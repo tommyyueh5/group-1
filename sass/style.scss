@@ -1,0 +1,35 @@
+@import "base/var";
+@import "mixins/mixin_func";
+@import "base/reset";
+
+@import "layout/header";
+@import "layout/footer";
+
+body {
+  background-color: black;
+}
+
+.button {
+  @include btn-neno(50, 20, 20);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// @mixin boxs($num) {
+//     @for $i from 1 through $num {
+//       .box_#{$i} {
+//         width: $i * 1px;
+//         @content;
+//       }
+//     }
+//   }
+// @include boxs(4)
+.center{
+    @include switch();
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}

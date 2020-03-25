@@ -1,0 +1,274 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+blockquote, q {
+  quotes: "" "";
+}
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #C2DFE3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav .list .list-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .list .list-box li a {
+  margin: 0 10px;
+  height: 50px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  color: #0E1C36;
+}
+
+footer {
+  background-color: #fff;
+}
+
+body {
+  background-color: black;
+}
+
+.button {
+  font-family: consolas;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  padding: 20px 20px;
+  color: #2186f3;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 50px;
+  overflow: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.button:hover {
+  color: #255784;
+  background: #2196f3;
+  -webkit-box-shadow: 0 0 10px #2186f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+          box-shadow: 0 0 10px #2186f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.button span:nth-child(1), .button span:nth-child(3), .button span:nth-child(2), .button span:nth-child(4) {
+  position: absolute;
+  display: block;
+}
+
+.button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#2186f3));
+  background: linear-gradient(90deg, transparent, #2186f3);
+}
+
+.button:hover span:nth-child(1) {
+  left: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#2186f3));
+  background: linear-gradient(270deg, transparent, #2186f3);
+}
+
+.button:hover span:nth-child(3) {
+  right: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#2186f3));
+  background: linear-gradient(180deg, transparent, #2186f3);
+}
+
+.button:hover span:nth-child(2) {
+  top: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#2186f3));
+  background: linear-gradient(360deg, transparent, #2186f3);
+}
+
+.button:hover span:nth-child(4) {
+  bottom: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.center input[type="checkbox"] {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  -webkit-appearance: none;
+  background: -webkit-gradient(linear, left bottom, left top, from(#333), to(#000));
+  background: linear-gradient(0deg, #333, #000);
+  outline: none;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px black, 0 5px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px black, 0 5px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.center input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 80px;
+  height: 40px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#000), to(#6b6b6b));
+  background: linear-gradient(0deg, #000, #6b6b6b);
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 0 1px #232323;
+          box-shadow: 0 0 0 1px #232323;
+  -webkit-transform: scale(0.98, 0.96);
+          transform: scale(0.98, 0.96);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.center input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 65px;
+  width: 4px;
+  height: 4px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#6b6b6b), to(#000));
+  background: linear-gradient(0deg, #6b6b6b, #000);
+  border-radius: 50%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.center input:checked[type="checkbox"] {
+  background: -webkit-gradient(linear, left bottom, left top, from(#6dd1ff), to(#20b7ff));
+  background: linear-gradient(0deg, #6dd1ff, #20b7ff);
+  -webkit-box-shadow: 0 0 2px #6dd1ff, 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px black, 0 5px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 2px #6dd1ff, 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px black, 0 5px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.center input:checked[type="checkbox"]:before {
+  left: 40px;
+}
+
+.center input:checked[type="checkbox"]::after {
+  background: #63cdff;
+  left: 105px;
+  border-style: 0 0 5px #13b3ff, 0 0 15px #13b3ff;
+}
+/*# sourceMappingURL=style.css.map */
