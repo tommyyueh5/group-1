@@ -23,8 +23,15 @@
     }
   }
 }
-
-@mixin btn-neno($Fs: 16, $updown: 15, $leftright: 20) //字大小、高度、寬度
+// btn-neno html結構 字大小、高度、寬度
+// <ahref="#"> 
+// <span></span>
+// <span></span>
+// <span></span>
+// <span></span>
+// Neon Button 
+// </a>
+@mixin btn-neno($Fs: 16, $updown: 15, $leftright: 20) 
 {
   @content;
   font-family: consolas;
@@ -103,7 +110,10 @@
     transition-delay: 0.75s;
   }
 }
-@mixin switch //大小固定
+// <div class="center">  大小固定
+// <input type="checkbox" name="" >
+// </div>
+@mixin switch
 {
   @content;
   input[type="checkbox"] {
@@ -155,5 +165,31 @@
     background: #63cdff;
     left: 105px;
     border-style: 0 0 5px #13b3ff, 0 0 15px #13b3ff;
+  }
+}
+
+@mixin shadow-btn($Fs: 16, $updown: 10, $leftright: 30){
+  @content;
+  display: inline-block;
+  padding:$updown+px $leftright+px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #5a84a2;
+  font-size: $Fs+px;
+  border-radius: 40px;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+              -2px -2px 12px rgba(255, 255, 255, 0.5),
+              inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.15);
+  &:hover {
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+                inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  &:hover span {
+    display: inline-block;
+    transform: scale(0.98);
   }
 }
