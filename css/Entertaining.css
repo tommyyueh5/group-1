@@ -55,7 +55,7 @@ blockquote, q {
 nav {
   width: 100%;
   margin: 0 auto;
-  background-color: #C2DFE3;
+  background-color: #c2dfe3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -90,7 +90,7 @@ nav .list .list-box li a {
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  color: #0E1C36;
+  color: #0e1c36;
 }
 
 footer {

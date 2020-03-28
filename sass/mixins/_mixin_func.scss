@@ -24,15 +24,14 @@
   }
 }
 // btn-neno html結構 字大小、高度、寬度
-// <ahref="#"> 
+// <ahref="#">
 // <span></span>
 // <span></span>
 // <span></span>
 // <span></span>
-// Neon Button 
+// Neon Button
 // </a>
-@mixin btn-neno($Fs: 16, $updown: 15, $leftright: 20) 
-{
+@mixin btn-neno($Fs: 16, $updown: 15, $leftright: 20) {
   @content;
   font-family: consolas;
   box-sizing: border-box;
@@ -113,8 +112,7 @@
 // <div class="center">  大小固定
 // <input type="checkbox" name="" >
 // </div>
-@mixin switch
-{
+@mixin switch {
   @content;
   input[type="checkbox"] {
     position: relative;
@@ -124,8 +122,7 @@
     background: linear-gradient(0deg, #333, #000);
     outline: none;
     border-radius: 20px;
-    box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e,
-      inset 0 0 10px rgba(0, 0, 0, 1), 0 5px 20px rgba(0, 0, 0, 0.5),
+    box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1), 0 5px 20px rgba(0, 0, 0, 0.5),
       inset 0 0 10px rgba(0, 0, 0, 0.2);
     &::before {
       content: "";
@@ -154,9 +151,8 @@
   }
   input:checked[type="checkbox"] {
     background: linear-gradient(0deg, #6dd1ff, #20b7ff);
-    box-shadow: 0 0 2px #6dd1ff, 0 0 0 4px #353535, 0 0 0 5px #3e3e3e,
-      inset 0 0 10px rgba(0, 0, 0, 1), 0 5px 20px rgba(0, 0, 0, 0.5),
-      inset 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px #6dd1ff, 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1),
+      0 5px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.2);
   }
   input:checked[type="checkbox"]:before {
     left: 40px;
@@ -168,28 +164,85 @@
   }
 }
 
-@mixin shadow-btn($Fs: 16, $updown: 10, $leftright: 30){
+@mixin shadow-botton-white($Fs: 16, $updown: 10, $leftright: 30) {
   @content;
   display: inline-block;
-  padding:$updown+px $leftright+px;
+  padding: $updown + px $leftright + px;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 2px;
-  color: #5a84a2;
-  font-size: $Fs+px;
+  font-size: $Fs + px;
   border-radius: 40px;
-  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
-              -2px -2px 12px rgba(255, 255, 255, 0.5),
-              inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 1), -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.15);
   &:hover {
-    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
-                inset -2px -2px 12px rgba(255, 255, 255, 0.5),
-                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-                inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1), inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.1), inset 2px 2px 8px rgba(0, 0, 0, 0.15);
   }
-  &:hover span {
+  &:hover span.btn-shadow {
+    position: absolute;
     display: inline-block;
     transform: scale(0.98);
+  }
+}
+@mixin shadow-botton-black($Fs: 16, $updown: 10, $leftright: 30) {
+  @content;
+  display: inline-block;
+  padding: $updown + px $leftright + px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  background-color: rgba(30,30,30,1);
+  font-size: $Fs + px;
+  border-radius: 40px;
+  box-shadow: 
+  inset -2px -2px 8px rgba(0, 0, 0, 1),
+  inset -2px -2px 12px rgba(30, 30, 30, 0.5),
+  inset 2px 2px 4px rgba(30, 30, 30, 0.1),
+  inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    box-shadow:
+    inset -2px -2px 8px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 12px rgba(30, 30, 30, 0.1),
+    inset 2px 2px 4px rgba(30, 30, 30, 0.5),
+    inset 2px 2px 8px rgba(0, 0, 0, 1);
+  }
+  &:hover span.btn-shadow {
+    position: absolute;
+    display: inline-block;
+    transform: scale(0.98);
+  }
+}
+@mixin shadow-btn-white($btn-level) {
+  @if $btn-level== level1 {
+    @include shadow-botton-white(24, 50, 180);
+  } @else if $btn-level==level2 {
+    @include shadow-botton-white(22, 45, 150);
+  } @else if $btn-level== level3 {
+    @include shadow-botton-white(20, 40, 130);
+  } @else if $btn-level== level4 {
+    @include shadow-botton-white(18, 30, 120);
+  } @else if $btn-level== level5 {
+    @include shadow-botton-white(16, 25, 100);
+  } @else if $btn-level== level6 {
+    @include shadow-botton-white(12, 15, 80);
+  }  
+}
+@mixin shadow-btn-black($btn-level) {
+  @if $btn-level== level1 {
+    @include shadow-botton-black(24, 50, 180);
+  } @else if $btn-level==level2 {
+    @include shadow-botton-black(22, 45, 150);
+  } @else if $btn-level== level3 {
+    @include shadow-botton-black(20, 40, 130);
+  } @else if $btn-level== level4 {
+    @include shadow-botton-black(18, 30, 120);
+  } @else if $btn-level== level5 {
+    @include shadow-botton-black(16, 25, 100);
+  } @else if $btn-level== level6 {
+    @include shadow-botton-black(12, 15, 80);
   }
 }

@@ -2,17 +2,10 @@
 @import "mixins/mixin_func";
 @import "base/reset";
 
+@import "layout/btn-style";
 @import "layout/header";
 @import "layout/footer";
 
 body {
   background-color: #f2f3f7;
-}
-
-.btn{
-  @include shadow-btn(30,50,100);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
 }
