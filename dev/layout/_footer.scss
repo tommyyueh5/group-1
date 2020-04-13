@@ -1,0 +1,62 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $color;
+    div.footer {
+        padding: 25px 0;
+        display: flex;
+        justify-content: center;
+        width: 1000px;
+        @include marginAuto;
+        ul.list-left {
+            flex: 2;
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+                color: #fff;
+                font-size: 20px;
+                margin: 5px 0;
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 14px;
+                }
+            }
+        }
+        ul.list-right {
+            flex: 1;
+            li {
+                margin-bottom: 25px;
+                color: blanchedalmond;
+            }
+            li:nth-child(2) {
+                ul {
+                    display: flex;
+                    li {
+                        width: 25px;
+                        height: 25px;
+                        background-color: gray;
+                        margin: 0 5px;
+                        text-align: center;
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                            line-height: 25px;
+                        }
+                    }
+                }
+            }
+            form{
+                input.email{
+                }
+                input.email-on{
+
+                }
+            }
+        }
+    }
+}

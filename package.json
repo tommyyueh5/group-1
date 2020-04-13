@@ -1,21 +1,13 @@
 {
-  "name": "my-project",
+  "name": "test-1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tommyyueh5/group-1.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tommyyueh5/group-1/issues"
-  },
-  "homepage": "https://github.com/tommyyueh5/group-1#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",

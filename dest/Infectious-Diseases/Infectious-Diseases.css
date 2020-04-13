@@ -1,0 +1,178 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+@-webkit-keyframes animation-move {
+  0% {
+    -webkit-transform: translate(0px, 100px);
+    -moz-transform: translate(0px, 100px);
+    -ms-transform: translate(0px, 100px);
+    transform: translate(0px, 100px); }
+  100% {
+    -webkit-transform: translate(100px, 200px);
+    -moz-transform: translate(100px, 200px);
+    -ms-transform: translate(100px, 200px);
+    transform: translate(100px, 200px); } }
+
+@-moz-keyframes animation-move {
+  0% {
+    -webkit-transform: translate(0px, 100px);
+    -moz-transform: translate(0px, 100px);
+    -ms-transform: translate(0px, 100px);
+    transform: translate(0px, 100px); }
+  100% {
+    -webkit-transform: translate(100px, 200px);
+    -moz-transform: translate(100px, 200px);
+    -ms-transform: translate(100px, 200px);
+    transform: translate(100px, 200px); } }
+
+@keyframes animation-move {
+  0% {
+    -webkit-transform: translate(0px, 100px);
+    -moz-transform: translate(0px, 100px);
+    -ms-transform: translate(0px, 100px);
+    transform: translate(0px, 100px); }
+  100% {
+    -webkit-transform: translate(100px, 200px);
+    -moz-transform: translate(100px, 200px);
+    -ms-transform: translate(100px, 200px);
+    transform: translate(100px, 200px); } }
+
+.animation-move {
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: animation-move;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-direction: forward;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: animation-move;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-direction: forward;
+  animation-delay: 0;
+  animation-duration: 0.5s;
+  animation-name: animation-move;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-direction: forward; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #3c4146; }
+  footer div.footer {
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    margin: 0 auto; }
+    footer div.footer ul.list-left {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap; }
+      footer div.footer ul.list-left li {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-size: 20px;
+        margin: 5px 0; }
+        footer div.footer ul.list-left li a {
+          color: white;
+          text-decoration: none;
+          font-size: 14px; }
+    footer div.footer ul.list-right {
+      flex: 1; }
+      footer div.footer ul.list-right li {
+        margin-bottom: 25px;
+        color: blanchedalmond; }
+      footer div.footer ul.list-right li:nth-child(2) ul {
+        display: flex; }
+        footer div.footer ul.list-right li:nth-child(2) ul li {
+          width: 25px;
+          height: 25px;
+          background-color: gray;
+          margin: 0 5px;
+          text-align: center; }
+          footer div.footer ul.list-right li:nth-child(2) ul li a {
+            text-decoration: none;
+            color: #fff;
+            line-height: 25px; }
+
+header {
+  background-color: #3c4146;
+  display: flex;
+  justify-content: space-between; }
+  header div.nothing {
+    width: 150px;
+    height: 50px; }
+  header ul.list-title {
+    display: flex;
+    align-items: center; }
+    header ul.list-title li {
+      margin: 0 25px; }
+    header ul.list-title li.logo > a {
+      display: block;
+      background-image: url(/dev/image/images.jpg);
+      background-position: center center;
+      background-size: cover;
+      width: 50px;
+      height: 50px; }
+    header ul.list-title li a {
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      color: #e6e6e6; }
+  header div.fuction {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    header div.fuction div {
+      height: 25px; }
