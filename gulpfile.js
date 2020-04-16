@@ -67,10 +67,11 @@ gulp.task('default', function () {
             //根目錄
             baseDir: "./",
             index: "dest/index/index.html"
+            // index: "dest/btn-style/btn-style.html"
         }
     });
 
-    gulp.watch(["sass/*.scss", "sass/**/*.scss","dev/layout/*.scss"], ['sass']).on('change', reload);
+    gulp.watch(["sass/*.scss", "sass/**/*.scss","dev/layout/**/*.scss","dev/html/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js"], ['concatjs']).on('change', reload);
 });

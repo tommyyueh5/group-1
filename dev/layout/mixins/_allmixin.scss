@@ -34,6 +34,13 @@ $btn-color5: #bdbbb0;
     }
 }
 
+@mixin HandV_center($top, $left, $z-index: null) {
+    position: absolute;
+    left: $left;
+    top: $top;
+    z-index: $z-index;
+    transform: translate(-50%, -50%);
+}
 $btn-bgc: black;
 
 // margin auto

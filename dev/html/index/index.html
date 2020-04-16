@@ -6,10 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @@include('../../layout/head.html')
+    <link rel="stylesheet" href="/dest/index/style.css">
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/dest/index/index.js"></script>
 </head>
 
 <body>
+    <div class="login-Bg on" id="loginBg">
+        <div class="login-Box">
+            <div class="X" id="btnX">
+                <span class="left"></span>
+                <span class="right"></span>
+            </div>
+            <form class="login-data" action="#">
+                <h1>登入/註冊</h1>
+                <label class="" for="account">常用信箱<br>
+                    <input type="email" name="emeEmail">
+                </label><br>
+
+                <label for="emePaw">密碼<br>
+                    <input type="password" name="emePaw"><br>
+                    <input class="viveswitch" type="checkbox" id="viveswitch">顯示密碼
+                </label>
+
+                <a href="">註冊</a>
+                或
+                <a href="">忘記密碼</a>
+                <br>
+                <input class="submit" type="submit" name="login" value="登入">
+            </form>
+        </div>
+    </div>
     @@include('../../layout/header.html')
+
+
+
+
+
+
+
     @@include('../../layout/footer.html')
 </body>
 

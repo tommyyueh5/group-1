@@ -3,6 +3,7 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: $color;
+    z-index: -1;
     div.footer {
         padding: 25px 0;
         display: flex;

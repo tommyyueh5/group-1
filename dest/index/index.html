@@ -5,30 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="./img/title/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" type="image/x-icon" href="./img/title/favicon.ico" />
-<link rel="stylesheet" type="text/css" th:href="@{../index/style.css}">
-<link rel="stylesheet" type="text/css" href="/dest/index/style.css">
-<link rel="stylesheet" type="text/css" href="/dest/index/style.css">
+    <link rel="icon" href="../../dev/image/title/logoimage.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="../../dev/image/title/logoimage.ico" />
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{../index/style.css}">
+    <link rel="stylesheet" type="text/css" href="/dest/index/style.css">
+    <link rel="stylesheet" type="text/css" href="/dest/index/style.css"> -->
+    <link rel="stylesheet" href="/dest/index/style.css">
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/dest/index/index.js"></script>
 </head>
 
 <body>
+    <div class="login-Bg on" id="loginBg">
+        <div class="login-Box">
+            <div class="X" id="btnX">
+                <span class="left"></span>
+                <span class="right"></span>
+            </div>
+            <form class="login-data" action="#">
+                <h1>登入/註冊</h1>
+                <label class="" for="account">常用信箱<br>
+                    <input type="email" name="emeEmail">
+                </label><br>
+
+                <label for="emePaw">密碼<br>
+                    <input type="password" name="emePaw"><br>
+                    <input class="viveswitch" type="checkbox" id="viveswitch">顯示密碼
+                </label>
+
+                <a href="">註冊</a>
+                或
+                <a href="">忘記密碼</a>
+                <br>
+                <input class="submit" type="submit" name="login" value="登入">
+            </form>
+        </div>
+    </div>
     <header>
     <div class="nothing"></div>
     <ul class="list-title">
-        <li><a href="">防疫知識王</a></li>
-        <li><a href="">討論區</a></li>
-        <li><a href="">傳染病事記</a></li>
-        <li class="logo"><a href="#"></a></li>
-        <li><a href="">最新消息</a></li>
-        <li><a href="">防疫SOP</a></li>
-        <li><a href="">防疫商店</a></li>
+        <li><a href="/dest/Entertaining/Entertaining.html">防疫知識王</a></li>
+        <li><a href="/dest/forum/forum.html">討論區</a></li>
+        <li><a href="/dest/Infectious-Diseases/Infectious-Diseases.html">傳染病事記</a></li>
+        <li class="logo"><a href="/dest/index/index.html"></a></li>
+        <li><a href="/dest/latest-news/latest-news.html">最新消息</a></li>
+        <li><a href="/dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html">防疫SOP</a></li>
+        <li><a href="/dest/Epidemic-shop/Epidemic-shop.html">防疫商店</a></li>
     </ul>
     <div class="fuction">
-        <div class="up">up</div>
+        <div class="up" id="login-btn">login</div>
         <div class="down">down</div>
     </div>
 </header>
+
+
+
+
+
+
+
     <footer>
     <div class="footer">
         <ul class="list-left">
