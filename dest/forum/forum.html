@@ -10,10 +10,51 @@
     <!-- <link rel="stylesheet" type="text/css" th:href="@{../index/style.css}">
     <link rel="stylesheet" type="text/css" href="/dest/index/style.css">
     <link rel="stylesheet" type="text/css" href="/dest/index/style.css"> -->
+    <link rel="stylesheet" href="/dest/forum/forum.css">
 </head>
 
 <body>
     <header>
+    <div class="login-Bg" id="loginBg">
+        <div class="login-Box">
+            <div class="sign-title">
+                <h1 id="sign-in">登入</h1>
+                <h1 id="sign-up">註冊</h1>
+            </div>
+            <div class="X" id="btnX">
+                <span class="left"></span>
+                <span class="right"></span>
+            </div>
+            <form class="sign sign-in" action="/dest/index/sign-in.php" method="GET">
+
+                <label for="emeEmail">登入信箱<br>
+                    <input class="input-data" type="email" name="emeEmail">
+                </label><br>
+
+                <label for="emePaw">登入密碼<br>
+                    <input class="input-data" type="password" name="emePaw"><br>
+                    <input class="viveswitch" type="checkbox">顯示密碼
+                </label>
+                <a href="">忘記密碼</a>
+                <br>
+                <input class="submit" type="submit" name="login" value="登入">
+            </form>
+
+            <form class="sign sign-up" action="/dest/index/sign-up.php" method="GET">
+                <label for="upEmail">註冊信箱<br>
+                    <input class="input-data" type="email" name="upEmail">
+                </label><br>
+
+                <label for="upPaw">註冊密碼<br>
+                    <input class="input-data" type="password" name="upPaw"><br>
+                    <input class="viveswitch" type="checkbox" id="vivePsw">顯示密碼
+                </label>
+                <a href="">忘記密碼</a>
+                <br>
+                <input class="submit" type="submit" name="login" value="登入">
+            </form>
+        </div>
+    </div>
     <div class="nothing"></div>
     <ul class="list-title">
         <li><a href="/dest/Entertaining/Entertaining.html">防疫知識王</a></li>

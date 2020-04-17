@@ -104,7 +104,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #3c4146;
+  background-color: rgba(0, 0, 0, 0.9);
   z-index: -1; }
   footer div.footer {
     padding: 25px 0;
@@ -146,7 +146,7 @@ footer {
             line-height: 25px; }
 
 header {
-  background-color: #3c4146;
+  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: space-between;
   z-index: -1; }
@@ -160,11 +160,11 @@ header {
       margin: 0 25px; }
     header ul.list-title li.logo > a {
       display: block;
-      background-image: url(/dev/image/virus/images.jpg);
+      background-image: url(/dev/image/title/logo-image.png);
       background-position: center center;
       background-size: cover;
-      width: 50px;
-      height: 50px; }
+      width: 40px;
+      height: 40px; }
     header ul.list-title li a {
       text-decoration: none;
       color: black;
@@ -176,12 +176,13 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: whitesmoke;
     cursor: pointer; }
     header div.fuction div {
       height: 25px; }
 
 div.login-Bg.on {
-  visibility: visible; }
+  display: block; }
 
 div.login-Bg {
   width: 100%;
@@ -189,7 +190,7 @@ div.login-Bg {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
   position: fixed;
-  visibility: hidden; }
+  display: none; }
   div.login-Bg .login-Box {
     display: inline-block;
     padding: 10px 30px;
@@ -208,7 +209,7 @@ div.login-Bg {
     background-color: #3c4146;
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 35%;
     transform: translate(-50%, -50%); }
     div.login-Bg .login-Box:hover {
       box-shadow: inset -2px -2px 8px rgba(0, 0, 0, 0.15), inset -2px -2px 12px rgba(30, 30, 30, 0.1), inset 2px 2px 4px rgba(30, 30, 30, 0.5), inset 2px 2px 8px black; }
@@ -216,6 +217,21 @@ div.login-Bg {
       position: absolute;
       display: inline-block;
       transform: scale(0.98); }
+    div.login-Bg .login-Box .sign-title {
+      font-size: 0px;
+      text-align: center;
+      display: inline-block;
+      margin: 15px 0;
+      transform: translateX(50%); }
+      div.login-Bg .login-Box .sign-title h1 {
+        cursor: pointer;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        padding: 10px 20px; }
+        div.login-Bg .login-Box .sign-title h1:hover {
+          transition: all .5s;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
     div.login-Bg .login-Box div.X {
       cursor: pointer;
       position: absolute;
@@ -235,28 +251,28 @@ div.login-Bg {
         transform: translate(-50%, -50%) rotate(45deg); }
       div.login-Bg .login-Box div.X span.right {
         transform: translate(-50%, -50%) rotate(-45deg); }
-    div.login-Bg .login-Box .login-data {
+    div.login-Bg .login-Box .sign-in {
+      display: block; }
+    div.login-Bg .login-Box .sign-up {
+      display: none; }
+    div.login-Bg .login-Box .sign {
       padding: 0 30px; }
-      div.login-Bg .login-Box .login-data h1 {
-        font-size: 30px;
-        padding: 20px 0;
-        text-align: center; }
-      div.login-Bg .login-Box .login-data label {
+      div.login-Bg .login-Box .sign label {
         font-weight: normal;
         font-size: 16px; }
-        div.login-Bg .login-Box .login-data label input {
+        div.login-Bg .login-Box .sign label input {
           margin: 10px 0;
           width: 100%;
           border-radius: 5px;
           height: 20px;
           border: 1px solid rgba(0, 0, 0, 0.5); }
-        div.login-Bg .login-Box .login-data label .viveswitch {
+        div.login-Bg .login-Box .sign label .viveswitch {
           width: 20px;
           margin-right: 10px; }
-      div.login-Bg .login-Box .login-data a {
+      div.login-Bg .login-Box .sign a {
         text-decoration: none;
         color: #1e7efc;
         font-size: 16px; }
-      div.login-Bg .login-Box .login-data .submit {
+      div.login-Bg .login-Box .sign .submit {
         width: 100%;
         margin-top: 10px; }

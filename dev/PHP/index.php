@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    @@include('../../layout/head.html')
-    <link rel="stylesheet" href="/dest/forum/forum.css">
 </head>
 
-<body>
-    @@include('../../layout/header.html')
-    @@include('../../layout/footer.html')
+<body>  
+        <p><? echo $_GET["emeEmail"], "<br>"; ?></p>
+        <p><? echo $_GET["emePaw"], "<br>"; ?></p>
 </body>
 
 </html>

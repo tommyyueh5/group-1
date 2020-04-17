@@ -1,6 +1,6 @@
 @import "../../layout/base/var";
 div.login-Bg.on {
-    visibility: visible;
+    display: block;
 }
 div.login-Bg {
     width: 100%;
@@ -8,8 +8,8 @@ div.login-Bg {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
     position: fixed;
-    visibility: hidden;
-    
+    display: none;
+
     .login-Box {
         @include shadow-botton-black();
         position: absolute;
@@ -17,8 +17,32 @@ div.login-Bg {
         height: 400px;
         border-radius: 10px;
         background-color: $color;
-        @include HandV_center(30%,50%);
-        div.X{
+        
+        @include HandV_center(35%, 50%);
+        .sign-title{
+            font-size: 0px;
+            text-align: center;
+            display: inline-block;
+            margin: 15px 0;
+            transform: translateX(50%);
+            h1 {
+                cursor: pointer;
+                font-size: 30px;
+                text-align: center;
+                display: inline-block;
+                padding: 10px 20px;
+                &:hover{
+                    transition: all .5s;
+                    box-shadow: 0 0 5px rgba(0,0,0,.5);
+                }
+                
+            }
+            // #sign-in{
+            //     background-color: gray;
+            // }
+        }
+
+        div.X {
             cursor: pointer;
             position: absolute;
             top: 10px;
@@ -26,7 +50,7 @@ div.login-Bg {
             border: 1px solid #000;
             width: 25px;
             height: 25px;
-            span{
+            span {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -34,20 +58,21 @@ div.login-Bg {
                 height: 1px;
                 background-color: black;
             }
-            span.left{
-                transform: translate(-50%,-50%) rotate(45deg);
+            span.left {
+                transform: translate(-50%, -50%) rotate(45deg);
             }
-            span.right{
-                transform: translate(-50%,-50%) rotate(-45deg);
+            span.right {
+                transform: translate(-50%, -50%) rotate(-45deg);
             }
         }
-        .login-data {
+        .sign-in{
+            display: block;
+        }
+        .sign-up{
+            display: none;
+        }
+        .sign{
             padding: 0 30px;
-            h1 {
-                font-size: 30px;
-                padding: 20px 0;
-                text-align: center;
-            }
             label {
                 font-weight: normal;
                 font-size: 16px;
@@ -68,7 +93,7 @@ div.login-Bg {
                 color: rgb(30, 126, 252);
                 font-size: 16px;
             }
-            .submit{
+            .submit {
                 width: 100%;
                 margin-top: 10px;
             }
