@@ -19,13 +19,13 @@ gulp.task('concatcss', function () {
 });
 
 //編譯scss
-
-
 gulp.task('sass', function () {
     gulp.src('./dev/html/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dest/'))
 });
+
+
 //壓縮檔案
 gulp.task('minicss', ['sass'], function () {
     gulp.src('dev/css/*.css')
