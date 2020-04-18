@@ -8,6 +8,10 @@ watch = require('gulp-watch');
 fileinclude = require('gulp-file-include');
 
 //搬家
+gulp.task('concatHtml', function () {
+    //do sometime
+    gulp.src('./dev/html/index/earth/**/*').pipe(gulp.dest('dest/index/earth/'))
+});
 gulp.task('concatjs', function () {
     //do sometime
     gulp.src('./dev/html/**/*.js').pipe(gulp.dest('dest/'))
@@ -66,12 +70,19 @@ gulp.task('default', function () {
         server: {
             //根目錄
             baseDir: "./",
+            files: ['**'],
+            proxy: 'http://localhost:3000',
             index: "dest/index/index.html"
             // index: "dest/btn-style/btn-style.html"
         }
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss","dev/layout/**/*.scss","dev/html/**/*.scss"], ['sass']).on('change', reload);
-    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude']).on('change', reload);
+    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude','concatHtml']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js","dev/layout/**/*.js"], ['concatjs']).on('change', reload);
+<<<<<<< HEAD
 });
+=======
+    
+});
+>>>>>>> 751fcb32fff2110b411a0839015e7a79164438be
