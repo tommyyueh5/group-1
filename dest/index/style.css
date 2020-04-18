@@ -14,7 +14,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-style: inherit;
   font-size: 100%;
   font-family: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  box-sizing: border-box; }
 
 /* remember to define focus styles! */
 :focus {
@@ -202,7 +203,7 @@ footer {
 
 header {
   background-color: #191919;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   display: flex;
@@ -332,3 +333,6 @@ header {
         header div.login-Bg .login-Box .sign .submit {
           width: 100%;
           margin-top: 10px; }
+
+section.leon {
+  background-color: #111; }
