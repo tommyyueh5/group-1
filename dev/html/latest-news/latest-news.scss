@@ -1,1 +1,36 @@
 @import "../../layout/base/var";
+
+div.breadcrumb{
+    padding: 5px 0px;
+    border-radius: 5px;
+    text-align: center;
+}
+div.breadcrumb ol.breadcrumb_list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+div.breadcrumb ol.breadcrumb_list > li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+div.breadcrumb ol.breadcrumb_list > li::before{
+    content: "/";
+    font-size: 18px;
+    color: #aaa;
+    margin-right: 12px;
+}
+div.breadcrumb ol.breadcrumb_list > li:first-child::before{
+    content: "";
+    margin-right: 0;
+}
+div.breadcrumb ol.breadcrumb_list > li > a{
+    text-decoration: none;
+    display: inline-block;
+    color: #000000;
+    font-size: 12px;
+}
+div.breadcrumb ol.breadcrumb_list > li > a:hover{
+    color: rgb(107, 4, 4);
+}
