@@ -72,7 +72,7 @@ gulp.task('default', function () {
             baseDir: "./",
             files: ['**'],
             proxy: 'http://localhost:3000',
-            index: "dest/index/index.html"
+            index: "dest/latest-news/latest-news.html"
             // index: "dest/btn-style/btn-style.html"
         }
     });
