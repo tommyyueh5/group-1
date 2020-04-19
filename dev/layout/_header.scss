@@ -2,9 +2,9 @@
 @import "../layout/modules/btn";
 header {
     background-color: #191919;
-    position: sticky;
-    top: 0;
     width: 100%;
+    position: absolute;
+    top: 0;
     display: flex;
     justify-content: space-between;
     z-index: 1;

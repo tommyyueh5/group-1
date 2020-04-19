@@ -3,45 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-    <title>Document</title>
-    <link
-        rel="icon"
-        href="../../dev/image/title/logoimage.ico"
-        type="image/x-icon"
-    >
-    <link
-        rel="shortcut icon"
-        type="image/x-icon"
-        href="../../dev/image/title/logoimage.ico"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="icon" href="../../dev/image/title/logoimage.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="../../dev/image/title/logoimage.ico" />
     <!-- <link rel="stylesheet" type="text/css" th:href="@{../index/style.css}">
     <link rel="stylesheet" type="text/css" href="/dest/index/style.css">
     <link rel="stylesheet" type="text/css" href="/dest/index/style.css"> -->
-    <link
-        rel="stylesheet"
-        href="/dest/index/style.css"
-    >
-    <link
-        rel="stylesheet"
-        href="/dest/index/earth/css/earth.css"
-    >
+    <link rel="stylesheet" href="/dest/index/style.css">
+    <link rel="stylesheet" href="/dest/index/earth/css/earth.css">
     <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="/dest/index/style.css">
+    <link rel="stylesheet" href="/dest/index/earth/css/earth.css">
     <script src="/dest/index/index.js"></script>
+    <!-- Link earth json&js& -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
     <script src="https://d3js.org/d3-geo.v1.js"></script>
     <script src="https://d3js.org/topojson.v2.js"></script>
     <script
-        src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js"
-    ></script>
+        src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js"></script>
+    <script src="/node_modules/swiper/js/swiper.min.js"></script>
+    <!-- Link fullpage CSS&JS -->
+    <link rel="stylesheet" href="/node_modules/fullpage.js/dist/fullpage.min.css">
+    <script src="/node_modules/fullpage.js/dist/fullpage.min.js"></script>
 </head>
 
 <body>
-    <header>
+
+    <header id="myMeun">
     <div class="nothing"></div>
     <ul class="list-title">
         <li><a href="/dest/Entertaining/Entertaining.html">防疫知識王</a></li>
@@ -97,160 +88,172 @@
         </div>
     </div>
 </header>
-    
-
-    <!-- 地球功能 -->
-    <section class="Earth">
-        <div class="stars">
-            <ul class="Showtable">
-                <li id="curentCitys"></li>
-                <li id="curentConfirmed"></li>
-                <li id="curentDeath"></li>
-                <li id="curentRecovered"></li>
-            </ul>
-            <h2 id="current"></h2>
-            <div class="clouds"><canvas id="globe"></canvas>
-            </div>
-        </div>
-    </section>
-    <section class="HotNews-1">
-        <div class="newTitle">
-            <div class="titleImg">
-                <img
-                    src=""
-                    alt=""
-                >
-            </div>
-            <h1>Hot News</h1>
-        </div>
-
-        <div class="container-top">
-            <div class="videoBox">
-                <iframe
-                    src="https://www.youtube.com/embed/-NWKv2gLx_w"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                ></iframe>
-            </div>
-            <ul class="article">
-                <li class="item1 item"><a href="#"><img
-                            src="/dev/image/HotNews/img/For1.png"
-                            alt=""
-                        ></a></li>
-                <li class="item2 item"><a href="#">
-                        <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                        <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
-                            in Madrid, hailing the 6,000 staff who work there as heroes.
-                            Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it: a
-                            capital city blighted by this virus.
-
-                            This city has seen 7,000 deaths, more than other European capitals.
-
-                            The contagion spread at a remarkable rate through the densely populated city and its cluster
-                            of suburbs.
-
-                            The real death toll could be considerably higher as Madrid's regional government has
-                            revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were tested.
-
-                        </p>
-                    </a></li>
-                    <li class="item3 item"><a href="#">
-                        <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                        <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
-                            in Madrid, hailing the 6,000 staff who work there as heroes.
-                            Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it: a
-                            capital city blighted by this virus.
-    
-                            This city has seen 7,000 deaths, more than other European capitals.
-    
-                            The contagion spread at a remarkable rate through the densely populated city and its cluster
-                            of suburbs.
-    
-                            The real death toll could be considerably higher as Madrid's regional government has
-                            revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were tested.
-    
-                        </p>
-                        </a></li>
-                <li class="item4 item"><a href="#"><img
-                            src="/dev/image/HotNews/img/For2.png"
-                            alt=""
-                        ></a></li>
-                
-            </ul>
-        </div>
-    </section>
-    <section class="HotNews-2">
-        <div class="container-bottom">
-            <div class="bottom-left">
-                <ul>
-                    <li class="item1"><a href="#"><h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1><p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
-                        in Madrid, hailing the 6,000 staff who work there as heroes.
-                        Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it: a
-                        capital city blighted by this virus.
-
-                        This city has seen 7,000 deaths, more than other European capitals.
-
-                        The contagion spread at a remarkable rate through the densely populated city and its cluster
-                        of suburbs.
-
-                        The real death toll could be considerably higher as Madrid's regional government has
-                        revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were tested.</p></a></li>
-                    <li class="item2"><a href="#"><img src="/dev/image/HotNews/img/For2.png" alt=""></a></li>
-                    <li class="item3"><a href="#"><h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1><p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
-                        in Madrid, hailing the 6,000 staff who work there as heroes.
-                        Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it: a
-                        capital city blighted by this virus.
-
-                        This city has seen 7,000 deaths, more than other European capitals.
-
-                        The contagion spread at a remarkable rate through the densely populated city and its cluster
-                        of suburbs.
-
-                        The real death toll could be considerably higher as Madrid's regional government has
-                        revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were tested.
-                    
-                        The real death toll could be considerably higher as Madrid's regional government has
-                        revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were tested.
-                    </p>
-                        </a></li>
+    <div id="home">
+        <section class="section page-1">
+            <div class="stars">
+                <ul class="Showtable">
+                    <li id="curentCitys"></li>
+                    <li id="curentConfirmed"></li>
+                    <li id="curentDeath"></li>
+                    <li id="curentRecovered"></li>
                 </ul>
+                <h2 id="current"></h2>
+                <div class="clouds"><canvas id="globe"></canvas>
+                </div>
             </div>
-            <div class="bottom-right">
-                <h1>more about coronavirus</h1>
-                <div class="box">
-                    <div class="inside-left">
-                        <ul class="list">
-                            <li class="list-Title">熱門討論排行</li>
-                            <li class="item"><a href="#">a</a></li>
-                            <li class="item"><a href="#">c</a></li>
-                            <li class="item"><a href="#">d</a></li>
-                            <li class="item"><a href="#">e</a></li>
-                            <li class="item"><a href="#">f</a></li>
+        </section>
+
+        <section class="section page-2">
+            <section class="HotNews-1">
+                <div class="newTitle">
+                    <div class="titleImg">
+                        <img src="" alt="">
+                    </div>
+                    <h1>Hot News</h1>
+                </div>
+
+                <div class="container-top">
+                    <div class="videoBox">
+                        <iframe src="https://www.youtube.com/embed/-NWKv2gLx_w" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <ul class="article">
+                        <li class="item1 item"><a href="#"><img src="/dev/image/HotNews/img/For1.png" alt=""></a></li>
+                        <li class="item2 item"><a href="#">
+                                <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                                <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre
+                                    hospital
+                                    in Madrid, hailing the 6,000 staff who work there as heroes.
+                                    Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it:
+                                    a
+                                    capital city blighted by this virus.
+
+                                    This city has seen 7,000 deaths, more than other European capitals.
+
+                                    The contagion spread at a remarkable rate through the densely populated city and its
+                                    cluster
+                                    of suburbs.
+
+                                    The real death toll could be considerably higher as Madrid's regional government has
+                                    revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were
+                                    tested.
+
+                                </p>
+                            </a></li>
+                        <li class="item3 item"><a href="#">
+                                <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                                <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre
+                                    hospital
+                                    in Madrid, hailing the 6,000 staff who work there as heroes.
+                                    Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it:
+                                    a
+                                    capital city blighted by this virus.
+
+                                    This city has seen 7,000 deaths, more than other European capitals.
+
+                                    The contagion spread at a remarkable rate through the densely populated city and its
+                                    cluster
+                                    of suburbs.
+
+                                    The real death toll could be considerably higher as Madrid's regional government has
+                                    revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were
+                                    tested.
+
+                                </p>
+                            </a></li>
+                        <li class="item4 item"><a href="#"><img src="/dev/image/HotNews/img/For2.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </section>
+
+
+        </section>
+        <section class="section page-3">
+            <section class="HotNews-2">
+                <div class="container-bottom">
+                    <div class="bottom-left">
+                        <ul>
+                            <li class="item1"><a href="#">
+                                    <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                                    <p>Applause and cheering rings out every night in the huddled streets around 12
+                                        Octubre hospital
+                                        in Madrid, hailing the 6,000 staff who work there as heroes.
+                                        Spain has seen more than 20,000 deaths and the Madrid region is at the heart of
+                                        it: a
+                                        capital city blighted by this virus.
+
+                                        This city has seen 7,000 deaths, more than other European capitals.
+
+                                        The contagion spread at a remarkable rate through the densely populated city and
+                                        its cluster
+                                        of suburbs.
+
+                                        The real death toll could be considerably higher as Madrid's regional government
+                                        has
+                                        revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
+                                        were tested.</p>
+                                </a></li>
+                            <li class="item2"><a href="#"><img src="/dev/image/HotNews/img/For2.png" alt=""></a></li>
+                            <li class="item3"><a href="#">
+                                    <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                                    <p>Applause and cheering rings out every night in the huddled streets around 12
+                                        Octubre hospital
+                                        in Madrid, hailing the 6,000 staff who work there as heroes.
+                                        Spain has seen more than 20,000 deaths and the Madrid region is at the heart of
+                                        it: a
+                                        capital city blighted by this virus.
+
+                                        This city has seen 7,000 deaths, more than other European capitals.
+
+                                        The contagion spread at a remarkable rate through the densely populated city and
+                                        its cluster
+                                        of suburbs.
+
+                                        The real death toll could be considerably higher as Madrid's regional government
+                                        has
+                                        revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
+                                        were tested.
+
+                                        The real death toll could be considerably higher as Madrid's regional government
+                                        has
+                                        revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
+                                        were tested.
+                                    </p>
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="inside-right">
-                        <h1>即時訊息</h1>
-                        <div class="grid-template">
-                            <div class="grid-top-left"></div>
-                            <div class="grid-top-right"></div>
-                            <div class="grid-bottom-left"></div>
-                            <div class="grid-bottom-center"></div>
-                            <div class="grid-bottom-right"></div>
+                    <div class="bottom-right">
+                        <h1>more about coronavirus</h1>
+                        <div class="box">
+                            <div class="inside-left">
+                                <ul class="list">
+                                    <li class="list-Title">熱門討論排行</li>
+                                    <li class="item"><a href="#">a</a></li>
+                                    <li class="item"><a href="#">c</a></li>
+                                    <li class="item"><a href="#">d</a></li>
+                                    <li class="item"><a href="#">e</a></li>
+                                    <li class="item"><a href="#">f</a></li>
+                                </ul>
+                            </div>
+                            <div class="inside-right">
+                                <h1>即時訊息</h1>
+                                <div class="grid-template">
+                                    <div class="grid-top-left"></div>
+                                    <div class="grid-top-right"></div>
+                                    <div class="grid-bottom-left"></div>
+                                    <div class="grid-bottom-center"></div>
+                                    <div class="grid-bottom-right"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="leon">
-
-    </section>
-
-
-
-    <footer>
+            </section>
+        </section>
+        <section class="section page-4">
+            <footer>
     <div class="footer">
         <ul class="list-left">
             <li>防疫大富翁
@@ -305,6 +308,19 @@
         </ul>
     </div>
 </footer>
+        </section>
+    </div>
+
+    <script>
+        $("#home").fullpage({
+            // 參數設定[註1]
+            menu: "#myMeun",
+            navigation: true, // 顯示導行列
+            navigationPosition: "left", // 導行列位置
+        });
+    </script>
+
+
     <script>
         window.addEventListener('load', function () {
             var rotationDelay = 500

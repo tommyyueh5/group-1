@@ -102,10 +102,10 @@ blockquote, q {
   animation-direction: forward; }
 
 footer {
-  bottom: 0;
   width: 100%;
   background-color: #191919;
-  z-index: -1; }
+  position: absolute;
+  bottom: 0; }
   footer div.footer {
     padding: 25px 0;
     display: flex;
@@ -203,9 +203,9 @@ footer {
 
 header {
   background-color: #191919;
-  position: sticky;
-  top: 0;
   width: 100%;
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: space-between;
   z-index: 1; }
@@ -334,13 +334,28 @@ header {
           width: 100%;
           margin-top: 10px; }
 
+section.leon {
+  background-color: #111; }
+
+div#home section.section {
+  position: relative; }
+
+div#home section.page-2 .HotNews-1 {
+  padding-top: 50px; }
+
+div#home section.page-3 .HotNews-2 {
+  padding-top: 50px; }
+
+div#home section.page-4 {
+  background-color: orange; }
+
 section.Earth {
   width: 100%;
-  height: calc(100vh - 50px); }
+  height: 100vh; }
 
 section.HotNews-1 {
   width: 100%;
-  height: calc(100vh - 50px);
+  height: 100vh;
   background-color: #000; }
   section.HotNews-1 .newTitle {
     width: 100%;
@@ -425,7 +440,7 @@ section.HotNews-1 {
 
 section.HotNews-2 {
   width: 100%;
-  height: calc(100vh - 50px);
+  height: 100vh;
   background-color: #000; }
   section.HotNews-2 .container-bottom {
     width: 100%;
@@ -446,7 +461,7 @@ section.HotNews-2 {
         grid-gap: 10px; }
         section.HotNews-2 .container-bottom .bottom-left ul li {
           background-color: #ccc;
-          padding: 20px;
+          padding: 10px;
           box-sizing: border-box; }
           section.HotNews-2 .container-bottom .bottom-left ul li:nth-child(2) {
             padding: 0px; }
@@ -526,7 +541,7 @@ section.HotNews-2 {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 2fr 1fr;
             grid-gap: 10px;
-            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
+            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
             section.HotNews-2 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left {
               background: #000;
               grid-area: topLeft; }
@@ -542,6 +557,3 @@ section.HotNews-2 {
             section.HotNews-2 .container-bottom .bottom-right .box .inside-right .grid-template .grid-bottom-right {
               background: #ff0;
               grid-area: bottomRight; }
-
-section.leon {
-  background-color: #111; }
