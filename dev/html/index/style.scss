@@ -1,5 +1,311 @@
 @import "../../layout/base/var";
-section.han {
+
+
+section.Earth {
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+section.HotNews-1 {
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: #000;
+
+    .newTitle {
+        width: 100%;
+        height: 10%;
+        padding: 0 20px;
+        background: #333;
+        display: flex;
+        align-items: center;
+
+        .titleImg {
+            width: 20px;
+            height: 20px;
+            background-color: #f00;
+            margin-right: 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        h1 {
+            letter-spacing: 1px;
+            color: #fff;
+            font-size: $title-font;
+        }
+    }
+
+    .container-top {
+        width: 100%;
+        height: 90%;
+        padding: 25px 5%;
+        box-sizing: border-box;
+        // background-color: #555;
+        display: flex;
+        justify-content: space-around;
+
+        .videoBox {
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            iframe {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .article {
+            width: 50%;
+            height: 90%;
+            padding: 25px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 25px;
+
+
+            .item {
+                background-color: #ccc;
+                overflow: hidden;
+
+                &:nth-child(1) {
+                    border-radius: 0 30% 0 0;
+                }
+
+                &:nth-child(2) {
+                    border-radius: 20% 0 30% 0;
+                }
+
+                &:nth-child(3) {
+                    border-radius: 0 0 30% 0;
+                }
+
+                &:nth-child(4) {
+                    border-radius:   0 30% 0 20%;
+                }
+
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    padding: 20px;
+                    box-sizing: border-box;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    h1 {
+                        font-size: 24px;
+                        line-height: 1.2;
+                        margin: 10px 0;
+                        // letter-spacing: 1px;
+                        color: #000;
+                    }
+
+                    p {
+                        color: #333;
+                        font-size: 18px;
+                        // letter-spacing: 1px;
+                        line-height: 1.2;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 6;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+section.HotNews-2 {
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: #000;
+
+    .container-bottom {
+        width: 100%;
+        height: 100%;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        display: flex;
+
+        .bottom-left {
+            width: 20%;
+            height: 100%;
+            ul {
+                width: 100%;
+                height: 100%;
+                list-style: none;
+                display: grid;
+                grid-template-rows: 1fr 1fr 2fr;
+                grid-template-columns: 1fr;
+                grid-gap: 10px;
+                li {
+                    background-color: #ccc;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    &:nth-child(2){
+                        padding: 0px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        text-decoration: none;
+                        
+                        h1 {
+                            font-size: 24px;
+                            line-height: 1.2;
+                            color: #000;
+                            
+                        }
+    
+                        p {
+                            color: #333;
+                            font-size: 18px;
+                            // letter-spacing: 1px;
+                            line-height: 1.2;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 6;
+                            -webkit-box-orient: vertical;
+                            
+                        }
+                    }
+                &:nth-child(3){
+                    p{
+                        -webkit-line-clamp: 9;
+                    }
+                }
+                }
+            }
+        }
+
+        .bottom-right {
+            margin-left: 5px;
+            padding: 10px 5px;
+            width: 80%;
+            height: 100%;
+            background-color: #c1c1cf;
+
+            h1 {
+                height: 10%;
+                width: 100%;
+                background-color: #abcddd;
+            }
+
+            .box {
+                height: 90%;
+                display: flex;
+
+                .inside-left {
+                    flex: 1;
+                    // background-color: rgb(114, 27, 27);
+
+                    .list {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .list-Title {
+                            text-align: center;
+                            padding: 2.5%;
+                            font-size: 24px;
+                            background-color: #bbb;
+                            
+                        }
+
+                        .item {
+                            height: 19%;
+                            text-align: center;
+                            width: 100%;
+                            border: 1px solid #000;
+
+                            a {
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                                text-decoration: none;
+                            }
+                        }
+
+                    }
+                }
+
+                .inside-right {
+                    flex: 3;
+                    background-color: rgb(99, 84, 84);
+
+                    h1 {
+                        color: white;
+                        background-color: #000;
+                        width: 99%;
+                        height: 10%;
+                        margin: 0 auto;
+                    }
+
+                    .grid-template {
+                        padding: 5px;
+                        height: 90%;
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        grid-template-rows: 2fr 1fr;
+                        grid-gap: 10px;
+                        grid-template-areas:
+                            "topLeft topLeft topRight"
+                            "bottomLeft bottomCenter bottomRight ";
+
+                        .grid-top-left {
+                            background: #000;
+                            grid-area: topLeft;
+                        }
+
+                        .grid-top-right {
+                            background: #f00;
+                            grid-area: topRight;
+                        }
+
+                        .grid-bottom-left {
+                            background: #0f0;
+                            grid-area: bottomLeft;
+                        }
+
+                        .grid-bottom-center {
+                            background: #00f;
+                            grid-area: bottomCenter;
+                        }
+
+                        .grid-bottom-right {
+                            background: #ff0;
+                            grid-area: bottomRight;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
 }
 
 section.leon {

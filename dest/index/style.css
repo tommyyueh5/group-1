@@ -204,10 +204,7 @@ footer {
 header {
   background-color: #191919;
   position: sticky;
-<<<<<<< HEAD
-=======
   top: 0;
->>>>>>> 7a92970f0bd095f9ca89f00021294df6bb517874
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -336,6 +333,215 @@ header {
         header div.login-Bg .login-Box .sign .submit {
           width: 100%;
           margin-top: 10px; }
+
+section.Earth {
+  width: 100%;
+  height: calc(100vh - 50px); }
+
+section.HotNews-1 {
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: #000; }
+  section.HotNews-1 .newTitle {
+    width: 100%;
+    height: 10%;
+    padding: 0 20px;
+    background: #333;
+    display: flex;
+    align-items: center; }
+    section.HotNews-1 .newTitle .titleImg {
+      width: 20px;
+      height: 20px;
+      background-color: #f00;
+      margin-right: 10px; }
+      section.HotNews-1 .newTitle .titleImg img {
+        width: 100%;
+        height: 100%; }
+    section.HotNews-1 .newTitle h1 {
+      letter-spacing: 1px;
+      color: #fff;
+      font-size: 24px; }
+  section.HotNews-1 .container-top {
+    width: 100%;
+    height: 90%;
+    padding: 25px 5%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around; }
+    section.HotNews-1 .container-top .videoBox {
+      width: 50%;
+      height: 100%;
+      box-sizing: border-box; }
+      section.HotNews-1 .container-top .videoBox iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    section.HotNews-1 .container-top .article {
+      width: 50%;
+      height: 90%;
+      padding: 25px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 25px; }
+      section.HotNews-1 .container-top .article .item {
+        background-color: #ccc;
+        overflow: hidden; }
+        section.HotNews-1 .container-top .article .item:nth-child(1) {
+          border-radius: 0 30% 0 0; }
+        section.HotNews-1 .container-top .article .item:nth-child(2) {
+          border-radius: 20% 0 30% 0; }
+        section.HotNews-1 .container-top .article .item:nth-child(3) {
+          border-radius: 0 0 30% 0; }
+        section.HotNews-1 .container-top .article .item:nth-child(4) {
+          border-radius: 0 30% 0 20%; }
+        section.HotNews-1 .container-top .article .item a {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          padding: 20px;
+          box-sizing: border-box; }
+          section.HotNews-1 .container-top .article .item a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+          section.HotNews-1 .container-top .article .item a h1 {
+            font-size: 24px;
+            line-height: 1.2;
+            margin: 10px 0;
+            color: #000; }
+          section.HotNews-1 .container-top .article .item a p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.2;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical; }
+
+section.HotNews-2 {
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: #000; }
+  section.HotNews-2 .container-bottom {
+    width: 100%;
+    height: 100%;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    display: flex; }
+    section.HotNews-2 .container-bottom .bottom-left {
+      width: 20%;
+      height: 100%; }
+      section.HotNews-2 .container-bottom .bottom-left ul {
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        display: grid;
+        grid-template-rows: 1fr 1fr 2fr;
+        grid-template-columns: 1fr;
+        grid-gap: 10px; }
+        section.HotNews-2 .container-bottom .bottom-left ul li {
+          background-color: #ccc;
+          padding: 20px;
+          box-sizing: border-box; }
+          section.HotNews-2 .container-bottom .bottom-left ul li:nth-child(2) {
+            padding: 0px; }
+            section.HotNews-2 .container-bottom .bottom-left ul li:nth-child(2) img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover; }
+          section.HotNews-2 .container-bottom .bottom-left ul li a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none; }
+            section.HotNews-2 .container-bottom .bottom-left ul li a h1 {
+              font-size: 24px;
+              line-height: 1.2;
+              color: #000; }
+            section.HotNews-2 .container-bottom .bottom-left ul li a p {
+              color: #333;
+              font-size: 18px;
+              line-height: 1.2;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 6;
+              -webkit-box-orient: vertical; }
+          section.HotNews-2 .container-bottom .bottom-left ul li:nth-child(3) p {
+            -webkit-line-clamp: 9; }
+    section.HotNews-2 .container-bottom .bottom-right {
+      margin-left: 5px;
+      padding: 10px 5px;
+      width: 80%;
+      height: 100%;
+      background-color: #c1c1cf; }
+      section.HotNews-2 .container-bottom .bottom-right h1 {
+        height: 10%;
+        width: 100%;
+        background-color: #abcddd; }
+      section.HotNews-2 .container-bottom .bottom-right .box {
+        height: 90%;
+        display: flex; }
+        section.HotNews-2 .container-bottom .bottom-right .box .inside-left {
+          flex: 1; }
+          section.HotNews-2 .container-bottom .bottom-right .box .inside-left .list {
+            height: 100%;
+            display: flex;
+            flex-direction: column; }
+            section.HotNews-2 .container-bottom .bottom-right .box .inside-left .list .list-Title {
+              text-align: center;
+              padding: 2.5%;
+              font-size: 24px;
+              background-color: #bbb; }
+            section.HotNews-2 .container-bottom .bottom-right .box .inside-left .list .item {
+              height: 19%;
+              text-align: center;
+              width: 100%;
+              border: 1px solid #000; }
+              section.HotNews-2 .container-bottom .bottom-right .box .inside-left .list .item a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                text-decoration: none; }
+        section.HotNews-2 .container-bottom .bottom-right .box .inside-right {
+          flex: 3;
+          background-color: #635454; }
+          section.HotNews-2 .container-bottom .bottom-right .box .inside-right h1 {
+            color: white;
+            background-color: #000;
+            width: 99%;
+            height: 10%;
+            margin: 0 auto; }
+          section.HotNews-2 .container-bottom .bottom-right .box .inside-right .grid-template {
+            padding: 5px;
+            height: 90%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 2fr 1fr;
+            grid-gap: 10px;
+            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
+            section.HotNews-2 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left {
+              background: #000;
+              grid-area: topLeft; }
+            section.HotNews-2 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-right {
+              background: #f00;
+              grid-area: topRight; }
+            section.HotNews-2 .container-bottom .bottom-right .box .inside-right .grid-template .grid-bottom-left {
+              background: #0f0;
+              grid-area: bottomLeft; }
+            section.HotNews-2 .container-bottom .bottom-right .box .inside-right .grid-template .grid-bottom-center {
+              background: #00f;
+              grid-area: bottomCenter; }
+            section.HotNews-2 .container-bottom .bottom-right .box .inside-right .grid-template .grid-bottom-right {
+              background: #ff0;
+              grid-area: bottomRight; }
 
 section.leon {
   background-color: #111; }
