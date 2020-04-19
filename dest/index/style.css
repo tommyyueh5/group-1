@@ -102,12 +102,10 @@ blockquote, q {
   animation-direction: forward; }
 
 footer {
-  bottom: 0;
   width: 100%;
-  position: sticky;
-  top: 0;
   background-color: #191919;
-  z-index: -1; }
+  position: absolute;
+  bottom: 0; }
   footer div.footer {
     padding: 25px 0;
     display: flex;
@@ -205,9 +203,9 @@ footer {
 
 header {
   background-color: #191919;
-  position: sticky;
-  top: 0;
   width: 100%;
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: space-between;
   z-index: 1; }
@@ -336,5 +334,14 @@ header {
           width: 100%;
           margin-top: 10px; }
 
-section.leon {
-  background-color: #111; }
+div#home section.section {
+  position: relative; }
+
+div#home section.page-2 {
+  background-color: gray; }
+
+div#home section.page-3 {
+  background-color: red; }
+
+div#home section.page-4 {
+  background-color: orange; }

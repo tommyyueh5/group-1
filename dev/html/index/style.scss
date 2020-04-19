@@ -1,7 +1,18 @@
 @import "../../layout/base/var";
 
+div#home {
+    section.section{
+        position: relative;
+    }
 
-
-section.leon {
-    background-color: #111;
+    section.page-2{
+        background-color:gray ;   
+    }
+    section.page-3{
+        background-color:red ;   
+    }
+    section.page-4{
+        background-color:orange ;   
+    }
+    
 }
