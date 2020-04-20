@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.js"></script>
+    <link rel="stylesheet" href="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul#menu {
+            background-color: #fff;
+            display: flex;
+            position: absolute;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="menu">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id="pagepiling">
+
+        <section class="section" id="page-1">page1</section>
+        <section class="section" id="page-2">page2</section>
+        <section class="section" id="page-3">page3</section>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#pagepiling').pagepiling({
+                menu: null,
+                direction: 'vertical',
+                verticalCentered: true,
+                sectionsColor: ['gray', 'green', 'red'],
+                anchors: ['page-1', 'page-2', 'page-3'],
+                scrollingSpeed: 700,
+                easing: 'swing',
+                loopBottom: false,
+                loopTop: false,
+                css3: true,
+                navigation: {
+                    'textColor': '#000',
+                    'bulletsColor': '#000',
+                    'position': 'right',
+                    'tooltips': ['section1', 'section2', 'section3', 'section4']
+                },
+                normalScrollElements: null,
+                normalScrollElementTouchThreshold: 5,
+                touchSensitivity: 5,
+                keyboardScrolling: true,
+                sectionSelector: '.section',
+                animateAnchor: false,
+
+                //events
+                onLeave: function (index, nextIndex, direction) { },
+                afterLoad: function (anchorLink, index) { },
+                afterRender: function () { },
+            });
+        });
+    </script>
+</body>
+
+</html>

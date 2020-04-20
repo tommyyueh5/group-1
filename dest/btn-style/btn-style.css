@@ -208,7 +208,7 @@ header {
   top: 0;
   display: flex;
   justify-content: space-between;
-  z-index: 1; }
+  z-index: 99999; }
   header div.nothing {
     width: 150px;
     height: 50px; }
@@ -279,7 +279,9 @@ header {
         text-align: center;
         display: inline-block;
         margin: 15px 0;
-        transform: translateX(50%); }
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%); }
         header div.login-Bg .login-Box .sign-title h1 {
           cursor: pointer;
           font-size: 30px;

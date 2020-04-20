@@ -15,6 +15,7 @@ gulp.task('concatHtml', function () {
 gulp.task('concatjs', function () {
     //do sometime
     gulp.src('./dev/html/**/*.js').pipe(gulp.dest('dest/'))
+    gulp.src('./dev/js/*.js').pipe(gulp.dest('dest/js'))
 });
 gulp.task('concatcss', function () {
     //do sometime
