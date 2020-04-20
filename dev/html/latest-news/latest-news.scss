@@ -1,1 +1,88 @@
 @import "../../layout/base/var";
+
+div.breadcrumb{
+    padding: 5px 50px;
+    border-radius: 5px;
+    
+}
+div.breadcrumb ol.breadcrumb_list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+div.breadcrumb ol.breadcrumb_list > li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+div.breadcrumb ol.breadcrumb_list > li::before{
+    content: "/";
+    font-size: 18px;
+    color: #aaa;
+    margin-right: 12px;
+}
+div.breadcrumb ol.breadcrumb_list > li:first-child::before{
+    content: "";
+    margin-right: 0;
+}
+div.breadcrumb ol.breadcrumb_list > li > a{
+    text-decoration: none;
+    display: inline-block;
+    color: #000000;
+    font-size: 12px;
+}
+div.breadcrumb ol.breadcrumb_list > li > a:hover{
+    color: rgb(107, 4, 4);
+}
+
+.news_nav{
+    padding: 5px 50px 5px 0;
+    border-radius: 5px;
+    text-align: right;
+}
+.news_nav .news_navlist{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.news_nav .news_navlist > li{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.news_nav .news_navlist > li::before{
+    content: "|";
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    margin-right: 12px;
+}
+.news_nav .news_navlist > li:first-child::before{
+    content: "";
+    margin-right: 0;
+}
+// .news_nav .news_navlist > li::after{
+//     content: "▼";
+//     font-size: 16px;
+//     color: rgb(0, 0, 0);
+//     margin-right: 12px;
+// }
+// .news_nav .news_navlist > li:first-child::after{
+//     content: "";
+//     margin-right: 0;
+// }
+
+.news_nav .news_navlist > li > a {
+    text-decoration: none;
+    color: #000000;
+    
+}
+.news_nav .news_navlist > li > a > p{
+    display: inline-block;
+    font-size: 30px;
+}
+.news_nav .news_navlist > li > a > span{
+    font-size: 16px;
+}
+.news_nav .news_navlist > li > a:hover{
+    color: rgb(107, 4, 4);
+}

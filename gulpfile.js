@@ -22,7 +22,7 @@ gulp.task('concatcss', function () {
 });
 gulp.task('concaticonfont', function () {
     //do sometime
-    gulp.src('./dev/html/*/iconfont').pipe(gulp.dest('dest/'))
+    gulp.src('./dev/html/*/iconfont/*').pipe(gulp.dest('dest/'))
 });
 
 //編譯scss
