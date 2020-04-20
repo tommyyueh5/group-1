@@ -1,9 +1,8 @@
 @import "../../layout/base/var";
 
-
 div#pagepiling {
-    .section{
-        // padding-top: 50px;
+    .section {
+        padding-top: 50px;
     }
 }
 
@@ -13,6 +12,7 @@ section.Earth {
 
 section.page-2 {
     width: 100%;
+    height: 100vh;
     background-color: #000;
 
     .newTitle {
@@ -55,6 +55,7 @@ section.page-2 {
             width: 50%;
             height: 100%;
             box-sizing: border-box;
+
             iframe {
                 width: 100%;
                 height: 100%;
@@ -134,17 +135,23 @@ section.page-2 {
 
 section.page-3 {
     width: 100%;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
     background-color: #000;
     .container-bottom {
         width: 100%;
         height: 100%;
-        padding: 10px 5px;
+        padding: 20px 10px;
         box-sizing: border-box;
         display: flex;
 
         .bottom-left {
+            padding: 0 15px;
+            box-sizing: border-box;
             width: 20%;
             height: 100%;
+
             ul {
                 width: 100%;
                 height: 100%;
@@ -153,18 +160,22 @@ section.page-3 {
                 grid-template-rows: 1fr 1fr 2fr;
                 grid-template-columns: 1fr;
                 grid-gap: 10px;
+
                 li {
                     background-color: #ccc;
                     padding: 10px;
                     box-sizing: border-box;
+
                     &:nth-child(2) {
                         padding: 0px;
+
                         img {
                             width: 100%;
                             height: 100%;
-                            object-fit: cover;
+                            // object-fit: cover;
                         }
                     }
+
                     a {
                         display: inline-block;
                         width: 100%;
@@ -188,11 +199,14 @@ section.page-3 {
                             display: -webkit-box;
                             -webkit-line-clamp: 6;
                             -webkit-box-orient: vertical;
+                            text-align: justify;
                         }
                     }
+
                     &:nth-child(3) {
                         p {
                             -webkit-line-clamp: 9;
+                            text-align: justify;
                         }
                     }
                 }
@@ -206,19 +220,25 @@ section.page-3 {
             height: 100%;
             background-color: #c1c1cf;
 
-            h1 {
-                height: 10%;
+            > h1 {
+                padding: 5px 0;
+                margin: 5px 0;
+                box-sizing: border-box;
                 width: 100%;
                 background-color: #abcddd;
+                text-align: center;
+                line-height: 1.5;
             }
 
             .box {
                 height: 90%;
+                padding: 0 15px;
+                box-sizing: border-box;
                 display: flex;
 
                 .inside-left {
                     flex: 1;
-                    // background-color: rgb(114, 27, 27);
+                    margin: 0 15px;
 
                     .list {
                         height: 100%;
@@ -228,8 +248,9 @@ section.page-3 {
                         .list-Title {
                             text-align: center;
                             padding: 2.5%;
-                            font-size: 24px;
+                            font-size: 20px;
                             background-color: #bbb;
+                            letter-spacing: 2px;
                         }
 
                         .item {
@@ -249,20 +270,22 @@ section.page-3 {
                 }
 
                 .inside-right {
+                    padding: 15px;
+                    box-sizing: border-box;
                     flex: 3;
                     background-color: rgb(99, 84, 84);
 
-                    h1 {
+                    > h1 {
                         color: white;
                         background-color: #000;
                         width: 99%;
-                        height: 10%;
+                        height: 5%;
                         margin: 0 auto;
                     }
 
                     .grid-template {
                         padding: 5px;
-                        height: 90%;
+                        height: 95%;
                         width: 100%;
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
@@ -275,30 +298,160 @@ section.page-3 {
                         .grid-top-left {
                             background: #000;
                             grid-area: topLeft;
+
+                            > a {
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                                text-decoration: none;
+
+                                > img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
                         }
 
                         .grid-top-right {
                             background: #f00;
                             grid-area: topRight;
+                            > ul {
+                                width: 100%;
+                                height: 100%;
+                                list-style: none;
+
+                                > li {
+                                    width: 100%;
+                                    height: calc(100% / 7);
+                                    padding: 5px;
+                                    box-sizing: border-box;
+                                    border-bottom: 1px solid #000;
+
+                                    > a {
+                                        display: inline-block;
+                                        text-decoration: none;
+
+                                        > p {
+                                            font-size: 16px;
+                                            color: #333;
+                                            line-height: 1.5;
+                                            text-overflow: ellipsis;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 2;
+                                            -webkit-box-orient: vertical;
+                                            text-align: justify;
+                                        }
+                                    }
+                                }
+                            }
                         }
 
                         .grid-bottom-left {
                             background: #0f0;
                             grid-area: bottomLeft;
+                            .inside-news-flex {
+                                width: 100%;
+                                height: 100%;
+                                .insideImgbox {
+                                    width: 100%;
+                                    height: 40%;
+                                    > img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                                .insideText {
+                                    width: 100%;
+                                    height: 60%;
+                                    padding: 5px;
+                                    box-sizing: border-box;
+                                    > a {
+                                        text-decoration: none;
+                                        > p {
+                                            font-size: 20px;
+                                            color: #333;
+                                            text-align: justify;
+                                        }
+                                    }
+                                }
+                            }
                         }
 
                         .grid-bottom-center {
-                            background: #00f;
+                            // background: #00f;
                             grid-area: bottomCenter;
+                            .inside-news-flex {
+                                width: 100%;
+                                height: 100%;
+                                .insideImgbox {
+                                    width: 100%;
+                                    height: 40%;
+                                    > img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                                .insideText {
+                                    width: 100%;
+                                    height: 60%;
+                                    padding: 5px;
+                                    box-sizing: border-box;
+                                    > a {
+                                        text-decoration: none;
+                                        > p {
+                                            font-size: 20px;
+                                            color: #333;
+                                            text-align: justify;
+                                        }
+                                    }
+                                }
+                            }
                         }
 
                         .grid-bottom-right {
                             background: #ff0;
                             grid-area: bottomRight;
+                            .inside-news-flex {
+                                width: 100%;
+                                height: 100%;
+                                .insideImgbox {
+                                    width: 100%;
+                                    height: 40%;
+                                    > img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                                .insideText {
+                                    width: 100%;
+                                    height: 60%;
+                                    padding: 5px;
+                                    box-sizing: border-box;
+                                    > a {
+                                        text-decoration: none;
+                                        > p {
+                                            font-size: 20px;
+                                            color: #333;
+                                            text-align: justify;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
+}
+section.virus_history {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
 }
