@@ -88,5 +88,5 @@ gulp.task('default', function () {
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss","dev/layout/**/*.scss","dev/html/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude','concatHtml','concaticonfont','concatimage']).on('change', reload);
-    gulp.watch(["dev/*.js", "dev/**/*.js","dev/layout/**/*.js"], ['concatjs']).on('change', reload);s
+    gulp.watch(["dev/*.js", "dev/**/*.js","dev/layout/**/*.js"], ['concatjs']).on('change', reload);
 });
