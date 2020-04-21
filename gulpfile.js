@@ -15,6 +15,7 @@ gulp.task('concatHtml', function () {
 gulp.task('concatjs', function () {
     //do sometime
     gulp.src('./dev/html/**/*.js').pipe(gulp.dest('dest/'))
+    gulp.src('./dev/js/*.js').pipe(gulp.dest('dest/js'))
 });
 gulp.task('concatcss', function () {
     //do sometime
@@ -22,7 +23,11 @@ gulp.task('concatcss', function () {
 });
 gulp.task('concaticonfont', function () {
     //do sometime
-    gulp.src('./dev/html/*/iconfont').pipe(gulp.dest('dest/'))
+    gulp.src('./dev/html/*/iconfont/*').pipe(gulp.dest('dest/'))
+});
+gulp.task('concatimage', function () {
+    //do sometime
+    gulp.src('./dev/image/**/*').pipe(gulp.dest('dest/image'))
 });
 
 //編譯scss
@@ -82,7 +87,6 @@ gulp.task('default', function () {
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss","dev/layout/**/*.scss","dev/html/**/*.scss"], ['sass']).on('change', reload);
-    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude','concatHtml','concaticonfont']).on('change', reload);
+    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude','concatHtml','concaticonfont','concatimage']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js","dev/layout/**/*.js"], ['concatjs']).on('change', reload);
-    
 });
