@@ -9,6 +9,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="../../dev/image/title/logoimage.ico" />
     <link rel="stylesheet" href="/node_modules/@icon/icofont/icofont.css">
     <link rel="stylesheet" href="/dest/forum/forum.css">
+    <link rel="stylesheet" href="/dest/forum/slick-theme.css">
+    <link rel="stylesheet" href="/dest/forum/slick.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script
+        src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/dest/forum/forum.js"></script>
+
 </head>
 
 <body>
@@ -76,6 +87,404 @@
         </div>
     </div>
 </header>
+
+    <!-- main -->
+
+    <main>
+
+        <!-- 麵包屑 -->
+        <div class="bread_crumbs">
+            <a href="../index/index.html"><span>Home</span></a> &gt;
+            <a href=""><span>Events</span></a> &gt;
+            <a href=""><span>Iran attack</span></a>
+        </div>
+
+        <!-- 彩虹跑馬燈 -->
+        <div class="marquee_container">
+
+            <p class="marquee_text">
+                我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈
+            </p>
+
+        </div>
+
+        <!-- 左邊filter -->
+        <aside class="filter">
+            <div class="filter_left">
+                <a href=""><img src="/dest/image/forum/fire.png"></a><br>
+                <a href=""><img src="/dest/image/forum/arrow.png"></a><br>
+                <a href=""><img src="/dest/image/forum/clock.png"></a>
+            </div>
+            <div class="filter_right">
+                <a href="">
+                    <h2>Hot</h2>
+                </a>
+                <a href="">
+                    <h2>Trending</h2>
+                </a>
+                <a href="">
+                    <h2>Fresh</h2>
+                </a>
+            </div>
+
+            <hr>
+            <a href="">
+                <h3>Meme</h3>
+            </a>
+            <hr>
+            <a href="">
+                <h3>Comic & Webtoon</h3>
+            </a>
+            <hr>
+            <a href="">
+                <h3>Funny</h3>
+            </a>
+            <hr>
+            <a href="">
+                <h3>Taiwan News</h3>
+            </a>
+            <hr>
+
+        </aside>
+
+        <!-- 右邊section幻燈片 -->
+        <section class="top_slide_container">
+
+            <canvas id="canvas"></canvas>
+
+        </section>
+
+        <!-- section 中間文章內容 -->
+        <section class="content_container">
+            <div class=subtitle_1>
+                <img src="/dest/image/forum/arrow.png">
+                <h3>Trending</h3>
+                <hr>
+            </div>
+            <div class="article_container1">
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">17</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dev/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dev/image/forum/forum_img_1.jpg" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">13</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dest/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dest/image/forum/forum_img_2.jpg" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">17</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dest/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dest/image/forum/forum_img_3.png" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+            </div>
+            <div class="article_container2">
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">17</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dest/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dest/image/forum/forum_img_4.jpg" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">17</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dest/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dest/image/forum/forum_img_5.jpg" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">17</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dest/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dest/image/forum/forum_img_6.png" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+            </div>
+
+            <div class="article_container3">
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">17</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dest/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dest/image/forum/forum_img_7.jpg" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">17</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dest/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dest/image/forum/forum_img_8.jpg" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+
+                <div class="article">
+                    <div class="date">
+                        <h4 class="year">2020</h4>
+                        <h4 class="day">17</h4>
+                        <h4 class="month">4月</h4>
+                    </div>
+                    <div class="info">
+                        <img class="thum_img" src="/dest/image/forum/thum_img1.jpeg">
+                        <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
+                    </div>
+                    <a href="#">
+                        <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                        <img class="main_img" src="/dest/image/forum/forum_img_9.jpg" alt="">
+                    </a>
+                    <h4 class="like_comment"><span class="likes">100</span>likes・<span
+                            class="comments">40</span>comments</h4>
+
+                    <h4 class="function">
+                        <img class="heart" src="/dest/image/forum/like.png">
+                        <img class="share" src="/dest/image/forum/share.png">
+                    </h4>
+                    <h4 class="function2">
+                        <img class="facebook" src="/dest/image/forum/facebook.png" alt="">
+                        <img class="line" src="/dest/image/forum/line.png" alt="">
+                    </h4>
+                </div>
+            </div>
+
+            <!-- 頁面切換列 -->
+            <div class="navigator">
+                <ul>
+                    <a href="">
+                        <li>&lt;</li>
+                    </a>
+                    <a href="">
+                        <li>1</li>
+                    </a>
+                    <a href="">
+                        <li>2</li>
+                    </a>
+                    <a href="">
+                        <li>3</li>
+                    </a>
+                    <a href="">
+                        <li>4</li>
+                    </a>
+                    <a href="">
+                        <li>5</li>
+                    </a>
+                    <a href="">
+                        <li>6</li>
+                    </a>
+                    <a href="">
+                        <li>7</li>
+                    </a>
+                    <a href="">
+                        <li>8</li>
+                    </a>
+                    <a href="">
+                        <li>9</li>
+                    </a>
+                    <a href="">
+                        <li>..</li>
+                    </a>
+                    <a href="">
+                        <li>&gt;</li>
+                    </a>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- 下方 你可能也喜歡的section -->
+        <section class="stretch">
+            <h2>You may also like</h2>
+            <div class="slider">
+                <a href="">
+                    <div class="slide1"></div>
+                </a>
+                <a href="">
+                    <div class="slide2"></div>
+                </a>
+
+                <a href="">
+                    <div class="slide3"></div>
+                </a>
+                <a href="">
+                    <div class="slide4"></div>
+                </a>
+                <a href="">
+                    <div class="slide5"></div>
+                </a>
+                <a href="">
+                    <div class="slide6"></div>
+                </a>
+                <a href="">
+                    <div class="slide7"></div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+
     <footer>
     <div class="footer">
         <ul class="list-left">
@@ -131,6 +540,46 @@
         </ul>
     </div>
 </footer>
+
+    <script src="dev/html/forum/forum.js"></script>
+    <script src="dev/html/forum/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                }, {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        });
+    </script>
 </body>
 
 </html>

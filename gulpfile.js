@@ -76,14 +76,15 @@ gulp.task('default', function () {
             baseDir: "./",
             files: ['**'],
             proxy: 'http://localhost:3000',
-            index: "dest/index/index.html"
+            // index: "dest/index/index.html"
+            index: "dest/forum/forum.html"
             // index: "dest/btn-style/btn-style.html"
             // index: "dest/index/swiper.html"
-            
+
         }
     });
 
-    gulp.watch(["sass/*.scss", "sass/**/*.scss","dev/layout/**/*.scss","dev/html/**/*.scss"], ['sass']).on('change', reload);
-    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude','concatHtml','concatimage']).on('change', reload);
-    gulp.watch(["dev/*.js", "dev/**/*.js","dev/layout/**/*.js"], ['concatjs']).on('change', reload);
+    gulp.watch(["sass/*.scss", "sass/**/*.scss", "dev/layout/**/*.scss", "dev/html/**/*.scss"], ['sass']).on('change', reload);
+    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatHtml', 'concatimage']).on('change', reload);
+    gulp.watch(["dev/*.js", "dev/**/*.js", "dev/layout/**/*.js"], ['concatjs']).on('change', reload);
 });

@@ -1,1 +1,413 @@
 @import "../../layout/base/var";
+footer {
+    position: unset;
+}
+
+main {
+    margin: 50px auto 0;
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+// 麵包屑
+div.bread_crumbs {
+    width: 100%;
+    text-align: left;
+    border: 1px solid white;
+    box-sizing: border-box;
+    padding: 15px 0 15px 80px;
+    font-size: 20px;
+    color: rgb(155, 155, 155);
+}
+
+div.bread_crumbs a {
+    text-decoration: none;
+    color: unset;
+}
+
+div.bread_crumbs a span {
+    font-size: 18px;
+    color: rgb(207, 207, 207);
+    border: white 1px solid;
+    padding: 0 5px;
+    margin: 0 10px;
+}
+
+// 彩虹跑馬燈
+div.marquee_container {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid whitesmoke;
+    padding: 13px 0;
+    box-sizing: border-box;
+    background-image: url("/dest/image/forum/marquee.png");
+    background-size: contain;
+    filter: grayscale(0.3);
+}
+
+p.marquee_text {
+    color: whitesmoke;
+    font-size: 22px;
+    font-weight: bold;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+    text-shadow: 0.04em 0.04em black;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-30%);
+    }
+}
+
+// 左邊filter
+aside.filter {
+    width: 20%;
+    border: whitesmoke 1px solid;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: rgb(43, 43, 43);
+    font-size: 0;
+    text-align: center;
+    padding: 50px 0;
+}
+
+div.filter_left {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid whitesmoke;
+    text-align: right;
+}
+
+div.filter_left img {
+    width: 60px;
+    border: 1px solid whitesmoke;
+    margin: 10px 0;
+    padding-right: 20px;
+}
+
+div.filter_right a {
+    text-decoration: none;
+    color: unset;
+}
+
+div.filter_right {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid whitesmoke;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+div.filter_right h2 {
+    font-size: 24px;
+    color: white;
+    text-align: left;
+    border: whitesmoke 1px solid;
+    letter-spacing: 1px;
+    padding: 7px;
+    margin: 10px 0 20px;
+}
+
+aside.filter h3 {
+    color: whitesmoke;
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 20px;
+}
+
+aside.filter>a {
+    text-decoration: none;
+    color: unset;
+}
+
+aside.filter hr {
+    width: 60%;
+    border: 0.5px solid rgb(151, 151, 151);
+}
+
+// 右邊section幻燈片 
+section.top_slide_container {
+    box-sizing: border-box;
+    // border: 1px solid red;
+    width: calc(100% - 20%);
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: top;
+    height: 570px;
+    background-color: whitesmoke;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+// section 中間文章內容
+section.content_container {
+    width: 90%;
+    border: 1px solid whitesmoke;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.subtitle_1 {
+    width: 100%;
+    padding: 30px 0;
+}
+
+div.subtitle_1 h3 {
+    font-size: 26px;
+    color: whitesmoke;
+    font-weight: bolder;
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 5px;
+}
+
+div.subtitle_1 img {
+    width: 40px;
+    vertical-align: top;
+    margin-left: 20px;
+}
+
+div.subtitle_1 hr {
+    display: inline-block;
+    width: 85%;
+    vertical-align: top;
+    margin: 20px 30px 0;
+}
+
+div.article_container1,
+div.article_container2,
+div.article_container3 {
+    font-size: 40px;
+    width: 28%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 auto;
+    // border: 1px solid red;
+}
+
+div.article_container1>div {
+    width: 90%;
+    background-color: whitesmoke;
+    position: relative;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 25px;
+}
+
+div.article_container2>div {
+    width: 90%;
+    background-color: whitesmoke;
+    position: relative;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 25px;
+}
+
+div.article_container3>div {
+    width: 90%;
+    background-color: whitesmoke;
+    position: relative;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 25px;
+}
+
+//文章內容
+div.article a {
+    color: unset;
+    text-decoration: none;
+}
+
+div.date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    text-align: center;
+    padding: 15px 30px;
+}
+
+h4.year {
+    color: white;
+    font-size: 12px;
+}
+
+h4.day {
+    color: white;
+    font-size: 24px;
+    margin: 5px 0;
+    font-weight: bolder;
+}
+
+h4.month {
+    color: grey;
+    font-size: 16px;
+}
+
+img.thum_img {
+    width: 40px;
+}
+
+div.info {
+    border: 1px solid black;
+}
+
+h4.username {
+    font-size: 20px;
+    color: rgb(146, 146, 146);
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 12px;
+}
+
+span.posted_time {
+    font-size: 20px;
+    color: rgb(146, 146, 146);
+}
+
+h2.article_title {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+img.main_img {
+    width: 100%;
+}
+
+h4.like_comment {
+    font-size: 20px;
+    color: rgb(146, 146, 146);
+    border: 1px solid black;
+    margin-top: 5px;
+}
+
+h4.function,
+h4.function2 {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+h4.function2 {
+    float: right;
+}
+
+h4.function img {
+    width: 20px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+h4.function2 img {
+    width: 20px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+img.heart {
+    margin-top: 1px;
+}
+
+// 頁面切換列
+div.navigator {
+    width: 70%;
+    border: 1px solid white;
+    margin: 20px auto;
+}
+
+div.navigator ul li {
+    font-size: 24px;
+    display: inline-block;
+    color: white;
+    margin: 5px;
+}
+
+// 下方你可能也喜歡區塊
+section.stretch {
+    width: 90%;
+    margin: 30px auto 0;
+    border-top: white 1px solid;
+    padding-bottom: 40px;
+}
+
+section.stretch h2 {
+    font-size: 26px;
+    font-weight: bolder;
+    color: grey;
+    margin: 20px 0;
+}
+
+//下方slider
+div.slider {
+    width: 100%;
+    border: 1px solid black;
+    font-size: 40px;
+    color: white;
+    margin: 0 auto;
+    background-color: black;
+    text-align: center;
+}
+
+div.slider a {
+    margin: 0 20px;
+    border: 4px solid gray;
+}
+
+div.slider a div {
+    width: 100%;
+    margin: 0 auto;
+    height: 300px;
+}
+
+div.slide1 {
+    background-image: url('/dest/image/forum/slide_1.jpeg');
+    background-size: cover;
+}
+
+div.slide2 {
+    background-image: url('/dest/image/forum/slide_2.jpg');
+    background-size: cover;
+}
+
+div.slide3 {
+    background-image: url('/dest/image/forum/slide_3.jpg');
+    background-size: cover;
+}
+
+div.slide4 {
+    background-image: url('/dest/image/forum/slide_4.jpg');
+    background-size: cover;
+}
+
+div.slide5 {
+    background-image: url('/dest/image/forum/slide_5.jpg');
+    background-size: cover;
+}
+
+div.slide6 {
+    background-image: url('/dest/image/forum/slide_6.png');
+    background-size: cover;
+}
+
+div.slide7 {
+    background-image: url('/dest/image/forum/slide_7.jpg');
+    background-size: contain;
+}
