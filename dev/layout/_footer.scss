@@ -3,6 +3,7 @@ footer {
     background-color: $btn-color1;
     position: absolute;
     bottom: 0;
+    z-index: -1;
     div.footer {
         padding: 25px 0;
         display: flex;

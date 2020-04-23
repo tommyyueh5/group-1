@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--icon-->
+    <script src="/node_modules/ionicons/dist/ionicons/ionicons.js"></script>
+    <!--googlefont-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--scrollmagic-->
+    <script src="/node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+    <!--jquery-->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    @@include('../../layout/head.html')
+    <link rel="stylesheet" href="/dest/diseaseHistory/sass/diseaseHistory.css">
+    <script src="/dest/js/var.js"></script>
+    <title>Document</title>
+</head>
+<body>
+        @@include('../../layout/header.html')
+        <main class="main">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Disease History</a></li>
+                </ol>
+            </nav>
+            <div class="history_container">
+                <section class="history_sextion1">
+                    <h1 class="history_title">A visual history of <br>pandemics</h1>
+                    <h5 class="history_subtitle">瘟疫與人</h5>
+                </section>
+                <section id="parallaxContainer">
+                    <div class="layer1">
+                        <section class=" book1">
+                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                        <section class=" book2">
+                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                        <section class="book3">
+                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                        <section class="book4">
+                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                        <section class="book5">
+                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                    </div>
+                    <div class="layer2">
+                        <!-- <section class=" book1">
+                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                        <section class=" book2">
+                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                        <section class="book3">
+                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                        <section class="book4">
+                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
+                        </section>
+                        <section class="book5">
+                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
+                        </section> -->
+                    </div>
+                    <div class="layer3">
+    
+                    </div>
+                </section>
+                <section class="row content-bottom">
+                    <section class="col-md-4 carsoul_button">
+                        <div class="slider-control">
+                            <div class="prev"><button type="button">
+                                    <ion-icon name="arrow-back"></ion-icon>
+                                </button></div>
+                            <div class="next"><button type="button">
+                                    <ion-icon name="arrow-forward"></ion-icon>
+                                </button></div>
+                        </div>
+                    </section>
+                    <section class="col-md-8 home_paragraph">
+                        <p>
+                            Pan·dem·ic /panˈdemik/ (of a disease) prevalent over a whole country or the world.<br>
+    
+                            As humans have spread across the world, so have infectious diseases. Even in this modern era,
+                            outbreaks are nearly constant, though not every outbreak reaches pandemic level as the Novel
+                            Coronavirus (COVID-19) has.
+                        </p>
+                    </section>
+                </section>
+            </div>
+        </main>
+    
+    
+    
+        <script>
+            $(function () { // wait for document ready
+                // build tween
+                var tween = new TimelineMax()
+                    .add([
+                        TweenMax.to("#parallaxContainer .layer1", 1, {
+                            backgroundPosition: "-40% 0",
+                            ease: Linear.easeNone
+                        }),
+                        TweenMax.to("#parallaxContainer .layer2", 1, {
+                            backgroundPosition: "-500% 0",
+                            ease: Linear.easeNone
+                        }),
+                        TweenMax.to("#parallaxContainer .layer3", 1, {
+                            backgroundPosition: "-225% 0",
+                            ease: Linear.easeNone
+                        })
+                    ]);
+    
+                // build scene
+                var scene = new ScrollMagic.Scene({
+                        triggerElement: "#parallaxContainer",
+                        duration: 2000,
+                        offset: 450
+                    })
+                    .setTween(tween)
+                    .setPin("#parallaxContainer")
+                    .addIndicators() // add indicators (requires plugin)
+                    .addTo(controller);
+            });
+        </script>
+        @@include('../../layout/footer.html')
+
+</body>
+</html>

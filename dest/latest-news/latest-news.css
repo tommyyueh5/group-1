@@ -105,7 +105,8 @@ footer {
   width: 100%;
   background-color: #353535;
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  z-index: -1; }
   footer div.footer {
     padding: 25px 0;
     display: flex;
@@ -202,7 +203,6 @@ footer {
   animation-direction: forward; }
 
 header {
-  background-color: #353535;
   width: 100%;
   position: absolute;
   top: 0;
@@ -212,63 +212,87 @@ header {
   z-index: 99999; }
   header div.logo {
     width: 100vw;
-    background-color: black; }
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; }
     header div.logo a {
       background-image: url("/dest/image/title/logo-text.png");
-      width: 100%;
+      width: 300px;
       height: 70px;
-      margin: 20px 0;
+      margin: 10px 0;
       display: block;
       background-position: center center;
       background-size: contain;
       background-repeat: no-repeat; }
+  header div.nav_bar.on {
+    top: -50px; }
   header div.nav_bar {
+    transition: top 0.3s linear;
     position: relative;
-    display: flex;
-    justify-content: space-between;
+    top: 0;
     color: whitesmoke;
     width: 100vw;
-    padding: 0 10px;
+    height: 50px;
+    background-color: #353535;
     cursor: pointer; }
-    header div.nav_bar div.up {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; }
-      header div.nav_bar div.up i {
-        font-size: 25px;
-        top: 0; }
-      header div.nav_bar div.up i.icofont-login {
-        left: 66px; }
-      header div.nav_bar div.up i.icofont-cart {
-        top: -2px;
-        left: 150px;
-        font-size: 30px; }
+    header div.nav_bar div.function_btn_left {
+      position: absolute;
+      top: 50%;
+      left: 25px;
+      transform: translateY(-50%);
+      display: flex; }
+      header div.nav_bar div.function_btn_left i {
+        font-size: 25px; }
+      header div.nav_bar div.function_btn_left i#login_btn {
+        margin-right: 50px; }
     header div.nav_bar ul.title_list {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       display: flex;
       align-items: center; }
       header div.nav_bar ul.title_list li {
-        margin: 0 25px; }
+        margin: 25px; }
       header div.nav_bar ul.title_list li.logo > a {
         display: block;
         background-image: url(/dev/image/title/logo-image.png);
         background-position: center center;
-        background-size: cover;
-        width: 100px; }
+        background-size: cover; }
       header div.nav_bar ul.title_list li a {
         text-decoration: none;
         color: black;
         font-size: 20px;
         color: #e6e6e6;
         letter-spacing: 5px; }
-    header div.nav_bar form i.icofont-search {
-      font-weight: bold;
-      font-size: 20px;
-      margin-right: 10px; }
-    header div.nav_bar form input {
-      background-color: transparent;
-      color: white;
-      border: none;
-      border-bottom: 1px solid white; }
+    header div.nav_bar div.fuction_btn_right {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      right: 25px;
+      transform: translateY(-50%); }
+      header div.nav_bar div.fuction_btn_right i#points {
+        font-size: 25px; }
+      header div.nav_bar div.fuction_btn_right p {
+        margin: 0 20px 0 10px; }
+      header div.nav_bar div.fuction_btn_right form.fuction_search {
+        display: flex;
+        justify-content: center; }
+        header div.nav_bar div.fuction_btn_right form.fuction_search i#search {
+          font-weight: bold;
+          font-size: 20px;
+          margin-right: 15px; }
+        header div.nav_bar div.fuction_btn_right form.fuction_search input {
+          background-color: transparent;
+          color: white;
+          border: none;
+          border-radius: 15px;
+          box-shadow: -1px -1px 10px white, inset 0 0 3px wheat; }
+          header div.nav_bar div.fuction_btn_right form.fuction_search input:focus {
+            box-shadow: -1px -1px 10px black, inset 0 0 3px red; }
   header div.login-Bg.on {
     display: block; }
   header div.login-Bg {

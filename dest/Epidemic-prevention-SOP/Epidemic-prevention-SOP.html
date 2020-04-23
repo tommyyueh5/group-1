@@ -13,26 +13,30 @@
 
 <body>
     <header id="myMeun">
-    <div class="logo">
+    <div id="logo" class="logo">
         <a href="/dest/index/index.html"></a>
     </div>
     <div class="nav_bar">
-        <div class="up">
-            <i id="login-btn" class="icofont icofont-login"></i>
+        <div class="function_btn_left">
+            <i id="login_btn" class="icofont icofont-login"></i>
             <i class="icofont icofont-cart"></i>
         </div>
         <ul class="title_list">
             <li><a href="/dest/Entertaining/Entertaining.html">防疫知識王</a></li>
             <li><a href="/dest/forum/forum.html">討論區</a></li>
-            <li><a href="/dest/Infectious-Diseases/Infectious-Diseases.html">傳染病事記</a></li>
+            <li><a href="/dest/diseaseHistory/diseaseHistory.html">傳染病事記</a></li>
             <li><a href="/dest/latest-news/latest-news.html">最新消息</a></li>
             <li><a href="/dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html">防疫SOP</a></li>
             <li><a href="/dest/Epidemic-shop/Epidemic-shop.html">防疫商店</a></li>
         </ul>
-        <form action="#">
-            <i class="icofont icofont-search"></i>
-            <input type="text" name="search" id="search">
-        </form>
+        <div class="fuction_btn_right">
+            <i id="points" class="icofont icofont-diamond"></i>
+            <p>6,666</p>
+            <form class="fuction_search" action="#">
+                <i id="search" class="icofont icofont-search"></i>
+                <input type="text" name="search" id="search">
+            </form>
+        </div>
     </div>
 
     <div class="login-Bg" id="loginBg">
@@ -45,7 +49,7 @@
                 <span class="left"></span>
                 <span class="right"></span>
             </div>
-            <form class="sign sign-in" action="/dest/index/sign-in.php" method="GET">
+            <form class="sign sign-in" action="/dest/index/PHP/sign-in.php" method="GET">
 
                 <label for="emeEmail">登入信箱<br>
                     <input class="input-data" type="email" name="emeEmail">
@@ -60,7 +64,7 @@
                 <input class="submit" type="submit" name="login" value="登入">
             </form>
 
-            <form class="sign sign-up" action="/dest/index/sign-up.php" method="GET">
+            <form class="sign sign-up" action="/dest/index/PHP/sign-up.php" method="GET">
                 <label for="upEmail">註冊信箱<br>
                     <input class="input-data" type="email" name="upEmail">
                 </label><br>
