@@ -21,10 +21,6 @@ gulp.task('concatcss', function () {
     //do sometime
     gulp.src('./dev/css/*.css').pipe(gulp.dest('dest/css'))
 });
-gulp.task('concaticonfont', function () {
-    //do sometime
-    gulp.src('./dev/html/*/iconfont/*').pipe(gulp.dest('dest/'))
-});
 gulp.task('concatimage', function () {
     //do sometime
     gulp.src('./dev/image/**/*').pipe(gulp.dest('dest/image'))
@@ -83,10 +79,11 @@ gulp.task('default', function () {
             index: "dest/index/index.html"
             // index: "dest/btn-style/btn-style.html"
             // index: "dest/index/swiper.html"
+            
         }
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss","dev/layout/**/*.scss","dev/html/**/*.scss"], ['sass']).on('change', reload);
-    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude','concatHtml','concaticonfont','concatimage']).on('change', reload);
+    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude','concatHtml','concatimage']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js","dev/layout/**/*.js"], ['concatjs']).on('change', reload);
 });
