@@ -1,48 +1,86 @@
 @import "../layout/mixins/allmixin";
 @import "../layout/modules/btn";
 header {
-    background-color: #191919;
+    background-color: $btn-color1;
     width: 100%;
     position: absolute;
     top: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     z-index: 99999;
-    div.nothing {
-        @include header-balance();
-        height: 50px;
-    }
-    ul.list-title {
-        display: flex;
-        align-items: center;
-        li {
-            margin: 0 25px;
-        }
-        li.logo > a {
+    div.logo {
+        width: 100vw;
+        background-color: black;
+        a {
+            background-image: url("/dest/image/title/logo-text.png");
+            width: 100%;
+            height: 70px;
+            margin: 20px 0;
             display: block;
-            background-image: url(/dev/image/title/logo-image.png);
             background-position: center center;
-            background-size: cover;
-            width: 40px;
-            height: 40px;
-        }
-        li a {
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            color: rgba(230, 230, 230, 1);
+            background-size: contain;
+            background-repeat: no-repeat;
         }
     }
-    div.fuction {
-        @include header-balance();
+    div.nav_bar {
+        position: relative;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         color: whitesmoke;
+        width: 100vw;
+        padding: 0 10px;
         cursor: pointer;
-        div {
-            height: 25px;
+        div.up {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            i {
+                font-size: 25px;
+                top: 0;
+            }
+            i.icofont-login {
+                left: 66px;
+            }
+            i.icofont-cart {
+                top: -2px;
+                left: 150px;
+                font-size: 30px;
+            }
+        }
+        ul.title_list {
+            display: flex;
+            align-items: center;
+            li {
+                margin: 0 25px;
+            }
+            li.logo > a {
+                display: block;
+                background-image: url(/dev/image/title/logo-image.png);
+                background-position: center center;
+                background-size: cover;
+                width: 100px;
+            }
+            li a {
+                text-decoration: none;
+                color: black;
+                font-size: 20px;
+                color: rgba(230, 230, 230, 1);
+                letter-spacing: 5px;
+            }
+        }
+        form {
+            i.icofont-search {
+                font-weight: bold;
+                font-size: 20px;
+                margin-right: 10px;
+            }
+            input {
+                background-color: transparent;
+                color: white;
+                border: none;
+                border-bottom: 1px solid rgb(255, 255, 255);
+            }
         }
     }
     div.login-Bg.on {
@@ -51,6 +89,8 @@ header {
     div.login-Bg {
         width: 100%;
         height: 100vh;
+        position: absolute;
+        top: 0;
         background-color: rgba(0, 0, 0, 0.8);
         z-index: 1;
         position: fixed;

@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
-    <link rel="icon" href="../../dev/image/title/logoimage.ico" type="image/x-icon">
-    <link rel="shortcut icon" type="image/x-icon" href="../../dev/image/title/logoimage.ico" />
+    @@include('../../layout/head.html')
     <link rel="stylesheet" href="/dest/index/SASS/style.css">
     <script src="/node_modules/jquery/dist/jquery.js"></script>>
     <script src="/dest/index/index.js"></script>
@@ -25,7 +24,7 @@
 <body>
 
     @@include('../../layout/header.html')
-    <div id="pagepiling">
+    <!-- <div id="pagepiling">
         <section id="section1" class="section page-1">
             <div class="stars">
                 <ul class="Showtable">
@@ -181,7 +180,7 @@
         <section id="section4" class="section page-4">
             @@include('../../layout/footer.html')
         </section>
-    </div>
+    </div> -->
 
     <script>
         $(document).ready(function () {
@@ -196,12 +195,7 @@
                 loopBottom: false,
                 loopTop: false,
                 css3: true,
-                navigation: {
-                    'textColor': '#000',
-                    'bulletsColor': '#000',
-                    'position': 'right',
-                    'tooltips': ['section1', 'section2', 'section3', 'section4']
-                },
+                navigation: false,
                 normalScrollElements: null,
                 normalScrollElementTouchThreshold: 5,
                 touchSensitivity: 5,

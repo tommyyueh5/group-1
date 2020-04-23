@@ -103,7 +103,7 @@ blockquote, q {
 
 footer {
   width: 100%;
-  background-color: #191919;
+  background-color: #353535;
   position: absolute;
   bottom: 0; }
   footer div.footer {
@@ -202,48 +202,80 @@ footer {
   animation-direction: forward; }
 
 header {
-  background-color: #191919;
+  background-color: #353535;
   width: 100%;
   position: absolute;
   top: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   z-index: 99999; }
-  header div.nothing {
-    width: 150px;
-    height: 50px; }
-  header ul.list-title {
-    display: flex;
-    align-items: center; }
-    header ul.list-title li {
-      margin: 0 25px; }
-    header ul.list-title li.logo > a {
+  header div.logo {
+    width: 100vw;
+    background-color: black; }
+    header div.logo a {
+      background-image: url("/dest/image/title/logo-text.png");
+      width: 100%;
+      height: 70px;
+      margin: 20px 0;
       display: block;
-      background-image: url(/dev/image/title/logo-image.png);
       background-position: center center;
-      background-size: cover;
-      width: 40px;
-      height: 40px; }
-    header ul.list-title li a {
-      text-decoration: none;
-      color: black;
-      font-size: 20px;
-      color: #e6e6e6; }
-  header div.fuction {
-    width: 150px;
+      background-size: contain;
+      background-repeat: no-repeat; }
+  header div.nav_bar {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: whitesmoke;
+    width: 100vw;
+    padding: 0 10px;
     cursor: pointer; }
-    header div.fuction div {
-      height: 25px; }
+    header div.nav_bar div.up {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      header div.nav_bar div.up i {
+        font-size: 25px;
+        top: 0; }
+      header div.nav_bar div.up i.icofont-login {
+        left: 66px; }
+      header div.nav_bar div.up i.icofont-cart {
+        top: -2px;
+        left: 150px;
+        font-size: 30px; }
+    header div.nav_bar ul.title_list {
+      display: flex;
+      align-items: center; }
+      header div.nav_bar ul.title_list li {
+        margin: 0 25px; }
+      header div.nav_bar ul.title_list li.logo > a {
+        display: block;
+        background-image: url(/dev/image/title/logo-image.png);
+        background-position: center center;
+        background-size: cover;
+        width: 100px; }
+      header div.nav_bar ul.title_list li a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        color: #e6e6e6;
+        letter-spacing: 5px; }
+    header div.nav_bar form i.icofont-search {
+      font-weight: bold;
+      font-size: 20px;
+      margin-right: 10px; }
+    header div.nav_bar form input {
+      background-color: transparent;
+      color: white;
+      border: none;
+      border-bottom: 1px solid white; }
   header div.login-Bg.on {
     display: block; }
   header div.login-Bg {
     width: 100%;
     height: 100vh;
+    position: absolute;
+    top: 0;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
     position: fixed;

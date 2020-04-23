@@ -192,9 +192,9 @@ window.addEventListener('load', function () {
 
   function loadData(cb) {
     
-    d3.json('dest/index/earth/json/worldMap.json', function (error, world) {
+    d3.json('/dest/index/earth/json/worldMap.json', function (error, world) {
       if (error) throw error
-      d3.tsv('dest/index/earth/json/earth.tsv', function (error, countries) {
+      d3.tsv('/dest/index/earth/json/earth.tsv', function (error, countries) {
         if (error) throw error;
         d3.json('https://pomber.github.io/covid19/timeseries.json', function (error, data) {
           if (error) throw error;

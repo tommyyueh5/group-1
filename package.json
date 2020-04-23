@@ -20,7 +20,8 @@
     "node-sass": "^4.13.1"
   },
   "dependencies": {
-    "fullpage.js": "^3.0.8",
-    "jquery": "^3.4.1"
+    "@icon/icofont": "^1.0.1-alpha.1",
+    "jquery": "^3.4.1",
+    "pagepiling-js-version-kostyast": "^2.0.5"
   }
 }

@@ -4,6 +4,8 @@
 @import "dev/html/index/SASS/_page-3.scss";
 div#pagepiling {
     .section {
+        position: absolute;
+        top: 0;
     }
 }
 section.virus_history {
