@@ -1,0 +1,102 @@
+@import "dev/layout/base/_var.scss";
+
+/* *{
+    margin: 0%;
+    display: inline-block;
+    box-sizing: border-box;
+} */
+.breadcrumb {
+    background-color: none;
+    background-image: url(/dest/image/btn_img_background/background-color.png);
+    border-radius: 0%;
+    margin: 10px 0 0 0%;
+}
+.breadcrumb-item > a,
+::after,
+::before {
+    color: grey;
+    /* position: relative;
+    left:50%; */
+}
+
+/*---------------------------------------------*/
+.main {
+    position: absolute;
+    top: 140px;
+    margin: 0%;
+    box-sizing: border-box;
+    display: inline-block;
+    background-image: url(/dest/image/btn_img_background/spanishflue.png);
+    width: 100%;
+    height: 768px;
+}
+/*-----------------------------------------------*/
+.history_container {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 50px;
+    width: 78%;
+    margin: 20px 0 0 20%;
+}
+.history_subtitle::before {
+    content: "";
+    background: rgb(4, 4, 4);
+    height: 1px;
+    width: 500px;
+    position: absolute;
+    top: 210px;
+    right: 390px;
+}
+.history_subtitle {
+    font-family: Toppan Bunkyu Midashi Mincho Extrabold;
+}
+.history_title {
+    font-family: Monoton;
+}
+/*---------------------------------------------------*/
+.layer1 {
+    display: flex;
+    align-content: stretch;
+    flex: 0 0 auto;
+    align-self: flex-end;
+    /* width:100vw;    */
+}
+.book1 .book2 .book3 .book4 .book5 {
+    margin: 0%;
+    box-sizing: border-box;
+
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.test {
+    width: 100%;
+}
+
+/*-----------------------------------------*/
+
+.home_paragraph {
+    font-size: 12px;
+}
+/*------------------------------------------*/
+.slider-control {
+    margin: 0%;
+    /* position: absolute; */
+    z-index: 2;
+    /* bottom: 4%;
+    left: 15%; */
+    display: flex;
+}
+button {
+    color: rgba(26, 26, 26, 0.3);
+    background: none;
+    padding: 13px 15px;
+    border: 1px solid rgba(26, 26, 26, 0.3);
+    font-size: 16px;
+    border-radius: 50%;
+    margin: 0.4em;
+    display: inline-block;
+}
+
+button:focus {
+    outline: none;
+}

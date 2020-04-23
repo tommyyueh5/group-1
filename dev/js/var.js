@@ -1,5 +1,5 @@
 $(window).ready(() => {//html載入完再執行
-    $('#login-btn').click((e) => {//點選註冊按鈕顯示燈箱
+    $('#login_btn').click((e) => {//點選註冊按鈕顯示燈箱
         $("#loginBg").toggleClass("on");
         e.stopPropagation();
         $('#sign-in').css('boxShadow', '0 0 5px rgba(0,0,0,.5)');
@@ -41,5 +41,9 @@ $(window).ready(() => {//html載入完再執行
         } else {
             $(':text').attr('type', 'password')
         }
+    });
+
+    $('#logo').click(() => {//點選註冊按鈕顯示燈箱
+        $(".nav_bar").toggleClass("on");
     });
 })
