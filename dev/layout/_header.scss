@@ -3,7 +3,9 @@
 
 header {
     width: 100%;
-    position: absolute;
+    // position: absolute;
+    // top: 0;
+    position: sticky;
     top: 0;
     display: flex;
     flex-direction: column;
