@@ -9,8 +9,9 @@ window.addEventListener('load', function () {
   }
   var colorWater = '#54a0ff'
   var colorLand = '#B99362' //島嶼F19BFE
-  var colorGraticule = '#181236' //181236
+  var colorGraticule = 'rgba(0,0,0,.3)' //181236
   var colorCountry = '#10ac84' //F6C1BC
+  var leaveColor = '#000'
   var newdataList = [];
   var dataList;
   var selectsItem;
@@ -29,7 +30,7 @@ window.addEventListener('load', function () {
     let datenum, confirmed, death, recovered;
     let citys = Object.keys(dataList).find((city) => {
       // console.log(city, country.name.trim());
-      if (country != undefined && country.name === city ) {
+      if (country != undefined && country.name.trim() === city ) {
     // console.log(city);
         return city;
       }
@@ -68,10 +69,11 @@ window.addEventListener('load', function () {
     Showtable._groups[0][0].style.right = '-100%';
     Showtable._groups[0][0].style.background = 'none';
     Showtable._groups[0][0].style.transition = 'all 1s';
-  [curentCitys,curentConfirmed,curentDeath, curentRecovered].forEach(item=>{
+    [curentCitys,curentConfirmed,curentDeath, curentRecovered].forEach(item=>{
       item.text('');
       item._groups[0][0].style.border = 'none';
     });
+    
   }
 
   //
@@ -154,13 +156,15 @@ window.addEventListener('load', function () {
 
   function render() {
     context.clearRect(0, 0, width, height)
+    
     fill(water, colorWater)
     stroke(graticule, colorGraticule)
     fill(land, colorLand)
+    stroke(land, leaveColor)
     // strokeRect(currentCountry,'#000')
     if (currentCountry) {
       fill(currentCountry, colorCountry)
-
+      stroke(currentCountry, '#000')
     }
   }
 
