@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
-  var rotationDelay = 500
+  var rotationDelay = 1000
   var scaleFactor = 0.6
-  var degPerSec = 6
+  var degPerSec = 3
   var angles = {
     x: -20,
     y: 40,
@@ -12,9 +12,8 @@ window.addEventListener('load', function () {
   var colorGraticule = 'rgba(0,0,0,.3)' //181236
   var colorCountry = '#10ac84' //F6C1BC
   var leaveColor = '#000'
-  var newdataList = [];
   var dataList;
-  var selectsItem;
+
 
 
   

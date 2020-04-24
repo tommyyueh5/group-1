@@ -32,11 +32,7 @@ $(window).ready(function () {
             slideShadows: true,
             shadow: true,
         },
-        mousewheel: {
-            forceToAxis: true,
-            invert: true,
-            sensitivity: 1,
-        },
+        
 
     });
 })
