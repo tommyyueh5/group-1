@@ -396,7 +396,7 @@ footer {
   position: unset; }
 
 main {
-  margin: 50px auto 0;
+  margin: 140px auto 0;
   width: 100%;
   background-color: #0a0a0a;
   box-sizing: border-box;
@@ -426,15 +426,15 @@ div.marquee_container {
   width: 100%;
   overflow: hidden;
   border: 1px solid whitesmoke;
-  padding: 13px 0;
+  padding: 10px 0;
   box-sizing: border-box;
-  background-image: url("/dest/image/forum/marquee.png");
+  background-image: url("/dev/image/forum/marquee.png");
   background-size: contain;
   filter: grayscale(0.3); }
 
 p.marquee_text {
   color: whitesmoke;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   animation: marquee 20s linear infinite;
   white-space: nowrap;
@@ -454,41 +454,41 @@ aside.filter {
   background-color: #2b2b2b;
   font-size: 0;
   text-align: center;
-  padding: 50px 0; }
+  padding: 30px 0 50px; }
 
-div.filter_left {
-  width: 50%;
+div.filter_order {
+  width: 100%;
   display: inline-block;
   box-sizing: border-box;
   border: 1px solid whitesmoke;
-  text-align: right; }
+  margin-bottom: 20px; }
 
-div.filter_left img {
-  width: 60px;
-  border: 1px solid whitesmoke;
-  margin: 10px 0;
-  padding-right: 20px; }
+div.filter_order > div {
+  width: 100%;
+  margin: 25px auto;
+  text-align: center; }
 
-div.filter_right a {
+div.filter_order img {
+  width: 40px;
+  border: 1px solid whitesmoke; }
+
+div.filter_order a {
   text-decoration: none;
   color: unset; }
 
-div.filter_right {
-  width: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  border: 1px solid whitesmoke;
-  vertical-align: top;
-  margin-bottom: 20px; }
-
-div.filter_right h2 {
+div.filter_order h2 {
   font-size: 24px;
   color: white;
   text-align: left;
   border: whitesmoke 1px solid;
   letter-spacing: 1px;
-  padding: 7px;
-  margin: 10px 0 20px; }
+  display: inline-block;
+  vertical-align: top;
+  padding: 7px 15px; }
+
+div.filter_order div a.-on h2 {
+  color: yellow;
+  font-weight: bolder; }
 
 aside.filter h3 {
   color: whitesmoke;
@@ -510,7 +510,7 @@ section.top_slide_container {
   display: inline-block;
   font-size: 20px;
   vertical-align: top;
-  height: 570px;
+  height: 580px;
   background-color: whitesmoke; }
 
 #canvas {
@@ -523,6 +523,12 @@ section.content_container {
   border: 1px solid whitesmoke;
   margin: 0 auto;
   text-align: center; }
+
+div.tab {
+  display: none; }
+
+div.tab.-on {
+  display: block; }
 
 div.subtitle_1 {
   width: 100%;
@@ -551,10 +557,11 @@ div.article_container1,
 div.article_container2,
 div.article_container3 {
   font-size: 40px;
-  width: 28%;
+  width: 30%;
   display: inline-block;
   vertical-align: top;
-  margin: 0 auto; }
+  margin: 0 20px;
+  border: 1px solid red; }
 
 div.article_container1 > div {
   width: 90%;
@@ -563,7 +570,7 @@ div.article_container1 > div {
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
   text-align: left;
-  margin-bottom: 40px;
+  margin: 0 auto 60px;
   padding: 25px; }
 
 div.article_container2 > div {
@@ -573,7 +580,7 @@ div.article_container2 > div {
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
   text-align: left;
-  margin-bottom: 40px;
+  margin: 0 auto 60px;
   padding: 25px; }
 
 div.article_container3 > div {
@@ -583,7 +590,7 @@ div.article_container3 > div {
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
   text-align: left;
-  margin-bottom: 40px;
+  margin: 0 auto 60px;
   padding: 25px; }
 
 div.article a {
@@ -706,29 +713,29 @@ div.slider a div {
   height: 300px; }
 
 div.slide1 {
-  background-image: url("/dest/image/forum/slide_1.jpeg");
+  background-image: url("/dev/image/forum/slide_1.jpeg");
   background-size: cover; }
 
 div.slide2 {
-  background-image: url("/dest/image/forum/slide_2.jpg");
+  background-image: url("/dev/image/forum/slide_2.jpg");
   background-size: cover; }
 
 div.slide3 {
-  background-image: url("/dest/image/forum/slide_3.jpg");
+  background-image: url("/dev/image/forum/slide_3.jpg");
   background-size: cover; }
 
 div.slide4 {
-  background-image: url("/dest/image/forum/slide_4.jpg");
+  background-image: url("/dev/image/forum/slide_4.jpg");
   background-size: cover; }
 
 div.slide5 {
-  background-image: url("/dest/image/forum/slide_5.jpg");
+  background-image: url("/dev/image/forum/slide_5.jpg");
   background-size: cover; }
 
 div.slide6 {
-  background-image: url("/dest/image/forum/slide_6.png");
+  background-image: url("/dev/image/forum/slide_6.png");
   background-size: cover; }
 
 div.slide7 {
-  background-image: url("/dest/image/forum/slide_7.jpg");
+  background-image: url("/dev/image/forum/slide_7.jpg");
   background-size: contain; }
