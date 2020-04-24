@@ -9,18 +9,21 @@
     <link rel="shortcut icon" type="image/x-icon" href="../../dev/image/title/logoimage.ico" />
     <link rel="stylesheet" href="/node_modules/@icon/icofont/icofont.css">
     <link rel="stylesheet" href="/dest/index/SASS/style.css">
-    <script src="/node_modules/jquery/dist/jquery.js"></script>>
-    <script src="/dest/index/index.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
     <!-- Link earth json&js& -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
     <script src="https://d3js.org/d3-geo.v1.js"></script>
     <script src="https://d3js.org/topojson.v2.js"></script>
     <script src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js"></script>
-    <!-- pagepiling js&css -->
-    <link rel="stylesheet" href="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.css">
-    <script src="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.js"></script>
+    <!-- <link rel="stylesheet" href="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.css"> -->
+    <!-- <script src="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.js"></script> -->
     <script src="/dest/index/earth/js/Earth.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.js'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.css' />
+    
+    <script src="/dest/index/index.js"></script>
 </head>
 
 <body>
@@ -93,161 +96,229 @@
         </div>
     </div>
 </header>
-    <div id="pagepiling">
-        <section id="section1" class="section page-1">
-            <div class="stars">
-                <ul class="Showtable">
-                    <li id="curentCitys"></li>
-                    <li id="curentConfirmed"></li>
-                    <li id="curentDeath"></li>
-                    <li id="curentRecovered"></li>
-                </ul>
-                <h2 id="current"></h2>
-                <div class="clouds"><canvas id="globe"></canvas>
-                </div>
+    <!-- <section id="section1" class="section page-1">
+        <div class="stars">
+            <ul class="Showtable">
+                <li id="curentCitys"></li>
+                <li id="curentConfirmed"></li>
+                <li id="curentDeath"></li>
+                <li id="curentRecovered"></li>
+            </ul>
+            <h2 id="current"></h2>
+            <div class="clouds"><canvas id="globe"></canvas>
             </div>
-        </section>
-        <section id="section2" class="section page-2">
-            <div class="newTitle">
-                <div class="titleImg">
-                    <img src="" alt="">
-                </div>
-                <h1>Hot News</h1>
+        </div>
+    </section>
+    <section id="section2" class="section page-2">
+        <div class="newTitle">
+            <div class="titleImg">
+                <img src="" alt="">
             </div>
+            <h1>Hot News</h1>
+        </div>
 
-            <div class="container-top">
-                <div class="videoBox">
-                    <iframe src="https://www.youtube.com/embed/-NWKv2gLx_w" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <ul class="article">
-                    <li class="item1 item"><a href="#"><img src="/dev/image/HotNews/img/For1.png" alt=""></a></li>
-                    <li class="item2 item"><a href="#">
+        <div class="container-top">
+            <div class="videoBox">
+                <iframe src="https://www.youtube.com/embed/-NWKv2gLx_w" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <ul class="article">
+                <li class="item1 item"><a href="#"><img src="/dev/image/HotNews/img/For1.png" alt=""></a></li>
+                <li class="item2 item"><a href="#">
+                        <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                        <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre
+                            hospital
+                            in Madrid, hailing the 6,000 staff who work there as heroes.
+                            Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it:
+                            a
+                            capital city blighted by this virus.
+
+                            This city has seen 7,000 deaths, more than other European capitals.
+
+                            The contagion spread at a remarkable rate through the densely populated city and its
+                            cluster
+                            of suburbs.
+
+                            The real death toll could be considerably higher as Madrid's regional government has
+                            revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were
+                            tested.
+
+                        </p>
+                    </a></li>
+                <li class="item3 item"><a href="#">
+                        <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                        <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre
+                            hospital
+                            in Madrid, hailing the 6,000 staff who work there as heroes.
+                            Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it:
+                            a
+                            capital city blighted by this virus.
+
+                            This city has seen 7,000 deaths, more than other European capitals.
+
+                            The contagion spread at a remarkable rate through the densely populated city and its
+                            cluster
+                            of suburbs.
+
+                            The real death toll could be considerably higher as Madrid's regional government has
+                            revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were
+                            tested.
+
+                        </p>
+                    </a></li>
+                <li class="item4 item"><a href="#"><img src="/dev/image/HotNews/img/For2.png" alt=""></a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="section3" class="section page-3">
+        <div class="container-bottom">
+            <div class="bottom-left">
+                <ul>
+                    <li class="item1"><a href="#">
                             <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                            <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre
-                                hospital
+                            <p>Applause and cheering rings out every night in the huddled streets around 12
+                                Octubre hospital
                                 in Madrid, hailing the 6,000 staff who work there as heroes.
-                                Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it:
-                                a
+                                Spain has seen more than 20,000 deaths and the Madrid region is at the heart of
+                                it: a
                                 capital city blighted by this virus.
 
                                 This city has seen 7,000 deaths, more than other European capitals.
 
-                                The contagion spread at a remarkable rate through the densely populated city and its
-                                cluster
+                                The contagion spread at a remarkable rate through the densely populated city and
+                                its cluster
                                 of suburbs.
 
-                                The real death toll could be considerably higher as Madrid's regional government has
-                                revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were
-                                tested.
-
-                            </p>
+                                The real death toll could be considerably higher as Madrid's regional government
+                                has
+                                revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
+                                were tested.</p>
                         </a></li>
-                    <li class="item3 item"><a href="#">
+                    <li class="item2"><a href="#"><img src="/dev/image/HotNews/img/For2.png" alt=""></a></li>
+                    <li class="item3"><a href="#">
                             <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                            <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre
-                                hospital
+                            <p>Applause and cheering rings out every night in the huddled streets around 12
+                                Octubre hospital
                                 in Madrid, hailing the 6,000 staff who work there as heroes.
-                                Spain has seen more than 20,000 deaths and the Madrid region is at the heart of it:
-                                a
+                                Spain has seen more than 20,000 deaths and the Madrid region is at the heart of
+                                it: a
                                 capital city blighted by this virus.
 
                                 This city has seen 7,000 deaths, more than other European capitals.
 
-                                The contagion spread at a remarkable rate through the densely populated city and its
-                                cluster
+                                The contagion spread at a remarkable rate through the densely populated city and
+                                its cluster
                                 of suburbs.
 
-                                The real death toll could be considerably higher as Madrid's regional government has
-                                revealed only 800 of 4,260 care home residents suspected of dying from Covid-19 were
-                                tested.
+                                The real death toll could be considerably higher as Madrid's regional government
+                                has
+                                revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
+                                were tested.
 
+                                The real death toll could be considerably higher as Madrid's regional government
+                                has
+                                revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
+                                were tested.
                             </p>
-                        </a></li>
-                    <li class="item4 item"><a href="#"><img src="/dev/image/HotNews/img/For2.png" alt=""></a></li>
+                        </a>
+                    </li>
                 </ul>
             </div>
-        </section>
-        <section id="section3" class="section page-3">
-            <div class="container-bottom">
-                <div class="bottom-left">
-                    <ul>
-                        <li class="item1"><a href="#">
-                                <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                                <p>Applause and cheering rings out every night in the huddled streets around 12
-                                    Octubre hospital
-                                    in Madrid, hailing the 6,000 staff who work there as heroes.
-                                    Spain has seen more than 20,000 deaths and the Madrid region is at the heart of
-                                    it: a
-                                    capital city blighted by this virus.
-
-                                    This city has seen 7,000 deaths, more than other European capitals.
-
-                                    The contagion spread at a remarkable rate through the densely populated city and
-                                    its cluster
-                                    of suburbs.
-
-                                    The real death toll could be considerably higher as Madrid's regional government
-                                    has
-                                    revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
-                                    were tested.</p>
-                            </a></li>
-                        <li class="item2"><a href="#"><img src="/dev/image/HotNews/img/For2.png" alt=""></a></li>
-                        <li class="item3"><a href="#">
-                                <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                                <p>Applause and cheering rings out every night in the huddled streets around 12
-                                    Octubre hospital
-                                    in Madrid, hailing the 6,000 staff who work there as heroes.
-                                    Spain has seen more than 20,000 deaths and the Madrid region is at the heart of
-                                    it: a
-                                    capital city blighted by this virus.
-
-                                    This city has seen 7,000 deaths, more than other European capitals.
-
-                                    The contagion spread at a remarkable rate through the densely populated city and
-                                    its cluster
-                                    of suburbs.
-
-                                    The real death toll could be considerably higher as Madrid's regional government
-                                    has
-                                    revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
-                                    were tested.
-
-                                    The real death toll could be considerably higher as Madrid's regional government
-                                    has
-                                    revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
-                                    were tested.
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
+            <div class="bottom-right">
+                <h1>more about coronavirus</h1>
+                <div class="box">
+                    <div class="inside-left">
+                        <ul class="list">
+                            <li class="list-Title">熱門討論排行</li>
+                            <li class="item"><a href="#">a</a></li>
+                            <li class="item"><a href="#">c</a></li>
+                            <li class="item"><a href="#">d</a></li>
+                            <li class="item"><a href="#">e</a></li>
+                            <li class="item"><a href="#">f</a></li>
+                        </ul>
+                    </div>
+                    <div class="inside-right">
+                        <h1>即時訊息</h1>
+                        <div class="grid-template">
+                            <div class="grid-top-left"></div>
+                            <div class="grid-top-right"></div>
+                            <div class="grid-bottom-left"></div>
+                            <div class="grid-bottom-center"></div>
+                            <div class="grid-bottom-right"></div>
+    </section> -->
+    <section id="section4" class="section page-4">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide data" data-year="1970"><img src="https://picsum.photos/1000/1000?random=1">
+                    <div class="swiper-slide-content">
+                        <h4 class="timeline-title">病毒歷史1</h4>
+                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
+                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a class="timeline-link" href="#">
+                            Read more</a>
+                    </div>
                 </div>
-                <div class="bottom-right">
-                    <h1>more about coronavirus</h1>
-                    <div class="box">
-                        <div class="inside-left">
-                            <ul class="list">
-                                <li class="list-Title">熱門討論排行</li>
-                                <li class="item"><a href="#">a</a></li>
-                                <li class="item"><a href="#">c</a></li>
-                                <li class="item"><a href="#">d</a></li>
-                                <li class="item"><a href="#">e</a></li>
-                                <li class="item"><a href="#">f</a></li>
-                            </ul>
-                        </div>
-                        <div class="inside-right">
-                            <h1>即時訊息</h1>
-                            <div class="grid-template">
-                                <div class="grid-top-left"></div>
-                                <div class="grid-top-right"></div>
-                                <div class="grid-bottom-left"></div>
-                                <div class="grid-bottom-center"></div>
-                                <div class="grid-bottom-right"></div>
-        
-        </section>
-        <section id="section4" class="section page-4">
-            <footer>
+                <div class="swiper-slide data" data-year="1980"><img src="https://picsum.photos/1000/1000?random=2">
+                    <div class="swiper-slide-content">
+                        <h4 class="timeline-title">病毒歷史2</h4>
+                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
+                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a class="timeline-link" href="#">
+                            Read more</a>
+                    </div>
+                </div>
+                <div class="swiper-slide data" data-year="1990"><img src="https://picsum.photos/1000/1000?random=3">
+                    <div class="swiper-slide-content">
+                        <h4 class="timeline-title">病毒歷史3</h4>
+                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
+                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a class="timeline-link" href="#">
+                            Read more</a>
+                    </div>
+                </div>
+                <div class="swiper-slide data" data-year="2000"><img src="https://picsum.photos/1000/1000?random=4">
+                    <div class="swiper-slide-content">
+                        <h4 class="timeline-title">病毒歷史4</h4>
+                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
+                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a class="timeline-link" href="#">
+                            Read more</a>
+                    </div>
+                </div>
+                <div class="swiper-slide data" data-year="2010"><img src="https://picsum.photos/1000/1000?random=5">
+                    <div class="swiper-slide-content">
+                        <h4 class="timeline-title">病毒歷史5</h4>
+                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
+                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a class="timeline-link" href="#">
+                            Read more</a>
+                    </div>
+                </div>
+                <div class="swiper-slide data" data-year="2011"><img src="https://picsum.photos/1000/1000?random=6">
+                    <div class="swiper-slide-content">
+                        <h4 class="timeline-title">病毒歷史6</h4>
+                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
+                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a class="timeline-link" href="#">
+                            Read more</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    <section id="section5" class="section page-5">
+        <footer>
     <div class="footer">
         <ul class="list-left">
             <li>防疫大富翁
@@ -302,9 +373,8 @@
         </ul>
     </div>
 </footer>
-        </section>
-    </div>
-
+    </section>
+    
 </body>
 
 </html>

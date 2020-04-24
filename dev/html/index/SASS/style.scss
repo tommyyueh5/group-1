@@ -2,14 +2,5 @@
 @import "dev/html/index/SASS/_page-1.scss";
 @import "dev/html/index/SASS/_page-2.scss";
 @import "dev/html/index/SASS/_page-3.scss";
-div#pagepiling {
-    section {
-        position: absolute;
-        top: 0;
-    }
-}
-section.virus_history {
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-}
+@import "dev/html/index/SASS/_swiper.scss";
+
