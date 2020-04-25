@@ -88,11 +88,11 @@ gulp.task('default', function () {
             baseDir: "./",
             files: ['**'],
             proxy: 'http://localhost:3000',
-            // index: "dest/index/index.html"
+            index: "dest/index/index.html"
             // index: "dest/btn-style/btn-style.html"
             // index: "dest/diseaseHistory/diseaseHistory.html"
             // index: "dest/game/game.html"
-            index: "dest/Epidemic-shop/Epidemic-shop.html"
+            // index: "dest/Epidemic-shop/Epidemic-shop.html"
             // index: "dest/Epidemic-shop/Epidemic-shop.html"
             // index: "dest/forum/forum.html"
             // index: "dest/infectious-Diseases/infectious-Diseases.hmtl"
