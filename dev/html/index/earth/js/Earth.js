@@ -7,13 +7,12 @@ window.addEventListener('load', function () {
     y: 40,
     z: 0
   }
-  var colorWater = '#54a0ff'
-  var colorLand = '#B99362' //島嶼F19BFE
+  var colorWater = '#33a6b8'
+  var colorLand = '#ffd4d4' //島嶼F19BFE
   var colorGraticule = 'rgba(0,0,0,.3)' //181236
   var colorCountry = '#10ac84' //F6C1BC
   var leaveColor = '#000'
   var dataList;
-
 
 
   
@@ -28,12 +27,13 @@ window.addEventListener('load', function () {
 
     let datenum, confirmed, death, recovered;
     let citys = Object.keys(dataList).find((city) => {
-      // console.log(city, country.name.trim());
       if (country != undefined && country.name.trim() === city ) {
-    // console.log(city);
         return city;
       }
     });
+   
+
+   
     
 
 
@@ -72,7 +72,6 @@ window.addEventListener('load', function () {
       item.text('');
       item._groups[0][0].style.border = 'none';
     });
-    
   }
 
   //
@@ -152,20 +151,37 @@ window.addEventListener('load', function () {
   function dragended() {
     startRotation(rotationDelay)
   }
-
+  
+ 
   function render() {
     context.clearRect(0, 0, width, height)
-    
     fill(water, colorWater)
     stroke(graticule, colorGraticule)
     fill(land, colorLand)
     stroke(land, leaveColor)
-    // strokeRect(currentCountry,'#000')
+
+     countries['features'].forEach((cityItem) => {
+      // var randomTransparent = Math.random().toFixed(2);
+      // var randomColor = Math.floor(Math.random() * 254 + 1).toFixed(2);
+      stroke(cityItem, `rgba(0,0,0,.4)`);
+      // fill(cityItem, `rgba(${randomColor},${randomColor},${randomColor}, 1)`);
+      // console.log(randomColor);
+      
+      // console.log(cityItem);
+    });
+    // console.log(getCountry);
+    
+    
+  
+
     if (currentCountry) {
       fill(currentCountry, colorCountry)
-      stroke(currentCountry, '#000')
+      // stroke(currentCountry, 'rgba(0,0,0,.4)')
     }
   }
+
+ 
+  
 
   function fill(obj, color) {
     context.beginPath()
@@ -229,6 +245,8 @@ window.addEventListener('load', function () {
 
   function mousemove() {
     var c = getCountry(this)
+    
+
     if (!c) {
       if (currentCountry) {
         leave(currentCountry)
@@ -244,7 +262,6 @@ window.addEventListener('load', function () {
     // console.log(currentCountry);
     render()
     enter(c)
-
 
   }
 
@@ -281,9 +298,12 @@ window.addEventListener('load', function () {
     countryList = cList
     dataList = data
 
-
-
-
+    
+       
+        
+    
+    
+    
 
 
 
@@ -293,5 +313,7 @@ window.addEventListener('load', function () {
     autorotate = d3.timer(rotate)
   });
 
+  
+  
 
 });
