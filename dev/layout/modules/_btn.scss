@@ -215,7 +215,6 @@
     @include shadow-botton-black(12, 15, 80);
   }
 }
-
 @mixin shadow-box-black($bw: 300px, $bh: 300px) {
   @content;
   width: $bw;
@@ -226,17 +225,6 @@
     -50px -50px 50px rgb(65, 65, 65), 20px 20px 20px rgb(50, 50, 50), 30px 30px 30px rgb(45, 45, 45),
     40px 40px 40px rgb(40, 40, 40), 50px 50px 50px rgb(35, 35, 35);
 }
-@mixin shadow-box-black($bw: 300px, $bh: 300px) {
-  @content;
-  width: $bw;
-  height: $bh;
-  border-radius: 50px;
-  background-color: #444444;
-  box-shadow: -20px -20px 20px rgb(80, 80, 80), -30px -30px 30px rgb(75, 75, 75), -40px -45px 40px rgb(70, 70, 70),
-    -50px -50px 50px rgb(65, 65, 65), 20px 20px 20px rgb(50, 50, 50), 30px 30px 30px rgb(45, 45, 45),
-    40px 40px 40px rgb(40, 40, 40), 50px 50px 50px rgb(35, 35, 35);
-}
-
 @mixin shadow-box-white($bw: 300px, $bh: 300px) {
   @content;
   width: $bw;

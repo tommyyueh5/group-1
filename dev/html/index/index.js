@@ -36,45 +36,46 @@ $(window).ready(function () {
 
     });
 })
+// -----SOP--------------------------------------------------------------------------------
+        window.addEventListener('load', function () {
+            let h = document.getElementsByClassName('fluid')[0];
+            let thermometer = document.getElementsByClassName('sop-thermometer')[0];
+            let v = 0;
+            let c = true;
+            let clear;
 
+            setInterval(function () {
+                v += 5;
+                h.style.height = `${check(v)}%`;
+                document.getElementsByClassName('base')[0].innerHTML = `${check(v)}<sup>o</sup>`;
+                if (v == 45) {
+                    v = 0;
+                }
 
+            }, 500);
+            //檢查是否大於 10 
+            function check(number) {
+                if (number <= 5) {
+                    number = "0" + number;
+                    return number;
+                } else {
+                    number = parseInt(number);
+                    return number;
+                }
+            }
+        });
 
-// swiper.on('slideChange',function(){
-//     // swiper.params.effect = "coverflow";
-//     // console.log(123);
-
-//     // swiper.params.effect === "coverflow"
-//     if(swiper.params.effect == "coverflow"){
-//         return swiper.params.effect = 'flip';
-//     }else if(swiper.params.effect == 'flip'){
-//         return swiper.params.effect = 'coverflow';
-//     }
-// })
-
-//pagepiling js
-// $(document).ready(function () {
-//     $('#pagepiling').pagepiling({
-//         menu: null,
-//         direction: 'vertical',
-//         verticalCentered: true,
-//         sectionsColor: [],
-//         anchors: [],
-//         scrollingSpeed: 700,
-//         easing: 'swing',
-//         loopBottom: false,
-//         loopTop: false,
-//         css3: true,
-//         navigation: false,
-//         normalScrollElements: null,
-//         normalScrollElementTouchThreshold: 5,
-//         touchSensitivity: 5,
-//         keyboardScrolling: true,
-//         sectionSelector: '.section',
-//         animateAnchor: false,
-
-//         //events
-//         onLeave: function (index, nextIndex, direction) { },
-//         afterLoad: function (anchorLink, index) { },
-//         afterRender: function () { },
-//     });
-// });
+        window.addEventListener('load', function () {
+            let washHand = document.getElementsByClassName('wash-hand')[0];
+            let sopWater = document.getElementsByClassName('sop-water');
+            washHand.addEventListener('mouseover', function () {
+                sopWater[0].classList.add('-w1');
+                sopWater[1].classList.add('-w2');
+                sopWater[2].classList.add('-w3');
+            });
+            washHand.addEventListener('mouseleave', function () {
+                sopWater[0].classList.remove('-w1');
+                sopWater[1].classList.remove('-w2');
+                sopWater[2].classList.remove('-w3');
+            });
+        });
