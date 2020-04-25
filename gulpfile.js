@@ -33,7 +33,14 @@ gulp.task('concatlatest', function () {
     //do sometime
     gulp.src('./dev/html/latest-news/map/**/*').pipe(gulp.dest('dest/latest-news/map/'))
 });
-
+gulp.task('concatshop_move', function () {
+    //do sometime
+    gulp.src('./dev/html/Epidemic-shop/img/**/*').pipe(gulp.dest('dest/Epidemic-shop/img'))
+});
+gulp.task('concat_icofont', function () {
+    //do sometime
+    gulp.src('./dev/html/Epidemic-shop/icofont/**/*').pipe(gulp.dest('dest/Epidemic-shop/icofont'))
+});
 //編譯scss
 
 
@@ -85,13 +92,13 @@ gulp.task('default', function () {
             // index: "dest/btn-style/btn-style.html"
             // index: "dest/diseaseHistory/diseaseHistory.html"
             // index: "dest/game/game.html"
-            // index: "dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html"
+            index: "dest/Epidemic-shop/Epidemic-shop.html"
             // index: "dest/Epidemic-shop/Epidemic-shop.html"
             // index: "dest/forum/forum.html"
             // index: "dest/infectious-Diseases/infectious-Diseases.hmtl"
             // index: "dest/latest-news/latest-news.html"
             // index: "dest/welcome.welcome.html"
-            index: "dest/btn-style/btn-style.html"
+            // index: "dest/btn-style/btn-style.html"
 
         }
     });

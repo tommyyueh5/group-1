@@ -24,6 +24,7 @@
     "bootstrap": "^4.4.1",
     "ionicons": "^5.0.1",
     "jquery": "^3.4.1",
+    "owl.carousel": "^2.3.4",
     "pagepiling-js-version-kostyast": "^2.0.5",
     "scrollmagic": "^2.0.7"
   }
