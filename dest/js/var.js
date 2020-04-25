@@ -43,7 +43,7 @@ $(window).ready(() => {//html載入完再執行
         }
     });
 
-    $('#logo').click(() => {//點選註冊按鈕顯示燈箱
-        $(".nav_bar").toggleClass("on");
+    $('.icofont-search').click(() => { //展開搜尋紐
+        $(".input_box").toggleClass("on");
     });
 })
