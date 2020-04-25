@@ -658,7 +658,7 @@ section.page-3 {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 2fr 1fr;
             grid-gap: 10px;
-            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
+            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
             section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left {
               background: #000;
               grid-area: topLeft; }
@@ -1000,11 +1000,11 @@ section.page-3 {
     position: absolute;
     width: 50%;
     height: 100%;
-    top: 20%;
+    top: 10%;
     left: 60%; }
     .sop-thermometer > .pos-thermometer > .thermometer_container {
       width: 30%;
-      height: 50%;
+      height: 77%;
       position: absolute; }
       .sop-thermometer > .pos-thermometer > .thermometer_container > .thermometer {
         border: 5px solid #5C525F;
@@ -1043,7 +1043,7 @@ section.page-3 {
         line-height: 60px;
         color: #FFF;
         position: absolute;
-        top: 100%;
+        bottom: 0;
         left: 10px;
         width: 60px;
         height: 60px;
