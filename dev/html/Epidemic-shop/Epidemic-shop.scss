@@ -1,1 +1,448 @@
 @import "../../layout/base/var";
+
+.epidemic-shop {
+    background-image: url("/dest/image/Epidemic-shop/background-color.png");
+    min-width: 1200px;
+}
+
+.advertise1 {
+    .advertise-inner {
+        position: relative;
+        .advertise-img {
+            width: 100%;
+            display: block;
+        }
+        .advertise-text {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            .advertise-title {
+                font-size: 50px;
+                text-align: center;
+                text-transform: capitalize;
+            }
+            .advertise-des {
+                font-size: 16px;
+                text-align: center;
+                text-transform: capitalize;
+            }
+        }
+        .advertise-links {
+            display: block;
+
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 80%;
+            top: 50%;
+            text-transform: uppercase;
+            padding: 8px 10px;
+            text-decoration: none;
+            // border: 1px solid rgb(240, 17, 17);
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+    }
+}
+
+.shop-items {
+    border: 1px solid black;
+    margin-top: 50px;
+    .shop-items-inner {
+        display: flex;
+
+        .shop-one {
+            // border: 1px solid red;
+            width: 45%;
+
+            .shop-discount {
+                // border: 1px solid blue;
+                width: 100%;
+                .shop-discount-img {
+                    width: 100%;
+                    display: block;
+                }
+            }
+
+            .shop-type {
+                margin-top: 30px;
+                // border: 1px solid purple;
+                display: flex;
+
+                .shop-type-choice {
+                    // border: 1px solid yellow;
+                    width: 15%;
+
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    .shop-type-choice-s {
+                        background-color: rgb(160, 160, 160);
+
+                        // margin-top: 20px;
+                        .type-ico {
+                            text-align: center;
+                            margin: 20px 0;
+                            display: inline-block;
+                            width: 50%;
+                            cursor: pointer;
+                            // height: 20px;
+                            .type-img {
+                                width: 100%;
+                                // height: 100%;
+                            }
+                        }
+                    }
+                }
+                .shop-type-content {
+                    // border: 1px solid orange;
+                    width: 85%;
+                    text-align: center;
+                }
+                .shop-type-content-inner {
+                    // border: 1px solid rgb(9, 255, 0);
+                    width: 80%;
+                    display: inline-block;
+                }
+            }
+        }
+        .shop-two {
+            // border: 1px solid green;
+            width: 55%;
+            .shop-two-item-des {
+                // border: 1px solid red;
+                width: 70%;
+                margin: 0 auto;
+                .shop-two-item-pic {
+                    // border: 1px solid yellow;
+                    position: relative;
+                    margin-top: 20px;
+
+                    img {
+                        width: 100%;
+                        display: block;
+                    }
+
+                    &:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        clip-path: polygon(0 0, 0% 100%, 100% 0);
+
+                        -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+                        background-color: rgb(255, 101, 126);
+                        width: 20%;
+                        height: 20%;
+                        top: -2%;
+                        left: -2%;
+                    }
+                }
+                .shop-two-tag {
+                    margin-top: 10px;
+                }
+
+                .shop-two-item-text {
+                    margin-top: 10px;
+                    p {
+                        font-size: 20px;
+                    }
+                }
+
+                .shop-two-tag {
+                    color: yellow;
+                }
+
+                .shop-two-item-text {
+                    // border: 1px solid peru;
+                }
+
+                .shop-two-item-price-outer {
+                    // border: 1px solid purple;
+                    margin-top: 20px;
+                    display: flex;
+                    .shop-two-item-price {
+                        // border: 1px solid rgb(23, 207, 253);
+                        width: 40%;
+                        display: flex;
+                        text-align: center;
+                        color: white;
+                        font-family: Arial, Helvetica, sans-serif;
+                        .shop-two-item-price-1 {
+                            // border: 1px solid black;
+                            width: 30%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            p {
+                                // border: 1px solid rgb(249, 253, 23);
+                            }
+                        }
+
+                        .shop-two-item-price-2 {
+                            // border: 1px solid black;
+                            width: 70%;
+                            display: flex;
+                            align-items: center;
+                            span {
+                                // border: 1px solid orange;
+                                display: inline-block;
+                                font-size: 60px;
+                            }
+                        }
+                    }
+                    .cart-out {
+                        // border: 1px solid green;
+                        width: 60%;
+                        .choice-number {
+                            // border: 1px solid red;
+                            display: flex;
+                            text-align: center;
+                            justify-content: center;
+
+                            input {
+                                width: 45px;
+                                height: 45px;
+                                text-align: center;
+                            }
+                            .minus {
+                                // border: 1px solid blue;
+                                width: 45px;
+                                line-height: 45px;
+                                font-size: 40px;
+                            }
+
+                            .plus {
+                                // border: 1px solid blue;
+                                width: 45px;
+                                line-height: 45px;
+                                font-size: 30px;
+                            }
+                        }
+
+                        .addcart {
+                            margin-top: 20px;
+                            text-align: center;
+                            button {
+                                background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+                                background-color: #eae0c2;
+                                border-radius: 7px;
+                                border: 1px solid #333029;
+                                display: inline-block;
+                                cursor: pointer;
+                                color: #505739;
+                                font-family: Arial;
+                                font-size: 23px;
+                                font-weight: bold;
+                                padding: 8px 17px;
+                                text-decoration: none;
+                            }
+                            button:hover {
+                                background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+                                background-color: #ccc2a6;
+                            }
+                            button:active {
+                                position: relative;
+                                top: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.myowl-1 {
+    border: 5px solid purple;
+}
+
+.myowl-item {
+    // border:1px solid red;
+    margin-right: 10px;
+}
+
+.myowl-1 .owl-nav {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+.myowl-1 .prenext {
+    font-size: 400%;
+}
+
+.sli {
+    // border: 1px solid blue;
+    margin: 20px 10px;
+
+    position: relative;
+    width: 150px;
+    height: 150px;
+
+    box-sizing: border-box;
+}
+
+// .sli::after {
+//     content: '$120';
+//     display: inline-block;
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+//     background-color: black;
+//     color: white;
+//     padding: 5px 8px;
+// }
+.shop-type-price {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+}
+
+.sli:hover {
+    border: 5px solid pink;
+    // box-shadow: 0 0 3px #FF0000;
+}
+
+.sli-img {
+    // display: block;
+}
+
+.m {
+    // width: 1300px;
+    height: 100%;
+    // border: 1px solid green;
+}
+
+.myowl-1 .owl-dots {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.myowl-1 span {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid rgb(216, 31, 31);
+    background: rgb(248, 21, 21);
+    margin-right: 5px;
+    display: inline-block; /*for making them horizontal, if you want vertical then you can use- display: block*/
+}
+
+.myowl-1 .owl-dot.active span {
+    background: #ffa60a;
+}
+
+.shop-item-detail {
+    .shop-item-title {
+        border: 1px solid green;
+        width: 80%;
+        display: flex;
+
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        .shop-item-title-star {
+            border: 1px solid red;
+            width: 10%;
+            text-align: center;
+            div {
+                margin: 3px 3px;
+                i {
+                    color: rgb(245, 253, 123);
+                }
+            }
+        }
+        p {
+            // border: 1px solid blue;
+            width: 80%;
+
+            color: white;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+    }
+
+    .shop-item-pic-1 {
+        .shop-item-pic-1-s {
+            width: 80%;
+
+            // border: 1px solid yellowgreen;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            text-align: center;
+
+            overflow: hidden;
+            border-radius: 20px;
+        }
+    }
+
+    .shop-item-text-1 {
+        .shop-item-text-1-s {
+            // border: 1px solid yellowgreen;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            width: 80%;
+            p {
+                color: white;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .shop-item-pic-2 {
+        .shop-item-pic-2-s {
+            width: 80%;
+
+            // border: 1px solid yellowgreen;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            text-align: center;
+
+            overflow: hidden;
+            border-radius: 20px;
+        }
+    }
+
+    .shop-item-text-2 {
+        .shop-item-text-2-s {
+            // border: 1px solid yellowgreen;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            width: 80%;
+            p {
+                color: white;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+.relative-info {
+    text-align: center;
+}
+
+.relative-info-inner {
+    width: 80%;
+    display: inline-block;
+    // position: relative;
+}
+
+.myowl-2 .owl-nav .pre {
+    position: absolute;
+    left: -10%;
+    color: rgb(255, 255, 255);
+    font-size: 400%;
+    top: 40%;
+}
+
+.myowl-2 .owl-nav .next {
+    position: absolute;
+    right: -10%;
+    top: 40%;
+    color: rgb(255, 255, 255);
+    font-size: 400%;
+}

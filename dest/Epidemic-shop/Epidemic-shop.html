@@ -4,40 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Epidemic-shop</title>
     <link rel="icon" href="../../dev/image/title/logoimage.ico" type="image/x-icon">
     <link rel="shortcut icon" type="image/x-icon" href="../../dev/image/title/logoimage.ico" />
     <link rel="stylesheet" href="/node_modules/@icon/icofont/icofont.css">
-    <link rel="stylesheet" href="/dest/Epidemic-shop/btn-style.css">
+    <link rel="stylesheet" href="/dest/Epidemic-shop/Epidemic-shop.css">
+    
+    <link rel="stylesheet" href="/dest/Epidemic-shop/icofont/icofont.min.css">
+    <script src="https://kit.fontawesome.com/667c458472.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script> -->
+    <!-- Jqeury -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    
 </head>
 
 <body>
     <header id="myMeun">
-    <div id="logo" class="logo">
-        <a href="/dest/index/index.html"></a>
-    </div>
+
     <div class="nav_bar">
-        <div class="function_btn_left">
-            <i id="login_btn" class="icofont icofont-login"></i>
-            <i class="icofont icofont-cart"></i>
+        <div id="logo" class="logo">
+            <a href="/dest/index/index.html"></a>
         </div>
-        <ul class="title_list">
-            <li><a href="/dest/Entertaining/Entertaining.html">防疫知識王</a></li>
-            <li><a href="/dest/forum/forum.html">討論區</a></li>
-            <li><a href="/dest/diseaseHistory/diseaseHistory.html">傳染病事記</a></li>
-            <li><a href="/dest/latest-news/latest-news.html">最新消息</a></li>
-            <li><a href="/dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html">防疫SOP</a></li>
-            <li><a href="/dest/Epidemic-shop/Epidemic-shop.html">防疫商店</a></li>
-        </ul>
         <div class="fuction_btn_right">
-            <i id="points" class="icofont icofont-diamond"></i>
-            <p>6,666</p>
-            <form class="fuction_search" action="#">
-                <i id="search" class="icofont icofont-search"></i>
-                <input type="text" name="search" id="search">
-            </form>
+            <div class="points">
+                <i id="points" class="icofont icofont-diamond"></i>
+                <p>6,666</p>
+            </div>
+            <div class="login_car">
+                <i id="login_btn" class="icofont icofont-login"></i>
+                <i class="icofont icofont-cart"></i>
+            </div>
         </div>
     </div>
+
+    <ul class="title_list">
+        <li><a href="/dest/Entertaining/Entertaining.html">防疫知識王</a></li>
+        <li><a href="/dest/forum/forum.html">討論區</a></li>
+        <li><a href="/dest/diseaseHistory/diseaseHistory.html">傳染病事記</a></li>
+        <li><a href="/dest/latest-news/latest-news.html">最新消息</a></li>
+        <li><a href="/dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html">防疫SOP</a></li>
+        <li><a href="/dest/Epidemic-shop/Epidemic-shop.html">防疫商店</a></li>
+        <form class="fuction_search" action="#">
+            <i class="icofont icofont-search"></i>
+            <input class="input_box" typne="text" name="search" id="search">
+        </form>
+    </ul>
 
     <div class="login-Bg" id="loginBg">
         <div class="login-Box">
@@ -81,11 +96,339 @@
     </div>
 </header>
 
+    <div class="epidemic-shop">
+        <section class="advertise1">
+            <div class="advertise-inner">
+                <img class="advertise-img" src="https://loremflickr.com/1080/240/sky" alt="">
+                <div class="advertise-text">
+                    <h3 class="advertise-title">New Arrival to sale</h3>
+                    <p class="advertise-des">up to 40% off</p>
+                </div>
+                <a class="advertise-links" href="https://www.google.com" target="_blank">shop sale</a>
+            </div>
+        </section>
 
-    <div class="advertise">
+        <section class="shop-items">
+            <div class="shop-items-inner">
+                <div class="shop-one">
+                    <div class="shop-discount">
+                        <img class="shop-discount-img" src="https://loremflickr.com/620/80/dog" alt="">
+                    </div>
+                    <div class="shop-type">
+                        <div class="shop-type-choice">
+                            <div class="shop-type-choice-s">
+                                <div class="type-ico" tar="group">
+                                    <img class="type-img" src="/dest/image/Epidemic-shop/groupw.png" alt="">
+                                </div>
+                                
+                                <div class="type-ico" tar="dress">
+                                    <img class="type-img" src="/dest/image/Epidemic-shop/dressb.png" alt="">
+                                </div>
+                                <div class="type-ico">
+                                    <img class="type-img" src="/dest/image/Epidemic-shop/shoeb.png" alt="">
+                                </div>
+                                <div class="type-ico">
+                                    <img class="type-img" src="/dest/image/Epidemic-shop/hatb.png" alt="">
+                                </div>
+                                <div class="type-ico">
+                                    <img class="type-img" src="/dest/image/Epidemic-shop/maskb.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="shop-type-content">
+                            <div class="shop-type-content-inner">
+
+                                <!-- group -->
+                                <div class="owl-carousel owl-theme myowl-1">
+                                    <div class="item myowl-item">
+                                        <div class="sli">
+                                            <img class="sli-img m" src="/dest/image/Epidemic-shop/1.jpg" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="/dest/image/Epidemic-shop/conten-mask-1.png" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <div class="item myowl-item">
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <div class="item myowl-item">
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <div class="item myowl-item">
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <div class="item myowl-item">
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- dress -->
+                                    <div class="item myowl-item hid">
+                                        <div class="sli">
+                                            <img class="sli-img m" src="/dest/image/Epidemic-shop/1.jpg" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="/dest/image/Epidemic-shop/conten-mask-1.png" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="/dest/image/Epidemic-shop/conten.png" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <div class="item myowl-item hid">
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <div class="item myowl-item hid">
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <div class="item myowl-item hid">
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <div class="item myowl-item hid">
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                        <div class="sli">
+                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
+                                            <div class="shop-type-price">$120</div>
+                                        </div>
+                                    </div>
+                                    <!-- dress -->
+                                </div>
+                                <!-- group -->
+                                
+                                <!-- dress -->
+                                <!-- <div class="owl-carousel owl-theme myowl-1" tar="dress">
+                                    
+                                </div> -->
+                                <!-- dress -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-two">
+                    <!-- <i class="fas fa-camera"></i>  -->
+                    <div class="shop-two-item-des">
+                        <div class="shop-two-item-pic" id="haha">
+                            <!-- <img  src="http://fakeimg.pl/400x300/282828/EAE0D0" alt=""> -->
+                        </div>
+
+                        <div class="shop-two-tag">
+                            <span class="shop-two-tag-span">#武漢肺炎</span>
+                            <span class="shop-two-tag-span">#口罩</span>
+                            <span class="shop-two-tag-span">#中國病毒</span>
+                        </div>
+
+                        <div class="shop-two-item-text">
+                            <p>可調式鼻梁片與臉型密合度佳</p>
+                        </div>
+                        
+
+                        
+
+                        <div class="shop-two-item-price-outer">
+                            <div class="shop-two-item-price">
+                                <div class="shop-two-item-price-1">
+                                    <p>Price</p>
+                                </div>
+                                <div class="shop-two-item-price-2">
+                                    <span class="shop-two-item-pirce">$150</span>
+                                </div>
+                            </div>
+                            <div class="cart-out">
+                                <div class="choice-number">
+                                    <span class="minus">-</span>
+                                    <input type="text" value='1'>
+                                    <span class="plus">+</span>
+                                </div>
+                                <div class="addcart">
+                                    <div class="addcart-1">
+                                        <button>
+                                            加入購物車
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-item-detail">
+            <div class="shop-item-title">
+                <div class="shop-item-title-star">
+                    <div>
+                        <i class='icofont-star'></i>
+                        <i class='icofont-star'></i>
+                    </div>
+                    <div>
+                        <i class='icofont-star'></i>
+                        <i class='icofont-star'></i>
+                        <i class='icofont-star'></i>
+                    </div>
+                    
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eius 
+                    optio nam doloribus dolor repellat, iure quos ad suscipit ipsa!
+                </p>
+            </div>
+
+            <div class="shop-item-pic-1">
+                <div class="shop-item-pic-1-s">
+                    <img src="http://fakeimg.pl/1240x320/282828/EAE0D0" alt="">
+                </div>
+            </div>
+
+            <div class="shop-item-text-1">
+                <div class="shop-item-text-1-s">
+                    <p>Installation of Mask Filter</p>
+                    <p>1.Open the mask to expose the inerior of the filter valve</p>
+                    <p>2.Accodgin to the OPEN direction on the valve, turn the valve counter(clockwise),to separate the valve</p>
+                    <p>3.Remove the filter</p>
+                    <p>4.Relace the new filter ,reverse the above steps</p>
+                </div>
+            </div>
+
+            <div class="shop-item-pic-2">
+                <div class="shop-item-pic-2-s">
+                    <img src="http://fakeimg.pl/1240x320/282828/EAE0D0" alt="">
+                </div>
+            </div>
+
+            <div class="shop-item-text-2">
+                <div class="shop-item-text-2-s">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere qui et placeat itaque nemo assumenda deserunt, eius natus quidem sed ab nobis ea eaque commodi doloremque expedita corporis esse quisquam!
+                    Fuga delectus culpa sint nemo nihil quam molestiae rem magnam distinctio. Nam repudiandae quaerat molestiae possimus, amet exercitationem doloribus facere, quam ea omnis corporis soluta ad non magnam suscipit sit!
+                    Earum sit delectus, quam doloribus adipisci libero possimus veritatis doloremque ullam, veniam totam quis nulla laboriosam nesciunt mollitia iure. At expedita, consectetur optio omnis est non repellat ab voluptates dolores.
+                    In culpa neque qui deserunt ad. Placeat reprehenderit quia commodi laudantium rem labore excepturi blanditiis porro incidunt debitis recusandae odit, repellendus velit similique suscipit qui animi libero perspiciatis dicta inventore!
+                    Ut nostrum hic quis, voluptas, rerum quod ducimus atque non dolorum ipsa quia cumque adipisci omnis. Recusandae accusantium debitis repellat laudantium impedit nam, in rem provident praesentium perspiciatis obcaecati fugit.</p>
+                    
+                </div>
+            </div>
+        </section>
         
-    </div>
 
+        
+        <section class="relative-info">
+            <div class="relative-info-inner">
+                <div class="owl-carousel owl-theme myowl-2">
+                    <div class="item myowl-item-2">
+                        <img src="https://loremflickr.com/320/240/dog?random=1" alt="">
+                    </div>
+                    <div class="item myowl-item-2">
+                        <img src="https://loremflickr.com/320/240/dog?random=2" alt="">
+                    </div>
+                    <div class="item myowl-item-2">
+                        <img src="https://loremflickr.com/320/240/dog?random=3" alt="">
+                    </div>
+                    <div class="item myowl-item-2">
+                        <img src="https://loremflickr.com/320/240/dog?random=4" alt="">
+                    </div>
+                    <div class="item myowl-item-2">
+                        <img src="https://loremflickr.com/320/240/dog?random=5" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    <div>
     <footer>
     <div class="footer">
         <ul class="list-left">
@@ -141,6 +484,48 @@
         </ul>
     </div>
 </footer>
+
+    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script>
+        $('.myowl-1').owlCarousel({
+            stagePadding: 50,
+            margin: 40,
+            nav:true,
+            
+            navText: ["<i class='icofont-rounded-left prenext'></i>","<i class='icofont-rounded-right prenext'></i>"],
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:2
+                }
+            }
+        });
+
+        $('.myowl-2').owlCarousel({
+            loop:true,
+            margin:50,
+            nav:true,
+            // navContainer: '#customNav',
+            navText: ["<i class='icofont-rounded-left prenext pre'></i>","<i class='icofont-rounded-right prenext next'></i>"],
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:4
+                }
+            }
+        });
+    </script>
+    <script src="/dest/Epidemic-shop/shopjs/shop.js"></script>
 </body>
 
 </html>
