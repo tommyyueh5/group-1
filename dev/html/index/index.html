@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
@@ -12,8 +12,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
     <script src="https://d3js.org/d3-geo.v1.js"></script>
     <script src="https://d3js.org/topojson.v2.js"></script>
+    <link rel="stylesheet" href="/dest/Epidemic-shop/icofont/icofont.min.css">
     <script
-        src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js"></script>
+        src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js">
+    </script>
+    <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
     <!-- <link rel="stylesheet" href="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.css"> -->
     <!-- <script src="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.js"></script> -->
     <script src="/dest/index/earth/js/Earth.js"></script>
@@ -241,13 +245,14 @@
                     </div>
                 </div>
             </div>
-            <!-- Add Pagination -->
+
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
     </section>
     <section id="section5" class="section page-5">
+
         <div class="sop-All">
             <div class="content-container">
                 <div class="content-box">
@@ -295,10 +300,76 @@
             </div>
         </div>
     </section>
+    <section id="section-game" class="section page-merge">
+        <div class="merge-game-Carousel">
+            <div class="game-background">
+                <div class="context">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aspernatur!</p>
+                </div>
+                <div class="game-btn">
+                    <a href="#">
+                        <p class="btn">Start Game</p>
+                    </a>
+                </div>
+            </div>
+            <div class="Carousel">
+                <div class="title">
+                    <p>you can also like:</p>
+                </div>
+                <div class="Carousel-Container">
+                    <div class="relative-info">
+                        <div class="relative-info-inner">
+                            <div class="owl-carousel owl-theme myowl-2">
+                                <div class="item myowl-item-2">
+                                    <img src="https://loremflickr.com/300/240/dog?random=1" alt="">
+                                </div>
+                                <div class="item myowl-item-2">
+                                    <img src="https://loremflickr.com/300/240/dog?random=2" alt="">
+                                </div>
+                                <div class="item myowl-item-2">
+                                    <img src="https://loremflickr.com/300/240/dog?random=3" alt="">
+                                </div>
+                                <div class="item myowl-item-2">
+                                    <img src="https://loremflickr.com/300/240/dog?random=4" alt="">
+                                </div>
+                                <div class="item myowl-item-2">
+                                    <img src="https://loremflickr.com/300/240/dog?random=5" alt="">
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="owl-nav" id="customNav">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="section6" class="section page-6">
         @@include('../../layout/footer.html')
     </section>
     <script src="/dest/index/index.js"></script>
+    <script>
+        $('.myowl-2').owlCarousel({
+            loop:true,
+            nav:true,
+            // navContainer: '#customNav',
+            navText: ["<i class='icofont-rounded-left prenext pre'></i>","<i class='icofont-rounded-right prenext next'></i>"],
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:4
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
