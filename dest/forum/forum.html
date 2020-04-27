@@ -160,39 +160,41 @@
 
         <!-- section 中間文章內容 -->
         <section class="content_container">
-            <div class="article_box">
-                <div class="article_content">
-                    <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材&nbsp&nbsp&nbsp&nbsp<a href="#">#日本</a> <a href="#">#惡搞</a><span>2020.04.07</span></h2>
-                    <div class="left">
-                        <img class="thumbnail" src="dev/image/forum/thum_img1.jpeg" alt="">
-                        <span>Stusis</span>
-                    </div>
-                    <div class="right">
-                        <img src="dev/image/forum/facebook.png" alt="">
-                        <img src="dev/image/forum/facebook.png" alt="">
-                        <img src="dev/image/forum/facebook.png" alt="">
-                        <img src="dev/image/forum/facebook.png" alt="">
-                    </div>
-                    <img class="main_pic" src="dev/image/forum/comment_pic1.png" alt="">
-                    <p class="article_text">
-                        文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容 文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容
-
-                    </p>
-                    <hr>
-                    <form action="" method="get">
-                        <img class="thumbnail2" src="dev/image/forum/thum_img1.jpeg" alt="">
-                        <textarea name="" id="" rows="10">                            
-                        </textarea>
-                        <button type="submit"><img src="" alt="" srcset=""></button>
-                    </form>
-                    <div class="comment">
-                        <h2><img src="">貓草：
-                            <h4>我看了很久，這衣服真的很二次元ww</h4><span>2020年04月09日 08:54</span></h2>
-                        <h2><img src="">貓草：
-                            <h4>我看了很久，這衣服真的很二次元ww</h4><span>2020年04月09日 08:54</span></h2>
-                        <h2><img src="">貓草：
-                            <h4>我看了很久，這衣服真的很二次元ww</h4><span>2020年04月09日 08:54</span></h2>
-                    </div>
+            <div class="article_content">
+                <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材&nbsp&nbsp&nbsp&nbsp<a href="#">#日本</a> <a href="#">#惡搞</a><span>2020.04.07</span></h2>
+                <div class="left">
+                    <img class="thumbnail" src="dev/image/forum/thum_img1.jpeg" alt="">
+                    <span>Stusis</span>
+                </div>
+                <div class="right">
+                    <img src="dev/image/forum/facebook.png" alt="">
+                    <img src="dev/image/forum/facebook.png" alt="">
+                    <img src="dev/image/forum/facebook.png" alt="">
+                    <img src="dev/image/forum/facebook.png" alt="">
+                </div>
+                <img class="main_pic" src="dev/image/forum/comment_pic1.png" alt="">
+                <p class="article_text">
+                    文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容 文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容
+                </p>
+                <hr>
+                <form action="" method="get">
+                    <img class="thumbnail2" src="dev/image/forum/thum_img1.jpeg" alt="">
+                    <textarea rows="2" placeholder="講話啊白癡......."></textarea>
+                    <button type="submit"></button>
+                </form>
+                <div class="comment">
+                    <h2><img src="dev/image/forum/thum_img2.png">貓草：
+                        <span>我看了很久，這衣服真的很二次元ww</span>
+                        <span class="time">2020年04月09日 08:54</span>
+                    </h2>
+                    <h2><img src="dev/image/forum/thum_img9.jpeg">貓屎：
+                        <span>我看了很久，這衣服真的很二次元ww</span>
+                        <span class="time">2020年04月09日 08:54</span>
+                    </h2>
+                    <h2><img src="dev/image/forum/thum_img7.png">貓尿：
+                        <span>我看了很久，這衣服真的很二次元ww</span>
+                        <span class="time">2020年04月09日 08:54</span>
+                    </h2>
                 </div>
             </div>
             <div class="tab_contents">
@@ -215,10 +217,8 @@
                                 <img class="thum_img" src="dev/image/forum/thum_img1.jpeg">
                                 <h4 class="username">Funny・<span class="posted_time">1h</span></h4>
                             </div>
-                            <a href="#">
-                                <h2 class="article_title">醫護人員們現在在想什麼？</h2>
-                                <img class="main_img" src="dev/image/forum/forum_img_1.jpg" alt="">
-                            </a>
+                            <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                            <img class="main_img" src="dev/image/forum/forum_img_1.jpg" alt="">
                             <h4 class="like_comment"><span class="likes">100</span>likes・<span class="comments">40</span>comments</h4>
 
                             <h4 class="function">
@@ -1214,6 +1214,21 @@
                 $("div.tab").removeClass("-on");
                 $("div.tab." + $(this).attr("data-target")).addClass("-on");
             });
+
+            $(".main_img,.article_title").on("click", function(e) {
+                $(".article_content").show();
+                e.stopPropagation();
+            });
+            $(".article_content").on("click", function(e) {
+                e.stopPropagation();
+
+            });
+            $("body").on("click", function() {
+                $(".article_content").hide();
+            });
+
+
+
         });
     </script>
 </body>
