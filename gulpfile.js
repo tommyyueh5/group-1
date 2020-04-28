@@ -88,8 +88,8 @@ gulp.task('default', function () {
             baseDir: "./",
             files: ['**'],
             proxy: 'http://localhost:3000',
-            index: "dest/index/index.html"
-            // index:"dest/Back_End/Back_End.html"
+            // index: "dest/index/index.html"
+            index:"dest/Back_End/Back_End.html"
             // index: "dest/btn-style/btn-style.html"
             // index: "dest/diseaseHistory/diseaseHistory.html"
             // index: "dest/game/game.html"
