@@ -5,140 +5,504 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="../../dev/image/title/logoimage.ico" type="image/x-icon">
-    <link rel="shortcut icon" type="image/x-icon" href="../../dev/image/title/logoimage.ico" />
-    <link rel="stylesheet" href="/node_modules/@icon/icofont/icofont.css">
-    <link rel="stylesheet" href="/dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.css">
+
+    <script src="/dest/Epidemic-prevention-SOP/sop.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="/dest/Epidemic-prevention-SOP/sop.css">
+    <style type="text/css">
+        * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        #pinContainer {
+
+            /* border: 5px solid red; */
+            width: 100%;
+            height: 800px;
+            overflow: hidden;
+            
+            position: relative; 
+
+            min-width: 1280px;
+        }
+
+        #slideContainer {
+            /* border: 5px solid green; */
+            width: 300%; 
+            height: 800px;
+            
+            position: relative;
+
+            background-image: url('/dest/image/Epidemic-prevention-SOP/111.png');
+        
+            background-size: contain;
+        }
+
+        .airplane {
+            position: absolute;
+            left: 1%;
+        }
+
+        .airplane-img {
+            
+            width: 50%;
+        }
+
+        .stair {
+            position: absolute;
+            bottom: 3%;
+            left: 7.4%;
+
+        }
+
+        .stair-img {
+            width: 61%;
+            opacity: 0;
+        }
+
+        .joke-small {
+            width: 62px;
+            height: 50px;
+            position: relative;
+            bottom: 267px;
+            left: 72px;
+
+        }
+
+        .joke-small-img {
+            width: 100%;
+            opacity: 0;
+        }
+
+        .joke {
+            width: 200px;
+            height: 400px;
+            position: absolute;
+            
+            /* border: 1px solid blue; */
+
+            transform: translateX(-50%);
+            left: 50%;
+            bottom: 15px;
+            background-image: url('/dest/image/Epidemic-prevention-SOP/all2.png');
+            background-position: 0px 0px;
+            opacity: 1;
+            animation-name: jokeshow;
+            animation-delay: 18s;
+            animation-fill-mode: backwards;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+
+       
+        }
+
+        @keyframes jokeshow{
+            0% {
+                opacity: 0;
+
+            }
+
+            100% {
+                opacity: 1;
+
+                
+            }
+        }
+
+        .sec1-mo-out {
+            position:absolute;
+            right: 13%;
+            bottom: 10%;
+        }
+
+        .sec1-mo {
+            border: 1px solid green;
+            width: 200px;
+            height: 400px;
+
+            position: relative;
+            
+        }
+
+        .sec1-mo-img {
+            width: 100%;
+        }
+
+        .sec1-home-out {
+            position: absolute;
+            width: 700px;
+            bottom: -4.5%;
+            right: -1%;
+        }
+        .sec1-home-img {
+            width: 100%;
+        }
+
+        @keyframes mark {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .sec1-mark {
+            position: absolute;
+            width: 100px;
+            top: -27%;
+            right: -34%;
+            z-index: 2;
+            cursor: pointer;
+
+            animation: mark 1s  infinite ;
+        }
+
+        .mark-img {
+            width: 100%;
+        }
+
+        .equipment {
+            /* border: 1px solid orange; */
+            width: 200px;
+            height: 300px;
+
+            position: absolute;
+            left: 2%;
+            top: 3%;
+            z-index: 1;
+
+            opacity: 1;
+        }
+
+        .equipment-mask-pic {
+            text-align: center;
+        }
+
+        .equipment-mask-img {
+            width: 40%;
+        }
+
+
+
+        .sec1-hint {
+            border: 5px solid rgb(204, 204, 204);
+            background-color: white;
+            width: 300px;
+
+            position: absolute;
+            right: 17%;
+            padding: 18px;
+            border-radius: 30px;
+            bottom: 461px;
+
+
+            opacity: 0;
+
+            transition: 2s ease;
+
+            font-size: 20px;
+
+        }
+
+        
+        .sec1-mask {
+            /* border: 1px solid red; */
+            width: 300px;
+            height: 200px;
+
+            position: absolute;
+            transform: translateX(-50%);
+            left: 75%;
+            bottom: 68%;
+            opacity: 0;
+
+            z-index: 1;
+
+            transition: opacity 2s ease , left 2s ease, bottom 2s ease;
+        }
+
+        .sec1-mask-pic {
+            border: 5px solid white;
+            display: inline-block;  
+
+            text-align: center;  
+        }
+
+        .sec1-mask-img {
+            width: 35%;
+        }
+
+        .show-hint {
+            opacity: 1;
+            transition: opacity 2s ease ;
+        }
+
+        
+
+        .show-mask {
+            opacity: 1;
+            transition: opacity 2s ease 2s;
+        }
+
+        .equip-show {
+            opacity: 1;
+            transition: opacity 2s ease 2s;
+        }
+
+        .sec1-mask-move {
+            left: 50%;
+            bottom: 178px;
+            opacity: 0;
+            transition: opacity 2s ease 2.5s, left 2s ease, bottom 2s ease;
+        }
+
+        div.plane {
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            z-index: 100;
+            background-color: white;
+            animation-name: map;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            opacity: 0%;
+        }
+
+        @keyframes map {
+            0%{
+                opacity: 100%;
+            }
+            90%{
+                opacity: 100%;
+            }
+            100%{
+                opacity: 0%;
+            }
+        }
+        
+        .map {
+            height: 100vh;
+    
+        }
+        
+        .airplane_pic {
+            height: 150px;
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+        }
+        .tower{
+            position: absolute;
+            top: 15%;
+            left: 25%;
+        }
+        .marquee{
+            background-color: white;
+            padding: 5px;
+            overflow: hidden;
+            width: 400px;
+            height: 50px;
+            position: absolute;
+            top: 53%;
+            left: 11%;
+        }
+        .container{
+            animation: marquee linear 55s infinite 10s;
+            padding-left: 100%;
+        }
+        .container p {
+            font-size: 30px;
+            white-space: nowrap;
+            
+        }
+        @keyframes marquee {
+            0%{
+                transform: translateX(0%);
+            }
+            100%{
+                transform: translateX(-1150%);
+            }
+        }
+        img.cloud_infinite{
+
+            position: absolute;
+            top: 0;
+            height: 100vh;
+            animation: cloud_move 50s linear ;
+            opacity: 0.8;
+        }
+        @keyframes cloud_move {
+            0%{
+                transform: translateX(0%);
+            }
+            100%{
+                transform: translateX(-100%);
+            }
+        }
+        
+        
+        
+    </style>
+    <style>
+        
+    </style>
+
 </head>
 
 <body>
-    <header id="myMeun">
+    <div id="pinContainer">
+        <div class="plane">
+            <img src="/dest/image/Epidemic-prevention-SOP/cloud.png" alt="" class="cloud_infinite">
+            <img class="map" src="/dest/image/Epidemic-prevention-SOP/world-map.png" alt="" class="map">
+            <img class="airplane_pic" src="/dest/image/Epidemic-prevention-SOP/1111.png" alt="" srcset="">
+    
+        </div>
+        <div id="slideContainer">
+            <div class="tower">
+                <img src="/dest/image/Epidemic-prevention-SOP/airport.png" alt="">
+                <div class="marquee">
+                    <div class="container">
+                        <p class="marquee_text">歡迎歸國，返國後若有發燒及呼吸道症狀，請佩戴口罩就醫。
+                    務必主動告知醫師14日內之旅遊史、職業史、接觸史及是否群聚(TOCC)
+    
+    
+                    有任何不明原因發燒或身體不適情形，或入境時如有嘔吐、腹瀉、腹痛、發燒，
+                    請告知航空公司服務人員或機場檢疫人員。</p>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
 
-    <div class="nav_bar">
-        <div id="logo" class="logo">
-            <a href="/dest/index/index.html"></a>
-        </div>
-        <div class="fuction_btn_right">
-            <div class="points">
-                <i id="points" class="icofont icofont-diamond"></i>
-                <p>6,666</p>
+            <div class="stair">
+
+                <img src="/dest/image/Epidemic-prevention-SOP/stair.png" alt="" class="stair-img">
+                <div class="joke-small">
+                    <img src="/dest/image/Epidemic-prevention-SOP/first.png" alt="" class="joke-small-img">
+                </div>
             </div>
-            <div class="login_car">
-                <i id="login_btn" class="icofont icofont-login"></i>
-                <i class="icofont icofont-cart"></i>
+            <div class="airplane">
+                <img src="/dest/image/Epidemic-prevention-SOP/ariplane.png" alt="" class="airplane-img">
+            </div>
+
+            
+            
+            <div id="item">
+                <img id="img1" src="/dest/image/Epidemic-prevention-SOP/ther.png" alt="">
+                <h2>溫度計</h2>
+                <span class="info">定時量體溫，若有發燒、咳嗽及呼吸急促等症狀，應就醫並落實健康管理、在家休息！</span>
+            </div>
+            <div id="item2">
+                <img id="img2" src="/dest/image/Epidemic-prevention-SOP/alcohol-gel.png" alt="">
+                <h2>消毒酒精</h2>
+                <span class="info">定時清潔消毒環境，隨身攜帶小瓶酒精、乾洗手，於公共場合、搭乘大眾運輸工具後進行殺菌消毒。
+                </span>
+            </div>
+            <div id="item3">
+                <img id="img3" src="/dest/image/Epidemic-prevention-SOP/soap.png" alt="">
+                <h2>肥皂</h2>
+                <span class="info">依正確步驟勤洗手：濕、洗、刷、搓、沖、乾，並撿手觸摸眼鼻口。</span>
+            </div>
+
+
+
+            <div id="sec1-hint" class="sec1-hint"></div>
+            <div class="sec1-mo-out">
+                <div class="sec1-mo">
+                    
+                    <img class="sec1-mo-img" src="/dest/image/Epidemic-prevention-SOP/cu.png" alt="">
+                        <div id="sec1-mark" class="sec1-mark">
+                            <img  class="mark-img" src="/dest/image/Epidemic-prevention-SOP/mark.png" alt="">
+                        </div>
+                        
+                </div>
+            </div>
+
+            <!-- home -->
+            <div class="sec1-home-out">
+                <div class="sec1-home">
+                    <img class="sec1-home-img" src="/dest/image/Epidemic-prevention-SOP/home.png" alt="">
+                </div>
+            </div>
+
+
+
+
+
+            <!-- 醫院 -->
+            <div class="pha">
+                <img id="doctor" src="/dest/image/Epidemic-prevention-SOP/doctor.png" alt="">
+                <img src="/dest/image/Epidemic-prevention-SOP/pharmacy.png" alt="">
+            </div>
+    
+
+
+
+
+        </div>
+
+        <div id="joke" class="joke">
+            joke
+        </div>
+
+
+        <div id="sec1-mask" class="sec1-mask">
+            
+            <div class="sec1-mask-pic">
+                
+                <img id="sec1-mask-img" class="sec1-mask-img" src="/dest/image/Epidemic-prevention-SOP/mask.png" alt="">
             </div>
         </div>
+
+        <div id="sec-equipment" class="equipment">
+            <!-- <div class="equipment-mask-pic">
+                <img class="equipment-mask-img" src="mask.png" alt="">
+            </div>
+            <div id="alcohol">
+                <img src="./alcohol-gel.png" alt="">
+            </div>
+            <div id="soap">
+                <img src="./soap.png" alt="">
+            </div>
+            <div id="ther">
+                <img src="./ther.png" alt="">
+            </div> -->
+        </div>
+
+
+
+
+      
+
+
+
+
+
+
+
+
     </div>
 
-    <ul class="title_list">
-        <li><a href="/dest/game/game.html">防疫知識王</a></li>
-        <li><a href="/dest/forum/forum.html">討論區</a></li>
-        <li><a href="/dest/diseaseHistory/diseaseHistory.html">傳染病事記</a></li>
-        <li><a href="/dest/latest-news/latest-news.html">最新消息</a></li>
-        <li><a href="/dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html">防疫SOP</a></li>
-        <li><a href="/dest/Epidemic-shop/Epidemic-shop.html">防疫商店</a></li>
-        <form class="fuction_search" action="#">
-            <i class="icofont icofont-search"></i>
-            <input class="input_box" typne="text" name="search" id="search">
-        </form>
-    </ul>
-
-    <div class="login-Bg" id="loginBg">
-        <div class="login-Box">
-            <div class="sign-title">
-                <h1 id="sign-in">登入</h1>
-                <h1 id="sign-up">註冊</h1>
-            </div>
-            <div class="X" id="btnX">
-                <span class="left"></span>
-                <span class="right"></span>
-            </div>
-            <form class="sign sign-in" action="/dest/index/PHP/sign-in.php" method="GET">
-
-                <label for="emeEmail">登入信箱<br>
-                    <input class="input-data" type="email" name="emeEmail">
-                </label><br>
-
-                <label for="emePaw">登入密碼<br>
-                    <input class="input-data" type="password" name="emePaw"><br>
-                    <input class="viveswitch" type="checkbox">顯示密碼
-                </label>
-                <a href="">忘記密碼</a>
-                <br>
-                <input class="submit" type="submit" name="login" value="登入">
-            </form>
-
-            <form class="sign sign-up" action="/dest/index/PHP/sign-up.php" method="GET">
-                <label for="upEmail">註冊信箱<br>
-                    <input class="input-data" type="email" name="upEmail">
-                </label><br>
-
-                <label for="upPaw">註冊密碼<br>
-                    <input class="input-data" type="password" name="upPaw"><br>
-                    <input class="viveswitch" type="checkbox" id="vivePsw">顯示密碼
-                </label>
-                <a href="">忘記密碼</a>
-                <br>
-                <input class="submit" type="submit" name="login" value="登入">
-            </form>
-        </div>
-    </div>
-</header>
-    <footer>
-    <div class="footer">
-        <ul class="list-left">
-            <li>防疫大富翁
-                <a href="">規則說明</a>
-            </li>
-            <li>討論區
-                <a href="">新增文章</a>
-                <a href="">熱搜排行</a>
-            </li>
-            <li>傳染病介紹
-                <a href="">法定傳染病</a>
-                <a href="">依照傳染途徑</a>
-            </li> 
-            <li>最新消息
-                <a href="">國內疫情確診分佈</a>
-                <a href="">國際醫療時事</a>
-                <a href="">國內醫療時事</a>
-                <a href="">醫療政令</a>
-                <a href="">醫療新聞</a>
-            </li>
-            <li>防疫商店
-                <a href="">虛擬展示功能</a>
-                <a href="">熱門商品</a>
-                <a href="">購物車</a>
-            </li>
-            <li>會員中心
-                <a href="">會員註冊</a>
-                <a href="">訂單查詢</a>
-                <a href="">忘記密碼</a>
-                <a href="">點數查詢</a>
-            </li>
-            <li>防疫SOP
-                <a href="">肺炎自我評估</a>
-            </li>
-        </ul>
-        <ul class="list-right">
-            <li>關注我們</li>
-            <li>
-                <ul class="icon">
-                    <li><a class="ig" href="">ig</a></li>
-                    <li><a class="fb" href="">fb</a></li>
-                    <li><a class="tw" href="">tw</a></li>
-                    <li><a class="pin" href="">pin</a></li>
-                    <li><a class="yt" href="">yt</a></li>
-                </ul>
-            </li>
-            <li>訂閱我們</li>
-            <form action="">
-                <input class="email"type="text" placeholder="E-mail">
-                <input class="email-on" type="submit" value="訂閱">
-            </form>
-        </ul>
-    </div>
-</footer>
+    <script src="/dest/Epidemic-prevention-SOP/111.js"></script>
+        
+    
 </body>
 
 </html>
