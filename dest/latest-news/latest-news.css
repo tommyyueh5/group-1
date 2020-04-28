@@ -200,10 +200,6 @@ footer {
   animation-fill-mode: forwards;
   animation-direction: forward; }
 
-body {
-  background-color: gray;
-  height: 500vh; }
-
 header {
   position: sticky;
   top: 0;

@@ -1,9 +1,6 @@
 @import "../layout/mixins/allmixin";
 @import "../layout/modules/btn";
-body {
-    background-color: gray;
-    height: 500vh;
-}
+
 header {
     position: sticky;
     top: 0;
