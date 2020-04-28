@@ -3,12 +3,13 @@ document.write("<script type='text/javascript' src='../../dev/js/var.js'></scrip
 $(function () {
     $.ajax({
         type: 'get',
-        url: './dest/latest-news/map/taiwanmap/downloads/index.json',
+        url: './dev/html/latest-news/map/taiwanmap/downloads/index.json',
         success: function (data) {
             pushDom(data.data);
         },
 
     });
+
     function pushDom(data1) {
         var vm = new Vue({
             el: '#app',
@@ -48,23 +49,31 @@ $(function () {
                 vm.filter = tagname;
         
         });
-
     }
-
-
-
-
-
-    
-
 });
 
 
+// --------------------------新聞頁籤----------------------------
+
+$(function(){
+    $("a.tab").on("click", function(e){
+      e.preventDefault();
+      
+
+      $(this).closest("ul").find("a.tab").removeClass("-on");
+      $(this).addClass("-on");
+      
+
+      $("div.tab").removeClass("-on");
+      $("div.tab." + $(this).attr("data-target")).addClass("-on");
+    });
+});
 
 
+// $(document).ready(function() {
 
-
-
-// d3------------------
+  
+  
+// });
 
 
