@@ -1,9 +1,9 @@
-document.write("<script type='text/javascript' src='../../dev/js/var.js'></script>");
+// document.write("<script type='text/javascript' src='../../dev/js/var.js'></script>");
 
 $(function () {
     $.ajax({
         type: 'get',
-        url: './dev/html/latest-news/map/taiwanmap/downloads/index.json',
+        url: 'dest/latest-news/map/taiwanmap/downloads/index.json',
         success: function (data) {
             pushDom(data.data);
         },

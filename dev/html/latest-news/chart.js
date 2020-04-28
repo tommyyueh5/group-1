@@ -99,7 +99,7 @@
 
             };
 
-            d3.csv('dev/html/latest-news/map/striat-map/col/data1.json').then(data => {
+            d3.csv('dest/latest-news/map/striat-map/col/data1.json').then(data => {
                 data.forEach(d => {
                     d.population = +d.population * 1;
                 });
@@ -382,6 +382,6 @@ var myBar = new Chart(ctx, {
 //   });
 // });
 
-document.getElementsByClassName('svg1_1').addEventListener('click', function(){
-    this.classList.toggle('lightbox');
- });
+// document.getElementsByClassName('svg1_1').addEventListener('click', function(){
+//     this.classList.toggle('lightbox');
+//  });

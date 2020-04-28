@@ -723,16 +723,14 @@ path:hover {
   width: 100%; }
 
 .svg1 {
-  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%; }
   .svg1 .svg1_1 {
     background-color: white;
-    width: 48%;
+    width: 100%;
     margin-top: 30px;
-    height: 240px;
-    cursor: pointer; }
+    height: 240px; }
   .svg1 h1 {
     color: red;
     margin-top: 28px;
@@ -743,27 +741,6 @@ path:hover {
     font-size: 28px;
     text-align: center;
     margin-top: 18px; }
-
-.svg1_1:nth-child(2) {
-  background-color: black; }
-
-.svg1_1:nth-child(2), .svg1_1:nth-child(4) {
-  margin-left: 2%; }
-
-.lightbox {
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  background: rgba(0, 0, 0, 0.8); }
-  .lightbox .svg1_1 {
-    width: auto;
-    height: auto;
-    max-width: 90vw;
-    max-height: 90vh;
-    margin: auto; }
 
 canvas {
   background-color: white; }
@@ -820,29 +797,34 @@ ul.tab_list > li > a.-on {
 
 .tab1,
 .tab2 {
-  width: 90%;
-  position: relative;
-  display: flex;
-  margin: 0 auto; }
+  position: relative; }
 
-.tab .left_list {
-  width: 33%; }
-
-.tab .left_list .left_listcards {
-  display: flex;
-  flex-direction: column;
+.tab .top_cards {
   width: 100%; }
 
-.left_listcards h2 {
-  font-size: 26px;
-  color: #aaa; }
+.tab .top_cards .top_cards_pic {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center; }
 
-.left_listcards hr {
+.tab .top_cards .top_cards_pic div {
+  width: 400px;
+  height: 350px;
+  padding: 0 10px; }
+
+.top_cards h2 {
+  font-size: 26px;
+  color: #aaa;
+  margin-left: 3%; }
+
+.top_cards_pic hr {
   width: 90%;
   margin-right: 10%; }
 
-.left_listcards img {
-  width: 90%;
+.top_cards_pic img {
+  width: 100%;
   margin-bottom: 5%; }
 
 .right_list {
