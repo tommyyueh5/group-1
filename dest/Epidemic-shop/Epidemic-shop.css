@@ -384,6 +384,7 @@ header {
 .advertise1 .advertise-inner {
   position: relative; }
   .advertise1 .advertise-inner .advertise-img {
+    filter: opacity(60%);
     width: 100%;
     display: block; }
   .advertise1 .advertise-inner .advertise-text {
@@ -412,7 +413,6 @@ header {
     color: black; }
 
 .shop-items {
-  border: 1px solid black;
   margin-top: 50px; }
   .shop-items .shop-items-inner {
     display: flex; }
@@ -432,15 +432,18 @@ header {
           display: flex;
           align-items: center; }
           .shop-items .shop-items-inner .shop-one .shop-type .shop-type-choice .shop-type-choice-s {
-            background-color: #a0a0a0; }
+            background-color: #a0a0a0;
+            width: 100%; }
             .shop-items .shop-items-inner .shop-one .shop-type .shop-type-choice .shop-type-choice-s .type-ico {
               text-align: center;
               margin: 20px 0;
               display: inline-block;
-              width: 50%;
-              cursor: pointer; }
+              width: 45px;
+              cursor: pointer;
+              height: 45px; }
               .shop-items .shop-items-inner .shop-one .shop-type .shop-type-choice .shop-type-choice-s .type-ico .type-img {
-                width: 100%; }
+                width: 100%;
+                height: 100%; }
         .shop-items .shop-items-inner .shop-one .shop-type .shop-type-content {
           width: 85%;
           text-align: center; }
@@ -453,10 +456,15 @@ header {
         width: 70%;
         margin: 0 auto; }
         .shop-items .shop-items-inner .shop-two .shop-two-item-des .shop-two-item-pic {
+          background-color: white;
           position: relative;
-          margin-top: 20px; }
+          margin-top: 20px;
+          width: 550px;
+          height: 600px;
+          overflow: hidden; }
           .shop-items .shop-items-inner .shop-two .shop-two-item-des .shop-two-item-pic img {
             width: 100%;
+            height: 100%;
             display: block; }
           .shop-items .shop-items-inner .shop-two .shop-two-item-des .shop-two-item-pic:before {
             content: "";
@@ -507,15 +515,23 @@ header {
               .shop-items .shop-items-inner .shop-two .shop-two-item-des .shop-two-item-price-outer .cart-out .choice-number input {
                 width: 45px;
                 height: 45px;
-                text-align: center; }
+                text-align: center;
+                display: inline-block;
+                border: none; }
               .shop-items .shop-items-inner .shop-two .shop-two-item-des .shop-two-item-price-outer .cart-out .choice-number .minus {
+                display: inline-block;
                 width: 45px;
-                line-height: 45px;
-                font-size: 40px; }
+                line-height: 39px;
+                font-size: 50px;
+                border: 1px solid #ccc;
+                cursor: pointer; }
               .shop-items .shop-items-inner .shop-two .shop-two-item-des .shop-two-item-price-outer .cart-out .choice-number .plus {
+                display: inline-block;
                 width: 45px;
                 line-height: 45px;
-                font-size: 30px; }
+                font-size: 30px;
+                border: 1px solid #ccc;
+                cursor: pointer; }
             .shop-items .shop-items-inner .shop-two .shop-two-item-des .shop-two-item-price-outer .cart-out .addcart {
               margin-top: 20px;
               text-align: center; }
@@ -539,18 +555,43 @@ header {
                 position: relative;
                 top: 2px; }
 
-.myowl-1 {
-  border: 5px solid purple; }
+.ac {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.jacket {
+  bottom: -31%;
+  width: 513px;
+  height: 417px;
+  left: 7%; }
+
+.goggles {
+  width: 225px;
+  left: 32%;
+  /* bottom: 0; */
+  top: 31%;
+  height: 100px; }
+
+.mask {
+  width: 285px;
+  height: 100px;
+  top: 43%;
+  left: 26%; }
+
+.owl-all {
+  background-color: white;
+  border-radius: 20px; }
 
 .myowl-item {
   margin-right: 10px; }
 
-.myowl-1 .owl-nav {
+.owl-all .owl-nav {
   text-align: center;
   margin-top: 20px;
   display: none; }
 
-.myowl-1 .prenext {
+.owl-all .prenext {
   font-size: 400%; }
 
 .sli {
@@ -572,35 +613,35 @@ header {
 .sli:hover {
   border: 5px solid pink; }
 
-.m {
-  height: 100%; }
+.sli-img {
+  display: block;
+  height: 100%;
+  cursor: pointer; }
 
-.myowl-1 .owl-dots {
+.owl-all .owl-dots {
   margin-top: 5px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  padding-bottom: 10px; }
 
-.myowl-1 span {
-  width: 10px;
-  height: 10px;
+.owl-all span {
+  width: 15px;
+  height: 15px;
   border-radius: 100%;
-  border: 1px solid #d81f1f;
-  background: #f81515;
+  background: #dadada;
   margin-right: 5px;
   display: inline-block;
   /*for making them horizontal, if you want vertical then you can use- display: block*/ }
 
-.myowl-1 .owl-dot.active span {
-  background: #ffa60a; }
+.owl-all .owl-dot.active span {
+  background: #353535; }
 
 .shop-item-detail .shop-item-title {
-  border: 1px solid green;
   width: 80%;
   display: flex;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 30px; }
   .shop-item-detail .shop-item-title .shop-item-title-star {
-    border: 1px solid red;
     width: 10%;
     text-align: center; }
     .shop-item-detail .shop-item-title .shop-item-title-star div {
@@ -609,17 +650,21 @@ header {
         color: #f5fd7b; }
   .shop-item-detail .shop-item-title p {
     width: 80%;
+    padding: 10px 0px;
     color: white;
     font-size: 26px;
     letter-spacing: 1px; }
 
 .shop-item-detail .shop-item-pic-1 .shop-item-pic-1-s {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   margin-bottom: 50px;
   text-align: center;
   overflow: hidden;
   border-radius: 20px; }
+  .shop-item-detail .shop-item-pic-1 .shop-item-pic-1-s img {
+    width: 100%;
+    display: block; }
 
 .shop-item-detail .shop-item-text-1 .shop-item-text-1-s {
   margin: 0 auto;
@@ -636,6 +681,9 @@ header {
   text-align: center;
   overflow: hidden;
   border-radius: 20px; }
+  .shop-item-detail .shop-item-pic-2 .shop-item-pic-2-s img {
+    width: 100%;
+    display: block; }
 
 .shop-item-detail .shop-item-text-2 .shop-item-text-2-s {
   margin: 0 auto;
@@ -665,3 +713,6 @@ header {
   top: 40%;
   color: white;
   font-size: 400%; }
+
+.hid {
+  display: none; }
