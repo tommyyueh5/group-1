@@ -275,7 +275,9 @@ $('.myowl-1-1').owlCarousel({
             items:1
         },
         600:{
-            items:2
+            items:2,
+            margin: 0,
+            stagePadding: 100,
         },
         1000:{
             items:2
