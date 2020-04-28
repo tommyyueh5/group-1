@@ -299,75 +299,75 @@ Chart.controllers.roundedBar = Chart.controllers.bar.extend({
 
 // -------右下圖----------
 
-var ctx = document.getElementById('chart2').getContext('2d');
-var myBar = new Chart(ctx, {
-    type: 'roundedBar',
-    //plugins: [ChartDataSource],
-    data: {
-        labels: ['紐西蘭', '中國', '印尼', '日本', '澳門', '菲律賓', '卡達', '土耳其', '南非', '埃及', '加拿大', '美國', '奧地利',
-            '捷克', '丹麥', '法國', '德國', '義大利', '西班牙', '英國'
-        ],
-        datasets: [{
-            label: '病例數',
-            data: [1, 11, 2, 3, 1, 5, 1, 15, 1, 10, 1, 18, 4, 3, 1, 14, 5, 5, 11,
-                12
-            ], //資料以陣列形式存放
-            borderColor: "#80b6f4",
-            backgroundColor: "#80b6f4",
-            fill: false,
-            borderWidth: 4,
-        }],
-    },
-    options: {
-        maintainAspectRatio: false,
-        legend: {
-            display: false,
-            labels: {
-                fontSize: 12,
-            },
-        },
-        layout: {
-            padding: {
-                right: 10,
-            },
-        },
-        animation: {
-            duration: 1500,
-        },
-        title: {
-            text: '冠狀病毒肺炎境外移入確定病例統計-人數/國家',
-            fontSize: 12,
-            display: true,
-            position: 'top',
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    padding: 0,
-                    fontSize: 12,
-                    fontStyle: 'bold',
-                    beginAtZero: true,
-                },
-                scaleLabel: {
-                    display: true,
-                    labelString: '人數',
-                },
-            }],
-            xAxes: [{
-                ticks: {
-                    padding: 0,
-                    fontSize: 12,
-                    fontStyle: 'bold',
-                    beginAtZero: true,
-                },
-                scaleLabel: {
-                    display: true,
-                    labelString: '國家',
-                },
-            }],
-        }
-    }
-});
+// var ctx = document.getElementById('chart2').getContext('2d');
+// var myBar = new Chart(ctx, {
+//     type: 'roundedBar',
+//     //plugins: [ChartDataSource],
+//     data: {
+//         labels: ['紐西蘭', '中國', '印尼', '日本', '澳門', '菲律賓', '卡達', '土耳其', '南非', '埃及', '加拿大', '美國', '奧地利',
+//             '捷克', '丹麥', '法國', '德國', '義大利', '西班牙', '英國'
+//         ],
+//         datasets: [{
+//             label: '病例數',
+//             data: [1, 11, 2, 3, 1, 5, 1, 15, 1, 10, 1, 18, 4, 3, 1, 14, 5, 5, 11,
+//                 12
+//             ], //資料以陣列形式存放
+//             borderColor: "#80b6f4",
+//             backgroundColor: "#80b6f4",
+//             fill: false,
+//             borderWidth: 4,
+//         }],
+//     },
+//     options: {
+//         maintainAspectRatio: false,
+//         legend: {
+//             display: false,
+//             labels: {
+//                 fontSize: 12,
+//             },
+//         },
+//         layout: {
+//             padding: {
+//                 right: 10,
+//             },
+//         },
+//         animation: {
+//             duration: 1500,
+//         },
+//         title: {
+//             text: '冠狀病毒肺炎境外移入確定病例統計-人數/國家',
+//             fontSize: 12,
+//             display: true,
+//             position: 'top',
+//         },
+//         scales: {
+//             yAxes: [{
+//                 ticks: {
+//                     padding: 0,
+//                     fontSize: 12,
+//                     fontStyle: 'bold',
+//                     beginAtZero: true,
+//                 },
+//                 scaleLabel: {
+//                     display: true,
+//                     labelString: '人數',
+//                 },
+//             }],
+//             xAxes: [{
+//                 ticks: {
+//                     padding: 0,
+//                     fontSize: 12,
+//                     fontStyle: 'bold',
+//                     beginAtZero: true,
+//                 },
+//                 scaleLabel: {
+//                     display: true,
+//                     labelString: '國家',
+//                 },
+//             }],
+//         }
+//     }
+// });
 
 
 

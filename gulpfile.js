@@ -95,10 +95,10 @@ gulp.task('default', function () {
             // index: "dest/btn-style/btn-style.html"
             // index: "dest/diseaseHistory/diseaseHistory.html"
             // index: "dest/game/game.html"
-            index: "dest/Epidemic-shop/Epidemic-shop.html"
+            // index: "dest/Epidemic-shop/Epidemic-shop.html"
             // index: "dest/forum/forum.html"
             // index: "dest/infectious-Diseases/infectious-Diseases.hmtl"
-            // index: "dest/latest-news/latest-news.html"
+            index: "dest/latest-news/latest-news.html"
             // index: "dest/welcome.welcome.html"
             // index: "dest/btn-style/btn-style.html"
 

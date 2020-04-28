@@ -581,27 +581,6 @@
     }
 }   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .relative-info {
     text-align: center;
 }
@@ -630,4 +609,16 @@
 
 .hid {
     display: none;
+}
+@include rwd(desktop) {
+    
+}
+@include rwd(medium) {
+    
+}
+@include rwd(small) {
+    
+}
+@include rwd(mobile) {
+    
 }
