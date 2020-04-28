@@ -93,7 +93,7 @@ let url = `https://news.campaign.yahoo.com.tw/2019-nCoV/index.php`;
         });
          console.log({data:arrLink});
         let result = {data:arrLink};
-        await fs.writeFileSync(`downloads/index.json`, JSON.stringify(result, null ,4));  
+        await fs.writeFileSync(`dest/latest-news/map/taiwanmap/downloads/index.json`, JSON.stringify(result, null ,4));  
         // await fs.writeFileSync(`downloads/index.json`, JSON.stringify(arrLink, null,4));  
         //console.log(typeof JSON.stringify(arrLink));
   
