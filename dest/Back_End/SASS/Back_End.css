@@ -131,7 +131,8 @@ body.Back_Edn {
       body.Back_Edn main.information aside div.p_title {
         position: relative;
         border: 1px solid #fff;
-        height: 200px; }
+        height: 200px;
+        min-height: 200px; }
         body.Back_Edn main.information aside div.p_title div.profile {
           position: absolute;
           left: 50%;
@@ -180,7 +181,10 @@ body.Back_Edn {
             body.Back_Edn main.information section.mgmt_data ul.mgmt_data_item > li ul.profile_list li.p_list {
               border: 1px solid #fff;
               height: calc((100%) / 4);
+              min-height: 155px;
+              max-height: 200px;
               width: 50%;
+              min-width: 450px;
               position: relative; }
               body.Back_Edn main.information section.mgmt_data ul.mgmt_data_item > li ul.profile_list li.p_list div.p_Profile {
                 width: 100px;
@@ -264,7 +268,7 @@ body.Back_Edn {
         body.Back_Edn main.information section.mgmt_data div.edit_fuc span {
           padding: 10px 20px;
           border-radius: 20px;
-          transition: all .3s linear;
+          transition: all 0.3s linear;
           box-shadow: 0 0 5px #fff; }
           body.Back_Edn main.information section.mgmt_data div.edit_fuc span:hover {
             box-shadow: inset 0 0 5px #fff; }
