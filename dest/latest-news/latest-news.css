@@ -377,6 +377,17 @@ header {
           width: 100%;
           margin-top: 10px; }
 
+@font-face {
+  src: url(/dev/layout/fonts/helveticaneue/HelveticaNeue.ttf);
+  src: url(/dev/layout/fonts/impact/impact.ttf);
+  src: url(/dev/layout/fonts/lobster/Font-Lab-Source/LobsterSource.vfb);
+  src: url(/dev/layout/fonts/SilomBol.ttf);
+  src: url(/dev/layout/fonts/SilomBol2.ttf);
+  src: url(/dev/layout/fonts);
+  src: url(/dev/layout/fonts/timr45w.ttf);
+  src: url(/dev/layout/fonts/);
+  src: url(/dev/layout/fonts); }
+
 main {
   background-color: #222; }
 
