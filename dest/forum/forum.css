@@ -429,12 +429,10 @@ div.marquee_container {
   filter: grayscale(0.4); }
 
 p.marquee_text {
-  color: whitesmoke;
+  color: black;
   font-size: 18px;
-  font-weight: bold;
   animation: marquee 25s linear infinite;
-  white-space: nowrap;
-  text-shadow: 0.04em 0.04em black; }
+  white-space: nowrap; }
 
 @keyframes marquee {
   0% {
@@ -795,6 +793,16 @@ div.slide7 {
   background-image: url("/dev/image/forum/slide_7.jpg");
   background-size: contain; }
 
+div.background {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 50; }
+
 div.article_content {
   display: none;
   width: 70%;
@@ -805,7 +813,7 @@ div.article_content {
   border-radius: 20px;
   transform: translate(-50%);
   background-color: white;
-  padding: 60px;
+  padding: 100px;
   text-align: center;
   overflow: scroll;
   z-index: 101; }
@@ -817,12 +825,12 @@ div.article_content h2 {
 
 div.article_content h2 a {
   font-size: 20px;
-  color: #dddd0a;
+  color: #bbbb0a;
   text-decoration: none; }
 
 div.article_content > h2 > span {
   font-size: 18px;
-  color: #cfcfcf;
+  color: #919090;
   float: right; }
 
 div.left,
@@ -834,6 +842,9 @@ div.right {
   padding: 10px 30px;
   vertical-align: top;
   text-align: left; }
+
+div.right {
+  text-align: center; }
 
 div.left {
   font-size: 26px;
@@ -850,14 +861,13 @@ img.thumbnail2 {
   margin: 10px; }
 
 div.left span {
-  border: 1px solid black;
   display: inline-block;
   vertical-align: top;
   margin-top: 15px; }
 
 div.right img {
-  height: 50px;
-  margin: 2px 10px; }
+  height: 40px;
+  margin: 7px 20px; }
 
 img.main_pic {
   margin: 30px auto;
@@ -865,8 +875,9 @@ img.main_pic {
 
 p.article_text {
   font-size: 20px;
-  line-height: 30px;
-  text-align: left; }
+  line-height: 32px;
+  text-align: left;
+  margin: 40px auto 60px; }
 
 div.article_content hr {
   margin: 20px auto;
@@ -878,7 +889,8 @@ form {
   form textarea {
     resize: none;
     width: 80%;
-    margin: 18px 10px; }
+    margin: 18px 10px;
+    font-size: 16px; }
   form button {
     background-image: url("/dev/image/forum/send.png");
     background-size: cover;
@@ -887,7 +899,7 @@ form {
     border: unset;
     cursor: pointer;
     vertical-align: top;
-    margin: 15px 10px 0; }
+    margin: 20px 10px 0; }
 
 div.comment {
   width: 100%;
@@ -904,7 +916,8 @@ div.comment {
       margin-right: 15px;
       vertical-align: middle; }
     div.comment h2 span {
-      font-size: 16px; }
+      font-size: 16px;
+      font-weight: lighter; }
     div.comment h2 span.time {
       font-size: 12px;
       float: right;
