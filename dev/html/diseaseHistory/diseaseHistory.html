@@ -1,136 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--icon-->
-    <script src="/node_modules/ionicons/dist/ionicons/ionicons.js"></script>
+    <!--featherlight-->
+    <script src="//code.jquery.com/jquery-latest.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript"
+        charset="utf-8"></script>
+    <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css"
+        rel="stylesheet" />
+    <!--ionicons-->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <!--googlefont-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <!--bootstrap-->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--scrollmagic-->
     <script src="/node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
     <script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
     <!--jquery-->
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- turnjs -->
+    <script src="https://cdn.jsdelivr.net/npm/turn-js@0.5.4/index.min.js"></script>
+    <script src="./base/lib/hash.js"></script>
+    <script src="./base/lib/scissor.min.js"></script>
+    <script src="./base/lib/turn.min.js"></script>
+    <script src="./base/lib/zoom.min.js"></script>
+    <!-- slick -->
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     @@include('../../layout/head.html')
-    <link rel="stylesheet" href="/dest/diseaseHistory/sass/diseaseHistory.css">
-    <script src="/dest/js/var.js"></script>
+    <link rel="stylesheet" href="/dest/diseaseHistory/diseaseHistory.css">
+    <!-- <script src="/dest/js/var.js"></script> -->
     <title>Document</title>
 </head>
+
 <body>
-        @@include('../../layout/header.html')
-        <main class="main">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Disease History</a></li>
-                </ol>
-            </nav>
-            <div class="history_container">
-                <section class="history_sextion1">
-                    <h1 class="history_title">A visual history of <br>pandemics</h1>
-                    <h5 class="history_subtitle">瘟疫與人</h5>
-                </section>
-                <section id="parallaxContainer">
-                    <div class="layer1">
-                        <section class=" book1">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class=" book2">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book3">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book4">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book5">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
+    @@include('../../layout/header.html')
+    <main class="main">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Disease History</a></li>
+            </ol>
+        </nav>
+        <div class="history_container">
+            <section class="history_sextion1">
+                <h1 class="history_title">A visual history of <br>pandemics</h1>
+                <h5 class="history_subtitle">瘟疫與人</h5>
+            </section>
+            <div class="image-slider">
+                <div class="layer1">
+                    <div class=" book1">
+                        <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                        <!-- <div class="lightbox" id="fl2">
+                            <h2>Featherlight with custom styles</h2>
+                            <p>It's easy to override the styling of Featherlight. All you need to do is specify an
+                                additional class in the data-featherlight-variant of the triggering element. This class
+                                will be added and you can then override everything. You can also reset all CSS:
+                                <em>$('.special').featherlight({ resetCss: true });</em>
+                            </p>
+                        </div> -->
+                        <!-- <a class="lightbox1"  data-featherlight="ajax">
+                            <div id="flipbook">
+                                <div class="hard"> Turn.js </div>
+                                <div class="hard"></div>
+                                <div> Page 1 </div>
+                                <div> Page 2 </div>
+                                <div> Page 3 </div>
+                                <div> Page 4 </div>
+                                <div class="hard"></div>
+                                <div class="hard"></div>
+                            </div>
+                        </a> -->
+                        <!-- <div id="flipbook">
+                            <div class="hard"> Turn.js </div>
+                            <div class="hard"></div>
+                            <div> Page 1 </div>
+                            <div> Page 2 </div>
+                            <div> Page 3 </div>
+                            <div> Page 4 </div>
+                            <div class="hard"></div>
+                            <div class="hard"></div>
+                        </div> -->
                     </div>
-                    <div class="layer2">
-                        <!-- <section class=" book1">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class=" book2">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book3">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book4">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book5">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section> -->
+                    <div class=" book2">
+                        <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png">
                     </div>
-                    <div class="layer3">
-    
+                    <div class="book3">
+                        <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png">
                     </div>
-                </section>
-                <section class="row content-bottom">
-                    <section class="col-md-4 carsoul_button">
-                        <div class="slider-control">
-                            <div class="prev"><button type="button">
-                                    <ion-icon name="arrow-back"></ion-icon>
-                                </button></div>
-                            <div class="next"><button type="button">
-                                    <ion-icon name="arrow-forward"></ion-icon>
-                                </button></div>
-                        </div>
-                    </section>
-                    <section class="col-md-8 home_paragraph">
-                        <p>
-                            Pan·dem·ic /panˈdemik/ (of a disease) prevalent over a whole country or the world.<br>
-    
-                            As humans have spread across the world, so have infectious diseases. Even in this modern era,
-                            outbreaks are nearly constant, though not every outbreak reaches pandemic level as the Novel
-                            Coronavirus (COVID-19) has.
-                        </p>
-                    </section>
-                </section>
+                    <div class="book4">
+                        <!-- <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png"> -->
+                    </div>
+                    <div class="book5">
+                        <!-- <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png"> -->
+                    </div>
+                </div>
+                <div class="layer2">
+                    <div class=" book1">
+                        <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                    <div class=" book2">
+                        <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                    <div class="book3">
+                        <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                    <div class="book4">
+                        <!-- <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png"> -->
+                    </div>
+                    <div class="book5">
+                        <!-- <img class="test" src="/dest/diseaseHistory/btn_img_background/25booksaunt1-superJumbo-v4.png"> -->
+                    </div>
+                </div>
+                <!-- <div class="layer3"> -->
+
+                <!-- </div> -->
             </div>
-        </main>
-    
-    
-    
-        <script>
-            $(function () { // wait for document ready
-                // build tween
-                var tween = new TimelineMax()
-                    .add([
-                        TweenMax.to("#parallaxContainer .layer1", 1, {
-                            backgroundPosition: "-40% 0",
-                            ease: Linear.easeNone
-                        }),
-                        TweenMax.to("#parallaxContainer .layer2", 1, {
-                            backgroundPosition: "-500% 0",
-                            ease: Linear.easeNone
-                        }),
-                        TweenMax.to("#parallaxContainer .layer3", 1, {
-                            backgroundPosition: "-225% 0",
-                            ease: Linear.easeNone
-                        })
-                    ]);
-    
-                // build scene
-                var scene = new ScrollMagic.Scene({
-                        triggerElement: "#parallaxContainer",
-                        duration: 2000,
-                        offset: 450
-                    })
-                    .setTween(tween)
-                    .setPin("#parallaxContainer")
-                    .addIndicators() // add indicators (requires plugin)
-                    .addTo(controller);
-            });
-        </script>
-        @@include('../../layout/footer.html')
+            <section class="row content-bottom">
+                <section class="col-md-4 carsoul_button">
+                    <div class="slider-control">
+                        <div class="prev"><button type="button">
+                                <ion-icon name="arrow-back"></ion-icon>
+                            </button></div>
+                        <div class="next"><button type="button">
+                                <ion-icon name="arrow-forward"></ion-icon>
+                            </button></div>
+                    </div>
+                </section>
+                <section class="col-md-8 home_paragraph">
+                    <p>
+                        Pan·dem·ic /panˈdemik/ (of a disease) prevalent over a whole country or the world.<br>
+
+                        As humans have spread across the world, so have infectious diseases. Even in this modern era,
+                        outbreaks are nearly constant, though not every outbreak reaches pandemic level as the Novel
+                        Coronavirus (COVID-19) has.
+                    </p>
+                </section>
+            </section>
+        </div>
+    </main>
+
+
+
+    <script>
+        //----------------------------carsoul slick 
+        var sickPrimary = {
+            autoplay: true,
+            autoplaySpeed: 2400,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 1800,
+            cssEase: 'cubic-bezier(.84, 0, .08, .99)',
+            centerMode: true,
+            prevArrow: $('.prev'),
+            nextArrow: $('.next')
+        }
+
+        $('.image-slider').slick(sickPrimary);
+
+        //-----------------------------carsoul slick end
+
+        //-----------------------------lightbox
+        
+
+        //-----------------------------lightbox off
+
+
+
+        //------------------------------------------flip book 
+
+
+
+        $("#flipbook").turn({
+            width: 400,
+            height: 300,
+            autoCenter: true
+        });
+
+
+
+        //-----------------------------------------------flip book end
+    </script>
+    @@include('../../layout/footer.html')
 
 </body>
+
 </html>

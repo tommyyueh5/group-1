@@ -201,96 +201,94 @@ footer {
   animation-direction: forward; }
 
 header {
-  width: 100%;
   position: sticky;
   top: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 99999; }
-  header div.logo {
-    width: 100vw;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1; }
-    header div.logo a {
-      background-image: url("/dest/image/title/logo-text.png");
-      width: 300px;
-      height: 70px;
-      margin: 10px 0;
-      display: block;
-      background-position: center center;
-      background-size: contain;
-      background-repeat: no-repeat; }
-  header div.nav_bar.on {
-    top: -50px; }
   header div.nav_bar {
-    transition: top 0.3s linear;
     position: relative;
-    top: 0;
+    transition: top 0.3s linear;
     color: whitesmoke;
-    width: 100vw;
-    height: 50px;
-    background-color: #353535;
-    cursor: pointer; }
-    header div.nav_bar div.function_btn_left {
-      position: absolute;
-      top: 50%;
-      left: 25px;
-      transform: translateY(-50%);
-      display: flex; }
-      header div.nav_bar div.function_btn_left i {
-        font-size: 25px; }
-      header div.nav_bar div.function_btn_left i#login_btn {
-        margin-right: 50px; }
-    header div.nav_bar ul.title_list {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+    width: 100%;
+    background-image: url("/dest/image/index/background/black_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex; }
+    header div.nav_bar div.logo {
+      width: 100vw;
       display: flex;
-      align-items: center; }
-      header div.nav_bar ul.title_list li {
-        margin: 25px; }
-      header div.nav_bar ul.title_list li.logo > a {
+      justify-content: center;
+      align-items: center;
+      z-index: 1; }
+      header div.nav_bar div.logo a {
+        background-image: url("/dest/image/title/logo-text.png");
+        width: 300px;
+        height: 70px;
         display: block;
-        background-image: url(/dev/image/title/logo-image.png);
         background-position: center center;
-        background-size: cover; }
-      header div.nav_bar ul.title_list li a {
+        background-size: contain;
+        background-repeat: no-repeat; }
+    header div.nav_bar div.fuction_btn_right {
+      z-index: 999;
+      position: absolute;
+      top: 50%;
+      left: 88%;
+      transform: translateY(-50%); }
+      header div.nav_bar div.fuction_btn_right i {
+        cursor: pointer;
+        font-size: 25px;
+        margin-right: 20px; }
+      header div.nav_bar div.fuction_btn_right div.points {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px; }
+      header div.nav_bar div.fuction_btn_right div.login_car {
+        display: flex; }
+  header ul.title_list {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #0e1c36; }
+    header ul.title_list li {
+      margin: 10px 15px; }
+      header ul.title_list li a {
         text-decoration: none;
         color: black;
         font-size: 20px;
         color: #e6e6e6;
-        letter-spacing: 5px; }
-    header div.nav_bar div.fuction_btn_right {
-      display: flex;
-      align-items: center;
+        letter-spacing: 3px; }
+    header ul.title_list form.fuction_search {
       position: absolute;
       top: 50%;
-      right: 25px;
-      transform: translateY(-50%); }
-      header div.nav_bar div.fuction_btn_right i#points {
-        font-size: 25px; }
-      header div.nav_bar div.fuction_btn_right p {
-        margin: 0 20px 0 10px; }
-      header div.nav_bar div.fuction_btn_right form.fuction_search {
-        display: flex;
-        justify-content: center; }
-        header div.nav_bar div.fuction_btn_right form.fuction_search i#search {
-          font-weight: bold;
-          font-size: 20px;
-          margin-right: 15px; }
-        header div.nav_bar div.fuction_btn_right form.fuction_search input {
-          background-color: transparent;
-          color: white;
-          border: none;
-          border-radius: 15px;
-          box-shadow: -1px -1px 10px white, inset 0 0 3px wheat; }
-          header div.nav_bar div.fuction_btn_right form.fuction_search input:focus {
-            box-shadow: -1px -1px 10px black, inset 0 0 3px red; }
+      left: 88.2%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: center; }
+      header ul.title_list form.fuction_search i.icofont-search {
+        font-weight: bold;
+        margin-right: 15px;
+        color: white;
+        font-size: 25px;
+        cursor: pointer; }
+      header ul.title_list form.fuction_search input {
+        background-color: transparent;
+        box-shadow: 0 0 3px white;
+        padding-left: 10px;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        width: 0;
+        transition: all 0.5s linear;
+        opacity: 0; }
+      header ul.title_list form.fuction_search input.on {
+        opacity: 1;
+        width: 100px; }
   header div.login-Bg.on {
     display: block; }
   header div.login-Bg {
@@ -298,21 +296,16 @@ header {
     height: 100vh;
     position: absolute;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #333333;
     z-index: 1;
     position: fixed;
     display: none; }
     header div.login-Bg .login-Box {
-      display: inline-block;
-      padding: 10px 30px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: 500;
-      letter-spacing: 2px;
-      background-color: #26292e;
-      font-size: 16px;
-      border-radius: 40px;
-      box-shadow: inset -2px -2px 8px black, inset -2px -2px 12px rgba(30, 30, 30, 0.5), inset 2px 2px 4px rgba(30, 30, 30, 0.1), inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+      width: 300px;
+      height: 300px;
+      border-radius: 50px;
+      background-color: #444444;
+      box-shadow: -20px -20px 20px #505050, -30px -30px 30px #4b4b4b, -40px -45px 40px #464646, -50px -50px 50px #414141, 20px 20px 20px #323232, 30px 30px 30px #2d2d2d, 40px 40px 40px #282828, 50px 50px 50px #232323;
       position: absolute;
       width: 400px;
       height: 400px;
@@ -322,12 +315,6 @@ header {
       left: 50%;
       top: 35%;
       transform: translate(-50%, -50%); }
-      header div.login-Bg .login-Box:hover {
-        box-shadow: inset -2px -2px 8px rgba(0, 0, 0, 0.15), inset -2px -2px 12px rgba(30, 30, 30, 0.1), inset 2px 2px 4px rgba(30, 30, 30, 0.5), inset 2px 2px 8px black; }
-      header div.login-Bg .login-Box:hover span.btn-shadow {
-        position: absolute;
-        display: inline-block;
-        transform: scale(0.98); }
       header div.login-Bg .login-Box .sign-title {
         font-size: 0px;
         text-align: center;

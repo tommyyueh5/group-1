@@ -93,23 +93,15 @@ gulp.task('default', function () {
             // index: "dest/Back_End/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html"
             // index: "dest/btn-style/btn-style.html"
-            // index: "dest/diseaseHistory/diseaseHistory.html"
+            index: "dest/diseaseHistory/diseaseHistory.html"
             // index: "dest/game/game.html"
             // index: "dest/Epidemic-shop/Epidemic-shop.html"
-<<<<<<< HEAD
             // index: "dest/forum/forum.html"
+            // index: "dest/member/member.html"
             // index: "dest/infectious-Diseases/infectious-Diseases.hmtl"
-            index: "dest/latest-news/latest-news.html"
+            // index: "dest/latest-news/latest-news.html"
             // index: "dest/welcome.welcome.html"
             // index: "dest/btn-style/btn-style.html"
-=======
-            index: "dest/forum/forum.html"
-                // index: "dest/member/member.html"
-                // index: "dest/infectious-Diseases/infectious-Diseases.hmtl"
-                // index: "dest/latest-news/latest-news.html"
-                // index: "dest/welcome.welcome.html"
-                // index: "dest/btn-style/btn-style.html"
->>>>>>> Jacky
 
         }
     });
