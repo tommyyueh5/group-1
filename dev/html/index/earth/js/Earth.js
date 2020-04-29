@@ -13,8 +13,10 @@ window.addEventListener('load', function () {
   var colorCountry = '#10ac84' //F6C1BC
   var leaveColor = '#000'
   var dataList;
+  var totaldeath = 0,totalConfirmed = 0,totlerecovered = 0;
+  let datenum, confirmed, death, recovered;
 
-
+  
   
 
 
@@ -25,15 +27,16 @@ window.addEventListener('load', function () {
     })
 
 
-    let datenum, confirmed, death, recovered;
+    
     let citys = Object.keys(dataList).find((city) => {
       if (country != undefined && country.name.trim() === city ) {
         return city;
       }
     });
-   
+    // console.log(dataList);
+    
 
-   
+    
     
 
 
@@ -45,21 +48,21 @@ window.addEventListener('load', function () {
       death = dataList[citys][datenum].deaths;
       recovered = dataList[citys][datenum].recovered;
     Showtable._groups[0][0].style.right = 0;
-    Showtable._groups[0][0].style.background = '#ccc';
+    
     Showtable._groups[0][0].style.transition = 'all 1s';
     //將顏色框共同改變
-    [curentCitys,curentConfirmed,curentDeath, curentRecovered].forEach(item=>{
-      item._groups[0][0].style.border = '1px solid red';
-    });
+    
+
+    
       //顯示地圖資料
       curentCitys.text(country &&
         `地區:${citys} `)
         curentConfirmed.text(country &&
-        `確診人數: ${confirmed} `)
+        `確診人數: ${confirmed.toLocaleString('zh-TW')}人 `)
         curentDeath.text(country &&
-        `死亡人數: ${death}`)
+        `死亡人數: ${death.toLocaleString('zh-TW')}人`)
         curentRecovered.text(country &&
-        `已完成隔離人數: ${recovered}`) 
+        `已完成隔離人數: ${recovered.toLocaleString('zh-TW')}人`) 
     }
   }
 
@@ -161,22 +164,10 @@ window.addEventListener('load', function () {
     stroke(land, leaveColor)
 
      countries['features'].forEach((cityItem) => {
-      // var randomTransparent = Math.random().toFixed(2);
-      // var randomColor = Math.floor(Math.random() * 254 + 1).toFixed(2);
       stroke(cityItem, `rgba(0,0,0,.4)`);
-      // fill(cityItem, `rgba(${randomColor},${randomColor},${randomColor}, 1)`);
-      // console.log(randomColor);
-      
-      // console.log(cityItem);
     });
-    // console.log(getCountry);
-    
-    
-  
-
     if (currentCountry) {
       fill(currentCountry, colorCountry)
-      // stroke(currentCountry, 'rgba(0,0,0,.4)')
     }
   }
 
@@ -293,10 +284,27 @@ window.addEventListener('load', function () {
     .on('mousemove', mousemove)
 
   loadData(function (world, cList, data) {
-    land = topojson.feature(world, world.objects.land)
-    countries = topojson.feature(world, world.objects.countries)
-    countryList = cList
-    dataList = data
+    land = topojson.feature(world, world.objects.land);
+    countries = topojson.feature(world, world.objects.countries);
+    countryList = cList;
+    dataList = data;
+
+    
+    (function(data){
+      // 計算全球人數
+      let cfd = document.querySelectorAll('.global');
+      for (let item in data) {
+         totalConfirmed += data[item][data[item].length - 1].confirmed;
+         totaldeath += data[item][data[item].length - 1].deaths;
+         totlerecovered += data[item][data[item].length - 1].recovered;
+      }
+      // 載入全球人數計算
+      cfd[0].textContent = totalConfirmed.toLocaleString('zh-TW');
+      cfd[1].textContent = totaldeath.toLocaleString('zh-TW');
+      cfd[2].textContent = totlerecovered.toLocaleString('zh-TW');
+    })(data);
+    // console.log(1);
+    
 
     
        
