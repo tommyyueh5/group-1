@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
     let mask2 = document.getElementById('item2')
     let mask3 = document.getElementById('item3')
     let bag = document.getElementById('alcohol');
-
+    document.getElementById('myMeun').style.position ="static";
 
     // plane
     var aaa = new TimelineMax()
@@ -48,7 +48,7 @@ window.addEventListener('load', function() {
             scale: 1.3,
         })
         .to('.airplane-img', 2, {
-            y: 500,
+            y: 300,
             rotation: 0,
             scale: 2,
 
@@ -78,7 +78,7 @@ window.addEventListener('load', function() {
         console.log(mask1, mask2, mask3);
         let tag1 = document.createElement('div');
         tag1.innerHTML = `<div id="ther" style="animation-play-state:running">
-                            <img src="./ther.png" alt="">
+                            <img src="/dest/image//Epidemic-prevention-SOP/ther.png" alt="">
                         </div>`;
         equipment.appendChild(tag1);
         mask1.remove();
@@ -88,7 +88,7 @@ window.addEventListener('load', function() {
     mask2.onclick = function() {
         let tag1 = document.createElement('div');
         tag1.innerHTML = `<div id="alcohol" style="animation-play-state:running">
-        <img src="./alcohol-gel.png" alt="">
+        <img src="/dest/image/Epidemic-prevention-SOP/alcohol-gel.png" alt="">
         </div>`;
         equipment.appendChild(tag1);
         mask2.remove();
@@ -96,7 +96,7 @@ window.addEventListener('load', function() {
     mask3.onclick = function() {
         let tag1 = document.createElement('div');
         tag1.innerHTML = `<div id="soap" style="animation-play-state:running">
-        <img src="./soap.png" alt="">
+        <img src="/dest/image/Epidemic-prevention-SOP/soap.png" alt="">
         </div>`;
         equipment.appendChild(tag1);
         mask3.remove();
@@ -177,8 +177,9 @@ window.addEventListener('load', function() {
             if (inter == 1) {
                 slideContainerMove = setInterval(function() {
                     s += 5;
-                    if (s == 1) {
-                        s--;
+                    console.log(s);
+                    if (s == 0) {
+                        s=-5;
                     }
                     slideContainer.style.left = `${s}px`;
                 }, 5);
@@ -216,7 +217,7 @@ window.addEventListener('load', function() {
         mask.classList.add('sec1-mask-move');
         let tag = document.createElement('div');
         tag.innerHTML = `<div class="equipment-mask-pic">
-        <img class="equipment-mask-img" src="mask.png" alt="">
+        <img class="equipment-mask-img" src="/dest/image/Epidemic-prevention-SOP/mask.png" alt="">
         </div>`;
         equipment.appendChild(tag);
         equipment.classList.add('equip-show');
