@@ -6,7 +6,7 @@
 
 .sop-All {
     // width: 100vw;
-    height: 100vh;
+    height: 681px;
     background: url("/dest/image/sopImg/black_background.png") no-repeat;
     background-size: cover;
     flex-direction: column;
@@ -155,8 +155,8 @@
     height: 100%;
     transform: scale(1);
     position: relative;
-    background:url("/dev/image/sopImg/background-item.png");
-    background-size: cover;
+    background:url("/dev/image/sopImg/3d.png");
+    background-size: contain;
     // overflow: hidden;
     z-index: 10;
 
@@ -190,10 +190,10 @@
                 display: block;
                 position: absolute;
                 z-index: 1;
-                top: 9%;
+                bottom: 26%;
                 left: 20px;
                 width: 40px;
-                height: 238px;
+                height: 169px;
                 border-radius: 50px 50px 0 0;
                 background: #FFF;
 
@@ -202,7 +202,7 @@
                     position: relative;
                     display: block;
                     width: 20px;
-                    height: 232px;
+                    height: 161px;
                     border-radius: 10px 10px 0 0;
                     margin: 5px auto;
 
@@ -215,7 +215,7 @@
                         height: 2%;
                         border-radius: 25px 25px 0 0;
                         position: absolute;
-                        bottom: 0;
+                        bottom: -4%;
 
                     }
                 }
@@ -263,7 +263,7 @@
     height: 100%;
     position: relative;
     z-index: 10;
-    background:url("/dev/image/sopImg/background-item.png");
+    background:url("/dev/image/sopImg/s.png");
     background-size: cover;
     >.sop-hand1 {
         width: 45%;
