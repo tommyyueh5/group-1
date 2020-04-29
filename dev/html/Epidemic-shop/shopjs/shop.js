@@ -33,8 +33,8 @@ window.addEventListener('load', ()=>{
         b = $(this).parent().attr('tar');
 
         $(`.owl-all[tar=${b}]`).owlCarousel({
-            stagePadding: 50,
-            margin: 40,
+            // stagePadding: 50,
+            // margin: 40,
             nav:true,
             
             navText: ["<i class='icofont-rounded-left prenext'></i>","<i class='icofont-rounded-right prenext'></i>"],
@@ -50,6 +50,11 @@ window.addEventListener('load', ()=>{
                 }
             }
         });
+
+
+
+        //rerwd
+        
     });
 
 
@@ -151,11 +156,18 @@ window.addEventListener('load', ()=>{
     document.getElementById('minus').addEventListener('click', function(){
         
         $('.shop-two-item-pirce').text(  sum *  parseInt( document.getElementById('count').value ) );
+        if (  isNaN($('.shop-two-item-pirce').text()) ) {
+            $('.shop-two-item-pirce').text('$'+0);
+        }
     });
 
     document.getElementById('plus').addEventListener('click', function(){
-        console.log(sum);
+        
         $('.shop-two-item-pirce').text(  sum *  parseInt( document.getElementById('count').value ) );
+        console.log($(typeof '.shop-two-item-pirce').text());
+        if (  isNaN($('.shop-two-item-pirce').text()) ) {
+            $('.shop-two-item-pirce').text('$'+0);
+        }
     });
 
     //input
@@ -166,94 +178,12 @@ window.addEventListener('load', ()=>{
         $('.shop-two-item-pirce').text(        price[$('#haha').children().children('img').attr('da')] * parseInt($('#count').val())  )
     });
 
-    // function makeResizableDiv(div) {
-    //     const element = document.querySelector(div);
-    //     const resizers = document.querySelectorAll(div + ' .resizer')
-    //     const minimum_size = 20;
-    //     let original_width = 0;
-    //     let original_height = 0;
-    //     let original_x = 0;
-    //     let original_y = 0;
-    //     let original_mouse_x = 0;
-    //     let original_mouse_y = 0;
-    //     for (let i = 0;i < resizers.length; i++) {
-    //         const currentResizer = resizers[i];
-
-    //         currentResizer.addEventListener('mousedown', function(e) {
-    //             e.preventDefault()
-    //             original_width = parseFloat(getComputedStyle(element, null).getPropertyValue('width').replace('px', ''));
-    //             original_height = parseFloat(getComputedStyle(element, null).getPropertyValue('height').replace('px', ''));
-    //             original_x = element.getBoundingClientRect().left;
-    //             original_y = element.getBoundingClientRect().top;
-    //             original_mouse_x = e.pageX;
-    //             original_mouse_y = e.pageY;
-    //             window.addEventListener('mousemove', resize)
-    //             window.addEventListener('mouseup', stopResize)
-    //         })
-          
-    //         function resize(e) {
-    //             if (currentResizer.classList.contains('bottom-right')) {
-    //                 const width = original_width + (e.pageX - original_mouse_x);
-    //                 const height = original_height + (e.pageY - original_mouse_y)
-    //                 if (width > minimum_size) {
-    //                     element.style.width = width + 'px'
-    //                 }
-    //                 if (height > minimum_size) {
-    //                     element.style.height = height + 'px'
-    //                 }
-    //             }
-    //             else if (currentResizer.classList.contains('bottom-left')) {
-    //                 const height = original_height + (e.pageY - original_mouse_y)
-    //                 const width = original_width - (e.pageX - original_mouse_x)
-    //                 if (height > minimum_size) {
-    //                     element.style.height = height + 'px'
-    //                 }
-    //                 if (width > minimum_size) {
-    //                     element.style.width = width + 'px'
-    //                     element.style.left = original_x + (e.pageX - original_mouse_x) + 'px'
-    //                 }
-    //             }
-    //             else if (currentResizer.classList.contains('top-right')) {
-    //                 const width = original_width + (e.pageX - original_mouse_x)
-    //                 const height = original_height - (e.pageY - original_mouse_y)
-    //                 if (width > minimum_size) {
-    //                     element.style.width = width + 'px'
-    //                 }
-    //                 if (height > minimum_size) {
-    //                     element.style.height = height + 'px'
-    //                     element.style.top = original_y + (e.pageY - original_mouse_y) + 'px'
-    //                 }
-    //             }
-    //             else {
-    //                 const width = original_width - (e.pageX - original_mouse_x)
-    //                 const height = original_height - (e.pageY - original_mouse_y)
-    //                 if (width > minimum_size) {
-    //                     element.style.width = width + 'px'
-    //                     element.style.left = original_x + (e.pageX - original_mouse_x) + 'px'
-    //                 }
-    //                 if (height > minimum_size) {
-    //                     element.style.height = height + 'px'
-    //                     element.style.top = original_y + (e.pageY - original_mouse_y) + 'px'
-    //                 }
-    //             }
-    //         }
-          
-    //         function stopResize() {
-    //             window.removeEventListener('mousemove', resize)
-    //         }
-    //     }
-    // }
-      
-      
-
-    
-
-
-    // for (let i = 0 ; i<document.getElementsByClassName('sli').length ; i++) {
-    //     document.getElementsByClassName('sli')[i].addEventListener('click', function(e){
-    //         joker.appendChild(e.currentTarget);
-    //     } );
-    // }
+    document.getElementById('re').addEventListener('click', function(){
+        $('#haha').find('.ac').remove();
+        $('.shop-two-item-pirce').text(0);
+        document.getElementById('count').value = '1';
+        sum = 0;
+    });
 
 
 
@@ -265,21 +195,53 @@ window.addEventListener('load', ()=>{
 
 
 $('.myowl-1-1').owlCarousel({
-    stagePadding: 50,
-    margin: 40,
+    // stagePadding: 50,
+    
     nav:true,
     
     navText: ["<i class='icofont-rounded-left prenext'></i>","<i class='icofont-rounded-right prenext'></i>"],
     responsive:{
         0:{
-            items:1
+            items:1,
+            margin: 50,
+            // stagePadding: 95,
         },
-        600:{
-            items:2
+        576: {
+            items:1,
+            margin: 10,
+            // stagePadding: 95,
+        },
+        645: {
+            items:2,
+            margin: 50,
+            // stagePadding: 75,
+        },
+        767: {
+            items:2,
+            margin: 0,
+            // stagePadding: 60,
+        },
+        991:{
+            items:2,
+            margin: 0,
+            // stagePadding: 100,
         },
         1000:{
-            items:2
+            items:2,
+            margin: 10,
+            // stagePadding: 65,
+        },
+        1200:{
+            items:2,
+            margin: 20,
+            // stagePadding: 65,
+        },
+        1400:{
+            items:2,
+            margin: 0,
+            // stagePadding: 85,
         }
+
     }
 });
 
