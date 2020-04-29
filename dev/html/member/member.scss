@@ -1,0 +1,174 @@
+@import "../../layout/base/var";
+footer {
+    position: unset;
+}
+
+main {
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    box-sizing: border-box;
+    font-size: 0;
+    text-align: center;
+}
+
+// 麵包屑
+div.bread_crumbs {
+    width: 100%;
+    text-align: left;
+    // border: 1px solid white;
+    box-sizing: border-box;
+    padding: 15px 0 15px 80px;
+    font-size: 20px;
+    color: rgb(155, 155, 155);
+}
+
+div.bread_crumbs a {
+    text-decoration: none;
+    color: unset;
+}
+
+div.bread_crumbs a span {
+    font-size: 18px;
+    color: rgb(207, 207, 207);
+    // border: white 1px solid;
+    padding: 0 5px;
+    margin: 0 10px;
+}
+
+// 左邊會員資訊欄 
+aside.member_info {
+    display: inline-block;
+    // border: 1px solid white;
+    width: 20%;
+    margin: 0 20px;
+    text-align: center;
+    div.member_img {
+        width: 100%;
+        padding-top: 40px;
+        img {
+            width: 80%;
+            border-top-left-radius: 30%;
+            filter: grayscale(0.9);
+        }
+    }
+    h2.member_name {
+        font-size: 30px;
+        color: rgb(204, 204, 204);
+        font-weight: bolder;
+        margin: 25px auto;
+    }
+    h3 {
+        font-size: 18px;
+        color: rgb(204, 204, 204);
+        margin: 25px auto;
+    }
+    h4 {
+        color: rgb(204, 204, 204);
+        font-size: 24px;
+        i {
+            margin-right: 20px;
+        }
+    }
+    a {
+        color: unset;
+        text-decoration: unset;
+    }
+    h2.edit {
+        font-size: 24px;
+        color: rgb(204, 204, 204);
+        border: 1px solid rgb(204, 204, 204);
+        display: inline-block;
+        padding: 20px;
+        border-radius: 30px;
+        margin: 30px auto;
+    }
+}
+
+// 右邊會員功能資訊欄 
+section.member_data {
+    // border: 1px solid white;
+    width: 60%;
+    margin: 40px 20px 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+// 頁籤選項
+ul.tab_list {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    margin-bottom: 30px;
+    a {
+        color: none;
+        text-decoration: unset;
+    }
+    li {
+        display: inline-block;
+        font-size: 26px;
+        color: rgb(204, 204, 204);
+        margin: 0 25px;
+        padding: 0 15px 15px;
+    }
+    a.-on li {
+        border-bottom: 4px solid rgb(221, 221, 221);
+        color: rgb(245, 245, 245);
+    }
+}
+
+// 頁籤內容
+div.tab_contents {
+    width: 100%;
+}
+
+div.tab {
+    display: none;
+}
+
+div.tab_text {
+    display: grid;
+    grid-template-columns: 20% 50% 15%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.content_img {
+    // border: 1px solid white;
+    img {
+        width: 100%;
+    }
+}
+
+.contents {
+    // border: 1px solid white;
+    text-align: left;
+    h2 {
+        font-size: 22px;
+        letter-spacing: 1px;
+        color: rgb(204, 204, 204);
+        line-height: 28px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 14px;
+        color: rgb(204, 204, 204);
+        letter-spacing: 1px;
+        line-height: 20px;
+    }
+}
+
+.time {
+    // border: 1px solid white;
+    h3 {
+        font-size: 20px;
+        color: rgb(204, 204, 204);
+        line-height: 30px;
+    }
+}
+
+div.-on {
+    display: block;
+}
