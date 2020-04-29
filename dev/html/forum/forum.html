@@ -43,9 +43,10 @@
 
         <!-- 左邊filter -->
         <aside class="filter">
+
             <div class="filter_order">
                 <div>
-                    <a href="#" data-target="tab5" class="tab -on"><img src="dev/image/forum/fire.png">
+                    <a href="#" data-target="tab5" class="tab"><img src="dev/image/forum/fire.png">
                         <h2>熱門程度</h2>
                     </a>
                 </div>
@@ -60,7 +61,7 @@
                     </a>
                 </div>
                 <hr>
-                <a href="#" data-target="tab1" class="tab">
+                <a href="#" data-target="tab1" class="tab -on">
                     <h3>疫情資訊</h3>
                 </a>
                 <hr>
@@ -95,7 +96,7 @@
             <canvas id="canvas"></canvas>
 
         </section>
-
+        <div class="background"></div>
         <!-- section 中間文章內容 -->
         <section class="content_container">
             <div class="article_content">
@@ -106,13 +107,14 @@
                 </div>
                 <div class="right">
                     <img src="dev/image/forum/facebook.png" alt="">
-                    <img src="dev/image/forum/facebook.png" alt="">
-                    <img src="dev/image/forum/facebook.png" alt="">
-                    <img src="dev/image/forum/facebook.png" alt="">
+                    <img src="dev/image/forum/line.png" alt="">
+                    <img src="dev/image/forum/twitter.png" alt="">
+                    <img src="dev/image/forum/ig.png" alt="">
                 </div>
                 <img class="main_pic" src="dev/image/forum/comment_pic1.png" alt="">
                 <p class="article_text">
-                    文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容 文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容文章內容
+                    &nbsp&nbsp&nbsp負責播報六、日新聞的日本朝日電視台主播本間智惠（本間智恵）在上個週末過後意外爆紅，全都是因為她穿了一件白底黑邊的衣服上台播報，乍看之下整個身體都像是經過小朋友隨手塗鴉合成，導致她被網友懷疑實際上是不是全裸呢？甚至還被惡搞素材大玩特玩！當她知道這件衣服在網路上被取笑得這麼誇張，以後可能再也不敢穿這件衣服出門了啊……雖然本魚也覺得這件衣服超像合成就是了！
+                    <br>&nbsp&nbsp&nbsp日本主播本間智惠（本間智恵）自2008年進入朝日電視台，現在主要負責每週六、日的新聞時段，她在上個星期六（4月4日）穿了一套白底黑邊的衣服報了一整天的新聞，隨即成了網路上的話題焦點……
                 </p>
                 <hr>
                 <form action="" method="get">
@@ -1389,6 +1391,7 @@
 
             $(".main_img,.article_title").on("click", function(e) {
                 $(".article_content").show();
+                $(".background").show();
                 e.stopPropagation();
             });
             $(".article_content").on("click", function(e) {
@@ -1396,11 +1399,9 @@
 
             });
             $("body").on("click", function() {
-                $(".article_content").hide();
+                $(".article_content,.background").hide();
+
             });
-
-
-
         });
     </script>
 </body>
