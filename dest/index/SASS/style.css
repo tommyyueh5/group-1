@@ -720,7 +720,7 @@ section.page-3 {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 2fr 1fr;
             grid-gap: 10px;
-            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
+            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
             section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left {
               grid-area: topLeft; }
               section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left > div {
