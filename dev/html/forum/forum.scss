@@ -361,10 +361,6 @@ img.thum_img {
     width: 40px;
 }
 
-div.info {
-    // border: 1px solid black;
-}
-
 h4.username {
     font-size: 20px;
     color: rgb(146, 146, 146);
@@ -509,7 +505,7 @@ div.slide7 {
 
 // 文章內容燈箱
 div.background {
-    display: none;
+    display: block;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -520,7 +516,7 @@ div.background {
 }
 
 div.article_content {
-    display: none;
+    display: block;
     width: 70%;
     height: 80vh;
     position: fixed;
@@ -529,7 +525,7 @@ div.article_content {
     border-radius: 20px;
     transform: translate(-50%);
     background-color: white;
-    padding: 100px;
+    padding: 50px 80px;
     text-align: center;
     overflow: scroll;
     z-index: 101;
@@ -539,6 +535,7 @@ div.article_content h2 {
     font-size: 30px;
     line-height: 45px;
     text-align: left;
+    margin: 20px 0;
 }
 
 div.article_content h2 a {
@@ -556,21 +553,20 @@ div.article_content>h2>span {
 div.left,
 div.right {
     display: inline-block;
-    width: 50%;
-    border-bottom: 1px solid rgb(140, 140, 140);
-    border-top: 1px solid rgb(140, 140, 140);
+    width: 40%;
+    // border: 1px solid black;
     padding: 10px 30px;
     vertical-align: top;
     text-align: left;
 }
 
 div.right {
-    text-align: center;
+    text-align: right;
 }
 
 div.left {
     font-size: 26px;
-    border-right: 1px solid rgb(140, 140, 140);
+    // border-right: 1px solid rgb(140, 140, 140);
 }
 
 img.thumbnail {

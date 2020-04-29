@@ -421,8 +421,7 @@ header {
 .miss {
   position: absolute;
   right: 180px;
-  bottom: 130px;
-  /* background-image: url('miss.png'); */
+  bottom: 95px;
   width: 120px;
   height: 250px;
   background-size: cover;
@@ -622,7 +621,7 @@ div.plane {
 
 .tower {
   position: absolute;
-  top: 15%;
+  bottom: 9%;
   left: 25%; }
 
 .marquee {
@@ -793,8 +792,9 @@ div.pha {
 
 h2,
 span.info {
-  color: whitesmoke;
+  color: #222222;
   text-shadow: grey 0.02em 0.02em;
+  line-height: 20px;
   opacity: 1;
   transition: linear .3s; }
 

@@ -48,7 +48,7 @@ window.addEventListener('load', function() {
             scale: 1.3,
         })
         .to('.airplane-img', 2, {
-            y: 300,
+            y: 500,
             rotation: 0,
             scale: 2,
 
