@@ -608,31 +608,6 @@
 .hid {
     display: none;
 }
-<<<<<<< HEAD
-@include rwd(desktop) {
-    
-}
-@include rwd(medium) {
-    
-}
-@include rwd(small) {
-    
-}
-@include rwd(mobile) {
-    
-=======
-
-
-
-
-
-
-
-
-
-
-
-
 @media  only screen and (max-width:991px) {
     .sli {
         text-align: center;
@@ -1398,10 +1373,7 @@
                         }
                     }
                 }
-    
-                
             }
         }
     }
->>>>>>> fish
 }
