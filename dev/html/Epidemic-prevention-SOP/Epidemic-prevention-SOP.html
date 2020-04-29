@@ -7,11 +7,136 @@
     <title>Document</title>
     @@include('../../layout/head.html')
     <link rel="stylesheet" href="/dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.css">
+    <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="dev/html/Epidemic-prevention-SOP/Epidemic-prevention-SOP.js"></script>
 </head>
 
 <body>
     @@include('../../layout/header.html')
-    @@include('../../layout/footer.html')
+
+    <div id="pinContainer">
+        <div class="plane">
+            <img src="dev/image/sop/cloud_infinite.png" alt="" class="cloud_infinite">
+            <img class="map" src="dev/image/sop/world-map.png" alt="" class="map">
+            <img class="airplane_pic" src="dev/image/sop/1111.png" alt="" srcset="">
+
+        </div>
+        <div id="slideContainer">
+            <div class="tower">
+                <img src="dev/image/sop/airport.png" alt="">
+                <div class="marquee">
+                    <div class="container">
+                        <p class="marquee_text">歡迎歸國，返國後若有發燒及呼吸道症狀，請佩戴口罩就醫。 務必主動告知醫師14日內之旅遊史、職業史、接觸史及是否群聚(TOCC) 有任何不明原因發燒或身體不適情形，或入境時如有嘔吐、腹瀉、腹痛、發燒， 請告知航空公司服務人員或機場檢疫人員。
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="stair">
+
+                <img src="dev/image/sop/stair.png" alt="" class="stair-img">
+                <div class="miss"></div>
+                <div class="joke-small">
+                    <img src="dev/image/sop/first.png" alt="" class="joke-small-img">
+                </div>
+            </div>
+            <div class="airplane">
+                <img src="dev/image/sop/ariplane.png" alt="" class="airplane-img">
+            </div>
+
+
+
+            <div id="item">
+                <img id="img1" src="dev/image/sop/ther.png" alt="">
+                <h2>溫度計</h2>
+                <span class="info">定時量體溫，若有發燒、咳嗽及呼吸急促等症狀，應就醫並落實健康管理、在家休息！</span>
+            </div>
+            <div id="item2">
+                <img id="img2" src="dev/image/sop/alcohol-gel.png" alt="">
+                <h2>消毒酒精</h2>
+                <span class="info">定時清潔消毒環境，隨身攜帶小瓶酒精、乾洗手，於公共場合、搭乘大眾運輸工具後進行殺菌消毒。
+                </span>
+            </div>
+            <div id="item3">
+                <img id="img3" src="dev/image/sop/soap.png" alt="">
+                <h2>肥皂</h2>
+                <span class="info">依正確步驟勤洗手：濕、洗、刷、搓、沖、乾，並撿手觸摸眼鼻口。</span>
+            </div>
+
+
+
+            <div id="sec1-hint" class="sec1-hint"></div>
+            <div class="sec1-mo-out">
+                <div class="sec1-mo">
+
+                    <img class="sec1-mo-img" src="dev/image/sop/cu.png" alt="">
+                    <div id="sec1-mark" class="sec1-mark">
+                        <img class="mark-img" src="dev/image/sop/mark.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- home -->
+            <div class="sec1-home-out">
+                <div class="sec1-home">
+                    <img class="sec1-home-img" src="dev/image/sop/home.png" alt="">
+                </div>
+            </div>
+
+
+
+
+
+            <!-- 醫院 -->
+            <div class="pha">
+                <img id="doctor" src="dev/image/sop/doctor.png" alt="">
+                <img src="dev/image/sop/pharmacy.png" alt="">
+            </div>
+
+
+
+
+
+        </div>
+
+        <div id="joke" class="joke">
+            joke
+        </div>
+
+
+        <div id="sec1-mask" class="sec1-mask">
+
+            <div class="sec1-mask-pic">
+
+                <img id="sec1-mask-img" class="sec1-mask-img" src="dev/image/sop/mask.png" alt="">
+            </div>
+        </div>
+
+        <div id="sec-equipment" class="equipment">
+            <!-- <div class="equipment-mask-pic">
+                <img class="equipment-mask-img" src="mask.png" alt="">
+            </div>
+            <div id="alcohol">
+                <img src="./alcohol-gel.png" alt="">
+            </div>
+            <div id="soap">
+                <img src="./soap.png" alt="">
+            </div>
+            <div id="ther">
+                <img src="./ther.png" alt="">
+            </div> -->
+        </div>
+
+        @@include('../../layout/footer.html')
+        <script src="dev/html/Epidemic-prevention-SOP/SOP_2.js"></script>
+
 </body>
 
 </html>
