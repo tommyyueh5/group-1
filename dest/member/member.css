@@ -470,7 +470,7 @@ ul.tab_list {
     text-decoration: unset; }
   ul.tab_list li {
     display: inline-block;
-    font-size: 26px;
+    font-size: 20px;
     color: #cccccc;
     margin: 0 25px;
     padding: 0 15px 15px; }
@@ -511,7 +511,7 @@ div.tab_text {
     line-height: 20px; }
 
 .time h3 {
-  font-size: 20px;
+  font-size: 16px;
   color: #cccccc;
   line-height: 30px; }
 
