@@ -2,6 +2,7 @@
 @import "dev/layout/mixins/allmixin";
 @import "dev/layout/modules/btn";
 @import "dev/layout/rwd/_RWD_Total.scss";
+@import "dev/layout/base/fonts";
 body.Back_Edn {
     overflow-y: hidden;
     ::-webkit-scrollbar {
@@ -72,6 +73,7 @@ body.Back_Edn {
                     i,
                     h1 {
                         cursor: pointer;
+                        
                     }
                 }
             }
@@ -132,7 +134,17 @@ body.Back_Edn {
                             }
                             &:nth-child(5){
                                 div.p_Profile{
-                                    background-image: url(/dest/image/Back_End/Ellipse2.png);
+                                    background-image: url(/dest/image/Back_End/Ellipse6.png);
+                                }    
+                            }
+                            &:nth-child(6){
+                                div.p_Profile{
+                                    background-image: url(/dest/image/Back_End/Ellipse7.png);
+                                }    
+                            }
+                            &:nth-child(7){
+                                div.p_Profile{
+                                    background-image: url(/dest/image/Back_End/Ellipse8.png);
                                 }    
                             }
                     
@@ -142,7 +154,6 @@ body.Back_Edn {
                                 align-items: flex-start;
                                 padding-left: 100px;
                                 line-height: 1.5;
-                                font-family: "Tamil";
                                 @include HandV_center(50%, 50%);
                                 div {
                                     display: flex;
@@ -151,6 +162,7 @@ body.Back_Edn {
 
                                     p {
                                         margin-right: 20px;
+                                        
                                     }
                                     span.center {
                                         padding-top: 10px;
@@ -160,23 +172,7 @@ body.Back_Edn {
                             }
                         }
                     }
-                }
-                .i1 {
-                }
-                .i2 {
-                }
-                .i3 {
-                }
-                .i4 {
-                }
-                .i5 {
-                }
-                .i6 {
-                }
-                .i7 {
-                }
-                .i8 {
-                }
+                }                
             }
             div.edit_fuc {
                 position: absolute;
