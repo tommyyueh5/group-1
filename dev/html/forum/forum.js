@@ -250,10 +250,11 @@ function render() {
     canvas.width = canvas.width;
     ctx.save();
     ctx.scale(devicePixelRatio, devicePixelRatio);
-
+    
     crowd.forEach(peep => {
+        console.log("123");
         peep.render(ctx);
     });
-
+    
     ctx.restore();
 }
