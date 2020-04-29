@@ -4,7 +4,7 @@ document.write("<script type='text/javascript' src='../../dev/js/var.js'></scrip
 $(function () {
   $.ajax({
     type: 'get',
-    url: './dev/html/latest-news/map/taiwanmap/downloads/index.json',
+    url: './dev/html/latest-news/map/taiwanmap/index.json',
     success: function success(data) {
       pushDom(data.data);
     }

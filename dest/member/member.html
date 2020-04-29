@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="../../dev/image/title/logoimage.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="../../dev/image/title/logoimage.ico" />
+    <link rel="stylesheet" href="/node_modules/@icon/icofont/icofont.css">
+    <link rel="stylesheet" href="/dest/member/member.css">
+    <link rel="stylesheet" href="/node_modules/@icon/icofont/icofont.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header id="myMeun">
+
+    <div class="nav_bar">
+        <div id="logo" class="logo">
+            <a href="/dest/index/index.html"></a>
+        </div>
+        <div class="fuction_btn_right">
+            <div class="points">
+                <i id="points" class="icofont icofont-diamond"></i>
+                <p>6,666</p>
+            </div>
+            <div class="login_car">
+                <i id="login_btn" class="icofont icofont-login"></i>
+                <i class="icofont icofont-cart"></i>
+            </div>
+        </div>
+    </div>
+
+    <ul class="title_list">
+        <li><a href="/dest/game/game.html">防疫知識王</a></li>
+        <li><a href="/dest/forum/forum.html">討論區</a></li>
+        <li><a href="/dest/diseaseHistory/diseaseHistory.html">傳染病事記</a></li>
+        <li><a href="/dest/latest-news/latest-news.html">最新消息</a></li>
+        <li><a href="/dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html">防疫SOP</a></li>
+        <li><a href="/dest/Epidemic-shop/Epidemic-shop.html">防疫商店</a></li>
+        <form class="fuction_search" action="#">
+            <i class="icofont icofont-search"></i>
+            <input class="input_box" typne="text" name="search" id="search">
+        </form>
+    </ul>
+
+    <div class="login-Bg" id="loginBg">
+        <div class="login-Box">
+            <div class="sign-title">
+                <h1 id="sign-in">登入</h1>
+                <h1 id="sign-up">註冊</h1>
+            </div>
+            <div class="X" id="btnX">
+                <span class="left"></span>
+                <span class="right"></span>
+            </div>
+            <form class="sign sign-in" action="/dest/index/PHP/sign-in.php" method="GET">
+
+                <label for="emeEmail">登入信箱<br>
+                    <input class="input-data" type="email" name="emeEmail">
+                </label><br>
+
+                <label for="emePaw">登入密碼<br>
+                    <input class="input-data" type="password" name="emePaw"><br>
+                    <input class="viveswitch" type="checkbox">顯示密碼
+                </label>
+                <a href="">忘記密碼</a>
+                <br>
+                <input class="submit" type="submit" name="login" value="登入">
+            </form>
+
+            <form class="sign sign-up" action="/dest/index/PHP/sign-up.php" method="GET">
+                <label for="upEmail">註冊信箱<br>
+                    <input class="input-data" type="email" name="upEmail">
+                </label><br>
+
+                <label for="upPaw">註冊密碼<br>
+                    <input class="input-data" type="password" name="upPaw"><br>
+                    <input class="viveswitch" type="checkbox" id="vivePsw">顯示密碼
+                </label>
+                <a href="">忘記密碼</a>
+                <br>
+                <input class="submit" type="submit" name="login" value="登入">
+            </form>
+        </div>
+    </div>
+</header>
+    <!-- main -->
+    <main>
+        <!-- 麵包屑 -->
+        <div class="bread_crumbs">
+            <a href="../index/index.html"><span>Home</span></a> &gt;
+            <a href=""><span>Events</span></a> &gt;
+            <a href=""><span>Iran attack</span></a>
+        </div>
+        <!-- 左邊資料欄 -->
+        <aside class="member_info">
+            <div class="member_img">
+                <img src="dev/image/member/member_pic2.jpeg" alt="">
+            </div>
+            <h2 class="member_name">
+                Vivian Wang
+            </h2>
+            <h3 class="member_email">
+                Vivian520@gmail.com
+            </h3>
+            <h3 class="member_join">
+                已加入<span>475</span>天
+            </h3>
+            <h4 class="point">
+                <i id="points" class="icofont icofont-diamond"></i>66666
+            </h4>
+            <a href="#">
+                <h2 class="edit">編輯個人資料</h2>
+            </a>
+        </aside>
+
+        <!-- 右邊會員功能資訊欄 -->
+        <section class="member_data">
+            <ul class="tab_list">
+                <a class="tab -on" data-target="tab1" href="#">
+                    <li>發文紀錄</li>
+                </a>
+                <a class="tab " data-target="tab2" href="#">
+                    <li>留言紀錄</li>
+                </a>
+                <a class="tab " data-target="tab3" href="#">
+                    <li>自我管理紀錄</li>
+                </a>
+                <a class="tab " data-target="tab4" href="#">
+                    <li>檢舉案件狀態</li>
+                </a>
+                <a class="tab " data-target="tab5" href="#">
+                    <li>重設密碼</li>
+                </a>
+            </ul>
+            <div class="tab_contents">
+                <div class="tab tab1 -on">
+                    <div class="tab_text">
+                        <div class="content_img">
+                            <img src="dev/image/member/comment_pic1.png" alt="">
+                        </div>
+                        <div class="contents">
+                            <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材</h2>
+                            <p>負責播播六、日新聞的日本朝日電視台主播本間智慧在上週末意外爆紅全都是因為她穿了一件白底黑邊的衣服上台播報，乍看之下整個身體都像是經過小朋友隨手塗鴉而成，導致...</p>
+                        </div>
+                        <div class="time">
+                            <h3>討論區<br>Funny<br>2020.04.07</h3>
+                        </div>
+                    </div>
+                    <div class="tab_text">
+                        <div class="content_img">
+                            <img src="dev/image/member/member_pic_3.jpg" alt="">
+                        </div>
+                        <div class="contents">
+                            <h2>完全命中現況《南方四賤客》諷刺中國被禁 製作人推特馬上道歉惹
+                            </h2>
+                            <p>如果說辛普森家庭一直成功預言未來，那這次《南方四賤客》可以說搶先他們一部做出神預言，完美將整個NBA遭中國抵制事件，融合在他們十一月播出...</p>
+                        </div>
+                        <div class="time">
+                            <h3>討論區<br>Comic & Webtoon<br>2020.03.08</h3>
+                        </div>
+                    </div>
+                    <div class="tab_text">
+                        <div class="content_img">
+                            <img src="dev/image/member/member_pic4.jpg" alt="">
+                        </div>
+                        <div class="contents">
+                            <h2>肺炎防疫期間《超商店員無法理解客人的行為》面對防止飛沫傳染的透明布簾客人行為超傻眼</h2>
+                            <p>無論超商店員還是餐廳服務生，正因為自己有過不少服務業的郭做經驗也特別能體會其中心酸，光是原本沒有新冠肺癌的情況下，就已經吃力不討好了，更何況...</p>
+                        </div>
+                        <div class="time">
+                            <h3>討論區<br>Taiwan News<br>2020.02.07</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab tab2 ">
+
+                </div>
+                <div class="tab tab3 ">
+
+                </div>
+                <div class="tab tab4 ">
+
+                </div>
+                <div class="tab tab5 ">
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    <div class="footer">
+        <ul class="list-left">
+            <li>防疫大富翁
+                <a href="">規則說明</a>
+            </li>
+            <li>討論區
+                <a href="">新增文章</a>
+                <a href="">熱搜排行</a>
+            </li>
+            <li>傳染病介紹
+                <a href="">法定傳染病</a>
+                <a href="">依照傳染途徑</a>
+            </li> 
+            <li>最新消息
+                <a href="">國內疫情確診分佈</a>
+                <a href="">國際醫療時事</a>
+                <a href="">國內醫療時事</a>
+                <a href="">醫療政令</a>
+                <a href="">醫療新聞</a>
+            </li>
+            <li>防疫商店
+                <a href="">虛擬展示功能</a>
+                <a href="">熱門商品</a>
+                <a href="">購物車</a>
+            </li>
+            <li>會員中心
+                <a href="">會員註冊</a>
+                <a href="">訂單查詢</a>
+                <a href="">忘記密碼</a>
+                <a href="">點數查詢</a>
+            </li>
+            <li>防疫SOP
+                <a href="">肺炎自我評估</a>
+            </li>
+        </ul>
+        <ul class="list-right">
+            <li>關注我們</li>
+            <li>
+                <ul class="icon">
+                    <li><a class="ig" href="">ig</a></li>
+                    <li><a class="fb" href="">fb</a></li>
+                    <li><a class="tw" href="">tw</a></li>
+                    <li><a class="pin" href="">pin</a></li>
+                    <li><a class="yt" href="">yt</a></li>
+                </ul>
+            </li>
+            <li>訂閱我們</li>
+            <form action="">
+                <input class="email"type="text" placeholder="E-mail">
+                <input class="email-on" type="submit" value="訂閱">
+            </form>
+        </ul>
+    </div>
+</footer>
+
+    <!-- 頁籤 -->
+    <script>
+        $(document).ready(function() {
+            $("a.tab").on("click", function(e) {
+                e.preventDefault();
+                $(this).closest(".tab_list").find("a.tab").removeClass("-on");
+                $(this).addClass("-on");
+
+                $("div.tab").removeClass("-on");
+                $("div.tab." + $(this).attr("data-target")).addClass("-on");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

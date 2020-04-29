@@ -200,10 +200,6 @@ footer {
   animation-fill-mode: forwards;
   animation-direction: forward; }
 
-body {
-  background-color: gray;
-  height: 500vh; }
-
 header {
   position: sticky;
   top: 0;
@@ -380,6 +376,17 @@ header {
         header div.login-Bg .login-Box .sign .submit {
           width: 100%;
           margin-top: 10px; }
+
+@font-face {
+  src: url(/dev/layout/fonts/helveticaneue/HelveticaNeue.ttf);
+  src: url(/dev/layout/fonts/impact/impact.ttf);
+  src: url(/dev/layout/fonts/lobster/Font-Lab-Source/LobsterSource.vfb);
+  src: url(/dev/layout/fonts/SilomBol.ttf);
+  src: url(/dev/layout/fonts/SilomBol2.ttf);
+  src: url(/dev/layout/fonts);
+  src: url(/dev/layout/fonts/timr45w.ttf);
+  src: url(/dev/layout/fonts/);
+  src: url(/dev/layout/fonts); }
 
 section.Earth {
   width: 100%; }
@@ -713,7 +720,7 @@ section.page-3 {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 2fr 1fr;
             grid-gap: 10px;
-            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
+            grid-template-areas: "topLeft topLeft topRight" "bottomLeft bottomCenter bottomRight "; }
             section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left {
               grid-area: topLeft; }
               section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left > div {

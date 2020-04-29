@@ -10,27 +10,8 @@
     <link rel="stylesheet" href="/node_modules/@icon/icofont/icofont.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <link rel="stylesheet" href="/dest/latest-news/latest-news.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource"></script>
-    <script src="/dest/latest-news/latest-news.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-        </script>
 
-
-    <!-- Optional theme -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <!-- Latest compiled and minified JavaScript -->
-
-    <!-- <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&subset=latin-ext" rel="stylesheet"> -->
 
 </head>
 
@@ -120,24 +101,130 @@
                         <p>News</p>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#">
                         <p>Taiwan News</p>
                     </a>
-                </li>
+                </li> -->
             </ol>
         </div>
+        <!-- ----------------------------影片------------------------------ -->
+
+        <div class="video">
+
+            <div class="gallery">
+
+                <div class="image-preview">
+                    <video id="preview" width="100%" controls>
+                        <source src="/dest/image/latest-news/4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <!-- Elastislide Carousel -->
+                <ul id="carousel" class="elastislide-list">
+
+                    <li data-preview="/dest/image/latest-news/4.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/4.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/5.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/5.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/4.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/4.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/5.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/5.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/4.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/4.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/5.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/5.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/4.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/4.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/5.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/5.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/4.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/4.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/5.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/5.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/4.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/4.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/5.mp4">
+                        <a href="#">
+                            <video src="/dest/image/latest-news/5.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
+                            </video>
+                        </a>
+                    </li>
 
 
 
-        <div>
-            <iframe width="100%" height="600" src="https://www.youtube.com/embed/h_pubH-Lb1U" frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+                </ul>
+                <!-- End Elastislide Carousel -->
+
+
+
+            </div>
+
+            <!-- <p><strong>Resize the browser to see how the carousel adapts</strong></p>
+                <p class="info"><strong>Example 4:</strong> Usage in an image gallery; a minimum of 4 images are visible.
+                </p> -->
+
         </div>
 
-        <div class="first_title">CornavirusCOVID-19TaiwanCases</div>
+        <!-- ----------------------------地圖+圖表------------------------------ -->
 
+        <div class="first_title">CornavirusCOVID-19TaiwanCases</div>
         <div class="map_chartarea">
 
             <div class="out-right">
@@ -179,28 +266,27 @@
                 <div class="map_chart">
                     <div class="svg1">
                         <div class="svg1_1">
-                            <!-- <svg width="400" height="200"></svg> -->
-                            <svg width="355.2" height="235"></svg>
+                            <svg width="700" height="230" class=""></svg>
                         </div>
-                        <div class="svg1_2">
+                        <!-- <div class="svg1_1">
                             <h1>COVID-19</h1>
                             <h6>武漢肺炎</h6>
                             <h6>監測趨勢圖</h6>
                             <h6>依資料來源</h6>
+                        </div> -->
+                        <div class="svg1_1">
+                            <canvas id="chart" class=""></canvas>
                         </div>
-                        <div class="svg1_3">
-                            <canvas id="chart"></canvas>
-                        </div>
-                        <div class="svg1_4">
-                            <canvas id="chart2"></canvas>
-                        </div>
+                        <!-- <div class="svg1_1">
+                            <canvas id="chart2" class=""></canvas>
+                        </div> -->
                     </div>
                 </div>
 
             </div>
 
             <div id="app">
-                <div class="map_title">全國嚴重特殊傳染性肺炎本土病例及境外移入病例地圖分布(2020年01週-2020年14週)</div>
+                <div class="map_title">全國嚴重特殊傳染性肺炎病例地圖分布</div>
                 <div class="out-left">
                     <div class="title_area">
                         <h6>武漢肺炎確診人數</h6>
@@ -212,8 +298,7 @@
                         </div>
                     </div>
                     <svg id="image_3" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="-300 -100 1000 900">
-                        <!-- <defs></defs> -->
-                        <!-- <title>20170427直播用台灣</title> -->
+
                         <path id="penghu_a" data-name="penghu_country" class="penghu_b"
                             d="M77.44,422.09l-2,1.71-.79.24h-.92l.43.79v.92l-.18.85-1.22,1-.12.92.67.37,1.65-.73.67-.49,1,.06.61.43.55.61-1.83,2-.92.12-1.83-.31,1,1.16,1.4.61,1.1-.12.79-.49,2.74.06.55.73.3.79-.91,1.46-.12.49.79.55-.06.67-.73.73-.79-.06-.55-.49L78,436.3l-.91.12L76,438.74l-1,1.1.43.73,1.77.18,1-.12,1.22-.43,1-.06,1.1,1.22.79-.18.12-.79.73-.67.06-.85.3-.85-.73-.43-.12-.67.61-.67.43-.79,3-2.38.79-.12L89,431.06l.24-.73.67-.55,4.21-.12,1.28-.61.55.43.18.91.43.79.73.49.85-.18.67-.37h1l.37-.55L98,428.31l-.55-2,.24-.73v-.91l-.37-.79-1.64-1.77-.43-1.4-.49.55-.24,1.71-.85-.12-.43-.85-.55-.61.24-.55.49-.37-1.16-1.1-.79-.31-.55.55-1.16,2.13-.67-.12-.61.18-1,1-.18.73-.49.12-.06-2.74.67-1.46-1,.12-.55.37-3.54.61-.55.43.06.85.49.67v.91l-.37.61-.85.24-.55.67v1.89l-.49.55-.91-.43-.67-.61.12-1.22-1-.12-.12-.85.49-.79.06-.55-.61-.73h0Z" />
                         <path id="chiayi_a" data-name="17" class="chiayi_b"
@@ -277,553 +362,115 @@
                     </svg>
                 </div>
             </div>
-
         </div>
+
 
         <hr>
 
-        <div class="second_title">
-            <span>Editor's Picks</span>
-            <ul class="news_navlist">
-                <!-- <li>
-                  <a href="#">
-                    <p>Coronavirus</p>
-                    <span>&#9660</span>
-                  </a>
-               </li> -->
-                <li>
-                    <a href="#">
-                        <p>Taiwan News</p>
-                        <span>&#9660</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p>World News</p>
-                        <span>&#9660</span>
-                    </a>
-                </li>
-                <!-- <li>
-                  <a href="#">
-                    <p>Speeches</p>
-                    <span>&#9660</span>
-                  </a>
-                </li> -->
-            </ul>
-        </div>
-
+        <!-- ----------------------------新聞------------------------------ -->
         <div class="news_container">
-            <div class="left_list">
-                <div class="left_listcards">
-                    <div><img src="/dest/image/latest-news/img-11.png" alt=""></div>
-                    <div><img src="/dest/image/latest-news/img-12.jpg" alt=""></div>
-                    <div><img src="/dest/image/latest-news/img-11.png" alt=""></div>
-                </div>
+            <div class="tab_list_block">
+                <h1>Editor's Picks</h1>
+                <ul class="tab_list">
+                    <li>
+                        <a href="#" data-target="tab1" class="tab -on">
+                            <p>TaiwanNews</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="tab2" class="tab">
+                            <p>WorldNews</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <div class="right_list">
-                <div class="right_listcards">
-                    <div class="right_listcards_top">
-                        <div>
-                            <img src="/dest/image/latest-news/img-1.jpg" alt="">
-                        </div>
-                        <div>
-                            <img src="/dest/image/latest-news/img-6.png" alt="">
-                            <img src="/dest/image/latest-news/img-8.jpg" alt="">
-                        </div>
+            <div class="tab tab1 -on">
+                <div class="top_cards">
+                    <h2>最新消息</h2>
+                    <hr>
+                    <div class="top_cards_pic">
+                        <div><a href=""><img src="/dest/image/latest-news/img-11.png" alt=""></a></div>
+                        <div><a href=""><img src="/dest/image/latest-news/img-12.jpg" alt=""></a></div>
+                        <div><a href=""><img src="/dest/image/latest-news/img-11.png" alt=""></a></div>
+                        <div><a href=""><img src="/dest/image/latest-news/img-9.jpg" alt=""></a></div>
+                        <!-- <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div> -->
                     </div>
-
-                    <img src="/dest/image/latest-news/img-2.jpg" alt="">
-                    <img src="/dest/image/latest-news/img-5.jpg" alt="">
-                    <img src="/dest/image/latest-news/img-9.jpg" alt="">
-                    <img src="/dest/image/latest-news/img-3.jpg" alt="">
-                    <img src="/dest/image/latest-news/img-10.png" alt="">
-                    <img src="/dest/image/latest-news/img-13.jpg" alt="">
-                    <img src="/dest/image/latest-news/img-4.jpg" alt="">
                 </div>
-            </div>
-        </div>
 
-
-
-
-
-        <div class="container">
-            <div class="row" id="slider-text">
-                <div class="col-md-6">
-                    <h2>You may also be interesting in</h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- Item slider-->
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="carousel carousel-showmanymoveone slide" id="itemslider">
-                        <div class="carousel-inner">
-
-                            <div class="item active">
-                                <div class="col-xs-12 col-sm-6 col-md-2">
-                                    <a href="#"><img
-                                            src="https://images.unsplash.com/photo-1539840093138-9b3e230e5206?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=765a2eb222b1851840a4a157780fb487&auto=format&fit=crop&w=1534&q=80"
-                                            class="img-responsive center-block"></a>
-
-                                </div>
+                <div class="right_list">
+                    <div class="right_listcards">
+                        <h2>熱門消息</h2>
+                        <hr>
+                        <div class="right_listcards_top">
+                            <div>
+                                <a href=""><img src="/dest/image/latest-news/img-1.jpg" alt=""></a>
+                                <a href=""><img src="/dest/image/latest-news/img-2.jpg" alt=""></a>
                             </div>
-
-                            <div class="item">
-                                <div class="col-xs-12 col-sm-6 col-md-2">
-                                    <a href="#"><img
-                                            src="https://images.unsplash.com/photo-1524010349062-860def6649c3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e725946a3f177dce83a705d4b12019c2&auto=format&fit=crop&w=500&q=60"
-                                            class="img-responsive center-block"></a>
-
-                                </div>
+                            <div>
+                                <a href=""><img src="/dest/image/latest-news/img-6.png" alt=""></a>
+                                <a href=""><img src="/dest/image/latest-news/img-8.jpg" alt=""></a>
+                                <a href=""><img src="/dest/image/latest-news/img-13.jpg" alt=""></a>
                             </div>
-
-                            <div class="item">
-                                <div class="col-xs-12 col-sm-6 col-md-2">
-                                    <a href="#"><img
-                                            src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=04aebe9a22884efa1a5f61e434215597&auto=format&fit=crop&w=500&q=60"
-                                            class="img-responsive center-block"></a>
-                                    <span class="badge">100%</span>
-
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="col-xs-12 col-sm-6 col-md-2">
-                                    <a href="#"><img
-                                            src="https://images.unsplash.com/photo-1531925470851-1b5896b67dcd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=91fe0ca1b5d72338a8aac04935b52148&auto=format&fit=crop&w=500&q=60"
-                                            class="img-responsive center-block"></a>
-
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="col-xs-12 col-sm-6 col-md-2">
-                                    <a href="#"><img
-                                            src="https://images.unsplash.com/photo-1516961642265-531546e84af2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=74065eec3c2f6a8284bbe30402432f1d&auto=format&fit=crop&w=500&q=60"
-                                            class="img-responsive center-block"></a>
-
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="col-xs-12 col-sm-6 col-md-2">
-                                    <a href="#"><img
-                                            src="https://images.unsplash.com/photo-1532086853747-99450c17fa2e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=61a42a11f627b0d21d0df757d9b8fe23&auto=format&fit=crop&w=500&q=60"
-                                            class="img-responsive center-block"></a>
-
-                                </div>
-                            </div>
-
                         </div>
-
-                        <div id="slider-control">
-                            <a class="left carousel-control" href="#itemslider" data-slide="prev"><img
-                                    src="https://cdn0.iconfinder.com/data/icons/website-kit-2/512/icon_402-512.png"
-                                    alt="Left" class="img-responsive"></a>
-                            <a class="right carousel-control" href="#itemslider" data-slide="next"><img
-                                    src="http://pixsector.com/cache/81183b13/avcc910c4ee5888b858fe.png" alt="Right"
-                                    class="img-responsive"></a>
-                        </div>
+                        <a href=""><img src="/dest/image/latest-news/img-4.jpg" alt=""></a>
+                        <a href=""><img src="/dest/image/latest-news/img-5.jpg" alt=""></a>
+                        <a href=""><img src="/dest/image/latest-news/img-3.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
+            <!-- 
+            <div class="tab tab2">
+                <div class="left_list">
+                    <div class="left_listcards">
+                        <h2>最新消息</h2>
+                        <hr>
+                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
+                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
+                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
+                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
+                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
+                    </div>
+                </div>
+
+                <div class="right_list">
+                    <div class="right_listcards">
+                        <h2>熱門消息</h2>
+                        <hr>
+                        <div class="right_listcards_top">
+                            <div>
+                                <a href=""><img src="/dest/image/latest-news/img-2.jpg" alt=""></a>
+                                <a href=""><img src="/dest/image/latest-news/img-1.jpg" alt=""></a>
+                            </div>
+                            <div>
+                                <a href=""><img src="/dest/image/latest-news/img-6.png" alt=""></a>
+                                <a href=""><img src="/dest/image/latest-news/img-8.jpg" alt=""></a>
+                                <a href=""><img src="/dest/image/latest-news/img-13.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <a href=""><img src="/dest/image/latest-news/img-4.jpg" alt=""></a>
+                        <a href=""><img src="/dest/image/latest-news/img-5.jpg" alt=""></a>
+                        <a href=""><img src="/dest/image/latest-news/img-3.jpg" alt=""></a>
+                    </div>
+                    
+                </div>
+            </div> -->
+
+            <div class="pagination_block">
+                <ul class="pagination">
+                    <li><a href="#">&lt;</a></li>
+                    <li><a href="#" class="-on">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">&gt;</a></li>
+                </ul>
+            </div>
+
         </div>
-        <!-- Item slider end-->
-        <br /><br />
+
+        <br>
+        <br>
     </main>
-
-    <script>
-        (function (d3) {
-            'use strict';
-            const data = [3, 5, 8, 7, 6, 5, 4, 3]
-            const titleText1 = 'TAIWAN COVID-19 AREA';
-            const titleText = 'time';
-            const xAxisLabelText = 'Number of completed quarantines';
-
-            const svg = d3.select('svg');
-
-            const width = +svg.attr('width');
-            const height = +svg.attr('height');
-
-            const render = data => {
-                const xValue = d => d['population'];
-                const yValue = d => d.country;
-                const margin = {
-                    top: 40,
-                    right: 5,
-                    bottom: 30,
-                    left: 60
-                };
-                const innerWidth = width - margin.left - margin.right;
-                const innerHeight = height - margin.top - margin.bottom;
-
-
-
-                const xScale = d3.scaleLinear()
-                    .domain([0, d3.max(data, xValue)])
-                    .range([0, innerWidth]);
-
-                const yScale = d3.scaleBand()
-                    .domain(data.map(yValue))
-                    .range([0, innerHeight])
-                    .padding(0.59);
-
-                const g = svg.append('g')
-                    .attr('transform', `translate(${margin.left},${margin.top})`);
-
-                const xAxisTickFormat = number =>
-                    d3.format('.1s')(number)
-                        .replace('G', 'B');
-
-                const xAxis = d3.axisBottom(xScale)
-                    .tickFormat(xAxisTickFormat)
-                    .tickSize(0);
-
-                g.append('g')
-                    .call(d3.axisLeft(yScale))
-                    .selectAll('.domain, .tick line')
-                    .remove();
-
-                const xAxisG = g.append('g').call(xAxis)
-                    .attr('transform', `translate(0,${innerHeight})`);
-
-                xAxisG.select('.domain').remove();
-
-                xAxisG.append('text')
-                    .attr('class', 'axis-label')
-                    .attr('y', 30)
-                    .attr('x', 100)
-                    .attr('fill', 'black')
-                    .text(xAxisLabelText);
-
-
-
-                g.selectAll('rect').data(data)
-                    .attr('fill', 'url(#linear-gradient)')
-                    .enter().append('rect')
-                    .attr('rx', 2) //圓角
-                    .attr('ry', 2) //圓角
-                    .text(function (d) {
-                        return d;
-                    })
-                    .style('fill', '#1e1e1e')
-
-                    .attr('y', d => yScale(yValue(d)))
-                    .transition()
-                    .duration(1500)
-                    .attr('width', d => xScale(xValue(d)))
-
-                    .attr('height', yScale.bandwidth());
-
-                g.append('text')
-                    .attr('class', 'title')
-                    .attr('font-size', 12)
-                    .attr('x', -50)
-                    .attr('y', 0)
-                    .text(titleText);
-
-                g.append('text')
-                    .attr('class', 'title')
-                    .attr('font-size', 11)
-                    .attr('x', 20)
-                    .attr('y', -20)
-                    .text(titleText1);
-
-            };
-
-            d3.csv('dest/latest-news/map/striat-map/col/data1.json').then(data => {
-                data.forEach(d => {
-                    d.population = +d.population * 1;
-                });
-                render(data);
-            });
-
-        }(d3));
-    </script>
-    <script>
-        //Chart.plugins.register(ChartDataSource);
-        var context = document.getElementById('chart').getContext('2d');
-        var chart = new Chart(context, {
-            type: 'line',
-            //plugins: [ChartDataSource],
-            data: {
-                labels: ['第一週', '第二週', '第三週', '第四週', '第五週', '第六週', '第七週', '第八週', '第九週', '第十週', '第十一週', '第十二週',
-                    '第十三週',
-                ], //項目中的標籤
-                datasets: [{
-                    lineTension: 0.3,
-                    label: '病例數',
-                    data: [0, 1, 0, 9, 11, 7, 1, 6, 10, 15, 66, 102, 7], //資料以陣列形式存放
-                    borderColor: "#80b6f4",
-                    pointBorderColor: "#80b6f4",
-                    pointBackgroundColor: "#80b6f4",
-                    pointHoverBackgroundColor: "#80b6f4",
-                    pointHoverBorderColor: "#80b6f4",
-                    pointBorderWidth: 0.1,
-                    pointHoverRadius: 10,
-                    pointHoverBorderWidth: 10,
-                    pointRadius: 5,
-                    fill: false,
-                    borderWidth: 1,
-                }],
-            },
-            options: {
-                maintainAspectRatio: false,
-                legend: {
-                    display: false,
-                    labels: {
-                        fontSize: 10,
-                    },
-                },
-                layout: {
-                    padding: {
-                        right: 0,
-                    },
-                },
-                animation: {
-                    duration: 1500,
-                },
-                title: {
-                    text: '2020年各周確定病例統計表--人數/周數',
-                    fontSize: 12,
-                    display: true,
-                    position: 'top',
-                },
-                scales: {
-                    labelString: '111',
-                    yAxes: [{
-                        ticks: {
-                            margin: 30,
-                            padding: 10,
-                            fontSize: 12,
-                            fontStyle: 'bold',
-                            beginAtZero: true,
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: '人數',
-                        },
-                    }],
-                    xAxes: [{
-                        ticks: {
-                            padding: 10,
-                            fontSize: 12,
-                            fontStyle: 'bold',
-                            beginAtZero: true,
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: '年周數',
-                        },
-                    }],
-                }
-            }
-        });
-
-
-        Chart.helpers.drawRoundedTopRectangle = function (ctx, x, y, width, height, radius) {
-            ctx.beginPath();
-            ctx.moveTo(x + radius, y);
-            // top right corner
-            ctx.lineTo(x + width - radius, y);
-            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-            // bottom right	corner
-            ctx.lineTo(x + width, y + height);
-            // bottom left corner
-            ctx.lineTo(x, y + height);
-            // top left	
-            ctx.lineTo(x, y + radius);
-            ctx.quadraticCurveTo(x, y, x + radius, y);
-            ctx.closePath();
-        };
-
-        Chart.elements.RoundedTopRectangle = Chart.elements.Rectangle.extend({
-            draw: function () {
-                var ctx = this._chart.ctx;
-                var vm = this._view;
-                var left, right, top, bottom, signX, signY, borderSkipped;
-                var borderWidth = vm.borderWidth;
-
-                if (!vm.horizontal) {
-                    // bar
-                    left = vm.x - vm.width / 2;
-                    right = vm.x + vm.width / 2;
-                    top = vm.y;
-                    bottom = vm.base;
-                    signX = 1;
-                    signY = bottom > top ? 1 : -1;
-                    borderSkipped = vm.borderSkipped || 'bottom';
-                } else {
-                    // horizontal bar
-                    left = vm.base;
-                    right = vm.x;
-                    top = vm.y - vm.height / 2;
-                    bottom = vm.y + vm.height / 2;
-                    signX = right > left ? 1 : -1;
-                    signY = 1;
-                    borderSkipped = vm.borderSkipped || 'left';
-                }
-
-                // Canvas doesn't allow us to stroke inside the width so we can
-                // adjust the sizes to fit if we're setting a stroke on the line
-                if (borderWidth) {
-                    // borderWidth shold be less than bar width and bar height.
-                    var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
-                    borderWidth = borderWidth > barSize ? barSize : borderWidth;
-                    var halfStroke = borderWidth / 2;
-                    // Adjust borderWidth when bar top position is near vm.base(zero).
-                    var borderLeft = left + (borderSkipped !== 'left' ? halfStroke * signX : 0);
-                    var borderRight = right + (borderSkipped !== 'right' ? -halfStroke * signX : 0);
-                    var borderTop = top + (borderSkipped !== 'top' ? halfStroke * signY : 0);
-                    var borderBottom = bottom + (borderSkipped !== 'bottom' ? -halfStroke * signY : 0);
-                    // not become a vertical line?
-                    if (borderLeft !== borderRight) {
-                        top = borderTop;
-                        bottom = borderBottom;
-                    }
-                    // not become a horizontal line?
-                    if (borderTop !== borderBottom) {
-                        left = borderLeft;
-                        right = borderRight;
-                    }
-                }
-
-                // calculate the bar width and roundess
-                var barWidth = Math.abs(left - right);
-                var roundness = this._chart.config.options.barRoundness || 0.75;
-                var radius = barWidth * roundness * 0.75;
-
-                // keep track of the original top of the bar
-                var prevTop = top;
-
-                // move the top down so there is room to draw the rounded top
-                top = prevTop + radius;
-                var barRadius = top - prevTop;
-
-                ctx.beginPath();
-                ctx.fillStyle = vm.backgroundColor;
-                ctx.strokeStyle = vm.borderColor;
-                ctx.lineWidth = borderWidth;
-
-                // draw the rounded top rectangle
-                Chart.helpers.drawRoundedTopRectangle(ctx, left, (top - barRadius + 1), barWidth, bottom -
-                    prevTop, barRadius);
-
-                ctx.fill();
-                if (borderWidth) {
-                    ctx.stroke();
-                }
-
-                // restore the original top value so tooltips and scales still work
-                top = prevTop;
-            },
-        });
-
-        Chart.defaults.roundedBar = Chart.helpers.clone(Chart.defaults.bar);
-
-        Chart.controllers.roundedBar = Chart.controllers.bar.extend({
-            dataElementType: Chart.elements.RoundedTopRectangle
-        });
-        var ctx = document.getElementById('chart2').getContext('2d');
-        var myBar = new Chart(ctx, {
-            type: 'roundedBar',
-            //plugins: [ChartDataSource],
-            data: {
-                labels: ['紐西蘭', '中國', '印尼', '日本', '澳門', '菲律賓', '卡達', '土耳其', '南非', '埃及', '加拿大', '美國', '奧地利',
-                    '捷克', '丹麥', '法國', '德國', '義大利', '西班牙', '英國'
-                ],
-                datasets: [{
-                    label: '病例數',
-                    data: [1, 11, 2, 3, 1, 5, 1, 15, 1, 10, 1, 18, 4, 3, 1, 14, 5, 5, 11,
-                        12
-                    ], //資料以陣列形式存放
-                    borderColor: "#80b6f4",
-                    backgroundColor: "#80b6f4",
-                    fill: false,
-                    borderWidth: 4,
-                }],
-            },
-            options: {
-                maintainAspectRatio: false,
-                legend: {
-                    display: false,
-                    labels: {
-                        fontSize: 12,
-                    },
-                },
-                layout: {
-                    padding: {
-                        right: 10,
-                    },
-                },
-                animation: {
-                    duration: 1500,
-                },
-                title: {
-                    text: '冠狀病毒肺炎境外移入確定病例統計-人數/國家',
-                    fontSize: 12,
-                    display: true,
-                    position: 'top',
-                },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            padding: 0,
-                            fontSize: 12,
-                            fontStyle: 'bold',
-                            beginAtZero: true,
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: '人數',
-                        },
-                    }],
-                    xAxes: [{
-                        ticks: {
-                            padding: 0,
-                            fontSize: 12,
-                            fontStyle: 'bold',
-                            beginAtZero: true,
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: '國家',
-                        },
-                    }],
-                }
-            }
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-
-            $('#itemslider').carousel({
-                interval: 3000
-            });
-
-            $('.carousel-showmanymoveone .item').each(function () {
-                var itemToClone = $(this);
-
-                for (var i = 1; i < 6; i++) {
-                    itemToClone = itemToClone.next();
-
-                    if (!itemToClone.length) {
-                        itemToClone = $(this).siblings(':first');
-                    }
-
-                    itemToClone.children(':first-child').clone()
-                        .addClass("cloneditem-" + (i))
-                        .appendTo($(this));
-                }
-            });
-        });
-    </script>
-
     <footer>
     <div class="footer">
         <ul class="list-left">
@@ -881,6 +528,17 @@
 </footer>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/dest/latest-news/latest-news.js"></script>
+    <script type="text/javascript" src="/dest/latest-news/jqueryppcustom.js"></script>
+    <script type="text/javascript" src="/dest/latest-news/jqueryelastislide.js"></script>
+    <script src="/dest/latest-news/chart.js"></script>
 
 </body>
 
