@@ -16,7 +16,7 @@ main {
 div.bread_crumbs {
     width: 100%;
     text-align: left;
-    border: 1px solid white;
+    // border: 1px solid white;
     box-sizing: border-box;
     padding: 15px 0 15px 80px;
     font-size: 20px;
@@ -31,7 +31,7 @@ div.bread_crumbs a {
 div.bread_crumbs a span {
     font-size: 18px;
     color: rgb(207, 207, 207);
-    border: white 1px solid;
+    // border: white 1px solid;
     padding: 0 5px;
     margin: 0 10px;
 }
@@ -40,19 +40,19 @@ div.bread_crumbs a span {
 div.marquee_container {
     width: 100%;
     overflow: hidden;
-    border: 1px solid whitesmoke;
+    // border: 1px solid whitesmoke;
     padding: 10px 0;
     box-sizing: border-box;
     background-image: url("/dev/image/forum/marquee.png");
     background-size: contain;
-    filter: grayscale(0.3);
+    filter: grayscale(0.4);
 }
 
 p.marquee_text {
     color: whitesmoke;
     font-size: 18px;
     font-weight: bold;
-    animation: marquee 20s linear infinite;
+    animation: marquee 25s linear infinite;
     white-space: nowrap;
     text-shadow: 0.04em 0.04em black;
 }
@@ -62,27 +62,27 @@ p.marquee_text {
         transform: translateX(100%);
     }
     100% {
-        transform: translateX(-30%);
+        transform: translateX(-45%);
     }
 }
 
 // 左邊filter
 aside.filter {
     width: 20%;
-    border: whitesmoke 1px solid;
+    // border: whitesmoke 1px solid;
     box-sizing: border-box;
     display: inline-block;
     background-color: rgb(43, 43, 43);
     font-size: 0;
     text-align: center;
-    padding: 30px 0 50px;
+    padding: 30px 0 55px;
 }
 
 div.filter_order {
     width: 100%;
     display: inline-block;
     box-sizing: border-box;
-    border: 1px solid whitesmoke;
+    // border: 1px solid whitesmoke;
     margin-bottom: 20px;
 }
 
@@ -94,7 +94,7 @@ div.filter_order>div {
 
 div.filter_order img {
     width: 40px;
-    border: 1px solid whitesmoke;
+    // border: 1px solid whitesmoke;
 }
 
 div.filter_order a {
@@ -103,19 +103,14 @@ div.filter_order a {
 }
 
 div.filter_order h2 {
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     text-align: left;
-    border: whitesmoke 1px solid;
+    // border: whitesmoke 1px solid;
     letter-spacing: 1px;
     display: inline-block;
     vertical-align: top;
-    padding: 7px 15px;
-}
-
-div.filter_order div a.-on h2 {
-    color: yellow;
-    font-weight: bolder;
+    padding: 10px 15px
 }
 
 aside.filter h3 {
@@ -135,6 +130,15 @@ aside.filter hr {
     border: 0.5px solid rgb(151, 151, 151);
 }
 
+div.filter_order div a.-on h2 {
+    color: yellow;
+}
+
+div.filter_order a.-on h3 {
+    background-color: rgb(207, 207, 207);
+    color: rgb(43, 43, 43);
+}
+
 // 右邊section幻燈片 
 section.top_slide_container {
     box-sizing: border-box;
@@ -145,6 +149,87 @@ section.top_slide_container {
     vertical-align: top;
     height: 580px;
     background-color: whitesmoke;
+    position: relative;
+    div.post {
+        // border: 1px solid black;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        text-align: center;
+        img.moon {
+            width: 50px;
+            position: relative;
+            left: 55px;
+            top: 25px;
+            z-index: 0;
+            transform: rotate(30deg);
+        }
+    }
+    textarea {
+        background-color: black;
+        border: unset;
+        font-size: 22px;
+        padding: 20px;
+        border-radius: 20px;
+        letter-spacing: 2px;
+        color: whitesmoke;
+        width: 50%;
+        resize: none;
+        position: relative;
+        z-index: 20;
+    }
+    textarea::-webkit-input-placeholder {
+        color: whitesmoke;
+    }
+    textarea:-moz-placeholder {
+        /* Firefox 18- */
+        color: whitesmoke;
+    }
+    textarea::-moz-placeholder {
+        /* Firefox 19+ */
+        color: whitesmoke;
+    }
+    textarea:-ms-input-placeholder {
+        color: whitesmoke;
+    }
+    textarea::placeholder {
+        color: whitesmoke;
+    }
+    label {
+        width: 35px;
+        z-index: 20;
+        vertical-align: top;
+        position: relative;
+        right: 60px;
+        top: 20px;
+        cursor: pointer;
+    }
+    label img {
+        width: 35px;
+        padding: 3px 5px;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        background-color: whitesmoke;
+        z-index: 0;
+    }
+    input {
+        opacity: 0;
+        width: 40px;
+    }
+    button {
+        background-color: black;
+        border: unset;
+        font-size: 22px;
+        color: whitesmoke;
+        padding: 17px 30px;
+        border-radius: 20px;
+        letter-spacing: 2px;
+        vertical-align: top;
+        cursor: pointer;
+        position: relative;
+        right: 30px;
+    }
 }
 
 #canvas {
@@ -156,7 +241,7 @@ section.top_slide_container {
 // section 中間文章內容
 section.content_container {
     width: 90%;
-    border: 1px solid whitesmoke;
+    // border: 1px solid whitesmoke;
     margin: 0 auto;
     text-align: center;
 }
@@ -204,7 +289,7 @@ div.article_container3 {
     display: inline-block;
     vertical-align: top;
     margin: 0 20px;
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 
 div.article_container1>div {
@@ -277,13 +362,13 @@ img.thum_img {
 }
 
 div.info {
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 h4.username {
     font-size: 20px;
     color: rgb(146, 146, 146);
-    border: 1px solid black;
+    // border: 1px solid black;
     display: inline-block;
     vertical-align: top;
     margin-top: 12px;
@@ -306,7 +391,7 @@ img.main_img {
 h4.like_comment {
     font-size: 20px;
     color: rgb(146, 146, 146);
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-top: 5px;
 }
 
@@ -339,7 +424,7 @@ img.heart {
 // 頁面切換列
 div.navigator {
     width: 70%;
-    border: 1px solid white;
+    // border: 1px solid white;
     margin: 20px auto;
 }
 

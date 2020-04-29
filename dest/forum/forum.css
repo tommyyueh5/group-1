@@ -404,7 +404,6 @@ main {
 div.bread_crumbs {
   width: 100%;
   text-align: left;
-  border: 1px solid white;
   box-sizing: border-box;
   padding: 15px 0 15px 80px;
   font-size: 20px;
@@ -417,25 +416,23 @@ div.bread_crumbs a {
 div.bread_crumbs a span {
   font-size: 18px;
   color: #cfcfcf;
-  border: white 1px solid;
   padding: 0 5px;
   margin: 0 10px; }
 
 div.marquee_container {
   width: 100%;
   overflow: hidden;
-  border: 1px solid whitesmoke;
   padding: 10px 0;
   box-sizing: border-box;
   background-image: url("/dev/image/forum/marquee.png");
   background-size: contain;
-  filter: grayscale(0.3); }
+  filter: grayscale(0.4); }
 
 p.marquee_text {
   color: whitesmoke;
   font-size: 18px;
   font-weight: bold;
-  animation: marquee 20s linear infinite;
+  animation: marquee 25s linear infinite;
   white-space: nowrap;
   text-shadow: 0.04em 0.04em black; }
 
@@ -443,23 +440,21 @@ p.marquee_text {
   0% {
     transform: translateX(100%); }
   100% {
-    transform: translateX(-30%); } }
+    transform: translateX(-45%); } }
 
 aside.filter {
   width: 20%;
-  border: whitesmoke 1px solid;
   box-sizing: border-box;
   display: inline-block;
   background-color: #2b2b2b;
   font-size: 0;
   text-align: center;
-  padding: 30px 0 50px; }
+  padding: 30px 0 55px; }
 
 div.filter_order {
   width: 100%;
   display: inline-block;
   box-sizing: border-box;
-  border: 1px solid whitesmoke;
   margin-bottom: 20px; }
 
 div.filter_order > div {
@@ -468,26 +463,20 @@ div.filter_order > div {
   text-align: center; }
 
 div.filter_order img {
-  width: 40px;
-  border: 1px solid whitesmoke; }
+  width: 40px; }
 
 div.filter_order a {
   text-decoration: none;
   color: unset; }
 
 div.filter_order h2 {
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   text-align: left;
-  border: whitesmoke 1px solid;
   letter-spacing: 1px;
   display: inline-block;
   vertical-align: top;
-  padding: 7px 15px; }
-
-div.filter_order div a.-on h2 {
-  color: yellow;
-  font-weight: bolder; }
+  padding: 10px 15px; }
 
 aside.filter h3 {
   color: whitesmoke;
@@ -503,6 +492,13 @@ aside.filter hr {
   width: 60%;
   border: 0.5px solid #979797; }
 
+div.filter_order div a.-on h2 {
+  color: yellow; }
+
+div.filter_order a.-on h3 {
+  background-color: #cfcfcf;
+  color: #2b2b2b; }
+
 section.top_slide_container {
   box-sizing: border-box;
   width: calc(100% - 20%);
@@ -510,7 +506,75 @@ section.top_slide_container {
   font-size: 20px;
   vertical-align: top;
   height: 580px;
-  background-color: whitesmoke; }
+  background-color: whitesmoke;
+  position: relative; }
+  section.top_slide_container div.post {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center; }
+    section.top_slide_container div.post img.moon {
+      width: 50px;
+      position: relative;
+      left: 55px;
+      top: 25px;
+      z-index: 0;
+      transform: rotate(30deg); }
+  section.top_slide_container textarea {
+    background-color: black;
+    border: unset;
+    font-size: 22px;
+    padding: 20px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    color: whitesmoke;
+    width: 50%;
+    resize: none;
+    position: relative;
+    z-index: 20; }
+  section.top_slide_container textarea::-webkit-input-placeholder {
+    color: whitesmoke; }
+  section.top_slide_container textarea:-moz-placeholder {
+    /* Firefox 18- */
+    color: whitesmoke; }
+  section.top_slide_container textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: whitesmoke; }
+  section.top_slide_container textarea:-ms-input-placeholder {
+    color: whitesmoke; }
+  section.top_slide_container textarea::placeholder {
+    color: whitesmoke; }
+  section.top_slide_container label {
+    width: 35px;
+    z-index: 20;
+    vertical-align: top;
+    position: relative;
+    right: 60px;
+    top: 20px;
+    cursor: pointer; }
+  section.top_slide_container label img {
+    width: 35px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    background-color: whitesmoke;
+    z-index: 0; }
+  section.top_slide_container input {
+    opacity: 0;
+    width: 40px; }
+  section.top_slide_container button {
+    background-color: black;
+    border: unset;
+    font-size: 22px;
+    color: whitesmoke;
+    padding: 17px 30px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    vertical-align: top;
+    cursor: pointer;
+    position: relative;
+    right: 30px; }
 
 #canvas {
   width: 100%;
@@ -519,7 +583,6 @@ section.top_slide_container {
 
 section.content_container {
   width: 90%;
-  border: 1px solid whitesmoke;
   margin: 0 auto;
   text-align: center; }
 
@@ -559,8 +622,7 @@ div.article_container3 {
   width: 30%;
   display: inline-block;
   vertical-align: top;
-  margin: 0 20px;
-  border: 1px solid red; }
+  margin: 0 20px; }
 
 div.article_container1 > div {
   width: 90%;
@@ -621,13 +683,9 @@ h4.month {
 img.thum_img {
   width: 40px; }
 
-div.info {
-  border: 1px solid black; }
-
 h4.username {
   font-size: 20px;
   color: #929292;
-  border: 1px solid black;
   display: inline-block;
   vertical-align: top;
   margin-top: 12px; }
@@ -646,7 +704,6 @@ img.main_img {
 h4.like_comment {
   font-size: 20px;
   color: #929292;
-  border: 1px solid black;
   margin-top: 5px; }
 
 h4.function,
@@ -672,7 +729,6 @@ img.heart {
 
 div.navigator {
   width: 70%;
-  border: 1px solid white;
   margin: 20px auto; }
 
 div.navigator ul li {
