@@ -1,0 +1,27 @@
+// RWD斷點
+$desktop: 1200px;
+$medium: 991px;
+$small: 767px;
+$mobile: 576px;
+// RWD斷點
+
+@mixin rwd($breakpoint) {
+    @if $breakpoint == desktop {
+        @media all and (max-width: $desktop) {
+            @content;
+        }
+    } @else if $breakpoint == medium {
+        @media all and (max-width: $medium) {
+            
+            @content;
+        }
+    } @else if $breakpoint == small {
+        @media all and (max-width: $small) {
+            @content;
+        }
+    } @else if $breakpoint == mobile {
+        @media all and (max-width: $mobile) {
+            @content;
+        }
+    }
+}

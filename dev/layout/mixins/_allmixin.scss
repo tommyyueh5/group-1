@@ -1,10 +1,13 @@
 $fontSize: 14px;
+$icon_fs:25px;
 $haedFs: 20px;
 $headColor: #0e1c36;
 $color: rgba(60, 65, 70, 1);
 $bgc: #0e1c36;
 $bgc-h: #c2dfe3;
 $fontFamily: "arial" san-serif;
+$headerH:100px;
+$title-font:24px;
 
 $btn-level: (
     level1: btn1,
@@ -20,12 +23,15 @@ $btn-color2: #c2dfe3;
 $btn-color3: #0e1c36;
 $btn-color4: #ffffff;
 $btn-color5: #bdbbb0;
+
+
+
 @mixin marginAuto() {
     margin: 0 auto;
 }
-//header我又欄位寬度
+//header左右欄位平衡寬度
 @mixin header-balance() {
-    width: 150px;
+    // width:100px;
 }
 
 @mixin theme_brand($brand) {

@@ -1,11 +1,24 @@
 @import "../../layout/base/var";
-.bgc{
-    background-color: rgba(0,0,0,.5);
-    width: 100%;
-    height: 100vh;
-    .box-shadow{
-        
-        
-
+body {
+    position: relative;
+    .bgc {
+        position: absolute;
+        background-color: #333333;
+        width: 100%;
+        height: 100vh;
+        .box-shadow {
+            
+            @include HandV_center(50%,50%);
+            @include shadow-box-black()
+        }
+    }
+    @include rwd(desktop) {
+    }
+    @include rwd(medium) {
+    }
+    @include rwd(small) {
+    }
+    @include rwd(mobile) {
     }
 }
+

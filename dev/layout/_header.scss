@@ -1,48 +1,106 @@
 @import "../layout/mixins/allmixin";
 @import "../layout/modules/btn";
 header {
-    background-color: #191919;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    z-index: 1;
-    div.nothing {
-        @include header-balance();
-        height: 50px;
-    }
-    ul.list-title {
+    flex-direction: column;
+    align-items: center;
+    z-index: 99999;
+    div.nav_bar {
+        position: relative;
+        transition: top 0.3s linear;
+        color: whitesmoke;
+        width: 100%;
+        background-image: url("/dest/image/index/background/black_background.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
         display: flex;
-        align-items: center;
-        li {
-            margin: 0 25px;
+        div.logo {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            a {
+                background-image: url("/dest/image/title/logo-text.png");
+                width: 300px;
+                height: 70px;
+                display: block;
+                background-position: center center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
         }
-        li.logo > a {
-            display: block;
-            background-image: url(/dev/image/title/logo-image.png);
-            background-position: center center;
-            background-size: cover;
-            width: 40px;
-            height: 40px;
-        }
-        li a {
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            color: rgba(230, 230, 230, 1);
+        div.fuction_btn_right {
+            z-index: 999;
+            position: absolute;
+            top: 50%;
+            left: 88%;
+            transform: translateY(-50%);
+            i {
+                cursor: pointer;
+                font-size: $icon_fs;
+                margin-right: 20px;
+            }
+            div.points {
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+            }
+            div.login_car {
+                display: flex;
+            }
         }
     }
-    div.fuction {
-        @include header-balance();
+    ul.title_list {
         display: flex;
-        flex-direction: column;
+        position: relative;
         align-items: center;
         justify-content: center;
-        color: whitesmoke;
-        cursor: pointer;
-        div {
-            height: 25px;
+        width: 100%;
+        background-color: $btn-color3;
+        li {
+            margin: 10px 15px;
+            a {
+                text-decoration: none;
+                color: black;
+                font-size: 20px;
+                color: rgba(230, 230, 230, 1);
+                letter-spacing: 3px;
+            }
+        }
+        form.fuction_search {
+            position: absolute;
+            top: 50%;
+            left: 88.2%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            i.icofont-search {
+                font-weight: bold;
+                margin-right: 15px;
+                color: white;
+                font-size: $icon_fs;
+                cursor: pointer;
+            }
+            input {
+                background-color: transparent;
+                box-shadow: 0 0 3px rgba(255, 255, 255, 9);
+                padding-left: 10px;
+                color: white;
+                border: none;
+                border-radius: 15px;
+                width: 0;
+                transition: all 0.5s linear;
+                opacity: 0;
+            }
+            input.on {
+                opacity: 1;
+                width: 100px;
+            }
         }
     }
     div.login-Bg.on {
@@ -51,26 +109,30 @@ header {
     div.login-Bg {
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 0;
+        // background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(51, 51, 51, 1);
         z-index: 1;
         position: fixed;
         display: none;
-
         .login-Box {
-            @include shadow-botton-black();
+            @include shadow-box-black();
             position: absolute;
             width: 400px;
             height: 400px;
             border-radius: 10px;
             background-color: $color;
-
-            @include HandV_center(35%, 50%);
+            @include HandV_center(35%,
+            50%);
             .sign-title {
                 font-size: 0px;
                 text-align: center;
                 display: inline-block;
                 margin: 15px 0;
-                transform: translateX(50%);
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
                 h1 {
                     cursor: pointer;
                     font-size: 30px;
@@ -83,7 +145,6 @@ header {
                     }
                 }
             }
-
             div.X {
                 cursor: pointer;
                 position: absolute;

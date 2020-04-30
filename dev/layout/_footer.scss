@@ -1,8 +1,6 @@
 footer {
-    // position: absolute;
-    bottom: 0;
     width: 100%;
-    background-color: #191919;
+    background-color: $btn-color1;
     z-index: -1;
     div.footer {
         padding: 25px 0;
@@ -49,13 +47,6 @@ footer {
                             line-height: 25px;
                         }
                     }
-                }
-            }
-            form{
-                input.email{
-                }
-                input.email-on{
-
                 }
             }
         }

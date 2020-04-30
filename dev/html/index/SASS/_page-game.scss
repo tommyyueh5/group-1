@@ -1,0 +1,179 @@
+.merge-game-Carousel {
+    // width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    // background-color: #f0f;
+
+    //遊戲頁面
+    .game-container {
+        width: 100%;
+        height: 65%;
+        position: relative;
+
+        >.game-background {
+            width: 100%;
+            height: 100%;
+            background: url('/dev/image/index-game-page/covid-19.gif') center center;
+            background-size: cover;
+ 
+
+
+            //遊戲圖片 background-image: url();
+
+            >.context {
+                position: absolute;
+                left: 50%;
+                top: 40%;
+                transform: translate(-50%, -40%);
+                width: 50%;
+                height: 20%;
+                // background-color: #000;
+                padding: 10px 20px;
+
+                >p {
+                    text-align: center;
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: whitesmoke;
+                    letter-spacing: 1px;
+                    line-height: 1.5;
+                    text-shadow: 0 1px 1px #fff;
+                }
+            }
+
+            >.game-btn {
+                width: 150px;
+                height: 50px;
+                position: absolute;
+                left: 50%;
+                top: 90%;
+                transform: translate(-50%, -60%);
+                border-radius: 40%;
+                // overflow: hidden;
+
+                >a {
+                    display: inline-block;
+                    text-decoration: none;
+                    padding: 0;
+                    border-radius: 50px;
+                    background-color: #e5e5e5;
+                    margin: auto;
+                    height: 100%;
+                    width: 100%;
+                    box-shadow:
+                        rgba(70, 70, 70, 0.4) 3px 3px 4px,
+                        rgba(255, 255, 255, 1) -3px -3px 15px;
+                    text-align: center;
+                    outline: none;
+                    border: none;
+                    
+
+                    &:hover {
+                        box-shadow:
+                            inset rgba(70, 70, 70, 0.4) 3px 3px 4px,
+                            inset rgba(255, 255, 255, 1) -3px -3px 4px;
+                    }
+
+                    >p.btn-text {
+                        margin: 0;
+                        font: bold 24px arial, sans-serif;
+                        line-height: 50px;
+                        background-color: #dedede;
+                        color: #414141;
+                        text-shadow:
+                            rgba(70, 70, 70, 0.4) 2px 2px 5px,
+                            rgba(255, 255, 255, 1) -2px -2px 5px;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -moz-background-clip: text;
+                    }
+
+                    &:hover .btn-text {
+                        text-shadow:
+                            rgba(70, 70, 70, 0.4) 2px 2px 4px,
+                            rgba(255, 255, 255, 1) -2px -2px 4px;
+                        font-size: 24px;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+
+
+    //輪播商品
+    .Carousel {
+        width: 100%;
+        height: 35%;
+        background-color: #000;
+
+        >.title {
+            width: 35%;
+            height: 10%;
+            text-align: center;
+
+            p {
+                font-size: 24px;
+                line-height: 1.3;
+                letter-spacing: 1px;
+                color: #fff;
+            }
+        }
+
+        //商品頁面
+        >.Carousel-Container {
+            max-width: 100%;
+            height: 90%;
+            padding: 30px 0;
+            box-sizing: border-box;
+            position: relative;
+            // background-color: #f00;
+
+            >.swiper-container-games {
+                width: 100%;
+                height: 100%;
+                // background-color: #f0f;
+                // margin: 0 auto;
+
+                >.swiper-wrapper {
+                    width: 100%;
+                    height: 100%;
+                    // background-color: #f0f;
+                    
+
+                    >.swiper-slide {
+                        // height: 100%;
+                        text-align: center;
+                        font-size: 18px;
+                        background: #fff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 5px;
+
+                        >a {
+                            display: inline-block;
+                            // width: inherit;
+                            // height: inherit;
+                            width: 100%;
+                            height: 100%;
+                            // background-color: #ff00ff;
+                            >img {
+
+                                width: 100%;
+                                height: 100%;
+                                // object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+            .swiper-pagination-bullets-dynamic{
+                padding: 15px 0 ;
+                margin: 0 auto;
+                left: none; 
+                 transform: none; 
+            }
+        }
+    }
+}
