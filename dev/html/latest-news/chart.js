@@ -98,8 +98,8 @@
                     .text(titleText1);
 
             };
-
-            d3.csv('./map/striat-map/col/data1.json').then(data => {
+            
+            d3.csv('/dest/latest-news/map/striat-map/col/data1.json').then(data => {
                 data.forEach(d => {
                     console.log(d);
                     d.population = +d.population * 1;
