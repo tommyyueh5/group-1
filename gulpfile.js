@@ -93,24 +93,16 @@ gulp.task('default', function() {
             // index: "dest/Back_End/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP/Epidemic-prevention-SOP.html"
             // index: "dest/btn-style/btn-style.html"
-            // index: "dest/diseaseHistory/diseaseHistory.html"
+            index: "dest/diseaseHistory/diseaseHistory.html"
             // index: "dest/game/game.html"
-<<<<<<< HEAD
             //index: "dest/Epidemic-shop/Epidemic-shop.html"
-            index: "dest/forum/forum.html"
-                // index: "dest/member/member.html"
-                // index: "dest/infectious-Diseases/infectious-Diseases.hmtl"
-                //  index: "dest/latest-news/latest-news.html"
-                // index: "dest/welcome.welcome.html"
-                // index: "dest/btn-style/btn-style.html"
-
-=======
             // index: "dest/forum/forum.html"
-            index: "dest/member/member.html"
+            // index: "dest/member/member.html"
             // index: "dest/infectious-Diseases/infectious-Diseases.hmtl"
-            // index: "dest/welcome/welcome.html"
-            // index: "dest/latest-news/latest-news.html"
->>>>>>> 87f14f328253d90d60d7255919395faefaf6e8f0
+            //  index: "dest/latest-news/latest-news.html"
+            // index: "dest/welcome.welcome.html"
+            // index: "dest/btn-style/btn-style.html"
+
         }
     });
 
