@@ -14,497 +14,27 @@
 
 >>>>>>> 713ab601f474a3d1bef2f4bca761f8cdcac797fd
 
-    <!-- <style>
-        .demo-1 .elastislide-horizontal {
-            padding: 10px 37px;
-            border-radius: 10px/90px;
-            box-shadow:
-                0 1px 3px rgba(0, 0, 0, 0.1),
-                inset -2px 0 3px 2px rgba(255, 255, 255, 0.6),
-                inset 2px 0 3px 2px rgba(255, 255, 255, 0.6),
-                inset -10px 0 10px 1px rgba(155, 155, 155, 0.1),
-                inset 10px 0 10px 1px rgba(155, 155, 155, 0.1);
-        }
-
-        .demo-1 .elastislide-wrapper:before,
-        .demo-1 .elastislide-wrapper:after {
-            content: '';
-            position: absolute;
-            z-index: -2;
-            bottom: 15px;
-            left: 20px;
-            width: 50%;
-            height: 20%;
-            border-radius: 10px/90px;
-            box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
-            -webkit-transform: rotate(-3deg);
-            -moz-transform: rotate(-3deg);
-            -ms-transform: rotate(-3deg);
-            -o-transform: rotate(-3deg);
-            transform: rotate(-3deg);
-        }
-
-        .demo-1 .elastislide-wrapper:after {
-            right: 20px;
-            left: auto;
-            -webkit-transform: rotate(3deg);
-            -moz-transform: rotate(3deg);
-            -ms-transform: rotate(3deg);
-            -o-transform: rotate(3deg);
-            transform: rotate(3deg);
-        }
-
-        .demo-2 .elastislide-vertical {
-            max-width: 170px;
-            padding: 37px 10px;
-            border-radius: 90px/10px;
-            box-shadow:
-                0 1px 3px rgba(0, 0, 0, 0.1),
-                inset -2px 0 3px 2px rgba(255, 255, 255, 0.6),
-                inset 2px 0 3px 2px rgba(255, 255, 255, 0.6),
-                inset 0 -10px 10px 1px rgba(155, 155, 155, 0.1),
-                inset 0 10px 10px 1px rgba(155, 155, 155, 0.1);
-        }
-
-        .demo-2 .elastislide-vertical:before {
-            top: 30px;
-            bottom: 30px;
-            left: 0;
-            right: 0;
-            content: " ";
-            position: absolute;
-            z-index: -2;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-            border-radius: 20px/160px;
-        }
-
-        .demo-2 .elastislide-vertical:after {
-            content: " ";
-            position: absolute;
-            z-index: -2;
-        }
-
-        .demo-3 .elastislide-horizontal {
-            background-color: #000;
-            padding: 30px 60px;
-        }
-
-        .no-touch .demo-3 .elastislide-horizontal {
-            opacity: 0.8;
-            -webkit-transition: opacity 0.3s ease-in-out;
-            -moz-transition: opacity 0.3s ease-in-out;
-            -ms-transition: opacity 0.3s ease-in-out;
-            -o-transition: opacity 0.3s ease-in-out;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .no-touch .demo-3 .elastislide-horizontal:hover {
-            opacity: 1;
-        }
-
-        .demo-3 .elastislide-wrapper nav span {
-            background-color: #000;
-        }
-
-        .demo-3 .elastislide-carousel ul li a {
-            padding: 0 10px;
-        }
-
-        .demo-3 .elastislide-carousel ul li a video {
-            border-radius: 10px;
-            border: none;
-        }
-
-        .demo-4 .elastislide-horizontal {
-            background-color: transparent;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .demo-3 .elastislide-horizontal.elastislide-loading,
-        .demo-4 .elastislide-horizontal.elastislide-loading {
-            background-image: url(./dev/html/latest-news/img/loading_dark.gif);
-        }
-
-        .demo-4 .elastislide-carousel ul li a {
-            padding: 2px;
-        }
-
-        .demo-4 .elastislide-carousel ul li a video {
-            border-radius: 10px;
-            border: none;
-            box-shadow: 0 1px 2px #000;
-        }
-
-        .demo-4 .elastislide-wrapper nav span {
-            background-color: #666;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
-        }
-
-        .demo-4 .image-preview video {
-
-            max-width: 100%;
-            display: block;
-        }
-
-        .demo-4 .elastislide-carousel ul li.current-img a video {
-            box-shadow: 0 0 3px 2px rgba(62, 235, 255, 0.8);
-        }
-
-        @media screen and (max-width: 460px) {
-            .demo-3 .elastislide-horizontal {
-                padding: 10px 40px;
-            }
-        }
-
-
-        /* General Demo Style */
-        @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-
-        html {
-            height: 100%;
-        }
-
-        *,
-        *:after,
-        *:before {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-        .clearfix:before,
-        .clearfix:after {
-            content: " ";
-            /* 1 */
-            display: table;
-            /* 2 */
-        }
-
-        .clearfix:after {
-            clear: both;
-        }
-
-        .clearfix {
-            *zoom: 1;
-        }
-
-        body {
-            font-family: 'Lato', Calibri, Arial, sans-serif;
-            background: #ddd url(./img/bg.jpg) repeat top left;
-            font-weight: 300;
-            font-size: 15px;
-            color: #333;
-            -webkit-font-smoothing: antialiased;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-        }
-
-        a {
-            color: #555;
-            text-decoration: none;
-        }
-
-        .container {
-            width: 100%;
-            position: relative;
-        }
-
-        .clr {
-            clear: both;
-            float: none;
-        }
-
-        .main {
-            width: 100%;
-            /* max-width: 960px; */
-            padding: 0 10px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .main>header {
-            padding: 40px 0;
-        }
-
-        .main>header h1 {
-            font-size: 34px;
-            line-height: 38px;
-            margin: 0;
-            font-weight: 700;
-            color: #333;
-            float: left;
-        }
-
-        .main>header h1 span {
-            display: block;
-            font-size: 20px;
-            font-weight: 300;
-        }
-
-        .main p {
-            padding: 30px 0 0;
-            text-align: center;
-            font-weight: 400;
-            line-height: 22px;
-        }
-
-        /* Header Style */
-        .codrops-top {
-            line-height: 24px;
-            font-size: 11px;
-            background: #fff;
-            background: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            z-index: 9999;
-            position: relative;
-            font-family: Cambria, Georgia, serif;
-            box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .codrops-top a {
-            padding: 0px 10px;
-            letter-spacing: 1px;
-            color: #333;
-            text-shadow: 0 -1px 0 #fff;
-            display: inline-block;
-        }
-
-        .codrops-top a:hover {
-            background: rgba(255, 255, 255, 0.8);
-            color: #000;
-        }
-
-        .codrops-top span.right {
-            float: right;
-        }
-
-        .codrops-top span.right a {
-            float: left;
-            display: block;
-        }
-
-        /* Demo Buttons Style */
-        .codrops-demos {
-            float: right;
-            clear: none;
-            padding-top: 10px;
-        }
-
-        .codrops-demos a {
-            display: inline-block;
-            margin: 10px 10px 10px 0;
-            color: #666;
-            font-weight: 700;
-            line-height: 30px;
-            border-bottom: 4px solid transparent;
-        }
-
-        .codrops-demos a:hover {
-            color: #000;
-            border-color: #000;
-        }
-
-        .codrops-demos a.current-demo,
-        .codrops-demos a.current-demo:hover {
-            color: #aaa;
-            border-color: #aaa;
-        }
-
-        .column {
-            width: 50%;
-            float: left;
-            padding: 20px;
-            min-height: 300px;
-        }
-
-        .column p {
-            text-align: left;
-        }
-
-        .column-20 {
-            width: 20%;
-        }
-
-        .column-80 {
-            width: 80%;
-        }
-
-        .js .fixed-bar {
-            position: fixed;
-            width: 100%;
-            left: 0;
-            bottom: 0;
-        }
-
-        .js .gallery {
-            width: 100%;
-            /* max-width: 450px; */
-            margin: 0 auto;
-            border-radius: 20px;
-            position: relative;
-            background: #000 url(./img/black_denim.png);
-            box-shadow: 0 2px 1px rgba(255, 255, 255, 0.9), 0 -2px 1px rgba(255, 255, 255, 0.9);
-        }
-
-        .lt-ie8 .elastislide-list {
-            display: none;
-        }
-
-        @media screen and (max-width: 690px) {
-            .codrops-demos {
-                float: left;
-                clear: both;
-            }
-        }
-
-
-        /* Elastislide Style */
-
-        .elastislide-list {
-            list-style-type: none;
-            display: none;
-        }
-
-        .no-js .elastislide-list {
-            display: block;
-        }
-
-        .elastislide-carousel ul li {
-            min-width: 20px;
-            /* minimum width of the image (min width + border) */
-        }
-
-        .elastislide-wrapper {
-            position: relative;
-            background-color: #fff;
-            margin: 0 auto;
-            min-height: 60px;
-            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .elastislide-wrapper.elastislide-loading {
-            background-image: url(./img/loading.gif);
-            background-repeat: no-repeat;
-            background-position: center center;
-        }
-
-        .elastislide-horizontal {
-            padding: 10px 40px;
-        }
-
-        .elastislide-vertical {
-            padding: 40px 10px;
-        }
-
-        .elastislide-carousel {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .elastislide-carousel ul {
-            position: relative;
-            display: block;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            backface-visibility: hidden;
-            -webkit-transform: translateX(0px);
-            -moz-transform: translateX(0px);
-            -ms-transform: translateX(0px);
-            -o-transform: translateX(0px);
-            transform: translateX(0px);
-        }
-
-        .elastislide-horizontal ul {
-            white-space: nowrap;
-        }
-
-        .elastislide-carousel ul li {
-            margin: 0;
-            backface-visibility: hidden;
-        }
-
-        .elastislide-horizontal ul li {
-            height: 100%;
-            display: inline-block;
-        }
-
-        .elastislide-vertical ul li {
-            display: block;
-        }
-
-        .elastislide-carousel ul li a {
-            display: inline-block;
-            width: 100%;
-        }
-
-        .elastislide-carousel ul li a video {
-            display: block;
-            border: 2px solid white;
-            max-width: 100%;
-        }
-
-        /* Navigation Arrows */
-
-        .elastislide-wrapper nav span {
-            position: absolute;
-            background: #ddd url(./img/nav.png) no-repeat 4px 3px;
-            width: 23px;
-            height: 23px;
-            border-radius: 50%;
-            text-indent: -9000px;
-            cursor: pointer;
-            opacity: 0.8;
-        }
-
-        .elastislide-wrapper nav span:hover {
-            opacity: 1.0
-        }
-
-        .elastislide-horizontal nav span {
-            top: 50%;
-            left: 10px;
-            margin-top: -11px;
-        }
-
-        .elastislide-vertical nav span {
-            top: 10px;
-            left: 50%;
-            margin-left: -11px;
-            background-position: -17px 5px;
-        }
-
-        .elastislide-horizontal nav span.elastislide-next {
-            right: 10px;
-            left: auto;
-            background-position: 4px -17px;
-        }
-
-        .elastislide-vertical nav span.elastislide-next {
-            bottom: 10px;
-            top: auto;
-            background-position: -17px -18px;
-        }
-    </style> -->
 </head>
 
 <body>
+    <!-- ----------------------------header---------------------------------- -->
     @@include('../../layout/header.html')
+    <!-- ----------------------------header---------------------------------- -->
+
+    <!-- ----------------------------breadcrumb------------------------------ -->
+
     <main>
+
         <div class="breadcrumb">
             <ol class="breadcrumb_list">
                 <li>
                     <a href="#">
-                        <p>Home</p>
+                        <p>首頁</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <p>News</p>
+                        <p>最新消息</p>
                     </a>
                 </li>
                 <!-- <li>
@@ -514,14 +44,22 @@
                 </li> -->
             </ol>
         </div>
+<<<<<<< HEAD
         <!-- ----------------------------影片------------------------------ -->
 <<<<<<< HEAD
+=======
+>>>>>>> new
 
+
+        <!-- ----------------------------breadcrumb------------------------------ -->
+
+        <!-- ----------------------------video------------------------------ -->
         <div class="main">
 
             <div class="gallery">
 
                 <div class="image-preview">
+<<<<<<< HEAD
                     <video id="preview" width="50%" controls>
 =======
 
@@ -533,95 +71,67 @@
                     <video id="preview" width="100%" controls>
 >>>>>>> 713ab601f474a3d1bef2f4bca761f8cdcac797fd
                         <source src="/dest/image/latest-news/4.mp4" type="video/mp4">
+=======
+
+                    <video id="preview" width="100%" height="600" controls>
+                        <source src="/dest/image/latest-news/01.mp4" type="video/mp4">
+>>>>>>> new
                     </video>
+
                 </div>
                 <!-- Elastislide Carousel -->
                 <ul id="carousel" class="elastislide-list">
 
-                    <li data-preview="/dest/image/latest-news/4.mp4">
+                    <li data-preview="/dest/image/latest-news/01.mp4">
                         <a href="#">
-                            <video src="/dest/image/latest-news/4.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
+
+                            <video class="video1" src="/dest/image/latest-news/01.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/01.mp4" type="video/mp4">
+                            </video>
+                            
+
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/02.mp4">
+                        <a href="#">
+                            
+                                <video src="/dest/image/latest-news/02.mp4">
+                                    <source alt="image04" src="/dest/image/latest-news/02.mp4" type="video/mp4">
+                                </video>
+                        
+                        </a>
+                    </li>
+                    <li data-preview="/dest/image/latest-news/03.mp4">
+                        <a href="#">
+                            <video class="video3" src="/dest/image/latest-news/03.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/03.mp4" type="video/mp4">
                             </video>
                         </a>
                     </li>
-                    <li data-preview="/dest/image/latest-news/5.mp4">
+                    <li data-preview="/dest/image/latest-news/04.mp4">
                         <a href="#">
-                            <video src="/dest/image/latest-news/5.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
+                            <video class="video1" src="/dest/image/latest-news/04.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/04.mp4" type="video/mp4">
                             </video>
                         </a>
                     </li>
-                    <li data-preview="/dest/image/latest-news/4.mp4">
+                    <li data-preview="/dest/image/latest-news/05.mp4">
                         <a href="#">
-                            <video src="/dest/image/latest-news/4.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
+                            <video src="/dest/image/latest-news/05.mp4">
+                                <source alt="image04" src="/dest/image/latest-news/05.mp4" type="video/mp4">
                             </video>
                         </a>
                     </li>
-                    <li data-preview="/dest/image/latest-news/5.mp4">
+                    <li data-preview="/dest/image/latest-news/06.mp4">
                         <a href="#">
-                            <video src="/dest/image/latest-news/5.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
+
+                            <video class="video3" src="/dest/image/latest-news/06.mp4">
+
+                                <source alt="image04" src="/dest/image/latest-news/06.mp4" type="video/mp4">
                             </video>
                         </a>
                     </li>
-                    <li data-preview="/dest/image/latest-news/4.mp4">
-                        <a href="#">
-                            <video src="/dest/image/latest-news/4.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="/dest/image/latest-news/5.mp4">
-                        <a href="#">
-                            <video src="/dest/image/latest-news/5.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="/dest/image/latest-news/4.mp4">
-                        <a href="#">
-                            <video src="/dest/image/latest-news/4.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="/dest/image/latest-news/5.mp4">
-                        <a href="#">
-                            <video src="/dest/image/latest-news/5.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="/dest/image/latest-news/4.mp4">
-                        <a href="#">
-                            <video src="/dest/image/latest-news/4.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="/dest/image/latest-news/5.mp4">
-                        <a href="#">
-                            <video src="/dest/image/latest-news/5.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="/dest/image/latest-news/4.mp4">
-                        <a href="#">
-                            <video src="/dest/image/latest-news/4.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/4.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="/dest/image/latest-news/5.mp4">
-                        <a href="#">
-                            <video src="/dest/image/latest-news/5.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/5.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
+
 
 
 
@@ -638,7 +148,9 @@
 
         </div>
 
-        <!-- ----------------------------地圖+圖表------------------------------ -->
+        <!-- ----------------------------video------------------------------ -->
+
+        <!-- ----------------------------地圖+圖表--------------------------- -->
 
         <div class="first_title">CornavirusCOVID-19TaiwanCases</div>
         <div class="map_chartarea">
@@ -780,22 +292,23 @@
             </div>
         </div>
 
+        <!-- ----------------------------地圖+圖表------------------------------ -->
 
         <hr>
 
         <!-- ----------------------------新聞------------------------------ -->
         <div class="news_container">
-            <div class="tab_list_block">
+            <div class="tab_block">
                 <h1>Editor's Picks</h1>
                 <ul class="tab_list">
                     <li>
                         <a href="#" data-target="tab1" class="tab -on">
-                            <p>TaiwanNews</p>
+                            <p>國內新聞</p>
                         </a>
                     </li>
                     <li>
                         <a href="#" data-target="tab2" class="tab">
-                            <p>WorldNews</p>
+                            <p>國際新聞</p>
                         </a>
                     </li>
                 </ul>
@@ -807,66 +320,629 @@
                     <h2>最新消息</h2>
                     <hr>
                     <div class="top_cards_pic">
-                        <div><a href=""><img src="/dest/image/latest-news/img-11.png" alt=""></a></div>
-                        <div><a href=""><img src="/dest/image/latest-news/img-12.jpg" alt=""></a></div>
-                        <div><a href=""><img src="/dest/image/latest-news/img-11.png" alt=""></a></div>
-                        <div><a href=""><img src="/dest/image/latest-news/img-9.jpg" alt=""></a></div>
-                        <!-- <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div> -->
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">29</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="/dest/image/latest-news/img-11.png" alt="">
+                                <div class="cards_content">
+                                    <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">28</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="/dest/image/latest-news/img-5.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">27</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="/dest/image/latest-news/img-12.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">26</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="bottom_cards">
                     <h2>熱門消息</h2>
                     <hr>
-                    <div class="bottom_cards_pic">    
-                        <a href=""><img src="/dest/image/latest-news/img-1.jpg" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-2.jpg" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-6.png" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-8.jpg" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-13.jpg" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-4.jpg" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-5.jpg" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-3.jpg" alt=""></a>
-                    </div>
-                </div>
-                
-            </div>
-            <!-- 
-            <div class="tab tab2">
-                <div class="left_list">
-                    <div class="left_listcards">
-                        <h2>最新消息</h2>
-                        <hr>
-                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
-                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
-                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
-                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
-                        <div><a href=""><img src="/dest/image/latest-news/img-10.png" alt=""></a></div>
+                    <div class="bottom_cards_pic">
+                        <div class="all-list">
+                            <div class="list1 ">
+
+                                <div class="list1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="list1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-12.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="list1-1">
+                                    <!-- <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div> -->
+                                        <img src="/dest/image/latest-news/img-11.png" alt="">
+                                        <!-- <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div> -->
+                                    <!-- </a> -->
+                                </div>
+
+
+                                <div class="inside-left">
+                                    <ul class="list">
+                                        <li class="list-Title">熱門討論排行</li>
+                                        <li class="item">
+                                            <div class="item-content"><span>1</span> <a href="#">
+                                                    <p>防疫做得好，自我健康才會好?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>2</span> <a href="#">
+                                                    <p>現在新冠狀病毒有疫苗出來了嗎?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>3</span> <a href="#">
+                                                    <p>現在哪個國家死亡人數最多?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>4</span> <a href="#">
+                                                    <p>台灣現在疫情人數越來越多了!!</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>5</span> <a href="#">
+                                                    <p>疫情導致經濟嚴重下滑!!</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>6</span> <a href="#">
+                                                    <p>蝙蝠及穿山甲病原傻傻分不清?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>7</span> <a href="#">
+                                                    <p>口罩哪裡還有庫存?</p>
+                                                </a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="list2">
+                            <div class="list2-2q">
+                                <div class="list2-1">
+                                    <div class="list2-2222221">
+                                        <a href="">
+                                            <div class="date">
+                                                <h4 class="year">2020</h4>
+                                                <h4 class="day">29</h4>
+                                                <h4 class="month">4月</h4>
+                                            </div>
+                                            <img src="/dest/image/latest-news/img-1.jpg" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="list2-1 list2-22">
+                                    <div class="list2-2222221">
+                                        <a href="">
+                                            <div class="date">
+                                                <h4 class="year">2020</h4>
+                                                <h4 class="day">29</h4>
+                                                <h4 class="month">4月</h4>
+                                            </div>
+                                            <img src="/dest/image/latest-news/img-6.png" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="list2-2222221">
+                                        <a href=""> 
+                                            <div class="date">  
+                                                <h4 class="year">2020</h4>  
+                                                <h4 class="day">29</h4> 
+                                                <h4 class="month">4月</h4>  
+                                            </div>  
+                                            <img src="/dest/image/latest-news/img-8.jpg" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="list-2">
+                                <div class="list2-1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-2.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="list2-1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-5.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="list2-1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="list2-1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-3.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="list3-qal">
+                                <div class="list2-3">
+                                     <!-- <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div> -->
+                                        <img src="/dest/image/latest-news/img-10.png" alt="">
+                                        <!-- <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a> -->
+                                </div>
+                                <div class="list-3">
+                                    <div class="list-333">
+                                        <a href="">
+                                            <div class="date">
+                                                <h4 class="year">2020</h4>
+                                                <h4 class="day">29</h4>
+                                                <h4 class="month">4月</h4>
+                                            </div>
+                                            <img src="/dest/image/latest-news/img-13.jpg" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="list-333">
+                                        <a href="">
+                                            <div class="date">
+                                                <h4 class="year">2020</h4>
+                                                <h4 class="day">29</h4>
+                                                <h4 class="month">4月</h4>
+                                            </div>
+                                            <img src="/dest/image/latest-news/img-4.jpg" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="laster">
+                                <span>
+                                    德國學者研究發現，疫情爆發的城市多是航空業主要轉機點或重要機場，便捷的交通讓傳染病得以傳播至世界各角落。隨著疫情升溫，境外旅客讓各國如臨大敵，歐盟、美國紛紛關閉邊界，台灣也於3月18日禁止外籍旅客入境。
+                                </span>
+                            </div> -->
+                        </div>
+
+
                     </div>
                 </div>
 
-                <div class="right_list">
-                    <div class="right_listcards">
-                        <h2>熱門消息</h2>
-                        <hr>
-                        <div class="right_listcards_top">
-                            <div>
-                                <a href=""><img src="/dest/image/latest-news/img-2.jpg" alt=""></a>
-                                <a href=""><img src="/dest/image/latest-news/img-1.jpg" alt=""></a>
-                            </div>
-                            <div>
-                                <a href=""><img src="/dest/image/latest-news/img-6.png" alt=""></a>
-                                <a href=""><img src="/dest/image/latest-news/img-8.jpg" alt=""></a>
-                                <a href=""><img src="/dest/image/latest-news/img-13.jpg" alt=""></a>
-                            </div>
+            </div>
+
+            <div class="tab tab2">
+
+                <div class="top_cards">
+                    <h2>最新消息</h2>
+                    <hr>
+                    <div class="top_cards_pic">
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">29</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="/dest/image/latest-news/img-5.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                </div>
+                            </a>
                         </div>
-                        <a href=""><img src="/dest/image/latest-news/img-4.jpg" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-5.jpg" alt=""></a>
-                        <a href=""><img src="/dest/image/latest-news/img-3.jpg" alt=""></a>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">28</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="/dest/image/latest-news/img-11.png" alt="">
+                                <div class="cards_content">
+                                    <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">27</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="/dest/image/latest-news/img-12.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">26</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    
                 </div>
-            </div> -->
+
+                <div class="bottom_cards">
+                    <h2>熱門消息</h2>
+                    <hr>
+                    <div class="bottom_cards_pic">
+                        <div class="all-list">
+                            <div class="list1 ">
+
+                                <div class="list1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="list1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-12.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="list1-1">
+                                    <!-- <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div> -->
+                                        <img src="/dest/image/latest-news/img-11.png" alt="">
+                                        <!-- <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div> -->
+                                    <!-- </a> -->
+                                </div>
+
+
+                                <div class="inside-left">
+                                    <ul class="list">
+                                        <li class="list-Title">熱門討論排行</li>
+                                        <li class="item">
+                                            <div class="item-content"><span>1</span> <a href="#">
+                                                    <p>防疫做得好，自我健康才會好?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>2</span> <a href="#">
+                                                    <p>現在新冠狀病毒有疫苗出來了嗎?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>3</span> <a href="#">
+                                                    <p>現在哪個國家死亡人數最多?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>4</span> <a href="#">
+                                                    <p>台灣現在疫情人數越來越多了!!</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>5</span> <a href="#">
+                                                    <p>疫情導致經濟嚴重下滑!!</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>6</span> <a href="#">
+                                                    <p>蝙蝠及穿山甲病原傻傻分不清?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>7</span> <a href="#">
+                                                    <p>口罩哪裡還有庫存?</p>
+                                                </a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="list2">
+                            <div class="list2-2q">
+                                <div class="list2-1">
+                                    <div class="list2-2222221">
+                                        <a href="">
+                                            <div class="date">
+                                                <h4 class="year">2020</h4>
+                                                <h4 class="day">29</h4>
+                                                <h4 class="month">4月</h4>
+                                            </div>
+                                            <img src="/dest/image/latest-news/img-1.jpg" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="list2-1 list2-22">
+                                    <div class="list2-2222221">
+                                        <a href="">
+                                            <div class="date">
+                                                <h4 class="year">2020</h4>
+                                                <h4 class="day">29</h4>
+                                                <h4 class="month">4月</h4>
+                                            </div>
+                                            <img src="/dest/image/latest-news/img-6.png" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="list2-2222221">
+                                        <!-- <a href=""> 
+                                            <div class="date">  
+                                                <h4 class="year">2020</h4>  
+                                                <h4 class="day">29</h4> 
+                                                <h4 class="month">4月</h4>  
+                                            </div>   -->
+                                            <img src="/dest/image/latest-news/img-8.jpg" alt="">
+                                            <!-- <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div> -->
+                                        <!-- </a> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="list-2">
+                                <div class="list2-1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-2.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="list2-1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-5.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="list2-1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="list2-1-1">
+                                    <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div>
+                                        <img src="/dest/image/latest-news/img-3.jpg" alt="">
+                                        <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="list3-qal">
+                                <div class="list2-3">
+                                     <!-- <a href="">
+                                        <div class="date">
+                                            <h4 class="year">2020</h4>
+                                            <h4 class="day">29</h4>
+                                            <h4 class="month">4月</h4>
+                                        </div> -->
+                                        <img src="/dest/image/latest-news/img-10.png" alt="">
+                                        <!-- <div class="cards_content">
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                        </div>
+                                    </a> -->
+                                </div>
+                                <div class="list-3">
+                                    <div class="list-333">
+                                        <a href="">
+                                            <div class="date">
+                                                <h4 class="year">2020</h4>
+                                                <h4 class="day">29</h4>
+                                                <h4 class="month">4月</h4>
+                                            </div>
+                                            <img src="/dest/image/latest-news/img-13.jpg" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="list-333">
+                                        <a href="">
+                                            <div class="date">
+                                                <h4 class="year">2020</h4>
+                                                <h4 class="day">29</h4>
+                                                <h4 class="month">4月</h4>
+                                            </div>
+                                            <img src="/dest/image/latest-news/img-4.jpg" alt="">
+                                            <div class="cards_content">
+                                                <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="laster">
+                                <span>
+                                    德國學者研究發現，疫情爆發的城市多是航空業主要轉機點或重要機場，便捷的交通讓傳染病得以傳播至世界各角落。隨著疫情升溫，境外旅客讓各國如臨大敵，歐盟、美國紛紛關閉邊界，台灣也於3月18日禁止外籍旅客入境。
+                                </span>
+                            </div> -->
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
 
             <div class="pagination_block">
                 <ul class="pagination">
@@ -879,9 +955,10 @@
             </div>
 
         </div>
+        <!-- ----------------------------新聞------------------------------ -->
+        <br>
+        <br>
 
-        <br>
-        <br>
     </main>
     @@include('../../layout/footer.html')
 
@@ -903,7 +980,7 @@
     <script src="./dest/latest-news/chart.js"></script>
     <script type="text/javascript" src="./dev/html/latest-news/jqueryppcustom.js"></script>
     <script type="text/javascript" src="./dev/html/latest-news/jqueryelastislide.js"></script>
-  
+
 
 
     <script>
@@ -932,7 +1009,7 @@
             $preview.attr('src', el.data('preview'));
             $carouselItems.removeClass('current-img');
             el.addClass('current-img');
-             carousel.setCurrent(pos);
+            //  carousel.setCurrent(pos);
 
         }
     </script>
