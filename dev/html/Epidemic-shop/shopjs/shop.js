@@ -172,11 +172,20 @@ window.addEventListener('load', ()=>{
 
     //input
     document.getElementById('count').addEventListener('input',function(){
-        if ($('.shop-two-item-pirce').text()==NaN) {
+
+        
+        $('.shop-two-item-pirce').text(  sum *  parseInt( document.getElementById('count').value ) );
+
+
+        if (  $('#count').val()=='') {
             $('.shop-two-item-pirce').text(0);
         }
-        $('.shop-two-item-pirce').text(        price[$('#haha').children().children('img').attr('da')] * parseInt($('#count').val())  )
+        
     });
+
+
+
+
 
     document.getElementById('re').addEventListener('click', function(){
         $('#haha').find('.ac').remove();
