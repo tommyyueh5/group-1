@@ -212,12 +212,12 @@ $('.myowl-1-1').owlCarousel({
     navText: ["<i class='icofont-rounded-left prenext'></i>","<i class='icofont-rounded-right prenext'></i>"],
     responsive:{
         0:{
-            items:1,
-            margin: 50,
+            items:2,
+            margin: 10,
             // stagePadding: 95,
         },
         576: {
-            items:1,
+            items:2,
             margin: 10,
             // stagePadding: 95,
         },
