@@ -56,7 +56,7 @@ document.write("<script type='text/javascript' src='../../dev/js/var.js'></scrip
     g.append('text').attr('class', 'title').attr('font-size', 11).attr('x', 20).attr('y', -20).text(titleText1);
   };
 
-  d3.csv('dev/html/latest-news/map/striat-map/col/data1.json').then(function (data) {
+  d3.csv('../map/striat-map/col/data1.json').then(function (data) {
     data.forEach(function (d) {
       d.population = +d.population * 1;
     });

@@ -31,6 +31,7 @@ window.addEventListener('load', function(){
     let mask2 = document.getElementById('item2')
     let mask3 = document.getElementById('item3')
     let bag = document.getElementById('alcohol');
+    
 
     
     // plane

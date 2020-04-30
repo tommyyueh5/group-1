@@ -5,8 +5,8 @@
 }
 
 .sop-All {
-    width: 100vw;
-    height: 100vh;
+    // width: 100vw;
+    height: 681px;
     background: url("/dest/image/sopImg/black_background.png") no-repeat;
     background-size: cover;
     flex-direction: column;
@@ -59,8 +59,9 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 100%;
+            width: 85%;
             height: 100%;
+            margin: 0 auto;
 
             // background-color: #ccc;
             .container_sop {
@@ -69,7 +70,7 @@
                 height: 100%;
                 border-radius: 50%;
                 // background-color: rgb(43, 25, 25);
-                border: 20px solid #fff;
+                // border: 20px solid #fff;
             }
         }
     }
@@ -154,6 +155,8 @@
     height: 100%;
     transform: scale(1);
     position: relative;
+    background:url("/dev/image/sopImg/3d.png");
+    background-size: contain;
     // overflow: hidden;
     z-index: 10;
 
@@ -172,6 +175,7 @@
         height: 100%;
         top: 10%;
         left: 60%;
+        
 
         >.thermometer_container {
             width: 30%;
@@ -186,9 +190,10 @@
                 display: block;
                 position: absolute;
                 z-index: 1;
+                bottom: 26%;
                 left: 20px;
                 width: 40px;
-                height: 238px;
+                height: 169px;
                 border-radius: 50px 50px 0 0;
                 background: #FFF;
 
@@ -197,7 +202,7 @@
                     position: relative;
                     display: block;
                     width: 20px;
-                    height: 232px;
+                    height: 161px;
                     border-radius: 10px 10px 0 0;
                     margin: 5px auto;
 
@@ -210,7 +215,7 @@
                         height: 2%;
                         border-radius: 25px 25px 0 0;
                         position: absolute;
-                        bottom: 0;
+                        bottom: -4%;
 
                     }
                 }
@@ -255,10 +260,11 @@
 
 .wash-hand {
     width: 100%;
-    height: 90%;
+    height: 100%;
     position: relative;
     z-index: 10;
-
+    background:url("/dev/image/sopImg/s.png");
+    background-size: cover;
     >.sop-hand1 {
         width: 45%;
         position: absolute;
@@ -361,7 +367,7 @@
     >.sop-hand-faucet {
         position: absolute;
         right: 20%;
-        top: 20%;
+        top: 10%;
         width: 30%;
     }
 

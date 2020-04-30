@@ -6,25 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
     @@include('../../layout/head.html')
-    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <!-- <script src="/node_modules/jquery/dist/jquery.js"></script> -->
     <!-- Link earth json&js& -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
-    <script src="https://d3js.org/d3-geo.v1.js"></script>
-    <script src="https://d3js.org/topojson.v2.js"></script>
     <link rel="stylesheet" href="/dest/Epidemic-shop/icofont/icofont.min.css">
-    <script
-        src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js">
-    </script>
-    <link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
-    <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-    <!-- <link rel="stylesheet" href="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.css"> -->
-    <!-- <script src="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.js"></script> -->
-    <script src="/dest/index/earth/js/Earth.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.js'></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css' />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.css' />
     <link rel="stylesheet" href="/dest/index/SASS/style.css">
+
 </head>
 
 <body>
@@ -32,6 +20,22 @@
     @@include('../../layout/header.html')
     <section id="section1" class="section page-1">
         <div class="stars">
+            <div class="global-people">
+                <ul>
+                    <li >全球已確診:
+                        <div>
+                            <p class="global"></p><span>人</span>
+                        </div>
+                        
+                    </li>
+                    <li >全球死亡:<div>
+                        <p class="global"></p><span>人</span>
+                    </div> </li>
+                    <li >全球已完成隔離:<div>
+                        <p class="global"></p><span>人</span>
+                    </div> </li>
+                </ul>
+            </div>
             <ul class="Showtable">
                 <li id="curentCitys"></li>
                 <li id="curentConfirmed"></li>
@@ -107,7 +111,7 @@
     </section>
     <section id="section3" class="section page-3">
         <div class="container-bottom">
-            <div class="bottom-left">
+            <!-- <div class="bottom-left">
                 <ul>
                     <li class="item1"><a href="#">
                             <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
@@ -158,97 +162,179 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <div class="bottom-right">
-                <h1>more about coronavirus</h1>
+                <h1>觀看更多疫情消息</h1>
                 <div class="box">
                     <div class="inside-left">
                         <ul class="list">
                             <li class="list-Title">熱門討論排行</li>
-                            <li class="item"><a href="#">a</a></li>
-                            <li class="item"><a href="#">c</a></li>
-                            <li class="item"><a href="#">d</a></li>
-                            <li class="item"><a href="#">e</a></li>
-                            <li class="item"><a href="#">f</a></li>
+                            <li class="item">
+                                <div class="item-content"><span>1</span> <a href="#">
+                                        <p>防疫做得好，自我健康才會好?</p>
+                                    </a></div>
+                            </li>
+                            <li class="item">
+                                <div class="item-content"><span>2</span> <a href="#">
+                                        <p>現在新冠狀病毒有疫苗出來了嗎?</p>
+                                    </a></div>
+                            </li>
+                            <li class="item">
+                                <div class="item-content"><span>3</span> <a href="#">
+                                        <p>現在哪個國家死亡人數最多?</p>
+                                    </a></div>
+                            </li>
+                            <li class="item">
+                                <div class="item-content"><span>4</span> <a href="#">
+                                        <p>台灣現在疫情人數越來越多了!!</p>
+                                    </a></div>
+                            </li>
+                            <li class="item">
+                                <div class="item-content"><span>5</span> <a href="#">
+                                        <p>疫情導致經濟嚴重下滑!!</p>
+                                    </a></div>
+                            </li>
+                            <li class="item">
+                                <div class="item-content"><span>6</span> <a href="#">
+                                        <p>蝙蝠及穿山甲病原傻傻分不清?</p>
+                                    </a></div>
+                            </li>
+                            <li class="item">
+                                <div class="item-content"><span>7</span> <a href="#">
+                                        <p>口罩哪裡還有庫存?</p>
+                                    </a></div>
+                            </li>
                         </ul>
                     </div>
                     <div class="inside-right">
-                        <h1>即時訊息</h1>
+                        <div class="immediate">
+                            <span>台灣各地區今日確診人數:</span>
+                            <h1 id="textillate-Start"></h1><span>人</span>
+                        </div>
                         <div class="grid-template">
-                            <div class="grid-top-left"></div>
-                            <div class="grid-top-right"></div>
-                            <div class="grid-bottom-left"></div>
-                            <div class="grid-bottom-center"></div>
-                            <div class="grid-bottom-right"></div>
+                            <div class="grid-top-left">
+                                <div>
+                                    <a href="#">
+                                        <img src="/dev/image/HotNews/img/For1.png" alt="">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas eos
+                                            quas fugit ea? Error harum neque veniam obcaecati, nobis modi quaerat,
+                                            cupiditate praesentium quod illum animi, ut nostrum amet.</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid-top-right">
+                                <ul>
+                                    <li>
+                                        <p><a href="#">美國確診數破百萬 川普：其他國家篩檢遠遠落後美國</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#">狡猾病毒！東京老翁測「陰性」後隔天去世 死後再測又轉陽</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#">打卡介苗國家疫情控制較佳？ 台大醫：身體第一線免疫反應提高</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#">武漢肺炎》美國累計破百萬！全球確診破311萬 死亡逾21萬</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#">若中國沒隱匿疫情 英國研究：全球擴散本可減少95％</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#">中共戰狼外交屢踢鐵板！華府專家曝「中國模式」內幕</a></p>
+                                    </li>
+                                    <li>
+                                        <p><a href="#">病毒變異愈大致死率愈高 中研院長：已演化成6大類</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-bottom-left">
+                                <div>
+                                    <a href="#">
+                                        <img src="/dev/image/HotNews/img/For1.png" alt="">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas eos
+                                            quas fugit ea? Error harum neque veniam obcaecati, nobis modi quaerat,
+                                            cupiditate praesentium quod illum animi, ut nostrum amet.</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid-bottom-center">
+                                <div>
+                                    <a href="#">
+                                        <img src="/dev/image/HotNews/img/For1.png" alt="">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas eos
+                                            quas fugit ea? Error harum neque veniam obcaecati, nobis modi quaerat,
+                                            cupiditate praesentium quod illum animi, ut nostrum amet.</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid-bottom-right">
+                                <div>
+                                    <a href="#">
+                                        <img src="/dev/image/HotNews/img/For1.png" alt="">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas eos
+                                            quas fugit ea? Error harum neque veniam obcaecati, nobis modi quaerat,
+                                            cupiditate praesentium quod illum animi, ut nostrum amet.</p>
+                                    </a>
+                                </div>
+                            </div>
     </section>
     <section id="section4" class="section page-4">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide data" data-year="1970"><img src="https://picsum.photos/1000/1000?random=1">
+                <div class="swiper-slide data" data-year="2019"><img src="/dev/image/index-history/balck.png">
                     <div class="swiper-slide-content">
-                        <h4 class="timeline-title">病毒歷史1</h4>
-                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
-                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a class="timeline-link" href="#">
+                        <h4 class="timeline-title">武漢肺炎</h4>
+                        <p class="timeline-text">
+                            嚴重特殊傳染性肺炎疫情，是指在2019年至2020年間由嚴重急性呼吸系統綜合症冠狀病毒2型（SARS-CoV-2）所引發的全球大流行疫情[284]。疫情最初在2019年12月於中華人民共和國湖北省武漢市開始爆發，隨後在2020年初迅速擴散至全球多國，逐漸變成一場全球性大瘟疫[285]，是全球自第二次世界大戰以來面臨的最嚴峻危機。截至2020年4月28日，全球已有220多個國家和地區累計報告逾300萬名確診病例，逾20萬名患者死亡。
+                        </p>
+                        <a class="timeline-link" href="/dest/diseaseHistory/diseaseHistory.html">
                             Read more</a>
                     </div>
                 </div>
-                <div class="swiper-slide data" data-year="1980"><img src="https://picsum.photos/1000/1000?random=2">
+                <div class="swiper-slide data" data-year="1980"><img src="/dev/image/index-history/COVID.png">
                     <div class="swiper-slide-content">
-                        <h4 class="timeline-title">病毒歷史2</h4>
-                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
-                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a class="timeline-link" href="#">
+                        <h4 class="timeline-title">H1N1新型流感</h4>
+                        <p class="timeline-text">
+                            一次由流感病毒新型變體H1N1新型流感所引發的全球性流行病疫情。最早的已知個案是2009年3月9日墨西哥韋拉克魯斯市格羅利亞的五歲小孩。17日開始有美國個案，並於4月12日發生小範圍群聚感染。
+                        </p>
+                        <a class="timeline-link" href="/dest/diseaseHistory/diseaseHistory.html">
                             Read more</a>
                     </div>
                 </div>
-                <div class="swiper-slide data" data-year="1990"><img src="https://picsum.photos/1000/1000?random=3">
+                <div class="swiper-slide data" data-year="1918"><img src="/dev/image/index-history/SARS.png">
                     <div class="swiper-slide-content">
-                        <h4 class="timeline-title">病毒歷史3</h4>
-                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
-                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a class="timeline-link" href="#">
+                        <h4 class="timeline-title">西班牙流感</h4>
+                        <p class="timeline-text">
+                            1918年流感大流行，也被稱為西班牙流感，是於1918年1月至1920年12月間爆發的不尋常致命的流感大流行，造成當時世界人口約四分之一的5億人感染，1700萬至5000萬、甚至可能高達1億人死亡，使其成為人類歷史上最致命的大流行病之一，僅次於黑死病
+                        </p>
+                        <a class="timeline-link" href="/dest/diseaseHistory/diseaseHistory.html">
                             Read more</a>
                     </div>
                 </div>
-                <div class="swiper-slide data" data-year="2000"><img src="https://picsum.photos/1000/1000?random=4">
+                <div class="swiper-slide data" data-year="1540"><img src="/dev/image/index-history/smallpox.png">
                     <div class="swiper-slide-content">
-                        <h4 class="timeline-title">病毒歷史4</h4>
-                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
-                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a class="timeline-link" href="#">
+                        <h4 class="timeline-title">天花</h4>
+                        <p class="timeline-text">
+                            天花是一種由天花病毒引起之人類傳染病。患者一般在染病後的12天內，出現包括發燒、肌肉疼痛、頭痛等近似普通感冒的症狀。幾天後，其口咽部分的黏膜會長出紅點，身體多處地方亦會長出皮疹（以臉部居多）。天花病毒共有兩類：主天花病毒及次天花病毒.
+                        </p>
+                        <a class="timeline-link" href="/dest/diseaseHistory/diseaseHistory.html">
                             Read more</a>
                     </div>
                 </div>
-                <div class="swiper-slide data" data-year="2010"><img src="https://picsum.photos/1000/1000?random=5">
+                <div class="swiper-slide data" data-year="1347"><img src="/dev/image/index-history/Spain.png">
                     <div class="swiper-slide-content">
-                        <h4 class="timeline-title">病毒歷史5</h4>
-                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
-                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a class="timeline-link" href="#">
-                            Read more</a>
-                    </div>
-                </div>
-                <div class="swiper-slide data" data-year="2011"><img src="https://picsum.photos/1000/1000?random=6">
-                    <div class="swiper-slide-content">
-                        <h4 class="timeline-title">病毒歷史6</h4>
-                        <p class="timeline-text">Lorem ipsum dolor site amet, consectetur adipscing elit, sed do eisumod
-                            tempor incididut ut labore et dolore magna aliqua. Ut enim ad mimim venjam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a class="timeline-link" href="#">
+                        <h4 class="timeline-title">黑死病</h4>
+                        <p class="timeline-text">
+                            發生在1347年—1351年。普遍認為是由一種名為鼠疫的細菌造成的，一些歷史學家認為黑死病開始於十四世紀二、三十年代的中國或中亞，在隨後的數年內由商人和士兵攜帶到俄羅斯南部克里米亞；在十四世紀四十年代，流行病從克里米亞傳到西歐和北非。黑死病造成全世界死亡人數高達7500萬，其中歐洲的死亡人數為2500萬到5000萬。
+                        </p>
+                        <a class="timeline-link" href="/dest/diseaseHistory/diseaseHistory.html">
                             Read more</a>
                     </div>
                 </div>
             </div>
 
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+
         </div>
     </section>
     <section id="section5" class="section page-5">
@@ -265,14 +351,16 @@
                     <div class="container_sop">
                         <div class="Sop-plane">
                             <img class="worldwide" src="/dest/image/sopImg/plane/worldwide.png" alt="">
-                            <img class="General_Office" src="/dest/image/sopImg/plane/iconfinder_General_Office_31_3592824.png"
-                                alt="" srcset="">
+                            <img class="General_Office"
+                                src="/dest/image/sopImg/plane/iconfinder_General_Office_31_3592824.png" alt=""
+                                srcset="">
                             <img class="cancel" src="/dest/image/sopImg/plane/cancel.png" alt="" srcset="">
                         </div>
                     </div>
                     <div class="container_sop">
                         <div class="sop-thermometer">
-                            <img class="sop-thermometer-img" src="/dest/image/sopImg/thermometer/thermometer.png" alt="">
+                            <img class="sop-thermometer-img" src="/dest/image/sopImg/thermometer/thermometer.png"
+                                alt="">
                             <div class="pos-thermometer">
                                 <div class="thermometer_container">
                                     <div class="thermometer">
@@ -290,9 +378,12 @@
                             <img class="sop-hand1" src="/dest/image/sopImg/wash_hand/hand1.png" alt="">
                             <img class="sop-hand2" src="/dest/image/sopImg/wash_hand/hand2.png" alt="">
                             <img class="bubble1" src="/dest/image/sopImg/wash_hand/bubble.png" alt="" srcset="">
-                            <img class="sop-hand-water-1 sop-water" src="/dest/image/sopImg/wash_hand/water1.png" alt="">
-                            <img class="sop-hand-water-2 sop-water" src="/dest/image/sopImg/wash_hand/water2.png" alt="">
-                            <img class="sop-hand-water-3 sop-water" src="/dest/image/sopImg/wash_hand/water2.png" alt="">
+                            <img class="sop-hand-water-1 sop-water" src="/dest/image/sopImg/wash_hand/water1.png"
+                                alt="">
+                            <img class="sop-hand-water-2 sop-water" src="/dest/image/sopImg/wash_hand/water2.png"
+                                alt="">
+                            <img class="sop-hand-water-3 sop-water" src="/dest/image/sopImg/wash_hand/water2.png"
+                                alt="">
                             <img class="sop-hand-faucet" src="/dest/image/sopImg/wash_hand/faucet.png" alt="">
                         </div>
                     </div>
@@ -302,46 +393,51 @@
     </section>
     <section id="section-game" class="section page-merge">
         <div class="merge-game-Carousel">
-            <div class="game-background">
-                <div class="context">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, aspernatur!</p>
-                </div>
-                <div class="game-btn">
-                    <a href="#">
-                        <p class="btn">Start Game</p>
-                    </a>
+            <div class="game-container">
+                <div class="game-background">
+                    <div class="context">
+                        <p>挑戰新冠狀病毒十大知識問答，您懂多少?</p>
+                    </div>
+                    <div class="game-btn">
+                        <a href="/dest/game/game.html" class="button">
+                            <p class="btn-text">Start Game</p>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="Carousel">
                 <div class="title">
-                    <p>you can also like:</p>
+                    <p>You may also like?</p>
                 </div>
                 <div class="Carousel-Container">
-                    <div class="relative-info">
-                        <div class="relative-info-inner">
-                            <div class="owl-carousel owl-theme myowl-2">
-                                <div class="item myowl-item-2">
-                                    <img src="https://loremflickr.com/300/240/dog?random=1" alt="">
-                                </div>
-                                <div class="item myowl-item-2">
-                                    <img src="https://loremflickr.com/300/240/dog?random=2" alt="">
-                                </div>
-                                <div class="item myowl-item-2">
-                                    <img src="https://loremflickr.com/300/240/dog?random=3" alt="">
-                                </div>
-                                <div class="item myowl-item-2">
-                                    <img src="https://loremflickr.com/300/240/dog?random=4" alt="">
-                                </div>
-                                <div class="item myowl-item-2">
-                                    <img src="https://loremflickr.com/300/240/dog?random=5" alt="">
-                                </div>
-                                
-                            </div>
-                            
+
+                    <div class="swiper-container-games">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 17.png"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 18.jpg"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 19.png"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 20.png"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 21.jpg"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 22.jpg"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 23.jpg"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 24.jpg"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 25.jpg"
+                                        alt=""></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="/dev/image/index-commodity/Image 26.jpg"
+                                        alt=""></a></div>
                         </div>
-                        <div class="owl-nav" id="customNav">
-                        </div>
+                        <!-- Add Pagination -->
+                        <div class="paginations"></div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -350,26 +446,21 @@
     <section id="section6" class="section page-6">
         @@include('../../layout/footer.html')
     </section>
-    <script src="/dest/index/index.js"></script>
-    <script>
-        $('.myowl-2').owlCarousel({
-            loop:true,
-            nav:true,
-            // navContainer: '#customNav',
-            navText: ["<i class='icofont-rounded-left prenext pre'></i>","<i class='icofont-rounded-right prenext next'></i>"],
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:4
-                }
-            }
-        });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+    <script src="https://d3js.org/d3-geo.v1.js"></script>
+    <script src="https://d3js.org/topojson.v2.js"></script>
+    <script
+        src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js">
     </script>
+    <!-- <link rel="stylesheet" href="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.css"> -->
+    <!-- <script src="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.js"></script> -->
+    <script src="/dest/index/earth/js/Earth.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.js'></script>
+    <script src="/node_modules/typed.js/lib/typed.js"></script>
+    <script src="/dest/index/index.js"></script>
+
+
 </body>
 
 </html>

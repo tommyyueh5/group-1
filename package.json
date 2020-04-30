@@ -29,6 +29,9 @@
     "node-schedule": "^1.3.2",
     "owl.carousel": "^2.3.4",
     "pagepiling-js-version-kostyast": "^2.0.5",
-    "scrollmagic": "^2.0.7"
+    "scrollmagic": "^2.0.7",
+    "textillate": "^0.4.1",
+    "typed": "^0.3.3",
+    "typed.js": "^2.0.11"
   }
 }
