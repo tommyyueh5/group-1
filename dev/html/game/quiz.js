@@ -1,3 +1,4 @@
+document.write("<script type='text/javascript' src='/dev/js/var.js'></script>");
 // select all elements
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");

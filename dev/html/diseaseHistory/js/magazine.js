@@ -1,7 +1,7 @@
 /*
  * Magazine sample
 */
-
+document.write("<script type='text/javascript' src='/dev/js/var.js'></script>");
 function addPage(page, book) {
 
 	var id, pages = book.turn('pages');
