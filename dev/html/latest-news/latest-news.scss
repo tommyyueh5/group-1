@@ -53,11 +53,11 @@ div.breadcrumb ol.breadcrumb_list>li>a:hover {
   padding: 10px 37px;
   border-radius: 10px/90px;
   box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.1),
-    inset -2px 0 3px 2px rgba(255, 255, 255, 0.6),
-    inset 2px 0 3px 2px rgba(255, 255, 255, 0.6),
-    inset -10px 0 10px 1px rgba(155, 155, 155, 0.1),
-    inset 10px 0 10px 1px rgba(155, 155, 155, 0.1);
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      inset -2px 0 3px 2px rgba(255, 255, 255, 0.6),
+      inset 2px 0 3px 2px rgba(255, 255, 255, 0.6),
+      inset -10px 0 10px 1px rgba(155, 155, 155, 0.1),
+      inset 10px 0 10px 1px rgba(155, 155, 155, 0.1);
 }
 
 .demo-1 .elastislide-wrapper:before,
@@ -93,11 +93,11 @@ div.breadcrumb ol.breadcrumb_list>li>a:hover {
   padding: 37px 10px;
   border-radius: 90px/10px;
   box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.1),
-    inset -2px 0 3px 2px rgba(255, 255, 255, 0.6),
-    inset 2px 0 3px 2px rgba(255, 255, 255, 0.6),
-    inset 0 -10px 10px 1px rgba(155, 155, 155, 0.1),
-    inset 0 10px 10px 1px rgba(155, 155, 155, 0.1);
+      0 1px 3px rgba(0, 0, 0, 0.1),
+      inset -2px 0 3px 2px rgba(255, 255, 255, 0.6),
+      inset 2px 0 3px 2px rgba(255, 255, 255, 0.6),
+      inset 0 -10px 10px 1px rgba(155, 155, 155, 0.1),
+      inset 0 10px 10px 1px rgba(155, 155, 155, 0.1);
 }
 
 .demo-2 .elastislide-vertical:before {
@@ -186,7 +186,7 @@ div.breadcrumb ol.breadcrumb_list>li>a:hover {
 
 @media screen and (max-width: 460px) {
   .demo-3 .elastislide-horizontal {
-    padding: 10px 40px;
+      padding: 10px 40px;
   }
 }
 
@@ -253,7 +253,7 @@ a {
 }
 
 .main {
-  width: 100%;
+  width: 90%;
   /* max-width: 960px; */
   padding: 0 10px;
   margin: 0 auto;
@@ -390,8 +390,8 @@ a {
 
 @media screen and (max-width: 690px) {
   .codrops-demos {
-    float: left;
-    clear: both;
+      float: left;
+      clear: both;
   }
 }
 
@@ -411,14 +411,34 @@ a {
   min-width: 20px;
   /* minimum width of the image (min width + border) */
 }
+.elastislide-wrapper::before{
+  content:"";
+  width:80%;
+  height:100%;
+  position:absolute;
+  background-color:white;
+  top:0;
+  left:75px;
+  opacity: 0.2;
+  z-index:-1;
+}
+
 
 .elastislide-wrapper {
-  position: relative;
-  background-color: #fff;
+  position: absolute;
+  background-color:none;
+  width:55%;
+  opacity:1;
+  bottom:0;
+  z-index:2000;
+  right:0;
   margin: 0 auto;
   min-height: 60px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  z-index:2000;
 }
+
+
 
 .elastislide-wrapper.elastislide-loading {
   background-image: url(./img/loading.gif);
@@ -478,8 +498,11 @@ a {
 
 .elastislide-carousel ul li a video {
   display: block;
-  border: 2px solid white;
+  // border: 2px solid white;
   max-width: 100%;
+  width:100%;
+  clip-path: circle(34% at 50% 50%);
+
 }
 
 /* Navigation Arrows */
@@ -522,6 +545,18 @@ a {
   bottom: 10px;
   top: auto;
   background-position: -17px -18px;
+}
+video{
+  margin:auto;
+  border:1px solid black;
+}
+.video1{
+  margin-left:80px;
+  
+}
+.video3{
+  margin-left: -80px;
+  
 }
 
 // -----------------video--------------------------
@@ -726,6 +761,7 @@ hr {
 .tab_block .tab_list>li>a>p {
   display: inline-block;
   font-size: 30px;
+  padding: 0;
 }
 
 // .tab_list_block .tab_list>li>a:hover {
