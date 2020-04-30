@@ -1,136 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--icon-->
-    <script src="/node_modules/ionicons/dist/ionicons/ionicons.js"></script>
+    <!--featherlight-->
+    <script src="//code.jquery.com/jquery-latest.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript"
+        charset="utf-8"></script>
+    <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css"
+        rel="stylesheet" />
+    <!--ionicons-->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <!--googlefont-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <!--bootstrap-->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    @@include('../../layout/head.html')
+    <link rel="stylesheet" href="/dest/diseaseHistory/diseaseHistory.css">
+    <!-- <script src="/dest/js/var.js"></script> -->
+    <title>Document</title>
+</head>
+
+<body>
+    @@include('../../layout/header.html')
+    <main class="main">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Disease History</a></li>
+            </ol>
+        </nav>
+        <div class="history_container">
+            <section class="history_sextion1">
+                <h1 class="history_title">A visual history of <br>pandemics</h1>
+                <h5 class="history_subtitle">瘟疫與人</h5>
+            </section>
+            <div class="image-slider">
+                <div class="layer1">
+                    <div id="covid-19" class="pandemics">
+                        <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                    <div id="spanish-flue" class="pandemics">
+                        <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                    <div id="black-disease" class="pandemics">
+                        <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                </div>
+                <div class="layer2">
+                    <div id="sars" class="pandemics">
+                        <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                    <div id="smallpox" class="pandemics">
+                        <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                    <div id="ebola" class="pandemics">
+                        <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
+                    </div>
+                </div>
+                <!-- <div class="layer3"> -->
+
+                <!-- </div> -->
+            </div>
+            <section class="row content-bottom">
+                <section class="col-md-4 carsoul_button">
+                    <div class="slider-control">
+                        <div class="prev"><button type="button">
+                                <ion-icon name="arrow-back"></ion-icon>
+                            </button></div>
+                        <div class="next"><button type="button">
+                                <ion-icon name="arrow-forward"></ion-icon>
+                            </button></div>
+                    </div>
+                </section>
+                <section class="col-md-8 home_paragraph">
+                    <p>
+                        Pan·dem·ic /panˈdemik/ (of a disease) prevalent over a whole country or the world.<br>
+
+                        As humans have spread across the world, so have infectious diseases. Even in this modern era,
+                        outbreaks are nearly constant, though not every outbreak reaches pandemic level as the Novel
+                        Coronavirus (COVID-19) has.
+                    </p>
+                </section>
+            </section>
+            <div class="book_content">
+                <!-- <div class="flipbook">
+                    <div class="hard"><img class="cover1"
+                            src="/dest/diseaseHistory/btn_img_background/covid19cover.png"></div>
+                    <div class="hard"></div>
+                    <div class="covid19page-1"><img class="cover1"
+                            src="/dest/diseaseHistory/btn_img_background/covid19cover.png">
+                        <h2 class="content-title">緣起</h2>
+                        <p class="book-content">2019冠状病毒病[9][10]（英語：Coronavirus disease
+                            2019，缩写：COVID-19[11][12][13]，俗稱：武漢肺炎[14][15][16][17]、新冠肺炎）是一種由严重急性呼吸系统综合征冠状病毒2（缩写：SARS-CoV-2）引发的传染病。該病首名病人相信於2019年末在中国大陆湖北省武汉市[18][註
+                            1]確診，其后此病在全球各國急速擴散，截至2020年4月29日已经波及226个国家和地区，感染超過300萬人並已導致其中逾20萬名病人病逝，被世衛組織認定為人類自二戰以來最具毀滅性的瘟疫。
+                        </p>
+                    </div>
+                    <div> Page 2 </div>
+                    <div> Page 3 </div>
+                    <div> Page 4 </div>
+                    <div class="hard"></div>
+                    <div class="hard"></div>
+                </div> -->
+                <h1 class="book1-title">2019冠状病毒病</h1>
+                <section class="row covid19-comtent" style="margin:2% 0%;">
+                    <div class="col-md-6">
+                        <!-- <img class="covid-19img" src="/dest/diseaseHistory/btn_img_background/covid19cover.png">  -->
+                        <h2 class="content-title">緣起</h2>
+                        <div class="book-content">2019~? 冠状病毒病[9][10]（英語：Coronavirus disease
+                            2019，缩写：COVID-19[11][12][13]，俗稱：武漢肺炎[14][15][16][17]、新冠肺炎）是一種由严重急性呼吸系统综合征冠状病毒2（缩写：SARS-CoV-2）引发的传染病。該病首名病人相信於2019年末在中国大陆湖北省武汉市[18][註
+                            1]確診，其后此病在全球各國急速擴散，截至2020年4月29日已经波及226个国家和地区，感染超過300萬人並已導致其中逾20萬名病人病逝，被世衛組織認定為人類自二戰以來最具毀滅性的瘟疫。
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="content-title">病徵</h2>
+                        <div class="book-content">
+                            COVID-19的症狀及嚴重程度因人而異，本疾病存在無症狀感染者[22]，有症狀患者主要以輕症居多（約81%）[23]。大多数患者的表现以類流感症狀为主[註
+                            2]，常见临床表现包括发热、四肢乏力、干咳等症状，其他表现包含鼻塞、打噴嚏、流鼻水、头痛、咽痛、咳血，咳痰、肌痛，或腹泻等[26][27]。有報導顯示輕症初期症狀可能以嗅覺及味覺喪失表現[28][29][28]，部分輕症患者无肺炎表现，仅表现为低热、轻微乏力等[30]。嚴重症狀包括呼吸困難、持續性胸痛、意識混亂、步行困難或面唇發黑[31]。
+                        </div>
+                    </div>
+                </section>
+                <div class="col-md-12 content" >
+                    目前對病毒尚無有效的针对性治疗方法，主要為通過监测和維持患者生命指标等支持治疗，及时给予有效氧疗、呼吸器等呼吸治療及輸液等措施[41]，並支持受到進犯的器官[58][59][60]。美國疾病管制暨預防中心（CDC）建議疑似個案應配戴外科口罩[61]。體外膜氧合（ECMO）現已應用於維持呼吸衰竭患者的生命徵象，但其實際效益仍尚待評估[62][63]。世界衛生組織（WHO）及中国国家卫生健康委员会已針對因COVID-19重症入院的病人提出建議[64][65]。
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
     <!--scrollmagic-->
     <script src="/node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
     <script src="/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
-    <!--jquery-->
-    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    @@include('../../layout/head.html')
-    <link rel="stylesheet" href="/dest/diseaseHistory/sass/diseaseHistory.css">
-    <script src="/dest/js/var.js"></script>
-    <title>Document</title>
-</head>
-<body>
-        @@include('../../layout/header.html')
-        <main class="main">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Disease History</a></li>
-                </ol>
-            </nav>
-            <div class="history_container">
-                <section class="history_sextion1">
-                    <h1 class="history_title">A visual history of <br>pandemics</h1>
-                    <h5 class="history_subtitle">瘟疫與人</h5>
-                </section>
-                <section id="parallaxContainer">
-                    <div class="layer1">
-                        <section class=" book1">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class=" book2">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book3">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book4">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book5">
-                            <img class="test" src="/dest/image/btn_img_background/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                    </div>
-                    <div class="layer2">
-                        <!-- <section class=" book1">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class=" book2">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book3">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book4">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section>
-                        <section class="book5">
-                            <img class="test" src="./btn,backgroundcolor/25booksaunt1-superJumbo-v4.png">
-                        </section> -->
-                    </div>
-                    <div class="layer3">
-    
-                    </div>
-                </section>
-                <section class="row content-bottom">
-                    <section class="col-md-4 carsoul_button">
-                        <div class="slider-control">
-                            <div class="prev"><button type="button">
-                                    <ion-icon name="arrow-back"></ion-icon>
-                                </button></div>
-                            <div class="next"><button type="button">
-                                    <ion-icon name="arrow-forward"></ion-icon>
-                                </button></div>
-                        </div>
-                    </section>
-                    <section class="col-md-8 home_paragraph">
-                        <p>
-                            Pan·dem·ic /panˈdemik/ (of a disease) prevalent over a whole country or the world.<br>
-    
-                            As humans have spread across the world, so have infectious diseases. Even in this modern era,
-                            outbreaks are nearly constant, though not every outbreak reaches pandemic level as the Novel
-                            Coronavirus (COVID-19) has.
-                        </p>
-                    </section>
-                </section>
-            </div>
-        </main>
-    
-    
-    
-        <script>
-            $(function () { // wait for document ready
-                // build tween
-                var tween = new TimelineMax()
-                    .add([
-                        TweenMax.to("#parallaxContainer .layer1", 1, {
-                            backgroundPosition: "-40% 0",
-                            ease: Linear.easeNone
-                        }),
-                        TweenMax.to("#parallaxContainer .layer2", 1, {
-                            backgroundPosition: "-500% 0",
-                            ease: Linear.easeNone
-                        }),
-                        TweenMax.to("#parallaxContainer .layer3", 1, {
-                            backgroundPosition: "-225% 0",
-                            ease: Linear.easeNone
-                        })
-                    ]);
-    
-                // build scene
-                var scene = new ScrollMagic.Scene({
-                        triggerElement: "#parallaxContainer",
-                        duration: 2000,
-                        offset: 450
-                    })
-                    .setTween(tween)
-                    .setPin("#parallaxContainer")
-                    .addIndicators() // add indicators (requires plugin)
-                    .addTo(controller);
+    <!-- turnjs -->
+    <script src="/dest/diseaseHistory/base/lib/turn.js"></script>
+    <script src="/dest/diseaseHistory/base/lib/zoom.min.js"></script>
+    <script src="/dest/diseaseHistory/base/lib/scissor.min.js"></script>
+    <script src="/dest/diseaseHistory/base/lib/hash.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/turn-js@0.5.4/index.min.js"></script> -->
+
+
+
+
+    <!-- slick -->
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        //-----------------------------carsoul slick end
+
+        //-----------------------------lightbox on
+        $(document).ready(function () {
+            // $(".book_content").hide();
+            $(".pandemics").on("click", function (e) {
+                $(".book_content").show();
+                e.stopPropagation();
             });
-        </script>
-        @@include('../../layout/footer.html')
+
+            $("body").on("click", function () {
+                $(".book_content").hide();
+            });
+
+        });
+
+        //-----------------------------lightbox off
+
+
+        //----------------------------carsoul slick 
+        var options = {
+            autoplay: true,
+            autoplaySpeed: 2400,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 1800,
+            cssEase: 'cubic-bezier(.84, 0, .08, .99)',
+            centerMode: true,
+            prevArrow: $('.prev'),
+            nextArrow: $('.next')
+        }
+
+        $('.image-slider').slick(options);
+
+        //------------------------------------------flip book 
+
+
+
+        $(".flipbook").turn({
+            width: 400,
+            height: 300,
+            autoCenter: true
+        });
+
+
+
+        //-----------------------------------------------flip book end
+    </script>
+    @@include('../../layout/footer.html')
 
 </body>
+
 </html>
