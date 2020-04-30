@@ -228,12 +228,12 @@ $('.myowl-1-1').owlCarousel({
         },
         1000:{
             items:2,
-            margin: 10,
+            margin: 40,
             // stagePadding: 65,
         },
         1200:{
             items:2,
-            margin: 20,
+            margin: 40,
             // stagePadding: 65,
         },
         1400:{

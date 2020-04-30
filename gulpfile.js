@@ -104,6 +104,6 @@ gulp.task('default', function () {
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss", "dev/layout/**/*.scss", "dev/html/**/*.scss"], ['sass']).on('change', reload);
-    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatHtml', 'concatimage', 'concatphp']).on('change', reload);
+    gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatHtml', 'concatimage', 'concatphp','concat_icofont']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js", "dev/layout/**/*.js"], ['concatjs']).on('change', reload);
 });

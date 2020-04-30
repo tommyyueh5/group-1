@@ -610,22 +610,15 @@
 }
 
 @media  only screen and (max-width:991px) {
-    .sli {
-        text-align: center;
-        margin: 20px 0px;
-    }
-
-    div.epidemic-shop {
-        min-width: 0;
-    }
     .shop-items {
-        margin-top: 10px;
+        // border: 1px solid black;
+        margin-top: 50px;
         .shop-items-inner {
-            display: block;
+            display: flex;
     
             .shop-one {
                 // border: 1px solid red;
-                width: 100%;
+                width: 45%;
     
                 .shop-discount {
                     // border: 1px solid blue;
@@ -638,16 +631,18 @@
     
                 .shop-type {
                     margin-top: 30px;
-                    border: 1px solid purple;
+                    // border: 1px solid purple;
                     display: flex;
     
                     
     
                     .shop-type-choice {
-                        border: 1px solid yellow;
+                        // border: 1px solid yellow;
                         width: 15%;
     
                         text-align: center;
+                        display: flex;
+                        align-items: center;
                         .shop-type-choice-s {
                             background-color: rgb(160, 160, 160);
                             width: 100%;
@@ -657,9 +652,9 @@
                                 text-align: center;
                                 margin: 20px 0;
                                 display: inline-block;
-                                width: 45px;
+                                width: 40px;
                                 cursor: pointer;
-                                height: 45px;
+                                height: 40px;
                                 .type-img{
                                     width: 100%;
                                     height: 100%;
@@ -674,28 +669,32 @@
                         }
                         .shop-type-content-inner {
                             // border: 1px solid rgb(9, 255, 0);
-                            width: 80%;
+                            width: 70%;
                             display: inline-block;
                     }
                 }
             }
+    
+    
             .shop-two {
-                border: 1px solid green;
-                width: 100%;
+                // border: 1px solid green;
+                width: 55%;
                 .shop-two-item-des {
-                    border: 1px solid red;
+                    // border: 1px solid red;
                     // width: 70%;
                     margin: 0 auto;
-                    text-align: center;
                     .shop-two-item-pic {
                         background-color: white;
                         // border: 1px solid yellow;
                         position: relative;
-                        display: inline-block;
                         margin-top: 20px;
+                        margin-left: 15%;
+    
+    
                         width: 550px;
-                        height: 600px;
+                        height: 650px;
                         overflow: hidden;
+                        // margin-left: 30px;
                         img {
                             width: 100%;
                             height: 100%;
@@ -718,6 +717,40 @@
                     }
                     .shop-two-tag {
                         margin-top: 10px;
+                        margin-left: 15%;
+                        color: yellow;
+                        .btnplace {
+                            margin-left: 20%;
+                            display: inline-block;
+                            .re {
+                            
+                                box-shadow: 0px 1px 0px 0px #fff6af;
+                                background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+                                background-color:#ffec64;
+                                border-radius:6px;
+                                border:1px solid #ffaa22;
+                                display:inline-block;
+                                cursor:pointer;
+                                color:#333333;
+                                font-family:Arial;
+                                font-size:15px;
+                                font-weight:bold;
+                                padding:6px 24px;
+                                text-decoration:none;
+                                text-shadow:0px 1px 0px #ffee66;
+        
+                            }
+                            .re:hover {
+                                background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+                                background-color:#ffab23;
+                            }
+                            .re:active {
+                                position:relative;
+                                top:1px;
+                            }
+                        }
+                        
+                        
                     }
     
                     .shop-two-item-text {
@@ -727,11 +760,6 @@
                         }
                     
                     }
-                    
-                    
-                    .shop-two-tag {
-                        color: yellow;
-                    }
     
                     .shop-two-item-text {
                         // border: 1px solid peru;
@@ -739,18 +767,18 @@
                     
                     .shop-two-item-price-outer { 
     
-                        
-                        border: 1px solid purple;
-                        
-                        margin: 0 auto;
+                        margin-left: 15%;
+                        // border: 1px solid purple;
                         margin-top: 20px;
                         display: flex;
-                        width: 50%;
                         .shop-two-item-price {
                             // border: 1px solid rgb(23, 207, 253);
                             width: 40%;
                             display :flex;
                             text-align: center;
+    
+    
+                            font-size: 20px;
                             color: white;
                             font-family: Arial, Helvetica, sans-serif;
                             .shop-two-item-price-1 {
@@ -761,13 +789,12 @@
                                 align-items: center;
                                 p {
                                     
-                                    // border: 1px solid rgb(249, 253, 23);
                                 }
                             }  
                                 
                                
                             .shop-two-item-price-2 {
-                                // border: 1px solid black;
+                                // border: 1px solid rgb(218, 221, 21);
                                 width: 70%;
                                 display: flex;
                                 align-items: center;
@@ -783,7 +810,7 @@
                         }
                         .cart-out {
                             // border: 1px solid green;
-                            width: 60%;
+                            width: 30%;
                             .choice-number {
                                 // border: 1px solid red;
                                 display: flex;
@@ -802,9 +829,12 @@
                                     display: inline-block;
                                     width: 45px;
                                     line-height: 39px;
+        
+                                    color: #E6E6E6;
                                     font-size: 50px;
                                     border: 1px solid #ccc;
                                     cursor: pointer;
+    
     
                                 }
     
@@ -812,6 +842,8 @@
                                     // border: 1px solid blue;
                                     display: inline-block;
                                     width: 45px;
+    
+                                    color: #E6E6E6;
                                     line-height: 45px;
                                     font-size: 30px;
                                     border: 1px solid #ccc;
@@ -822,7 +854,7 @@
                             .addcart {
                                 margin-top: 20px;
                                 text-align: center;
-                                button {
+                                .addbtn {
                                     background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
                                     background-color:#eae0c2;
                                     border-radius:7px;
@@ -836,11 +868,11 @@
                                     padding:8px 17px;
                                     text-decoration:none;
                                 }
-                                button:hover {
+                                .addbtn:hover {
                                     background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
                                     background-color:#ccc2a6;
                                 }
-                                button:active {
+                                .addbtn:active {
                                     position:relative;
                                     top:2px;
                                 }
@@ -854,7 +886,6 @@
         }
     }
 }
-
 
 
 
