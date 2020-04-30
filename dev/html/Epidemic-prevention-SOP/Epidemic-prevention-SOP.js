@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
     let mask2 = document.getElementById('item2')
     let mask3 = document.getElementById('item3')
     let bag = document.getElementById('alcohol');
-    document.getElementById('myMeun').style.position ="static";
+    document.getElementById('myMeun').style.position = "static";
 
     // plane
     var aaa = new TimelineMax()
@@ -179,7 +179,7 @@ window.addEventListener('load', function() {
                     s += 5;
                     console.log(s);
                     if (s == 0) {
-                        s=-5;
+                        s = -5;
                     }
                     slideContainer.style.left = `${s}px`;
                 }, 5);

@@ -188,10 +188,11 @@
     background-color: white;
     width: 300px;
     position: absolute;
-    right: 17%;
+    right: 16%;
+    bottom: 386px;
     padding: 18px;
     border-radius: 30px;
-    bottom: 461px;
+    
     opacity: 0;
     transition: 2s ease;
     font-size: 20px;
@@ -204,7 +205,7 @@
     position: absolute;
     transform: translateX(-50%);
     left: 75%;
-    bottom: 68%;
+    bottom: 63%;
     opacity: 0;
     z-index: 1;
     transition: opacity 2s ease, left 2s ease, bottom 2s ease;
@@ -244,7 +245,7 @@
 
 div.plane {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     text-align: center;
     position: absolute;
     top: 0;
@@ -269,7 +270,7 @@ div.plane {
 }
 
 .map {
-    height: 100vh;
+    height: 100%;
 }
 
 .airplane_pic {
@@ -318,7 +319,7 @@ div.plane {
 img.cloud_infinite {
     position: absolute;
     top: 0;
-    height: 100vh;
+    height: 100%;
     animation: cloud_move 50s linear;
     opacity: 0.8;
 }
@@ -362,8 +363,8 @@ div.pha {
 #text {
     display: inline-block;
     position: absolute;
-    left: 88px;
-    bottom: 394px;
+    left: 187px;
+    bottom: 328px;
     padding: 18px;
     border-radius: 30px;
     /* border: 1px snow solid; */
@@ -557,11 +558,6 @@ span.info {
     width: 45%;
 }
 
-
-
-
-
-
 div.pha {
     display: inline-block;
     position: absolute;
@@ -572,7 +568,7 @@ div.pha {
 #doctor {
     width: 200px;
     position: relative;
-    left: 5%;    
+    left: 5%;
     animation-name: drout;
     animation-timing-function: ease-in;
     animation-duration: 2s;
@@ -592,8 +588,8 @@ div.pha {
 #text {
     display: inline-block;
     position: absolute;
-    left: 88px;
-    bottom: 394px;
+    left: 184px;
+    bottom: 329px;
     padding: 18px;
     border-radius: 30px;
     /* border: 1px snow solid; */
@@ -623,8 +619,6 @@ div.pha {
     width: 20%;
 }
 
-
-
 #item {
     position: absolute;
     top: 5%;
@@ -639,6 +633,7 @@ div.pha {
     animation-fill-mode: backwards;
     animation-play-state: paused;
 }
+
 #item2 {
     position: absolute;
     top: 5%;
@@ -658,7 +653,7 @@ div.pha {
     position: absolute;
     top: 5%;
     left: 45%;
-    width:5%;
+    width: 5%;
     padding: 10px;
     animation-name: maskin3;
     animation-timing-function: ease-in;
@@ -678,7 +673,7 @@ div.pha {
 }
 
 #item3 #img3 {
-    width:80%;
+    width: 80%;
 }
 
 #item:hover {
@@ -717,9 +712,6 @@ div.pha {
     opacity: 1;
 }
 
-
-
-
 h2,
 span.info {
     color: whitesmoke;
@@ -755,8 +747,9 @@ span.info {
     }
 }
 
-#alcohol,#soap,#ther {
-
+#alcohol,
+#soap,
+#ther {
     opacity: 1;
     animation-name: appear;
     animation-timing-function: linear;
@@ -778,11 +771,13 @@ span.info {
 }
 
 #alcohol img {
-    width:50%;
+    width: 50%;
 }
+
 #soap img {
-    width:50%;
+    width: 50%;
 }
+
 #ther img {
-    width:45%;
+    width: 45%;
 }
