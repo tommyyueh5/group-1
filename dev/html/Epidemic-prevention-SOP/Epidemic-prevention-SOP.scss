@@ -557,11 +557,6 @@ span.info {
     width: 45%;
 }
 
-
-
-
-
-
 div.pha {
     display: inline-block;
     position: absolute;
@@ -572,7 +567,7 @@ div.pha {
 #doctor {
     width: 200px;
     position: relative;
-    left: 5%;    
+    left: 5%;
     animation-name: drout;
     animation-timing-function: ease-in;
     animation-duration: 2s;
@@ -623,8 +618,6 @@ div.pha {
     width: 20%;
 }
 
-
-
 #item {
     position: absolute;
     top: 5%;
@@ -639,6 +632,7 @@ div.pha {
     animation-fill-mode: backwards;
     animation-play-state: paused;
 }
+
 #item2 {
     position: absolute;
     top: 5%;
@@ -658,7 +652,7 @@ div.pha {
     position: absolute;
     top: 5%;
     left: 45%;
-    width:5%;
+    width: 5%;
     padding: 10px;
     animation-name: maskin3;
     animation-timing-function: ease-in;
@@ -678,7 +672,7 @@ div.pha {
 }
 
 #item3 #img3 {
-    width:80%;
+    width: 80%;
 }
 
 #item:hover {
@@ -717,9 +711,6 @@ div.pha {
     opacity: 1;
 }
 
-
-
-
 h2,
 span.info {
     color: whitesmoke;
@@ -755,8 +746,9 @@ span.info {
     }
 }
 
-#alcohol,#soap,#ther {
-
+#alcohol,
+#soap,
+#ther {
     opacity: 1;
     animation-name: appear;
     animation-timing-function: linear;
@@ -778,11 +770,13 @@ span.info {
 }
 
 #alcohol img {
-    width:50%;
+    width: 50%;
 }
+
 #soap img {
-    width:50%;
+    width: 50%;
 }
+
 #ther img {
-    width:45%;
+    width: 45%;
 }
