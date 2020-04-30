@@ -217,13 +217,13 @@ $('.myowl-1-1').owlCarousel({
             // stagePadding: 75,
         },
         767: {
-            items:2,
+            items:3,
             margin: 0,
             // stagePadding: 60,
         },
         991:{
             items:2,
-            margin: 0,
+            margin: 50,
             // stagePadding: 100,
         },
         1000:{
