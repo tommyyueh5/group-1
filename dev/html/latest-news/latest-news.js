@@ -3,7 +3,7 @@
 $(function () {
     $.ajax({
         type: 'get',
-        url: 'dest/latest-news/map/taiwanmap/index.json',
+        url: './map/taiwanmap/index.json',
         success: function (data) {
             pushDom(data.data);
         },

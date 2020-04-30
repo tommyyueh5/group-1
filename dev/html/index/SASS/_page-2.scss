@@ -65,22 +65,23 @@ section.page-2 {
             .item {
                 background-color: #ccc;
                 overflow: hidden;
+                border-radius: 5px;
 
-                &:nth-child(1) {
-                    border-radius: 0 30% 0 0;
-                }
+                // &:nth-child(1) {
+                //     border-radius: 0 30% 0 0;
+                // }
 
-                &:nth-child(2) {
-                    border-radius: 20% 0 30% 0;
-                }
+                // &:nth-child(2) {
+                //     border-radius: 20% 0 30% 0;
+                // }
 
-                &:nth-child(3) {
-                    border-radius: 0 0 30% 0;
-                }
+                // &:nth-child(3) {
+                //     border-radius: 0 0 30% 0;
+                // }
 
-                &:nth-child(4) {
-                    border-radius: 0 30% 0 20%;
-                }
+                // &:nth-child(4) {
+                //     border-radius: 0 30% 0 20%;
+                // }
 
                 a {
                     display: inline-block;

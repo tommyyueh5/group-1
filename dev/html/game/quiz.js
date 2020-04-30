@@ -25,70 +25,70 @@ dexBoxDis.addEventListener('click',()=>{
 let questions = [
     {
         question: "冠狀病毒的簡稱是什麼？?",
-        imgSrc: "img/pic1.png",
+        imgSrc: "/dest/image/game/img/pic1.png",
         choiceA: "convid-19",
         choiceB: "convid-18",
         choiceC: "convid-17",
         correct: "A"
     }, {
         question: "冠狀病毒屬會造成什麼樣的人類疾病？?",
-        imgSrc: "img/pic2.png",
+        imgSrc: "/dest/image/game/img/pic2.png",
         choiceA: "發燒",
         choiceB: "肚子痛",
         choiceC: "全身痠痛",
         correct: "A"
     }, {
         question: "我要怎麼預防感染2019新型冠狀病毒?",
-        imgSrc: "img/pic3.png",
+        imgSrc: "/dest/image/game/img/pic3.png",
         choiceA: "儘量避免出入人潮多的地方",
         choiceB: "多去運動公園與大眾運動增加抵抗力",
         choiceC: "多吃為它命",
         correct: "A"
     }, {
         question: "2019新型冠狀病毒的潛伏期是多久？?",
-        imgSrc: "img/pic4.png",
+        imgSrc: "/dest/image/game/img/pic4.png",
         choiceA: "2至12天",
         choiceB: "1小時",
         choiceC: "19天",
         correct: "A"
     }, {
         question: "現在還可以去中國武漢嗎??",
-        imgSrc: "img/pic5.png",
+        imgSrc: "/dest/image/game/img/pic5.png",
         choiceA: "疾病管制署已第三級旅遊警示建議避免所有非必要的旅遊。",
         choiceB: "不可以去",
         choiceC: "經過申請才可以去",
         correct: "A"
     }, {
         question: "要在哪裡可以看國內最新疫情變化及防疫建議？?",
-        imgSrc: "img/pic6.png",
+        imgSrc: "/dest/image/game/img/pic6.png",
         choiceA: "疾病管制署",
         choiceB: "中央通訊社",
         choiceC: "youtube",
         correct: "A"
     }, {
         question: "如果一定要去有疫情的地區，要怎麼保護自己？",
-        imgSrc: "img/pic7.png",
+        imgSrc: "/dest/image/game/img/pic7.png",
         choiceA: "落實肥皂勤洗手、咳嗽戴口罩等個人防護措施。",
         choiceB: "多去人多的地方",
         choiceC: "無法避免",
         correct: "A"
     }, {
         question: "要在哪裡看到國際疫情？？",
-        imgSrc: "img/pic8.png",
+        imgSrc: "/dest/image/game/img/pic8.png",
         choiceA: "疾病管制署",
         choiceB: "中央通訊社",
         choiceC: "youtube",
         correct: "A"
     }, {
         question: "下列何者非2019新型冠狀病毒傳播方式？",
-        imgSrc: "img/pic9.png",
+        imgSrc: "/dest/image/game/img/pic9.png",
         choiceA: "口鼻分泌物或體液",
         choiceB: "電腦病毒檔案下載",
         choiceC: "吃野味",
         correct: "A"
     },{
         question: "下列何者非2019新型冠狀病毒傳播方式？",
-        imgSrc: "img/pic9.png",
+        imgSrc: "/dest/image/game/img/pic9.png",
         choiceA: "口鼻分泌物或體液",
         choiceB: "電腦病毒檔案下載",
         choiceC: "吃野味",
@@ -209,11 +209,11 @@ function scoreRender() {
 
 
     // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "img/1.png" :
-              (scorePerCent >= 60) ? "img/2.png" :
-              (scorePerCent >= 40) ? "img/3.png" :
-              (scorePerCent >= 20) ? "img/3.png" :
-              "img/3.png";
+    let img = (scorePerCent >= 80) ? "/dest/image/game/img/1.png" :
+              (scorePerCent >= 60) ? "/dest/image/game/img/2.png" :
+              (scorePerCent >= 40) ? "/dest/image/game/img/3.png" :
+              (scorePerCent >= 20) ? "/dest/image/game/img/3.png" :
+              "/dest/image/game/img/3.png";
 
     scoreDiv.innerHTML = "<img src=" + img + ">";
     scoreDiv.innerHTML += `

@@ -12,6 +12,7 @@ $mobile: 576px;
         }
     } @else if $breakpoint == medium {
         @media all and (max-width: $medium) {
+            
             @content;
         }
     } @else if $breakpoint == small {
