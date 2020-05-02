@@ -6,25 +6,38 @@
 
 .sop-All {
     // width: 100vw;
-    height: 681px;
+    // height: 510px;
     background: url("/dest/image/sopImg/black_background.png") no-repeat;
     background-size: cover;
     flex-direction: column;
     display: flex;
+    
+    // @include rwd(medium) {
+    //     height: 450px;
+    // }
+
+    // @include rwd(small) {
+    //     height: 400px;
+    // }
+
+    // @include rwd(mobile) {
+    //     height: 380px;
+    // }
 
     .content-container {
 
         width: 100%;
-        height: 30%;
+        // height: 30%;
 
         .content-box {
             width: 100%;
-            height: 100%;
+            // height: 100%;
 
             >h1 {
 
-                width: 20%;
-                height: 20%;
+                width: 50%;
+                // height: 20%;
+                // font-family: 'Thonburi';
                 line-height: 1.5;
                 letter-spacing: 2px;
                 text-align: center;
@@ -37,7 +50,7 @@
 
             >p {
                 padding: 20px 15px;
-                width: 50%;
+                width: 80%;
                 height: 20%;
                 font-size: 20px;
                 color: #fff;
@@ -53,38 +66,49 @@
 
     .show_sop {
         width: 100%;
-        height: 50%;
+
+        @include rwd(medium) {
+            height: 40%;
+        }
 
         .Sop_Process {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 85%;
-            height: 100%;
+            width: 100%;
+            // height: 100%;
+            
             margin: 0 auto;
+            
 
-            // background-color: #ccc;
             .container_sop {
                 overflow: hidden;
-                width: 30%;
-                height: 100%;
+                width: 300px;
+                height: 300px;
                 border-radius: 50%;
-                // background-color: rgb(43, 25, 25);
-                // border: 20px solid #fff;
+                @include rwd(medium) {
+                    width: 250px;
+                    height: 250px;
+                }
+
+                @include rwd(small) {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                @include rwd(mobile) {
+                    width: 150px;
+                    height: 150px;
+                }
             }
         }
     }
 }
 
-
-
-
 .Sop-plane {
     // padding: 20px;
     width: 100%;
     height: 100%;
-    min-width: 300px;
-    min-height: 285px;
     position: relative;
     z-index: 10;
 
@@ -107,30 +131,54 @@
         transition: linear 0.5s;
     }
 
+
     >.General_Office {
         position: absolute;
-        left: -100%;
-        transform: scale(1) rotate(0deg);
         width: 100%;
         height: 80%;
-        opacity: 0;
-        transition: linear .5s;
-    }
 
-    // &:hover >.worldwide {
-    //     width: 100%;
-    //     height: 100%;
-    //     transition: linear .5s;
-    //     transform: translateX(-50%) rotate(45deg);
-    // }
-    &:hover>.General_Office {
-        width: 100%;
-        height: 80%;
-        transition: ease .5s;
-        left: 50%;
-        opacity: 1;
-        transform: translateX(-50%) scale(.5) rotate(45deg);
+        left: -100%;
+        // transform: scale(1) rotate(0deg);
+        // opacity: 0;
+        // transition: linear .5s;
+        animation: office 1.5s linear 0s infinite normal none running;
+        // animation: office;
+        // animation-duration: 0.5s;
+        // animation-iteration-count: infinite;
     }
+    @keyframes office {
+        0% {
+            left: -100%;
+            transform: scale(1) rotate(0deg);
+            opacity: 0;
+        }
+
+        50% {
+            left: 50%;
+            opacity: 1;
+            transform: translateX(-50%) scale(.5) rotate(45deg);
+        }
+
+        100% {
+            left: 50%;
+            opacity: 1;
+            transform: translateX(-50%) scale(.5) rotate(45deg);
+        }
+    }
+    &:hover >.worldwide {
+        width: 100%;
+        height: 100%;
+        transition: linear .5s;
+        transform: translateX(-50%) rotate(45deg);
+    }
+    // &:hover>.General_Office {
+    //     width: 100%;
+    //     height: 80%;
+        // transition: ease .5s;
+        // left: 50%;
+        // opacity: 1;
+        // transform: translateX(-50%) scale(.5) rotate(45deg);
+    // }
 
     &:hover>.cancel {
         width: 100%;
@@ -147,12 +195,10 @@
 
 
 // Sop Process two
-
-
-
 .sop-thermometer {
     width: 100%;
     height: 100%;
+    
     transform: scale(1);
     position: relative;
     background:url("/dev/image/sopImg/3d.png");
@@ -162,11 +208,11 @@
 
     >.sop-thermometer-img {
         display: inline-block;
-        width: 50%;
-        height: 65%;
+        width: 35%;
+        height: 52%;
         position: absolute;
-        top: 20%;
-        left: 10%;
+        top: 40%;
+        left: 12%;
     }
 
     >.pos-thermometer {
@@ -190,22 +236,25 @@
                 display: block;
                 position: absolute;
                 z-index: 1;
-                bottom: 26%;
-                left: 20px;
-                width: 40px;
-                height: 169px;
+                bottom: 31%;
+                left: 51%;
+                width: 74%;
+                height: 65%;
                 border-radius: 50px 50px 0 0;
                 background: #FFF;
+
+                @include rwd(mobile) {
+                    bottom: 33%;
+                }
 
                 >.stem {
                     background: #EFEFEF;
                     position: relative;
                     display: block;
-                    width: 20px;
-                    height: 161px;
+                    width: 76%;
+                    height: 98%;
                     border-radius: 10px 10px 0 0;
                     margin: 5px auto;
-
 
 
                     >.fluid {
@@ -231,11 +280,15 @@
                 line-height: 60px;
                 color: #FFF;
                 position: absolute;
-                bottom: 0;
-                left: 10px;
-                width: 60px;
-                height: 60px;
+                bottom: 1%;
+                left: 24%;
+                width: 131%;
+                height: 28%;
                 border-radius: 100%;
+                @include rwd(small) {
+                    line-height: 35px;
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -271,7 +324,7 @@
         z-index: -3;
         bottom: 5%;
         left: 18%;
-        animation-play-state: paused;
+        // animation-play-state: paused;
         animation-name: handmove1;
         animation-duration: 0.5s;
         animation-direction: alternate-reverse;
@@ -285,20 +338,20 @@
         z-index: -1;
         bottom: 5%;
         left: 18%;
-        animation-play-state: paused;
+        // animation-play-state: paused;
         animation-name: handmove2;
         animation-duration: 0.5s;
         animation-direction: alternate-reverse;
         animation-iteration-count: infinite;
     }
 
-    &:hover .sop-hand1 {
-        animation-play-state: running;
-    }
+    // &:hover .sop-hand1 {
+    //     animation-play-state: running;
+    // }
 
-    &:hover .sop-hand2 {
-        animation-play-state: running;
-    }
+    // &:hover .sop-hand2 {
+    //     animation-play-state: running;
+    // }
 
     >.bubble1 {
         position: absolute;
@@ -306,12 +359,12 @@
         width: 33%;
         bottom: 2%;
         left: 35%;
-        animation: 1s out linear infinite alternate-reverse paused;
+        animation: 1s out linear infinite alternate-reverse;
     }
 
-    &:hover .bubble1 {
-        animation-play-state: running;
-    }
+    // &:hover .bubble1 {
+    //     animation-play-state: running;
+    // }
 
     >.sop-hand-water-1 {
         position: absolute;
@@ -321,13 +374,13 @@
         right: 42%;
         opacity: 0;
 
-        &.-w1 {
+        // &.-w1 {
             animation-play-state: running;
             animation-name: watermove1;
             animation-duration: 1s;
             animation-delay: 0.9s;
             animation-iteration-count: infinite;
-        }
+        // }
     }
 
     >.sop-hand-water-2 {
@@ -338,13 +391,13 @@
         right: 42%;
         opacity: 0;
 
-        &.-w2 {
+        // &.-w2 {
             animation-play-state: running;
             animation-name: watermove1;
             animation-duration: 1s;
             animation-delay: 0.7s;
             animation-iteration-count: infinite;
-        }
+        // }
     }
 
     >.sop-hand-water-3 {
@@ -355,13 +408,13 @@
         right: 42%;
         opacity: 0;
 
-        &.-w3 {
+        // &.-w3 {
             animation-play-state: running;
             animation-name: watermove1;
             animation-duration: 1s;
             animation-delay: 0.5s;
             animation-iteration-count: infinite;
-        }
+        // }
     }
 
     >.sop-hand-faucet {
@@ -448,5 +501,35 @@
     0% {
         top: 50%;
         opacity: 0;
+    }
+}
+
+
+.pointer {
+    // border: 1px solid red;
+    text-align: center;
+    margin: 20px 0;
+    .sop-link {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        img {
+            width: 100%;
+            height: 100%;
+            transform: rotate(90deg);
+            vertical-align: middle;
+            
+        }
+        
+    }
+    p {
+        display: inline-block;    
+        color: white;
+        a {
+            text-decoration: none;
+        }
+        a:active, a:hover, a:link, a:visited {
+            color: white;
+        }
     }
 }
