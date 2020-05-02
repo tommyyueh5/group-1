@@ -1,4 +1,4 @@
-document.write("<script type='text/javascript' src='/dest/js/var.js'></script>");
+document.write("<script type='text/javascript' src='../dest/js/var.js'></script>");
 
 //swiper---------------------------------------------------------------------
 $(window).ready(function() {

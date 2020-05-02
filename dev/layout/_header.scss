@@ -13,7 +13,7 @@ header {
         transition: top 0.3s linear;
         color: whitesmoke;
         width: 100%;
-        background-image: url("/dest/image/index/background/black_background.png");
+        background-image: url("../image/index/background/black_background.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
@@ -25,7 +25,7 @@ header {
             align-items: center;
             z-index: 1;
             a {
-                background-image: url("/dest/image/title/logo-text.png");
+                background-image: url("../image/title/logo-text.png");
                 width: 300px;
                 height: 70px;
                 display: block;

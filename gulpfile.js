@@ -14,17 +14,9 @@ gulp.task('concatHtml', function () {
 });
 gulp.task('concatjs', function () {
     //do sometime
-    gulp.src('./dev/html/**/*.js').pipe(gulp.dest('dest/'))
-    gulp.src('./dev/js/*.js').pipe(gulp.dest('dest/js'))
-});
-gulp.task('concatjs', function () {
-    //do sometime
     gulp.src('./dev/JS/**/*').pipe(gulp.dest('dest/js'))
 });
-gulp.task('concatcss', function () {
-    //do sometime
-    gulp.src('./dev/css/*.css').pipe(gulp.dest('dest/css'))
-});
+
 gulp.task('concatimage', function () {
     //do sometime
     gulp.src('./dev/image/**/*').pipe(gulp.dest('dest/image'))
@@ -37,17 +29,9 @@ gulp.task('concatfont', function () {
     //do sometime
     gulp.src('./dev/LAYOUT/fonts/**/*').pipe(gulp.dest('dest/fonts'))
 });
-gulp.task('concatlatest', function () {
+gulp.task('concatlayput', function () {
     //do sometime
-    gulp.src('./dev/html/latest-news/map/**/*').pipe(gulp.dest('dest/latest-news/map/'))
-});
-gulp.task('concatshop_move', function () {
-    //do sometime
-    gulp.src('./dev/html/Epidemic-shop/img/**/*').pipe(gulp.dest('dest/Epidemic-shop/img'))
-});
-gulp.task('concat_icofont', function () {
-    //do sometime
-    gulp.src('./dev/html/Epidemic-shop/icofont/**/*').pipe(gulp.dest('dest/Epidemic-shop/icofont'))
+    gulp.src('./dev/layout/**/*').pipe(gulp.dest('dest/Epidemic-shop/icofont'))
 });
 //編譯scss
 
@@ -85,7 +69,7 @@ gulp.task('clean', function () {
 //         .pipe(gulp.dest('dest/'));
 // })
 gulp.task('fileinclude', function () {
-    gulp.src(['dev/HTML/*.html'])
+    gulp.src(['dev/*.html'])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
@@ -103,22 +87,21 @@ gulp.task('default', function () {
             //根目錄
             baseDir: "./",
             files: ['**'],
-            proxy: 'http://localhost:3000',
-            // index: "/dest/index.html"
-            // index: "/dest/Back_End.html"
-            // index: "/dest/Epidemic-prevention-SOP.html"
-            // index: "/dest/btn-style.html"
-            // index: "/dest/diseaseHistory.html"
-            // index: "/dest/game.html"
-            // index: "/dest/Epidemic-shop.html"
-            // index: "/dest/forum.html"
-            // index: "/dest/member.html"
-            // index: "/dest/infectious-Diseases.hmtl"
-            // index: "/dest/latest-news.html"
-            // index: "/dest/latest-news_child.html"
-            index: "/dest/welcome.html"
-            // index: "/dest/btn-style.html"
-
+            proxy: 'http://localhost:3005',
+            index: "dest/homepage.html"
+            // index: "dest/Back_End.html"
+            // index: "dest/Epidemic-prevention-SOP.html"
+            // index: "dest/btn-style.html"
+            // index: "dest/diseaseHistory.html"
+            // index: "dest/game.html"
+            // index: "dest/Epidemic-shop.html"
+            // index: "dest/forum.html"
+            // index: "dest/member.html"
+            // index: "dest/infectious-Diseases.hmtl"
+            // index: "dest/latest-news.html"
+            // index: "dest/latest-news_child.html"
+            // index: "dest/welcome.html"
+            // index: "dest/btn-style.html"
         }
     });
 

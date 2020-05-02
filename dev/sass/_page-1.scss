@@ -78,7 +78,7 @@ section.Earth {
     }
 
     .clouds {
-        background: transparent url("/dest/image/earth/cloud_1.png") repeat top center;
+        background: transparent url("../image/earth/cloud_1.png") repeat top center;
         background-size: cover;
         z-index: 3;
         animation: move-clouds-back 200s linear infinite;
