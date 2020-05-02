@@ -38,7 +38,7 @@ window.addEventListener('load', ()=>{
             // margin: 40,
             nav:true,
             
-            navText: ["<i class='icofont-rounded-left prenext'></i>","<i class='icofont-rounded-right prenext'></i>"],
+            navText: ["<i class='icofont icofont-rounded-left prenext'></i>","<i class='icofont icofont-rounded-right prenext'></i>"],
             responsive:{
                 0:{
                     items:1
@@ -260,7 +260,7 @@ $('.myowl-2').owlCarousel({
     margin:50,
     nav:true,
     // navContainer: '#customNav',
-    navText: ["<i class='icofont-rounded-left prenext pre'></i>","<i class='icofont-rounded-right prenext next'></i>"],
+    navText: ["<i class='icofont icofont-rounded-left prenext pre'></i>","<i class='icofont icofont-rounded-right prenext next'></i>"],
     responsive:{
         0:{
             items:1

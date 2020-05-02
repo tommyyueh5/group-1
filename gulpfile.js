@@ -8,30 +8,26 @@ watch = require('gulp-watch');
 fileinclude = require('gulp-file-include');
 
 //搬家
-gulp.task('concatHtml', function () {
-    //do sometime
-    gulp.src('./dev/html/index/earth/**/*').pipe(gulp.dest('dest/index/earth/'))
-});
 gulp.task('concatjs', function () {
     //do sometime
-    gulp.src('./dev/JS/**/*').pipe(gulp.dest('dest/js'))
+    gulp.src('./dev/JS/**/*').pipe(gulp.dest('./dest/js'))
 });
 
 gulp.task('concatimage', function () {
     //do sometime
-    gulp.src('./dev/image/**/*').pipe(gulp.dest('dest/image'))
+    gulp.src('./dev/image/**/*').pipe(gulp.dest('./dest/image'))
 });
 gulp.task('concatphp', function () {
     //do sometime
-    gulp.src('./dev/html/*/PHP/*').pipe(gulp.dest('dest/'))
+    gulp.src('./dev/html/*/PHP/*').pipe(gulp.dest('./dest/'))
 });
 gulp.task('concatfont', function () {
     //do sometime
-    gulp.src('./dev/LAYOUT/fonts/**/*').pipe(gulp.dest('dest/fonts'))
+    gulp.src('./dev/LAYOUT/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
 });
 gulp.task('concatlayput', function () {
     //do sometime
-    gulp.src('./dev/layout/**/*').pipe(gulp.dest('dest/Epidemic-shop/icofont'))
+    gulp.src('./dev/layout/**/*').pipe(gulp.dest('./dest/Epidemic-shop/icofont'))
 });
 //編譯scss
 
@@ -39,7 +35,7 @@ gulp.task('concatlayput', function () {
 gulp.task('sass', function () {
     gulp.src('./dev/SASS/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('dest/css'))
+        .pipe(gulp.dest('./dest/css'))
 });
 //壓縮檔案
 gulp.task('minicss', ['sass'], function () {
@@ -74,7 +70,7 @@ gulp.task('fileinclude', function () {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(gulp.dest('dest/'));
+        .pipe(gulp.dest('./dest'));
 })
 
 //建立預視瀏覽器
