@@ -275,9 +275,13 @@ $('.myowl-2').owlCarousel({
             items:1
         },
         600:{
-            items:3
+            items:2
         },
-        1000:{
+        992: {
+            items:2
+        },
+
+        1055:{
             items:3
         }
     }

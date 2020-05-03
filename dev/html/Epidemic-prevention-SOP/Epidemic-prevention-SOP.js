@@ -111,10 +111,6 @@ window.addEventListener('load', function() {
 
         if (e.code == 'ArrowRight' && c == 1) {
 
-
-
-
-
             c = 0;
             setTimeout(function() {
                 v += 200;
@@ -124,8 +120,7 @@ window.addEventListener('load', function() {
 
             if (inter == 1) {
                 slideContainerMove = setInterval(function() {
-                    s -= 5;
-                    slideContainer.style.left = `${s}px`;
+                    
                     //
                     if (s == -1010) {
 
@@ -152,6 +147,11 @@ window.addEventListener('load', function() {
                         }).go();
 
                     }
+                    if (s == -2900) {
+                        s = -2895;
+                    }
+                    s -= 5;
+                    slideContainer.style.left = `${s}px`;
                     //
                 }, 5);
                 inter = 0;
@@ -176,11 +176,11 @@ window.addEventListener('load', function() {
 
             if (inter == 1) {
                 slideContainerMove = setInterval(function() {
-                    s += 5;
-                    console.log(s);
+                    
                     if (s == 0) {
                         s = -5;
                     }
+                    s += 5;
                     slideContainer.style.left = `${s}px`;
                 }, 5);
                 inter = 0;
