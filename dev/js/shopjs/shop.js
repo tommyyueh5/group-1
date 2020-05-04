@@ -41,13 +41,33 @@ window.addEventListener('load', ()=>{
             navText: ["<i class='icofont icofont-rounded-left prenext'></i>","<i class='icofont icofont-rounded-right prenext'></i>"],
             responsive:{
                 0:{
-                    items:1
+                    items:2,
+                    margin: 10,
                 },
-                600:{
-                    items:2
+                577: {
+                    items:2,
+                    margin: 0,
                 },
-                1000:{
-                    items:2
+                768: {
+                    items:1,
+                    margin: 50,
+                },
+                980: {
+                    items:1,
+                    margin: 0,
+                },
+                992:{
+                    items:2,
+                    margin: 50,
+                },
+                
+                1200:{
+                    items:2,
+                    margin: 0,
+                },
+                1400:{
+                    items:2,
+                    margin: 0,
                 }
             }
         });
@@ -214,42 +234,31 @@ $('.myowl-1-1').owlCarousel({
         0:{
             items:2,
             margin: 10,
-            // stagePadding: 95,
         },
-        576: {
+        577: {
             items:2,
-            margin: 10,
-            // stagePadding: 95,
-        },
-        645: {
-            items:2,
-            margin: 50,
-            // stagePadding: 75,
-        },
-        767: {
-            items:3,
             margin: 0,
-            // stagePadding: 60,
         },
-        991:{
+        768: {
+            items:1,
+            margin: 50,
+        },
+        980: {
+            items:1,
+            margin: 0,
+        },
+        992:{
             items:2,
             margin: 50,
-            // stagePadding: 100,
         },
-        1000:{
-            items:2,
-            margin: 40,
-            // stagePadding: 65,
-        },
+        
         1200:{
             items:2,
-            margin: 40,
-            // stagePadding: 65,
+            margin: 0,
         },
         1400:{
             items:2,
             margin: 0,
-            // stagePadding: 85,
         }
 
     }
@@ -266,9 +275,13 @@ $('.myowl-2').owlCarousel({
             items:1
         },
         600:{
-            items:3
+            items:2
         },
-        1000:{
+        992: {
+            items:2
+        },
+
+        1055:{
             items:3
         }
     }

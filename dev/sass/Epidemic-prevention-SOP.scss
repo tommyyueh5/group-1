@@ -5,12 +5,12 @@
     height: 600px;
     overflow: hidden;
     position: relative;
-    min-width: 1280px;
+    // min-width: 1280px;
 }
 
 #slideContainer {
     /* border: 5px solid green; */
-    width: 300%;
+    width: 4200px;
     height: 100%;
     position: relative;
     background-image: url('/dev/image/sop/111.png');
@@ -780,4 +780,4 @@ span.info {
 
 #ther img {
     width: 45%;
-}
+}  
