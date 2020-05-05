@@ -3,7 +3,7 @@ document.write("<script type='text/javascript' src='../dest/js/var.js'></script>
 //swiper---------------------------------------------------------------------
 $(window).ready(function() {
         var swiper1 = new Swiper('.swiper-container ', {
-            direction: 'vertical',
+            direction: 'horizontal',
             speed: 1000,
             // spaceBetween: 500,
             autoHeight: true,
@@ -12,7 +12,6 @@ $(window).ready(function() {
             loop: true,
             grabCursor: true,
             touchAngle: 45,
-
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -24,10 +23,18 @@ $(window).ready(function() {
                 },
             },
 
+            
+
             cubeEffect: {
                 slideShadows: true,
                 shadow: true,
             },
+            breakpoints:{
+                1200:{
+                    direction: 'vertical',
+                    
+                }
+            }
 
 
         });
@@ -82,15 +89,12 @@ window.addEventListener('load', function() {
 var swiper2 = new Swiper('.swiper-container-games', {
     slidesPerView: 3,
     spaceBetween: 30,
-    freeMode: true,
+    freeMode: false,
     setWrapperSize: true,
-    width: 1600,
-    // autoWidth:true,
     loop: true,
-
-    // slideNextClass : 'mynext',
-    // slidePrevClass : 'myprev',
-    // init: true,
+    autoplay: {
+        delay: 3000,
+      },
     pagination: {
         el: '.paginations',
         clickable: true,
@@ -98,6 +102,10 @@ var swiper2 = new Swiper('.swiper-container-games', {
     },
 
     breakpoints: {
+        414: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
         640: {
             slidesPerView: 2,
             spaceBetween: 20,
@@ -106,7 +114,7 @@ var swiper2 = new Swiper('.swiper-container-games', {
             slidesPerView: 3,
             spaceBetween: 40,
         },
-        1024: {
+        1200: {
             slidesPerView: 4,
             spaceBetween: 50,
         },
@@ -149,4 +157,208 @@ window.addEventListener('load', function() {
         smartBackspace: false,
 
     });
+});
+// 影片==============================================
+
+
+window.addEventListener('load',function(){
+
+
+const player = document.querySelector('.player');
+const video = player.querySelector('.viewer');
+const progress = player.querySelector('.progress');
+const progressBar = player.querySelector('.progress__filled');
+const toggle = player.querySelector('.toggle');
+const skipButtons = player.querySelectorAll('[data-skip]');
+const ranges = player.querySelectorAll('.player__slider');
+
+
+
+function togglePlay() {
+  const method = video.paused ? 'play' : 'pause';
+  video[method]();
+}
+
+function updateButton() {
+  const icon = this.paused ? '►' : '❚ ❚';
+  console.log(icon);
+  toggle.textContent = icon;
+}
+
+function skip() {
+ video.currentTime += parseFloat(this.dataset.skip);
+}
+
+function handleRangeUpdate() {
+  video[this.name] = this.value;
+}
+
+function handleProgress() {
+  const percent = (video.currentTime / video.duration) * 100;
+  progressBar.style.flexBasis = `${percent}%`;
+}
+
+function scrub(e) {
+  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
+}
+
+video.addEventListener('click', togglePlay);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
+video.addEventListener('timeupdate', handleProgress);
+
+toggle.addEventListener('click', togglePlay);
+skipButtons.forEach(button => button.addEventListener('click', skip));
+ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
+ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
+
+let mousedown = false;
+progress.addEventListener('click', scrub);
+progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => mousedown = true);
+progress.addEventListener('mouseup', () => mousedown = false);
+
+});
+// 子分頁============================================================
+window.addEventListener('load', function () {
+    //獲取標籤區
+    let International = document.querySelectorAll('.International');
+    let subNewsBox = document.querySelector('.subNewsBox');
+   
+    
+    //建立元素區
+    let btnClose = document.createElement('a');
+    let subcontainer = document.createElement('div');
+    let content = document.createElement('div');
+    let newsTitle = document.createElement('h1');
+    let newsContent = document.createElement('p');
+    let imgBox = document.createElement('div');
+    let img = document.createElement('img');
+    let dateBox = document.createElement('div');
+    let pdate = ` <p class="date1">0</p>
+                    <p class="date2">1</p>
+                    <p class="date3">2</p>`;
+    let pImg = document.createElement('p')
+    //新增class區
+    subcontainer.classList.add('subcontainer');
+    btnClose.classList.add('btnclose');
+    content.classList.add('content');
+    imgBox.classList.add('imgBox');
+    newsTitle.classList.add('newsTitle');
+    newsContent.classList.add('newsContent');
+    dateBox.classList.add('dateBox');
+    pImg.classList.add('pImg');
+    // pdate.classList.add('pdate');
+
+
+
+
+
+    //ajax取得json檔資料
+    (function () {
+        let xhr = new XMLHttpRequest();
+        let xhrData;
+
+        xhr.addEventListener('load', function () {
+            // console.log(xhr.readyState);
+
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                xhrData = JSON.parse(xhr.responseText);
+                ExportHtml(xhrData)
+            }
+        });
+        // 資料路徑
+        xhr.open('get', '/dest/js/news.json', true);
+        xhr.send();
+    })();
+    // xhrhandler()
+
+
+    // ================================================================
+
+
+    //輸出資料至畫面畫面
+    function ExportHtml(datalist) {
+        let flag = false;
+        Array.from(International).forEach((item, index) => {
+            item.addEventListener('click', function () {
+                
+                console.dir(document.body);
+                document.body.style.overflow = 'hidden';
+                
+                
+                // subNewsBox.style.overflow = 'hidden';
+                //顯示資料及加入標籤
+                subNewsBox.style.display = 'block';
+                subNewsBox.appendChild(subcontainer);
+                subcontainer.appendChild(btnClose);
+                subcontainer.appendChild(content);
+                content.appendChild(newsTitle);
+                content.appendChild(imgBox);
+                content.appendChild(newsContent);
+                imgBox.appendChild(img);
+                imgBox.appendChild(pImg);
+                content.appendChild(dateBox);
+                dateBox.innerHTML = pdate;
+                // dateBox.appendChild(pdate);
+                // dateBox.appendChild(pdate)
+
+                //設置屬性區
+                img.setAttribute('src', datalist[index].detail.imgBox.img);
+                //  圖片敘述
+                pImg.innerText = `▲ ${datalist[index].detail.imgBox.imgdetail}`;
+                // console.log(datalist[index]);
+
+
+
+
+                // 顯示標題及內容
+                let dateChilds = dateBox.children;
+                let date = dateHandler(datalist[index].detail.date);
+                newsTitle.innerText = datalist[index].title;
+                newsContent.innerText = datalist[index].detail.textContent;
+                dateChilds[0].innerText = date[0];
+                dateChilds[2].innerText = `${date[1]}月`;
+                dateChilds[1].innerText = date[2];
+
+
+
+                //關閉就執行
+                if (!flag) {
+                    btnClose.addEventListener('click', closebtn);
+                    subNewsBox.addEventListener('click', outlayerclose);
+                }
+            });
+        });
+
+
+
+        //關閉btn按鈕
+        function closebtn() {
+            subcontainer.remove();
+            flag = false;
+        }
+        // 點擊subNewsBox之外關閉彈跳視窗
+        function outlayerclose(e) {
+            // console.log(e.clientX, e.clientY);
+            let rx = subcontainer.getBoundingClientRect().right;
+            let lx = subcontainer.getBoundingClientRect().left;
+            let by = subcontainer.getBoundingClientRect().bottom;
+            let ty = subcontainer.getBoundingClientRect().top;
+            if (e.clientX < lx || e.clientX > rx || e.clientY < ty || e.clientY > by) {
+                // document.body.display.overflow = 'auto';
+                document.body.style.overflow = 'auto';
+                subNewsBox.style.display = 'none';
+                subcontainer.remove();
+                flag = false;
+            }
+        }
+
+        //日期處理
+        function dateHandler(date) {
+            return date.split('/');
+        }
+    }
+
 });

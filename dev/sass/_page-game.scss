@@ -145,7 +145,7 @@
                         // height: 100%;
                         text-align: center;
                         font-size: 18px;
-                        background: #fff;
+                        // background: #fff;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -162,6 +162,7 @@
 
                                 width: 100%;
                                 height: 100%;
+                                border-radius: 5px;
                                 // object-fit: cover;
                             }
                         }
@@ -175,5 +176,38 @@
                  transform: none; 
             }
         }
+    }
+}
+
+
+@include rwd(desktop) {
+    
+}
+@include rwd(medium) {
+    
+}
+@include rwd(small) {
+    
+}
+@include rwd(mobile) {
+
+    .merge-game-Carousel .game-container > .game-background > .context{
+        top: 25%;
+        transform: translate(-50%, -25%);
+        width: 80%;
+        height: 50%;
+    }
+
+    .merge-game-Carousel .game-container > .game-background > .game-btn{
+        top: 65%;
+        transform: translate(-50%, -65%);
+    }
+    .merge-game-Carousel .Carousel > .title{
+        width: 95%;
+        padding: 5px 0;
+        margin: 0 auto;
+    }
+    .merge-game-Carousel .Carousel > .title p{
+        font-size: $sub_titleFs;
     }
 }
