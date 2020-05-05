@@ -17,20 +17,33 @@
 
 <body>
     @@include('./LAYOUT/header.html')
-
+    <!-- <button id='btn'>1234</button> -->
+    <div id='btn' class="skip">
+        <img src="../dest/image/sop/skip.png" alt="">
+    </div>
     <div id="pinContainer">
+        
+        <!-- <div class="keyhint">
+            <p>使用</p>
+            <div class="keyhint-pic">
+                <img src="../dest/image/Epidemic-prevention-SOP/keyhint.png" alt="">
+            </div>
+        </div> -->
+        
         <div class="plane">
             <img src="../dest/image/sop/cloud_infinite.png" alt="" class="cloud_infinite">
             <img class="map" src="../dest/image/sop/world-map.png" alt="" class="map">
             <img class="airplane_pic" src="../dest/image/sop/1111.png" alt="" srcset="">
 
         </div>
+
+
         <div id="slideContainer">
             <div class="tower">
                 <img src="../dest/image/sop/airport.png" alt="">
                 <div class="marquee">
                     <div class="container">
-                        <p class="marquee_text">歡迎歸國，返國後若有發燒及呼吸道症狀，請佩戴口罩就醫。 務必主動告知醫師14日內之旅遊史、職業史、接觸史及是否群聚(TOCC) 有任何不明原因發燒或身體不適情形，或入境時如有嘔吐、腹瀉、腹痛、發燒， 請告知航空公司服務人員或機場檢疫人員。
+                        <p class="marquee_text">歡迎歸國，返國後若有發燒及呼吸道症狀，請配戴口罩就醫。 務必主動告知醫師14日內之旅遊史、職業史、接觸史及是否群聚(TOCC) 有任何不明原因發燒或身體不適情形，或入境時如有嘔吐、腹瀉、腹痛、發燒， 請告知航空公司服務人員或機場檢疫人員。
                         </p>
                     </div>
 
@@ -42,7 +55,7 @@
             <div class="stair">
 
                 <img src="../dest/image/sop/stair.png" alt="" class="stair-img">
-                <div class="miss"></div>
+                
                 <div class="joke-small">
                     <img src="../dest/image/sop/first.png" alt="" class="joke-small-img">
                 </div>
@@ -51,8 +64,13 @@
                 <img src="../dest/image/sop/ariplane.png" alt="" class="airplane-img">
             </div>
 
+            <div class="miss" id='miss'></div>
 
 
+
+            <div class="pointer-1" id="pointer-1">
+                <img src="../dest/image/Epidemic-prevention-SOP/hand_pointer.png" alt="">
+            </div>
             <div id="item">
                 <img id="img1" src="../dest/image/sop/ther.png" alt="">
                 <h2>溫度計</h2>
@@ -73,6 +91,10 @@
 
 
             <div id="sec1-hint" class="sec1-hint"></div>
+
+            <div class="pointer-2" id="pointer-2">
+                <img src="../dest/image/Epidemic-prevention-SOP/hand_pointer.png" alt="">
+            </div>
             <div class="sec1-mo-out">
                 <div class="sec1-mo">
 
@@ -113,9 +135,7 @@
 
 
         <div id="sec1-mask" class="sec1-mask">
-
             <div class="sec1-mask-pic">
-
                 <img id="sec1-mask-img" class="sec1-mask-img" src="../dest/image/sop/mask.png" alt="">
             </div>
         </div>

@@ -1,6 +1,11 @@
 
 window.addEventListener('load', function() {
+    
+    
+
     let joke = document.getElementById('joke');
+    let miss = document.getElementById('miss');
+
     let slideContainer = document.getElementById('slideContainer');
     let mark = document.getElementById('sec1-mark');
     let hint = document.getElementById('sec1-hint');
@@ -19,17 +24,47 @@ window.addEventListener('load', function() {
     let slideContainerMove;
 
     let dranimate = document.getElementById('doctor');
-    let mask1 = document.getElementById('item');
-    console.log(mask1);
 
+    let pointer1 = document.getElementById('pointer-1');
+    let mask1 = document.getElementById('item');
     let mask2 = document.getElementById('item2')
     let mask3 = document.getElementById('item3')
     let bag = document.getElementById('alcohol');
     document.getElementById('myMeun').style.position = "static";
 
+    // map
+    let Path = {
+        curviness: 3,
+        autoRotate: true,
+        values: [
+            { x: 300, y: -20 },
+            { x: 450, y: 10 },
+            { x: 700, y: 100 },
+            { x: 950, y: -100 },
+            { x: 650, y: -50 },
+            { x: 800, y: 70 },
+            { x: 950, y: -60 },
+            { x: 1200, y: -100 },
+            { x: 1400, y: 20 },
+            { x: 1200, y: 80 },
+            { x: 1600, y: -200 },
+    
+            { x: window.innerWidth, y: -150 },
+        ]
+    }
+    
+    let tween = new TimelineLite();
+    
+    tween.add(
+        TweenLite.to('.airplane_pic', 8, {
+            bezier: Path,
+            ease: Power0.easeNone
+        })
+    );
+
     // plane
-    var aaa = new TimelineMax()
-        .to('.airplane-img', 2, {
+    var plane = new TimelineMax();
+    plane.to('.airplane-img', 2, {
             y: 100,
             rotation: -10,
             scale: 1.1,
@@ -57,7 +92,7 @@ window.addEventListener('load', function() {
             opacity: 1,
 
         })
-        .to(['.joke-small-img'], 1, {
+        .to('.joke-small-img', 1, {
             opacity: 1,
         })
         .to(['.joke-small-img'], 1, {
@@ -73,6 +108,17 @@ window.addEventListener('load', function() {
             scale: 3.4,
             opacity: 0,
         });
+        plane.addLabel('spin');
+        // var nextLabel = getLabelAfter()
+        // tl.tweenTo(nextLabel)
+    document.getElementById('btn').addEventListener('click',function(){
+        joke.style.animationName = 'stop';
+        miss.style.animationDelay = '0.1s';
+
+        
+        document.getElementsByClassName('plane')[0].remove();
+        plane.seek('spin');
+    });
 
     // plane
     mask1.onclick = function() {
@@ -105,13 +151,14 @@ window.addEventListener('load', function() {
 
     //remove map
     setTimeout(function() {
-        document.getElementsByClassName('plane')[0].remove();
+        if (document.getElementsByClassName('plane')[0]) {
+            document.getElementsByClassName('plane')[0].remove();
+        }
     }, 6000);
 
     window.addEventListener('keydown', function(e) {
-
-        if (e.code == 'ArrowRight' && c == 1) {
-
+        if (e.keyCode == 39 && c == 1) {
+            
             c = 0;
             setTimeout(function() {
                 v += 200;
@@ -129,7 +176,7 @@ window.addEventListener('load', function() {
                         mask1.style.animationPlayState = 'running';
                         mask2.style.animationPlayState = 'running';
                         mask3.style.animationPlayState = 'running';
-
+                        pointer1.style.animationPlayState = 'running';
                         let pha = document.getElementsByClassName('pha')[0];
                         let type = document.createElement("p");
                         type.setAttribute('id', 'text');
@@ -148,12 +195,11 @@ window.addEventListener('load', function() {
                         }).go();
 
                     }
-                    if (s == -2900) {
-                        s = -2895;
+                    if (s == (-3515) ){
+                        s = -3510;
                     }
                     s -= 5;
                     slideContainer.style.left = `${s}px`;
-                    //
                 }, 5);
                 inter = 0;
             }
@@ -162,12 +208,12 @@ window.addEventListener('load', function() {
 
         window.addEventListener('keyup', function(e) {
             clearInterval(slideContainerMove);
-            if (e.code == 'ArrowRight') {
+            if (e.keyCode == 39) {
                 inter = 1;
             }
         });
 
-        if (e.code == 'ArrowLeft' && c == 1) {
+        if (e.keyCode == 37 && c == 1) {
             c = 0;
             setTimeout(function() {
                 v += 200;
@@ -189,7 +235,7 @@ window.addEventListener('load', function() {
         }
         window.addEventListener('keyup', function(e) {
             clearInterval(slideContainerMove);
-            if (e.code == 'ArrowLeft') {
+            if (e.keyCode == 37) {
                 inter = 1;
             }
         });
@@ -276,4 +322,9 @@ window.addEventListener('load', function() {
     $('.icofont-search').click(() => { //展開搜尋紐
         $(".input_box").toggleClass("on");
     });
+
+
+
+    
+    
 });

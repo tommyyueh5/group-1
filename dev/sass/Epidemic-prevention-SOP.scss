@@ -1,21 +1,128 @@
 @import "../LAYOUT/base/var";
+body {
+    background-image: url('../../dest/image/sopImg/black_background.png');
+    
+}
+
 #pinContainer {
-    /* border: 5px solid red; */
-    width: 100%;
+    // border: 5px solid red;
+    width: 1280px;
     height: 600px;
+
+    
     overflow: hidden;
     position: relative;
     // min-width: 1280px;
+    margin: 0 auto;
+    
+    
 }
 
 #slideContainer {
-    /* border: 5px solid green; */
-    width: 4200px;
+    // border: 5px solid green;
+    width: 4800px;
     height: 100%;
     position: relative;
-    background-image: url('/dev/image/sop/111.png');
+    background-image: url('/dev/image/sop/background0.png');
     background-size: contain;
 }
+
+.skip {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.keyhint {
+    border: 2px solid orange;
+    color: white;
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(70, 70, 70, 0.61);
+}
+
+.keyhint-pic {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.pointer-1 {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    transform: rotate(90deg);
+    top: 23%;
+    left: 33%;
+    opacity: 0;
+    cursor: pointer;
+    animation:  secmask 2s ease-in 2s 1 normal paused forwards, 
+                secmaskmove 1s ease-in 3s infinite normal paused none;
+    cursor: pointer;
+    
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+.pointer-2 {
+    width: 60px;
+    height: 60px;
+    
+    position: absolute;
+    transform: rotate(90deg);
+    top: 23%;
+    left: 72%;
+    opacity: 0;
+    cursor: pointer;
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes secmask{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes secmaskmove{
+    0% {
+        left: 33%;
+    }
+    100% {
+        left: 33.1%;
+    }
+}
+// position: absolute;
+// top: 5%;
+// left: 35%;
+// width: 5%;
+// padding: 10px;
+// animation-name: maskin;
+// animation-timing-function: ease-in;
+// animation-duration: 2s;
+// animation-delay: 2.5s;
+// opacity: 1;
+// animation-fill-mode: backwards;
+// animation-play-state: paused;
+
 
 .airplane {
     position: absolute;
@@ -29,18 +136,19 @@
 .stair {
     position: absolute;
     bottom: 3%;
-    left: 7.4%;
+    left: 6.7%;
 }
 
 .miss {
     position: absolute;
-    right: 180px;
-    bottom: 95px;
+    left: 16%;
+    bottom: 77px;
     width: 120px;
     height: 250px;
     background-size: cover;
     animation: eyes 5s step-end infinite 13.5s;
     transition: .2s linear all;
+    
 }
 
 @keyframes eyes {
@@ -111,7 +219,7 @@
 
 .sec1-mo-out {
     position: absolute;
-    right: 13%;
+    right: 21%;
     bottom: 10%;
 }
 
@@ -130,8 +238,8 @@
 .sec1-home-out {
     position: absolute;
     width: 700px;
-    bottom: -4.5%;
-    right: -1%;
+    bottom: -7.5%;
+    right: 8%;
 }
 
 .sec1-home-img {
@@ -221,6 +329,29 @@
     width: 35%;
 }
 
+
+// @keyframes sec1mask{
+//     0% {
+//         opacity: 0;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
+// position: absolute;
+// top: 5%;
+// left: 35%;
+// width: 5%;
+// padding: 10px;
+// animation-name: maskin;
+// animation-timing-function: ease-in;
+// animation-duration: 2s;
+// animation-delay: 2.5s;
+// opacity: 1;
+// animation-fill-mode: backwards;
+// animation-play-state: paused;
+
+
 .show-hint {
     opacity: 1;
     transition: opacity 2s ease;
@@ -249,7 +380,7 @@ div.plane {
     text-align: center;
     position: absolute;
     top: 0;
-    z-index: 100;
+    z-index: 5;
     background-color: white;
     animation-name: map;
     animation-duration: 5s;
@@ -490,7 +621,7 @@ div.pha {
 h2,
 span.info {
     color: rgb(34, 34, 34);
-    text-shadow: grey 0.02em 0.02em;
+    // text-shadow: grey 0.02em 0.02em;
     line-height: 20px;
     opacity: 1;
     transition: linear .3s;
@@ -714,7 +845,7 @@ div.pha {
 
 h2,
 span.info {
-    color: whitesmoke;
+    color: rgb(36, 36, 36);
     text-shadow: grey 0.02em 0.02em;
     opacity: 1;
     transition: linear .3s;
