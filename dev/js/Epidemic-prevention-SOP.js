@@ -7,6 +7,7 @@ window.addEventListener('load', function() {
     let miss = document.getElementById('miss');
 
     let slideContainer = document.getElementById('slideContainer');
+    let pinContainer = document.getElementById('pinContainer');
     let mark = document.getElementById('sec1-mark');
     let hint = document.getElementById('sec1-hint');
 
@@ -27,9 +28,10 @@ window.addEventListener('load', function() {
 
     let pointer1 = document.getElementById('pointer-1');
     let mask1 = document.getElementById('item');
-    let mask2 = document.getElementById('item2')
-    let mask3 = document.getElementById('item3')
+    let mask2 = document.getElementById('item2');
+    let mask3 = document.getElementById('item3');
     let bag = document.getElementById('alcohol');
+    let sign = document.getElementById('sign');
     document.getElementById('myMeun').style.position = "static";
 
     // map
@@ -115,14 +117,22 @@ window.addEventListener('load', function() {
         joke.style.animationName = 'stop';
         miss.style.animationDelay = '0.1s';
 
-        
-        document.getElementsByClassName('plane')[0].remove();
+        if (document.getElementsByClassName('plane')[0]) {
+            document.getElementsByClassName('plane')[0].remove();
+        }
         plane.seek('spin');
+        this.remove();
     });
+
+    setTimeout(function(){
+        if (document.getElementById('btn')) {
+            document.getElementById('btn').remove();
+        }
+    },18000);
 
     // plane
     mask1.onclick = function() {
-        console.log(mask1, mask2, mask3);
+        // console.log(mask1, mask2, mask3);
         let tag1 = document.createElement('div');
         tag1.innerHTML = `<div id="ther" style="animation-play-state:running">
                             <img src="/dest/image//Epidemic-prevention-SOP/ther.png" alt="">
@@ -168,10 +178,8 @@ window.addEventListener('load', function() {
 
             if (inter == 1) {
                 slideContainerMove = setInterval(function() {
-                    
                     //
                     if (s == -1010) {
-
                         dranimate.style.animationPlayState = 'running';
                         mask1.style.animationPlayState = 'running';
                         mask2.style.animationPlayState = 'running';
@@ -193,8 +201,14 @@ window.addEventListener('load', function() {
                             speed: 50,
                             startDelay: 2000,
                         }).go();
-
                     }
+
+                    if (s==-3515) {
+                        sign.style.animationPlayState = 'running';
+                        sign.style.backgroundColor ='rgba(187, 187, 187, 0.562)';
+                    }
+
+                    
                     if (s == (-3515) ){
                         s = -3510;
                     }

@@ -29,8 +29,8 @@ body {
 
 .skip {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    right: 5%;
+    bottom: 0%;
     z-index: 10;
 }
 
@@ -62,13 +62,12 @@ body {
     height: 60px;
     position: absolute;
     transform: rotate(90deg);
-    top: 23%;
-    left: 33%;
+    top: 35%;
+    left: -23%;
     opacity: 0;
     cursor: pointer;
     animation:  secmask 2s ease-in 2s 1 normal paused forwards, 
                 secmaskmove 1s ease-in 3s infinite normal paused none;
-    cursor: pointer;
     
     img {
         display: block;
@@ -84,7 +83,7 @@ body {
     transform: rotate(90deg);
     top: 23%;
     left: 72%;
-    opacity: 0;
+    opacity: 1;
     cursor: pointer;
     img {
         display: block;
@@ -104,10 +103,10 @@ body {
 
 @keyframes secmaskmove{
     0% {
-        left: 33%;
+        left: -23%;
     }
     100% {
-        left: 33.1%;
+        left: -24%;
     }
 }
 // position: absolute;
@@ -221,30 +220,30 @@ body {
     position: absolute;
     right: 21%;
     bottom: 10%;
+    .sec1-mo {
+        // border: 1px solid green;
+        bottom: -51px;
+        width: 200px;
+        height: 400px;
+        position: relative;
+        .sec1-mo-img {
+            width: 100%;
+        }
+    }
 }
 
-.sec1-mo {
-    // border: 1px solid green;
-    bottom: -51px;
-    width: 200px;
-    height: 400px;
-    position: relative;
-}
-
-.sec1-mo-img {
-    width: 100%;
-}
 
 .sec1-home-out {
     position: absolute;
     width: 700px;
     bottom: -7.5%;
     right: 8%;
+    .sec1-home-img {
+        width: 100%;
+    }
 }
 
-.sec1-home-img {
-    width: 100%;
-}
+
 
 @keyframes mark {
     0% {
@@ -374,6 +373,53 @@ body {
     transition: opacity 2s ease 2.5s, left 2s ease, bottom 2s ease;
 }
 
+
+
+.sign {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // left: 14%;
+    bottom: -100%;
+    text-align: center;
+    z-index: 15;
+    animation: sign 2s ease-in 0s 1 normal paused forwards;
+    img {
+        display: inline-block;
+        width: 71%;
+        height: 91%;
+        margin: 20px;
+        
+    }
+    p {
+        position: absolute;
+        bottom: 65%;
+        left: 36%;
+        font-size: 50px;
+        a {
+            text-decoration: none;
+            color: black;  
+        }
+    }
+
+
+}
+
+@keyframes sign {
+    0%{
+    }
+    100%{
+        bottom: 0%;
+    }
+}
+
+
+
+
+
+
+
+//開
 div.plane {
     width: 100%;
     height: 100%;
@@ -404,12 +450,17 @@ div.plane {
     height: 100%;
 }
 
+
+
 .airplane_pic {
     height: 150px;
     position: absolute;
     bottom: 50%;
     left: 0;
 }
+//
+
+
 
 .tower {
     position: absolute;

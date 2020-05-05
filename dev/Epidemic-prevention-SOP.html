@@ -18,11 +18,13 @@
 <body>
     @@include('./LAYOUT/header.html')
     <!-- <button id='btn'>1234</button> -->
-    <div id='btn' class="skip">
+    <!-- <div id='btn' class="skip">
         <img src="../dest/image/sop/skip.png" alt="">
-    </div>
+    </div> -->
     <div id="pinContainer">
-        
+        <div id='btn' class="skip">
+            <img src="../dest/image/sop/skip.png" alt="">
+        </div>
         <!-- <div class="keyhint">
             <p>使用</p>
             <div class="keyhint-pic">
@@ -68,24 +70,29 @@
 
 
 
-            <div class="pointer-1" id="pointer-1">
+            <!-- <div class="pointer-1" id="pointer-1">
                 <img src="../dest/image/Epidemic-prevention-SOP/hand_pointer.png" alt="">
-            </div>
+            </div> -->
             <div id="item">
                 <img id="img1" src="../dest/image/sop/ther.png" alt="">
                 <h2>溫度計</h2>
                 <span class="info">定時量體溫，若有發燒、咳嗽及呼吸急促等症狀，應就醫並落實健康管理、在家休息！</span>
+                <div class="pointer-1" id="pointer-1">
+                    <img src="../dest/image/Epidemic-prevention-SOP/hand_pointer.png" alt="">
+                </div>
             </div>
             <div id="item2">
                 <img id="img2" src="../dest/image/sop/alcohol-gel.png" alt="">
                 <h2>消毒酒精</h2>
                 <span class="info">定時清潔消毒環境，隨身攜帶小瓶酒精、乾洗手，於公共場合、搭乘大眾運輸工具後進行殺菌消毒。
                 </span>
+               
             </div>
             <div id="item3">
                 <img id="img3" src="../dest/image/sop/soap.png" alt="">
                 <h2>肥皂</h2>
                 <span class="info">依正確步驟勤洗手：濕、洗、刷、搓、沖、乾，並撿手觸摸眼鼻口。</span>
+                
             </div>
 
 
@@ -106,6 +113,12 @@
                 </div>
             </div>
 
+            <!-- 醫院 -->
+            <div class="pha">
+                <img id="doctor" src="../dest/image/sop/doctor.png" alt="">
+                <img src="../dest/image/sop/pharmacy.png" alt="">
+            </div>
+
             <!-- home -->
             <div class="sec1-home-out">
                 <div class="sec1-home">
@@ -114,17 +127,9 @@
             </div>
 
 
-
-
-
-            <!-- 醫院 -->
-            <div class="pha">
-                <img id="doctor" src="../dest/image/sop/doctor.png" alt="">
-                <img src="../dest/image/sop/pharmacy.png" alt="">
-            </div>
-
-
-
+            <!-- <div class="sign">
+                <img src="../dest/image/Epidemic-prevention-SOP/sign.png" alt="">
+            </div> -->
 
 
         </div>
@@ -154,6 +159,12 @@
                 <img src="./ther.png" alt="">
             </div> -->
         </div>
+        
+        <div class="sign" id="sign">
+            <img src="../dest/image/Epidemic-prevention-SOP/sign.png" alt="">
+            <p><a href="../dest/game.html">點選前往防疫知識王</a></p>
+        </div>
+        
 
     </div>
     @@include('./LAYOUT/footer.html')
