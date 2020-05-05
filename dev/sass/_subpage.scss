@@ -1,0 +1,173 @@
+.subNewsBox {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 1);
+    display: none;
+    border-radius: 5px;
+    z-index: 1;
+    
+    >.subcontainer {
+        width: 50vw;
+        height: 80vh;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    
+        /* overflow-y: auto; */
+        
+        >.btnclose {
+            position: absolute;
+            top: -60px;
+            right: -50px;
+            width: 50px;
+            height: 50px;
+            margin-top: -12px;
+            width: 60px;
+            height: 60px;
+            border: 2px solid transparent;
+            border-radius: 25%;
+            font-size: 0;
+            color: transparent;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            cursor: pointer;
+            -webkit-transition: all 100ms ease-out;
+            transition: all 100ms ease-out;
+            border-color: orange;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                display: block;
+                background-color: white;
+                -webkit-transition: all 100ms ease-in;
+                transition: all 100ms ease-in;
+            }
+            &::before {
+                width: 12px;
+                height: 2px;
+                margin: -1px auto auto -6px;
+            }
+            
+            &::after {
+                width: 2px;
+                height: 12px;
+                margin: -6px auto auto -1px;
+            }
+        }
+        >.content {
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+            background-color: #fff;
+            overflow-y: auto;
+            border-radius: 5px;
+            >.dateBox {
+                width: 60px;
+                height: 75px;
+                background-color: rgb(224, 214, 121);
+                position: absolute;
+                top: 0;
+                left: -55px;
+                text-align: center;
+                padding: 5px;
+                border-radius: 5px 0 0 5px;
+                >.date1 {
+                    font-size: 14px;
+                }
+                
+                >.date2 {
+                    font-weight: 700;
+                    font-size: 24px;
+                }
+                
+                >.date3 {
+                    font-size: 16px;
+                }
+            }
+            >.newsTitle {
+                width: 90%;
+                margin: 0 auto;
+                text-align: left;
+                color: #000;
+                letter-spacing: 2px;
+                line-height: 1.5;
+                font-weight: 700;
+                font-size: 24px;
+                padding: 5% 2%;
+                font-weight: 700;
+                position: relative;
+                overflow: hidden;
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    border-bottom: 1px solid rgb(116, 113, 113);
+                    position: absolute;
+                    left: 2%;
+                    top: -20%;
+                }
+            }
+
+            >.newsContent {
+                width: 100%;
+                margin: 5% auto 0;
+                padding: 0 7%;
+                color: #000;
+                letter-spacing: 2px;
+                text-align: justify;
+                font-size: 20px;
+                line-height: 1.8;
+            }
+
+            >.imgBox {
+                margin: 0 auto;
+                width: 85%;
+                height: 50%;
+                border-radius: 5px;
+                overflow: hidden;
+                /* background-color: #f0f; */
+                >img {
+                    width: 100%;
+                    height: 90%;
+                    border-radius: 5px;
+                }
+                >.pImg {
+                    height: 10%;
+                    padding: 10px;
+                    text-align: right;
+                    /* font-size: 16px; */
+                    color: #000;
+                
+                }
+
+            }
+        }
+    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
