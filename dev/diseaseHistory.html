@@ -5,28 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @@include('./LAYOUT/head.html')
     <!--featherlight-->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript"
+    <script src="//code.jquery.com/jquery-latest.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript"
         charset="utf-8"></script>
-    <link href="https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css"
+    <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css"
         rel="stylesheet" />
     <!--ionicons-->
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <!--googlefont-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <!--bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="../dest/css/homepage.css">
-    <script src="../dest/js/var.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    @@include('./layout/head.html')
+    <link rel="stylesheet" href="../dest/css/diseaseHistory.css">
     <title>Document</title>
 </head>
 
 <body>
-    @@include('./LAYOUT/header.html')
+    @@include('./layout/header.html')
     <main class="main">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -90,10 +91,10 @@
             <div class="book_content">
                 <!-- <div class="flipbook">
                     <div class="hard"><img class="cover1"
-                            src="../dest/diseaseHistory/btn_img_background/covid19cover.png"></div>
+                            src="/dest/diseaseHistory/btn_img_background/covid19cover.png"></div>
                     <div class="hard"></div>
                     <div class="covid19page-1"><img class="cover1"
-                            src="../dest/diseaseHistory/btn_img_background/covid19cover.png">
+                            src="/dest/diseaseHistory/btn_img_background/covid19cover.png">
                         <h2 class="content-title">緣起</h2>
                         <p class="book-content">2019冠状病毒病[9][10]（英語：Coronavirus disease
                             2019，缩写：COVID-19[11][12][13]，俗稱：武漢肺炎[14][15][16][17]、新冠肺炎）是一種由严重急性呼吸系统综合征冠状病毒2（缩写：SARS-CoV-2）引发的传染病。該病首名病人相信於2019年末在中国大陆湖北省武汉市[18][註
@@ -109,7 +110,7 @@
                 <h1 class="book1-title">2019冠状病毒病</h1>
                 <section class="row covid19-comtent" style="margin:2% 0%;">
                     <div class="col-md-6">
-                        <!-- <img class="covid-19img" src="../dest/diseaseHistory/btn_img_background/covid19cover.png">  -->
+                        <!-- <img class="covid-19img" src="/dest/diseaseHistory/btn_img_background/covid19cover.png">  -->
                         <h2 class="content-title">緣起</h2>
                         <div class="book-content">2019~? 冠状病毒病[9][10]（英語：Coronavirus disease
                             2019，缩写：COVID-19[11][12][13]，俗稱：武漢肺炎[14][15][16][17]、新冠肺炎）是一種由严重急性呼吸系统综合征冠状病毒2（缩写：SARS-CoV-2）引发的传染病。該病首名病人相信於2019年末在中国大陆湖北省武汉市[18][註
@@ -132,20 +133,20 @@
             </div>
         </div>
     </main>
-    @@include('./LAYOUT/footer.html')
-    <!--jquery-->
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    @@include('./layout/footer.html')
+    <script src="../dest/js/magazine.js"></script>
     <!--scrollmagic-->
     <script src="../dest/node_modules/scrollmagic@2.0.7/scrollmagic/minified/ScrollMagic.min.js"></script>
-    <script src="../dest/node_modules/scrollmagic@2.0.7/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script
+        src="../dest/node_modules/scrollmagic@2.0.7/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
     <!-- turnjs -->
-    <script src="../dest/js/base/lib/turn.js"></script>
-    <script src="../dest/js/base/lib/zoom.min.js"></script>
-    <script src="../dest/js/base/lib/scissor.min.js"></script>
-    <script src="../dest/js/base/lib/hash.js"></script>
+    <script src="../dev/js/base/lib/turn.js"></script>
+    <script src="../dev/js/base/lib/zoom.min.js"></script>
+    <script src="../dev/js/base/lib/scissor.min.js"></script>
+    <script src="../dev/js/base/lib/hash.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/turn-js@0.5.4/index.min.js"></script> -->
     <!-- slick -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script>
         //-----------------------------carsoul slick end

@@ -15,7 +15,7 @@
 
 <body>
 
-    @@include('./LAYOUT/header.html')
+    <!-- @@include('./LAYOUT/header.html') -->
     <section id="section1" class="section page-1">
         <div class="stars">
             <div class="global-people">
@@ -54,111 +54,89 @@
             <div class="titleImg">
                 <img src="" alt="">
             </div>
-            <h1>Hot News</h1>
+            <h1>全球熱門</h1>
         </div>
 
         <div class="container-top">
             <div class="videoBox">
-                <iframe src="https://www.youtube.com/embed/-NWKv2gLx_w" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <div class="player">
+                    <video class="player__video viewer" src="../dest/image/HotNews/video/hotNewsV.mp4"></video>
+                    <div class="player__controls">
+                        <div class="progress">
+                            <div class="progress__filled"></div>
+                        </div>
+                        <button class="player__button toggle" title="Toggle Play">►</button>
+                        <input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1">
+                        <input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.1"
+                            value="1">
+                        <button data-skip="-10" class="player__button">« 10s</button>
+                        <button data-skip="25" class="player__button">25s »</button>
+                    </div>
+                </div>
             </div>
             <ul class="article">
-                <li class="item1 item">
-                    <a href="#"><img src="../dest/image/HotNews/img/For1.png" alt=""></a>
+                <li class="item1 item ">
+                    <div class="International">
+                        <div class="hotNewcontent ">
+                            <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                            <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
+                                in Madrid, hailing the 6,000 staff who work there as heroes. Spain has seen more than 20,000
+                                deaths and the Madrid region is at the heart
+                            </p>
+                        </div>
+                       
+                    </div>
                 </li>
-                <li class="item2 item">
-                    <a href="#">
-                        <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                        <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
-                            in Madrid, hailing the 6,000 staff who work there as heroes. Spain has seen more than 20,000
-                            deaths and the Madrid region is at the heart
-                            of it: a capital city blighted by this virus. This city has seen 7,000 deaths, more than
-                            other European capitals. The contagion spread at a remarkable rate through the densely
-                            populated city and its cluster of suburbs. The
-                            real death toll could be considerably higher as Madrid's regional government has revealed
-                            only 800 of 4,260 care home residents suspected of dying from Covid-19 were tested.
-
-                        </p>
-                    </a>
+                <li class="item2 item ">
+                    <div class="International">
+                        <div class="hotNewcontent">
+                            <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                            <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
+                                in Madrid, hailing the 6,000 staff who work there as heroes. Spain has seen more than 20,000
+                                deaths and the Madrid region is at the heart
+    
+                            </p>
+                        </div>
+                    </div>
                 </li>
-                <li class="item3 item">
-                    <a href="#">
-                        <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                        <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
-                            in Madrid, hailing the 6,000 staff who work there as heroes. Spain has seen more than 20,000
-                            deaths and the Madrid region is at the heart
-                            of it: a capital city blighted by this virus. This city has seen 7,000 deaths, more than
-                            other European capitals. The contagion spread at a remarkable rate through the densely
-                            populated city and its cluster of suburbs. The
-                            real death toll could be considerably higher as Madrid's regional government has revealed
-                            only 800 of 4,260 care home residents suspected of dying from Covid-19 were tested.
-
-                        </p>
-                    </a>
+                <li class="item3 item ">
+                    <div class="International">
+                        <div class="hotNewcontent ">
+                            <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                            <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
+                                in Madrid, hailing the 6,000 staff who work there as heroes. Spain has seen more than 20,000
+                                deaths and the Madrid region is at the heart
+    
+                            </p>
+                        </div>
+                    </div>
                 </li>
-                <li class="item4 item">
-                    <a href="#"><img src="../dest/image/HotNews/img/For2.png" alt=""></a>
+                <li class="item4 item International">
+                    <div class="International">
+                        <div class="hotNewcontent">
+                            <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
+                            <p>Applause and cheering rings out every night in the huddled streets around 12 Octubre hospital
+                                in Madrid, hailing the 6,000 staff who work there as heroes. Spain has seen more than 20,000
+                                deaths and the Madrid region is at the heart
+    
+                            </p>
+                        </div>
+                    </div>
                 </li>
+                
             </ul>
         </div>
+        
     </section>
     <section id="section3" class="section page-3">
         <div class="container-bottom">
-            <!-- <div class="bottom-left">
-                <ul>
-                    <li class="item1"><a href="#">
-                            <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                            <p>Applause and cheering rings out every night in the huddled streets around 12
-                                Octubre hospital
-                                in Madrid, hailing the 6,000 staff who work there as heroes.
-                                Spain has seen more than 20,000 deaths and the Madrid region is at the heart of
-                                it: a
-                                capital city blighted by this virus.
-
-                                This city has seen 7,000 deaths, more than other European capitals.
-
-                                The contagion spread at a remarkable rate through the densely populated city and
-                                its cluster
-                                of suburbs.
-
-                                The real death toll could be considerably higher as Madrid's regional government
-                                has
-                                revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
-                                were tested.</p>
-                        </a></li>
-                    <li class="item2"><a href="#"><img src="../dest/image/HotNews/img/For2.png" alt=""></a></li>
-                    <li class="item3"><a href="#">
-                            <h1>Coronavirus: Madrid’s medical heroes in the fight of their lives</h1>
-                            <p>Applause and cheering rings out every night in the huddled streets around 12
-                                Octubre hospital
-                                in Madrid, hailing the 6,000 staff who work there as heroes.
-                                Spain has seen more than 20,000 deaths and the Madrid region is at the heart of
-                                it: a
-                                capital city blighted by this virus.
-
-                                This city has seen 7,000 deaths, more than other European capitals.
-
-                                The contagion spread at a remarkable rate through the densely populated city and
-                                its cluster
-                                of suburbs.
-
-                                The real death toll could be considerably higher as Madrid's regional government
-                                has
-                                revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
-                                were tested.
-
-                                The real death toll could be considerably higher as Madrid's regional government
-                                has
-                                revealed only 800 of 4,260 care home residents suspected of dying from Covid-19
-                                were tested.
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-            </div> -->
             <div class="bottom-right">
-                <h1>觀看更多疫情消息</h1>
+                <div class="newTitle">
+                    <div class="titleImg">
+                        <img src="" alt="">
+                    </div>
+                    <h1>台灣即時新聞</h1>
+                </div>
                 <div class="box">
                     <div class="inside-left">
                         <ul class="list">
@@ -221,8 +199,8 @@
                         </div>
                         <div class="grid-template">
                             <div class="grid-top-left">
-                                <div>
-                                    <a href="#">
+                                <div class="International">
+                                    <a href="javascript:void(0)">
                                         <img src="../dest/image/HotNews/img/For1.png" alt="">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas eos
                                             quas fugit ea? Error harum neque veniam obcaecati, nobis modi quaerat,
@@ -255,11 +233,14 @@
                                     </li>
                                 </ul>
                             </div>
+                        </div>
+                        <div class="bottom">
                             <div class="grid-bottom-left">
                                 <div>
                                     <a href="#">
                                         <img src="../dest/image/HotNews/img/For1.png" alt="">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas eos
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas
+                                            eos
                                             quas fugit ea? Error harum neque veniam obcaecati, nobis modi quaerat,
                                             cupiditate praesentium quod illum animi, ut nostrum amet.</p>
                                     </a>
@@ -269,7 +250,8 @@
                                 <div>
                                     <a href="#">
                                         <img src="../dest/image/HotNews/img/For1.png" alt="">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas eos
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas
+                                            eos
                                             quas fugit ea? Error harum neque veniam obcaecati, nobis modi quaerat,
                                             cupiditate praesentium quod illum animi, ut nostrum amet.</p>
                                     </a>
@@ -279,12 +261,15 @@
                                 <div>
                                     <a href="#">
                                         <img src="../dest/image/HotNews/img/For1.png" alt="">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas eos
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptas
+                                            eos
                                             quas fugit ea? Error harum neque veniam obcaecati, nobis modi quaerat,
                                             cupiditate praesentium quod illum animi, ut nostrum amet.</p>
                                     </a>
                                 </div>
                             </div>
+                        </div>
+
     </section>
     <section id="section4" class="section page-4">
         <div class="swiper-container">
@@ -360,13 +345,15 @@
                         <div class="Sop-plane">
                             <img class="worldwide" src="../dest/image/sopImg/plane/worldwide.png" alt="">
                             <img class="General_Office"
-                                src="../dest/image/sopImg/plane/iconfinder_General_Office_31_3592824.png" alt="" srcset="">
+                                src="../dest/image/sopImg/plane/iconfinder_General_Office_31_3592824.png" alt=""
+                                srcset="">
                             <img class="cancel" src="../dest/image/sopImg/plane/cancel.png" alt="" srcset="">
                         </div>
                     </div>
                     <div class="container_sop">
                         <div class="sop-thermometer">
-                            <img class="sop-thermometer-img" src="../dest/image/sopImg/thermometer/thermometer.png" alt="">
+                            <img class="sop-thermometer-img" src="../dest/image/sopImg/thermometer/thermometer.png"
+                                alt="">
                             <div class="pos-thermometer">
                                 <div class="thermometer_container">
                                     <div class="thermometer">
@@ -384,9 +371,12 @@
                             <img class="sop-hand1" src="../dest/image/sopImg/wash_hand/hand1.png" alt="">
                             <img class="sop-hand2" src="../dest/image/sopImg/wash_hand/hand2.png" alt="">
                             <img class="bubble1" src="../dest/image/sopImg/wash_hand/bubble.png" alt="" srcset="">
-                            <img class="sop-hand-water-1 sop-water" src="../dest/image/sopImg/wash_hand/water1.png" alt="">
-                            <img class="sop-hand-water-2 sop-water" src="../dest/image/sopImg/wash_hand/water2.png" alt="">
-                            <img class="sop-hand-water-3 sop-water" src="../dest/image/sopImg/wash_hand/water2.png" alt="">
+                            <img class="sop-hand-water-1 sop-water" src="../dest/image/sopImg/wash_hand/water1.png"
+                                alt="">
+                            <img class="sop-hand-water-2 sop-water" src="../dest/image/sopImg/wash_hand/water2.png"
+                                alt="">
+                            <img class="sop-hand-water-3 sop-water" src="../dest/image/sopImg/wash_hand/water2.png"
+                                alt="">
                             <img class="sop-hand-faucet" src="../dest/image/sopImg/wash_hand/faucet.png" alt="">
                         </div>
                     </div>
@@ -467,21 +457,23 @@
         </div>
     </section>
     <section id="section6" class="section page-6">
-        @@include('./LAYOUT/footer.html')
+        <!-- @@include('./LAYOUT/footer.html') -->
     </section>
+    <div class="subNewsBox"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
     <script src="https://d3js.org/d3-geo.v1.js"></script>
     <script src="https://d3js.org/topojson.v2.js"></script>
     <script
         src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js">
-        </script>
+    </script>
     <!-- <link rel="stylesheet" href="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.css"> -->
     <!-- <script src="/node_modules/pagepiling-js-version-kostyast/dist/jquery.pagepiling.min.js"></script> -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.js'></script>
-    <script src="../dest/node_modules/typed.js@2.0.11/lib/typed.js"></script>
+    <script src="../dest/node_modules/typed.js/lib/typed.js"></script>
     <script src="../dest/js/homepage.js"></script>
     <script src="../dest/js/Earth.js"></script>
+    <!-- <script src="../dest/js/International.js"></script> -->
 
 
 </body>

@@ -35,7 +35,7 @@ $(window).ready(() => {//html載入完再執行
         $('.sign-in').css('display', 'block');
         $('.sign-up').css('display', 'none');
     })
-    $(".viveswitch").click(function() {//顯示密碼開關
+    $(".viveswitch").click(function () {//顯示密碼開關
         if ($(this).prop("checked")) {
             $(':password').attr('type', 'text')
         } else {
@@ -44,6 +44,25 @@ $(window).ready(() => {//html載入完再執行
     });
 
     $('.icofont-search').click(() => { //展開搜尋紐
-        $(".input_box").toggleClass("on");
+        let search_switch = document.body.clientWidth;
+        if (search_switch < 1100) {
+            $(".title_list").toggleClass("on");
+        } else {
+            $(".input_box").toggleClass("on");
+        }
     });
-})
+    let search_switch = document.body.clientWidth
+    function shadowBtn() {
+        let Btn = document.querySelector('#btn');
+        Btn.addEventListener('mousedown', function () {
+            this.classList.add("on");
+            Btn.addEventListener('mouseup', function () {
+                this.classList.remove("on")
+            });
+        });
+    };
+    // shadowBtn();
+});
+
+
+

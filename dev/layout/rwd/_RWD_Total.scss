@@ -3,6 +3,7 @@ $desktop: 1200px;
 $medium: 991px;
 $small: 767px;
 $mobile: 576px;
+$header:1100px;
 // RWD斷點
 
 @mixin rwd($breakpoint) {
@@ -12,7 +13,6 @@ $mobile: 576px;
         }
     } @else if $breakpoint == medium {
         @media all and (max-width: $medium) {
-            
             @content;
         }
     } @else if $breakpoint == small {
@@ -21,6 +21,10 @@ $mobile: 576px;
         }
     } @else if $breakpoint == mobile {
         @media all and (max-width: $mobile) {
+            @content;
+        }
+    } @else if $breakpoint == header {
+        @media all and (max-width: $header) {
             @content;
         }
     }

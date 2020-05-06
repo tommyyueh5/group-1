@@ -1,5 +1,4 @@
-@import "dev/layout/base/_var.scss";
-
+@import "../LAYOUT/base/var";
 /* *{
     margin: 0%;
     display: inline-block;
@@ -8,20 +7,18 @@
 }  */
 .breadcrumb {
     background-color: none;
-    background-image: url(/dest/image/btn_img_background/background-color.png);
+    background-image: url(./btn_img_background/background-color.png);
     border-radius: 0%;
     margin: 10px 0 0 0%;
 }
 
-.breadcrumb-item>a,
+.breadcrumb-item > a,
 ::after,
 ::before {
     color: grey;
     /* position: relative;
     left:50%; */
 }
-
-
 
 /*---------------------------------------------*/
 .main {
@@ -30,7 +27,7 @@
     margin: 0%;
     box-sizing: border-box;
     display: inline-block;
-    background-image: url(/dest/image/btn_img_background/spanishflue.png);
+    background-image: url(./btn_img_background/spanishflue.png);
     width: 100%;
     height: 768px;
 }
@@ -54,17 +51,16 @@
     left: 20%;
 }
 
-.history_container>.history_sextion1>.history_subtitle {
+.history_container > .history_sextion1 > .history_subtitle {
     font-family: Toppan Bunkyu Midashi Mincho Extrabold;
     font-size: 35px;
     position: relative;
 }
 
-.history_container>.history_sextion1>.history_title {
+.history_container > .history_sextion1 > .history_title {
     font-family: Monoton;
     font-size: 40px;
 }
-
 
 /* bookstyle---------------------------------------------------*/
 /* .slick-initialized .slick-slide{
@@ -89,8 +85,6 @@
 .test {
     width: 80%;
 }
-
-
 
 /*-----------------------------------------*/
 
@@ -136,8 +130,7 @@ button:focus {
     background-color: white;
     padding: 60px;
     z-index: 101;
-    overflow: auto
-    
+    overflow: auto;
 }
 
 .black-target {
@@ -154,16 +147,16 @@ button:focus {
     max-height: 0%;
     max-width: 0%;
     border: 3px solid #fff;
-    box-shadow:0 0 8px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
-    transition:.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 /*book -------------------------------------------------------------------*/
 
-.flipbook{
+.flipbook {
     box-sizing: border-box;
     position: fixed;
-    right:20%;
+    right: 20%;
     box-sizing: border-box;
     text-align: center;
 }
@@ -173,18 +166,14 @@ button:focus {
 
 /* 佔-------------------------------------------------------------------*/
 
-.book1-title{
-    line-height:45px;
-    font-size:30px;
+.book1-title {
+    line-height: 45px;
+    font-size: 30px;
     font-family: Toppan Bunkyu Midashi Mincho Extrabold;
 }
-.content-title{
+.content-title {
     font-size: 30px;
 }
-
-
-
-
 
 /*  RWD   --------------------------------------------------------------*/
 
@@ -217,7 +206,6 @@ button:focus {
     .layer1,
     .layer2 {
         display: none;
-
     }
 
     .history_subtitle::before {
@@ -233,14 +221,10 @@ button:focus {
     }
 }
 
-
-
-
 @media only screen and (max-width: 400px) {
     .history_container {
         width: 90%;
         margin: 5%;
-
     }
 
     .history_subtitle {
@@ -250,5 +234,4 @@ button:focus {
     .history_subtitle::before {
         display: none;
     }
-
 }

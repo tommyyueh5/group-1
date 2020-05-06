@@ -1,6 +1,7 @@
 section.Earth {
     width: 100%;
 }
+
 .stars,
 .twinkling,
 .clouds {
@@ -16,64 +17,68 @@ section.Earth {
     z-index: 0;
     overflow: hidden;
 
-    >.global-people{
-        width: 20%;
-        height: 50%;
+    >.global-people {
+        width: 100%;
+        height: 10%;
         position: absolute;
-        bottom: 25%;
-        left: 20px;
+        // top: 0;
         background-color: rgba(236, 213, 213, 0.486);
-        border-radius: 5px;
-        >ul{
+
+        >ul {
             height: 100%;
             padding: 10px;
             box-sizing: border-box;
             display: flex;
+            // flex-direction: row;
             justify-content: space-around;
-            flex-direction: column;
             align-items: center;
-            >li{
-                padding: 20px;
+
+            >li {
                 flex: 1;
                 text-align: center;
                 width: 100%;
-                height: 100%;
                 color: #33A6B8;
                 // background-color: #00f;
-                font-size: 20px;
+                font-size: $sub_titleFs;
                 font-weight: 700;
                 line-height: 1.5;
                 letter-spacing: 2px;
-                >div{
-                    >p{
+
+                >div {
+                    >p {
                         display: inline-block;
-                        font-size: 18px;
+                        font-size: $sub_titleFs;
                         font-weight: 700;
-                        color: #222;
-                        
+                        line-height: 1.5;
+                        letter-spacing: 2px;
+                        color: $color;
+
                     }
-                    
+
                 }
-                &:nth-child(2) >div > p{
+
+                &:nth-child(2)>div>p {
                     color: red;
                 }
             }
-            
+
         }
     }
-    .Showtable{
+
+    .Showtable {
         position: absolute;
         right: -50%;
-        top: 50%;
+        bottom: 10%;
         list-style: none;
-        
-        li{
+
+        li {
             padding: 10px 15px;
             // background: #ccc;
+            // position: absolute;
             background-color: rgba(51, 166, 184, 0.795);
             color: #000;
-            font-size: 20px;
-            font-family: Verdana;
+            font-size: $sub_titleFs;
+            // font-family: Verdana;
         }
     }
 
@@ -82,6 +87,7 @@ section.Earth {
         background-size: cover;
         z-index: 3;
         animation: move-clouds-back 200s linear infinite;
+
         #globe {
             cursor: pointer;
         }
@@ -148,4 +154,29 @@ section.Earth {
     to {
         background-position: 10000px 0;
     }
+}
+
+
+@include rwd(desktop) {
+    .stars .Showtable{
+        bottom: 0;
+    }
+}
+@include rwd(medium) {
+    
+}
+@include rwd(small) {
+}
+@include rwd(mobile) {
+    .stars > .global-people > ul > li{
+     font-size: $main_TextFs;  
+     letter-spacing: 0px;
+    }
+    .stars > .global-people > ul > li > div > p{
+        font-size: $main_TextFs; 
+    }
+    .stars .Showtable li{
+        font-size: $main_TextFs; 
+    }
+   
 }
