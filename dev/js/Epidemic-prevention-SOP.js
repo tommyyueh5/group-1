@@ -32,9 +32,10 @@ window.addEventListener('load', function() {
     let mask3 = document.getElementById('item3');
     let bag = document.getElementById('alcohol');
     let sign = document.getElementById('sign');
-    document.getElementById('myMeun').style.position = "static";
+    // document.getElementById('myMeun').style.position = "static";
 
     // map
+    
     let Path = {
         curviness: 3,
         autoRotate: true,
@@ -53,10 +54,30 @@ window.addEventListener('load', function() {
     
             { x: window.innerWidth, y: -150 },
         ]
+    };
+
+    if (window.innerWidth < 1200) {
+        Path = {
+            curviness: 3,
+            autoRotate: true,
+            values: [
+                { x: 100, y: -20 },
+                { x: 150, y: 10 },
+                { x: 100, y: 100 },
+                { x: 150, y: -100 },
+                { x: 150, y: -50 },
+                { x: 100, y: 70 },
+                { x: 150, y: -60 },
+                { x: 100, y: -100 },
+                { x: 100, y: 20 },
+                { x: 100, y: 80 },
+                { x: 100, y: -200 },
+                { x: window.innerWidth, y: -150 },
+            ]
+        }
     }
     
     let tween = new TimelineLite();
-    
     tween.add(
         TweenLite.to('.airplane_pic', 8, {
             bezier: Path,
@@ -64,65 +85,196 @@ window.addEventListener('load', function() {
         })
     );
 
+
+
     // plane
-    var plane = new TimelineMax();
-    plane.to('.airplane-img', 2, {
-            y: 100,
-            rotation: -10,
-            scale: 1.1,
-            ease: Power0.easeNone,
-            delay: 5,
-        })
-        .to('.airplane-img', 2, {
-            y: 200,
-            rotation: 0,
-            ease: Power0.easeNone,
-            scale: 1.2,
-        })
-        .to('.airplane-img', 2, {
-            y: 300,
-            rotation: 10,
-            ease: Power0.easeNone,
-            scale: 1.3,
-        })
-        .to('.airplane-img', 2, {
-            y: 300,
-            rotation: 0,
-            scale: 2,
+    // var plane = new TimelineMax();
+    // plane.to('.airplane-img', 2, {
+    //         y: 100,
+    //         rotation: -10,
+    //         scale: 1.1,
+    //         ease: Power0.easeNone,
+    //         delay: 5,
+    //     })
+    //     .to('.airplane-img', 2, {
+    //         y: 200,
+    //         rotation: 0,
+    //         ease: Power0.easeNone,
+    //         scale: 1.2,
+    //     })
+    //     .to('.airplane-img', 2, {
+    //         y: 300,
+    //         rotation: 10,
+    //         ease: Power0.easeNone,
+    //         scale: 1.3,
+    //     })
+    //     .to('.airplane-img', 2, {
+    //         y: 300,
+    //         rotation: 0,
+    //         scale: 2,
 
-        }).to('.stair-img', 1, {
-            opacity: 1,
+    //     }).to('.stair-img', 1, {
+    //         opacity: 1,
 
-        })
-        .to('.joke-small-img', 1, {
-            opacity: 1,
-        })
-        .to(['.joke-small-img'], 1, {
-            x: 72,
-            ease: Power0.easeNone,
-        })
-        .to(['.joke-small-img'], 1, {
-            x: 297,
-            y: 149,
-        })
-        .to(['.joke-small-img'], 1, {
-            y: 68,
-            scale: 3.4,
-            opacity: 0,
-        });
-        plane.addLabel('spin');
+    //     })
+    //     .to('.joke-small-img', 1, {
+    //         opacity: 1,
+    //     })
+    //     .to(['.joke-small-img'], 1, {
+    //         x: 72,
+    //         ease: Power0.easeNone,
+    //     })
+    //     .to(['.joke-small-img'], 1, {
+    //         x: 297,
+    //         y: 149,
+    //     })
+    //     .to(['.joke-small-img'], 1, {
+    //         y: 68,
+    //         scale: 3.4,
+    //         opacity: 0,
+    //     });
+    //     plane.addLabel('spin');
         // var nextLabel = getLabelAfter()
         // tl.tweenTo(nextLabel)
-    document.getElementById('btn').addEventListener('click',function(){
-        joke.style.animationName = 'stop';
-        miss.style.animationDelay = '0.1s';
+        //
+    var plane;
+    
+    if (window.innerWidth<576) {
+        plane = new TimelineMax();
+        plane.to('.airplane-img', 2, {
+                y: 100,
+                rotation: -10,
+                scale: 1.1,
+                ease: Power0.easeNone,
+                delay: 5,
+            })
+            .to('.airplane-img', 2, {
+                y: 200,
+                rotation: 0,
+                ease: Power0.easeNone,
+                scale: 1.2,
+            })
+            .to('.airplane-img', 2, {
+                y: 300,
+                rotation: 10,
+                ease: Power0.easeNone,
+                scale: 1.3,
+            })
+            .to('.airplane-img', 2, {
+                x: -10,
+                y: 320,
+                rotation: 0,
+                scale: 2,
 
-        if (document.getElementsByClassName('plane')[0]) {
-            document.getElementsByClassName('plane')[0].remove();
-        }
-        plane.seek('spin');
-        this.remove();
-    });
+            }).to('.stair-img', 1, {
+                opacity: 1,
+
+            })
+            .to('.joke-small-img', 1, {
+                opacity: 1,
+            })
+            .to(['.joke-small-img'], 1, {
+                x: 18,
+                ease: Power0.easeNone,
+            })
+            .to(['.joke-small-img'], 1, {
+                x: 150,
+                y: 100,
+            })
+            .to(['.joke-small-img'], 1, {
+                y: 100,
+                scale: 3.4,
+                opacity: 0,
+            });
+        plane.addLabel('spin');
+
+        document.getElementById('btn').addEventListener('click',function(){
+            joke.style.animationName = 'stop';
+            miss.style.animationDelay = '0.1s';
+    
+            if (document.getElementsByClassName('plane')[0]) {
+                document.getElementsByClassName('plane')[0].remove();
+            }
+            plane.seek('spin');
+            this.remove();
+        });
+
+    } else {
+        timeline();
+    }
+    
+    function timeline() {
+        plane = new TimelineMax();
+        plane.to('.airplane-img', 2, {
+                y: 100,
+                rotation: -10,
+                scale: 1.1,
+                ease: Power0.easeNone,
+                delay: 5,
+            })
+            .to('.airplane-img', 2, {
+                y: 200,
+                rotation: 0,
+                ease: Power0.easeNone,
+                scale: 1.2,
+            })
+            .to('.airplane-img', 2, {
+                y: 300,
+                rotation: 10,
+                ease: Power0.easeNone,
+                scale: 1.3,
+            })
+            .to('.airplane-img', 2, {
+                y: 300,
+                rotation: 0,
+                scale: 2,
+
+            }).to('.stair-img', 1, {
+                opacity: 1,
+
+            })
+            .to('.joke-small-img', 1, {
+                opacity: 1,
+            })
+            .to(['.joke-small-img'], 1, {
+                x: 72,
+                ease: Power0.easeNone,
+            })
+            .to(['.joke-small-img'], 1, {
+                x: 297,
+                y: 149,
+            })
+            .to(['.joke-small-img'], 1, {
+                y: 68,
+                scale: 3.4,
+                opacity: 0,
+        });
+        plane.addLabel('spin');
+
+        document.getElementById('btn').addEventListener('click',function(){
+            joke.style.animationName = 'stop';
+            miss.style.animationDelay = '0.1s';
+    
+            if (document.getElementsByClassName('plane')[0]) {
+                document.getElementsByClassName('plane')[0].remove();
+            }
+            plane.seek('spin');
+            this.remove();
+        });
+    }
+    
+    
+
+    // document.getElementById('btn').addEventListener('click',function(){
+    //     joke.style.animationName = 'stop';
+    //     miss.style.animationDelay = '0.1s';
+
+    //     if (document.getElementsByClassName('plane')[0]) {
+    //         document.getElementsByClassName('plane')[0].remove();
+    //     }
+    //     plane.seek('spin');
+    //     this.remove();
+    // });
 
     setTimeout(function(){
         if (document.getElementById('btn')) {
@@ -166,94 +318,113 @@ window.addEventListener('load', function() {
         }
     }, 6000);
 
-    window.addEventListener('keydown', function(e) {
-        if (e.keyCode == 39 && c == 1) {
-            
-            c = 0;
-            setTimeout(function() {
-                v += 200;
-                joke.style.backgroundPosition = `-${v}px 0px`;
-                c = 1;
-            }, 200);
 
-            if (inter == 1) {
-                slideContainerMove = setInterval(function() {
-                    //
-                    if (s == -1010) {
-                        dranimate.style.animationPlayState = 'running';
-                        mask1.style.animationPlayState = 'running';
-                        mask2.style.animationPlayState = 'running';
-                        mask3.style.animationPlayState = 'running';
-                        pointer1.style.animationPlayState = 'running';
-                        let pha = document.getElementsByClassName('pha')[0];
-                        let type = document.createElement("p");
-                        type.setAttribute('id', 'text');
-                        pha.appendChild(type);
-                        new TypeIt("#text", {
-                            strings: [
-                                "您好~現在是非常時期,請記得以下幾點重要事項:",
-                                "1.記得早晚量測體溫",
-                                "2.勤用肥皂洗手",
-                                "3.定時用酒精消毒 ",
-                                "4.減少出入公共場所 ",
-                                "5.與人保持一公尺以上的社交距離",
-                            ],
-                            speed: 50,
-                            startDelay: 2000,
-                        }).go();
-                    }
 
-                    if (s==-3515) {
-                        sign.style.animationPlayState = 'running';
-                        sign.style.backgroundColor ='rgba(187, 187, 187, 0.562)';
-                    }
+
+    let pin = window.getComputedStyle(slideContainer).getPropertyValue('width').slice(0,-2);
+    let slider = window.getComputedStyle(pinContainer).getPropertyValue('width').slice(0,-2);
+    key();
+    function key() {
+        window.addEventListener('keydown', function(e) {
+            if (e.keyCode == 39 && c == 1) {
+                c = 0;
+                setTimeout(function() {
+                    v += 200;
+                    joke.style.backgroundPosition = `-${v}px 0px`;
+                    c = 1;
+                }, 200);
+
+                if (inter == 1) {
+                    slideContainerMove = setInterval(function() {
+                        //
+                        if (s == -1010) {
+                            dranimate.style.animationPlayState = 'running';
+                            mask1.style.animationPlayState = 'running';
+                            mask2.style.animationPlayState = 'running';
+                            mask3.style.animationPlayState = 'running';
+                            pointer1.style.animationPlayState = 'running';
+                            let pha = document.getElementsByClassName('pha')[0];
+                            let type = document.createElement("p");
+                            type.setAttribute('id', 'text');
+                            pha.appendChild(type);
+                            new TypeIt("#text", {
+                                strings: [
+                                    "您好~現在是非常時期,請記得以下幾點重要事項:",
+                                    "1.記得早晚量測體溫",
+                                    "2.勤用肥皂洗手",
+                                    "3.定時用酒精消毒 ",
+                                    "4.減少出入公共場所 ",
+                                    "5.與人保持一公尺以上的社交距離",
+                                ],
+                                speed: 50,
+                                startDelay: 2000,
+                            }).go();
+                        }
+
+
+                       
+                        if (s == -(   parseInt( window.getComputedStyle(slideContainer).getPropertyValue('width').slice(0,-2) )-my(parseInt(window.getComputedStyle(pinContainer).getPropertyValue('width').slice(0,-2)))       -5)) {
+                            sign.style.animationPlayState = 'running';
+                            sign.style.backgroundColor ='rgba(187, 187, 187, 0.562)';
+                        }
+                        if (s == -(   parseInt( window.getComputedStyle(slideContainer).getPropertyValue('width').slice(0,-2) )-my(parseInt(window.getComputedStyle(pinContainer).getPropertyValue('width').slice(0,-2)))       -5)){
+                            s =( -   (parseInt( window.getComputedStyle(slideContainer).getPropertyValue('width').slice(0,-2) )-my(parseInt(window.getComputedStyle(pinContainer).getPropertyValue('width').slice(0,-2)))  -  10) );
+                        }
+
+                        
+                        // if (s == (-(oo-xx)+5)){
+                        //     s =(-(oo-xx)+10);
+                        // }
+
+                        
+                        // if (s == (-3515) ){
+                        //     s = -3510;
+                        // }
 
                     
-                    if (s == (-3515) ){
-                        s = -3510;
-                    }
-                    s -= 5;
-                    slideContainer.style.left = `${s}px`;
-                }, 5);
-                inter = 0;
+                        s -= 5;
+                        slideContainer.style.left = `${s}px`;
+                    }, 5);
+                    inter = 0;
+                }
+
             }
 
-        }
+            window.addEventListener('keyup', function(e) {
+                clearInterval(slideContainerMove);
+                if (e.keyCode == 39) {
+                    inter = 1;
+                }
+            });
 
-        window.addEventListener('keyup', function(e) {
-            clearInterval(slideContainerMove);
-            if (e.keyCode == 39) {
-                inter = 1;
+            if (e.keyCode == 37 && c == 1) {
+                c = 0;
+                setTimeout(function() {
+                    v += 200;
+                    c = 1;
+                    joke.style.backgroundPosition = `-${v}px 400px`;
+                }, 200);
+
+                if (inter == 1) {
+                    slideContainerMove = setInterval(function() {
+                        
+                        if (s == 0) {
+                            s = -5;
+                        }
+                        s += 5;
+                        slideContainer.style.left = `${s}px`;
+                    }, 5);
+                    inter = 0;
+                }
             }
+            window.addEventListener('keyup', function(e) {
+                clearInterval(slideContainerMove);
+                if (e.keyCode == 37) {
+                    inter = 1;
+                }
+            });
         });
-
-        if (e.keyCode == 37 && c == 1) {
-            c = 0;
-            setTimeout(function() {
-                v += 200;
-                c = 1;
-                joke.style.backgroundPosition = `-${v}px 400px`;
-            }, 200);
-
-            if (inter == 1) {
-                slideContainerMove = setInterval(function() {
-                    
-                    if (s == 0) {
-                        s = -5;
-                    }
-                    s += 5;
-                    slideContainer.style.left = `${s}px`;
-                }, 5);
-                inter = 0;
-            }
-        }
-        window.addEventListener('keyup', function(e) {
-            clearInterval(slideContainerMove);
-            if (e.keyCode == 37) {
-                inter = 1;
-            }
-        });
-    });
+    }
 
 
     //
@@ -285,9 +456,18 @@ window.addEventListener('load', function() {
         setTimeout(function() {
             mask.remove();
         }, 4000);
-
-
     });
+    
+    window.addEventListener('resize', function(){
+        pin = window.getComputedStyle(slideContainer).getPropertyValue('width').slice(0,-2);
+        slider = window.getComputedStyle(pinContainer).getPropertyValue('width').slice(0,-2);
+    });
+
+    function my(i) {
+        // y = i.toString().slice(0,-1) + '0';
+        return parseInt(i.toString().slice(0,-1) + '0');
+    }
+
 
     $('#login_btn').click((e) => {//點選註冊按鈕顯示燈箱
         $("#loginBg").toggleClass("on");
