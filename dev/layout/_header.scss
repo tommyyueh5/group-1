@@ -221,13 +221,13 @@ header {
 }
 @include rwd(header) {
     header {
-        position: sticky;
+        position: absolute;
         top: 0;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        z-index: 99999;
+        z-index: 999;
         div.nav_bar {
             position: relative;
             transition: top 0.3s linear;
@@ -286,13 +286,25 @@ header {
             }
         }
         div.title_list {
-            position: absolute;
+            position: fixed;
             right: 25px;
-            top: 900%;
-            width: 100px;
-            height: 100px;
+            bottom: 25px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background-color: $btn-color3;
+            &::before{
+                position: absolute;
+                
+                display:block;
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: white;
+            }
+            &::after{
+                
+            }
             ul.mark_bar {
                 position: absolute;
                 bottom: 100px;

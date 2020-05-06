@@ -87,7 +87,7 @@ gulp.task('default', function () {
             // index: "dest/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP.html"
             // index: "dest/btn-style.html"
-            index: "dest/diseaseHistory.html"
+            // index: "dest/diseaseHistory.html"
             // index: "dest/game.html"
             // index: "dest/Epidemic-shop.html"
             // index: "dest/forum.html"
@@ -97,7 +97,7 @@ gulp.task('default', function () {
             // index: "dest/latest-news_child.html"
             // index: "dest/welcome.html"
             // index: "dest/btn-style.html"
-            // index: "dest/header.html"
+            index: "dest/header.html"
         }
     });
 

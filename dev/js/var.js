@@ -52,16 +52,17 @@ $(window).ready(() => {//html載入完再執行
         }
     });
     let search_switch = document.body.clientWidth
-    
-    shadowBtn();
-})
-
-function shadowBtn() {
-    let Btn = document.querySelector('#btn');
-    Btn.addEventListener('mousedown', function () {
-        this.classList.add("on");
-        Btn.addEventListener('mouseup', function () {
-            this.classList.remove("on")
+    function shadowBtn() {
+        let Btn = document.querySelector('#btn');
+        Btn.addEventListener('mousedown', function () {
+            this.classList.add("on");
+            Btn.addEventListener('mouseup', function () {
+                this.classList.remove("on")
+            });
         });
-    });
-};
+    };
+    // shadowBtn();
+});
+
+
+
