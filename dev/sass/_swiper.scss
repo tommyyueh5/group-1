@@ -227,6 +227,9 @@ top: 0;
 }
 
 @include rwd(medium) {
+    .swiper-pagination::before{
+        top: 800%;
+    }
     .swiper-pagination .swiper-pagination-bullet::before{
         margin-top: 65px;
     }
@@ -246,6 +249,7 @@ top: 0;
 }
 
 @include rwd(small) {
+    
     .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text{
         margin-top: initial;
     }
@@ -257,6 +261,9 @@ top: 0;
     margin-left: 22px;
     width: 3px;
     height: 30px;
+    }
+    .swiper-pagination::before{
+        top: 980%;
     }
    
 }
@@ -296,7 +303,5 @@ top: 0;
         right: 25%;
         bottom: 25%;
     }
-    .swiper-pagination::before{
-        top: 980%;
-    }
+    
 }
