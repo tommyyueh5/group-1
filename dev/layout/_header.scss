@@ -286,23 +286,37 @@ header {
             }
         }
         div.title_list {
-            width: 100vw;
-            position: relative;
-            background-color: $btn-color1;
-
+            position: absolute;
+            right: 25px;
+            top: 900%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $btn-color3;
             ul.mark_bar {
-                position: relative;
+                position: absolute;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
                 display: flex;
+                flex-direction: column-reverse;
                 align-items: center;
                 justify-content: center;
 
                 li {
+                    position: relative;
+                    width: 70px;
+                    height: 70px;
+                    background-color: blueviolet;
+                    border-radius: 50%;
                     margin: 10px;
                     a {
+                        @include HandV_center(50%, 50%);
                         text-decoration: none;
+                        margin-bottom: 20px;
                         color: black;
-                        font-size: 20px;
-                        color: rgba(230, 230, 230, 1);
+                        font-size: 14px;
+                        color: rgba(150, 150, 150, 1);
                         letter-spacing: 3px;
                         display: inline-block;
                     }
@@ -310,9 +324,7 @@ header {
             }
             form.fuction_search {
                 position: absolute;
-                top: 50%;
-                right: 1%;
-                transform: translateY(-50%);
+                @include HandV_center(50%, 50%);
                 display: flex;
                 justify-content: start;
                 i.icofont-search {
@@ -321,6 +333,7 @@ header {
                     color: white;
                     font-size: $icon_fs;
                     cursor: pointer;
+                    order: 2;
                 }
                 input {
                     background-color: transparent;
@@ -332,10 +345,11 @@ header {
                     width: 0%;
                     transition: all 0.5s linear;
                     opacity: 0;
+                    order: 1;
                 }
                 input.on {
                     opacity: 1;
-                    width: 100%;
+                    width: 100px;
                 }
             }
         }
