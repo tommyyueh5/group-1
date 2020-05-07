@@ -51,17 +51,38 @@ $(window).ready(() => {//html載入完再執行
             $(".input_box").toggleClass("on");
         }
     });
-    let search_switch = document.body.clientWidth
-    function shadowBtn() {
-        let Btn = document.querySelector('#btn');
-        Btn.addEventListener('mousedown', function () {
-            this.classList.add("on");
-            Btn.addEventListener('mouseup', function () {
-                this.classList.remove("on")
-            });
-        });
-    };
+    // let search_switch = document.body.clientWidth
+    // function shadowBtn() {
+    //     let Btn = document.querySelector('#btn');
+    //     Btn.addEventListener('mousedown', function () {
+    //         this.classList.add("on");
+    //         Btn.addEventListener('mouseup', function () {
+    //             this.classList.remove("on")
+    //         });
+    //     });
+    // };
     // shadowBtn();
+    function rotate_menu() {
+        let menu_list = document.querySelector('#menu_list');
+
+        let search_btn = document.querySelector('.fuction_search');
+
+        let mark_bar = document.querySelectorAll('.mark_bar');
+
+        //阻斷冒泡
+        search_btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+        //阻斷冒泡
+        mark_bar[0].addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
+        //菜單開關
+        menu_list.addEventListener("click", function () {
+            mark_bar[0].classList.toggle('on');
+        });
+    }
+    rotate_menu();
 });
 
 

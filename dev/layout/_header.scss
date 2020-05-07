@@ -60,16 +60,26 @@ header {
             div.inbtn {
                 display: flex;
                 align-items: center;
-                #login_btn {
-                }
             }
         }
     }
     div.title_list {
-        width: 100vw;
+        width: 100%;
         position: relative;
         background-color: $btn-color3;
-
+        div.menu_btn {
+            span {
+                display: none;
+            }
+            span.horizontal {
+                width: 0px;
+                height: 0px;
+            }
+            span.vertical {
+                width: 0px;
+                height: 0px;
+            }
+        }
         ul.mark_bar {
             position: relative;
             display: flex;
@@ -95,9 +105,10 @@ header {
             transform: translateY(-50%);
             display: flex;
             justify-content: start;
+            width: 185px;
             i.icofont-search {
                 font-weight: bold;
-                margin-right: 23px;
+                margin-right: 15px;
                 color: white;
                 font-size: $icon_fs;
                 cursor: pointer;
@@ -227,7 +238,7 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        z-index: 999;
+        z-index: 999999;
         div.nav_bar {
             position: relative;
             transition: top 0.3s linear;
@@ -280,12 +291,11 @@ header {
                 div.inbtn {
                     display: flex;
                     align-items: center;
-                    #login_btn {
-                    }
                 }
             }
         }
         div.title_list {
+            cursor: pointer;
             position: fixed;
             right: 25px;
             bottom: 25px;
@@ -293,52 +303,58 @@ header {
             height: 70px;
             border-radius: 50%;
             background-color: $btn-color3;
-            &::before{
-                position: absolute;
-                
-                display:block;
-                content: "";
-                width: 100%;
-                height: 2px;
-                background-color: white;
+            div.menu_btn {
+                span {
+                    display: block;
+                    transition: 0.5s;
+                    @include HandV_center(50%, 50%);
+                    background-color: white;
+                }
+                span.horizontal {
+                    width: 2px;
+                    height: 50%;
+                }
+                span.vertical {
+                    width: 50%;
+                    height: 2px;
+                }
             }
-            &::after{
-                
+            ul.mark_bar.on {
+                display: flex;
             }
             ul.mark_bar {
                 position: absolute;
                 bottom: 100px;
                 left: 50%;
                 transform: translateX(-50%);
-                display: flex;
+                display: none;
                 flex-direction: column-reverse;
                 align-items: center;
                 justify-content: center;
-
                 li {
                     position: relative;
                     width: 70px;
                     height: 70px;
-                    background-color: blueviolet;
+                    background-color: $btn-color2;
                     border-radius: 50%;
                     margin: 10px;
                     a {
                         @include HandV_center(50%, 50%);
                         text-decoration: none;
                         margin-bottom: 20px;
-                        color: black;
+                        color: $btn-color3;
                         font-size: 14px;
-                        color: rgba(150, 150, 150, 1);
                         letter-spacing: 3px;
                         display: inline-block;
                     }
                 }
             }
             form.fuction_search {
-                position: absolute;
                 @include HandV_center(50%, 50%);
                 display: flex;
+                background-color: #111;
                 justify-content: start;
+                width: 20px;
                 i.icofont-search {
                     font-weight: bold;
                     margin-right: 23px;
@@ -346,8 +362,10 @@ header {
                     font-size: $icon_fs;
                     cursor: pointer;
                     order: 2;
+                    display: none;
                 }
                 input {
+                    display: none;
                     background-color: transparent;
                     box-shadow: 0 0 3px rgba(255, 255, 255, 9);
                     padding-left: 10px;

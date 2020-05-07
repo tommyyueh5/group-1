@@ -1,17 +1,16 @@
 $fontSize: 14px;
-$icon_fs:25px;
+$icon_fs: 25px;
 $haedFs: 20px;
 $headColor: #0e1c36;
 $color: rgba(60, 65, 70, 1);
+$deepBgColor: #101010;
 $bgc: #0e1c36;
 $bgc-h: #c2dfe3;
 $fontFamily: "arial" san-serif;
-$headerH:100px;
-$main_titleFs:24px;
-$sub_titleFs:22px;
-$main_TextFs:16px;
-
-
+$headerH: 100px;
+$main_titleFs: 24px;
+$sub_titleFs: 22px;
+$main_TextFs: 16px;
 
 $btn-level: (
     level1: btn1,
@@ -27,8 +26,6 @@ $btn-color2: #c2dfe3;
 $btn-color3: #0e1c36;
 $btn-color4: #ffffff;
 $btn-color5: #bdbbb0;
-
-
 
 @mixin marginAuto() {
     margin: 0 auto;

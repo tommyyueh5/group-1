@@ -36,6 +36,8 @@ gulp.task('sass', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dest/css'))
 });
+
+
 //壓縮檔案
 gulp.task('minicss', ['sass'], function () {
     gulp.src('dest/CSS/*.css')
@@ -84,7 +86,7 @@ gulp.task('default', function () {
             files: ['**'],
             proxy: 'http://localhost:3005',
             // index: "dest/homepage.html"
-            // index: "dest/Back_End.html"
+            index: "dest/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP.html"
             // index: "dest/btn-style.html"
             // index: "dest/diseaseHistory.html"
@@ -97,7 +99,7 @@ gulp.task('default', function () {
             // index: "dest/latest-news_child.html"
             // index: "dest/welcome.html"
             // index: "dest/btn-style.html"
-            index: "dest/header.html"
+            // index: "dest/header.html"
         }
     });
 

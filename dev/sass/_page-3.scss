@@ -67,7 +67,7 @@ section.page-3 {
                         }
                     }
 
-                    >&:nth-child(3) {
+                    &:nth-child(3) {
                         p {
                             -webkit-line-clamp: 9;
                             text-align: justify;
