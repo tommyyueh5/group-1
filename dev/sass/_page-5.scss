@@ -12,17 +12,7 @@
     flex-direction: column;
     display: flex;
     
-    // @include rwd(medium) {
-    //     height: 450px;
-    // }
-
-    // @include rwd(small) {
-    //     height: 400px;
-    // }
-
-    // @include rwd(mobile) {
-    //     height: 380px;
-    // }
+    
 
     .content-container {
 
@@ -80,7 +70,10 @@
             
             margin: 0 auto;
             
-
+            @include rwd(mobile) {
+                display: block;
+                // height: px;
+            }
             .container_sop {
                 overflow: hidden;
                 width: 300px;
@@ -99,7 +92,13 @@
                 @include rwd(mobile) {
                     width: 150px;
                     height: 150px;
+                    
+                    display: block;
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                    
                 }
+                
             }
         }
     }
@@ -203,9 +202,14 @@
     position: relative;
     background:url("/dev/image/sopImg/3d.png");
     background-size: contain;
-    // overflow: hidden;
     z-index: 10;
-
+    // @include rwd(mobile) {
+    //     width: 150px;
+    //     height: 150px;
+    //     border-radius: 50%;
+    //     display: inline-block;
+    //     overflow: hidden;
+    // }
     >.sop-thermometer-img {
         display: inline-block;
         width: 35%;
@@ -318,6 +322,13 @@
     z-index: 10;
     background:url("/dev/image/sopImg/s.png");
     background-size: cover;
+    // @include rwd(mobile) {
+    //     width: 150px;
+    //     height: 150px;
+    //     border-radius: 50%;
+    //     display: inline-block;
+    //     overflow: hidden;
+    // }
     >.sop-hand1 {
         width: 45%;
         position: absolute;

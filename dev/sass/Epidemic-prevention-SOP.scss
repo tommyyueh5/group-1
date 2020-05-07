@@ -5,7 +5,7 @@
 }
 
 #pinContainer {
-    border: 5px solid red;
+    // border: 5px solid red;
     width: 90%;
     // width: 1280px;
 
@@ -24,7 +24,7 @@
 }
 
 #slideContainer {
-    border: 5px solid green;
+    // border: 5px solid green;
     width: 4800px;
     height: 100%;
     position: relative;
@@ -312,6 +312,11 @@
     width: 700px;
     bottom: -7.5%;
     right: 8%;
+    @include rwd(mobile) {
+        width: 645px;
+        bottom: -12.5%;
+        right: 9%;
+    }
     .sec1-home-img {
         width: 100%;
     }
@@ -396,7 +401,7 @@
     left: 75%;
     bottom: 63%;
     opacity: 0;
-    z-index: 1;
+    z-index: 2;
     transition: opacity 2s ease, left 2s ease, bottom 2s ease;
 }
 

@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
     let mask3 = document.getElementById('item3');
     let bag = document.getElementById('alcohol');
     let sign = document.getElementById('sign');
-    // document.getElementById('myMeun').style.position = "static";
+    document.getElementById('myMeun').style.position = "static";
 
     // map
     
@@ -372,14 +372,7 @@ window.addEventListener('load', function() {
                         }
 
                         
-                        // if (s == (-(oo-xx)+5)){
-                        //     s =(-(oo-xx)+10);
-                        // }
-
                         
-                        // if (s == (-3515) ){
-                        //     s = -3510;
-                        // }
 
                     
                         s -= 5;
@@ -464,7 +457,6 @@ window.addEventListener('load', function() {
     });
 
     function my(i) {
-        // y = i.toString().slice(0,-1) + '0';
         return parseInt(i.toString().slice(0,-1) + '0');
     }
 
