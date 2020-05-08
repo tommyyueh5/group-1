@@ -86,7 +86,7 @@ gulp.task('default', function () {
             files: ['**'],
             proxy: 'http://localhost:3005',
             // index: "dest/homepage.html"
-            index: "dest/Back_End.html"
+            // index: "dest/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP.html"
             // index: "dest/btn-style.html"
             // index: "dest/diseaseHistory.html"
@@ -97,7 +97,7 @@ gulp.task('default', function () {
             // index: "dest/infectious-Diseases.hmtl"
             // index: "dest/latest-news.html"
             // index: "dest/latest-news_child.html"
-            // index: "dest/index.html"
+            index: "dest/index.html"
             // index: "dest/btn-style.html"
             // index: "dest/header.html"
         }
