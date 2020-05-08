@@ -269,7 +269,7 @@ window.addEventListener('load', function () {
             }
         });
         // 資料路徑
-        xhr.open('get', '/dest/js/news.json', true);
+        xhr.open('get', '../dest/js/news.json', true);
         xhr.send();
     })();
     // xhrhandler()
