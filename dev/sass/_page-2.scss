@@ -15,7 +15,7 @@ section.page-2 {
         .titleImg {
             width: 20px;
             height: 20px;
-            background-color: #f00;
+            // background-color: #f00;
             margin-right: 10px;
 
             img {
@@ -280,12 +280,12 @@ section.page-2 {
 
     section.page-2 .container-top .article {
         width: 100%;
-        height: 60vh;
+        height: 40vh;
         padding: 25px;
         box-sizing: border-box;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
-        grid-template-rows: repeat(auto-fit, minmax(250px,1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        grid-template-rows: repeat(auto-fit, minmax(200px,1fr));
         grid-gap: 25px;
     }
 
@@ -295,11 +295,12 @@ section.page-2 {
 @include rwd(medium) {
     section.page-2 .container-top .article {
         width: 100%;
-        height: 50vh;
+        height: 60vh;
         padding: 25px;
         box-sizing: border-box;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 330px));
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 430px));
         grid-template-rows: repeat(auto-fit, minmax(200px, 210px));
         grid-gap: 25px;
     }
@@ -307,9 +308,21 @@ section.page-2 {
 }
 
 @include rwd(small) {
-    
-    
+    section.page-2 .container-top .article {
+        width: 100%;
+        height: 50vh;
+        padding: 25px;
+        box-sizing: border-box;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+        grid-template-rows: repeat(auto-fit, minmax(180px, 1fr));
+        grid-gap: 25px;
+    }
+
 }
+    
+
 
 @include rwd(mobile) {
     section.page-2 .container-top .article {

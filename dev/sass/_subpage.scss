@@ -20,14 +20,11 @@
         transform: translate(-50%, -50%);
         z-index: 1;
     
-        /* overflow-y: auto; */
         
         >.btnclose {
             position: absolute;
             top: -60px;
             right: -50px;
-            width: 50px;
-            height: 50px;
             margin-top: -12px;
             width: 60px;
             height: 60px;
@@ -158,6 +155,71 @@
 
 
 
+
+@include rwd(desktop) {
+    .subNewsBox > .subcontainer{
+        width: 80vw;
+    }
+
+}
+
+@include rwd(medium) {
+
+}
+@include rwd(small) {
+    
+    
+}
+
+@include rwd(mobile) {
+    .subNewsBox > .subcontainer > .content > .dateBox{
+        left: -1px;
+        top: 0px;
+        border-radius: 0px 0 25px 0px;
+    }
+    .subNewsBox > .subcontainer > .btnclose::after,
+    .subNewsBox > .subcontainer > .btnclose::before
+    {
+        transform: rotate(45deg);
+    }
+    .subNewsBox > .subcontainer > .btnclose{
+            margin-top: 0px;  
+            top: 0px;
+            right: 0px;
+            transform: rotate(0deg);
+            width: 30px;
+    height: 30px;
+    background: #000;
+    }
+    .subNewsBox > .subcontainer{
+        height: 100vh;
+        width: 100vw;
+    }
+    .subNewsBox{
+        border-radius: 0;
+    }
+    .subNewsBox > .subcontainer > .content{
+        border-radius: 0;
+    }
+    .subNewsBox > .subcontainer > .content > .newsTitle{
+        font-size: 18px;
+        width: 95%;
+        letter-spacing: 1px;
+    }
+    .subNewsBox > .subcontainer > .content > .imgBox{
+        width: 100%;
+    }
+    .subNewsBox > .subcontainer > .content > .imgBox > .pImg{
+        font-size: 12px;
+    }
+    .subNewsBox > .subcontainer > .content > .newsContent{
+        padding: 0;
+        font-size:16px;
+        line-height: 1.5;
+        
+    }
+
+}
 
 
 

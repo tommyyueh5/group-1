@@ -6,7 +6,7 @@ $(window).ready(function() {
             direction: 'horizontal',
             speed: 1000,
             // spaceBetween: 500,
-            autoHeight: true,
+            // autoHeight: true,
             effect: "slide",
             watchOverflow: true,
             loop: true,
@@ -181,7 +181,7 @@ function togglePlay() {
 
 function updateButton() {
   const icon = this.paused ? '►' : '❚ ❚';
-  console.log(icon);
+//   console.log(icon);
   toggle.textContent = icon;
 }
 
@@ -284,7 +284,7 @@ window.addEventListener('load', function () {
         Array.from(International).forEach((item, index) => {
             item.addEventListener('click', function () {
                 
-                console.dir(document.body);
+                // console.dir(document.body);
                 document.body.style.overflow = 'hidden';
                 
                 
