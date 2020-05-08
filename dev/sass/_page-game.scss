@@ -13,18 +13,16 @@
         >.game-background {
             width: 100%;
             height: 100%;
-            background: url('../image/index-game-page/homepageGame.gif') center center;
-            background-size: cover;
- 
-
-
+            background: url('../image/index-game-page/homepageGame.gif') center center no-repeat #000;
+            // background-size: cover;
+            // border-radius: 5px;
             //遊戲圖片 background-image: url();
 
             >.context {
                 position: absolute;
                 left: 50%;
-                top: 40%;
-                transform: translate(-50%, -40%);
+                top: 20%;
+                transform: translate(-50%, -20%);
                 width: 50%;
                 height: 20%;
                 // background-color: #000;
@@ -34,7 +32,7 @@
                     text-align: center;
                     font-size: 24px;
                     font-weight: 700;
-                    color: whitesmoke;
+                    color: #000;
                     letter-spacing: 1px;
                     line-height: 1.5;
                     text-shadow: 0 1px 1px #fff;
@@ -190,6 +188,9 @@
     
 }
 @include rwd(mobile) {
+    .merge-game-Carousel .game-container > .game-background{
+        background-size: cover;
+    }
 
     .merge-game-Carousel .game-container > .game-background > .context{
         top: 25%;
@@ -199,8 +200,11 @@
     }
 
     .merge-game-Carousel .game-container > .game-background > .game-btn{
-        top: 65%;
-        transform: translate(-50%, -65%);
+        top: 75%;
+        transform: translate(-50%, -75%);
+    }
+    .merge-game-Carousel .game-container > .game-background > .game-btn > a{
+        height: 90%;
     }
     .merge-game-Carousel .Carousel > .title{
         width: 95%;
