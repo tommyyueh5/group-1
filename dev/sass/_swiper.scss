@@ -2,6 +2,30 @@
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
+
+    >.newTitle {
+        width: 100%;
+        padding: 20px;
+        background: #333;
+        display: flex;
+        align-items: center;
+
+        >.titleImg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+
+            >img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        >h1{
+            letter-spacing: 1px;
+            color: #fff;
+            font-size: 24px;
+        }
+    }
 }
 
 .swiper-container {
@@ -78,9 +102,9 @@
                     letter-spacing: 3px;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 9;
-                        -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 9;
+                    -webkit-box-orient: vertical;
 
                 }
 
@@ -182,129 +206,161 @@
 
 
 @include rwd(desktop) {
-    
-    .swiper-pagination::before{
+
+    .swiper-pagination::before {
         right: 0%;
         top: 750%;
-    content: '';
-    position: absolute;
-    left: initial;
-    
-    height: 4px;
-    width: 100vw;
-    z-index: 1;
-    background: linear-gradient(90deg,#fff, #000, #fff);
+        content: '';
+        position: absolute;
+        left: initial;
+
+        height: 4px;
+        width: 100vw;
+        z-index: 1;
+        background: linear-gradient(90deg, #fff, #000, #fff);
     }
-    .swiper-pagination-bullets{
+
+    .swiper-pagination-bullets {
         top: 5% !important;
     }
-    .swiper-pagination .swiper-pagination-bullet::before{
+
+    .swiper-pagination .swiper-pagination-bullet::before {
         content: "";
         width: 3px;
         height: 40px;
-    position: absolute;
-    margin-top: 65px;
-    margin-left: 40px;
-    left: inherit;
-    background-color: #000;
-    opacity: 0;
-top: 0;
+        position: absolute;
+        margin-top: 65px;
+        margin-left: 40px;
+        left: inherit;
+        background-color: #000;
+        opacity: 0;
+        top: 0;
     }
-    .swiper-pagination .swiper-pagination-bullet-active::before{
+
+    .swiper-pagination .swiper-pagination-bullet-active::before {
         background: #fff;
-    opacity: 1;
+        opacity: 1;
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content {
         width: 80%;
         height: 50%;
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-title{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-title {
         margin: 10px 0;
     }
-    .swiper-pagination{
+
+    .swiper-pagination {
         height: 1%;
     }
 }
 
 @include rwd(medium) {
-    .swiper-pagination::before{
+    .swiper-pagination::before {
         top: 830%;
     }
-    .swiper-pagination .swiper-pagination-bullet::before{
+
+    .swiper-pagination .swiper-pagination-bullet::before {
         margin-top: 65px;
     }
-    .swiper-pagination .swiper-pagination-bullet::before{
+
+    .swiper-pagination .swiper-pagination-bullet::before {
         height: 30px;
         margin-top: 55px;
 
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-title{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-title {
         padding: 15px;
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text {
         margin-top: 0px;
         font-size: 18px;
-    letter-spacing: 2px;
+        letter-spacing: 2px;
     }
 }
 
 @include rwd(small) {
-    
-    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text {
         margin-top: initial;
     }
-    .swiper-pagination .swiper-pagination-bullet{
+
+    .swiper-pagination .swiper-pagination-bullet {
         width: 90px;
     }
-    .swiper-pagination .swiper-pagination-bullet::before{
+
+    .swiper-pagination .swiper-pagination-bullet::before {
         margin-top: 55px;
         margin-left: 40px;
-    width: 3px;
-    height: 30px;
+        width: 3px;
+        height: 30px;
     }
-    .swiper-pagination::before{
+
+    .swiper-pagination::before {
         top: 980%;
     }
-   
+
+
 }
 
 @include rwd(mobile) {
-    .swiper-pagination::before{
-        top: 1300%;
+    .swiper-pagination::before {
+        top: 1350%;
     }
-    .swiper-pagination .swiper-pagination-bullet{
+
+    .swiper-pagination .swiper-pagination-bullet {
         font-size: 20px;
         width: 65px;
     }
-    .swiper-pagination .swiper-pagination-bullet::before{
+
+    .swiper-pagination .swiper-pagination-bullet::before {
         margin-top: 60px;
-    margin-left: 22px;
-    width: 3px;
-    height: 25px;
+        margin-left: 22px;
+        width: 3px;
+        height: 25px;
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content {
         left: 25%;
         top: 25%;
         transform: translate(-25%, 0);
         height: 65%;
         padding: 0 15px;
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content::before{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content::before {
         left: 5%;
         height: 100%;
         transform: translate(0%, 0);
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-title{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-title {
         font-size: 20px;
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text {
         font-size: 16px;
         letter-spacing: 1px;
         padding: 0px;
     }
-    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-link{
+
+    .swiper-container .swiper-wrapper .swiper-slide-content .timeline-link {
         right: 25%;
         bottom: 15%;
+        color: #000;
+        border: 3px solid #000;
+
+        &:hover {
+            color: #000;
+            border: 3px solid #000;
+        }
     }
-    
+    .page-4 > .newTitle{
+        padding: 10px;
+    }
+
+
 }

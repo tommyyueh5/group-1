@@ -37,7 +37,7 @@
             cursor: pointer;
             -webkit-transition: all 100ms ease-out;
             transition: all 100ms ease-out;
-            border-color: orange;
+            border-color: white;
             &::before,
             &::after {
                 content: '';
@@ -181,15 +181,19 @@
     .subNewsBox > .subcontainer > .btnclose::before
     {
         transform: rotate(45deg);
+        background-color: #000;
+        
     }
     .subNewsBox > .subcontainer > .btnclose{
             margin-top: 0px;  
-            top: 0px;
-            right: 0px;
+            top: 10px;
+            right: 10px;
             transform: rotate(0deg);
             width: 30px;
     height: 30px;
-    background: #000;
+    background: none;
+        border-color:#000;
+        // color: #000;
     }
     .subNewsBox > .subcontainer{
         height: 100vh;

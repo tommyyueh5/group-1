@@ -26,8 +26,8 @@ window.addEventListener('load', function () {
     dateBox.classList.add('dateBox');
     pImg.classList.add('pImg');
     // pdate.classList.add('pdate');
-
-
+    
+   
 
 
 
@@ -82,6 +82,7 @@ window.addEventListener('load', function () {
                 // dateBox.appendChild(pdate)
 
                 //設置屬性區
+
                 img.setAttribute('src', datalist[index].detail.imgBox.img);
                 //  圖片敘述
                 pImg.innerText = `▲ ${datalist[index].detail.imgBox.imgdetail}`;
@@ -115,8 +116,9 @@ window.addEventListener('load', function () {
         function closebtn() {
             subcontainer.remove();
             flag = false;
+            
         }
-        // 點擊subNewsBox之外關閉彈跳視窗
+        點擊subNewsBox之外關閉彈跳視窗
         function outlayerclose(e) {
             // console.log(e.clientX, e.clientY);
             let rx = subcontainer.getBoundingClientRect().right;
