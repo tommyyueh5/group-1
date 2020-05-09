@@ -31,9 +31,20 @@ body.Back_Edn {
         }
     }
     main.information {
+        position: relative;
         display: flex;
         height: calc(100vh - 70px);
         aside {
+            &::before {
+                position: absolute;
+                top: 100px;
+                left: 21%;
+                display: block;
+                content: "";
+                width: 2px;
+                height: 80%;
+                background-color: #fff;
+            }
             flex: 2;
             min-width: 300px;
             // border: 1px solid #fff;
@@ -91,12 +102,13 @@ body.Back_Edn {
                 width: 100%;
                 height: 50px;
                 z-index: 10;
-                &::before{
+                &::before {
                     position: absolute;
-                    right: 0;
+                    top: 30px;
+                    left: 250px;
                     display: block;
-                    content:"";
-                    width: 500px;
+                    content: "";
+                    width: 55%;
                     height: 2px;
                     background-color: #fff;
                 }
@@ -117,6 +129,7 @@ body.Back_Edn {
                         flex-wrap: wrap;
                         overflow-y: scroll;
                         li.p_list {
+                            box-shadow: 0 3px 30px rgb(84, 190, 240);
                             height: 200px;
                             width: 50%;
                             min-width: 478px;
@@ -202,7 +215,7 @@ body.Back_Edn {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                background-color:$deepBgColor;
+                background-color: $deepBgColor;
                 span {
                     padding: 10px 20px;
                     border-radius: 20px;
