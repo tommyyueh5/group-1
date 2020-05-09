@@ -189,7 +189,7 @@ section.page-2 {
             grid-gap: 25px;
 
             .item {
-                background-color: #ccc;
+                // background-color: #ccc;
                 overflow: hidden;
                 border-radius: 5px;
                 padding: 10px;
@@ -340,5 +340,9 @@ section.page-2 {
     }
     section.page-2 .container-top{
         height: 1300px;
+    }
+    section.page-2 .newTitle{
+        padding: 10px;
+        font-size: 22px;
     }
 }

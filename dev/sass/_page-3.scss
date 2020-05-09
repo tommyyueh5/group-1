@@ -515,11 +515,18 @@ section.page-3 {
     section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template{
         margin-bottom: 0px;
     }
+    section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left > div{
+        margin-bottom: 15px;
+    }
+    section.page-3 .container-bottom .bottom-right .newTitle{
+        padding: 10px;
+        font-size: 22px;
+    }
     .section.page-3 .container-bottom .bottom-right .box .inside-right .bottom .grid-bottom-left,
     section.page-3 .container-bottom .bottom-right .box .inside-right .bottom .grid-bottom-center,
     section.page-3 .container-bottom .bottom-right .box .inside-right .bottom .grid-bottom-right{
         padding: 10px;
-
+        margin-bottom: 5px;
 }
     
 }
