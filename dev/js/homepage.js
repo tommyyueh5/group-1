@@ -306,6 +306,8 @@ window.addEventListener('load', function () {
 
                 //設置屬性區
                 img.setAttribute('src', datalist[index].detail.imgBox.img);
+                //停止預設行為
+                btnClose.setAttribute('href', 'javascript:void(0)');
                 //  圖片敘述
                 pImg.innerText = `▲ ${datalist[index].detail.imgBox.imgdetail}`;
                 // console.log(datalist[index]);
