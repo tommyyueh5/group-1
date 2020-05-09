@@ -215,7 +215,17 @@ window.addEventListener('load', ()=>{
         sum = 0;
     });
 
+    document.getElementById('shop-two-mobile-choice').addEventListener('click', function(){
+        const shopOne = document.getElementById('shop-one');
+        shopOne.classList.add('mobile-shop');
+        
+    });
 
+    document.getElementById('mobile-arrow').addEventListener('click', function(){
+        const shopOne = document.getElementById('shop-one');
+        shopOne.classList.remove('mobile-shop');
+        
+    });
 
 
 
