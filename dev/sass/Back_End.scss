@@ -121,87 +121,14 @@ body.Back_Edn {
                 li.data {
                     width: 100%;
                 }
-                > li {
-                    display: none;
-                    ul.profile_list {
-                        display: flex;
-                        height: 100%;
-                        flex-wrap: wrap;
-                        overflow-y: scroll;
-                        li.p_list {
-                            box-shadow: 0 3px 30px rgb(84, 190, 240);
-                            height: 200px;
-                            width: 50%;
-                            min-width: 478px;
-                            position: relative;
-                            div.p_Profile {
-                                width: 100px;
-                                height: 100px;
-                                border-radius: 50%;
-                                border: 1px solid #fff;
-                                background-position: center center;
-                                @include HandV_center(50%, 25%);
-                            }
-                            &:nth-child(1) {
-                                div.p_Profile {
-                                    background-image: url(../image/Back_End/Ellipse2.png);
-                                }
-                            }
-                            &:nth-child(2) {
-                                div.p_Profile {
-                                    background-image: url(../image/Back_End/Ellipse3.png);
-                                }
-                            }
-                            &:nth-child(3) {
-                                div.p_Profile {
-                                    background-image: url(../image/Back_End/Ellipse4.png);
-                                }
-                            }
-                            &:nth-child(4) {
-                                div.p_Profile {
-                                    background-image: url(../image/Back_End/Ellipse5.png);
-                                }
-                            }
-                            &:nth-child(5) {
-                                div.p_Profile {
-                                    background-image: url(../image/Back_End/Ellipse6.png);
-                                }
-                            }
-                            &:nth-child(6) {
-                                div.p_Profile {
-                                    background-image: url(../image/Back_End/Ellipse7.png);
-                                }
-                            }
-                            &:nth-child(7) {
-                                div.p_Profile {
-                                    background-image: url(../image/Back_End/Ellipse8.png);
-                                }
-                            }
-
-                            div.p_data {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: flex-start;
-                                padding-left: 100px;
-                                line-height: 1.5;
-                                @include HandV_center(50%, 50%);
-                                div {
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: flex-start;
-
-                                    p {
-                                        margin-right: 20px;
-                                    }
-                                    span.center {
-                                        padding-top: 10px;
-                                        @include switch(20px);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                @import "../sass/Back_End/_BE_member.scss";
+                @import "../sass/Back_End/_BE_member.scss";
+                @import "../sass/Back_End/_BE_member.scss";
+                @import "../sass/Back_End/_BE_member.scss";
+                @import "../sass/Back_End/_BE_member.scss";
+                @import "../sass/Back_End/_BE_member.scss";
+                @import "../sass/Back_End/_BE_member.scss";
+                @import "../sass/Back_End/_BE_member.scss";
             }
             div.edit_fuc {
                 position: absolute;
@@ -286,7 +213,7 @@ body.Back_Edn {
     //                 }
     //                 > li {
     //                     display: none;
-    //                     ul.profile_list {
+    //                     ul.member_list {
     //                         display: flex;
     //                         height: 100%;
     //                         flex-wrap: wrap;
@@ -300,7 +227,7 @@ body.Back_Edn {
     //                             width: 100%;
     //                             min-width: 450px;
     //                             position: relative;
-    //                             div.p_Profile {
+    //                             div.p_member {
     //                                 width: 100px;
     //                                 height: 100px;
     //                                 border-radius: 50%;
