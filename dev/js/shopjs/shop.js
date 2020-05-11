@@ -117,10 +117,10 @@ window.addEventListener('load', ()=>{
     };
 
     let sum;
-
+    let buyList = new Array();
     $('.sli').click(move);
     function move(e) {
-        let cl = this.cloneNode(true);
+        cl = this.cloneNode(true);
         let fo = document.createElement('div');
         count = 1;
         sum =0;
@@ -170,7 +170,25 @@ window.addEventListener('load', ()=>{
         $(`.shop-item-detail`).addClass('hid');
         $(`.shop-item-detail[da=${oo}]`).removeClass('hid');
         
+
+
+
         // 
+        function additem() {
+            //init
+            buyList = [];
+            // console.log(joker);
+            // console.log(joker.getElementsByClassName('ac'));
+            for (let i = 0; i<joker.getElementsByClassName('ac').length; i++ ) {
+                
+                buyList.push(joker.getElementsByClassName('ac')[i].firstElementChild.getAttribute('da'));
+                console.log(buyList);
+
+
+            }
+        }
+        additem();
+
     }
     
 
@@ -228,6 +246,32 @@ window.addEventListener('load', ()=>{
     });
 
 
+
+    //add cart
+    
+    const addCart = document.getElementById('addbtn');
+    let N = 1;
+    addCart.addEventListener('click', function(){
+        if (buyList.length==0) {
+            alert('請');
+        } else {
+        
+            var storage = sessionStorage;
+            for (let i = 0 ; i < buyList.length; i++) {
+                storage[`${N}`] +=buyList[i];
+            }
+        }
+        N++;
+    });
+
+
+    // function additem() {
+    //     console.log(joker);
+    //     console.log(joker.getElementsByClassName('ac'));
+    //     for (let i = 0; i<joker.getElementsByClassName('ac').length; i++ ) {
+    //         joker.getElementsByClassName('ac')[i]
+    //     }
+    // }
 
 
 });
