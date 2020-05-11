@@ -1396,6 +1396,25 @@
                 $(".article_content,.background").hide();
 
             });
+            //條件篩選
+            $("#filter_con").on("click", function() {
+                $(".filter_left div").slideToggle();
+            });
+            $("#filter_top").on("click", function() {
+                $(".filter_right h3").slideToggle();
+            });
+            $(".filter_right h3").on("click", function(e) {
+                // console.log($(this).text());
+                // console.log($(".filter_right span").text());
+                $(".filter_right span").text($(this).text());
+                $(".filter_right h3").slideToggle();
+            });
+            $(".filter_left div").on("click", function(e) {
+                // console.log($(this).text());
+                $(".filter_left span").text($(this).text());
+                $(".filter_left div").slideToggle();
+
+            });
         });
     </script>
 
