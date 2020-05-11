@@ -18,10 +18,10 @@ $(window).ready(() => {//html載入完再執行
         })
     });
 
-    $("#btnX,#loginBg").click(() => {//點選關閉鈕及灰背景都可以關閉燈箱
-        $("#loginBg").removeClass("on");
-        $('#sign-up').css('boxShadow', '');
-    });
+    // $("#btnX,#loginBg").click(() => {//點選關閉鈕及灰背景都可以關閉燈箱
+    //     $("#loginBg").removeClass("on");
+    //     $('#sign-up').css('boxShadow', '');
+    // });
 
     $('#sign-up').click(() => {//點選註冊紐切換
         $('#sign-up').css('boxShadow', '0 0 5px rgba(0,0,0,.5)');
