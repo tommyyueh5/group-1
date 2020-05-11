@@ -173,7 +173,6 @@ window.addEventListener('load', function () {
 
  
   
-
   function fill(obj, color) {
     context.beginPath()
     path(obj)
@@ -200,21 +199,7 @@ window.addEventListener('load', function () {
     lastTime = now
   }
 
-  // function loadData(cb) {
-    
-  //   d3.json('/dest/js/earth_json/earth.json', function (error, world) {
-  //     if (error) throw error
-  //     d3.tsv('/dest/js/earth_json/earth.tsv', function (error, countries) {
-  //       if (error) throw error;
-  //       d3.json('https://pomber.github.io/covid19/timeseries.json', function (error, data) {
-  //         if (error) throw error;
-  //         cb(world, countries, data)
-  //       });
-
-
-  //     })
-  //   })
-  // }
+ 
   function loadData(cb) {
     
     d3.json('../dest/js/earth.json', function (error, world) {
@@ -231,7 +216,6 @@ window.addEventListener('load', function () {
     })
   }
 
-  // https://github.com/d3/d3-polygon
   function polygonContains(polygon, point) {
     var n = polygon.length
     var p = polygon[n - 1]
@@ -318,7 +302,6 @@ window.addEventListener('load', function () {
       cfd[1].textContent = totaldeath.toLocaleString('zh-TW');
       cfd[2].textContent = totlerecovered.toLocaleString('zh-TW');
     })(data);
-    // console.log(1);
     
 
     
