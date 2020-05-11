@@ -22,11 +22,15 @@ gulp.task('concatphp', function () {
 });
 gulp.task('concatfont', function () {
     //do sometime
-    gulp.src('./dev/LAYOUT/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
+    gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
 });
 gulp.task('concatlayput', function () {
     //do sometime
     gulp.src('./dev/layout/**/*').pipe(gulp.dest('./dest/Epidemic-shop/icofont'))
+});
+gulp.task('concatphp', function () {
+    //do sometime
+    gulp.src('./dev/php/**/*.php').pipe(gulp.dest('./dest/php'))
 });
 //編譯scss
 
@@ -85,8 +89,8 @@ gulp.task('default', function () {
             baseDir: "./",
             files: ['**'],
             proxy: 'http://localhost:3005',
-            index: "dest/homepage.html"
-            // index: "dest/Back_End.html"
+            // index: "dest/homepage.html"
+            index: "dest/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP.html"
             // index: "dest/btn-style.html"
             // index: "dest/diseaseHistory.html"
@@ -106,5 +110,10 @@ gulp.task('default', function () {
     gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss", "dev/layout/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatimage']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js", "dev/layout/**/*.js"], ['concatjs']).on('change', reload);
+<<<<<<< HEAD
     gulp.watch(["dev/*.php","dev/**/*.php"], ['concatphp']).on('change', reload);
 });
+=======
+    gulp.watch(["dve/*.php","dev/**/*.php"], ['concatphp']).on('change', reload);
+});
+>>>>>>> 53771bad4dda27f0642ef7067482fec45ac206ce

@@ -1,0 +1,64 @@
+> li.i6 {
+    margin-top: 10px;
+    width: 100%;
+    ul.game_list {
+        width: 100%;
+        height: 100%;
+        li.p_game {
+            position: relative;
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 100px;
+            &::before {
+                display: block;
+                content: "";
+                width: 80%;
+                background-color: #fff;
+                height: 3px;
+                @include HandV_center(100%, 50%);
+            }
+            div.game_topic {
+                flex: 3;
+            }
+            ul.answer_list {
+                flex: 3;
+                display: flex;
+                height: 100%;
+                width: 100%;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 50px 0;
+                margin: 0 auto;
+                li {
+                    width: 200px;
+                    height: 100%;
+                    display: flex;
+                    align-items: flex-start;
+                    margin: 0 0 10px 100px;
+                }
+            }
+            div.answer {
+                flex: 2;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                padding: 50px;
+            }
+            div.Audit_results {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                span.center {
+                    @include switch(20px);
+                }
+            }
+        }
+    }
+}
