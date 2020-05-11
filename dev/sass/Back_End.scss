@@ -32,6 +32,8 @@ body.Back_Edn {
         }
     }
     main.information {
+        max-width: 1440px;
+        margin: 0 auto;
         position: relative;
         display: flex;
         height: calc(100vh - 70px);
@@ -129,7 +131,7 @@ body.Back_Edn {
                 @import "../sass/Back_End/_BE_news.scss";
                 @import "../sass/Back_End/_BE_game.scss";
                 @import "../sass/Back_End/_BE_care.scss";
-                @import "../sass/Back_End/_BE_schedule.scss";
+                @import "../sass/Back_End/_BE_product.scss";
             }
             div.edit_fuc {
                 position: absolute;

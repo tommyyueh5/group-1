@@ -8,10 +8,15 @@
     @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="../dest/css/member.css">
     <link rel="stylesheet" href="../dest/node_modules/@icon/icofont/icofont.css">
+
 </head>
 
 <body>
     @@include('./LAYOUT/header.html')
+    <script>
+            let loginbox = document.querySelector('#loginBg');
+            loginbox.classList.add('on');
+    </script>
     <!-- main -->
     <main>
         <!-- 麵包屑 -->
@@ -133,6 +138,7 @@
             });
         });
     </script>
+
 
 </body>
 
