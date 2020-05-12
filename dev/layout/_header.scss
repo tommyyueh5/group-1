@@ -44,11 +44,30 @@ header {
             display: flex;
             align-items: center;
             font: $sub_titleFs normal;
+            div.member_center{
+                display: none;
+                margin-right: 5px;
+                >a{
+                    text-decoration: none;
+                    color: #fff;
+                    >p{
+                        font-size: $sub_titleFs;
+                    }
+                }
+                &.on{
+                    display: block;
+                }
+            }
             i {
                 cursor: pointer;
                 margin-right: 10px;
                 font-style: normal;
+                >a{
+                    text-decoration: none;
+                    color: #fff;
+                }
             }
+            
             div.points {
                 display: flex;
                 align-items: center;
