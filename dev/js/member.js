@@ -1,8 +1,5 @@
 document.write("<script type='text/javascript' src='../dest/js/var.js'></script>");
-<<<<<<< HEAD
-=======
 
-document.write("<script type='text/javascript' src='/dev/js/var.js'></script>");
 
 
 function doFirst() {
@@ -24,4 +21,3 @@ function fileChange() {
 };
 
 window.addEventListener('load', doFirst);
->>>>>>> 4f52dc5596a460076aa0acc8f9646df1560706ef

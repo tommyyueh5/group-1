@@ -16,19 +16,11 @@ gulp.task('concatimage', function() {
     //do sometime
     gulp.src('./dev/image/**/*').pipe(gulp.dest('./dest/image'))
 });
-<<<<<<< HEAD
 // gulp.task('concatphp', function () {
 //     //do sometime
 //     gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
 // });
 gulp.task('concatfont', function () {
-=======
-gulp.task('concatphp', function() {
-    //do sometime
-    gulp.src('./dev/html/*/PHP/*').pipe(gulp.dest('./dest/'))
-});
-gulp.task('concatfont', function() {
->>>>>>> 4f52dc5596a460076aa0acc8f9646df1560706ef
     //do sometime
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
 });
@@ -97,7 +89,7 @@ gulp.task('default', function() {
             baseDir: "./",
             files: ['**'],
             proxy: 'http://localhost:3005',
-            // index: "dest/homepage.html"
+            index: "dest/homepage.html"
             // index: "dest/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP.html"
             // index: "dest/btn-style.html"
@@ -105,7 +97,7 @@ gulp.task('default', function() {
             // index: "dest/game.html"
             // index: "dest/Epidemic-shop.html"
             // index: "dest/forum.html"
-            index: "dest/member.html"
+            // index: "dest/member.html"
                 // index: "dest/infectious-Diseases.hmtl"
                 // index: "dest/latest-news.html"
                 // index: "dest/latest-news_child.html"
@@ -118,10 +110,5 @@ gulp.task('default', function() {
     gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss", "dev/layout/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatimage']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js", "dev/layout/**/*.js"], ['concatjs']).on('change', reload);
-<<<<<<< HEAD
   
 });
-=======
-    gulp.watch(["dve/*.php", "dev/**/*.php"], ['concatphp']).on('change', reload);
-});
->>>>>>> 4f52dc5596a460076aa0acc8f9646df1560706ef

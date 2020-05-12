@@ -44,10 +44,10 @@ window.addEventListener('load', function () {
                     sessionStorage.setItem('memImg', datamemb.memImg);
                     sessionStorage.setItem('point', datamemb.point);
                     $cs('member_center').classList.add('on');
-                    $cs('member_name').textContent = sessionStorage.getItem('memId');
-                    $cs('member_email').textContent = sessionStorage.getItem('email');
-                    $cs('member_img>img').src = sessionStorage.getItem('memImg');
-                    $cs('memPoint').textContent = sessionStorage.getItem('point');
+                    // $cs('member_name').textContent = sessionStorage.getItem('memId');
+                    // $cs('member_email').textContent = sessionStorage.getItem('email');
+                    // $cs('member_img>img').src = sessionStorage.getItem('memImg');
+                    // $cs('memPoint').textContent = sessionStorage.getItem('point');
                     // $cs('member_email').textContent = datamemb.email;
                     // $cs('memPoint').textContent = datamemb.point;
 
