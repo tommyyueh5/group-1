@@ -12,23 +12,50 @@
 
 <body>
     @@include('./LAYOUT/header.html')
-    <script>
-            let loginbox = document.querySelector('#loginBg');
-            loginbox.classList.add('on');
-    </script>
+    <!-- <script>
+        let loginbox = document.querySelector('#loginBg');
+        loginbox.classList.add('on');
+    </script> -->
+
     <!-- main -->
     <main>
         <!-- 麵包屑 -->
         <div class="bread_crumbs">
-            <a href="../dest/index.html"><span>Home</span></a> &gt;
+            <a href="../index/index.html"><span>Home</span></a> &gt;
             <a href=""><span>Events</span></a> &gt;
             <a href=""><span>Iran attack</span></a>
         </div>
         <!-- 左邊資料欄 -->
         <aside class="member_info">
             <div class="member_img">
-                <img src="../dest/image/member/member_pic2.jpeg" alt="">
+                <img class="thumbnail" src="/dest/image/member/member_pic2.jpeg">
+                <form action="#" method="post" class="edit_thumbnail">
+                    <label for="editimage">
+                        <img src="/dest/image/member/interface.png" >
+                        <input type="file" name="" id="editimage" value="">
+                    </label>
+                </form>
             </div>
+            <div class="member_edit">
+                <form action="#" method="post">
+                    <h2 class="member_name">
+                        <input id="editname" type="text" value="Vivian Wang" disabled>
+                    </h2>
+                    <h3 class="member_email">
+                        <input id="editemail" type="text" value="Vivian520@gmail.com" disabled>
+                    </h3>
+                    <h3 class="member_join">
+                        已加入<span>475</span>天
+                    </h3>
+                    <h4 class="point">
+                        <i id="points" class="icofont icofont-diamond"></i>66666
+                    </h4>
+                    <h2 class="edit">編輯個人資料</h2>
+                    <input id="save" type="submit" value="儲存">
+                    <input id="cancel" type="reset" value="取消">
+                </form>
+            </div>
+<<<<<<< HEAD
             <h2 class="member_name">
                 Vivian Wang
             </h2>
@@ -45,32 +72,32 @@
             <a href="#">
                 <h2 class="edit">編輯個人資料</h2>
             </a>
+=======
+>>>>>>> 4f52dc5596a460076aa0acc8f9646df1560706ef
         </aside>
 
         <!-- 右邊會員功能資訊欄 -->
         <section class="member_data">
             <ul class="tab_list">
-                <a class="tab -on" data-target="tab1" href="#">
+                <a class="tab -on " data-target="tab1" href="#">
                     <li>發文紀錄</li>
                 </a>
                 <a class="tab " data-target="tab2" href="#">
                     <li>留言紀錄</li>
                 </a>
                 <a class="tab " data-target="tab3" href="#">
-                    <li>自我管理紀錄</li>
-                </a>
-                <a class="tab " data-target="tab4" href="#">
                     <li>檢舉案件狀態</li>
                 </a>
-                <a class="tab " data-target="tab5" href="#">
+                <a class="tab" data-target="tab4" href="#">
                     <li>重設密碼</li>
                 </a>
+
             </ul>
             <div class="tab_contents">
                 <div class="tab tab1 -on">
                     <div class="tab_text">
                         <div class="content_img">
-                            <img src="../dest/image/member/comment_pic1.png" alt="">
+                            <img src="/dest/image/member/comment_pic1.png" alt="">
                         </div>
                         <div class="contents">
                             <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材</h2>
@@ -80,9 +107,9 @@
                             <h3>討論區<br>Funny<br>2020.04.07</h3>
                         </div>
                     </div>
-                    <div class="tab_text">
+                    <div class="tab_text ">
                         <div class="content_img">
-                            <img src="../dest/image/member/member_pic_3.jpg" alt="">
+                            <img src="/dest/image/member/member_pic_3.jpg" alt="">
                         </div>
                         <div class="contents">
                             <h2>完全命中現況《南方四賤客》諷刺中國被禁 製作人推特馬上道歉惹
@@ -95,7 +122,7 @@
                     </div>
                     <div class="tab_text">
                         <div class="content_img">
-                            <img src="../dest/image/member/member_pic4.jpg" alt="">
+                            <img src="/dest/image/member/member_pic4.jpg" alt="">
                         </div>
                         <div class="contents">
                             <h2>肺炎防疫期間《超商店員無法理解客人的行為》面對防止飛沫傳染的透明布簾客人行為超傻眼</h2>
@@ -106,31 +133,122 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- 留言紀錄 -->
                 <div class="tab tab2 ">
-
+                    <div class="record">
+                        <div class="topic">
+                            <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材</h2>
+                        </div>
+                        <div class="comment">
+                            <img src="/dest/image/member/member_pic2.jpeg">
+                            <h2>Vivian Wang</h2>:
+                            <p>我還看了很久這衣服真的很二次元</p>
+                        </div>
+                        <div class="theme">
+                            <h3>討論區<br>Comic & Webtoon<br>2020.03.08</h3>
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class="topic">
+                            <h2>完全命中現況《南方四賤客》諷刺中國被禁 製作人推特馬上道歉惹</h2>
+                        </div>
+                        <div class="comment">
+                            <img src="/dest/image/member/member_pic2.jpeg">
+                            <h2>Vivian Wang</h2>:
+                            <p>我還看了很久這衣服真的很二次元</p>
+                        </div>
+                        <div class="theme">
+                            <h3>討論區<br>Comic & Webtoon<br>2020.03.08</h3>
+                        </div>
+                    </div>
+                    <div class="record">
+                        <div class="topic">
+                            <h2>肺炎防疫期間《超商店員無法理解客人的行為》面對防止飛沫傳染的透明布簾客人行為超傻眼</h2>
+                        </div>
+                        <div class="comment">
+                            <img src="/dest/image/member/member_pic2.jpeg">
+                            <h2>Vivian Wang</h2>:
+                            <p>我還看了很久這衣服真的很二次元</p>
+                        </div>
+                        <div class="theme">
+                            <h3>討論區<br>Comic & Webtoon<br>2020.03.08</h3>
+                        </div>
+                    </div>
                 </div>
+                <!-- 檢舉案件狀態 -->
+
                 <div class="tab tab3 ">
+                    <div class="report">
+                        <div class="title">
+                            <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材</h2>
+                        </div>
+                        <div class="content">
+                            <h3>C.仇恨或惡意內容</h3>
+                            <h3>2019.04.07</h3>
+                        </div>
+                        <div class="condition">
+                            <h3>已通過</h3>
+                        </div>
+                    </div>
+                    <div class="report">
+                        <div class="title">
+                            <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材</h2>
+                        </div>
+                        <div class="content">
+                            <h3>C.仇恨或惡意內容</h3>
+                            <h3>2019.04.07</h3>
+                        </div>
+                        <div class="condition">
+                            <h3>已通過</h3>
+                        </div>
+                    </div>
+                    <div class="report">
+                        <div class="title">
+                            <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材</h2>
+                        </div>
+                        <div class="content">
+                            <h3>C.仇恨或惡意內容</h3>
+                            <h3>2019.04.07</h3>
+                        </div>
+                        <div class="condition">
+                            <h3>已通過</h3>
+                        </div>
+                    </div>
+
 
                 </div>
-                <div class="tab tab4 ">
-
-                </div>
-                <div class="tab tab5 ">
+                <!-- 重設密碼 -->
+                <div class="tab tab4">
+                    <h3>使用中</h3>
+                    <div class="pswCon">
+                        <h2>帳號：<span>Vivian520@gmail.com</span></h2>
+                        <h2>密碼：<span>T1901824<span></h2>
+                        <form action="#" method="post">
+                            <h2>新密碼：<input type="text" placeholder="含英文數字共8碼"></h2><br>
+                        <input type="submit" value="確認">
+                        </form>
+                    </div>
 
                 </div>
             </div>
         </section>
     </main>
     @@include('./LAYOUT/footer.html')
+<<<<<<< HEAD
     <!-- <script src="../dest/jquery/dist/jquery.min.js"></script> -->
     <script 123 src="../dest/js/member.js"></script>
     
     
+=======
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="../dest/js/member.js"></script>
+>>>>>>> 4f52dc5596a460076aa0acc8f9646df1560706ef
     <!-- 頁籤 -->
+
     <script>
-        $(document).ready(function () {
-            $("a.tab").on("click", function (e) {
+        $(document).ready(function() {
+            // 切換頁籤
+            $("a.tab").on("click", function(e) {
                 e.preventDefault();
                 $(this).closest(".tab_list").find("a.tab").removeClass("-on");
                 $(this).addClass("-on");
@@ -138,7 +256,20 @@
                 $("div.tab").removeClass("-on");
                 $("div.tab." + $(this).attr("data-target")).addClass("-on");
             });
+            //編輯個人資料
+            $(".edit").on("click", function() {
+                $(".edit").hide();
+                $("#save,#cancel,.edit_thumbnail").show();
+                $("input").removeAttr('disabled');
+                $("#editname").focus();
+                $("#cancel").on("click", function() {
+                    $(".edit").show();
+                    $("#save,#cancel,.edit_thumbnail").hide();
+                    $("#editname,#editemail").attr('disabled', true);
+                });
+            });
         });
+        
     </script>
 
 

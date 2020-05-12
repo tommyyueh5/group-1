@@ -1,9 +1,10 @@
 @import "../LAYOUT/base/var";
-footer {
-    position: unset;
+body {
+    background-color: rgb(10, 10, 10);
 }
+
 main {
-    margin: 0 auto;
+    margin: 0 auto 40px;
     width: 100%;
     background-color: rgb(10, 10, 10);
     box-sizing: border-box;
@@ -41,14 +42,80 @@ aside.member_info {
     // border: 1px solid white;
     width: 20%;
     margin: 0 20px;
+    min-width: 400px;
     text-align: center;
+    div.member_edit {
+        #editemail,
+        #editname {
+            border: 2px solid grey;
+            background-color: rgb(10, 10, 10);
+            color: rgb(192, 191, 191);
+            font-size: 22px;
+            text-align: center;
+            width: 85%;
+            cursor: pointer;
+        }
+        #editemail:focus,
+        #editname:focus {
+            background-color: whitesmoke;
+            color: black;
+        }
+        #editemail:disabled,
+        #editname:disabled {
+            border: unset;
+            cursor: none;
+        }
+        #save,
+        #cancel {
+            border: 1px solid whitesmoke;
+            background-color: rgb(10, 10, 10);
+            color: rgb(212, 212, 212);
+            border-radius: 30px;
+            font-size: 18px;
+            padding: 10px 30px;
+            margin: 15px 10px;
+            display: none;
+            cursor: pointer;
+        }
+    }
     div.member_img {
         width: 100%;
         padding-top: 40px;
-        img {
+        position: relative;
+        img.thumbnail {
             width: 80%;
             border-top-left-radius: 30%;
-            filter: grayscale(0.9);
+            // filter: grayscale(0.9);
+        }
+        form {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            text-align: right;
+            // border: 1px solid white;
+            label {
+                position: relative;
+                right: 10px;
+                bottom: 30px;
+            }
+            img {
+                float: right;
+                width: 50px;
+                position: relative;
+                top: 18px;
+                cursor: pointer;
+                padding: 10px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 10px;
+            }
+            input {
+                border: 1px solid white;
+                color: transparent;
+                opacity: 0;
+            }
         }
     }
     h2.member_name {
@@ -77,10 +144,12 @@ aside.member_info {
         font-size: 24px;
         color: rgb(204, 204, 204);
         border: 1px solid rgb(204, 204, 204);
-        display: inline-block;
+        // display: inline-block;
         padding: 20px;
+        width: 65%;
         border-radius: 30px;
         margin: 30px auto;
+        cursor: pointer;
     }
 }
 
@@ -90,6 +159,7 @@ section.member_data {
     width: 60%;
     margin: 40px 20px 0;
     display: inline-block;
+    // height: 700px;
     vertical-align: top;
 }
 
@@ -110,7 +180,7 @@ ul.tab_list {
         padding: 0 15px 15px;
     }
     a.-on li {
-        border-bottom: 4px solid rgb(221, 221, 221);
+        border-bottom: 4px solid rgb(228, 228, 8);
         color: rgb(245, 245, 245);
     }
 }
@@ -124,6 +194,7 @@ div.tab {
     display: none;
 }
 
+// 發文紀錄
 div.tab_text {
     display: grid;
     grid-template-columns: 20% 50% 15%;
@@ -165,9 +236,403 @@ div.tab_text {
         font-size: 16px;
         color: rgb(204, 204, 204);
         line-height: 30px;
+        text-align: left;
+    }
+}
+
+//留言紀錄
+div.record {
+    border-bottom: 1px solid grey;
+    display: grid;
+    grid-template-columns: 30% 50% 15%;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    div.topic {
+        h2 {
+            font-size: 22px;
+            color: rgb(204, 204, 204);
+            line-height: 28px;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+        p {
+            display: inline-block;
+        }
+    }
+    div.comment {
+        font-size: 20px;
+        color: rgb(204, 204, 204);
+        line-height: 30px;
+        img {
+            width: 40px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        h2 {
+            font-size: 20px;
+            color: rgb(204, 204, 204);
+            display: inline-block;
+        }
+        p {
+            color: rgb(204, 204, 204);
+            display: inline-block;
+            font-size: 20px;
+        }
+    }
+    div.theme {
+        h3 {
+            font-size: 16px;
+            color: rgb(204, 204, 204);
+            line-height: 30px;
+        }
+    }
+}
+
+//檢舉案件狀態
+div.report {
+    text-align: left;
+    line-height: 30px;
+    display: grid;
+    grid-template-columns: 45% 20% 15%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    color: rgb(204, 204, 204);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+    h3 {
+        font-size: 18px;
+    }
+}
+
+//重設密碼
+div.tab4 {
+    border-bottom: 1px solid grey;
+    padding-bottom: 40px;
+    h3 {
+        font-size: 22px;
+        color: rgb(204, 204, 204);
+        margin: 10px auto;
+    }
+}
+
+div.pswCon {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 22px;
+    color: rgb(204, 204, 204);
+    padding-top: 10px;
+    h2 {
+        width: 35%;
+        white-space: nowrap;
+        margin: 20px auto;
+        font-size: 22px;
+        color: rgb(204, 204, 204);
+        text-align: left;
+        // border: 1px solid grey;
+    }
+    input[type=text] {
+        width: 85%;
+        font-size: 20px;
+        background-color: rgb(241, 241, 241);
+    }
+    input[type=submit] {
+        font-size: 20px;
+        color: rgb(204, 204, 204);
+        background-color: transparent;
+        border: 1px solid rgb(204, 204, 204);
+        // display: inline-block;
+        padding: 5px 15px;
+        border-radius: 30px;
+        margin: 0 auto;
+        cursor: pointer;
     }
 }
 
 div.-on {
     display: block;
+    // overflow: scroll;
+}
+
+@media (max-width:1199px) {
+    aside.member_info {
+        width: 100%;
+        min-width: unset;
+        margin: 0 auto;
+        div.member_img {
+            width: 40%;
+            display: inline-block;
+            box-sizing: border-box;
+            img.thumbnail {
+                width: 300px;
+            }
+            form {
+                width: 300px;
+                // border: 1px solid white;
+                label {
+                    right: 10px;
+                    bottom: 10px;
+                }
+                img {
+                    width: 50px;
+                }
+            }
+        }
+        div.member_edit {
+            width: 40%;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: top;
+            padding-top: 40px;
+        }
+    }
+    // 右邊會員功能資訊欄 
+    section.member_data {
+        // border: 1px solid white;
+        width: 90%;
+        margin: 60px auto;
+    }
+    // 頁籤選項
+    ul.tab_list {
+        li {
+            display: inline-block;
+            font-size: 20px;
+            color: rgb(204, 204, 204);
+            margin: 0 20px;
+            padding: 0 15px 15px;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    aside.member_info {
+        div.member_img {
+            width: 45%;
+            img.thumbnail {
+                width: 250px;
+            }
+            form {
+                width: 250px;
+                // border: 1px solid white;
+                label {
+                    right: 10px;
+                    bottom: 10px;
+                }
+                img {
+                    width: 45px;
+                }
+            }
+        }
+        div.member_edit {
+            width: 45%;
+            padding-top: 20px;
+        }
+        h2.member_name {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        h4 {
+            font-size: 20px;
+        }
+        h2.edit {
+            font-size: 18px;
+            color: rgb(204, 204, 204);
+            border: 1px solid rgb(204, 204, 204);
+            display: inline-block;
+            padding: 20px;
+            border-radius: 30px;
+            margin: 30px auto;
+        }
+    }
+    // 右邊會員功能資訊欄 
+    section.member_data {
+        // border: 1px solid white;
+        width: 90%;
+        margin: 60px auto;
+    }
+    // 頁籤選項
+    ul.tab_list {
+        li {
+            font-size: 14px;
+            padding: 0 10px 10px;
+            margin: 0 15px;
+        }
+    }
+    //發文紀錄
+    .contents {
+        h2 {
+            font-size: 18px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    .time {
+        // border: 1px solid white;
+        h3 {
+            font-size: 14px;
+        }
+    }
+    //留言紀錄
+    div.record {
+        div.topic {
+            h2 {
+                font-size: 18px;
+            }
+        }
+        div.comment {
+            h2 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 18px;
+            }
+        }
+        div.theme {
+            h3 {
+                font-size: 14px;
+            }
+        }
+    }
+    //檢舉案件狀態
+    div.report {
+        div.title {
+            h2 {
+                font-size: 18px;
+            }
+        }
+        h3 {
+            font-size: 16px;
+        }
+    }
+    //重設密碼
+    div.tab4 {
+        h3 {
+            font-size: 18px;
+        }
+        div.pswCon {
+            h2 {
+                font-size: 18px;
+            }
+            input {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width:575px) {
+    aside.member_info {
+        div.member_img {
+            width: 100%;
+            img.thumbnail {
+                width: 250px;
+            }
+        }
+        div.member_edit {
+            width: 100%;
+            padding-top: 20px;
+        }
+        h2.member_name {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        h4 {
+            font-size: 20px;
+        }
+        h2.edit {
+            font-size: 18px;
+            color: rgb(204, 204, 204);
+            border: 1px solid rgb(204, 204, 204);
+            display: inline-block;
+            padding: 20px;
+            border-radius: 30px;
+            margin: 30px auto;
+        }
+    }
+    // 右邊會員功能資訊欄 
+    section.member_data {
+        // border: 1px solid white;
+        width: 100%;
+        margin: 40px auto;
+    }
+    // 頁籤選項
+    ul.tab_list {
+        li {
+            font-size: 12px;
+            padding: 0 5px 10px;
+            margin: 0 5px;
+        }
+    }
+    .contents {
+        h2 {
+            font-size: 18px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+    .time {
+        // border: 1px solid white;
+        h3 {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+    div.tab_text {
+        padding: 0 15px 25px;
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 25px;
+        div.content_img {
+            order: 2;
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        div.contents {
+            order: 1;
+            grid-column-start: 1;
+            grid-column-end: 6;
+        }
+        div.time {
+            order: 3;
+            grid-column-start: 4;
+            grid-column-end: 6;
+        }
+    }
+    //留言紀錄
+    div.record {
+        padding: 0 15px 25px;
+    }
+    //檢舉案件狀態
+    div.report {
+        padding: 0 15px 25px;
+    }
+    //重設密碼
+    div.tab4 {
+        h3 {
+            font-size: 18px;
+        }
+        div.pswCon {
+            h2 {
+                font-size: 18px;
+            }
+            input {
+                font-size: 16px;
+            }
+        }
+    }
+    div.-on {
+        display: block;
+        // overflow: scroll;
+        // height: 600px;
+    }
 }
