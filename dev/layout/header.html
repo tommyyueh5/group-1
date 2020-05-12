@@ -14,67 +14,76 @@
                 <i class="icofont icofont-cart"></i>
             </div>
         </div>
+        <div id="menu_switch">
+            <span class="switch_line btn_top"></span>
+            <span class="switch_line btn_mid"></span>
+            <span class="switch_line btn_bot"></span>
+        </div>
     </div>
 
 
     <div class="title_list" id="menu_list">
-        <div class="menu_btn">
-            <span class="horizontal"></span>
-            <span class="vertical"></span>
-        </div>
-        <ul class="mark_bar">
-            <li class="changePage "><a href="../dest/game.html">防疫知識王</a></li>
-            <li class="changePage"><a href="../dest/forum.html">討論區</a></li>
-            <li class="changePage"><a href="../dest/diseaseHistory.html">傳染病事記</a></li>
-            <li class="changePage"><a href="../dest/latest-news.html">最新消息</a></li>
-            <li class="changePage"><a href="../dest/Epidemic-prevention-SOP.html">防疫SOP</a></li>
-            <li class="changePage"><a href="../dest/Epidemic-shop.html">防疫商店</a></li>
-        </ul>
-        <form class="fuction_search" action="#">
-            <i class="icofont icofont-search"></i>
-            <input class="input_box" typne="text" name="search" id="search">
-        </form>
-    </div>
+        <div class="main_box">
 
-    <div class="login-Bg" id="loginBg">
-        <div class="login-Box">
-            <div class="sign-title">
-                <h1 id="sign-in">登入</h1>
-                <h1 id="sign-up">註冊</h1>
+            <div class="menu_btn">
+                <span class="horizontal"></span>
+                <span class="vertical"></span>
             </div>
-            <a href="javascript:history.go(-1)" class="X" id="btnX">
-                <span class="left"></span>
-                <span class="right"></span>
-            </a> 
-            <!-- <form class="sign sign-in" action="/dest/index/PHP/sign-in.php" method="GET"> -->
-            <form class="sign sign-in" action="../dest/member.html" method="GET">
-
-                <label for="emeEmail">登入信箱<br>
-                    <input class="input-data" type="email" name="emeEmail">
-                </label><br>
-
-                <label for="emePaw">登入密碼<br>
-                    <input class="input-data" type="password" name="emePaw"><br>
-                    <input class="viveswitch" type="checkbox">顯示密碼
-                </label>
-                <a href="">忘記密碼</a>
-                <br>
-                <input class="submit" type="submit" name="login" value="登入">
+            <ul class="mark_bar">
+                <li class="changePage "><a href="../dest/game.html">防疫知識王</a></li>
+                <li class="changePage"><a href="../dest/forum.html">討論區</a></li>
+                <li class="changePage"><a href="../dest/diseaseHistory.html">傳染病事記</a></li>
+                <li class="changePage"><a href="../dest/latest-news.html">最新消息</a></li>
+                <li class="changePage"><a href="../dest/Epidemic-prevention-SOP.html">防疫SOP</a></li>
+                <li class="changePage"><a href="../dest/Epidemic-shop.html">防疫商店</a></li>
+            </ul>
+            <form class="fuction_search" action="#">
+                <i class="icofont icofont-search"></i>
+                <input class="input_box" typne="text" name="search" id="search">
             </form>
+        </div>
 
-            <form class="sign sign-up" action="/dest/index/PHP/sign-up.php" method="GET">
-                <label for="upEmail">註冊信箱<br>
-                    <input class="input-data" type="email" name="upEmail">
-                </label><br>
+        <div class="login-Bg" id="loginBg">
+            <div class="login-Box">
+                <div class="sign-title">
+                    <h1 id="sign-in">登入</h1>
+                    <h1 id="sign-up">註冊</h1>
+                </div>
+                <a href="javascript:history.go(-1)" class="X" id="btnX">
+                    <span class="left"></span>
+                    <span class="right"></span>
+                </a>
+                <!-- <form class="sign sign-in" action="/dest/index/PHP/sign-in.php" method="GET"> -->
+                <form class="sign sign-in" action="../dest/member.html" method="GET">
 
-                <label for="upPaw">註冊密碼<br>
-                    <input class="input-data" type="password" name="upPaw"><br>
-                    <input class="viveswitch" type="checkbox" id="vivePsw">顯示密碼
-                </label>
-                <a href="">忘記密碼</a>
-                <br>
-                <input class="submit" type="submit" name="login" value="登入">
-            </form>
+                    <label for="emeEmail">登入信箱<br>
+                        <input class="input-data" type="email" name="emeEmail">
+                    </label><br>
+
+                    <label for="emePaw">登入密碼<br>
+                        <input class="input-data" type="password" name="emePaw"><br>
+                        <input class="viveswitch" type="checkbox">顯示密碼
+                    </label>
+                    <a href="">忘記密碼</a>
+                    <br>
+                    <input class="submit" type="submit" name="login" value="登入">
+                </form>
+
+                <form class="sign sign-up" action="/dest/index/PHP/sign-up.php" method="GET">
+                    <label for="upEmail">註冊信箱<br>
+                        <input class="input-data" type="email" name="upEmail">
+                    </label><br>
+
+                    <label for="upPaw">註冊密碼<br>
+                        <input class="input-data" type="password" name="upPaw"><br>
+                        <input class="viveswitch" type="checkbox" id="vivePsw">顯示密碼
+                    </label>
+                    <a href="">忘記密碼</a>
+                    <br>
+                    <input class="submit" type="submit" name="login" value="登入">
+                </form>
+            </div>
         </div>
     </div>
 </header>
+<script src="../../dest/js/var.js"></script>

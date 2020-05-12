@@ -83,6 +83,25 @@ $(window).ready(() => {//html載入完再執行
         });
     }
     rotate_menu();
+
+
+    let menuSwitch = document.querySelector('#menu_switch');
+    let titleList = document.querySelector('.title_list');
+    let mainBox = document.querySelector('.main_box');
+    menuSwitch.addEventListener('click', () => {
+        titleList.classList.toggle('move');
+        for (let i = 0; i < 3; i++) {
+            menuSwitch.children[i].classList.toggle('change');
+        }
+    });
+    let changePage = document.querySelector('.changePage');
+    mainBox.addEventListener('click', () => {
+        titleList.classList.remove('move');
+    });
+    changePage.addEventListener('click', (e) => {
+        e.stopPropagation
+    });
+
 });
 
 

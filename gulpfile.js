@@ -97,13 +97,13 @@ gulp.task('default', function() {
             // index: "dest/game.html"
             // index: "dest/Epidemic-shop.html"
             // index: "dest/forum.html"
-            index: "dest/member.html"
-                // index: "dest/infectious-Diseases.hmtl"
-                // index: "dest/latest-news.html"
-                // index: "dest/latest-news_child.html"
-                // index: "dest/index.html"
-                // index: "dest/btn-style.html"
-                // index: "dest/header.html"
+            // index: "dest/member.html"
+            // index: "dest/infectious-Diseases.hmtl"
+            // index: "dest/latest-news.html"
+            // index: "dest/latest-news_child.html"
+            // index: "dest/index.html"
+            // index: "dest/btn-style.html"
+            // index: "dest/header.html"
         }
     });
 
