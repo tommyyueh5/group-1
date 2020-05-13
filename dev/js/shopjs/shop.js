@@ -154,7 +154,6 @@ window.addEventListener('load', ()=>{
 
         for ( let i = 0; i < joker.children.length; i++) {
             if (joker.children[i].classList.contains('ac')) {
-
                 sum += price[joker.children[i].children[0].getAttribute('da')];
             }
             $('.shop-two-item-pirce').text(sum);
@@ -211,15 +210,10 @@ window.addEventListener('load', ()=>{
 
     //input
     document.getElementById('count').addEventListener('input',function(){
-
-        
         $('.shop-two-item-pirce').text(  sum *  parseInt( document.getElementById('count').value ) );
-
-
         if (  $('#count').val()=='') {
             $('.shop-two-item-pirce').text(0);
         }
-        
     });
 
 
@@ -231,6 +225,8 @@ window.addEventListener('load', ()=>{
         $('.shop-two-item-pirce').text(0);
         document.getElementById('count').value = '1';
         sum = 0;
+
+        buyList = [];
     });
 
     document.getElementById('shop-two-mobile-choice').addEventListener('click', function(){
@@ -251,19 +247,42 @@ window.addEventListener('load', ()=>{
     
     const addCart = document.getElementById('addbtn');
     let N = 1;
+    var storage = sessionStorage;
     addCart.addEventListener('click', function(){
+      
         if (buyList.length==0) {
-            alert('請');
+            alert('請先選');
         } else {
-        
-            var storage = sessionStorage;
+            storage[`${N}`]='';
+            console.log(buyList);
             for (let i = 0 ; i < buyList.length; i++) {
-                storage[`${N}`] +=buyList[i];
+                if (i == 0) {
+                    storage[`${N}`] +=  `${buyList[i]}`;
+                } else {
+                    storage[`${N}`] +=  `, ${buyList[i]}`
+                }
             }
+            N++;
         }
-        N++;
+        
+        // Object.keys(obj).forEach(function(key){
+
+        // });
     });
 
+
+
+    //cart
+    const cartList = document.getElementById('cart');
+    cartList.addEventListener('click', function(){
+        $('.cart-list').removeClass('hid');
+
+        
+    });
+    const cartListC = document.getElementById('cart-list-close');
+    cartListC.addEventListener('click', function(){
+        $('.cart-list').addClass('hid');
+    });
 
     // function additem() {
     //     console.log(joker);
@@ -273,7 +292,7 @@ window.addEventListener('load', ()=>{
     //     }
     // }
 
-
+    
 });
 
 

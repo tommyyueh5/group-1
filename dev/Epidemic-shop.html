@@ -7,7 +7,7 @@
     <title>Document</title>
     @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="../dest/css/Epidemic-shop.css">
-    <!-- <link rel="stylesheet" href="/dev/html/Epidemic-shop/icofont/icofont.min.css"> -->
+    <link rel="stylesheet" href="/dev/html/Epidemic-shop/icofont/icofont.min.css">
     <link rel="stylesheet" href="../dest/node_modules/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
     <!-- Jqeury -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -521,7 +521,7 @@
                                     <input type="text" value='1' id='count'>
                                     <span class="plus" id='plus'>+</span>
                                 </div>
-                                <div class="addcart">
+                                <div class="addcart" id="addbtn">
                                     <div class="addcart-1">
                                         <button class='addbtn'>
                                             加入購物車
@@ -730,11 +730,60 @@
                 </div>
             </div>
         </section>
-        <div>
-            @@include('./LAYOUT/footer.html')
-            <!-- <script src="./jquery/jquery.min.js"></script> -->
-            <script src="../dest/node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-            <script src="../dest/js/shopjs/shop.js"></script>
+    </div>
+
+    <div class="cart-list hid">
+        <div class="cart-list-close" id="cart-list-close">
+            <p><i class="icofont icofont-cart" ></i>我的購物車</p>
+            <i class="icofont-close-line"></i>
+        </div>
+        <div class="cart-list-inner">
+            <div class="cart-product-title">
+                <div class="cart-product-title-c cart-title-img">
+                    <p>商品</p>
+                </div>
+                <div class="cart-product-title-c product-title-n">
+                    <p>數量</p>
+                </div>
+                <div class="cart-product-title-c product-title-price">
+                    <p>價格</p>
+                </div>
+                <div class="cart-product-title-c product-title-remove">
+                    <p>移除</p>
+                </div>
+            </div>
+            <div class="cart-product-item">
+                <div class="ord-img">
+                    <div class="ord-pic">
+                        <img src="../dest/image/Epidemic-shop/cloth/jacket_1.png"
+                            alt="" da="jacket-1">
+                    </div>
+                    <div class="ord-pic">
+                        <img src="../dest/image/Epidemic-shop/glass/goggles_1.png"
+                            alt="" da="goggles-1">
+                    </div>
+                    <div class="ord-pic">
+                        <img src="../dest/image/Epidemic-shop/mask/mask-1.png"
+                            alt="" da="mask-1">
+                    </div>
+                </div>
+
+                <div class="ord-n">
+
+                </div>
+                <div class="ord-price">
+
+                </div>
+                <div class="ord-remove">
+                    <img class="ord-title-remove-img" src="../dest/image/Epidemic-shop/garbage.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @@include('./LAYOUT/footer.html') -->
+        <!-- <script src="./jquery/jquery.min.js"></script> -->
+        <script src="../dest/node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+        <script src="../dest/js/shopjs/shop.js"></script>
 </body>
 
 </html>
