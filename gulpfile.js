@@ -88,9 +88,9 @@ gulp.task('default', function() {
             //根目錄
             baseDir: "./",
             files: ['**'],
-            proxy: 'http://localhost:3005',
+            proxy: 'http://localhost:3005 ',
             // index: "dest/homepage.html"
-            // index: "dest/Back_End.html"
+            index: "dest/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP.html"
             // index: "dest/btn-style.html"
             // index: "dest/diseaseHistory.html"
@@ -104,6 +104,7 @@ gulp.task('default', function() {
             // index: "dest/index.html"
             // index: "dest/btn-style.html"
             // index: "dest/header.html"
+            // index: "dest/footer.html"
         }
     });
 
