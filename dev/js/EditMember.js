@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
 
         return document.getElementById(id);
     }
-    
+
     function $cs(cs) {
         return document.querySelector('.' + cs);
     }
@@ -39,22 +39,22 @@ window.addEventListener('load', function () {
 
         $id('save').addEventListener('click', function (e) {
             e.stopPropagation();
-            
+
             sessionStorage.setItem('memId', $id('editname').value);
             editname = sessionStorage.getItem('memId');
             sessionStorage.setItem('email', $id('editemail').value);
             editemail = sessionStorage.getItem('email');
 
-            xhrEdit.onload = function (e) {
-                if (xhrEdit.status == 200) {
-                    let correct = JSON.parse(xhrEdit.responseText)
-                    console.log(correct.success);
-                    
+            // xhrEdit.onload = function (e) {
+            // if (xhrEdit.status == 200) {
+            //     let correct = JSON.parse(xhrEdit.responseText)
+            //     console.log(correct.success);
 
-                }
-            }
+
+            // }
+            // }
             //ftp需跟改=================================================================
-            xhrEdit.open("POST", "http://localhost/DD106g1/EditMem.php", true);
+            xhrEdit.open("POST", "../../dest/php/EditMem.php", true);
 
             xhrEdit.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             let data_info;
