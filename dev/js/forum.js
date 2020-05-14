@@ -253,7 +253,7 @@ function render() {
     ctx.scale(devicePixelRatio, devicePixelRatio);
 
     crowd.forEach(peep => {
-        console.log("123");
+        // console.log("123");
         peep.render(ctx);
     });
 

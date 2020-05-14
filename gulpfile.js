@@ -16,11 +16,11 @@ gulp.task('concatimage', function() {
     //do sometime
     gulp.src('./dev/image/**/*').pipe(gulp.dest('./dest/image'))
 });
-gulp.task('concatphp', function() {
-    //do sometime
-    gulp.src('./dev/html/*/PHP/*').pipe(gulp.dest('./dest/'))
-});
-gulp.task('concatfont', function() {
+// gulp.task('concatphp', function () {
+//     //do sometime
+//     gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
+// });
+gulp.task('concatfont', function () {
     //do sometime
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
 });
@@ -30,7 +30,7 @@ gulp.task('concatlayput', function() {
 });
 gulp.task('concatphp', function() {
     //do sometime
-    gulp.src('./dev/php/**/*.php').pipe(gulp.dest('./dest/php'))
+    gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
 });
 //編譯scss
 
@@ -84,6 +84,7 @@ var reload = browserSync.reload;
 
 gulp.task('default', function() {
     // browserSync.init({
+<<<<<<< HEAD
         // server: {
             //根目錄
             // baseDir: "./",
@@ -105,11 +106,35 @@ gulp.task('default', function() {
             // index: "dest/btn-style.html"
             // index: "dest/header.html"
             // index: "dest/footer.html"
+=======
+    //     server: {
+    //         //根目錄
+    //         baseDir: "./",
+    //         files: ['**'],
+    //         proxy: 'http://localhost',
+    //         index: "dest/homepage.html",
+    //         // port:2000,
+    //         // index: "dest/Back_End.html"
+    //         // index: "dest/Epidemic-prevention-SOP.html"
+    //         // index: "dest/btn-style.html"
+    //         // index: "dest/diseaseHistory.html"
+    //         // index: "dest/game.html"
+    //         // index: "dest/Epidemic-shop.html"
+    //         // index: "dest/forum.html"
+    //         // index: "dest/member.html"
+    //             // index: "dest/infectious-Diseases.hmtl"
+    //             // index: "dest/latest-news.html"
+    //             // index: "dest/latest-news_child.html"
+    //             // index: "dest/index.html"
+    //             // index: "dest/btn-style.html"
+    //             // index: "dest/header.html"
+>>>>>>> hanboy
     //     }
     // });
 
     gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss", "dev/layout/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatimage']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js", "dev/layout/**/*.js"], ['concatjs']).on('change', reload);
-    gulp.watch(["dve/*.php", "dev/**/*.php"], ['concatphp']).on('change', reload);
+    gulp.watch(["dev/**/*.php"], ['concatphp']).on('change', reload);
+  
 });

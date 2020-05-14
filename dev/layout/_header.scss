@@ -45,17 +45,39 @@ header {
             display: flex;
             align-items: center;
             font: $sub_titleFs normal;
+            div.member_center{
+                display: none;
+                margin-right: 5px;
+                >a{
+                    text-decoration: none;
+                    color: #fff;
+                    >p{
+                        font-size: $sub_titleFs;
+                    }
+                }
+                &.on{
+                    display: block;
+                }
+            }
             i {
                 cursor: pointer;
                 margin-right: 10px;
                 font-style: normal;
+<<<<<<< HEAD
                 a {
                     text-decoration: none;
                     color: white;
+=======
+                >a{
+                    text-decoration: none;
+                    color: #fff;
+>>>>>>> hanboy
                 }
             }
+            
             div.points {
-                display: flex;
+                // display: flex;
+                display: none;
                 align-items: center;
                 margin-right: 20px;
                 font: $fontSize;
