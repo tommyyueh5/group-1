@@ -2,11 +2,11 @@
 session_start();
 try{
   require_once("connectdd106g1.php");
-  $sql = "select * from `member` where memId=:memId and memPsw=:memPsw"; 
+  $sql = "select * from `member` where MEM_NO=:MEM_NO and MEM_ACC=:MEM_ACC"; 
   $member = $pdo->prepare($sql);
-  $member->bindValue(":memId", $_POST["memId"]);
-  $member->bindValue(":memPsw", $_POST["memPsw"]);
-
+  $member->bindValue(":MEM_NO", $_POST["MEM_NO"]);
+  $member->bindValue(":MEM_ACC", $_POST["MEM_ACC"]);
+  
 
   $member->execute();
   if( $member->rowCount()==0){ //查無此人
@@ -17,7 +17,7 @@ try{
 
   	//寫入session
   	$_SESSION["no"] = $memRow["no"];
-  	$_SESSION["memId"] = $memRow["memId"];
+  	$_SESSION["MEM_NO"] = $memRow["MEM_NO"];
   	$_SESSION["memName"] = $memRow["memName"];
   	$_SESSION["email"] = $memRow["email"];
   	$_SESSION["tel"] = $memRow["tel"];
