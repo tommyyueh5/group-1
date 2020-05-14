@@ -8,22 +8,19 @@
     @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/dest/css/latest-news.css">
-    <script src="../dest/node_modules/jquery/jquery.min.js"></script>
-
-=======
     <link rel="stylesheet" href="../dest/css/latest-news.css">
-    <link rel="stylesheet" href="../dest/node_modules/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
->>>>>>> 4f52dc5596a460076aa0acc8f9646df1560706ef
+   
+
 </head>
+
 <body>
     <!-- ----------------------------header---------------------------------- -->
     @@include('./LAYOUT/header.html')
     <!-- ----------------------------header---------------------------------- -->
-    <main>
 
-        <!-- ----------------------------breadcrumb------------------------------ -->
+    <!-- ----------------------------breadcrumb------------------------------ -->
+
+    <main>
 
         <div class="breadcrumb">
             <ol class="breadcrumb_list">
@@ -37,13 +34,20 @@
                         <p>最新消息</p>
                     </a>
                 </li>
+                <!-- <li>
+                    <a href="#">
+                        <p>Taiwan News</p>
+                    </a>
+                </li> -->
             </ol>
         </div>
+
+        <!-- ----------------------------影片------------------------------ -->
+
 
         <!-- ----------------------------breadcrumb------------------------------ -->
 
         <!-- ----------------------------video------------------------------ -->
-
         <div class="main">
 
             <div class="gallery">
@@ -51,18 +55,18 @@
                 <div class="image-preview">
 
                     <video id="preview" width="100%" height="600" controls>
-                        <source src="/dest/image/latest-news/01.mp4" type="video/mp4">
+                        <source src="../dest/image/latest-news/01.mp4" type="video/mp4">
                     </video>
 
                 </div>
                 <!-- Elastislide Carousel -->
                 <ul id="carousel" class="elastislide-list">
 
-                    <li data-preview="/dest/image/latest-news/01.mp4">
+                    <li data-preview="../dest/image/latest-news/01.mp4">
                         <a href="#">
 
-                            <video class="video1" src="/dest/image/latest-news/01.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/01.mp4" type="video/mp4">
+                            <video class="video1" src="../dest/image/latest-news/01.mp4">
+                                <source alt="image04" src="../dest/image/latest-news/01.mp4" type="video/mp4">
                             </video>
 
 
@@ -71,48 +75,59 @@
                     <li data-preview="/dest/image/latest-news/02.mp4">
                         <a href="#">
 
-                            <video src="/dest/image/latest-news/02.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/02.mp4" type="video/mp4">
+                            <video src="../dest/image/latest-news/02.mp4">
+                                <source alt="image04" src="../dest/image/latest-news/02.mp4" type="video/mp4">
                             </video>
 
                         </a>
                     </li>
                     <li data-preview="/dest/image/latest-news/03.mp4">
                         <a href="#">
-                            <video class="video3" src="/dest/image/latest-news/03.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/03.mp4" type="video/mp4">
+                            <video class="video3" src="../dest/image/latest-news/03.mp4">
+                                <source alt="image04" src="../dest/image/latest-news/03.mp4" type="video/mp4">
                             </video>
                         </a>
                     </li>
-                    <li data-preview="/dest/image/latest-news/04.mp4">
+                    <li data-preview="../dest/image/latest-news/04.mp4">
                         <a href="#">
-                            <video class="video1" src="/dest/image/latest-news/04.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/04.mp4" type="video/mp4">
+                            <video class="video1" src="../dest/image/latest-news/04.mp4">
+                                <source alt="image04" src="../dest/image/latest-news/04.mp4" type="video/mp4">
                             </video>
                         </a>
                     </li>
                     <li data-preview="/dest/image/latest-news/05.mp4">
                         <a href="#">
-                            <video src="/dest/image/latest-news/05.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/05.mp4" type="video/mp4">
+                            <video src="../dest/image/latest-news/05.mp4">
+                                <source alt="image04" src="../dest/image/latest-news/05.mp4" type="video/mp4">
                             </video>
                         </a>
                     </li>
                     <li data-preview="/dest/image/latest-news/06.mp4">
                         <a href="#">
 
-                            <video class="video3" src="/dest/image/latest-news/06.mp4">
+                            <video class="video3" src="../dest/image/latest-news/06.mp4">
 
-                                <source alt="image04" src="/dest/image/latest-news/06.mp4" type="video/mp4">
+                                <source alt="image04" src="../dest/image/latest-news/06.mp4" type="video/mp4">
                             </video>
                         </a>
                     </li>
+
+
+
+
                 </ul>
                 <!-- End Elastislide Carousel -->
+
+
+
             </div>
 
-            <hr>
+            <!-- <p><strong>Resize the browser to see how the carousel adapts</strong></p>
+                <p class="info"><strong>Example 4:</strong> Usage in an image gallery; a minimum of 4 images are visible.
+                </p> -->
+
         </div>
+
 
         <!-- ----------------------------video------------------------------ -->
 
@@ -120,17 +135,75 @@
 
         <div class="first_title">CornavirusCOVID-19TaiwanCases</div>
         <div class="map_chartarea">
-        
+
+            <div class="out-right">
+                <div class="map_table">
+                    <table>
+                        <tr>
+                            <td rowspan="2">國內檢驗總計</td>
+                            <td>送驗</td>
+                            <td>排除</td>
+                            <td>確診</td>
+                            <td>死亡</td>
+                            <td>解除隔離</td>
+                        </tr>
+                        <tr>
+                            <td>307</td>
+                            <td>338</td>
+                            <td>306</td>
+                            <td>39</td>
+                            <td>39</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">昨日新增</td>
+                            <td>送驗</td>
+                            <td>排除</td>
+                            <td>確診</td>
+                            <td>死亡</td>
+                            <td>解除隔離</td>
+                        </tr>
+                        <tr>
+                            <td>307</td>
+                            <td>338</td>
+                            <td>306</td>
+                            <td>39</td>
+                            <td>39</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="map_chart">
+                    <div class="svg1">
+                        <div class="svg1_1">
+                            <svg width="700" height="230" class=""></svg>
+                        </div>
+                        <!-- <div class="svg1_1">
+                            <h1>COVID-19</h1>
+                            <h6>武漢肺炎</h6>
+                            <h6>監測趨勢圖</h6>
+                            <h6>依資料來源</h6>
+                        </div> -->
+                        <div class="svg1_1">
+                            <canvas id="chart" class=""></canvas>
+                        </div>
+                        <!-- <div class="svg1_1">
+                            <canvas id="chart2" class=""></canvas>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+
             <div id="app">
                 <div class="map_title">全國嚴重特殊傳染性肺炎病例地圖分布</div>
                 <div class="out-left">
                     <div class="title_area">
-                        <h1>武漢肺炎確診人數</h1>
+                        <h6>武漢肺炎確診人數</h6>
                         <hr>
                         <div class="forcast" v-if="now_area">
-                            <h2>{{now_area.name}}</h2>
-                            <h2>確診人數：{{now_area.number}}人</h2>
-                            <h2>隔離人數：{{now_area.brithplace}}人</h2>
+                            <h5>{{now_area.name}}</h5>
+                            <h4>確診人數 {{now_area.number}}</h4>
+                            <h2>隔離人數{{now_area.brithplace}}</h2>
                         </div>
                     </div>
                     <svg id="image_3" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="-300 -100 1000 900">
@@ -198,51 +271,6 @@
                     </svg>
                 </div>
             </div>
-
-            <div class="out-right">
-                <div class="map_table">
-                    <table>
-                        <tr>
-                            <td rowspan="2">國內檢驗總計</td>
-                            <td>送驗</td>
-                            <td>排除</td>
-                            <td>確診</td>
-                            <td>死亡</td>
-                            <td>解除隔離</td>
-                        </tr>
-                        <tr>
-                            <td>307</td>
-                            <td>338</td>
-                            <td>306</td>
-                            <td>39</td>
-                            <td>39</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">昨日新增</td>
-                            <td>送驗</td>
-                            <td>排除</td>
-                            <td>確診</td>
-                            <td>死亡</td>
-                            <td>解除隔離</td>
-                        </tr>
-                        <tr>
-                            <td>307</td>
-                            <td>338</td>
-                            <td>306</td>
-                            <td>39</td>
-                            <td>39</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="svg1_1">
-                    <canvas id="chart" class=""></canvas>
-                </div>
-                <div class="svg1_1">
-                    <canvas id="chart2" class=""></canvas>
-                </div>
-
-            </div>
-            
         </div>
 
         <!-- ----------------------------地圖+圖表------------------------------ -->
@@ -250,7 +278,6 @@
         <hr>
 
         <!-- ----------------------------新聞------------------------------ -->
-
         <div class="news_container">
             <div class="tab_block">
                 <h1>Editor's Picks</h1>
@@ -273,169 +300,196 @@
                 <div class="top_cards">
                     <h2>最新消息</h2>
                     <hr>
-                    <section class="relative-info">
-                        <div class="relative-info-inner">
-                            <div class="owl-carousel owl-theme myowl-2">
-                                <div class="item myowl-item-2 circle_card">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">29</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-11.png" alt="">
-                                        <div class="cards_content">
-                                            <span>軍艦服勤遇官兵發燒 國防部：已擬妥SOP</span>
-                                        </div>
-                                    </a>
+                    <div class="top_cards_pic">
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">29</h4>
+                                    <h4 class="month">4月</h4>
                                 </div>
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">28</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-5.jpg" alt="">
-                                        <div class="cards_content">
-                                            <span>【疫與記憶之八】留在波蘭，繼續當名存實亡的交換生</span>
-                                        </div>
-                                    </a>
+                                <img src="../dest/image/latest-news/img-11.png" alt="">
+                                <div class="cards_content">
+                                    <span>軍艦服勤遇官兵發燒 國防部：已擬妥SOP</span>
                                 </div>
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">27</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-12.jpg" alt="">
-                                        <div class="cards_content">
-                                            <span>中研院成功合成?!! 百毫克級-瑞德西韋</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">26</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
-                                        <div class="cards_content">
-                                            <span>寄送口罩給國外親友，實際問題!!</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">29</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-2.jpg" alt="">
-                                        <div class="cards_content">
-                                            <span> 日本宣布東京等7縣市進入「緊急狀態」</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                    </section>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">28</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="../dest/image/latest-news/img-5.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>【疫與記憶之八】留在波蘭，繼續當名存實亡的交換生</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">27</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="../dest/image/latest-news/img-12.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>中研院成功合成?!! 百毫克級-瑞德西韋</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">26</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="../dest/image/latest-news/img-9.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>寄送口罩給國外親友，實際問題!!</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="bottom_cards">
                     <h2>熱門消息</h2>
                     <hr>
                     <div class="bottom_cards_pic">
-                        <div class="news_item1">
-                            <div class="news_item1_child_1">
+                        <div class="all-list">
+                            <div class="list1 ">
 
-                                <div class="news_item1_child_1_son">
+                                <div class="list1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img class="circle_card" src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-9.jpg" alt="">
                                         <div class="cards_content">
                                             <span>寄送口罩給國外親友，實際問題!!</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="news_item1_child_1_son">
+                                <div class="list1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-12.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-12.jpg" alt="">
                                         <div class="cards_content">
                                             <span>中研院成功合成?!! 百毫克級-瑞德西韋</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="news_item1_child_1_son">
-                                    <a href="">
+                                <div class="list1-1">
+                                    <!-- <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-11.png" alt="">
-                                        <div class="cards_content">
+                                        </div> -->
+                                    <img src="../dest/image/latest-news/img-11.png" alt="">
+                                    <!-- <div class="cards_content">
                                             <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
-                                        </div>
-                                    </a>
+                                        </div> -->
+                                    <!-- </a> -->
                                 </div>
+
+
+                                <div class="inside-left">
+                                    <ul class="list">
+                                        <li class="list-Title">熱門討論排行</li>
+                                        <li class="item">
+                                            <div class="item-content"><span>1</span> <a href="#">
+                                                    <p>防疫做得好，自我健康才會好?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>2</span> <a href="#">
+                                                    <p>現在新冠狀病毒有疫苗出來了嗎?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>3</span> <a href="#">
+                                                    <p>現在哪個國家死亡人數最多?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>4</span> <a href="#">
+                                                    <p>台灣現在疫情人數越來越多了!!</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>5</span> <a href="#">
+                                                    <p>疫情導致經濟嚴重下滑!!</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>6</span> <a href="#">
+                                                    <p>蝙蝠及穿山甲病原傻傻分不清?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>7</span> <a href="#">
+                                                    <p>口罩哪裡還有庫存?</p>
+                                                </a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
                             </div>
 
                         </div>
 
-                        <div class="news_item2">
-                            <div class="news_item2_child_1">
-                                <div class="news_item2_child_1_son">
-                                    <div class="news_item2_child_1_son_youngson">
+                        <div class="list2">
+                            <div class="list2-2q">
+                                <div class="list2-1">
+                                    <div class="list2-2222221">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-1.jpg" alt="">
+                                            <img src="../dest/image/latest-news/img-1.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>義大利疫情危急 成為全球死亡病例最多的國家</span>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="news_item2_child_1_son  news_item2_child_1_son_1">
-                                    <div class="news_item2_child_1_son_youngson">
+                                <div class="list2-1 list2-22">
+                                    <div class="list2-2222221">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-6.png" alt="">
+                                            <img src="../dest/image/latest-news/img-6.png" alt="">
                                             <div class="cards_content">
                                                 <span> Who Cares？哪些外媒在「譚德塞歧視事件」發聲</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="news_item2_child_1_son_youngson">
+                                    <div class="list2-2222221">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-8.jpg" alt="">
+                                            <img src="../dest/image/latest-news/img-8.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>美逾33萬人確診 川普：死亡數恐超越世界大戰</span>
                                             </div>
@@ -444,54 +498,54 @@
                                 </div>
                             </div>
 
-                            <div class="news_item2_child_2">
-                                <div class="news_item2_child_2_son">
+                            <div class="list-2">
+                                <div class="list2-1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-2.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-2.jpg" alt="">
                                         <div class="cards_content">
                                             <span> 日本宣布東京等7縣市進入「緊急狀態」</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="news_item2_child_2_son">
+                                <div class="list2-1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-5.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-5.jpg" alt="">
                                         <div class="cards_content">
                                             <span>古巴航班停飛 荷蘭學生駕老帆船返鄉</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="news_item2_child_2_son">
+                                <div class="list2-1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-9.jpg" alt="">
                                         <div class="cards_content">
                                             <span>寄送口罩給國外親友，實際問題!!</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="news_item2_child_2_son">
+                                <div class="list2-1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-3.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-3.jpg" alt="">
                                         <div class="cards_content">
                                             <span>聯合國：二戰後最大危機</span>
                                         </div>
@@ -499,42 +553,42 @@
                                 </div>
                             </div>
 
-                            <div class="news_item2_child_3">
-                                <div class="news_item2_child_3_1_son">
-                                    <a href="">
+                            <div class="list3-qal">
+                                <div class="list2-3">
+                                    <!-- <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-10.png" alt="">
-                                        <div class="cards_content">
+                                        </div> -->
+                                    <img src="../dest/image/latest-news/img-10.png" alt="">
+                                    <!-- <div class="cards_content">
                                             <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
-                                <div class="news_item2_child_3_2_son">
-                                    <div class="news_item2_child_3_2_son_youngson">
+                                <div class="list-3">
+                                    <div class="list-333">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-13.jpg" alt="">
+                                            <img src="../dest/image/latest-news/img-13.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>WHO正名武漢肺炎新名為「COVID-19」</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="news_item2_child_3_2_son_youngson">
+                                    <div class="list-333">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-4.jpg" alt="">
+                                            <img src="../dest/image/latest-news/img-4.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>全球單日增近5萬例 破41.8萬例、逾1.8萬死</span>
                                             </div>
@@ -542,7 +596,15 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- <div class="laster">
+                                <span>
+                                    德國學者研究發現，疫情爆發的城市多是航空業主要轉機點或重要機場，便捷的交通讓傳染病得以傳播至世界各角落。隨著疫情升溫，境外旅客讓各國如臨大敵，歐盟、美國紛紛關閉邊界，台灣也於3月18日禁止外籍旅客入境。
+                                </span>
+                            </div> -->
                         </div>
+
+
                     </div>
                 </div>
 
@@ -553,169 +615,202 @@
                 <div class="top_cards">
                     <h2>最新消息</h2>
                     <hr>
-                    <section class="relative-info">
-                        <div class="relative-info-inner">
-                            <div class="owl-carousel owl-theme myowl-2">
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">29</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-11.png" alt="">
-                                        <div class="cards_content">
-                                            <span>軍艦服勤遇官兵發燒 國防部：已擬妥SOP</span>
-                                        </div>
-                                    </a>
+                    <div class="top_cards_pic">
+
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">28</h4>
+                                    <h4 class="month">4月</h4>
                                 </div>
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">28</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-5.jpg" alt="">
-                                        <div class="cards_content">
-                                            <span>【疫與記憶之八】留在波蘭，繼續當名存實亡的交換生</span>
-                                        </div>
-                                    </a>
+                                <img src="../dest/image/latest-news/img-5.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>【疫與記憶之八】留在波蘭，繼續當名存實亡的交換生</span>
                                 </div>
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">27</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-12.jpg" alt="">
-                                        <div class="cards_content">
-                                            <span>中研院成功合成?!! 百毫克級-瑞德西韋</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">26</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
-                                        <div class="cards_content">
-                                            <span>寄送口罩給國外親友，實際問題!!</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="item myowl-item-2">
-                                    <a href="">
-                                        <div class="date">
-                                            <h4 class="year">2020</h4>
-                                            <h4 class="day">29</h4>
-                                            <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-2.jpg" alt="">
-                                        <div class="cards_content">
-                                            <span> 日本宣布東京等7縣市進入「緊急狀態」</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                    </section>
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">27</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="../dest/image/latest-news/img-12.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>中研院成功合成?!! 百毫克級-瑞德西韋</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">26</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="../dest/image/latest-news/img-9.jpg" alt="">
+                                <div class="cards_content">
+                                    <span>寄送口罩給國外親友，實際問題!!</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="">
+                                <div class="date">
+                                    <h4 class="year">2020</h4>
+                                    <h4 class="day">29</h4>
+                                    <h4 class="month">4月</h4>
+                                </div>
+                                <img src="../dest/image/latest-news/img-11.png" alt="">
+                                <div class="cards_content">
+                                    <span>軍艦服勤遇官兵發燒 國防部：已擬妥SOP</span>
+                                </div>
+                            </a>
+                        </div>
+
+
+
+                    </div>
                 </div>
 
                 <div class="bottom_cards">
                     <h2>熱門消息</h2>
                     <hr>
                     <div class="bottom_cards_pic">
-                        <div class="news_item1">
-                            <div class="news_item1_child_1">
+                        <div class="all-list">
+                            <div class="list1 ">
 
-                                <div class="news_item1_child_1_son">
+                                <div class="list1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-9.jpg" alt="">
                                         <div class="cards_content">
                                             <span>寄送口罩給國外親友，實際問題!!</span>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="news_item1_child_1_son">
+                                <div class="list1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-12.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-12.jpg" alt="">
                                         <div class="cards_content">
                                             <span>中研院成功合成?!! 百毫克級-瑞德西韋</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="news_item1_child_1_son">
-                                    <a href="">
+                                <div class="list1-1">
+                                    <!-- <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-11.png" alt="">
-                                        <div class="cards_content">
+                                        </div> -->
+                                    <img src="../dest/image/latest-news/img-11.png" alt="">
+                                    <!-- <div class="cards_content">
                                             <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
-                                        </div>
-                                    </a>
+                                        </div> -->
+                                    <!-- </a> -->
                                 </div>
+
+
+                                <div class="inside-left">
+                                    <ul class="list">
+                                        <li class="list-Title">熱門討論排行</li>
+                                        <li class="item">
+                                            <div class="item-content"><span>1</span> <a href="#">
+                                                    <p>防疫做得好，自我健康才會好?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>2</span> <a href="#">
+                                                    <p>現在新冠狀病毒有疫苗出來了嗎?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>3</span> <a href="#">
+                                                    <p>現在哪個國家死亡人數最多?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>4</span> <a href="#">
+                                                    <p>台灣現在疫情人數越來越多了!!</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>5</span> <a href="#">
+                                                    <p>疫情導致經濟嚴重下滑!!</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>6</span> <a href="#">
+                                                    <p>蝙蝠及穿山甲病原傻傻分不清?</p>
+                                                </a></div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="item-content"><span>7</span> <a href="#">
+                                                    <p>口罩哪裡還有庫存?</p>
+                                                </a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
                             </div>
 
                         </div>
 
-                        <div class="news_item2">
-                            <div class="news_item2_child_1">
-                                <div class="news_item2_child_1_son">
-                                    <div class="news_item2_child_1_son_youngson">
+                        <div class="list2">
+                            <div class="list2-2q">
+                                <div class="list2-1">
+                                    <div class="list2-2222221">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-1.jpg" alt="">
+                                            <img src="../dest/image/latest-news/img-1.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>義大利疫情危急 成為全球死亡病例最多的國家</span>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="news_item2_child_1_son  news_item2_child_1_son_1">
-                                    <div class="news_item2_child_1_son_youngson">
-                                        <a href="">
+                                <div class="list2-1 list2-22">
+                                    <div class="list2-2222221">
+                                        <a href="../dest/latest-news//latest-news_child.html">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-6.png" alt="">
+                                            <img src="../dest/image/latest-news/img-6.png" alt="">
                                             <div class="cards_content">
                                                 <span> Who Cares？哪些外媒在「譚德塞歧視事件」發聲</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="news_item2_child_1_son_youngson">
+                                    <div class="list2-2222221">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-8.jpg" alt="">
+                                            <img src="../dest/image/latest-news/img-8.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>美逾33萬人確診 川普：死亡數恐超越世界大戰</span>
                                             </div>
@@ -724,54 +819,54 @@
                                 </div>
                             </div>
 
-                            <div class="news_item2_child_2">
-                                <div class="news_item2_child_2_son">
+                            <div class="list-2">
+                                <div class="list2-1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-2.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-2.jpg" alt="">
                                         <div class="cards_content">
                                             <span> 日本宣布東京等7縣市進入「緊急狀態」</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="news_item2_child_2_son">
+                                <div class="list2-1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-5.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-5.jpg" alt="">
                                         <div class="cards_content">
                                             <span>古巴航班停飛 荷蘭學生駕老帆船返鄉</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="news_item2_child_2_son">
+                                <div class="list2-1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-9.jpg" alt="">
                                         <div class="cards_content">
                                             <span>寄送口罩給國外親友，實際問題!!</span>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="news_item2_child_2_son">
+                                <div class="list2-1-1">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-3.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-3.jpg" alt="">
                                         <div class="cards_content">
                                             <span>聯合國：二戰後最大危機</span>
                                         </div>
@@ -779,42 +874,42 @@
                                 </div>
                             </div>
 
-                            <div class="news_item2_child_3">
-                                <div class="news_item2_child_3_1_son">
-                                    <a href="">
+                            <div class="list3-qal">
+                                <div class="list2-3">
+                                    <!-- <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
-                                        </div>
-                                        <img src="/dest/image/latest-news/img-10.png" alt="">
-                                        <div class="cards_content">
+                                        </div> -->
+                                    <img src="../dest/image/latest-news/img-10.png" alt="">
+                                    <!-- <div class="cards_content">
                                             <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
                                         </div>
-                                    </a>
+                                    </a> -->
                                 </div>
-                                <div class="news_item2_child_3_2_son">
-                                    <div class="news_item2_child_3_2_son_youngson">
+                                <div class="list-3">
+                                    <div class="list-333">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-13.jpg" alt="">
+                                            <img src="../dest/image/latest-news/img-13.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>WHO正名武漢肺炎新名為「COVID-19」</span>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="news_item2_child_3_2_son_youngson">
+                                    <div class="list-333">
                                         <a href="">
                                             <div class="date">
                                                 <h4 class="year">2020</h4>
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-4.jpg" alt="">
+                                            <img src="../dest/image/latest-news/img-4.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>全球單日增近5萬例 破41.8萬例、逾1.8萬死</span>
                                             </div>
@@ -822,7 +917,15 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- <div class="laster">
+                                <span>
+                                    德國學者研究發現，疫情爆發的城市多是航空業主要轉機點或重要機場，便捷的交通讓傳染病得以傳播至世界各角落。隨著疫情升溫，境外旅客讓各國如臨大敵，歐盟、美國紛紛關閉邊界，台灣也於3月18日禁止外籍旅客入境。
+                                </span>
+                            </div> -->
                         </div>
+
+
                     </div>
                 </div>
 
@@ -839,38 +942,17 @@
             </div>
 
         </div>
-
         <!-- ----------------------------新聞------------------------------ -->
+        <br>
+        <br>
 
-        <!-- ----------------------------底下輪播------------------------------ -->
-        <section class="relative-info">
-            <p class="like">你可能會喜歡</p>
-            <hr>
-            <div class="relative-info-inner">
-                <div class="owl-carousel owl-theme myowl-2">
-                    <div class="item myowl-item-2">
-                        <img src="https://loremflickr.com/320/240/dog?random=1" alt="">
-                    </div>
-                    <div class="item myowl-item-2">
-                        <img src="https://loremflickr.com/320/240/dog?random=2" alt="">
-                    </div>
-                    <div class="item myowl-item-2">
-                        <img src="https://loremflickr.com/320/240/dog?random=3" alt="">
-                    </div>
-                    <div class="item myowl-item-2">
-                        <img src="https://loremflickr.com/320/240/dog?random=4" alt="">
-                    </div>
-                    <div class="item myowl-item-2">
-                        <img src="https://loremflickr.com/320/240/dog?random=5" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
     @@include('./LAYOUT/footer.html')
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
@@ -878,12 +960,50 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script> -->
     <script src="../dest/js/latest-news.js"></script>
     <script src="../dest/js/chart.js"></script>
     <script type="text/javascript" src="../dest/js/jqueryelastislide.js"></script>
     <script type="text/javascript" src="../dest/js/jqueryppcustom.js"></script>
-    <script src="../dest/node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../dest/js/map/striat-map/col/data1.json"></script>
+
+    <script>
+        var current = 0,
+            $preview = $('#preview'),
+            $carouselEl = $('#carousel'),
+            $carouselItems = $carouselEl.children(),
+            carousel = $carouselEl.elastislide({
+                current: current,
+                minItems: 3,
+                onClick: function (el, pos, evt) {
+
+                    changeImage(el, pos);
+                    evt.preventDefault();
+
+                },
+                onReady: function () {
+
+                    changeImage($carouselItems.eq(current), current);
+
+                }
+            });
+
+        function changeImage(el, pos) {
+
+            $preview.attr('src', el.data('preview'));
+            $carouselItems.removeClass('current-img');
+            el.addClass('current-img');
+            //  carousel.setCurrent(pos);
+
+        }
+    </script>
+
+
+
 
 </body>
 

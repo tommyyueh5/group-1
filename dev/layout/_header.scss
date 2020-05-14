@@ -69,7 +69,8 @@ header {
             }
             
             div.points {
-                display: flex;
+                // display: flex;
+                display: none;
                 align-items: center;
                 margin-right: 20px;
                 font: $fontSize;

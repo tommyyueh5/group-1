@@ -37,7 +37,7 @@
                 </form>
             </div>
             <div class="member_edit">
-                <form action="#" method="post">
+                <div class="editBox">
                     <h2 class="member_name">
                         <input id="editname" type="text" value="Vivian Wang" disabled>
                     </h2>
@@ -48,12 +48,13 @@
                         已加入<span>475</span>天
                     </h3>
                     <h4 class="point">
-                        <i id="points" class="icofont icofont-diamond"></i>66666
+                        <i id="points" class="icofont icofont-diamond"></i>
+                        <span id="MyPoint">66666</span>
                     </h4>
                     <h2 class="edit">編輯個人資料</h2>
                     <input id="save" type="submit" value="儲存">
                     <input id="cancel" type="reset" value="取消">
-                </form>
+                </div>
             </div>
         </aside>
 
@@ -196,7 +197,6 @@
                         </div>
                     </div>
 
-
                 </div>
                 <!-- 重設密碼 -->
                 <div class="tab tab4">
@@ -241,10 +241,16 @@
                     $("#save,#cancel,.edit_thumbnail").hide();
                     $("#editname,#editemail").attr('disabled', true);
                 });
+                $("#save").on("click", function() {
+                    $(".edit").show();
+                    $("#save,#cancel,.edit_thumbnail").hide();
+                    $("#editname,#editemail").attr('disabled', true);
+                });
             });
         });
         
     </script>
+    <script src="../dest/js/EditMember.js"></script>
 
 
 </body>
