@@ -1,6 +1,11 @@
-$(window).ready(() => {//html載入完再執行
+$(document).ready(() => {//html載入完再執行
     $('#login_btn').click((e) => {//點選註冊按鈕顯示燈箱
-        $("#loginBg").toggleClass("on");
+        $("#loginBg").addClass("open");
+
+        // alert($('#loginBg').find('#sign-in').text());
+
+
+
         e.stopPropagation();
         $('#sign-in').css('boxShadow', '0 0 5px rgba(0,0,0,.5)');
         $('.sign-in').css('display', 'block');
