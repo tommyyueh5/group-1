@@ -1,5 +1,3 @@
-// document.write("<script type='text/javascript' src='../dest/js/var.js'></script>");
-
 //swiper---------------------------------------------------------------------
 $(window).ready(function() {
         var swiper1 = new Swiper('.swiper-container ', {

@@ -1,4 +1,3 @@
-document.write("<script type='text/javascript' src='/dest/js/var.js'></script>");
 window.addEventListener('load', function(){
     // console.log(window.screen.availHeight);
     let joke = document.getElementById('joke');

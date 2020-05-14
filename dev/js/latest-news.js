@@ -1,7 +1,4 @@
-// document.write("<script type='text/javascript' src='../dest/js/var.js'></script>");
-
 // --------------------------影片----------------------------
-
 window.addEventListener('load', function(){
     var current = 0,
     $preview = $('#preview'),

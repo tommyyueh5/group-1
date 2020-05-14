@@ -16,11 +16,7 @@ window.addEventListener('load', function () {
     let loginBox = $cs('login-Box');
     // console.log(loginBox);
 
-
     // 在登出的狀況下點擊會員中心 
-
-
-    console.log($cs('submit1'));
     
     let datamemb = null;
     let xhr = new XMLHttpRequest();
@@ -32,7 +28,7 @@ window.addEventListener('load', function () {
                 //抓取會員資料
                 datamemb = JSON.parse(xhr.responseText);
                 // datamemb = xhr.responseText;
-                console.log(datamemb);
+                // console.log(datamemb);
 
                 if (datamemb.memId) {
                     $id('loginBg').style.display = 'none';

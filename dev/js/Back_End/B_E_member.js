@@ -43,6 +43,6 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../dest/php/Back_End.php", true);
+    xhr.open("Get", "../../dest/php/Back_End/Back_End_MEM_data.php", true);
     xhr.send(null);
 });
