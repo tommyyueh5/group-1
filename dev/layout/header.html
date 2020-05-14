@@ -14,6 +14,7 @@
                 <i id="login_btn"><a href="#">登入</a></i>
                 <i class="icofont icofont-cart"></i>
             </div>
+            
         </div>
         <div id="menu_switch">
             <span class="switch_line btn_top"></span>
@@ -54,20 +55,19 @@
                     <span class="left"></span>
                     <span class="right"></span>
                 </a>
-                <!-- <form class="sign sign-in" action="/dest/index/PHP/sign-in.php" method="GET"> -->
-                <form class="sign sign-in" action="../dest/member.html" method="GET">
+                <form class="sign sign-in">
 
                     <label for="emeEmail">登入信箱<br>
-                        <input class="input-data" type="email" name="emeEmail">
+                        <input id="emeEmail" class="input-data" type="email" name="emeEmail">
                     </label><br>
 
                     <label for="emePaw">登入密碼<br>
-                        <input class="input-data" type="password" name="emePaw"><br>
+                        <input id="emePaw" class="input-data" type="password" name="emePaw"><br>
                         <input class="viveswitch" type="checkbox">顯示密碼
                     </label>
                     <a href="">忘記密碼</a>
                     <br>
-                    <input class="submit" type="submit" name="login" value="登入">
+                    <input class="submit1" type="button" name="login" value="登入">
                 </form>
 
                 <form class="sign sign-up" action="/dest/index/PHP/sign-up.php" method="GET">
@@ -81,10 +81,9 @@
                     </label>
                     <a href="">忘記密碼</a>
                     <br>
-                    <input class="submit" type="submit" name="login" value="登入">
+                    <input class="submit2" type="button" name="login" value="登入">
                 </form>
             </div>
         </div>
     </div>
 </header>
-<script src="../../dest/js/var.js"></script>
