@@ -17,18 +17,23 @@ window.addEventListener('load', () => {
         });
     });
 
+    //版面標題動態替換功能
+    //宣告替換物件
     let tagTitle = document.querySelector("#tag_title");
-
+    //宣告被替換物件
     let mgmtClicks = document.querySelectorAll(".mgmt_title");
-
+    //建立自動迴圈，點到誰指定誰
     Array.from(mgmtClicks).forEach(mgmtClick => {
         tagTitle.textContent = "會員列表"
+        //建立點擊聆聽
         mgmtClick.addEventListener("click", () => {
             let titleVal = mgmtClick.children[1].textContent;
+            //點及更換名稱
             tagTitle.textContent = titleVal;
         })
     });
 
+    //黃色遮罩動態移動功能
     //宣告黃色遮罩條
     let listBar = document.querySelector('#maskbar');
     //宣告所有列表欄位
@@ -42,19 +47,18 @@ window.addEventListener('load', () => {
                 //洗掉所有顏色
                 mgmtTitles[i].children[1].classList.remove('on');
                 mgmtTitles[i].children[0].classList.remove('on');
-
             }
             //加上點選當前的顏色
             this.children[1].classList.add('on');
             this.children[0].classList.add('on');
             //點選到的第幾列增加幾個固定高
             listBar.style.top = (50 * index) + 'px';
-
         })
-
     });
 
+
     
+
 
 });
 
