@@ -1,4 +1,5 @@
 document.write("<script type='text/javascript' src='/dev/js/var.js'></script>");
+
 window.addEventListener('load', ()=>{
     
 
@@ -142,7 +143,7 @@ window.addEventListener('load', ()=>{
         
         
         
-        cl.children[1].remove(); //remove price
+        cl.children[1].remove(); 
         cl.classList.remove('sli');
         cl.classList.add('ac');
 
@@ -160,7 +161,6 @@ window.addEventListener('load', ()=>{
         }
 
 
-        // price init
         document.getElementById('count').value = '1';
 
         
@@ -172,16 +172,11 @@ window.addEventListener('load', ()=>{
 
 
 
-        // 
         function additem() {
-            //init
             buyList = [];
-            // console.log(joker);
-            // console.log(joker.getElementsByClassName('ac'));
             for (let i = 0; i<joker.getElementsByClassName('ac').length; i++ ) {
                 
                 buyList.push(joker.getElementsByClassName('ac')[i].firstElementChild.getAttribute('da'));
-                console.log(buyList);
 
 
             }
@@ -193,7 +188,7 @@ window.addEventListener('load', ()=>{
 
     document.getElementById('minus').addEventListener('click', function(){
         
-        $('.shop-two-item-pirce').text(  sum *  parseInt( document.getElementById('count').value ) );
+        $('.shop-two-item-pirce').text( sum *  parseInt( document.getElementById('count').value ) );
         if (  isNaN($('.shop-two-item-pirce').text()) ) {
             $('.shop-two-item-pirce').text('$'+0);
         }
@@ -201,8 +196,7 @@ window.addEventListener('load', ()=>{
 
     document.getElementById('plus').addEventListener('click', function(){
         
-        $('.shop-two-item-pirce').text(  sum *  parseInt( document.getElementById('count').value ) );
-        console.log($(typeof '.shop-two-item-pirce').text());
+        $('.shop-two-item-pirce').text( sum *  parseInt( document.getElementById('count').value ) );
         if (  isNaN($('.shop-two-item-pirce').text()) ) {
             $('.shop-two-item-pirce').text('$'+0);
         }
@@ -210,7 +204,7 @@ window.addEventListener('load', ()=>{
 
     //input
     document.getElementById('count').addEventListener('input',function(){
-        $('.shop-two-item-pirce').text(  sum *  parseInt( document.getElementById('count').value ) );
+        $('.shop-two-item-pirce').text( sum *  parseInt( document.getElementById('count').value ) );
         if (  $('#count').val()=='') {
             $('.shop-two-item-pirce').text(0);
         }
@@ -243,54 +237,135 @@ window.addEventListener('load', ()=>{
 
 
 
-    //add cart
     
-    const addCart = document.getElementById('addbtn');
+
+    
+
+    const addCartbtn = document.getElementById('addbtn');
     let N = 1;
     var storage = sessionStorage;
-    addCart.addEventListener('click', function(){
-      
+    
+    addCartbtn.addEventListener('click', function(){
         if (buyList.length==0) {
             alert('請先選');
         } else {
+            while ($.inArray(N.toString() , Object.keys(storage) ) !=-1 ) {
+                N++;
+            }
             storage[`${N}`]='';
-            console.log(buyList);
             for (let i = 0 ; i < buyList.length; i++) {
                 if (i == 0) {
                     storage[`${N}`] +=  `${buyList[i]}`;
                 } else {
-                    storage[`${N}`] +=  `, ${buyList[i]}`
+                    storage[`${N}`] +=  `, ${buyList[i]}`;
                 }
             }
-            N++;
+            storage[`${N}`] +=  `, ${sum*count}, ${count}`;
         }
         
-        // Object.keys(obj).forEach(function(key){
-
-        // });
     });
 
+    function deleteItem(e) {
+        this.parentNode.parentNode.remove();
+
+        storage.removeItem(this.id);
+    }
 
 
-    //cart
-    const cartList = document.getElementById('cart');
-    cartList.addEventListener('click', function(){
-        $('.cart-list').removeClass('hid');
 
+
+    const cartshow = document.getElementById('cart');
+    const cartListInner = document.getElementById('cart-list-inner');
+    cartshow.addEventListener('click', function  (){   
         
+        if (document.getElementsByClassName('cart-product-item')) {
+            $('.cart-product-item').remove();
+        }
+        $('.cart-list').removeClass('hid');
+        if (storage.length) {
+            
+            let newitemD;
+
+            for( let i of Object.keys(storage)) {
+                newitemD = document.createElement('div');
+
+                newitemD.className="cart-product-item";
+
+                
+                newitemD.innerHTML = `<div class="ord-img"></div>
+                    <div class="ord-n">
+                        ${storage.getItem(i).split(', ')[storage.getItem(i).split(', ').length-1]}
+                    </div>
+                    <div class="ord-price">
+                        ${storage.getItem(i).split(', ')[storage.getItem(i).split(', ').length-2]}
+                    </div>
+
+                    <div class="ord-remove">
+                    <button class="btnremove" id="${i}">刪除</button>
+                    </div>
+                `;
+
+                itemL = storage.getItem(i).split(', ')
+                for ( let j = 0 ; j<itemL.length-2; j++) {
+                    if (itemL[j].substring(0, itemL[j].length-2) == 'jacket') {
+                        
+                        let divordpic = document.createElement('div');
+                        let divimg = document.createElement('img');
+                        divordpic.className = "ord-pic";
+                        divimg.src = `../dest/image/Epidemic-shop/cloth/${itemL[j].replace('-','_')}.png`;
+                        divimg.setAttribute('da',`${itemL[j]}`);
+                        divordpic.appendChild(divimg);
+                        newitemD.firstChild.appendChild(divordpic);
+
+                    } else if (itemL[j].substring(0, itemL[j].length-2) == 'goggles'){
+                        let divordpic = document.createElement('div');
+                        let divimg = document.createElement('img');
+                        divordpic.className = "ord-pic";
+                        divimg.src = `../dest/image/Epidemic-shop/glass/${itemL[j].replace('-','_')}.png`;
+                        divimg.setAttribute('da',`${itemL[j]}`);
+                        divordpic.appendChild(divimg);
+                        newitemD.firstChild.appendChild(divordpic);
+                    } else {
+                        let divordpic = document.createElement('div');
+                        let divimg = document.createElement('img');
+                        divordpic.className = "ord-pic";
+                        divimg.src = `../dest/image/Epidemic-shop/mask/${itemL[j].replace('-','_')}.png`;
+                        divimg.setAttribute('da',`${itemL[j]}`);
+                        divordpic.appendChild(divimg);
+                        newitemD.firstChild.appendChild(divordpic);
+                    }
+
+
+                    cartListInner.appendChild(newitemD);
+                    
+                }
+                
+            }
+            $('.btnremove').click(deleteItem);
+            
+        }
     });
     const cartListC = document.getElementById('cart-list-close');
     cartListC.addEventListener('click', function(){
         $('.cart-list').addClass('hid');
     });
 
-    // function additem() {
-    //     console.log(joker);
-    //     console.log(joker.getElementsByClassName('ac'));
-    //     for (let i = 0; i<joker.getElementsByClassName('ac').length; i++ ) {
-    //         joker.getElementsByClassName('ac')[i]
-    //     }
-    // }
+    document.getElementById('send').addEventListener('click', send);
+
+    function send() {
+        let conn = new XMLHttpRequest();
+        conn.open('post', './Epidemic-shop.php', true);
+        conn.send('123456');
+        conn.onreadystatechange = function() {
+            if (conn.readyState==4) {
+                if (conn.status == 200) {
+                    console.log(conn.responseText);
+                } else {
+                    alert(conn.status);
+                }
+            }
+        }
+    }
 
     
 });
