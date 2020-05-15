@@ -7,10 +7,10 @@
     <title>Document</title>
     @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="../dest/css/Epidemic-shop.css">
-    <link rel="stylesheet" href="/dev/html/Epidemic-shop/icofont/icofont.min.css">
+    <!-- <link rel="stylesheet" href="/dev/html/Epidemic-shop/icofont/icofont.min.css"> -->
     <link rel="stylesheet" href="../dest/node_modules/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
     <!-- Jqeury -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
     <script src="https://kit.fontawesome.com/667c458472.js" crossorigin="anonymous"></script>
     <!-- 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
@@ -737,7 +737,7 @@
             <p><i class="icofont icofont-cart" ></i>我的購物車</p>
             <i class="icofont-close-line"></i>
         </div>
-        <div class="cart-list-inner">
+        <div class="cart-list-inner" id="cart-list-inner">
             <div class="cart-product-title">
                 <div class="cart-product-title-c cart-title-img">
                     <p>商品</p>
@@ -752,32 +752,38 @@
                     <p>移除</p>
                 </div>
             </div>
-            <div class="cart-product-item">
-                <div class="ord-img">
-                    <div class="ord-pic">
-                        <img src="../dest/image/Epidemic-shop/cloth/jacket_1.png"
-                            alt="" da="jacket-1">
-                    </div>
-                    <div class="ord-pic">
-                        <img src="../dest/image/Epidemic-shop/glass/goggles_1.png"
-                            alt="" da="goggles-1">
-                    </div>
-                    <div class="ord-pic">
-                        <img src="../dest/image/Epidemic-shop/mask/mask-1.png"
-                            alt="" da="mask-1">
-                    </div>
+            
+            <!-- <div class="cart-product-item" id="item">
+                
+                <div>
+                        <div class="ord-img">
+                            <div class="ord-pic">
+                                <img src="../dest/image/Epidemic-shop/cloth/jacket_1.png"
+                                    alt="" da="jacket-1">
+                            </div>
+                            <div class="ord-pic">
+                                <img src="../dest/image/Epidemic-shop/glass/goggles_1.png"
+                                    alt="" da="goggles-1">
+                            </div>
+                            <div class="ord-pic">
+                                <img src="../dest/image/Epidemic-shop/mask/mask-1.png"
+                                    alt="" da="mask-1">
+                            </div>
+                        </div>
+                        <div class="ord-n">
+                        </div>
+                        <div class="ord-price">
+                        </div>
+                        <div class="ord-remove">
+                            <button>刪除</button>
+                        </div>
                 </div>
+                
+            </div> -->
 
-                <div class="ord-n">
-
-                </div>
-                <div class="ord-price">
-
-                </div>
-                <div class="ord-remove">
-                    <img class="ord-title-remove-img" src="../dest/image/Epidemic-shop/garbage.png" alt="">
-                </div>
-            </div>
+        </div>
+        <div>
+            <button id="send">ok</button>
         </div>
     </div>
     <!-- @@include('./LAYOUT/footer.html') -->
