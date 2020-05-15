@@ -58,7 +58,8 @@ window.addEventListener('load', function () {
             }
 
         }
-        xhr.open("POST", "../../dest/php/sessionLogin.php", true);
+        xhr.open("POST", "http://localhost/DD106g1/sessionLogin.php", true);
+        // xhr.open("POST", "../../dest/php/sessionLogin.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         let data_info = `emeEmail=${$id('emeEmail').value}&emePaw=${$id('emePaw').value}`;
         // console.log(data_info);
@@ -92,10 +93,10 @@ window.addEventListener('load', function () {
         $cs('member_center').classList.add('on');
     }
     let hanNo = sessionStorage.getItem('no');
-    if (!hanNo ||  !$id('editname')) {
+    if (!hanNo) {
         $id('editname').value = sessionStorage.getItem('memId');
         console.log('不存在');
-        return
+        // return
     }else{
          console.log('存在');
         $id('editname').value = sessionStorage.getItem('memId');

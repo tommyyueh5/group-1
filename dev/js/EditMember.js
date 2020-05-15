@@ -54,7 +54,8 @@ window.addEventListener('load', function () {
             // }
             // }
             //ftp需跟改=================================================================
-            xhrEdit.open("POST", "../../dest/php/EditMem.php", true);
+            xhrEdit.open("POST", "http://localhost/DD106g1/EditMem.php", true);
+            // xhrEdit.open("POST", "../../dest/php/EditMem.php", true);
 
             xhrEdit.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             let data_info;
