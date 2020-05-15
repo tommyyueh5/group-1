@@ -1,5 +1,3 @@
-document.write("<script type='text/javascript' src='/dev/js/var.js'></script>");
-
 window.addEventListener('load', ()=>{
     
 
@@ -143,7 +141,7 @@ window.addEventListener('load', ()=>{
         
         
         
-        cl.children[1].remove(); 
+        cl.children[1].remove(); //remove price
         cl.classList.remove('sli');
         cl.classList.add('ac');
 
@@ -237,6 +235,7 @@ window.addEventListener('load', ()=>{
 
 
 
+    //add cart
     
 
     
@@ -265,6 +264,7 @@ window.addEventListener('load', ()=>{
         
     });
 
+    //remove cart
     function deleteItem(e) {
         this.parentNode.parentNode.remove();
 
@@ -274,6 +274,7 @@ window.addEventListener('load', ()=>{
 
 
 
+    //cart
     const cartshow = document.getElementById('cart');
     const cartListInner = document.getElementById('cart-list-inner');
     cartshow.addEventListener('click', function  (){   
@@ -354,8 +355,9 @@ window.addEventListener('load', ()=>{
 
     function send() {
         let conn = new XMLHttpRequest();
-        conn.open('post', './Epidemic-shop.php', true);
-        conn.send('123456');
+        
+        conn.open('post', '../dest/php/Epidemic-shop.php', true);
+        conn.send('456');
         conn.onreadystatechange = function() {
             if (conn.readyState==4) {
                 if (conn.status == 200) {
