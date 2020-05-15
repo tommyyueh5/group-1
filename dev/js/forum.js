@@ -1,4 +1,3 @@
-document.write("<script type='text/javascript' src='/dest/js/var.js'></script>");
 console.clear();
 console.log('lsakdfalskjdflnksd');
 
@@ -253,7 +252,7 @@ function render() {
     ctx.scale(devicePixelRatio, devicePixelRatio);
 
     crowd.forEach(peep => {
-        console.log("123");
+        // console.log("123");
         peep.render(ctx);
     });
 

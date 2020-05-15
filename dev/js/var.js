@@ -1,6 +1,6 @@
-$(window).ready(() => {//html載入完再執行
+$(document).ready(() => {//html載入完再執行
     $('#login_btn').click((e) => {//點選註冊按鈕顯示燈箱
-        $("#loginBg").toggleClass("on");
+        $("#loginBg").addClass("open");
         e.stopPropagation();
         $('#sign-in').css('boxShadow', '0 0 5px rgba(0,0,0,.5)');
         $('.sign-in').css('display', 'block');
@@ -18,10 +18,10 @@ $(window).ready(() => {//html載入完再執行
         })
     });
 
-    $("#btnX,#loginBg").click(() => {//點選關閉鈕及灰背景都可以關閉燈箱
-        $("#loginBg").removeClass("on");
-        $('#sign-up').css('boxShadow', '');
-    });
+    // $("#btnX,#loginBg").click(() => {//點選關閉鈕及灰背景都可以關閉燈箱
+    //     $("#loginBg").removeClass("on");
+    //     $('#sign-up').css('boxShadow', '');
+    // });
 
     $('#sign-up').click(() => {//點選註冊紐切換
         $('#sign-up').css('boxShadow', '0 0 5px rgba(0,0,0,.5)');
@@ -44,45 +44,41 @@ $(window).ready(() => {//html載入完再執行
     });
 
     $('.icofont-search').click(() => { //展開搜尋紐
-        let search_switch = document.body.clientWidth;
-        if (search_switch < 1100) {
-            $(".title_list").toggleClass("on");
-        } else {
-            $(".input_box").toggleClass("on");
+        $(".input_box").toggleClass("on");
+    });
+
+    let menuSwitch = document.querySelector('#menu_switch');
+    let titleList = document.querySelector('.title_list');
+    let mainBox = document.querySelector('.main_box');
+    menuSwitch.addEventListener('click', () => {
+        titleList.classList.toggle('move');
+        for (let i = 0; i < 3; i++) {
+            menuSwitch.children[i].classList.toggle('change');
         }
     });
-    // let search_switch = document.body.clientWidth
-    // function shadowBtn() {
-    //     let Btn = document.querySelector('#btn');
-    //     Btn.addEventListener('mousedown', function () {
-    //         this.classList.add("on");
-    //         Btn.addEventListener('mouseup', function () {
-    //             this.classList.remove("on")
-    //         });
-    //     });
-    // };
-    // shadowBtn();
-    function rotate_menu() {
-        let menu_list = document.querySelector('#menu_list');
+    let changePage = document.querySelector('.changePage');
+    let icofontSearch = document.querySelector('.icofont-search');
+    let fuctionSearch = document.querySelector('.fuction_search');
+    let markBar = document.querySelector('.mark_bar');
+    let inputBox = document.querySelector('#search')
 
-        let search_btn = document.querySelector('.fuction_search');
+    mainBox.addEventListener('click', () => {
+        titleList.classList.toggle('move');
+        inputBox.classList.remove('on');
+    });
+    markBar.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+    changePage.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+    icofontSearch.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+    fuctionSearch.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
 
-        let mark_bar = document.querySelectorAll('.mark_bar');
-
-        //阻斷冒泡
-        search_btn.addEventListener("click", function (e) {
-            e.stopPropagation();
-        });
-        //阻斷冒泡
-        mark_bar[0].addEventListener("click", function (e) {
-            e.stopPropagation();
-        });
-        //菜單開關
-        menu_list.addEventListener("click", function () {
-            mark_bar[0].classList.toggle('on');
-        });
-    }
-    rotate_menu();
 });
 
 
