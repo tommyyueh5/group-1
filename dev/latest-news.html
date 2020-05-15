@@ -19,56 +19,43 @@
 
         <!-- ----------------------------breadcrumb------------------------------ -->
 
-        <div class="breadcrumb">
-            <ol class="breadcrumb_list">
-                <li>
-                    <a href="#">
-                        <p>首頁</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p>最新消息</p>
-                    </a>
-                </li>
-            </ol>
+        <div class="bread_crumbs">
+            <a href="../dest/index.html"><span>首頁</span></a> &gt;
+            <a href="#"><span>最新消息</span></a>
         </div>
 
         <!-- ----------------------------breadcrumb------------------------------ -->
 
         <!-- ----------------------------video------------------------------ -->
 
-        <div class="main">
+        <div class="video">
 
             <div class="gallery">
 
                 <div class="image-preview">
-
                     <video id="preview" width="100%" height="600" controls>
                         <source src="/dest/image/latest-news/01.mp4" type="video/mp4">
                     </video>
-
                 </div>
+
                 <!-- Elastislide Carousel -->
                 <ul id="carousel" class="elastislide-list">
 
                     <li data-preview="/dest/image/latest-news/01.mp4">
                         <a href="#">
-
+                            <div class="video_title">
+                                <p>寄送口罩給國外親友，實際問題!!!!!</p>
+                            </div>
                             <video class="video1" src="/dest/image/latest-news/01.mp4">
-                                <source alt="image04" src="/dest/image/latest-news/01.mp4" type="video/mp4">
+                                <source class="a" alt="image04" src="/dest/image/latest-news/01.mp4" type="video/mp4">
                             </video>
-
-
                         </a>
                     </li>
                     <li data-preview="/dest/image/latest-news/02.mp4">
                         <a href="#">
-
                             <video src="/dest/image/latest-news/02.mp4">
                                 <source alt="image04" src="/dest/image/latest-news/02.mp4" type="video/mp4">
                             </video>
-
                         </a>
                     </li>
                     <li data-preview="/dest/image/latest-news/03.mp4">
@@ -94,7 +81,6 @@
                     </li>
                     <li data-preview="/dest/image/latest-news/06.mp4">
                         <a href="#">
-
                             <video class="video3" src="/dest/image/latest-news/06.mp4">
 
                                 <source alt="image04" src="/dest/image/latest-news/06.mp4" type="video/mp4">
@@ -102,9 +88,7 @@
                         </a>
                     </li>
                 </ul>
-                <!-- End Elastislide Carousel -->
             </div>
-
             <hr>
         </div>
 
@@ -116,21 +100,21 @@
         <div class="map_chartarea">
         
             <div id="app">
-                <div class="map_title">全國嚴重特殊傳染性肺炎病例地圖分布</div>
                 <div class="out-left">
+                    <h1>全國嚴重特殊傳染性肺炎病例地圖分布</h1>
                     <div class="title_area">
-                        <h1>武漢肺炎確診人數</h1>
+                        <h2>新冠肺炎確診人數</h2>
                         <hr>
                         <div class="forcast" v-if="now_area">
-                            <h2>{{now_area.name}}</h2>
-                            <h2>確診人數：{{now_area.number}}人</h2>
-                            <h2>隔離人數：{{now_area.brithplace}}人</h2>
+                            <h3>{{now_area.name}}</h3>
+                            <h3>確診人數：{{now_area.number}}人</h3>
+                            <h3>隔離人數：{{now_area.brithplace}}人</h3>
                         </div>
                     </div>
                     <svg id="image_3" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="-300 -100 1000 900">
 
-                        <path id="penghu_a" data-name="penghu_country" class="penghu_b"
-                            d="M77.44,422.09l-2,1.71-.79.24h-.92l.43.79v.92l-.18.85-1.22,1-.12.92.67.37,1.65-.73.67-.49,1,.06.61.43.55.61-1.83,2-.92.12-1.83-.31,1,1.16,1.4.61,1.1-.12.79-.49,2.74.06.55.73.3.79-.91,1.46-.12.49.79.55-.06.67-.73.73-.79-.06-.55-.49L78,436.3l-.91.12L76,438.74l-1,1.1.43.73,1.77.18,1-.12,1.22-.43,1-.06,1.1,1.22.79-.18.12-.79.73-.67.06-.85.3-.85-.73-.43-.12-.67.61-.67.43-.79,3-2.38.79-.12L89,431.06l.24-.73.67-.55,4.21-.12,1.28-.61.55.43.18.91.43.79.73.49.85-.18.67-.37h1l.37-.55L98,428.31l-.55-2,.24-.73v-.91l-.37-.79-1.64-1.77-.43-1.4-.49.55-.24,1.71-.85-.12-.43-.85-.55-.61.24-.55.49-.37-1.16-1.1-.79-.31-.55.55-1.16,2.13-.67-.12-.61.18-1,1-.18.73-.49.12-.06-2.74.67-1.46-1,.12-.55.37-3.54.61-.55.43.06.85.49.67v.91l-.37.61-.85.24-.55.67v1.89l-.49.55-.91-.43-.67-.61.12-1.22-1-.12-.12-.85.49-.79.06-.55-.61-.73h0Z" />
+                        <!-- <path id="penghu_a" data-name="penghu_country" class="penghu_b"
+                            d="M77.44,422.09l-2,1.71-.79.24h-.92l.43.79v.92l-.18.85-1.22,1-.12.92.67.37,1.65-.73.67-.49,1,.06.61.43.55.61-1.83,2-.92.12-1.83-.31,1,1.16,1.4.61,1.1-.12.79-.49,2.74.06.55.73.3.79-.91,1.46-.12.49.79.55-.06.67-.73.73-.79-.06-.55-.49L78,436.3l-.91.12L76,438.74l-1,1.1.43.73,1.77.18,1-.12,1.22-.43,1-.06,1.1,1.22.79-.18.12-.79.73-.67.06-.85.3-.85-.73-.43-.12-.67.61-.67.43-.79,3-2.38.79-.12L89,431.06l.24-.73.67-.55,4.21-.12,1.28-.61.55.43.18.91.43.79.73.49.85-.18.67-.37h1l.37-.55L98,428.31l-.55-2,.24-.73v-.91l-.37-.79-1.64-1.77-.43-1.4-.49.55-.24,1.71-.85-.12-.43-.85-.55-.61.24-.55.49-.37-1.16-1.1-.79-.31-.55.55-1.16,2.13-.67-.12-.61.18-1,1-.18.73-.49.12-.06-2.74.67-1.46-1,.12-.55.37-3.54.61-.55.43.06.85.49.67v.91l-.37.61-.85.24-.55.67v1.89l-.49.55-.91-.43-.67-.61.12-1.22-1-.12-.12-.85.49-.79.06-.55-.61-.73h0Z" /> -->
                         <path id="chiayi_a" data-name="17" class="chiayi_b"
                             d="M193.2,485l-.14-1.13-1.11-.43h-2.58l-.28-1,.11-3.46,2-4.74,1,.09,2.5-1,.87-3.44.68-1.13-.17-2.41-.43-.6-1,.85-.85-.68-.53-1-.09-1.28.7-2.16v-1.13l-1-.26.09-1.2,1.47-2.86h-1.13l-1.11-.6L192,454l.51-1v-1.39l.6-.77.34-1.22.53-.94v-1.3l-1-.43-3.88.26-1.2-.43-.6-1,.26-6.21,1.07-.6,2.63.09,4,1.55h2.59l1,1.55h2.59l1.9-.86,4.31,1.55,2.59.34,1.55-1.21,1.21-1.55.17-2.41-.52-2.07,1.38-1.38h2.24v2.24l2.41.86.69-1.9,3.28-1.9.52-2.41,1.21-1.38,4.31-1.72,1.9,1,1.21-4.14,1-1.72,2.76.17,1.72-.86.69-2.07,4-1.21.69-1.9,1.55-1.21,1.21-1.55,1.9.86,1.55,1.21,1.9.69,4-1.55h5.17l3.62-1.9L267,415l1,3.45,2.93,2.41,1,1.55,1.72,1,2.41.17,1.55,1.21,2.07.69,9.49,1,1.9-1,1.21-1.38,3.79.17-.34,2.59,1.38,2.24,1.38-1.38,2.24-.52,1.38,1.38,2.07-.17,1.9-.69,2.41.17,1.9,1,2.41.34.86-1.72v-2.41l-.52-2.07-1-1.55,1.12-1.64,4.4-.43,7.93,2.93h2.59l2.24.52.86,1.72.17,5.86-.52,2.24-1.9,1.55v2.59l1,1.72,1.55,1.38.34,5,1.72,4,1.38,1.55,7.76.86,3.79-1.55,7.59.69,1.9.69,5.83.15-.83.19-1.72.86-4.48.69-1.55,1-4.31.86-2.93,2.41-1,1.72-1.9.86-1.55,1.21-2.24.35-1.55,1.72-1.21,2.93-1.21,1-.69,1.9-1.21,1.38-.17,2.41-1.9.69h-2.59L327.51,475l-1,1.72-2.76,2.76-4.83.34-1.55,4-3.45,1.72-.69,1.9-4.48.34-.86,4.48-5.52-.17-1.55-1.38-5.35-.17-.86,7.93.86,1.9,1.38,1.72v2.59l-1.38,1.21-1.72-.86-4.31.86-2.07-.69-2.41-1.72-2.59,3.8-2.07.52-2.24-.17-2.93-2.07-4.14-1.21-.69-1.72,2.24-3.28-.52-1.72-1.38-2.24-.35-1.72.86-1.72-.69-1.9-.17-2.41,1-1.9,1.55-1.21.17-2.07-.69-1.9-2.41-.17-2.59-.86-.69-1.55,1.72-1.21-.17-2.24-5.35-.34v-2.24l1.72-1.21,1-1.55L264.21,468l-1.55.86-2.07-.52-1.72-1.38-2.24-.69-1.21-1.55-2.59-.69-.17.34-1.55,1-2.24.17-1.38-1.38-2.24.35-3.62,1.72h-5.17l-4.14,2.41-.17.17-1,1.72-4.31-.17.17,2.07-4.83.34-.34,2.24-.86,1.72-1.21,1-1.72-1-1.38,1.38.69,1.9-.34,1.21-6.55,3.28-.52,2.07-2.24,3.28-2.07.86-3.1-.86-.86-1.38v1.89l-1.72-.17-1.55-1.38-.69-2.07-2.59-.52L193.2,485h0Z" />
                         <path id="1e42a38a-74d1-495e-b9b2-11b728815577" data-name="path2421"
@@ -175,7 +159,7 @@
                         <!-- <path id="d280cd89-2c2b-4087-8467-d9f6efea93ec" data-name="path3219"
                             class="e8e3f4a4-ad34-4cc6-9b06-8353f08c9353"
                             d="M49.65,742.23l.76-.48.89,0,1.36.82,1.52.35.6.6.76,1.55-1.49-.1-2-.6-1.93-.63-1-.63.79-.06,1.43.86,1.93-.29-.41-.67-1.9-.32-.48-.25-.92.16.06-.35Z" /> -->
-                        <g id="kinmen_a" data-name="kinmen_country">
+                        <!-- <g id="kinmen_a" data-name="kinmen_country">
                             <path id="kinmen_a" data-name="kinmen_country" class="kinmen_b"
                                 d="M65.59,235.62,65,236l-.44.5-1.69-.25-.63.31-.31.69v1.88l-.31.63-.06.88-.56.44h-.94l-.63.31.19.94.44.63-.31.69-.56.56-.69.25h-.25l.44.75,1.76.13.31.82.88-.06L63,244.28l.75-.19.82.19.38.56.69-.31.38-.63L66,243l.38-.63,1.82-.06.82-.25.44-.5,1-2.89-.13-.82-2.07-1.26-.5-.56-.63-.31-.88-.19-.63.06Z" />
                             <path id="kinmen_a" data-name="kinmen_country" class="kinmen_b"
@@ -188,46 +172,55 @@
                                 d="M107.46,220l-.75.25.31.31H108l-.5-.56h0Z" />
                             <path id="kinmen_a" data-name="kinmen_country" class="kinmen_b"
                                 d="M111.85,244l-.38.38.88-.06-.5-.31Z" />
-                        </g>
+                        </g> -->
                     </svg>
                 </div>
             </div>
 
             <div class="out-right">
                 <div class="map_table">
-                    <table>
-                        <tr>
-                            <td rowspan="2">國內檢驗總計</td>
-                            <td>送驗</td>
-                            <td>排除</td>
-                            <td>確診</td>
-                            <td>死亡</td>
-                            <td>解除隔離</td>
-                        </tr>
-                        <tr>
-                            <td>307</td>
-                            <td>338</td>
-                            <td>306</td>
-                            <td>39</td>
-                            <td>39</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">昨日新增</td>
-                            <td>送驗</td>
-                            <td>排除</td>
-                            <td>確診</td>
-                            <td>死亡</td>
-                            <td>解除隔離</td>
-                        </tr>
-                        <tr>
-                            <td>307</td>
-                            <td>338</td>
-                            <td>306</td>
-                            <td>39</td>
-                            <td>39</td>
-                        </tr>
-                    </table>
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <!-- <div class="panel-heading">Panel heading</div> -->
+                      
+                        <!-- Table -->
+                        <table class="table">
+                            <tr>
+                                <td rowspan="2">國內檢驗總計</td>
+                                <td>送驗</td>
+                                <td>排除</td>
+                                <td>確診</td>
+                                <td>死亡</td>
+                                <td>解除隔離</td>
+                            </tr>
+                            <tr>
+                                <td id="sendcheck"></td>
+                                <td id="alreadycheckcheckout"></td>
+                                <td id="covid_19check"></td>
+                                <td id="dead"></td>
+                                <td id="finishdivce"></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">昨日新增</td>
+                                <td>送驗</td>
+                                <td>排除</td>
+                                <td>確診</td>
+                                <td>死亡</td>
+                                <td>解除隔離</td>
+                            </tr>
+                            <tr>
+                                <td id='yes_sendcheck'></td>
+                                <td id='yes_alreadycheckcheckout'></td>
+                                <td id='yes_covid_19check'></td>
+                                <td>0</td>
+                                <td>39</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
+                <script>
+                    
+                </script>
                 <div class="svg1_1">
                     <canvas id="chart" class=""></canvas>
                 </div>
@@ -247,7 +240,7 @@
 
         <div class="news_container">
             <div class="tab_block">
-                <h1>Editor's Picks</h1>
+                <h1>新聞軼事</h1>
                 <ul class="tab_list">
                     <li>
                         <a href="#" data-target="tab1" class="tab -on">
@@ -346,15 +339,14 @@
                     <div class="bottom_cards_pic">
                         <div class="news_item1">
                             <div class="news_item1_child_1">
-
-                                <div class="news_item1_child_1_son">
+                                <!-- <div class="news_item1_child_1_son">
                                     <a href="">
                                         <div class="date">
                                             <h4 class="year">2020</h4>
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img class="circle_card" src="/dest/image/latest-news/img-9.jpg" alt="">
+                                        <img class="circle_card" src="../dest/image/latest-news/img-9.jpg" alt="">
                                         <div class="cards_content">
                                             <span>寄送口罩給國外親友，實際問題!!</span>
                                         </div>
@@ -368,7 +360,7 @@
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-12.jpg" alt="">
+                                        <img src="../dest/image/latest-news/img-12.jpg" alt="">
                                         <div class="cards_content">
                                             <span>中研院成功合成?!! 百毫克級-瑞德西韋</span>
                                         </div>
@@ -381,12 +373,13 @@
                                             <h4 class="day">29</h4>
                                             <h4 class="month">4月</h4>
                                         </div>
-                                        <img src="/dest/image/latest-news/img-11.png" alt="">
+                                        <img src="../dest/image/latest-news/img-11.png" alt="">
                                         <div class="cards_content">
-                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
+                                            <span>喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔喔</span>
                                         </div>
                                     </a>
-                                </div>
+                                </div> -->
+
                             </div>
 
                         </div>
@@ -416,7 +409,7 @@
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-6.png" alt="">
+                                            <img class="circle_card" src="/dest/image/latest-news/img-6.png" alt="">
                                             <div class="cards_content">
                                                 <span> Who Cares？哪些外媒在「譚德塞歧視事件」發聲</span>
                                             </div>
@@ -528,7 +521,7 @@
                                                 <h4 class="day">29</h4>
                                                 <h4 class="month">4月</h4>
                                             </div>
-                                            <img src="/dest/image/latest-news/img-4.jpg" alt="">
+                                            <img class="circle_card" src="/dest/image/latest-news/img-4.jpg" alt="">
                                             <div class="cards_content">
                                                 <span>全球單日增近5萬例 破41.8萬例、逾1.8萬死</span>
                                             </div>
@@ -640,7 +633,6 @@
                                         </div>
                                     </a>
                                 </div>
-
                                 <div class="news_item1_child_1_son">
                                     <a href="">
                                         <div class="date">
@@ -667,8 +659,8 @@
                                         </div>
                                     </a>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
 
                         <div class="news_item2">
@@ -822,15 +814,47 @@
 
             </div>
 
-            <div class="pagination_block">
-                <ul class="pagination">
-                    <li><a href="#">&lt;</a></li>
-                    <li><a href="#" class="-on">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">&gt;</a></li>
-                </ul>
-            </div>
+                                <!-- 頁面切換列 -->
+                                <div class="navigator">
+                                    <ul>
+                                        <a href="">
+                                            <li>&lt;</li>
+                                        </a>
+                                        <a href="">
+                                            <li style="border-bottom: 1px solid  white;">1</li>
+                                        </a>
+                                        <a href="">
+                                            <li>2</li>
+                                        </a>
+                                        <a href="">
+                                            <li>3</li>
+                                        </a>
+                                        <a href="">
+                                            <li>4</li>
+                                        </a>
+                                        <a href="">
+                                            <li>5</li>
+                                        </a>
+                                        <a href="">
+                                            <li>6</li>
+                                        </a>
+                                        <a href="">
+                                            <li>7</li>
+                                        </a>
+                                        <a href="">
+                                            <li>8</li>
+                                        </a>
+                                        <a href="">
+                                            <li>9</li>
+                                        </a>
+                                        <a href="">
+                                            <li>..</li>
+                                        </a>
+                                        <a href="">
+                                            <li>&gt;</li>
+                                        </a>
+                                    </ul>
+                                </div>
 
         </div>
 
@@ -878,6 +902,7 @@
     <script type="text/javascript" src="../dest/js/jqueryelastislide.js"></script>
     <script type="text/javascript" src="../dest/js/jqueryppcustom.js"></script>
     <script src="../dest/node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../dest/js/news_ajax.js"></script>
 
 </body>
 
