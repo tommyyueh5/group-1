@@ -1,9 +1,9 @@
 window.addEventListener('load', ()=>{
     
     let b = $('.myowl-1-1').attr('tar');
-    $(`.owl-all[tar=dress]`).owlCarousel('destroy'); 
+    $(`.owl-all[tar=clothe]`).owlCarousel('destroy'); 
     $(`.owl-all[tar=hand]`).owlCarousel('destroy'); 
-    $(`.owl-all[tar=goggles]`).owlCarousel('destroy'); 
+    $(`.owl-all[tar=goggle]`).owlCarousel('destroy'); 
     $(`.owl-all[tar=mask]`).owlCarousel('destroy'); 
 
 
@@ -455,57 +455,92 @@ function haha(x, y) {
     return n;
 }
 
+function xaxa() {
+
+}
+
 getproduct();
 
 function getproduct() {
     let conn = new XMLHttpRequest();
-    console.log(1111);
     conn.open('get', '../dest/php/shop.php', true);
     conn.send(null);
     conn.onreadystatechange = function() {
         if (conn.readyState==4) {
             if (conn.status == 200) {
-                console.log(555);
-                let prodataArray = haha(JSON.parse(conn.responseText), 3);
+                let prodataArray; 
                 // console.log(prodataArray);
                 // console.log(haha(prodataArray,3));
                 let shopTypeContentInner = document.getElementById('shop-type-content-inner');
+                let kind = ['group', 'clothe','goggle', 'mask'];
+                for ( let k = 0; k< kind.length; k++) {
+                    let myowl1 = document.createElement('div');
+                    myowl1.className= 'owl-carousel owl-theme myowl-1-1 owl-all';
+                    myowl1.setAttribute('tar', kind[k]);
+                    shopTypeContentInner.appendChild(myowl1);
 
-                // for ( let k = 0; k< ['group','dress','goggle'])
-                let myowl1 = document.createElement('div');
-                myowl1.className= 'owl-carousel owl-theme myowl-1-1 owl-all';
 
-                myowl1.setAttribute('tar', 'group');
-                shopTypeContentInner.appendChild(myowl1);
-
-                // console.log(prodataArray.length);
-                for (let i = 0; i< prodataArray.length; i++) {
-                    let item = document.createElement('div');
-                    item.className = 'item myowl-item';
-                    myowl1.appendChild(item);
-                    // console.log(myowl1);
-                    // console.log(prodataArray[1]); 
-                    prodata = prodataArray[i];
-                    
-                    for ( let j = 0; j<prodata.length; j++ ) {
-                        prosingle = prodata[j];
-                        let sli = document.createElement('div');
-                        sli.className= 'sli';
-                        item.appendChild(sli);
+                    let prodataArray = new Array();
+                    if (kind[k]=='group') {
+                        prodataArray = haha(JSON.parse(conn.responseText), 3);
+                        console.log(prodataArray);
+                    } else {
+                        let origin = JSON.parse(conn.responseText);
+                        // console.log(origin[0]['PRO_KIND']);
+                        // console.log(kind[k]);
+                        // console.log(origin[0][PRO_ID])
+                        // console.log(typeof origin);
+                        // console.log(origin[1]);
+                        for ( let u = 0;u<JSON.parse(conn.responseText).length;u++) {
+                            // console.log(origin[u]);
+                            
+                            
+                            if (kind[k]==origin[u]['PRO_KIND']) {
+                                console.log(1);
+                                prodataArray.push(origin[u]);
+                                // console.log(prodataArray);
+                            }
+                        }
                         
-                        let img = document.createElement('img');
-                        img.src = `${prosingle.PRO_SRC}`;
-                        img.setAttribute('da', `${prosingle.PRO_ID}`);
-                        sli.appendChild(img);
-
-                        let price = document.createElement('div');
-                        price.className='shop-type-price';
-                        price.textContent = '$' + `${prosingle.PRO_PRICE}`;
-                        sli.appendChild(price);
+                        prodataArray = haha(prodataArray,3);
+                        console.log(prodataArray);
+                    }
+                    // console.log(conn.responseText);
+                    for (let i = 0; i< prodataArray.length; i++) {
+                        let item = document.createElement('div');
+                        item.className = 'item myowl-item';
+                        myowl1.appendChild(item);
+                        // console.log(myowl1);
+                        // console.log(prodataArray[1]); 
+                        prodata = prodataArray[i];
+                        
+                        for ( let j = 0; j<prodata.length; j++ ) {
+                            prosingle = prodata[j];
+                            let sli = document.createElement('div');
+                            sli.className= 'sli';
+                            item.appendChild(sli);
+                            
+                            let img = document.createElement('img');
+                            img.src = `${prosingle.PRO_SRC}`;
+                            img.setAttribute('da', `${prosingle.PRO_ID}`);
+                            sli.appendChild(img);
+    
+                            let price = document.createElement('div');
+                            price.className='shop-type-price';
+                            price.textContent = '$' + `${prosingle.PRO_PRICE}`;
+                            sli.appendChild(price);
+                        }
                     }
                 }
-                console.log(shopTypeContentInner);
+                
 
+                // console.log(prodataArray.length);
+                
+                console.log(shopTypeContentInner);
+                $(`.owl-all[tar=clothe]`).owlCarousel('destroy'); 
+                $(`.owl-all[tar=hand]`).owlCarousel('destroy'); 
+                $(`.owl-all[tar=goggle]`).owlCarousel('destroy'); 
+                $(`.owl-all[tar=mask]`).owlCarousel('destroy'); 
                 $('.myowl-1-1').owlCarousel({
                     // stagePadding: 50,
                     
@@ -594,7 +629,6 @@ function getproduct() {
 
 //     }
 // });
-console.log(11111111);
 $('.myowl-2').owlCarousel({
     loop:true,
     margin:50,
