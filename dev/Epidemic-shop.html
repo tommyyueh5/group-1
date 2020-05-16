@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    @@include('./LAYOUT/head.html')
+    <link rel="stylesheet" href="../dest/node_modules/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="../dest/css/Epidemic-shop.css">
 
-    <link rel="stylesheet" href="../dest/node_modules/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+    @@include('./LAYOUT/head.html')
+
     
     <script src="https://kit.fontawesome.com/667c458472.js" crossorigin="anonymous"></script>
     <!-- 
@@ -61,7 +62,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="type-ico type-img-shoe" tar="shoe">
+                                    <div class="type-ico type-img-shoe" tar="goggles">
                                         <img class="type-img" src="../dest/image/Epidemic-shop/shoeb.png" alt="">
                                     </div>
                                 </div>
@@ -79,10 +80,10 @@
                         </div>
 
                         <div class="shop-type-content">
-                            <div class="shop-type-content-inner">
+                            <div class="shop-type-content-inner" id="shop-type-content-inner">
 
                                 <!-- group -->
-                                <div class="owl-carousel owl-theme myowl-1-1 owl-all" tar="group">
+                                <!-- <div class="owl-carousel owl-theme myowl-1-1 owl-all" tar="group">
                                     <div class="item myowl-item">
                                         <div class="sli">
                                             <img class="sli-img" src="../dest/image/Epidemic-shop/cloth/jacket_1.png"
@@ -168,12 +169,12 @@
                                             <div class="shop-type-price">$200</div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- group -->
 
 
                                 <!-- dress -->
-                                <div class="owl-carousel owl-theme myowl-1-2 owl-all" tar="dress">
+                                <!-- <div class="owl-carousel owl-theme myowl-1-2 owl-all" tar="dress">
                                     <div class="item myowl-item" tar="dress">
                                         <div class="sli">
                                             <img class="sli-img m" src="../dest/image/Epidemic-shop/cloth/jacket_1.png"
@@ -226,13 +227,13 @@
                                         </div>
                                     </div>
 
-                                </div>
+                                </div> -->
                                 <!-- dress -->
 
 
 
                                 <!-- goggles -->
-                                <div class="owl-carousel owl-theme myowl-1-3 owl-all" tar="shoe">
+                                <div class="owl-carousel owl-theme myowl-1-3 owl-all" tar="goggles">
                                     <div class="item myowl-item">
                                         <div class="sli">
                                             <img class="sli-img m" src="../dest/image/Epidemic-shop/glass/goggles_1.png"
@@ -288,7 +289,7 @@
                                 <!-- shoe -->
 
                                 <!-- mask  -->
-                                <div class="owl-carousel owl-theme myowl-1-4 owl-all" tar="mask">
+                                <!-- <div class="owl-carousel owl-theme myowl-1-4 owl-all" tar="mask">
                                     <div class="item myowl-item">
                                         <div class="sli">
                                             <img class="sli-img m" src="../dest/image/Epidemic-shop/mask/mask_1.png"
@@ -374,83 +375,10 @@
                                             <div class="shop-type-price">$5</div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- mask  -->
 
-                                <!-- hand
-                                <div class="owl-carousel owl-theme myowl-1-5 owl-all" tar="hand">
-                                    <div class="item myowl-item" tar="dress">
-                                        <div class="sli">
-                                            <img class="sli-img m" src="./img/hand/hand-1.png" alt="" da="hand-1">
-                                            <div class="shop-type-price">$150</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="./img/hand/hand-2.png" alt="" da="hand-2">
-                                            <div class="shop-type-price">$160</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="./img/hand/hand-3.png" alt="" da="hand-3">
-                                            <div class="shop-type-price">$170</div>
-                                        </div>
-                                    </div>
-                                    <div class="item myowl-item" tar="dress">
-                                        <div class="sli">
-                                            <img class="sli-img" src="./img/hand/hand-4.png" alt="" da="hand-4">
-                                            <div class="shop-type-price">$180</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="./img/hand/hand-5.png" alt="" da="hand-5">
-                                            <div class="shop-type-price">$190</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="./img/hand/hand-6.png" alt="" da="hand-6">
-                                            <div class="shop-type-price">$140</div>
-                                        </div>
-                                    </div>
-                                    <div class="item myowl-item" tar="dress">
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                    </div>
-                                    <div class="item myowl-item" tar="dress">
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                    </div>
-                                    <div class="item myowl-item" tar="dress">
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                        <div class="sli">
-                                            <img class="sli-img" src="http://fakeimg.pl/400x400/282828/EAE0D0" alt="">
-                                            <div class="shop-type-price">$120</div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- hand -->
+                                
 
 
                             </div>
@@ -785,10 +713,11 @@
             <button id="send">ok</button>
         </div>
     </div>
-    <!-- @@include('./LAYOUT/footer.html') -->
+        <!-- @@include('./LAYOUT/footer.html') -->
         <!-- <script src="./jquery/jquery.min.js"></script> -->
-        <script src="../dest/node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-        <script src="../dest/js/shopjs/shop.js"></script>
+        
+    <script src="../dest/node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../dest/js/shopjs/shop.js"></script>
 </body>
 
 </html>

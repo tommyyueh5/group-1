@@ -1,6 +1,5 @@
 window.addEventListener('load', ()=>{
     
-
     let b = $('.myowl-1-1').attr('tar');
     $(`.owl-all[tar=dress]`).owlCarousel('destroy'); 
     $(`.owl-all[tar=hand]`).owlCarousel('destroy'); 
@@ -352,11 +351,10 @@ window.addEventListener('load', ()=>{
     });
 
     document.getElementById('send').addEventListener('click', send);
-
     function send() {
         let conn = new XMLHttpRequest();
         
-        conn.open('post', '../dest/php/Epidemic-shop.php', true);
+        conn.open('post', '../dest/php/shop.php', true);
         conn.send('456');
         conn.onreadystatechange = function() {
             if (conn.readyState==4) {
@@ -369,51 +367,234 @@ window.addEventListener('load', ()=>{
         }
     }
 
-    
-});
+    // function haha(x, y) {
+    //     let a = Math.ceil(x.length/y);
+    //     let n = new Array();
+    //     let periodF = 0;
+    //     let periodL = y;
+    //     for ( let i = 0; i< a;i++) {
+    //         n.push(x.slice(periodF, periodL));
+    //         periodF +=3;
+    //         periodL +=3;
+    //     }
 
+    //     return n;
+    // }
 
+    // // console.log(haha([1,2,3,4,5,6,7,8,9,10],3));
 
-$('.myowl-1-1').owlCarousel({
-    // stagePadding: 50,
-    
-    nav:true,
-    
-    navText: ["<i class='icofont-rounded-left prenext'></i>","<i class='icofont-rounded-right prenext'></i>"],
-    responsive:{
-        0:{
-            items:1,
-            margin: 10,
-        },
-        577: {
-            items:2,
-            margin: 0,
-        },
-        768: {
-            items:1,
-            margin: 50,
-        },
-        980: {
-            items:1,
-            margin: 0,
-        },
-        992:{
-            items:2,
-            margin: 50,
-        },
+    // function getproduct() {
+    //     let conn = new XMLHttpRequest();
         
-        1200:{
-            items:2,
-            margin: 0,
-        },
-        1400:{
-            items:2,
-            margin: 0,
-        }
+    //     conn.open('get', '../dest/php/shop.php', true);
+    //     conn.send(null);
+    //     conn.onreadystatechange = function() {
+    //         if (conn.readyState==4) {
+    //             if (conn.status == 200) {
 
-    }
+    //                 let prodataArray = haha(JSON.parse(conn.responseText), 3);
+    //                 // console.log(prodataArray);
+    //                 // console.log(haha(prodataArray,3));
+    //                 let shopTypeContentInner = document.getElementById('shop-type-content-inner');
+
+
+    //                 let myowl1 = document.createElement('div');
+    //                 myowl1.className= 'owl-carousel owl-theme myowl-1-1 owl-all';
+    //                 myowl1.setAttribute('tar', 'group');
+    //                 shopTypeContentInner.appendChild(myowl1);
+
+    //                 // console.log(prodataArray.length);
+    //                 for (let i = 0; i< prodataArray.length; i++) {
+    //                     let item = document.createElement('div');
+    //                     item.className = 'item myowl-item';
+    //                     myowl1.appendChild(item);
+    //                     // console.log(myowl1);
+    //                     // console.log(prodataArray[1]); 
+    //                     prodata = prodataArray[i];
+                        
+    //                     for ( let j = 0; j<prodata.length; j++ ) {
+    //                         prosingle = prodata[j];
+    //                         let sli = document.createElement('div');
+    //                         sli.className= 'sli';
+    //                         item.appendChild(sli);
+                            
+    //                         let img = document.createElement('img');
+    //                         img.src = `${prosingle.PRO_SRC}`;
+    //                         img.setAttribute('da', `${prosingle.PRO_ID}`);
+    //                         sli.appendChild(img);
+
+    //                         let price = document.createElement('div');
+    //                         price.className='shop-type-price';
+    //                         price.textContent = '$' + `${prosingle.PRO_PRICE}`;
+    //                         sli.appendChild(price);
+    //                     }
+    //                 }
+    //                 console.log(shopTypeContentInner);
+    //             } else {
+    //                 alert(conn.status);
+    //             }
+    //         }
+    //     }
+    // }
+    
+
+    
 });
 
+function haha(x, y) {
+    let a = Math.ceil(x.length/y);
+    let n = new Array();
+    let periodF = 0;
+    let periodL = y;
+    for ( let i = 0; i< a;i++) {
+        n.push(x.slice(periodF, periodL));
+        periodF +=3;
+        periodL +=3;
+    }
+
+    return n;
+}
+
+getproduct();
+
+function getproduct() {
+    let conn = new XMLHttpRequest();
+    console.log(1111);
+    conn.open('get', '../dest/php/shop.php', true);
+    conn.send(null);
+    conn.onreadystatechange = function() {
+        if (conn.readyState==4) {
+            if (conn.status == 200) {
+                console.log(555);
+                let prodataArray = haha(JSON.parse(conn.responseText), 3);
+                // console.log(prodataArray);
+                // console.log(haha(prodataArray,3));
+                let shopTypeContentInner = document.getElementById('shop-type-content-inner');
+
+                // for ( let k = 0; k< ['group','dress','goggle'])
+                let myowl1 = document.createElement('div');
+                myowl1.className= 'owl-carousel owl-theme myowl-1-1 owl-all';
+
+                myowl1.setAttribute('tar', 'group');
+                shopTypeContentInner.appendChild(myowl1);
+
+                // console.log(prodataArray.length);
+                for (let i = 0; i< prodataArray.length; i++) {
+                    let item = document.createElement('div');
+                    item.className = 'item myowl-item';
+                    myowl1.appendChild(item);
+                    // console.log(myowl1);
+                    // console.log(prodataArray[1]); 
+                    prodata = prodataArray[i];
+                    
+                    for ( let j = 0; j<prodata.length; j++ ) {
+                        prosingle = prodata[j];
+                        let sli = document.createElement('div');
+                        sli.className= 'sli';
+                        item.appendChild(sli);
+                        
+                        let img = document.createElement('img');
+                        img.src = `${prosingle.PRO_SRC}`;
+                        img.setAttribute('da', `${prosingle.PRO_ID}`);
+                        sli.appendChild(img);
+
+                        let price = document.createElement('div');
+                        price.className='shop-type-price';
+                        price.textContent = '$' + `${prosingle.PRO_PRICE}`;
+                        sli.appendChild(price);
+                    }
+                }
+                console.log(shopTypeContentInner);
+
+                $('.myowl-1-1').owlCarousel({
+                    // stagePadding: 50,
+                    
+                    nav:true,
+                    
+                    navText: ["<i class='icofont-rounded-left prenext'></i>","<i class='icofont-rounded-right prenext'></i>"],
+                    responsive:{
+                        0:{
+                            items:1,
+                            margin: 10,
+                        },
+                        577: {
+                            items:2,
+                            margin: 0,
+                        },
+                        768: {
+                            items:1,
+                            margin: 50,
+                        },
+                        980: {
+                            items:1,
+                            margin: 0,
+                        },
+                        992:{
+                            items:2,
+                            margin: 50,
+                        },
+                        
+                        1200:{
+                            items:2,
+                            margin: 0,
+                        },
+                        1400:{
+                            items:2,
+                            margin: 0,
+                        }
+                
+                    }
+                });
+            } else {
+                alert(conn.status);
+            }
+        }
+    }
+}
+
+
+
+
+// $('.myowl-1-1').owlCarousel({
+//     // stagePadding: 50,
+    
+//     nav:true,
+    
+//     navText: ["<i class='icofont-rounded-left prenext'></i>","<i class='icofont-rounded-right prenext'></i>"],
+//     responsive:{
+//         0:{
+//             items:1,
+//             margin: 10,
+//         },
+//         577: {
+//             items:2,
+//             margin: 0,
+//         },
+//         768: {
+//             items:1,
+//             margin: 50,
+//         },
+//         980: {
+//             items:1,
+//             margin: 0,
+//         },
+//         992:{
+//             items:2,
+//             margin: 50,
+//         },
+        
+//         1200:{
+//             items:2,
+//             margin: 0,
+//         },
+//         1400:{
+//             items:2,
+//             margin: 0,
+//         }
+
+//     }
+// });
+console.log(11111111);
 $('.myowl-2').owlCarousel({
     loop:true,
     margin:50,
