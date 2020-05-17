@@ -75,9 +75,6 @@ header {
                 align-items: center;
                 margin-right: 20px;
                 font: $fontSize;
-                p {
-                    font-size: 18px;
-                }
             }
             div.inbtn {
                 display: flex;
@@ -89,6 +86,7 @@ header {
         width: 100%;
         position: relative;
         background-color: $btn-color3;
+        z-index: 1;
         div.main_box {
             position: relative;
             display: flex;
@@ -155,6 +153,7 @@ header {
                 input.on {
                     opacity: 1;
                     width: 100%;
+                    margin-right: 20px;
                 }
             }
         }
@@ -319,9 +318,6 @@ header {
                     align-items: center;
                     margin-right: 20px;
                     font: $fontSize;
-                    p {
-                        font-size: 18px;
-                    }
                 }
                 div.inbtn {
                     display: flex;
@@ -381,7 +377,7 @@ header {
             background-color: $deepBgColor;
             transition: left 0.5s linear;
             left: -100%;
-            // left: 0px;
+            z-index: 999;
             div.main_box {
                 width: 100%;
                 height: 100%;
@@ -608,10 +604,135 @@ header {
                     background-repeat: no-repeat;
                 }
             }
+            div.fuction_btn_right {
+                z-index: 999;
+                position: absolute;
+                top: 50%;
+                right: 1%;
+                transform: translateY(-50%);
+                display: flex;
+                align-items: center;
+                font: $sub_titleFs normal;
+                div.member_center {
+                    display: none;
+                    margin-right: 5px;
+                    > a {
+                        text-decoration: none;
+                        color: #fff;
+                        > p {
+                            font-size: $sub_titleFs/2;
+                        }
+                    }
+                    &.on {
+                        display: block;
+                    }
+                }
+
+                div.points {
+                    // display: flex;
+                    display: none;
+                    align-items: center;
+                    margin-right: 20px;
+                    font-size: 15px;
+                    i {
+                        cursor: pointer;
+                        margin-right: 10px;
+                        font-style: normal;
+                    }
+                }
+                div.inbtn {
+                    display: flex;
+                    align-items: center;
+                    font-size: 15px;
+                }
+            }
         }
     }
 }
 @include rwd(small) {
+    header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 99;
+        background-image: url("../image/index/background/black_background.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        div.nav_bar {
+            max-width: 1440px;
+            position: relative;
+            transition: top 0.3s linear;
+            height: 100%;
+            color: whitesmoke;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1;
+            div.logo {
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;
+                a {
+                    background-image: url("../image/title/logo-text.png");
+                    width: 300px;
+                    height: 30px;
+                    display: block;
+                    background-position: center center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+            div.fuction_btn_right {
+                z-index: 50;
+                position: initial;
+                transform: translateY(-50%);
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                margin-top: 15px;
+                font: $sub_titleFs normal;
+                div.member_center {
+                    display: none;
+                    margin-right: 5px;
+                    > a {
+                        text-decoration: none;
+                        color: #fff;
+                        > p {
+                            font-size: $sub_titleFs/2;
+                        }
+                    }
+                    &.on {
+                        display: block;
+                    }
+                }
+
+                div.points {
+                    // display: flex;
+                    display: none;
+                    align-items: center;
+                    margin-right: 20px;
+                    font-size: 15px;
+                    i {
+                        cursor: pointer;
+                        margin-right: 10px;
+                        font-style: normal;
+                    }
+                }
+                div.inbtn {
+                    display: flex;
+                    align-items: center;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
 }
 @include rwd(mobile) {
 }
