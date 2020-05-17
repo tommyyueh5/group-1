@@ -16,7 +16,7 @@ gulp.task('concatimage', function() {
     //do sometime
     gulp.src('./dev/image/**/*').pipe(gulp.dest('./dest/image'))
 });
-gulp.task('concatfont', function () {
+gulp.task('concatfont', function() {
     //do sometime
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
 });
@@ -92,17 +92,6 @@ gulp.task('default', function() {
             // index: "dest/diseaseHistory.html"
             // index: "dest/game.html"
             // index: "dest/Epidemic-shop.html"
-<<<<<<< HEAD
-            // index: "dest/forum.html"
-            // index: "dest/member.html"
-            // index: "dest/infectious-Diseases.hmtl"
-            // index: "dest/latest-news.html"
-            // index: "dest/latest-news_child.html"
-            index: "dest/index.html"
-            // index: "dest/btn-style.html"
-            // index: "dest/header.html"
-            // index: "dest/footer.html"
-=======
             index: "dest/forum.html"
                 // index: "dest/member.html"
                 // index: "dest/infectious-Diseases.hmtl"
@@ -111,7 +100,6 @@ gulp.task('default', function() {
                 // index: "dest/index.html"
                 // index: "dest/btn-style.html"
                 // index: "dest/header.html"
->>>>>>> J7
         }
     });
 
@@ -119,8 +107,5 @@ gulp.task('default', function() {
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatimage']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js", "dev/layout/**/*.js"], ['concatjs']).on('change', reload);
     gulp.watch(["dev/**/*.php"], ['concatphp']).on('change', reload);
-  
+
 });
-
-
-
