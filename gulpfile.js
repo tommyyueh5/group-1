@@ -92,6 +92,7 @@ gulp.task('default', function() {
             // index: "dest/diseaseHistory.html"
             // index: "dest/game.html"
             // index: "dest/Epidemic-shop.html"
+<<<<<<< HEAD
             // index: "dest/forum.html"
             // index: "dest/member.html"
             // index: "dest/infectious-Diseases.hmtl"
@@ -101,6 +102,16 @@ gulp.task('default', function() {
             // index: "dest/btn-style.html"
             // index: "dest/header.html"
             // index: "dest/footer.html"
+=======
+            index: "dest/forum.html"
+                // index: "dest/member.html"
+                // index: "dest/infectious-Diseases.hmtl"
+                // index: "dest/latest-news.html"
+                // index: "dest/latest-news_child.html"
+                // index: "dest/index.html"
+                // index: "dest/btn-style.html"
+                // index: "dest/header.html"
+>>>>>>> J7
         }
     });
 
