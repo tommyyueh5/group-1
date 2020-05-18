@@ -76,7 +76,7 @@ window.addEventListener('load', function () {
         xhrsend.open("post","http://localhost/DD106g1/uploadIMG.php");
         // xhrsend.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhrsend.send(formData);
-
+        
         
         Reader.addEventListener('load',function(){
             // 判斷檔案是否為jpg||png
@@ -92,6 +92,7 @@ window.addEventListener('load', function () {
                 $cs('thumbnail').src = this.result;
                 // update後到sesssion並img更改名稱   需要注意路徑問題
                 sessionStorage.setItem('memImg', `/dest/image/member/${imgName}.${isImg}`);
+                
               
             }else{
                 console.log('檔案格式有誤');

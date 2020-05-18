@@ -73,7 +73,8 @@ body.index_stage {
                     font-family: didot;
                 }
                 li.login_stage {
-                    form.login_item {
+                    form.login_item,
+                    div.login_item {
                         display: flex;
                         flex-direction: column;
                         label {
@@ -102,7 +103,7 @@ body.index_stage {
                             }
                         }
                     }
-                    form#Back_login {
+                    div#Back_login {
                         display: none;
                         label {
                             &:nth-child(2) {
@@ -117,7 +118,7 @@ body.index_stage {
                     form#Front_login.loginF {
                         display: none;
                     }
-                    form#Back_login.loginB {
+                    div#Back_login.loginB {
                         display: flex;
                     }
                 }
