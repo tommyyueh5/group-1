@@ -79,6 +79,7 @@ var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
 gulp.task('default', function() {
+<<<<<<< HEAD
     // browserSync.init({
     //     server: {
     //         //根目錄
@@ -103,6 +104,43 @@ gulp.task('default', function() {
     //         // index: "dest/footer.html"
     //     }
     // });
+=======
+    browserSync.init({
+        server: {
+            //根目錄
+            baseDir: "./",
+            files: ['**'],
+            proxy: 'http://localhost:3005 ',
+            // index: "dest/homepage.html"
+            // index: "dest/Back_End.html"
+            // index: "dest/Epidemic-prevention-SOP.html"
+            // index: "dest/btn-style.html"
+            // index: "dest/diseaseHistory.html"
+            // index: "dest/game.html"
+            // index: "dest/Epidemic-shop.html"
+<<<<<<< HEAD
+            // index: "dest/forum.html"
+            // index: "dest/member.html"
+            // index: "dest/infectious-Diseases.hmtl"
+            // index: "dest/latest-news.html"
+            // index: "dest/latest-news_child.html"
+            index: "dest/index.html"
+            // index: "dest/btn-style.html"
+            // index: "dest/header.html"
+            // index: "dest/footer.html"
+=======
+            index: "dest/forum.html"
+                // index: "dest/member.html"
+                // index: "dest/infectious-Diseases.hmtl"
+                // index: "dest/latest-news.html"
+                // index: "dest/latest-news_child.html"
+                // index: "dest/index.html"
+                // index: "dest/btn-style.html"
+                // index: "dest/header.html"
+>>>>>>> J7
+        }
+    });
+>>>>>>> c112842b75735ba5cefadfe72f6a2314d991836f
 
     gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss", "dev/layout/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatimage']).on('change', reload);
