@@ -7,34 +7,32 @@
     <title>Document</title>
     @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="../dest/css/forum.css">
-    <<<<<<< HEAD <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
-        <link rel="stylesheet" href="../dest/node_modules/slick/slick.css">
-        <script src="../dest/node_modules/jquery/jquery.min.js"></script>
-        =======
-        <!-- <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick.css">
+    <script src="../dest/node_modules/jquery/jquery.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
     <link rel="stylesheet" href="../dest/node_modules/slick/slick.css"> -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-        <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
-        <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
-        <!-- <script src="../dest/node_modules/slick/slick.min.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+    <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <!-- <script src="../dest/node_modules/slick/slick.min.js"></script> -->
 
 
-        >>>>>>> J7
+
 </head>
 
 <body>
     @@include('./LAYOUT/header.html')
 
     <!-- main -->
-
     <main>
-
         <!-- 麵包屑 -->
         <div class="bread_crumbs">
             <a href="../dest/index.html"><span>Home</span></a> &gt;
@@ -93,19 +91,19 @@
             <div class="post">
                 <input id="title" type="text" placeholder="你想下的標題？"><br>
                 <div class="postimg">
-                    <!-- <label for="upload"><img src="../dest/image/forum/image.png" alt=""></label> -->
-                    <input id="upload" type="file">
+                    <form id="upfile">
+                        <input class="oldPath" id="upload" type="file" name="uploads">
+                    </form>
                     <select name="sort" id="sort">
-                        <option value="">要發什麼版？</option>
-                        <option value="">疫情資訊版</option>
-                        <option value="">新聞版</option>
-                        <option value="">八卦版</option>
-                        <option value="">迷因版</option>
+                        <option disabled >要發什麼版？</option>
+                        <option value="1">疫情資訊版</option>
+                        <option value="2">新聞版</option>
+                        <option value="3">八卦版</option>
+                        <option value="4">迷因版</option>
                     </select>
                 </div>
-                <!-- <img class="moon" src="../dest/image/forum/moon.png">  -->
                 <textarea id="content" type="text" rows="1" placeholder="你想說的內容？"></textarea><br>
-                <button id="postBtn" type="submit" onclick="sendPost">發文</button>
+                <button id="postBtn" type="submit" onclick="uploadData;uploadImg">發文</button>
                 <button id="canBtn" type="submit">取消</button>
             </div>
 
@@ -212,9 +210,9 @@
                                 <img class="thum_img" src="../dest/image/forum/thum_img1.jpeg">
                                 <h4 class="username">Funny</h4>
                             </div>
-                            <h2 class="article_title">醫護人員們現在在想什麼？</h2>
+                            <h2 class="article_title"></h2>
                             <img class="main_img" src="../dest/image/forum/forum_img_1.jpg" alt="">
-                            <h4 class="like_comment"><span class="likes">100</span>likes・<span class="comments">40</span>comments</h4>
+                            <h4 class="like_comment"><span class="likes"></span><span class="comments">40</span>comments</h4>
 
                             <h4 class="function">
                                 <img class="heart" src="../dest/image/forum/like.png">
@@ -226,9 +224,6 @@
                             </h4>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </section>
@@ -377,21 +372,117 @@
 
                 $('.post').css('background-color', 'unset');
             });
-        });
-    </script>
-    <script>
-        $(function() {
-            /* 瀑布流區塊div */
-            var $container = $('.masonry');
-            //當圖片讀取完畢才執行
-            $container.imagesLoaded(function() {
-                //選擇瀑布流的區塊名稱
-                $container.masonry({
-                    itemSelector: '.item',
-                })
+            $(function() {
+                /* 瀑布流區塊div */
+                var $container = $('.masonry');
+                //當圖片讀取完畢才執行
+                $container.imagesLoaded(function() {
+                    //選擇瀑布流的區塊名稱
+                    $container.masonry({
+                        itemSelector: '.item',
+                    })
+                });
             });
         });
     </script>
+
+    <script>
+        //抓後端資料顯示在前端
+        // function showData() {
+        //     $.ajax({
+        //         url: './PHP/getinfo.php',
+        //         type: 'GET',
+        //         dataType: 'json',
+        //         success(data) {
+        //             console.log(data.length);
+        //             console.log(data[0].MEM_NO);
+        //             console.log(data);
+        //             for (let i = 0; i < data.length; i++) {
+        //                 userName = data[i].MEM_NO;
+        //                 nowTime = data[i].DIS_EST;
+        //                 topic = data[i].DIS_C_NO;
+        //                 imgPath = data[i].DIS_IMG_PATH;
+        //                 artitle = data[i].DIS_TIT;
+        //                 artcon = data[i].DIS_CON;
+        //                 // <div class="article">
+        //                 //         <h2 class="myname">${userName}</h2>
+        //                 //         <span class="mytime">${nowTime}</span>
+        //                 //         <h2 class="topic">${topic}</h2>
+        //                 //         <img class="myimg" src="${imgPath}">
+        //                 //         <h2 class="mytitle">${artitle}</h2>
+        //                 //         <p class="mycontent">${artcon}</p>
+        //                 //     </div>
+        //                 $('.masonry').append(`
+        //                     <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+        //                         <div class="item_content">
+        //                             <div class="date">
+        //                                 <h4 class="year">${nowTime}</h4>
+        //                             </div>
+        //                             <div class="info">
+        //                                 <img class="thum_img" src="../dest/image/forum/thum_img1.jpeg">
+        //                                 <h4 class="username">Funny</h4>
+        //                             </div>
+        //                             <h2 class="article_title">${artitle}</h2>
+        //                             <img class="main_img" src="${imgPath}" alt="">
+        //                             <h4 class="like_comment"><span class="likes"></span><span class="comments">40</span>comments</h4>
+
+        //                             <h4 class="function">
+        //                                 <img class="heart" src="../dest/image/forum/like.png">
+        //                                 <img class="share" src="../dest/image/forum/share.png">
+        //                             </h4>
+        //                             <h4 class="function2">
+        //                                 <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
+        //                                 <img class="line" src="../dest/image/forum/line.png" alt="">
+        //                             </h4>
+        //                         </div>
+        //                     </div>
+        //                 `)
+        //             }
+        //         },
+        //         error: function(xhr) {
+        //             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
+        //         }
+        //     });
+        // }
+        // 傳資料到後端
+        function uploadData() {
+            $.ajax({
+                url: './PHP/post.php',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    memno: getItem('no'),
+                    sort: $('#sort').val(),
+                    title: $('#title11').val(),
+                    content: $('#content').val(),
+                    path: $(".oldPath")[0].files[0].name,
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.responseText);
+                },
+                success: function(data) {
+                    alert('success: ' + data);
+                    location.href = 'forum.html';
+                }
+            });
+        }
+        //圖片上傳
+        function uploadImg() {
+            var form = new FormData(document.getElementById('upfile'))
+            $.ajax({
+                url: './PHP/upload.php',
+                type: "POST",
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    alert(data);
+                }
+            });
+        }
+        window.addEventListener('load', showData);
+    </script>
+
 
 
 </body>
