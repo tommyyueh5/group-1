@@ -19,6 +19,17 @@
                 height: 3px;
                 @include HandV_center(100%, 50%);
             }
+            div.product_upload {
+                flex: 2;
+                text-align: center;
+                img {
+                    width: 120px;
+                    height: 120px;
+                    object-fit: contain;
+                    object-position:center center;
+                }
+            }
+
             div.product_img {
                 flex: 2;
                 text-align: center;

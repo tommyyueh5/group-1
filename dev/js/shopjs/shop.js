@@ -357,7 +357,8 @@ window.addEventListener('load', ()=>{
             if (conn.readyState==4) {
                 if (conn.status == 200) {
                     console.log(JSON.stringify(storage));
-                    console.log(conn.responseText)
+
+                    console.log(conn.responseText);
                 } else {
                     alert(conn.status);
                 }
@@ -398,6 +399,7 @@ function getproduct() {
     conn.onreadystatechange = function() {
         if (conn.readyState==4) {
             if (conn.status == 200) {
+                console.log(22222);
                 let prodataArray; 
                 let shopTypeContentInner = document.getElementById('shop-type-content-inner');
                 let kind = ['group', 'clothe','goggle', 'mask'];
@@ -501,7 +503,7 @@ function getproduct() {
 
 
 
-
+console.log(11111);
 // $('.myowl-1-1').owlCarousel({
 //     // stagePadding: 50,
     
@@ -541,6 +543,10 @@ function getproduct() {
 
 //     }
 // });
+
+
+
+
 $('.myowl-2').owlCarousel({
     loop:true,
     margin:50,
