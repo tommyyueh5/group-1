@@ -8,26 +8,26 @@ watch = require('gulp-watch');
 fileinclude = require('gulp-file-include');
 
 //搬家
-gulp.task('concatjs', function() {
+gulp.task('concatjs', function () {
     gulp.src('./dev/JS/**/*').pipe(gulp.dest('./dest/js'))
 });
-gulp.task('concatimage', function() {
+gulp.task('concatimage', function () {
     gulp.src('./dev/image/**/*').pipe(gulp.dest('./dest/image'))
 });
 gulp.task('concatfont', function () {
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
 });
-gulp.task('concatlayput', function() {
+gulp.task('concatlayput', function () {
     gulp.src('./dev/layout/**/*').pipe(gulp.dest('./dest/Epidemic-shop/icofont'))
 });
-gulp.task('concatphp', function() {
+gulp.task('concatphp', function () {
     gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
 });
-gulp.task('concatfonts', function() {
+gulp.task('concatfonts', function () {
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
 });
 //編譯scss
-gulp.task('sass',['fileinclude'], function() {
+gulp.task('sass', ['fileinclude'], function () {
     gulp.src('./dev/SASS/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dest/css'))
@@ -35,7 +35,7 @@ gulp.task('sass',['fileinclude'], function() {
 
 
 //壓縮檔案
-gulp.task('minicss', ['sass'], function() {
+gulp.task('minicss', ['sass'], function () {
     gulp.src('dest/CSS/*.css')
         //壓縮
         .pipe(cleanCSS({
@@ -49,7 +49,7 @@ gulp.task('minicss', ['sass'], function() {
         .pipe(gulp.dest('dest/mini/css'));
 });
 //完成刪除舊檔名
-gulp.task('clean', function() {
+gulp.task('clean', function () {
     del(['dest/mini/css/style.css']);
 });
 
@@ -61,7 +61,7 @@ gulp.task('clean', function() {
 //         }))
 //         .pipe(gulp.dest('dest/'));
 // })
-gulp.task('fileinclude', function() {
+gulp.task('fileinclude', function () {
     gulp.src(['dev/*.html'])
         .pipe(fileinclude({
             prefix: '@@',
@@ -74,29 +74,29 @@ gulp.task('fileinclude', function() {
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-gulp.task('default', function() {
+gulp.task('default', function () {
     // browserSync.init({
     //     server: {
     //         //根目錄
     //         baseDir: "./",
     //         files: ['**'],
     //         proxy: 'http://localhost:3005 ',
-            // index: "dest/homepage.html"
-            // index: "dest/Back_End.html"
-            // index: "dest/Epidemic-prevention-SOP.html"
-            // index: "dest/btn-style.html"
-            // index: "dest/diseaseHistory.html"
-            // index: "dest/game.html"
-            // index: "dest/Epidemic-shop.html"
-            // index: "dest/forum.html"
-            // index: "dest/member.html"
-            // index: "dest/infectious-Diseases.hmtl"
-            // index: "dest/latest-news.html"
-            // index: "dest/latest-news_child.html"
-            // index: "dest/index.html"
-            // index: "dest/btn-style.html"
-            // index: "dest/header.html"
-            // index: "dest/footer.html"
+    // index: "dest/homepage.html"
+    // index: "dest/Back_End.html"
+    // index: "dest/Epidemic-prevention-SOP.html"
+    // index: "dest/btn-style.html"
+    // index: "dest/diseaseHistory.html"
+    // index: "dest/game.html"
+    // index: "dest/Epidemic-shop.html"
+    // index: "dest/forum.html"
+    // index: "dest/member.html"
+    // index: "dest/infectious-Diseases.hmtl"
+    // index: "dest/latest-news.html"
+    // index: "dest/latest-news_child.html"
+    // index: "dest/index.html"
+    // index: "dest/btn-style.html"
+    // index: "dest/header.html"
+    // index: "dest/footer.html"
     //     }
     // });
 
@@ -104,7 +104,7 @@ gulp.task('default', function() {
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatimage']).on('change', reload);
     gulp.watch(["dev/*.js", "dev/**/*.js", "dev/layout/**/*.js"], ['concatjs']).on('change', reload);
     gulp.watch(["dev/**/*.php"], ['concatphp']).on('change', reload);
-  
+
 });
 
 

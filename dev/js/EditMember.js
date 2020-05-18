@@ -77,12 +77,6 @@ window.addEventListener('load', function () {
         xhrsend.open("post", "../../dest/image/mem_image/uploadIMG.php");
         // xhrsend.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhrsend.send(formData);
-
-
-
-
-
-
         Reader.addEventListener('load', function () {
             // 判斷檔案是否為jpg||png
             let reg = /jpeg|png/;
