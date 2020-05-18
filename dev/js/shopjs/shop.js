@@ -139,7 +139,6 @@ window.addEventListener('load', ()=>{
         
         
         
-        
         cl.children[1].remove(); //remove price
         cl.classList.remove('sli');
         cl.classList.add('ac');
