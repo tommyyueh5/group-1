@@ -1,19 +1,18 @@
 <?
-header('Access-Control-Allow-Origin: http://localhost:3000');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 try {
     
 
-    require_once("connet.php");
+    require_once("../connectdd106g1.php");
     $emeEmail = $_POST["emeEmail"];
     $emePaw = $_POST["emePaw"];
 
     // echo $emeEmail;
-    $sql = "select * from `member` where `MEM_MAIL`=:emeEmail and `MEM_PAS`=:emePaw"; //''
+    // $sql = "select * from `member` where `MEM_MAIL`=:emeEmail and `MEM_PAS`=:emePaw"; //''
+    $sql = "select * from `asministrator` where `ADMIN_NAME`=:emeName and `ADMIN_PAS`=:emePaw";
+
 
     $member = $pdo->prepare( $sql ); //先編譯好
-    $member->bindValue(":emeEmail", $emeEmail); //代入資料
+    $member->bindValue(":emeName", $emeEmail); //代入資料
     $member->bindValue(":emePaw", $emePaw);
     // $member->bindValue(":emeEmail", 'cdman073@yahoo.com.tw'); //代入資料
     // $member->bindValue(":emePaw", '123456');

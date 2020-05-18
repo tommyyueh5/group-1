@@ -1,72 +1,127 @@
-body {
+@import "../layout/mixins/allmixin";
+@import "../layout/base/reset";
+@import "../layout/modules/btn";
+body.index_stage {
+    background-color: #4d4d4d;
+    width: 100%;
     height: 100vh;
-    background-image: url(../image/welcome/universe_bg.png);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-    main.fontandback {
-        z-index: 1;
+    box-sizing: border-box;
+    main.front_back {
+        width: 1200px;
         height: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 300px;
-        align-items: center;
-        div.door {
-            border-radius: 50%;
-            background-color: rgba(255,255,255,.5);
-            width: 250px;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
-            animation-direction: alternate-reverse;
-            animation-timing-function: linear;
-            a {
-                background-position: center center;
-                background-repeat: no-repeat;
-                background-size: contain;
-                height: 200px;
-                width: 200px;
-                display: block;
+        margin: 0 auto;
+        position: relative;
+        div.login_Bg {
+            @include HandV_center(50%, 50%);
+            height: 100%;
+            width: 100%;
+            div.stage_item {
+                position: absolute;
+                transform: translateY(-50%);
+                top: 50vh;
+                left: 10%;
+                align-self: center;
+                background-color: #444444;
+                box-shadow: 15px 20px 20px black;
+                border-top-right-radius: 100px;
+                margin-right: 50px;
+                padding: 50px 20px 10px 20px;
+                width: 340px;
+                cursor: pointer;
+                ul.change_stage {
+                    width: 100%;
+                    height: 100%;
+                    li.stage {
+                        p {
+                            font-size: 5rem;
+                            font-family: didot;
+                            letter-spacing: 0px;
+                            span {
+                                font-size: 15rem;
+                            }
+                        }
+                    }
+                    #front.changeF {
+                        display: none;
+                    }
+                    #front {
+                        display: block;
+                    }
+                    #back.changeB {
+                        display: block;
+                    }
+                    #back {
+                        display: none;
+                    }
+                }
             }
-            p {
-                font-size: 40px;
-                color: #fff;
-            }
-        }
-        .front_door {
-            animation-name: to_top;
-            > a {
-                background-image: url(../image/welcome/Bacteriophage_1.png);
-            }
-        }
-        @keyframes to_top1 {
-            0% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(30px);
-            }
-        }
-        .back_door {
-            animation-name: to_top1;
-
-            > a {
-                background-image: url(../image/welcome/virus_1.png);
-            }
-        }
-        @keyframes to_top {
-            0% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(15px);
+            ul.login_box {
+                position: absolute;
+                top: 25%;
+                right: 10%;
+                li.logo {
+                    background-image: url(../../dest/image/title/The_Infector.png);
+                    width: 500px;
+                    height: 250px;
+                    background-size: contain;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                li.logo_text {
+                    font-size: 50px;
+                    margin-bottom: 30px;
+                    font-family: didot;
+                }
+                li.login_stage {
+                    form.login_item,
+                    div.login_item {
+                        display: flex;
+                        flex-direction: column;
+                        label {
+                            margin: 10px 0;
+                            input {
+                                background-color: transparent;
+                            }
+                        }
+                        button.login_btn {
+                            cursor: pointer;
+                            width: 130px;
+                            padding: 5px 20px;
+                            background-color: #444444;
+                            border: 1px solid #444444;
+                            border-radius: 20px;
+                            font-size: 20px;
+                            margin: 10px 5px;
+                            transition: 0.2s;
+                            box-shadow: inset -3px -3px 0px blue($color: #000000);
+                            &:active {
+                                box-shadow: inset 3px 3px 0px blue($color: #000000);
+                            }
+                            a {
+                                text-decoration: none;
+                                color: black;
+                            }
+                        }
+                    }
+                    div#Back_login {
+                        display: none;
+                        label {
+                            &:nth-child(2) {
+                                .icofont {
+                                    cursor: pointer;
+                                    margin-left: 10px;
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                    form#Front_login.loginF {
+                        display: none;
+                    }
+                    div#Back_login.loginB {
+                        display: flex;
+                    }
+                }
             }
         }
     }

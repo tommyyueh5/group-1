@@ -16,10 +16,6 @@ gulp.task('concatimage', function() {
     //do sometime
     gulp.src('./dev/image/**/*').pipe(gulp.dest('./dest/image'))
 });
-// gulp.task('concatphp', function () {
-//     //do sometime
-//     gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
-// });
 gulp.task('concatfont', function () {
     //do sometime
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
@@ -83,6 +79,7 @@ var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
 gulp.task('default', function() {
+
     // browserSync.init({
     //     server: {
     //         // 根目錄
@@ -114,3 +111,6 @@ gulp.task('default', function() {
     gulp.watch(["dev/**/*.php"], ['concatphp']).on('change', reload);
   
 });
+
+
+
