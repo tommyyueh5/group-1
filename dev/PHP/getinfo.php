@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try{
 
-    require_once("connectBooks.php");
+    require_once("./PHP/connet.php");
 
     $sql= "select * from discussion";
     $articles = $pdo->query($sql);
