@@ -9,29 +9,25 @@ fileinclude = require('gulp-file-include');
 
 //搬家
 gulp.task('concatjs', function() {
-    //do sometime
     gulp.src('./dev/JS/**/*').pipe(gulp.dest('./dest/js'))
 });
 gulp.task('concatimage', function() {
-    //do sometime
     gulp.src('./dev/image/**/*').pipe(gulp.dest('./dest/image'))
 });
 gulp.task('concatfont', function () {
-    //do sometime
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
 });
 gulp.task('concatlayput', function() {
-    //do sometime
     gulp.src('./dev/layout/**/*').pipe(gulp.dest('./dest/Epidemic-shop/icofont'))
 });
 gulp.task('concatphp', function() {
-    //do sometime
     gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
 });
+gulp.task('concatfonts', function() {
+    gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
+});
 //編譯scss
-
-
-gulp.task('sass', function() {
+gulp.task('sass',['fileinclude'], function() {
     gulp.src('./dev/SASS/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dest/css'))
@@ -79,12 +75,12 @@ var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
 gulp.task('default', function() {
-    browserSync.init({
-        server: {
-            //根目錄
-            baseDir: "./",
-            files: ['**'],
-            proxy: 'http://localhost:3005 ',
+    // browserSync.init({
+    //     server: {
+    //         //根目錄
+    //         baseDir: "./",
+    //         files: ['**'],
+    //         proxy: 'http://localhost:3005 ',
             // index: "dest/homepage.html"
             // index: "dest/Back_End.html"
             // index: "dest/Epidemic-prevention-SOP.html"
@@ -97,12 +93,12 @@ gulp.task('default', function() {
             // index: "dest/infectious-Diseases.hmtl"
             // index: "dest/latest-news.html"
             // index: "dest/latest-news_child.html"
-            index: "dest/index.html"
+            // index: "dest/index.html"
             // index: "dest/btn-style.html"
             // index: "dest/header.html"
             // index: "dest/footer.html"
-        }
-    });
+    //     }
+    // });
 
     gulp.watch(["dev/sass/*.scss", "dev/sass/**/*.scss", "dev/layout/**/*.scss"], ['sass']).on('change', reload);
     gulp.watch(["dev/*.html", "dev/**/*.html"], ['fileinclude', 'concatimage']).on('change', reload);

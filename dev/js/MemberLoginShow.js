@@ -66,7 +66,8 @@ window.addEventListener('load', function () {
             }
 
         }
-        xhr.open("POST", "http://localhost/DD106g1/sessionLogin.php", true);
+        // xhr.open("POST", "http://localhost/DD106g1/sessionLogin.php", true);
+        xhr.open("POST", "../../dest/PHP/sessionLogin.php", true);
         // xhr.open("POST", "../../dest/php/sessionLogin.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         let data_info = `emeEmail=${$id('emeEmail').value}&emePaw=${$id('emePaw').value}`;
