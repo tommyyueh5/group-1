@@ -236,9 +236,6 @@ window.addEventListener('load', ()=>{
 
     //add cart
     
-
-    
-
     const addCartbtn = document.getElementById('addbtn');
     let N = 1;
     var storage = sessionStorage;
@@ -354,12 +351,13 @@ window.addEventListener('load', ()=>{
     function send() {
         let conn = new XMLHttpRequest();
         
-        conn.open('post', '../dest/php/shop.php', true);
-        conn.send('456');
+        conn.open('post', '../dest/php/shopord.php', true);
+        conn.send(JSON.stringify(storage));
         conn.onreadystatechange = function() {
             if (conn.readyState==4) {
                 if (conn.status == 200) {
-                    console.log(conn.responseText);
+                    console.log(JSON.stringify(storage));
+                    console.log(conn.responseText)
                 } else {
                     alert(conn.status);
                 }
@@ -483,35 +481,23 @@ function getproduct() {
                     let prodataArray = new Array();
                     if (kind[k]=='group') {
                         prodataArray = haha(JSON.parse(conn.responseText), 3);
-                        console.log(prodataArray);
                     } else {
                         let origin = JSON.parse(conn.responseText);
-                        // console.log(origin[0]['PRO_KIND']);
-                        // console.log(kind[k]);
-                        // console.log(origin[0][PRO_ID])
-                        // console.log(typeof origin);
-                        // console.log(origin[1]);
+                        
                         for ( let u = 0;u<JSON.parse(conn.responseText).length;u++) {
-                            // console.log(origin[u]);
                             
                             
                             if (kind[k]==origin[u]['PRO_KIND']) {
-                                console.log(1);
                                 prodataArray.push(origin[u]);
-                                // console.log(prodataArray);
                             }
                         }
                         
                         prodataArray = haha(prodataArray,3);
-                        console.log(prodataArray);
                     }
-                    // console.log(conn.responseText);
                     for (let i = 0; i< prodataArray.length; i++) {
                         let item = document.createElement('div');
                         item.className = 'item myowl-item';
                         myowl1.appendChild(item);
-                        // console.log(myowl1);
-                        // console.log(prodataArray[1]); 
                         prodata = prodataArray[i];
                         
                         for ( let j = 0; j<prodata.length; j++ ) {
@@ -533,10 +519,9 @@ function getproduct() {
                     }
                 }
                 
-
                 // console.log(prodataArray.length);
                 
-                console.log(shopTypeContentInner);
+                // console.log(shopTypeContentInner);
                 $(`.owl-all[tar=clothe]`).owlCarousel('destroy'); 
                 $(`.owl-all[tar=hand]`).owlCarousel('destroy'); 
                 $(`.owl-all[tar=goggle]`).owlCarousel('destroy'); 
