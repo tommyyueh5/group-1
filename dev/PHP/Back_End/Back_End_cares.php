@@ -3,7 +3,7 @@
 try {
   require_once("../connectdd106g1.php");  
   //選取資料表
-  $sql = "SELECT * FROM manage";
+  $sql = "select * from manage";
   //pdo請求資料庫
   $care = $pdo->query($sql);
 

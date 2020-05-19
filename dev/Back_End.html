@@ -84,7 +84,7 @@
                 </li>
                 <li class="data i2" style="display: none;">
                     <ul class="report_list">
-                        <!-- <li class="p_member">
+                        <li class="p_member">
                             <div class="main_data">
                                 <h1 class="report_title">《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材</h1>
                                 <div class="in_box">
@@ -103,13 +103,38 @@
                             <div class="Audit_results">
                                 <h1>已審核</h1>
                             </div>
-                        </li> -->
+                        </li>
+                    </ul>
+                </li>
+                <li class="data i3" style="display: none;">
+                    <ul class="forum_list">
+                        <li class="p_forum">
+                            <div class="forum_img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="main_data">
+                                <h1 class="forum_title">${forum_data[i]["DIS_TIT"]}</h1>
+                                <p>
+                                    ${forum_data[i]["DIS_CON"]}
+                                </p>
+                            </div>
+                            <div class="category">
+                                <p>討論區</p>
+                                <h1 class="tag">時事</h1>
+                                <p class="category_date">${forum_data[i]["DIS_EST"]}</p>
+                            </div>
+                            <div class="Audit_results">
+                                <span class="center">
+                                    <input type="checkbox" name="">
+                                </span>
+                            </div>
+                        </li>
                     </ul>
                 </li>
                 <li class="data i4" style="display: none;">
                     <ul class="tag_list">
                         <li class="p_tag" id="news_tag">
-                            <div class="tag_title">
+                            <!--<div class="tag_title">
                                 <h1>新聞區標籤 :</h1>
                             </div>
                             <ul class="tag_name">
@@ -177,747 +202,142 @@
                                     <a href="#"><span>#</span>境外移入</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="p_tag" id="forum_tag">
-                            <div class="tag_title">
-                                <h1>討論區標籤 :</h1>
-                            </div>
-                            <ul class="tag_name">
-                                <li>
-                                    <a href="#"><span>#</span>武漢肺炎</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>covid-19</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>WHO</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>陳時中</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>口罩</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>紓困方案</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>歐洲</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>美國</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>中國</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>酒精</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>油價</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>封城</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>譚得塞</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>零確診</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>群聚感染</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>僑生</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>居家隔離</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>罰款</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>磐石艦</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>鑽石公主號</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>境外移入</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="p_tag" id="game_tag">
-                            <div class="tag_title">
-                                <h1>遊戲區標籤 :</h1>
-                            </div>
-                            <ul class="tag_name">
-                                <li>
-                                    <a href="#"><span>#</span>武漢肺炎</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>covid-19</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>WHO</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>陳時中</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>口罩</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>紓困方案</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>歐洲</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>美國</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>中國</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>酒精</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>油價</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>封城</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>譚得塞</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>零確診</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>群聚感染</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>僑生</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>居家隔離</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>罰款</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>磐石艦</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>鑽石公主號</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>境外移入</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="p_tag" id="shop_tag">
-                            <div class="tag_title">
-                                <h1>商店區標籤 :</h1>
-                            </div>
-                            <ul class="tag_name">
-                                <li>
-                                    <a href="#"><span>#</span>武漢肺炎</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>covid-19</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>WHO</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>陳時中</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>口罩</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>紓困方案</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>歐洲</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>美國</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>中國</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>酒精</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>油價</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>封城</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>譚得塞</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>零確診</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>群聚感染</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>僑生</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>居家隔離</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>罰款</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>磐石艦</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>鑽石公主號</a>
-                                </li>
-                                <li>
-                                    <a href="#"><span>#</span>境外移入</a>
-                                </li>
-                            </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
-                <li class="data i5" style="display: none;">
-                    <ul class="news_list">
-                        <li class="p_news">
-                            <div class="news_img">
-                                <img src="../dest/image/HotNews/img/For2.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="news_title">【疫與記憶之八】留在波蘭，繼續當名存實亡的交換生</h1>
-                                <ul class="news_tag">
-                                    <li><span>#</span>武漢肺炎</li>
-                                    <li><span>#</span>新型冠狀病毒</li>
-                                    <li><span>#</span>波蘭</li>
-                                </ul>
-                                <p>「印象中，我們學校是3月11日開始停課。」
-                                    仍留在波蘭居里夫人大學交換的芝儀，回想起3月11日發生的事：在上學途中，從同學口中聽到學校出現新型冠狀病毒確診案例，當天學校立即宣布停課
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>最新消息</p>
-                                <h1 class="tag">台灣新聞</h1>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_news">
-                            <div class="news_img">
-                                <img src="../dest/image/HotNews/img/For2.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="news_title">美國現場》疫情釀百萬失業潮 大學生失學又失業</h1>
-                                <ul class="news_tag">
-                                    <li><span>#</span>武漢肺炎</li>
-                                    <li><span>#</span>新型冠狀病毒</li>
-                                    <li><span>#</span>波蘭</li>
-                                </ul>
-                                <p>3月1日，全美國武漢肺炎確診病例還不到百例，當時對美國人來說，新型冠狀病毒彷彿是發生在外太空的怪奇病菌，絕不會影響他們的生活。
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>最新消息</p>
-                                <h1 class="tag">世界新聞</h1>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_news">
-                            <div class="news_img">
-                                <img src="../dest/image/HotNews/img/For2.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="news_title">疫與記憶之七】上海篇：中國今死亡數歸零，只剩我在觀望</h1>
-                                <ul class="news_tag">
-                                    <li><span>#</span>武漢肺炎</li>
-                                    <li><span>#</span>新型冠狀病毒</li>
-                                    <li><span>#</span>波蘭</li>
-                                </ul>
-                                <p>我是一名動畫行業的編劇。2016年3月，我因緣際會下前往上海，任職於一間動畫公司。這是我第一份正式工作，在那之前，我對中國可以說是一無所知
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>最新消息</p>
-                                <h1 class="tag">台灣新聞</h1>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_news">
-                            <div class="news_img">
-                                <img src="../dest/image/HotNews/img/For2.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="news_title">【疫與記憶之八】留在波蘭，繼續當名存實亡的交換生</h1>
-                                <ul class="news_tag">
-                                    <li><span>#</span>武漢肺炎</li>
-                                    <li><span>#</span>新型冠狀病毒</li>
-                                    <li><span>#</span>波蘭</li>
-                                </ul>
-                                <p>「印象中，我們學校是3月11日開始停課。」
-                                    仍留在波蘭居里夫人大學交換的芝儀，回想起3月11日發生的事：在上學途中，從同學口中聽到學校出現新型冠狀病毒確診案例，當天學校立即宣布停課
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>最新消息</p>
-                                <h1 class="tag">世界新聞</h1>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_news">
-                            <div class="news_img">
-                                <img src="../dest/image/HotNews/img/For2.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="news_title">美國現場》疫情釀百萬失業潮 大學生失學又失業</h1>
-                                <ul class="news_tag">
-                                    <li><span>#</span>武漢肺炎</li>
-                                    <li><span>#</span>新型冠狀病毒</li>
-                                    <li><span>#</span>波蘭</li>
-                                </ul>
-                                <p>3月1日，全美國武漢肺炎確診病例還不到百例，當時對美國人來說，新型冠狀病毒彷彿是發生在外太空的怪奇病菌，絕不會影響他們的生活。
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>最新消息</p>
-                                <h1 class="tag">台灣新聞</h1>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_news">
-                            <div class="news_img">
-                                <img src="../dest/image/HotNews/img/For2.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="news_title">疫與記憶之七】上海篇：中國今死亡數歸零，只剩我在觀望</h1>
-                                <ul class="news_tag">
-                                    <li><span>#</span>武漢肺炎</li>
-                                    <li><span>#</span>新型冠狀病毒</li>
-                                    <li><span>#</span>波蘭</li>
-                                </ul>
-                                <p>我是一名動畫行業的編劇。2016年3月，我因緣際會下前往上海，任職於一間動畫公司。這是我第一份正式工作，在那之前，我對中國可以說是一無所知
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>最新消息</p>
-                                <h1 class="tag">世界新聞</h1>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="data i6" style="display: none;">
-                    <ul class="game_list">
-                        <li class="p_game">
-                            <div class="game_topic">
-                                <h1>冠狀病毒的簡稱是什麼？</h1>
-                            </div>
-                            <ul class="answer_list">
-                                <li>
-                                    <span>A.</span>
-                                    <p>Convid-19</p>
-                                </li>
-                                <li>
-                                    <span>B.</span>
-                                    <p>Convid-18</p>
-                                </li>
-                                <li>
-                                    <span>C.</span>
-                                    <p>Covid-17</p>
-                                </li>
+            </ul>
+            </li>
+            <li class="data i5" style="display: none;">
+                <ul class="news_list">
+                    <!-- <li class="p_news">
+                        <div class="news_img">
+                            <img src="../dest/image/HotNews/img/For2.png" alt="">
+                        </div>
+                        <div class="main_data">
+                            <h1 class="news_title">美國現場》疫情釀百萬失業潮 大學生失學又失業</h1>
+                            <ul class="news_tag">
+                                <li><span>#</span>武漢肺炎</li>
+                                <li><span>#</span>新型冠狀病毒</li>
+                                <li><span>#</span>波蘭</li>
                             </ul>
-                            <div class="answer">
-                                <p>A.Convid-19</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_game">
-                            <div class="game_topic">
-                                <h1>冠狀病毒屬會造成什麼樣的人類疾病？</h1>
-                            </div>
-                            <ul class="answer_list">
-                                <li>
-                                    <span>A.</span>
-                                    <p>發燒</p>
-                                </li>
-                                <li>
-                                    <span>B.</span>
-                                    <p>肚子痛</p>
-                                </li>
-                                <li>
-                                    <span>C.</span>
-                                    <p>全身痠痛</p>
-                                </li>
-                            </ul>
-                            <div class="answer">
-                                <p>A.Convid-19</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_game">
-                            <div class="game_topic">
-                                <h1>我要怎麼預防感染2019新型冠狀病毒?</h1>
-                            </div>
-                            <ul class="answer_list">
-                                <li>
-                                    <span>A.</span>
-                                    <p>儘量避免出入人潮多的地方</p>
-                                </li>
-                                <li>
-                                    <span>B.</span>
-                                    <p>多去運動公園與大眾運動增加抵抗力</p>
-                                </li>
-                                <li>
-                                    <span>C.</span>
-                                    <p>多吃維他命</p>
-                                </li>
-                            </ul>
-                            <div class="answer">
-                                <p>A.Convid-19</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_game">
-                            <div class="game_topic">
-                                <h1>2019新型冠狀病毒的潛伏期是多久？</h1>
-                            </div>
-                            <ul class="answer_list">
-                                <li>
-                                    <span>A.</span>
-                                    <p>2至12天</p>
-                                </li>
-                                <li>
-                                    <span>B.</span>
-                                    <p>1小時</p>
-                                </li>
-                                <li>
-                                    <span>C.</span>
-                                    <p>19天</p>
-                                </li>
-                            </ul>
-                            <div class="answer">
-                                <p>A.Convid-19</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="data i7" style="display: none;">
-                    <ul class="care_list">
-                        <li class="p_care">
-                            <div class="care_topic">
-                                <h1>下呼吸道症狀</h1>
-                            </div>
-                            <ul class="answer_list">
-                                <li>
-                                    <span>1.</span>
-                                    <p>咳嗽</p>
-                                </li>
-                                <li>
-                                    <span>2.</span>
-                                    <p>呼吸急促</p>
-                                </li>
-                                <li>
-                                    <span>3.</span>
-                                    <p>無</p>
-                                </li>
-                            </ul>
-                            <ul class="gat_point">
-                                <li>
-                                    <span>+</span>
-                                    <p>8</p>
-                                </li>
-                                <li>
-                                    <span>+</span>
-                                    <p>17</p>
-                                </li>
-                                <li>
-                                    <span>+</span>
-                                    <p>0</p>
-                                </li>
-                            </ul>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_care">
-                            <div class="care_topic">
-                                <h1>慢性病症狀</h1>
-                            </div>
-                            <ul class="answer_list">
-                                <li>
-                                    <span>1.</span>
-                                    <p>咳嗽</p>
-                                </li>
-                                <li>
-                                    <span>2.</span>
-                                    <p>呼吸急促</p>
-                                </li>
-                                <li>
-                                    <span>3.</span>
-                                    <p>無</p>
-                                </li>
-                            </ul>
-                            <ul class="gat_point">
-                                <li>
-                                    <span>+</span>
-                                    <p>8</p>
-                                </li>
-                                <li>
-                                    <span>+</span>
-                                    <p>17</p>
-                                </li>
-                                <li>
-                                    <span>+</span>
-                                    <p>0</p>
-                                </li>
-                            </ul>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_care">
-                            <div class="care_topic">
-                                <h1>上呼吸道症狀</h1>
-                            </div>
-                            <ul class="answer_list">
-                                <li>
-                                    <span>1.</span>
-                                    <p>咳嗽</p>
-                                </li>
-                                <li>
-                                    <span>2.</span>
-                                    <p>呼吸急促</p>
-                                </li>
-                                <li>
-                                    <span>3.</span>
-                                    <p>無</p>
-                                </li>
-                            </ul>
-                            <ul class="gat_point">
-                                <li>
-                                    <span>+</span>
-                                    <p>8</p>
-                                </li>
-                                <li>
-                                    <span>+</span>
-                                    <p>17</p>
-                                </li>
-                                <li>
-                                    <span>+</span>
-                                    <p>0</p>
-                                </li>
-                            </ul>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_care">
-                            <div class="care_topic">
-                                <h1>全身性症狀</h1>
-                            </div>
-                            <ul class="answer_list">
-                                <li>
-                                    <span>1.</span>
-                                    <p>咳嗽</p>
-                                </li>
-                                <li>
-                                    <span>2.</span>
-                                    <p>呼吸急促</p>
-                                </li>
-                                <li>
-                                    <span>3.</span>
-                                    <p>無</p>
-                                </li>
-                            </ul>
-                            <ul class="gat_point">
-                                <li>
-                                    <span>+</span>
-                                    <p>8</p>
-                                </li>
-                                <li>
-                                    <span>+</span>
-                                    <p>17</p>
-                                </li>
-                                <li>
-                                    <span>+</span>
-                                    <p>0</p>
-                                </li>
-                            </ul>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li class="data i8" style="display: none;">
-                    <ul class="product_list">
-                        <li class="p_product">
-                            <div class="product_img">
-                                <img src="../dest/image/index-commodity/Image_19.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="product_title">防疫衛生紙</h1>
-                                <ul class="product_tag">
-                                    <li><span>#</span>流鼻水</li>
-                                    <li><span>#</span>咳嗽</li>
-                                    <li><span>#</span>防疫</li>
-                                </ul>
-                                <p>柔軟再升級-獨創的紙纖柔化新技術，讓肌膚享受超細滑的觸感。品質最安心-完全使用美洲進口處女紙漿，確保紙質優良。,品質與環保流程通過ISO
-                                    9001及14001國際認證。,紙張不含螢光劑，確實為消費者安全把關。,產品最環保-採用永續林木紙漿，絕不使用熱帶雨林木漿，愛護地球從源頭做起。,本產品可在馬桶中分解。
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>上架時間</p>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_product">
-                            <div class="product_img">
-                                <img src="../dest/image/index-commodity/Image_19.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="product_title">防疫衛生紙</h1>
-                                <ul class="product_tag">
-                                    <li><span>#</span>流鼻水</li>
-                                    <li><span>#</span>咳嗽</li>
-                                    <li><span>#</span>防疫</li>
-                                </ul>
-                                <p>柔軟再升級-獨創的紙纖柔化新技術，讓肌膚享受超細滑的觸感。品質最安心-完全使用美洲進口處女紙漿，確保紙質優良。,品質與環保流程通過ISO
-                                    9001及14001國際認證。,紙張不含螢光劑，確實為消費者安全把關。,產品最環保-採用永續林木紙漿，絕不使用熱帶雨林木漿，愛護地球從源頭做起。,本產品可在馬桶中分解。
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>上架時間</p>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_product">
-                            <div class="product_img">
-                                <img src="../dest/image/index-commodity/Image_19.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="product_title">防疫衛生紙</h1>
-                                <ul class="product_tag">
-                                    <li><span>#</span>流鼻水</li>
-                                    <li><span>#</span>咳嗽</li>
-                                    <li><span>#</span>防疫</li>
-                                </ul>
-                                <p>柔軟再升級-獨創的紙纖柔化新技術，讓肌膚享受超細滑的觸感。品質最安心-完全使用美洲進口處女紙漿，確保紙質優良。,品質與環保流程通過ISO
-                                    9001及14001國際認證。,紙張不含螢光劑，確實為消費者安全把關。,產品最環保-採用永續林木紙漿，絕不使用熱帶雨林木漿，愛護地球從源頭做起。,本產品可在馬桶中分解。
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>上架時間</p>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                        <li class="p_product">
-                            <div class="product_img">
-                                <img src="../dest/image/index-commodity/Image_19.png" alt="">
-                            </div>
-                            <div class="main_data">
-                                <h1 class="product_title">防疫衛生紙</h1>
-                                <ul class="product_tag">
-                                    <li><span>#</span>流鼻水</li>
-                                    <li><span>#</span>咳嗽</li>
-                                    <li><span>#</span>防疫</li>
-                                </ul>
-                                <p>柔軟再升級-獨創的紙纖柔化新技術，讓肌膚享受超細滑的觸感。品質最安心-完全使用美洲進口處女紙漿，確保紙質優良。,品質與環保流程通過ISO
-                                    9001及14001國際認證。,紙張不含螢光劑，確實為消費者安全把關。,產品最環保-採用永續林木紙漿，絕不使用熱帶雨林木漿，愛護地球從源頭做起。,本產品可在馬桶中分解。
-                                </p>
-                            </div>
-                            <div class="category">
-                                <p>上架時間</p>
-                                <p class="category_date">2019.04.07</p>
-                            </div>
-                            <div class="Audit_results">
-                                <span class="center">
-                                    <input type="checkbox" name="">
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
+                            <p>3月1日，全美國武漢肺炎確診病例還不到百例，當時對美國人來說，新型冠狀病毒彷彿是發生在外太空的怪奇病菌，絕不會影響他們的生活。
+                            </p>
+                        </div>
+                        <div class="category">
+                            <p>最新消息</p>
+                            <h1 class="tag">世界新聞</h1>
+                            <p class="category_date">2019.04.07</p>
+                        </div>
+                        <div class="Audit_results">
+                            <span class="center">
+                                <input type="checkbox" name="">
+                            </span>
+                        </div>
+                    </li> -->
+                </ul>
+            </li>
+            <li class="data i6" style="display: none;">
+                <ul class="game_list">
+                    <!-- <li class="p_game">
+                                    <div class="game_topic">
+                                        <h1>冠狀病毒的簡稱是什麼？</h1>
+                                    </div>
+                                    <ul class="answer_list">
+                                        <li>
+                                            <span>A.</span>
+                                            <p>Convid-19</p>
+                                        </li>
+                                        <li>
+                                            <span>B.</span>
+                                            <p>Convid-18</p>
+                                        </li>
+                                        <li>
+                                            <span>C.</span>
+                                            <p>Covid-17</p>
+                                        </li>
+                                    </ul>
+                                    <div class="answer">
+                                        <p>A.Convid-19</p>
+                                    </div>
+                                    <div class="Audit_results">
+                                        <span class="center">
+                                            <input type="checkbox" name="">
+                                        </span>
+                                    </div>
+                                </li> -->
+                </ul>
+            </li>
+            <li class="data i7" style="display: none;">
+                <ul class="care_list">
+                    <!-- <li class="p_care">
+                                    <div class="care_topic">
+                                        <h1>下呼吸道症狀</h1>
+                                    </div>
+                                    <ul class="answer_list">
+                                        <li>
+                                            <span>1.</span>
+                                            <p>咳嗽</p>
+                                        </li>
+                                        <li>
+                                            <span>2.</span>
+                                            <p>呼吸急促</p>
+                                        </li>
+                                        <li>
+                                            <span>3.</span>
+                                            <p>無</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="gat_point">
+                                        <li>
+                                            <span>+</span>
+                                            <p>8</p>
+                                        </li>
+                                        <li>
+                                            <span>+</span>
+                                            <p>17</p>
+                                        </li>
+                                        <li>
+                                            <span>+</span>
+                                            <p>0</p>
+                                        </li>
+                                    </ul>
+                                    <div class="Audit_results">
+                                        <span class="center">
+                                            <input type="checkbox" name="">
+                                        </span>
+                                    </div>
+                                </li> -->
+                </ul>
+            </li>
+            <li class="data i8" style="display: none;">
+                <ul class="product_list">
+                    <!-- <li class="p_product">
+                                    <div class="product_img">
+                                        <img src="../dest/image/index-commodity/Image_19.png" alt="">
+                                    </div>
+                                    <div class="main_data">
+                                        <h1 class="product_title">防疫衛生紙</h1>
+                                        <ul class="product_tag">
+                                            <li><span>#</span>流鼻水</li>
+                                            <li><span>#</span>咳嗽</li>
+                                            <li><span>#</span>防疫</li>
+                                        </ul>
+                                        <p>柔軟再升級-獨創的紙纖柔化新技術，讓肌膚享受超細滑的觸感。品質最安心-完全使用美洲進口處女紙漿，確保紙質優良。,品質與環保流程通過ISO
+                                            9001及14001國際認證。,紙張不含螢光劑，確實為消費者安全把關。,產品最環保-採用永續林木紙漿，絕不使用熱帶雨林木漿，愛護地球從源頭做起。,本產品可在馬桶中分解。
+                                        </p>
+                                    </div>
+                                    <div class="category">
+                                        <p>上架時間</p>
+                                        <p class="category_date">2019.04.07</p>
+                                    </div>
+                                    <div class="Audit_results">
+                                        <span class="center">
+                                            <input type="checkbox" name="">
+                                        </span>
+                                    </div>
+                                </li> -->
+                </ul>
+            </li>
             </ul>
             <div class="edit_fuc">
                 <span>編輯</span>
@@ -931,14 +351,14 @@
 
     </footer>
     <script src="../dest/js/Back_End/Back_end.js"></script>
+    <script src="../dest/js/Back_End/B_E_member.js"></script>
     <script src="../dest/js/Back_End/B_E_care.js"></script>
     <script src="../dest/js/Back_End/B_E_forum.js"></script>
-    <script src="../dest/js/Back_End/B_E_game.js"></script>
-    <script src="../dest/js/Back_End/B_E_member.js"></script>
+    <script src="../dest/js/Back_End/B_E_report.js"></script>
+    <!--<script src="../dest/js/Back_End/B_E_game.js"></script>
     <script src="../dest/js/Back_End/B_E_news.js"></script>
     <script src="../dest/js/Back_End/B_E_product.js"></script>
-    <script src="../dest/js/Back_End/B_E_report.js"></script>
-    <script src="../dest/js/Back_End/B_E_tag.js"></script>
+    <script src="../dest/js/Back_End/B_E_tag.js"></script> -->
     <script src="../dest/js/adminLogin.js"></script>
 </body>
 
