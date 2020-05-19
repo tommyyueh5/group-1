@@ -1,11 +1,11 @@
 window.addEventListener('load', () => {
     let xhr = new XMLHttpRequest();
-    
+
     xhr.onload = function () {
         if (xhr.status == 200) {
-           var care_data = JSON.parse(xhr.responseText);
-            console.log(care_data);
-      
+            var care_data = JSON.parse(xhr.responseText);
+            // console.log(care_data);
+
             for (let i = 0; i < care_data.length; i++) {
                 $('.care_list').append(
                     `
@@ -43,34 +43,37 @@ window.addEventListener('load', () => {
                     </ul>
                     <div class="Audit_results">
                         <span class="center">
-                            <input type="checkbox" name="">
+                        <input class="care_isON" id="care_psi${care_data[i].MAN_NO}" type="checkbox" value="${care_data[i].MAN_ANS}">
                         </span>
                     </div>
                 </li>`
                 )
             }
-            let pData = document.querySelectorAll('.isON');
+            let pData = document.querySelectorAll('.care_isON');
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#aaa_${care_data[i].MEM_NO}`).click(function () {
 
-                        if ($(`#aaa_${care_data[i].MEM_NO}`).val() == 0) {
-                            $(`#aaa_${care_data[i].MEM_NO}`).val(1);
-                        } else {
-                            $(`#aaa_${care_data[i].MEM_NO}`).val(0);
-                        }
-                    })
                 } else {
                     p.checked = false;
                 }
-                console.log(pData[i].value);
+
+                $(`#care_psi${care_data[i].MAN_NO}`).click(function () {
+
+                    if ($(`#care_psi${care_data[i].MAN_NO}`).val() == 0) {
+                        $(`#care_psi${care_data[i].MAN_NO}`).val(1);
+                    } else {
+                        $(`#care_psi${care_data[i].MAN_NO}`).val(0);
+                    }
+                    
+                })
+                
             });
         } else {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../dest/PHP/Back_End/Back_End_cares.php", true);
+    xhr.open("Get", "../../../dest/PHP/Back_End/Back_End_cares.php", true);
     xhr.send(null);
 });
 

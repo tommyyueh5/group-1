@@ -71,32 +71,6 @@ gulp.task('fileinclude', function() {
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-<<<<<<< HEAD
-gulp.task('default', function() {
-    browserSync.init({
-        server: {
-            //根目錄
-            baseDir: "./",
-            files: ['**'],
-            proxy: 'http://localhost:3005 ',
-            // index: "dest/homepage.html"
-            // index: "dest/Back_End.html"
-            // index: "dest/Epidemic-prevention-SOP.html"
-            // index: "dest/btn-style.html"
-            // index: "dest/diseaseHistory.html"
-            // index: "dest/game.html"
-            // index: "dest/Epidemic-shop.html"
-            index: "dest/forum.html"
-                // index: "dest/member.html"
-                // index: "dest/infectious-Diseases.hmtl"
-                // index: "dest/latest-news.html"
-                // index: "dest/latest-news_child.html"
-                // index: "dest/index.html"
-                // index: "dest/btn-style.html"
-                // index: "dest/header.html"
-        }
-    });
-=======
 gulp.task('default', function () {
     // browserSync.init({
     //     server: {

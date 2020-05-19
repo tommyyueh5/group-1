@@ -1,10 +1,10 @@
 window.addEventListener('load', () => {
     let xhr = new XMLHttpRequest();
-    
+
     xhr.onload = function () {
         if (xhr.status == 200) {
             const game_data = JSON.parse(xhr.responseText);
-            console.log(game_data);
+            // console.log(game_data);
             for (let i = 0; i < game_data.length; i++) {
                 $('.game_list').append(`
                 <li class="p_game">
@@ -30,36 +30,36 @@ window.addEventListener('load', () => {
                 </div>
                 <div class="Audit_results">
                     <span class="center">
-                        <input type="checkbox" name="">
+                    <input class="game_isON" id="game_psi${game_data[i].GAME_NO}" type="checkbox" value="${game_data[i].GAME_STATUS}">
                     </span>
                 </div>
             </li>`
-            )
+                )
             }
-            
 
-            let pData = document.querySelectorAll('.isON');
+
+            let pData = document.querySelectorAll('.game_isON');
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#aaa_${game_data[i].GAME_NO}`).click(function () {
-
-                        if ($(`#aaa_${game_data[i].GAME_NO}`).val() == 0) {
-                            $(`#aaa_${game_data[i].GAME_NO}`).val(1);
-                        } else {
-                            $(`#aaa_${game_data[i].GAME_NO}`).val(0);
-                        }
-                    })
                 } else {
                     p.checked = false;
-                }
-               
+                };
+                $(`#game_psi${game_data[i].GAME_NO}`).click(function () {
+
+                    if ($(`#game_psi${game_data[i].GAME_NO}`).val() == 0) {
+                        $(`#game_psi${game_data[i].GAME_NO}`).val(1);
+                    } else {
+                        $(`#game_psi${game_data[i].GAME_NO}`).val(0);
+                    }
+                    console.log(p);
+                });
             });
         } else {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/php/Back_End/Back_End_MEM_data.php", true);
+    xhr.open("Get", "../../../dest/php/Back_End/Back_End_game.php", true);
     xhr.send(null);
-   
+
 });

@@ -3,7 +3,7 @@
 try {
   require_once("../connectdd106g1.php");
   //選取資料表
-  $sql = "SELECT * FROM product";
+  $sql = "select * from product";
   //pdo請求資料庫
   $product = $pdo->query($sql);
 

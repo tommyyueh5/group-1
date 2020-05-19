@@ -1,13 +1,13 @@
 window.addEventListener('load', () => {
     let xhr = new XMLHttpRequest();
-    
+
     xhr.onload = function () {
         if (xhr.status == 200) {
             const news_data = JSON.parse(xhr.responseText);
-            console.log(news_data);
+            // console.log(news_data[0].NEWS_NO);
             for (let i = 0; i < news_data.length; i++) {
                 $('.news_list').append(
-                `
+                    `
                 <li class="p_news">
                 <div class="news_img">
                     <img src="${news_data[i]["NEWS_IMG_PATH"]}" alt="">
@@ -28,37 +28,36 @@ window.addEventListener('load', () => {
                 </div>
                 <div class="Audit_results">
                     <span class="center">
-                        <input type="checkbox" name="">
+                    <input class="news_isON" id="news_psi${news_data[i].NEWS_NO}" type="checkbox" value="${news_data[i].NEWS_PUB}">
                     </span>
                 </div>
             </li>
             `
-            )
+                )
             };
-            
 
-            let pData = document.querySelectorAll('.isON');
+            let pData = document.querySelectorAll('.news_isON');
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#aaa_${news_data[i].GAME_NO}`).click(function () {
-
-                        if ($(`#aaa_${news_data[i].GAME_NO}`).val() == 0) {
-                            $(`#aaa_${news_data[i].GAME_NO}`).val(1);
-                        } else {
-                            $(`#aaa_${news_data[i].GAME_NO}`).val(0);
-                        }
-                    })
                 } else {
                     p.checked = false;
-                }
-               
+                };
+                $(`#news_psi${news_data[i].NEWS_NO}`).click(function () {
+
+                    if ($(`#news_psi${news_data[i].NEWS_NO}`).val() == 0) {
+                        $(`#news_psi${news_data[i].NEWS_NO}`).val(1);
+                    } else {
+                        $(`#news_psi${news_data[i].NEWS_NO}`).val(0);
+                    }
+                    console.log(p);
+                });
             });
         } else {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../dest/php/Back_End/Back_End_MEM_data.php", true);
-    xhr.send(null);   
+    xhr.open("Get", "../../../dest/php/Back_End/Back_End_news.php", true);
+    xhr.send(null);
 });
 
