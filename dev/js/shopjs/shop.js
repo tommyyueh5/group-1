@@ -289,14 +289,14 @@ window.addEventListener('load', ()=>{
 
                 
                 newitemD.innerHTML = `<div class="ord-img"></div>
-                    <div class="ord-n">
+                    <div class="ord_pst ord-n">
                         ${storage.getItem(i).split(', ')[storage.getItem(i).split(', ').length-1]}
                     </div>
-                    <div class="ord-price">
+                    <div class="ord_pst ord-price">
                         ${storage.getItem(i).split(', ')[storage.getItem(i).split(', ').length-2]}
                     </div>
 
-                    <div class="ord-remove">
+                    <div class="ord_pst ord-remove">
                     <button class="btnremove" id="${i}">刪除</button>
                     </div>
                 `;
