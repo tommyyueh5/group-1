@@ -1227,7 +1227,6 @@ $i5: 325px;
     position: fixed;
     width: 50vw;
     height: 100vh;
-    // border: 1px solid red;
     background-color: #ccc;
     z-index: 100000;
     // right: 0;
@@ -1235,7 +1234,12 @@ $i5: 325px;
     padding: 20px;
     transform: translateY(50%);
     top: -50%;
-
+    div.list_bottom {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        right: 20px;
+    }
     .cart-list-close {
         width: 100%;
         display: flex;
@@ -1255,8 +1259,7 @@ $i5: 325px;
     }
 
     .cart-list-inner {
-        // border: 1px solid rgb(0, 38, 255);
-        // padding: 20px;
+        position: relative;
         .cart-product-title {
             display: flex;
             justify-content: space-evenly;
@@ -1278,8 +1281,11 @@ $i5: 325px;
                 &:nth-child(4) {
                     flex: 2;
                 }
-                &:nth-child(2n+1){
+                &:nth-child(2n + 1) {
                     background-color: gray;
+                }
+                &:nth-child(2n) {
+                    background-color: #686868;
                 }
             }
         }
@@ -1287,7 +1293,7 @@ $i5: 325px;
         .cart-product-item {
             display: flex;
             justify-content: space-evenly;
-            border-bottom:1px black solid;
+            border-bottom: 1px black solid;
             overflow-y: scroll;
             .ord-img {
                 display: flex;
@@ -1302,7 +1308,7 @@ $i5: 325px;
                     }
                 }
             }
-            .ord_pst{
+            .ord_pst {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -1326,7 +1332,7 @@ $i5: 325px;
 
             & > :nth-child(4) {
                 flex: 2;
-                button.btnremove{
+                button.btnremove {
                     cursor: pointer;
                 }
             }
