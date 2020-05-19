@@ -66,9 +66,6 @@ $i5: 325px;
                     letter-spacing: 0px;
                     display: inline-block;
                 }
-
-
-
             }
 
             .advertise-des {
@@ -89,11 +86,6 @@ $i5: 325px;
                     display: inline-block;
                 }
             }
-
-
-
-
-
         }
 
         .advertise-links {
@@ -105,12 +97,21 @@ $i5: 325px;
             text-transform: uppercase;
             padding: 8px 10px;
             text-decoration: none;
-            background: linear-gradient(to right, rgba(76, 76, 76, 1) 0%, rgba(44, 44, 44, 1) 0%, rgba(89, 89, 89, 1) 0%, rgba(102, 102, 102, 1) 25%, rgba(71, 71, 71, 1) 39%, rgba(43, 43, 43, 1) 76%, rgba(28, 28, 28, 1) 91%, rgba(19, 19, 19, 1) 100%);
+            background: linear-gradient(
+                to right,
+                rgba(76, 76, 76, 1) 0%,
+                rgba(44, 44, 44, 1) 0%,
+                rgba(89, 89, 89, 1) 0%,
+                rgba(102, 102, 102, 1) 25%,
+                rgba(71, 71, 71, 1) 39%,
+                rgba(43, 43, 43, 1) 76%,
+                rgba(28, 28, 28, 1) 91%,
+                rgba(19, 19, 19, 1) 100%
+            );
             color: rgb(255, 255, 255);
             font-size: 20px;
 
             @include rwd(medium) {
-
                 font-size: 18px;
                 left: 78%;
             }
@@ -127,8 +128,6 @@ $i5: 325px;
                 padding: 6px 6px;
             }
         }
-
-
     }
 }
 
@@ -148,7 +147,6 @@ $i5: 325px;
         }
 
         .shop-one {
-
             // border: 1px solid red;
             width: 45%;
 
@@ -167,8 +165,6 @@ $i5: 325px;
                 bottom: -60%;
                 background-color: rgba(230, 230, 230, 0.63);
                 transition: bottom 1s;
-
-
             }
 
             @include rwd-shop(i5) {
@@ -179,7 +175,6 @@ $i5: 325px;
                 background-color: rgba(230, 230, 230, 0.63);
                 transition: bottom 1s;
             }
-
 
             .shop-discount {
                 // border: 1px solid blue;
@@ -296,7 +291,6 @@ $i5: 325px;
                             cursor: pointer;
 
                             @include rwd(mobile) {
-
                                 width: 20px;
                                 height: 20px;
                                 display: block;
@@ -305,11 +299,9 @@ $i5: 325px;
                                     width: 100%;
                                     height: 100%;
                                 }
-
                             }
 
                             @include rwd-shop(i5) {
-
                                 width: 20px;
                                 height: 20px;
                                 display: block;
@@ -320,7 +312,6 @@ $i5: 325px;
                                 }
                             }
                         }
-
 
                         @include rwd(mobile) {
                             div {
@@ -336,7 +327,8 @@ $i5: 325px;
                             }
                         }
 
-                        @include rwd-shop(i5) {}
+                        @include rwd-shop(i5) {
+                        }
                     }
                 }
 
@@ -368,12 +360,8 @@ $i5: 325px;
                         width: 95%;
                     }
                 }
-
             }
-
         }
-
-
 
         .shop-two {
             // border: 1px solid green;
@@ -383,9 +371,7 @@ $i5: 325px;
                 width: 100%;
             }
 
-
             .shop-two-item-des {
-
                 // border: 1px solid rgb(67, 171, 231);
                 .shop-two-item-pic-o {
                     text-align: center;
@@ -460,12 +446,9 @@ $i5: 325px;
                         width: 95%;
                     }
 
-
-
                     .btnplace {
                         margin-left: 28%;
                         display: inline-block;
-
 
                         @include rwd(mobile) {
                             margin-left: 65px;
@@ -474,7 +457,6 @@ $i5: 325px;
                         @include rwd-shop(i5) {
                             margin-left: 20px;
                         }
-
 
                         .re {
                             box-shadow: inset 0px -3px 7px 0px #000000;
@@ -522,8 +504,6 @@ $i5: 325px;
                 }
 
                 .shop-two-item-price-outer {
-
-
                     // border: 1px solid purple;
                     margin: 0 auto;
                     margin-top: 20px;
@@ -545,7 +525,6 @@ $i5: 325px;
                         display: flex;
 
                         @include rwd(mobile) {
-
                             display: block;
                         }
 
@@ -569,7 +548,6 @@ $i5: 325px;
                                 .mobile-text {
                                     font-size: 12px;
                                     margin-right: auto;
-
                                 }
 
                                 .choice-pic {
@@ -639,7 +617,8 @@ $i5: 325px;
                                     font-size: 16px;
                                 }
 
-                                p {}
+                                p {
+                                }
                             }
 
                             .shop-two-item-price-2 {
@@ -665,8 +644,6 @@ $i5: 325px;
                             }
                         }
                     }
-
-
 
                     .cart-out {
                         // border: 1px solid green;
@@ -710,7 +687,7 @@ $i5: 325px;
                                 display: inline-block;
                                 width: 45px;
                                 line-height: 39px;
-                                color: #E6E6E6;
+                                color: #e6e6e6;
                                 font-size: 50px;
                                 border: 1px solid #ccc;
                                 cursor: pointer;
@@ -734,7 +711,7 @@ $i5: 325px;
                                 // border: 1px solid blue;
                                 display: inline-block;
                                 width: 45px;
-                                color: #E6E6E6;
+                                color: #e6e6e6;
                                 line-height: 45px;
                                 font-size: 30px;
                                 border: 1px solid #ccc;
@@ -788,7 +765,6 @@ $i5: 325px;
                                 position: relative;
                                 top: 2px;
                             }
-
                         }
                     }
                 }
@@ -797,12 +773,9 @@ $i5: 325px;
     }
 }
 
-
-
 .mobile-shop {
     bottom: 0 !important;
 }
-
 
 .ac {
     position: absolute;
@@ -812,7 +785,8 @@ $i5: 325px;
     // top: 0;
 }
 
-.ac img {}
+.ac img {
+}
 
 .jacket {
     bottom: -27%;
@@ -847,7 +821,6 @@ $i5: 325px;
         height: 417px;
         left: -8%;
     }
-
 }
 
 .goggles {
@@ -926,7 +899,6 @@ $i5: 325px;
 }
 
 .myowl-item {
-
     // border:1px solid red;
     // margin-right: 10px;
     // text-align: center;
@@ -961,7 +933,6 @@ $i5: 325px;
         width: 120px;
         height: 120px;
         // margin: 20px 20px;
-
     }
 
     @include rwd-shop(i5) {
@@ -1055,7 +1026,6 @@ $i5: 325px;
         }
 
         .shop-item-title-star {
-
             // border: 1px solid red;
             width: 20%;
             text-align: center;
@@ -1078,7 +1048,6 @@ $i5: 325px;
             letter-spacing: 1px;
 
             @include rwd(mobile) {
-
                 font-size: 24px;
             }
 
@@ -1091,7 +1060,7 @@ $i5: 325px;
     .shop-item-pic-1 {
         .shop-item-pic-1-s {
             width: 68%;
-            // border: 1px solid yellowgreen;        
+            // border: 1px solid yellowgreen;
             margin: 0 auto;
             margin-bottom: 50px;
             text-align: center;
@@ -1143,7 +1112,7 @@ $i5: 325px;
     .shop-item-pic-2 {
         .shop-item-pic-2-s {
             width: 65%;
-            // border: 1px solid yellowgreen;        
+            // border: 1px solid yellowgreen;
             margin: 0 auto;
             margin-bottom: 50px;
             text-align: center;
@@ -1252,30 +1221,31 @@ $i5: 325px;
     &:hover p {
         bottom: 80%;
     }
-
 }
-
 
 .cart-list {
     position: fixed;
-    width: 40%;
+    width: 50vw;
     height: 100vh;
-
-    border: 1px solid red;
+    // border: 1px solid red;
+    background-color: #ccc;
     z-index: 100000;
-    right: 0;
-    padding: 10px;
+    // right: 0;
+    left: 0;
+    padding: 20px;
     transform: translateY(50%);
     top: -50%;
-    background-color: white;
 
     .cart-list-close {
         width: 100%;
         display: flex;
-
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        cursor: pointer;
         p {
             font-size: 24px;
-            margin-right: auto;
+            display: inline-block;
         }
 
         .icofont-close-line {
@@ -1285,21 +1255,18 @@ $i5: 325px;
     }
 
     .cart-list-inner {
-        border: 1px solid rgb(0, 38, 255);
-        padding: 20px;
-
+        // border: 1px solid rgb(0, 38, 255);
+        // padding: 20px;
         .cart-product-title {
             display: flex;
             justify-content: space-evenly;
-            border: 1px solid black;
-
+            font-size: 20px;
             .cart-product-title-c {
-                border: 1px solid green;
-
+                padding: 5px;
+                text-align: center;
                 &:nth-child(1) {
                     flex: 4;
                 }
-
                 &:nth-child(2) {
                     flex: 2;
                 }
@@ -1311,61 +1278,61 @@ $i5: 325px;
                 &:nth-child(4) {
                     flex: 2;
                 }
+                &:nth-child(2n+1){
+                    background-color: gray;
+                }
             }
-
         }
-
 
         .cart-product-item {
             display: flex;
             justify-content: space-evenly;
-            border: 1px solid black;
+            border-bottom:1px black solid;
+            overflow-y: scroll;
             .ord-img {
                 display: flex;
-                
+
                 .ord-pic {
                     width: 60px;
                     height: 60px;
 
                     img {
                         width: 100%;
-
+                        margin-left: 50px;
                     }
                 }
             }
+            .ord_pst{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             .ord-remove {
-                
-
                 .ord-title-remove-img {
                     width: 50%;
                 }
             }
-
             & > :nth-child(1) {
                 flex: 4;
-                border: 1px solid red;
             }
 
             & > :nth-child(2) {
                 flex: 2;
-                border: 1px solid red;
             }
 
             & > :nth-child(3) {
                 flex: 2;
-                border: 1px solid red;
             }
 
             & > :nth-child(4) {
                 flex: 2;
-                border: 1px solid red;
-                text-align: center;
+                button.btnremove{
+                    cursor: pointer;
+                }
             }
         }
     }
 }
-
-
 
 .hid {
     display: none;
