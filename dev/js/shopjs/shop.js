@@ -645,7 +645,7 @@ function getproduct() {
     }
 }
 
-
+console.log(1);
 
 // $('.myowl-1-1').owlCarousel({
 //     // stagePadding: 50,
