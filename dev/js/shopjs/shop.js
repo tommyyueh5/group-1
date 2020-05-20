@@ -492,7 +492,7 @@ window.addEventListener('load', ()=>{
         $('.cart-list').addClass('hid');
     });
 
-    
+
     document.getElementById('send').addEventListener('click', send);
     function send() {
         let conn = new XMLHttpRequest();
@@ -545,7 +545,6 @@ function getproduct() {
     conn.onreadystatechange = function() {
         if (conn.readyState==4) {
             if (conn.status == 200) {
-                console.log(22222);
                 let prodataArray; 
                 let shopTypeContentInner = document.getElementById('shop-type-content-inner');
                 let kind = ['group', 'clothe','goggle', 'mask'];
