@@ -234,15 +234,20 @@ window.addEventListener('load', ()=>{
 
 
     //add cart
-    
+    //
+
     const addCartbtn = document.getElementById('addbtn');
     let N = 1;
+    
     var storage = sessionStorage;
     
     addCartbtn.addEventListener('click', function(){
+        let cartall=0;
         if (buyList.length==0) {
             alert('請先選');
+            N = null;
         } else {
+            N=1;
             while ($.inArray(N.toString() , Object.keys(storage) ) !=-1 ) {
                 N++;
             }
@@ -256,14 +261,153 @@ window.addEventListener('load', ()=>{
             }
             storage[`${N}`] +=  `, ${sum*count}, ${count}`;
         }
+
         
+        if (N!=null) {
+            let newitemD;
+
+           
+            newitemD = document.createElement('div');
+
+            newitemD.className="cart-product-item";
+
+            
+            newitemD.innerHTML = `<div class="ord-img"></div>
+                <div class="ord_pst ord-n">
+                    ${storage.getItem(N).split(', ')[storage.getItem(N).split(', ').length-1]}
+                </div>
+                <div class="ord_pst ord-price">
+                    ${storage.getItem(N).split(', ')[storage.getItem(N).split(', ').length-2]}
+                </div>
+
+                <div class="ord_pst ord-remove">
+                <button class="btnremove" id="${N}">刪除</button>
+                </div>
+            `;
+
+            itemL = storage.getItem(N).split(', ')
+            for ( let j = 0 ; j<itemL.length-2; j++) {
+                if (itemL[j].substring(0, itemL[j].length-2) == 'jacket') {
+                    
+                    let divordpic = document.createElement('div');
+                    let divimg = document.createElement('img');
+                    divordpic.className = "ord-pic";
+                    divimg.src = `../dest/image/Epidemic-shop/cloth/${itemL[j].replace('-','_')}.png`;
+                    divimg.setAttribute('da',`${itemL[j]}`);
+                    divordpic.appendChild(divimg);
+                    newitemD.firstChild.appendChild(divordpic);
+
+                } else if (itemL[j].substring(0, itemL[j].length-2) == 'goggles'){
+                    let divordpic = document.createElement('div');
+                    let divimg = document.createElement('img');
+                    divordpic.className = "ord-pic";
+                    divimg.src = `../dest/image/Epidemic-shop/glass/${itemL[j].replace('-','_')}.png`;
+                    divimg.setAttribute('da',`${itemL[j]}`);
+                    divordpic.appendChild(divimg);
+                    newitemD.firstChild.appendChild(divordpic);
+                } else {
+                    let divordpic = document.createElement('div');
+                    let divimg = document.createElement('img');
+                    divordpic.className = "ord-pic";
+                    divimg.src = `../dest/image/Epidemic-shop/mask/${itemL[j].replace('-','_')}.png`;
+                    divimg.setAttribute('da',`${itemL[j]}`);
+                    divordpic.appendChild(divimg);
+                    newitemD.firstChild.appendChild(divordpic);
+                }
+
+
+                cartListInner.appendChild(newitemD);
+                
+            }
+            $('.btnremove').click(deleteItem);
+        } 
+        
+
+        //cartaddsumall
+        
+        for (let i of Object.keys(storage)) {
+            cartall+=parseInt(storage[i].split(', ')[storage[i].split(', ').length-2]);
+        }
+           
+            
+        
+        $('#cart-total').text(cartall);
+        // if (storage.length) {
+            
+        //     let newitemD;
+
+        //     for( let i of Object.keys(storage)) {
+        //         newitemD = document.createElement('div');
+
+        //         newitemD.className="cart-product-item";
+
+                
+        //         newitemD.innerHTML = `<div class="ord-img"></div>
+        //             <div class="ord_pst ord-n">
+        //                 ${storage.getItem(i).split(', ')[storage.getItem(i).split(', ').length-1]}
+        //             </div>
+        //             <div class="ord_pst ord-price">
+        //                 ${storage.getItem(i).split(', ')[storage.getItem(i).split(', ').length-2]}
+        //             </div>
+
+        //             <div class="ord_pst ord-remove">
+        //             <button class="btnremove" id="${i}">刪除</button>
+        //             </div>
+        //         `;
+
+        //         itemL = storage.getItem(i).split(', ')
+        //         for ( let j = 0 ; j<itemL.length-2; j++) {
+        //             if (itemL[j].substring(0, itemL[j].length-2) == 'jacket') {
+                        
+        //                 let divordpic = document.createElement('div');
+        //                 let divimg = document.createElement('img');
+        //                 divordpic.className = "ord-pic";
+        //                 divimg.src = `../dest/image/Epidemic-shop/cloth/${itemL[j].replace('-','_')}.png`;
+        //                 divimg.setAttribute('da',`${itemL[j]}`);
+        //                 divordpic.appendChild(divimg);
+        //                 newitemD.firstChild.appendChild(divordpic);
+
+        //             } else if (itemL[j].substring(0, itemL[j].length-2) == 'goggles'){
+        //                 let divordpic = document.createElement('div');
+        //                 let divimg = document.createElement('img');
+        //                 divordpic.className = "ord-pic";
+        //                 divimg.src = `../dest/image/Epidemic-shop/glass/${itemL[j].replace('-','_')}.png`;
+        //                 divimg.setAttribute('da',`${itemL[j]}`);
+        //                 divordpic.appendChild(divimg);
+        //                 newitemD.firstChild.appendChild(divordpic);
+        //             } else {
+        //                 let divordpic = document.createElement('div');
+        //                 let divimg = document.createElement('img');
+        //                 divordpic.className = "ord-pic";
+        //                 divimg.src = `../dest/image/Epidemic-shop/mask/${itemL[j].replace('-','_')}.png`;
+        //                 divimg.setAttribute('da',`${itemL[j]}`);
+        //                 divordpic.appendChild(divimg);
+        //                 newitemD.firstChild.appendChild(divordpic);
+        //             }
+
+
+        //             cartListInner.appendChild(newitemD);
+                    
+        //         }
+                
+        //     }
+        //     $('.btnremove').click(deleteItem);
+            
+        // }
     });
 
     //remove cart
     function deleteItem(e) {
+        let cartall=0;
         this.parentNode.parentNode.remove();
 
         storage.removeItem(this.id);
+
+        for (let i of Object.keys(storage)) {
+            cartall+=parseInt(storage[i].split(', ')[storage[i].split(', ').length-2]);
+        }
+        
+        $('#cart-total').text(cartall);
     }
 
 
@@ -271,7 +415,7 @@ window.addEventListener('load', ()=>{
 
     //cart
     const cartshow = document.getElementById('cart');
-    const cartListInner = document.getElementById('cart-list-inner');
+    const cartListInner = document.getElementById('cart-product-all');
     cartshow.addEventListener('click', function  (){   
         
         if (document.getElementsByClassName('cart-product-item')) {
@@ -341,11 +485,14 @@ window.addEventListener('load', ()=>{
             
         }
     });
+
+
     const cartListC = document.getElementById('cart-list-close');
     cartListC.addEventListener('click', function(){
         $('.cart-list').addClass('hid');
     });
 
+    
     document.getElementById('send').addEventListener('click', send);
     function send() {
         let conn = new XMLHttpRequest();

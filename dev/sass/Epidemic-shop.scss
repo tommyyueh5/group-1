@@ -1260,6 +1260,7 @@ $i5: 325px;
 
     .cart-list-inner {
         position: relative;
+        // overflow-y: scroll;
         .cart-product-title {
             display: flex;
             justify-content: space-evenly;
@@ -1290,11 +1291,16 @@ $i5: 325px;
             }
         }
 
+        .cart-product-all {
+            overflow-y: scroll;
+            height: 55vh;
+        }
+
         .cart-product-item {
             display: flex;
             justify-content: space-evenly;
             border-bottom: 1px black solid;
-            overflow-y: scroll;
+            // overflow-y: scroll;
             .ord-img {
                 display: flex;
 
