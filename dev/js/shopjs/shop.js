@@ -636,7 +636,6 @@ function getproduct() {
                             items:2,
                             margin: 0,
                         }
-                
                     }
                 });
             } else {
@@ -648,7 +647,6 @@ function getproduct() {
 
 
 
-console.log(11111);
 // $('.myowl-1-1').owlCarousel({
 //     // stagePadding: 50,
     
