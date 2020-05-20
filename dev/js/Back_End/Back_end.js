@@ -55,11 +55,6 @@ window.addEventListener('load', () => {
             listBar.style.top = (50 * index) + 'px';
         })
     });
-
-
-    
-
-
 });
 
 

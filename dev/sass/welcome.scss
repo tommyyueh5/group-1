@@ -5,7 +5,6 @@ body.index_stage {
     background-color: #4d4d4d;
     width: 100%;
     height: 100vh;
-    box-sizing: border-box;
     main.front_back {
         width: 1200px;
         height: 100%;
@@ -26,7 +25,7 @@ body.index_stage {
                 border-top-right-radius: 100px;
                 margin-right: 50px;
                 padding: 50px 20px 10px 20px;
-                width: 340px;
+                width: 370px;
                 cursor: pointer;
                 ul.change_stage {
                     width: 100%;
@@ -60,7 +59,7 @@ body.index_stage {
                 top: 25%;
                 right: 10%;
                 li.logo {
-                    background-image: url(../../dest/image/title/The_Infector.png);
+                    background-image: url(../../dest/image/title/welcome_title.png);
                     width: 500px;
                     height: 250px;
                     background-size: contain;
@@ -70,7 +69,7 @@ body.index_stage {
                 li.logo_text {
                     font-size: 50px;
                     margin-bottom: 30px;
-                    font-family: didot;
+                    font-family: Berkelium Bitmap;
                 }
                 li.login_stage {
                     form.login_item,

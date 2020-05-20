@@ -3,11 +3,11 @@ window.addEventListener('load', () => {
     xhr.onload = function () {
         if (xhr.status == 200) {
             const member_data = JSON.parse(xhr.responseText)
-            console.log(JSON.parse(xhr.responseText));
+            // console.log(JSON.parse(xhr.responseText));
             for (let i = 0; i < member_data.length; i++) {
                 $('.member_list').append(`
                                         <li class="p_list">
-                                        <img class="p_member" src="../dest/image/Back_End/${member_data[i].MEM_IMG}" alt="">
+                                        <img class="p_member" src="${member_data[i].MEM_IMG}" alt="">
                                         <div class="p_data">
                                             <h1>Name:<span>${member_data[i].MEM_NAME}</span></h1>
                                             <p>No.<span>${member_data[i].MEM_NO}</span></p>
@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
                                             <div>
                                                 <p>position:</p>
                                                 <span class="center">
-                                                    <input class="isON" id="aaa_${member_data[i].MEM_NO}" type="checkbox" value="${member_data[i].MEM_POSITION}">
+                                                    <input class="isON" id="member_psi${member_data[i].MEM_NO}" type="checkbox" value="${member_data[i].MEM_POSITION}">
                                                 </span>
                                             </div>
                                         </div>
@@ -26,18 +26,20 @@ window.addEventListener('load', () => {
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#aaa_${member_data[i].MEM_NO}`).click(function () {
-
-                        if ($(`#aaa_${member_data[i].MEM_NO}`).val() == 0) {
-                            $(`#aaa_${member_data[i].MEM_NO}`).val(1);
-                        } else {
-                            $(`#aaa_${member_data[i].MEM_NO}`).val(0);
-                        }
-                    })
                 } else {
                     p.checked = false;
                 }
-                console.log(pData[i].value);
+                $(`#member_psi${member_data[i].MEM_NO}`).click(function () {
+
+                    if ($(`#member_psi${member_data[i].MEM_NO}`).val() == 0) {
+                        $(`#member_psi${member_data[i].MEM_NO}`).val(1);
+                    } else {
+                        $(`#member_psi${member_data[i].MEM_NO}`).val(0);
+                    }
+                    console.log(p);
+                });
+
+
             });
         } else {
             alert(xhr.status);
