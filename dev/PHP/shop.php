@@ -8,7 +8,8 @@
         $pdo = new PDO($dsn, $user, $password);
         
         $sql = "SELECT *
-                FROM PRODUCT";
+                FROM PRODUCT
+                WHERE PRO_SHE=1";
 
         $statement = $pdo->prepare($sql);
         $statement->execute();

@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="../dest/node_modules/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="../dest/css/Epidemic-shop.css">
 
-    @@include('./LAYOUT/head.html')
-
-    
+    <!-- @@include('./LAYOUT/head.html') -->
+    <link rel="stylesheet" href="../dest/node_modules/icofont/icofont.css">
+    <script src="../dest/node_modules/jquery/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/667c458472.js" crossorigin="anonymous"></script>
     <!-- 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
@@ -378,7 +378,7 @@
                                 </div> -->
                                 <!-- mask  -->
 
-                                
+
 
 
                             </div>
@@ -428,13 +428,13 @@
                                             alt="" da="goggles-1">
                                     </div>
                                     <div class="choice-pic">
-                                        <img class="choice-img" src="../dest/image/Epidemic-shop/mask/mask_1.png"
-                                            alt="" da="mask-1">
+                                        <img class="choice-img" src="../dest/image/Epidemic-shop/mask/mask_1.png" alt=""
+                                            da="mask-1">
                                     </div>
                                 </div>
                                 <div class="shop-two-item-price-i">
                                     <div class="shop-two-item-price-1">
-                                        
+
                                         <p>總價</p>
                                     </div>
                                     <div class="shop-two-item-price-2">
@@ -660,11 +660,13 @@
     </div>
 
     <div class="cart-list hid" id="cart">
-        <div class="cart-list-close" id="cart-list-close">
-            <p><i class="icofont icofont-cart" ></i>我的購物車</p>
-            <i class="icofont icofont-close-line"></i>
+        <div class="cart-list-close">
+            <i id="cart-list-close" class="icofont icofont-close-line"></i>
+            <p><i class="icofont icofont-cart"></i>我的購物車</p>
         </div>
         <div class="cart-list-inner" id="cart-list-inner">
+
+            
             <div class="cart-product-title">
                 <div class="cart-product-title-c cart-title-img">
                     <p>商品</p>
@@ -679,7 +681,9 @@
                     <p>移除</p>
                 </div>
             </div>
-            
+            <div class="cart-product-all" id="cart-product-all">
+
+            </div>
             <!-- <div class="cart-product-item" id="item">
                 
                 <div>
@@ -707,15 +711,17 @@
                 </div>
                 
             </div> -->
+            
 
         </div>
-        <div>
-            <button id="send">ok</button>
+        <div class="list_bottom">
+            <p>總價<span id="cart-total">123</span></p> 
+            <button id="send">確認訂單</button>
         </div>
     </div>
-        <!-- @@include('./LAYOUT/footer.html') -->
-        <!-- <script src="./jquery/jquery.min.js"></script> -->
-        
+    <!-- @@include('./LAYOUT/footer.html') -->
+    <!-- <script src="./jquery/jquery.min.js"></script> -->
+
     <script src="../dest/node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
     <script src="../dest/js/shopjs/shop.js"></script>
 </body>

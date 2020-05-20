@@ -6,27 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>welcome</title>
     <link rel="stylesheet" href="../dest/css/welcome.css">
-    
+    <script src="../dest/js/welcome.js"></script>
+    <link rel="stylesheet" href="../dest/node_modules/icofont/icofont.css">
 </head>
 
-<body>
-    <main class="fontandback">
-        
-            <div class="door front_door">
-                
-                <a href="../dest/homepage.html"></a>
-                <p>前台</p>
-
+<body class="index_stage">
+    <main class="front_back">
+        <div class="login_Bg" id="loginBg">
+            <div class="stage_item">
+                <ul class="change_stage">
+                    <li class="stage" id="front">
+                        <p><span>F</span>ront</p>
+                    </li>
+                    <li class="stage" id="back">
+                        <p><span>B</span>ack</p>
+                    </li>
+                </ul>
             </div>
-
-            <div class="door back_door">
-
-                <a href="../dest/Back_End.html"></a>
-                <p>後台</p>
-
-            </div>
-
+            <ul class="login_box">
+                <li class="logo"></li>
+                <li class="logo_text">疫鄉人</li>
+                <li class="login_stage">
+                    <form id="Front_login" class="login_item">
+                        <button id="in_homepage" class="login_btn" type="button">進入</button>
+                    </form>
+                    <div id="Back_login" class="login_item">
+                        <label for="name">Rootname : <input id="rootName" type="text"></label>
+                        <label for="psw">Passwoed : <input id="pws_box" type="password"><i class="icofont icofont-eye-blocked"></i></label>
+                        <button id="Backstage" class="login_btn" type="button">登入</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </main>
+    <script src="../dest/js/adminLogin.js"></script>
 </body>
-
 </html>

@@ -15,7 +15,15 @@ window.addEventListener('load', function () {
     textError.textContent = '帳號密碼有誤請重新輸入';
     let loginBox = $cs('login-Box');
     // console.log(loginBox);
-
+    // 點擊打叉就返回上一頁
+    // if(!$id(btnX)){
+    //     return
+    // }else{
+    //     $id(btnX).addEventListener('click',function(e){
+    //         e.stopPropagation();
+    //         this.href = history.go(-1);
+    //     });
+    // }
     // 在登出的狀況下點擊會員中心 
     
     let datamemb = null;
@@ -39,7 +47,7 @@ window.addEventListener('load', function () {
                     sessionStorage.setItem('point', datamemb.point);
                     sessionStorage.setItem('no', datamemb.no);
                     
-                    window.location.href = '../../dest/member.html'
+                    window.location.href = '../dest/member.html'
                     $cs('member_center').classList.add('on');
                     $id('editname').value = sessionStorage.getItem('memId');
                     $id('editemail').value = sessionStorage.getItem('email');
@@ -58,10 +66,11 @@ window.addEventListener('load', function () {
             }
 
         }
-        xhr.open("POST", "../../dest/php/sessionLogin.php", true);
+        // xhr.open("POST", "http://localhost/DD106g1/sessionLogin.php", true);
+        xhr.open("POST", "../dest/PHP/sessionLogin.php", true);
+        // xhr.open("POST", "../../dest/php/sessionLogin.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         let data_info = `emeEmail=${$id('emeEmail').value}&emePaw=${$id('emePaw').value}`;
-        // console.log(data_info);
         
         xhr.send(data_info);
         
@@ -74,7 +83,7 @@ window.addEventListener('load', function () {
     $id("login_btn").addEventListener('click', function () {
         if ($id("login_btn").textContent == '登出') {
             sessionStorage.clear();
-            window.location.href = '../../dest/homepage.html'
+            window.location.href = '../dest/homepage.html'
         } else {
             return
         }
@@ -92,17 +101,22 @@ window.addEventListener('load', function () {
         $cs('member_center').classList.add('on');
     }
     let hanNo = sessionStorage.getItem('no');
-    if (!hanNo ||  !$id('editname')) {
-        $id('editname').value = sessionStorage.getItem('memId');
+    // 有session的hanNo不存在
+    if (!hanNo) {
+        // $id('memPoint').textContent = sessionStorage.getItem('point');
         console.log('不存在');
         return
-    }else{
+    }else if(hanNo){
          console.log('存在');
-        $id('editname').value = sessionStorage.getItem('memId');
-        $id('editemail').value = sessionStorage.getItem('email');
-        $cs('member_img>img').src = sessionStorage.getItem('memImg');
-        $id('MyPoint').textContent = sessionStorage.getItem('point');
         $id('memPoint').textContent = sessionStorage.getItem('point');
+        if($id('editname')){
+            $id('editname').value = sessionStorage.getItem('memId');
+            $id('editemail').value = sessionStorage.getItem('email');
+            $cs('member_img>img').src = sessionStorage.getItem('memImg');
+            $id('MyPoint').textContent = sessionStorage.getItem('point');
+        }else{
+            return
+        }
     }
 
     

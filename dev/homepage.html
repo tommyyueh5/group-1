@@ -10,11 +10,10 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css' />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/css/swiper.css' />
     <link rel="stylesheet" type="text/css" href="../dest/css/homepage.css">
-
+    <script src="../dest/node_modules/jquery/jquery.js"></script>
 </head>
 
 <body>
-
     @@include('./LAYOUT/header.html')
     <section id="section1" class="section page-1">
         <div class="stars">
@@ -459,7 +458,6 @@
                         <!-- Add Pagination -->
                         <div class="paginations"></div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -469,22 +467,7 @@
     </section>
     
     <div class="subNewsBox"></div> <!--  開啟子頁面全部新聞框架 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
-    <script src="https://d3js.org/d3-geo.v1.js"></script>
-    <script src="https://d3js.org/topojson.v2.js"></script>
-    <script
-        src="https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js">
-    </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.3.7/js/swiper.js'></script>
-    <script src="../dest/node_modules/typed.js@2.0.11/lib/typed.min.js"></script>
-    <script src="../dest/js/homepage.js"></script>
-    <script src="../dest/js/Earth.js"></script>
-    <script src="../dest/js/var.js"></script>
-
-
-    
-
+        @@include('./html_plugin/homepage_plugin.html')    
 </body>
 
 </html>
