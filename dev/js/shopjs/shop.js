@@ -492,11 +492,6 @@ window.addEventListener('load', ()=>{
         $('.cart-list').addClass('hid');
     });
 
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 7cb0922b4b11d93de3bb80307cc07e8ca02f769d
     document.getElementById('send').addEventListener('click', send);
     function send() {
         let conn = new XMLHttpRequest();
@@ -650,14 +645,8 @@ function getproduct() {
     }
 }
 
-<<<<<<< HEAD
 console.log(1);
 
-=======
-
-
-console.log(11111);
->>>>>>> 7cb0922b4b11d93de3bb80307cc07e8ca02f769d
 // $('.myowl-1-1').owlCarousel({
 //     // stagePadding: 50,
     

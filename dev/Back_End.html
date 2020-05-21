@@ -50,14 +50,18 @@
                     <i class="icofont icofont-ui-game"></i>
                     <h1 class="">遊戲題庫</h1>
                 </li>
-                <li class="mgmt_title" id="care">
-                    <i class="icofont icofont-medical-sign"></i>
-                    <h1 class="">自我檢測題目</h1>
-                </li>
                 <li class="mgmt_title" id="product">
                     <i class="icofont icofont-box"></i>
                     <h1 class="">商品上下架</h1>
                 </li>
+                <li class="mgmt_title" id="care">
+                    <i class="icofont icofont-medical-sign"></i>
+                    <h1 class="">自我檢測題目</h1>
+                </li>
+                <!-- <li class="mgmt_title" id="product">
+                    <i class="icofont icofont-box"></i>
+                    <h1 class="">商品上下架</h1>
+                </li> -->
             </ul>
         </aside>
         <section class="mgmt_data">
@@ -266,77 +270,41 @@
                     </ul>
                 </li>
                 <li class="data i7" style="display: none;">
-                    <ul class="care_list">
-                        <!-- <li class="p_care">
-                                    <div class="care_topic">
-                                        <h1>下呼吸道症狀</h1>
-                                    </div>
-                                    <ul class="answer_list">
-                                        <li>
-                                            <span>1.</span>
-                                            <p>咳嗽</p>
-                                        </li>
-                                        <li>
-                                            <span>2.</span>
-                                            <p>呼吸急促</p>
-                                        </li>
-                                        <li>
-                                            <span>3.</span>
-                                            <p>無</p>
-                                        </li>
-                                    </ul>
-                                    <ul class="gat_point">
-                                        <li>
-                                            <span>+</span>
-                                            <p>8</p>
-                                        </li>
-                                        <li>
-                                            <span>+</span>
-                                            <p>17</p>
-                                        </li>
-                                        <li>
-                                            <span>+</span>
-                                            <p>0</p>
-                                        </li>
-                                    </ul>
-                                    <div class="Audit_results">
-                                        <span class="center">
-                                            <input type="checkbox" name="">
-                                        </span>
-                                    </div>
-                                </li> -->
-                    </ul>
-                </li>
-                <li class="data i8" style="display: none;">
                     <ul class="product_list">
                         <li class="p_product">
                             <form action="">
-                                <div class="product_upload" id="upload">
-                                    <img src="../dest/image/index-commodity/Image_19.png" alt="">
+                                <div class="product_upload" >
+                                    <!-- <img src="../dest/image/index-commodity/Image_19.png" alt=""> -->
+                                    <img id="product-img-upload" src="http://fakeimg.pl/150x150/282828/EAE0D0/" alt="">
+                                    <input type="file" id="upload">
                                 </div>
                                 <div class="main_data">
                                     <h1 class="product_title">
                                         分類
-                                        <select name="" id="">
+                                        <select name="" id="imageKind">
+                                            <option value="" selected>請選擇</option>
                                             <option value="clothe">隔離衣</option>
                                             <option value="goggle">防疫眼鏡</option>
                                             <option value="mask">防疫口罩</option>
                                         </select>
                                     </h1>
                                     <ul class="product_tag">
-                                        商品敘述
+                                        商品名稱
+                                        <input type="text" id="pro-id">
+                                        商口價格
+                                        <input type="text" id="pro-price">
                                     </ul>
                                     <p>
-                                        
-                                        <textarea name="" id="" cols="10" rows="5"></textarea>
+                                        商品敘述
+                                        <textarea name="" id="product-desc" cols="40" rows="5" style="resize : none;"></textarea>
                                     </p>
                                 </div>
-                                <div class="category">
+                                <!-- <div class="category">
                                     <p>上架時間</p>
                                     <p class="category_date">2019.04.07</p>
-                                </div>
+                                </div> -->
                                 <div class="Audit_results">
-                                    <input type="submit" value="上架">
+                                    <input id="upbtn" name="file" type="submit" value="上架">
                                 </div>
                             </form>
                         </li>
@@ -417,6 +385,49 @@
                         </li> -->
                     </ul>
                 </li>
+                <li class="data i8" style="display: none;">
+                    <ul class="care_list">
+                        <!-- <li class="p_care">
+                                    <div class="care_topic">
+                                        <h1>下呼吸道症狀</h1>
+                                    </div>
+                                    <ul class="answer_list">
+                                        <li>
+                                            <span>1.</span>
+                                            <p>咳嗽</p>
+                                        </li>
+                                        <li>
+                                            <span>2.</span>
+                                            <p>呼吸急促</p>
+                                        </li>
+                                        <li>
+                                            <span>3.</span>
+                                            <p>無</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="gat_point">
+                                        <li>
+                                            <span>+</span>
+                                            <p>8</p>
+                                        </li>
+                                        <li>
+                                            <span>+</span>
+                                            <p>17</p>
+                                        </li>
+                                        <li>
+                                            <span>+</span>
+                                            <p>0</p>
+                                        </li>
+                                    </ul>
+                                    <div class="Audit_results">
+                                        <span class="center">
+                                            <input type="checkbox" name="">
+                                        </span>
+                                    </div>
+                                </li> -->
+                    </ul>
+                </li>
+                
             </ul>
             <div class="edit_fuc">
                 <span>編輯</span>

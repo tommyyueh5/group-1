@@ -1,46 +1,3 @@
-window.addEventListener('load', () => {
-    let xhr = new XMLHttpRequest();
-    
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-           var product_data = JSON.parse(xhr.responseText);
-            // console.log(product_data);
-            for (let i = 0; i < product_data.length; i++) {
-                $('.product_list').append(`
-                <li class="p_product">
-                <div class="product_img">
-                    <img src="${product_data[i].PRO_IMG}" alt="">
-                </div>
-                <div class="main_data">
-                    <h1 class="product_title">${product_data[i].PRO_NAME}</h1>
-                    <ul class="product_tag">
-                        <li><span></span></li>
-                        <li><span></span></li>
-                        <li><span></span></li>
-                    </ul>
-                    <p>
-                    ${product_data[i].PRO_EXP}
-                    </p>
-                </div>
-                <div class="category">
-                    <p>上架時間</p>
-                    <p class="category_date">${product_data[i].PRO_PUBLISH}</p>
-                </div>
-                <div class="Audit_results">
-                    <span class="center">
-                    <input class="product_isON" id="product_psi${product_data[i].PRO_NO}" type="checkbox" value="${product_data[i].PRO_PUB}">
-                    </span>
-                </div>
-            </li>`)
-            }
-            let pData = document.querySelectorAll('.product_isON');
-            pData.forEach((p, i) => {
-                if (p.value == 1) {
-                    p.checked = true;
-                } else {
-                    p.checked = false;
-                }
-                $(`#product_psi${product_data[i].PRO_NO}`).click(function () {
 
 
 let item = `<li class="p_product">
@@ -139,9 +96,9 @@ let item = `<li class="p_product">
 // } 
 
 
+//load product
 let conn = new XMLHttpRequest();
-conn.open('get', '../dev/PHP/shopba.php', true);
-
+conn.open('get', '../dev/PHP/shopbackload.php', true);
 conn.send(null);
 conn.onreadystatechange = function() {
     if (conn.readyState==4) {
@@ -193,7 +150,7 @@ conn.onreadystatechange = function() {
                 let conn = new XMLHttpRequest();
                 $(this).attr('value', this.checked ? '1' : '0');
                 
-                conn.open('get', `../dev/PHP/shopr.php?id=${this.parentNode.id}&c=${$(this).val()}`, true);
+                conn.open('get', `../dev/PHP/shopbackrelease.php?id=${this.parentNode.id}&c=${$(this).val()}`, true);
                 conn.send(null);
                 conn.onreadystatechange = function () {
                     if (conn.readyState==4) {
@@ -203,7 +160,6 @@ conn.onreadystatechange = function() {
                         }
                     } 
                 }
-                // this.value='1';
             });
             
 
@@ -212,3 +168,67 @@ conn.onreadystatechange = function() {
         }
     }
 } 
+
+
+//file
+
+let form = new FormData();
+let readfile = new FileReader();
+const productUpImage = document.getElementById('product-img-upload');
+
+let upfile= document.getElementById('upload');
+upfile.addEventListener('change', function(e){
+
+    form.append('images', upfile.files[0]);
+    readfile.readAsDataURL(e.target.files[0]);
+    readfile.addEventListener('load', function(e) {
+        
+        productUpImage.src= this.result;
+    })
+    for ( let key of form.values()){
+        // console.log(key);
+    }
+
+});
+
+const upload = document.getElementById('upbtn');
+const imageKind = document.getElementById('imageKind');
+const productDesc = document.getElementById('product-desc');
+const proId = document.getElementById('pro-id');
+const proPri = document.getElementById('pro-price');
+
+upload.addEventListener('click', function(e){
+    e.preventDefault();
+
+    form.append('kind',imageKind.value);
+
+
+
+    form.append('desc',productDesc.value);
+
+
+    
+
+    form.append('pri',proPri.value);
+    form.append('id',proId .value);
+    
+   
+    
+    let conn = new XMLHttpRequest();
+
+    conn.open('post', '../dest/php/shopbackaddnewproduct.php', true);
+    conn.send(form);
+    conn.onreadystatechange = function() {
+        if (conn.readyState==4) {
+            if (conn.status == 200) {
+                console.log(conn.responseText);
+            }else {
+                alert(conn.status);
+            }
+        } 
+    }
+        
+    
+    
+    
+});
