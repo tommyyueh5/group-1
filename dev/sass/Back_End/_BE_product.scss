@@ -127,6 +127,7 @@
                     width: 120px;
                     height: 120px;
                     object-fit: contain;
+<<<<<<< HEAD
                     object-position: center center;
                 }
                 div.create_product_img {
@@ -142,6 +143,10 @@
                     &:active {
                         background-color: #bbb;
                     }
+=======
+                    object-position:center center;
+                    
+>>>>>>> 63fb450160d8ddf5a985d5fb696d9d2794eb033a
                 }
             }
             div.main_data {
