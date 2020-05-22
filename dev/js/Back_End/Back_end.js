@@ -22,6 +22,7 @@ window.addEventListener('load', () => {
             //先移除全部class .on
             for (let i = 0; i < datas.length; i++) {
                 datas[i].style.display = 'none';
+
             }
             //把自己加上class on.
             datas[index].style.display = 'block';
@@ -34,6 +35,7 @@ window.addEventListener('load', () => {
         $csa('game_list')[0].removeChild($id('create_game'));
         //開啟新增題目createBtn點擊聆聽功能
         createBtn.addEventListener('click', createFun, true)
+
     };
     //新增商品功能
     let cancelCreateProduct = () => {
@@ -46,7 +48,7 @@ window.addEventListener('load', () => {
     //版面標題動態替換功能
     let createBtn = document.querySelector("#create_btn");
     //針對mgmt_title建立自動迴圈，點到誰指定誰
-    Array.from($csa('mgmt_title')).forEach(mgmtClick => {
+    Array.from($csa('mgmt_title')).forEach((mgmtClick, index) => {
         $id('tag_title').textContent = "會員列表"
         //建立點擊聆聽
         mgmtClick.addEventListener("click", () => {
@@ -58,27 +60,31 @@ window.addEventListener('load', () => {
             createBtn.textContent = titleVal;
             //新增案件判斷切換功能
             createBtn.style.display = "none";
+
             //判斷頁籤抬頭
             if (createBtn.textContent == "遊戲題庫") {
                 createBtn.style.display = "block";
                 createBtn.textContent = "新增題庫";
-                //判斷商品頁是否有新增表格
-                if ($id('create_product')) {
-                    //如果有就刪除
-                    cancelCreateProduct();
-                }
-                //判斷頁籤抬頭
             } else if (createBtn.textContent == "商品上下架") {
                 createBtn.style.display = "block";
                 createBtn.textContent = "新增商品";
-                //判斷題庫頁是否有新增表格
-                if ($id('create_game')) {
-                    //如果有就刪除
-                    cancelCreateTopit();
-                }
             } else {
                 createBtn.style.display = "none";
             }
+
+            // 點擊頁籤將取消所有編輯選取
+            let objs = datas[index].querySelectorAll("ul>li");
+            for (let j = 0; j < objs.length; j++) {
+                objs[j].classList.remove("edit_focus");
+            }
+            $id('edit').textContent = '編輯';
+            //切換頁籤直接刪除新增表格
+            if ($id('create_product')) {
+                $csa('product_list')[0].removeChild($id('create_product'));
+            } else if ($id('create_game')) {
+                $csa('game_list')[0].removeChild($id('create_game'));
+            }
+
         })
     });
 
@@ -179,49 +185,69 @@ window.addEventListener('load', () => {
             listBar.style.top = (50 * index) + 'px';
         })
     });
-
-    let edit = () => {
+    // 編輯功能
+    let edit_cancel = () => {
+        // 建立mgmt_title為基礎的自動迴圈
         Array.from($csa('mgmt_title')).forEach((memitem, index) => {
+            // 判斷前兩個不允許做編輯
             if ($tag('h1')[index].textContent == $id('tag_title').textContent) {
                 if ($tag('h1')[index].textContent == "會員列表") {
                     alert(`${memitem.textContent}表單無法修改`)
                 } else if ($tag('h1')[index].textContent == "檢舉案件") {
                     alert(`${memitem.textContent}表單無法修改`)
                 } else {
-                    console.log($csa('data'));
-                    Array.from($csa('data')).forEach((data, index) => {
-                        // $csa('data')[index].children[0].children[0].classList.add('edit_focus')
-                        console.log(data.children);
-                    });
+                    // 後面五個可以做編輯且判斷底下的每一個class有沒有edit_focus沒有的話加上，有的話取消
+                    let objects = $csa('data')[index].querySelectorAll('ul>li')
 
-
-                    // for (let j = 0; j < $csa('data').length; j++) {
-                    //     $csa('data')[index].children[0].children[j].classList.add('edit_focus')
-                    // }
-                }
-                // console.log($csa('data')[index]);
-
-            }
+                    if ($csa('data')[index].querySelectorAll('ul>li')[0].classList.contains('edit_focus')) {
+                        for (let j = 0; j < objects.length; j++) {
+                            objects[j].classList.remove('edit_focus')
+                            // 編輯按鈕文字切換
+                            $id('edit').textContent = '編輯';
+                        }
+                    } else {
+                        let objects = $csa('data')[index].querySelectorAll('ul>li')
+                        for (let j = 0; j < objects.length; j++) {
+                            objects[j].classList.add('edit_focus')
+                            $id('edit').textContent = '取消';
+                        }
+                        // for (let n = 0; n < objects.length; n++) {
+                        //     objects[n].addEventListener('click', choose_edit, true);
+                        // }
+                    };
+                };
+            };
         });
     };
 
-    $id('edit').addEventListener('click', edit, true);
+    $id('edit').addEventListener('click', edit_cancel, true);
+
+    let choose_edit = () => {
+        //頁籤
+        let title_object = $csa('mgmt_title')
+        for (let n = 0; n < title_object.length; n++) {
+            // 表單欄位數
+            let objects = $csa('data')[n].querySelectorAll('ul>li')
+            // 當在當前頁籤且在編輯狀態下才作用
+            if (objects[0].classList.contains('edit_focus')) {
+                 if ($tag('h1')[n].textContent == $id('tag_title').textContent) {
+
+   
+                }
+            }
+        }
+        Array.from($csa('data')[2].querySelector('ul>li').children).forEach(item => {
+            let forumTitle = document.querySelector('.forum_title');
 
 
 
+            console.log($csa('data')[2].querySelector('ul>li').children);
 
-
-
-
-
-
-
-
-
-
-
-
-
+            console.log(forumTitle);
+            // item.replaceChild(input, forumTitle)
+        })
+    }
+    window.addEventListener("click", choose_edit, true);
 
 });
 
