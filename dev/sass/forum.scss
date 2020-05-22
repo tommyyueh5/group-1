@@ -150,6 +150,9 @@ section.top_slide_container {
     height: 580px;
     background-color: whitesmoke;
     position: relative;
+    form {
+        display: inline;
+    }
     div.post {
         // border: 1px solid black;
         position: absolute;
@@ -374,6 +377,10 @@ h2.article_title {
     margin: 20px 0;
 }
 
+p.article_content {
+    display: none;
+}
+
 img.main_img {
     width: 100%;
 }
@@ -595,26 +602,23 @@ div.article_content hr {
     border: 0.5px solid rgb(140, 140, 140);
 }
 
-form {
-    text-align: center;
-    margin-bottom: 18px;
-    textarea {
-        resize: none;
-        width: 80%;
-        height: unset;
-        margin: 18px 10px;
-        font-size: 16px;
-    }
-    button {
-        background-image: url("/dest/image/forum/send.png");
-        background-size: cover;
-        width: 40px;
-        height: 40px;
-        border: unset;
-        cursor: pointer;
-        vertical-align: top;
-        margin: 20px 10px 0;
-    }
+textarea#comment_text {
+    resize: none;
+    width: 80%;
+    height: unset;
+    margin: 18px 10px;
+    font-size: 16px;
+}
+
+button#postCom {
+    background-image: url("/dest/image/forum/send.png");
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    border: unset;
+    cursor: pointer;
+    vertical-align: top;
+    margin: 20px 10px 0;
 }
 
 div.comment {
@@ -622,7 +626,7 @@ div.comment {
     overflow: scroll;
     h2 {
         border-top: 1px solid rgb(140, 140, 140);
-        padding: 15px 40px 12px;
+        padding: 18px 40px 0px;
         font-size: 18px;
         font-weight: bold;
         img {

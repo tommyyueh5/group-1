@@ -4,7 +4,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 header('Content-Type: application/json; charset=UTF-8');
 try{
-    require_once("connectBooks.php");
+    require_once("connet.php");
    
     // if($_SERVER['REQUEST_METHOD']=="POST"){
         $memno = $_POST["memno"];
