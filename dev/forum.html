@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @@include('./LAYOUT/head.html')
+<<<<<<< HEAD
     <link rel="stylesheet" href="../dest/css/forum.css">
     <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
     <link rel="stylesheet" href="../dest/node_modules/slick/slick.css">
     <script src="../dest/node_modules/jquery/jquery.min.js"></script>
 
+=======
+    <!-- <link rel="stylesheet" href="../dest/css/forum.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick.css">
+    <script src="../dest/node_modules/jquery/jquery.min.js"></script> -->
+>>>>>>> han
     <!-- <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
     <link rel="stylesheet" href="../dest/node_modules/slick/slick.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -25,7 +32,10 @@
     <!-- <script src="../dest/node_modules/slick/slick.min.js"></script> -->
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> han
 </head>
 
 <body>
@@ -372,117 +382,21 @@
 
                 $('.post').css('background-color', 'unset');
             });
-            $(function() {
-                /* 瀑布流區塊div */
-                var $container = $('.masonry');
-                //當圖片讀取完畢才執行
-                $container.imagesLoaded(function() {
-                    //選擇瀑布流的區塊名稱
-                    $container.masonry({
-                        itemSelector: '.item',
-                    })
-                });
+        });
+    </script>
+    <script>
+        $(function() {
+            /* 瀑布流區塊div */
+            var $container = $('.masonry');
+            //當圖片讀取完畢才執行
+            $container.imagesLoaded(function() {
+                //選擇瀑布流的區塊名稱
+                $container.masonry({
+                    itemSelector: '.item',
+                })
             });
         });
     </script>
-
-    <script>
-        //抓後端資料顯示在前端
-        // function showData() {
-        //     $.ajax({
-        //         url: './PHP/getinfo.php',
-        //         type: 'GET',
-        //         dataType: 'json',
-        //         success(data) {
-        //             console.log(data.length);
-        //             console.log(data[0].MEM_NO);
-        //             console.log(data);
-        //             for (let i = 0; i < data.length; i++) {
-        //                 userName = data[i].MEM_NO;
-        //                 nowTime = data[i].DIS_EST;
-        //                 topic = data[i].DIS_C_NO;
-        //                 imgPath = data[i].DIS_IMG_PATH;
-        //                 artitle = data[i].DIS_TIT;
-        //                 artcon = data[i].DIS_CON;
-        //                 // <div class="article">
-        //                 //         <h2 class="myname">${userName}</h2>
-        //                 //         <span class="mytime">${nowTime}</span>
-        //                 //         <h2 class="topic">${topic}</h2>
-        //                 //         <img class="myimg" src="${imgPath}">
-        //                 //         <h2 class="mytitle">${artitle}</h2>
-        //                 //         <p class="mycontent">${artcon}</p>
-        //                 //     </div>
-        //                 $('.masonry').append(`
-        //                     <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
-        //                         <div class="item_content">
-        //                             <div class="date">
-        //                                 <h4 class="year">${nowTime}</h4>
-        //                             </div>
-        //                             <div class="info">
-        //                                 <img class="thum_img" src="../dest/image/forum/thum_img1.jpeg">
-        //                                 <h4 class="username">Funny</h4>
-        //                             </div>
-        //                             <h2 class="article_title">${artitle}</h2>
-        //                             <img class="main_img" src="${imgPath}" alt="">
-        //                             <h4 class="like_comment"><span class="likes"></span><span class="comments">40</span>comments</h4>
-
-        //                             <h4 class="function">
-        //                                 <img class="heart" src="../dest/image/forum/like.png">
-        //                                 <img class="share" src="../dest/image/forum/share.png">
-        //                             </h4>
-        //                             <h4 class="function2">
-        //                                 <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
-        //                                 <img class="line" src="../dest/image/forum/line.png" alt="">
-        //                             </h4>
-        //                         </div>
-        //                     </div>
-        //                 `)
-        //             }
-        //         },
-        //         error: function(xhr) {
-        //             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
-        //         }
-        //     });
-        // }
-        // 傳資料到後端
-        function uploadData() {
-            $.ajax({
-                url: './PHP/post.php',
-                type: 'POST',
-                dataType: 'html',
-                data: {
-                    memno: getItem('no'),
-                    sort: $('#sort').val(),
-                    title: $('#title11').val(),
-                    content: $('#content').val(),
-                    path: $(".oldPath")[0].files[0].name,
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.responseText);
-                },
-                success: function(data) {
-                    alert('success: ' + data);
-                    location.href = 'forum.html';
-                }
-            });
-        }
-        //圖片上傳
-        function uploadImg() {
-            var form = new FormData(document.getElementById('upfile'))
-            $.ajax({
-                url: './PHP/upload.php',
-                type: "POST",
-                data: form,
-                processData: false,
-                contentType: false,
-                success: function(data) {
-                    alert(data);
-                }
-            });
-        }
-        // window.addEventListener('load', showData);
-    </script>
-
 
 
 </body>

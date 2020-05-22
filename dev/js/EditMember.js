@@ -46,11 +46,11 @@ window.addEventListener('load', function () {
 
             //ftp需更改=================================================================
             // xhrEdit.open("POST", "http://localhost/DD106g1/EditMem.php", true);
-            xhrEdit.open("POST", "../../dest/PHP/EditMem.php", true);
+            xhrEdit.open("POST", "../../dest/PHP_program/EditMem.php", true);
 
             xhrEdit.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             // 欲將資料傳入資料庫前準備
-            let data_info = `editname=${editname}&editemail=${editemail}&editimg=${editimg} &PHPNO=${PHPNO}`;
+            let data_info = `editname=${editname}&editemail=${editemail}&editimg=${editimg}&PHPNO=${PHPNO}`;
             // console.log(data_info);
             xhrEdit.send(data_info);
         })
@@ -77,6 +77,12 @@ window.addEventListener('load', function () {
         xhrsend.open("post", "../../dest/image/mem_image/uploadIMG.php");
         // xhrsend.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhrsend.send(formData);
+
+
+
+
+
+
         Reader.addEventListener('load', function () {
             // 判斷檔案是否為jpg||png
             let reg = /jpeg|png/;
@@ -98,10 +104,5 @@ window.addEventListener('load', function () {
 
         });
     }
-
-    //   function ImgFileLoading(ImgData,formData){
-
-    //   }
-
 
 })

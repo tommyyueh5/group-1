@@ -70,21 +70,26 @@
                     <input class="submit1" type="button" name="login" value="登入">
                 </form>
 
-                <form class="sign sign-up" action="/dest/index/PHP/sign-up.php" method="GET">
+                <form class="sign sign-up">
                     <label for="upEmail">註冊信箱<br>
-                        <input class="input-data" type="email" name="upEmail">
+                        <input id="RG_Email" class="input-data" type="email" name="upEmail">
+                    </label><br>
+
+                    <label for="upName">註冊名稱<br>
+                        <input id="RG_Name" class="input-data" type="text" name="upName" maxlength="10">
                     </label><br>
 
                     <label for="upPaw">註冊密碼<br>
-                        <input class="input-data" type="password" name="upPaw"><br>
+                        <input id="RG_Pwd" class="input-data" type="password" name="upPaw"><br>
                         <input class="viveswitch" type="checkbox" id="vivePsw">顯示密碼
                     </label>
                     <a href="">忘記密碼</a>
                     <br>
-                    <input class="submit2" type="button" name="login" value="登入">
+                    <input class="submit2" type="button" name="login" value="註冊">
                 </form>
             </div>
         </div>
     </div>
+    <script src="../../dest/js/registered.js"></script>
 </header>
 

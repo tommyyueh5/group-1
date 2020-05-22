@@ -19,6 +19,8 @@ gulp.task('concatlayput', function () {
 });
 gulp.task('concatphp', function() {
     gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
+    //do sometime
+    gulp.src('./dev/PHP_program/**/*.php').pipe(gulp.dest('./dest/PHP_program'))
 });
 gulp.task('concatfonts', function() {
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))

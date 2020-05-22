@@ -1,4 +1,5 @@
 @import "../LAYOUT/base/var";
+
 body {
     background-color: rgb(10, 10, 10);
 }
@@ -44,7 +45,9 @@ aside.member_info {
     margin: 0 20px;
     min-width: 400px;
     text-align: center;
+
     div.member_edit {
+
         #editemail,
         #editname {
             border: 2px solid grey;
@@ -55,16 +58,19 @@ aside.member_info {
             width: 85%;
             cursor: pointer;
         }
+
         #editemail:focus,
         #editname:focus {
             background-color: whitesmoke;
             color: black;
         }
+
         #editemail:disabled,
         #editname:disabled {
             border: unset;
             cursor: none;
         }
+
         #save,
         #cancel {
             border: 1px solid whitesmoke;
@@ -78,15 +84,18 @@ aside.member_info {
             cursor: pointer;
         }
     }
+
     div.member_img {
         width: 100%;
         padding-top: 40px;
         position: relative;
+
         img.thumbnail {
             width: 80%;
             border-top-left-radius: 30%;
             // filter: grayscale(0.9);
         }
+
         form {
             display: none;
             position: absolute;
@@ -95,12 +104,14 @@ aside.member_info {
             transform: translateX(-50%);
             width: 80%;
             text-align: right;
+
             // border: 1px solid white;
             label {
                 position: relative;
                 right: 10px;
                 bottom: 30px;
             }
+
             img {
                 float: right;
                 width: 50px;
@@ -111,6 +122,7 @@ aside.member_info {
                 background-color: rgb(255, 255, 255);
                 border-radius: 10px;
             }
+
             input {
                 border: 1px solid white;
                 color: transparent;
@@ -118,28 +130,34 @@ aside.member_info {
             }
         }
     }
+
     h2.member_name {
         font-size: 30px;
         color: rgb(204, 204, 204);
         font-weight: bolder;
         margin: 25px auto;
     }
+
     h3 {
         font-size: 18px;
         color: rgb(204, 204, 204);
         margin: 25px auto;
     }
+
     h4 {
         color: rgb(204, 204, 204);
         font-size: 24px;
+
         i {
             margin-right: 20px;
         }
     }
+
     a {
         color: unset;
         text-decoration: unset;
     }
+
     h2.edit {
         font-size: 24px;
         color: rgb(204, 204, 204);
@@ -168,10 +186,12 @@ ul.tab_list {
     width: 100%;
     border-bottom: 1px solid grey;
     margin-bottom: 30px;
+
     a {
         color: none;
         text-decoration: unset;
     }
+
     li {
         display: inline-block;
         font-size: 20px;
@@ -179,6 +199,7 @@ ul.tab_list {
         margin: 0 25px;
         padding: 0 15px 15px;
     }
+
     a.-on li {
         border-bottom: 4px solid rgb(228, 228, 8);
         color: rgb(245, 245, 245);
@@ -206,6 +227,7 @@ div.tab_text {
 }
 
 .content_img {
+
     // border: 1px solid white;
     img {
         width: 100%;
@@ -215,22 +237,35 @@ div.tab_text {
 .contents {
     // border: 1px solid white;
     text-align: left;
+
     h2 {
         font-size: 22px;
         letter-spacing: 1px;
         color: rgb(204, 204, 204);
         line-height: 28px;
         margin-bottom: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
+
     p {
         font-size: 14px;
         color: rgb(204, 204, 204);
         letter-spacing: 1px;
         line-height: 20px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     }
 }
 
 .time {
+
     // border: 1px solid white;
     h3 {
         font-size: 16px;
@@ -250,6 +285,7 @@ div.record {
     padding-bottom: 30px;
     margin-bottom: 30px;
     text-align: left;
+
     div.topic {
         h2 {
             font-size: 22px;
@@ -258,30 +294,36 @@ div.record {
             letter-spacing: 1px;
             display: inline-block;
         }
+
         p {
             display: inline-block;
         }
     }
+
     div.comment {
         font-size: 20px;
         color: rgb(204, 204, 204);
         line-height: 30px;
+
         img {
             width: 40px;
             border-radius: 50%;
             margin: 0 5px;
         }
+
         h2 {
             font-size: 20px;
             color: rgb(204, 204, 204);
             display: inline-block;
         }
+
         p {
             color: rgb(204, 204, 204);
             display: inline-block;
             font-size: 20px;
         }
     }
+
     div.theme {
         h3 {
             font-size: 16px;
@@ -304,6 +346,7 @@ div.report {
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid grey;
+
     h3 {
         font-size: 18px;
     }
@@ -311,8 +354,9 @@ div.report {
 
 //重設密碼
 div.tab4 {
-    border-bottom: 1px solid grey;
+    // border-bottom: 1px solid grey;
     padding-bottom: 40px;
+
     h3 {
         font-size: 22px;
         color: rgb(204, 204, 204);
@@ -327,31 +371,53 @@ div.pswCon {
     font-size: 22px;
     color: rgb(204, 204, 204);
     padding-top: 10px;
+
     h2 {
-        width: 35%;
+        width: 40%;
         white-space: nowrap;
         margin: 20px auto;
         font-size: 22px;
         color: rgb(204, 204, 204);
-        text-align: left;
+        text-align: center;
         // border: 1px solid grey;
     }
-    input[type=text] {
-        width: 85%;
-        font-size: 20px;
-        background-color: rgb(241, 241, 241);
+
+    >div {
+        display: inline-block;
+
+        label {
+            display: inline-block;
+            text-align: center;
+            margin-top: 30px;
+
+            input[type=password] {
+                display: inline-flex;
+                ;
+                width: 60%;
+                font-size: 20px;
+                background-color: rgb(241, 241, 241);
+            }
+
+        }
+
+        label:nth-child(2) {
+            padding: 50px;
+        }
+
+        input[type=submit] {
+            font-size: 20px;
+            color: rgb(204, 204, 204);
+            background-color: transparent;
+            border: 1px solid rgb(204, 204, 204);
+            // display: inline-block;
+            padding: 5px 15px;
+            border-radius: 30px;
+            margin: 30px auto 0;
+            cursor: pointer;
+        }
+
     }
-    input[type=submit] {
-        font-size: 20px;
-        color: rgb(204, 204, 204);
-        background-color: transparent;
-        border: 1px solid rgb(204, 204, 204);
-        // display: inline-block;
-        padding: 5px 15px;
-        border-radius: 30px;
-        margin: 0 auto;
-        cursor: pointer;
-    }
+
 }
 
 div.-on {
@@ -364,25 +430,31 @@ div.-on {
         width: 100%;
         min-width: unset;
         margin: 0 auto;
+
         div.member_img {
             width: 40%;
             display: inline-block;
             box-sizing: border-box;
+
             img.thumbnail {
                 width: 300px;
             }
+
             form {
                 width: 300px;
+
                 // border: 1px solid white;
                 label {
                     right: 10px;
                     bottom: 10px;
                 }
+
                 img {
                     width: 50px;
                 }
             }
         }
+
         div.member_edit {
             width: 40%;
             box-sizing: border-box;
@@ -391,12 +463,14 @@ div.-on {
             padding-top: 40px;
         }
     }
+
     // 右邊會員功能資訊欄 
     section.member_data {
         // border: 1px solid white;
         width: 90%;
         margin: 60px auto;
     }
+
     // 頁籤選項
     ul.tab_list {
         li {
@@ -413,34 +487,43 @@ div.-on {
     aside.member_info {
         div.member_img {
             width: 45%;
+
             img.thumbnail {
                 width: 250px;
             }
+
             form {
                 width: 250px;
+
                 // border: 1px solid white;
                 label {
                     right: 10px;
                     bottom: 10px;
                 }
+
                 img {
                     width: 45px;
                 }
             }
         }
+
         div.member_edit {
             width: 45%;
             padding-top: 20px;
         }
+
         h2.member_name {
             font-size: 24px;
         }
+
         h3 {
             font-size: 16px;
         }
+
         h4 {
             font-size: 20px;
         }
+
         h2.edit {
             font-size: 18px;
             color: rgb(204, 204, 204);
@@ -451,12 +534,14 @@ div.-on {
             margin: 30px auto;
         }
     }
+
     // 右邊會員功能資訊欄 
     section.member_data {
         // border: 1px solid white;
         width: 90%;
         margin: 60px auto;
     }
+
     // 頁籤選項
     ul.tab_list {
         li {
@@ -465,21 +550,27 @@ div.-on {
             margin: 0 15px;
         }
     }
+
     //發文紀錄
     .contents {
         h2 {
             font-size: 18px;
         }
+
         p {
             font-size: 12px;
+
         }
     }
+
     .time {
+
         // border: 1px solid white;
-        h3 {
+        >div {
             font-size: 14px;
         }
     }
+
     //留言紀錄
     div.record {
         div.topic {
@@ -487,20 +578,24 @@ div.-on {
                 font-size: 18px;
             }
         }
+
         div.comment {
             h2 {
                 font-size: 18px;
             }
+
             p {
                 font-size: 18px;
             }
         }
+
         div.theme {
             h3 {
                 font-size: 14px;
             }
         }
     }
+
     //檢舉案件狀態
     div.report {
         div.title {
@@ -508,19 +603,23 @@ div.-on {
                 font-size: 18px;
             }
         }
+
         h3 {
             font-size: 16px;
         }
     }
+
     //重設密碼
     div.tab4 {
         h3 {
             font-size: 18px;
         }
+
         div.pswCon {
             h2 {
                 font-size: 18px;
             }
+
             input {
                 font-size: 16px;
             }
@@ -532,23 +631,29 @@ div.-on {
     aside.member_info {
         div.member_img {
             width: 100%;
+
             img.thumbnail {
                 width: 250px;
             }
         }
+
         div.member_edit {
             width: 100%;
             padding-top: 20px;
         }
+
         h2.member_name {
             font-size: 24px;
         }
+
         h3 {
             font-size: 16px;
         }
+
         h4 {
             font-size: 20px;
         }
+
         h2.edit {
             font-size: 18px;
             color: rgb(204, 204, 204);
@@ -559,12 +664,14 @@ div.-on {
             margin: 30px auto;
         }
     }
+
     // 右邊會員功能資訊欄 
     section.member_data {
         // border: 1px solid white;
         width: 100%;
         margin: 40px auto;
     }
+
     // 頁籤選項
     ul.tab_list {
         li {
@@ -573,63 +680,77 @@ div.-on {
             margin: 0 5px;
         }
     }
+
     .contents {
         h2 {
             font-size: 18px;
         }
+
         p {
             font-size: 12px;
         }
     }
+
     .time {
+
         // border: 1px solid white;
         h3 {
             font-size: 14px;
             text-align: center;
         }
     }
+
     div.tab_text {
         padding: 0 15px 25px;
         grid-template-columns: repeat(5, 1fr);
         row-gap: 25px;
+
         div.content_img {
             order: 2;
             grid-column-start: 1;
             grid-column-end: 4;
         }
+
         div.contents {
             order: 1;
             grid-column-start: 1;
             grid-column-end: 6;
         }
+
         div.time {
             order: 3;
             grid-column-start: 4;
             grid-column-end: 6;
         }
     }
+
     //留言紀錄
     div.record {
         padding: 0 15px 25px;
     }
+
     //檢舉案件狀態
     div.report {
         padding: 0 15px 25px;
     }
+
     //重設密碼
     div.tab4 {
         h3 {
             font-size: 18px;
         }
+
         div.pswCon {
             h2 {
                 font-size: 18px;
             }
+
             input {
                 font-size: 16px;
             }
         }
     }
+
     div.-on {
         display: block;
         // overflow: scroll;
