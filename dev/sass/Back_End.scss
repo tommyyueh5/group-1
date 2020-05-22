@@ -2,10 +2,10 @@
 @import "../LAYOUT/base/fonts";
 @import "../LAYOUT/mixins/allmixin";
 @import "../LAYOUT/modules/btn";
-@import "../LAYOUT/rwd/RWD_Total";
 
 body.Back_Edn {
     overflow-y: hidden;
+    margin: 0 auto;
     ::-webkit-scrollbar {
         display: none;
     }
@@ -13,12 +13,15 @@ body.Back_Edn {
     color: white;
     background-color: $deepBgColor;
     header.Back_End_Header {
+        background-color: #333333;
+        height: 60px;
+        width: 100%;
+        min-width: 1440px;
         nav {
-            width: 100%;
-            background-color: $btn-color1;
             display: flex;
             justify-content: center;
-            padding: 5px 0;
+            align-items: center;
+            height: 60px;
             a {
                 background-image: url("../../dest/image/title/logo-text.png");
                 width: 300px;
@@ -31,7 +34,8 @@ body.Back_Edn {
         }
     }
     main.information {
-        min-width: 1100px;
+        min-width: 1440px;
+        max-width: 1440px;
         margin: 0 auto;
         position: relative;
         display: flex;
@@ -79,12 +83,12 @@ body.Back_Edn {
                     background-color: yellow;
                     z-index: -1;
                     transition: linear 0.3s;
-                    &::after{
+                    &::after {
                         position: absolute;
                         right: -25px;
                         transform: rotate(45deg);
                         display: block;
-                        content: '';
+                        content: "";
                         width: 50px;
                         height: 50px;
                         background-color: $deepBgColor;
@@ -104,7 +108,8 @@ body.Back_Edn {
                         color: white;
                         cursor: pointer;
                     }
-                    i.on,h1.on{
+                    i.on,
+                    h1.on {
                         color: black;
                     }
                 }
@@ -115,6 +120,30 @@ body.Back_Edn {
             height: 90%;
             flex: 8;
             position: relative;
+            div#create_btn {
+                position: absolute;
+                font-size: 20px;
+                display: block;
+                padding: 0 20px;
+                height: 40px;
+                width: 150px;
+                top: 10px;
+                right: 90px;
+                z-index: 11;
+                background-color: #333333;
+                text-align: center;
+                line-height: 40px;
+                cursor: pointer;
+                transition: all 0.3s linear;
+                &:hover {
+                    box-shadow: inset -5px -5px #444;
+                    background-color: white;
+                    color: #333333;
+                }
+                &:active {
+                    box-shadow: inset 5px 5px #444;
+                }
+            }
             h1#tag_title {
                 position: absolute;
                 font-size: $main_titleFs;
@@ -124,7 +153,6 @@ body.Back_Edn {
                 width: 100%;
                 height: 55px;
                 z-index: 10;
-
                 &::before {
                     position: absolute;
                     top: 30px;
@@ -143,11 +171,19 @@ body.Back_Edn {
                 overflow: scroll;
                 li.data {
                     width: 100%;
+                    ul {
+                        > li.edit_focus {
+                            cursor: pointer;
+                            transition: all 0.3s linear;
+                            &:hover {
+                                border: 5px solid #fff;
+                            }
+                        }
+                    }
                 }
                 @import "../sass/Back_End/_BE_member.scss";
                 @import "../sass/Back_End/_BE_Report.scss";
                 @import "../sass/Back_End/_BE_forum.scss";
-                @import "../sass/Back_End/_BE_tag.scss";
                 @import "../sass/Back_End/_BE_news.scss";
                 @import "../sass/Back_End/_BE_game.scss";
                 @import "../sass/Back_End/_BE_care.scss";
@@ -171,8 +207,8 @@ body.Back_Edn {
                     padding: 10px 20px;
                     transition: all 0.3s linear;
                     background-color: #333333;
-                    box-shadow:inset -3px -3px 0px #444;
-                    &:hover{
+                    &:hover {
+                        box-shadow: inset -5px -5px #444;
                         background-color: white;
                         color: #333333;
                     }
@@ -182,13 +218,5 @@ body.Back_Edn {
                 }
             }
         }
-    }
-    @include rwd(desktop) {
-    }
-    @include rwd(medium) {
-    }
-    @include rwd(small) {
-    }
-    @include rwd(mobile) {
     }
 }
