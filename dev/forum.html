@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @@include('./LAYOUT/head.html')
+<<<<<<< HEAD
     <link rel="stylesheet" href="../dest/css/forum.css">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick.css">
+    <script src="../dest/node_modules/jquery/jquery.min.js"></script>
+
+=======
+    <!-- <link rel="stylesheet" href="../dest/css/forum.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick.css">
+    <script src="../dest/node_modules/jquery/jquery.min.js"></script> -->
+>>>>>>> han
+    <!-- <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick.css"> -->
+>>>>>>> 6c3531963f80090a88149ab5a12f508ef1b398d6
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- <script src="../dest/node_modules/jquery/jquery.min.js"></script> -->
@@ -20,6 +36,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+<<<<<<< HEAD
+=======
+    <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <!-- <script src="../dest/node_modules/slick/slick.min.js"></script> -->
+
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> han
+>>>>>>> 6c3531963f80090a88149ab5a12f508ef1b398d6
 </head>
 
 <body>
@@ -491,6 +518,7 @@
                 $('#sort').hide();
                 $('.post').css('background-color', 'unset');
             });
+<<<<<<< HEAD
 
         });
         window.addEventListener('load', function() {
@@ -500,6 +528,25 @@
         });
     </script>
 
+=======
+        });
+    </script>
+    <script>
+        $(function() {
+            /* 瀑布流區塊div */
+            var $container = $('.masonry');
+            //當圖片讀取完畢才執行
+            $container.imagesLoaded(function() {
+                //選擇瀑布流的區塊名稱
+                $container.masonry({
+                    itemSelector: '.item',
+                })
+            });
+        });
+    </script>
+
+
+>>>>>>> 6c3531963f80090a88149ab5a12f508ef1b398d6
 </body>
 
 </html>

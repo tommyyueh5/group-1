@@ -196,7 +196,7 @@
     
     transform: scale(1);
     position: relative;
-    background:url("/dev/image/sopImg/3d.png");
+    background:url("../../dest/image/sopImg/3d.png");
     background-size: contain;
     z-index: 10;
     // @include rwd(mobile) {
@@ -316,7 +316,7 @@
     height: 100%;
     position: relative;
     z-index: 10;
-    background:url("/dev/image/sopImg/s.png");
+    background:url("../../dest/image/sopImg/s.png");
     background-size: cover;
     // @include rwd(mobile) {
     //     width: 150px;

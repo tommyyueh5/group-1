@@ -2,9 +2,9 @@ window.addEventListener('load', () => {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-           var forum_data = JSON.parse(xhr.responseText);
-            console.log(forum_data);
-      
+            var forum_data = JSON.parse(xhr.responseText);
+            // console.log(forum_data);
+
             for (let i = 0; i < forum_data.length; i++) {
                 $('.forum_list').append(
                     `
@@ -25,34 +25,34 @@ window.addEventListener('load', () => {
                             </div>
                             <div class="Audit_results">
                                 <span class="center">
-                                    <input type="checkbox" name="">
+                                <input class="forum_isON" id="discussion_psi${forum_data[i].DIS_NO}" type="checkbox" value="${forum_data[i].DIS_PUB}">
                                 </span>
                             </div>
                         </li>`
                 )
             }
-            let pData = document.querySelectorAll('.isON');
+            let pData = document.querySelectorAll('.forum_isON');
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#aaa_${forum_data[i].MEM_NO}`).click(function () {
-
-                        if ($(`#aaa_${forum_data[i].MEM_NO}`).val() == 0) {
-                            $(`#aaa_${forum_data[i].MEM_NO}`).val(1);
-                        } else {
-                            $(`#aaa_${forum_data[i].MEM_NO}`).val(0);
-                        }
-                    })
                 } else {
                     p.checked = false;
                 }
-                console.log(pData[i].value);
+                $(`#discussion_psi${forum_data[i].DIS_NO}`).click(function () {
+
+                    if ($(`#discussion_psi${forum_data[i].DIS_NO}`).val() == 0) {
+                        $(`#discussion_psi${forum_data[i].DIS_NO}`).val(1);
+                    } else {
+                        $(`#discussion_psi${forum_data[i].DIS_NO}`).val(0);
+                    }
+                    
+                })
             });
         } else {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/php/Back_End/Back_End_MEM_data.php", true);
-    xhr.send(null);   
+    xhr.open("Get", "../../../dest/php/Back_End/Back_End_forum.php", true);
+    xhr.send(null);
 });
 

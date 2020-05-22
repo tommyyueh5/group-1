@@ -14,12 +14,13 @@ gulp.task('concatjs', function() {
 gulp.task('concatimage', function() {
     gulp.src('./dev/image/**/*').pipe(gulp.dest('./dest/image'))
 });
-
-gulp.task('concatlayput', function() {
+gulp.task('concatlayput', function () {
     gulp.src('./dev/layout/**/*').pipe(gulp.dest('./dest/Epidemic-shop/icofont'))
 });
 gulp.task('concatphp', function() {
     gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
+    //do sometime
+    gulp.src('./dev/PHP_program/**/*.php').pipe(gulp.dest('./dest/PHP_program'))
 });
 gulp.task('concatfonts', function() {
     gulp.src('./dev/layout/fonts/**/*').pipe(gulp.dest('./dest/fonts'))
@@ -72,7 +73,7 @@ gulp.task('fileinclude', function() {
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-gulp.task('default', function() {
+gulp.task('default', function () {
     // browserSync.init({
     //     server: {
     //         //根目錄
