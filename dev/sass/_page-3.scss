@@ -125,7 +125,8 @@ section.page-3 {
                         min-width: 290px;
                         display: flex;
                         flex-direction: column;
-                        justify-content: center;
+                        justify-content: flex-start;
+                        padding-top: 30px;
 
                         .list-Title {
                             text-align: center;
@@ -513,7 +514,8 @@ section.page-3 {
 }
 @include rwd(mobile) {
     section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template{
-        margin-bottom: 0px;
+        margin-bottom: 15px;
+    height: 250px;
     }
     section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left > div{
         margin-bottom: 15px;
