@@ -1,4 +1,4 @@
-> li.i5 {
+> li.i4 {
     margin-top: 10px;
     width: 100%;
     ul.news_list {
@@ -16,7 +16,7 @@
                 content: "";
                 width: 80%;
                 background-color: #fff;
-                height: 3px;
+                height: 1px;
                 @include HandV_center(100%, 50%);
             }
             div.news_img {
