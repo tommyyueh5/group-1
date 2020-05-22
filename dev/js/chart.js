@@ -1,5 +1,3 @@
-
-
 // -------左上圖----------
 
 
@@ -10,118 +8,118 @@
 // }
 
 
-        // (function (d3) {
-        //     'use strict';
-          
-        //     const titleText1 = 'TAIWAN COVID-19 AREA';
-        //     const titleText = 'time';
-        //     const xAxisLabelText = 'Number of completed quarantines';
+// (function (d3) {
+//     'use strict';
 
-        //     const svg = d3.select('svg');
+//     const titleText1 = 'TAIWAN COVID-19 AREA';
+//     const titleText = 'time';
+//     const xAxisLabelText = 'Number of completed quarantines';
 
-        //     const width = +svg.attr('width');
-        //     const height = +svg.attr('height');
+//     const svg = d3.select('svg');
 
-        //     const render = data => {
-        //         const xValue = d => d['population'];
-        //         const yValue = d => d.country;
-        //         const margin = {
-        //             top: 40,
-        //             right: 0,
-        //             bottom: 50,
-        //             left: 60,
-        //         };
-        //         const innerWidth = width - margin.left - margin.right;
-        //         const innerHeight = height - margin.top - margin.bottom;
+//     const width = +svg.attr('width');
+//     const height = +svg.attr('height');
 
-
-
-        //         const xScale = d3.scaleLinear()
-        //             .domain([0, d3.max(data, xValue)])
-        //             // .scale(xScale2)
-        //             // .orient("left")
-        //             // .ticks(Math.max(width/50, 2))
-        //             .range([0, innerWidth]);
-
-        //         const yScale = d3.scaleBand()
-        //             .domain(data.map(yValue))
-        //             .range([0, innerHeight])
-        //             .padding(0.7);
-
-        //         const g = svg.append('g')
-        //             .attr('transform', `translate(${margin.left},${margin.top})`);
-
-        //         const xAxisTickFormat = number =>
-        //             d3.format('.0s')(number)
-        //             .replace('G', 'B');
-
-        //         const xAxis = d3.axisBottom(xScale)
-        //             .tickFormat(xAxisTickFormat)
-        //             .tickSize(0)
-                 
-
-        //         g.append('g')
-        //             .call(d3.axisLeft(yScale))
-        //             .selectAll('.domain, .tick line')
-        //             .remove();
-
-        //         const xAxisG = g.append('g').call(xAxis)
-        //             .attr('transform', `translate(0,${innerHeight})`);
-
-        //         xAxisG.select('.domain').remove();
-
-        //         xAxisG.append('text')
-        //             .attr('class', 'axis-label')
-        //             .attr('y', 40)
-        //             .attr('x', 150)
-        //             .attr('fill', 'black')
-        //             .text(xAxisLabelText)
-        //             .attr('font-size', 15);
+//     const render = data => {
+//         const xValue = d => d['population'];
+//         const yValue = d => d.country;
+//         const margin = {
+//             top: 40,
+//             right: 0,
+//             bottom: 50,
+//             left: 60,
+//         };
+//         const innerWidth = width - margin.left - margin.right;
+//         const innerHeight = height - margin.top - margin.bottom;
 
 
 
-        //         g.selectAll('rect').data(data)
-        //             .attr('fill', 'url(#linear-gradient)')
-        //             .enter().append('rect')
-        //             .attr('rx', 5) //圓角
-        //             .attr('ry', 5) //圓角
-        //             .text(function (d) {
-        //                 return d;
-        //             })
-        //             .style('fill', '#1e1e1e')
+//         const xScale = d3.scaleLinear()
+//             .domain([0, d3.max(data, xValue)])
+//             // .scale(xScale2)
+//             // .orient("left")
+//             // .ticks(Math.max(width/50, 2))
+//             .range([0, innerWidth]);
 
-        //             .attr('y', d => yScale(yValue(d)))
-        //             // .transition()
-        //             // .duration(1500)
-        //             .attr('width', d => xScale(xValue(d)))
+//         const yScale = d3.scaleBand()
+//             .domain(data.map(yValue))
+//             .range([0, innerHeight])
+//             .padding(0.7);
 
-        //             .attr('height', yScale.bandwidth());
+//         const g = svg.append('g')
+//             .attr('transform', `translate(${margin.left},${margin.top})`);
 
-        //         g.append('text')
-        //             .attr('class', 'title')
-        //             .attr('font-size', 15)
-        //             .attr('x', -40)
-        //             .attr('y', 0)
-        //             .text(titleText);
+//         const xAxisTickFormat = number =>
+//             d3.format('.0s')(number)
+//             .replace('G', 'B');
 
-        //         g.append('text')
-        //             .attr('class', 'title')
-        //             .attr('font-size', 20)
-        //             .attr('x', 30)
-        //             .attr('y', -20)
-        //             .text(titleText1);
+//         const xAxis = d3.axisBottom(xScale)
+//             .tickFormat(xAxisTickFormat)
+//             .tickSize(0)
 
-        //     };
 
-        //     d3.csv('/dest/latest-news/map/striat-map/col/data1.json').then(data => {
-        //         data.forEach(d => {
-        //             console.log(d);
-        //             d.population = +d.population * 10;
-        //         });
-        //         render(data);
-        //     });
+//         g.append('g')
+//             .call(d3.axisLeft(yScale))
+//             .selectAll('.domain, .tick line')
+//             .remove();
 
-        // })(d3);
+//         const xAxisG = g.append('g').call(xAxis)
+//             .attr('transform', `translate(0,${innerHeight})`);
+
+//         xAxisG.select('.domain').remove();
+
+//         xAxisG.append('text')
+//             .attr('class', 'axis-label')
+//             .attr('y', 40)
+//             .attr('x', 150)
+//             .attr('fill', 'black')
+//             .text(xAxisLabelText)
+//             .attr('font-size', 15);
+
+
+
+//         g.selectAll('rect').data(data)
+//             .attr('fill', 'url(#linear-gradient)')
+//             .enter().append('rect')
+//             .attr('rx', 5) //圓角
+//             .attr('ry', 5) //圓角
+//             .text(function (d) {
+//                 return d;
+//             })
+//             .style('fill', '#1e1e1e')
+
+//             .attr('y', d => yScale(yValue(d)))
+//             // .transition()
+//             // .duration(1500)
+//             .attr('width', d => xScale(xValue(d)))
+
+//             .attr('height', yScale.bandwidth());
+
+//         g.append('text')
+//             .attr('class', 'title')
+//             .attr('font-size', 15)
+//             .attr('x', -40)
+//             .attr('y', 0)
+//             .text(titleText);
+
+//         g.append('text')
+//             .attr('class', 'title')
+//             .attr('font-size', 20)
+//             .attr('x', 30)
+//             .attr('y', -20)
+//             .text(titleText1);
+
+//     };
+
+//     d3.csv('/dest/latest-news/map/striat-map/col/data1.json').then(data => {
+//         data.forEach(d => {
+//             console.log(d);
+//             d.population = +d.population * 10;
+//         });
+//         render(data);
+//     });
+
+// })(d3);
 
 // -------右上圖----------
 
@@ -208,7 +206,7 @@ var chart = new Chart(context, {
 });
 
 
-Chart.helpers.drawRoundedTopRectangle = function (ctx, x, y, width, height, radius) {
+Chart.helpers.drawRoundedTopRectangle = function(ctx, x, y, width, height, radius) {
     ctx.beginPath();
     ctx.moveTo(x + radius, y);
     // top right corner
@@ -225,7 +223,7 @@ Chart.helpers.drawRoundedTopRectangle = function (ctx, x, y, width, height, radi
 };
 
 Chart.elements.RoundedTopRectangle = Chart.elements.Rectangle.extend({
-    draw: function () {
+    draw: function() {
         var ctx = this._chart.ctx;
         var vm = this._view;
         var left, right, top, bottom, signX, signY, borderSkipped;
@@ -319,16 +317,14 @@ var myBar = new Chart(ctx, {
     type: 'roundedBar',
     //plugins: [ChartDataSource],
     data: {
-        labels: ['2020/01','2020/02','2020/03', '2020/04', '2020/05', '2020/06', '2020/07', '2020/08','2020/09','2020/10','2020/11','2020/12','2020/13'
-        ],
+        labels: ['2020/01', '2020/02', '2020/03', '2020/04', '2020/05', '2020/06', '2020/07', '2020/08', '2020/09', '2020/10', '2020/11', '2020/12', '2020/13'],
         datasets: [{
             label: '病例數',
-            data: [20, 26,27, 58, 29, 30,24,25,24,25,26,30,24
-            ], //資料以陣列形式存放
+            data: [20, 26, 27, 58, 29, 30, 24, 25, 24, 25, 26, 30, 24], //資料以陣列形式存放
             borderColor: "#80b6f4",
             backgroundColor: "#80b6f4",
             fill: false,
-            borderWidth:1,
+            borderWidth: 1,
         }],
     },
     options: {

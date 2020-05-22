@@ -7,24 +7,34 @@
     <title>Document</title>
     @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="../dest/css/forum.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
     <link rel="stylesheet" href="../dest/node_modules/slick/slick.css">
     <script src="../dest/node_modules/jquery/jquery.min.js"></script>
 
+=======
+
+    <!-- <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
+    <link rel="stylesheet" href="../dest/node_modules/slick/slick.css"> -->
+    <!-- <script src="../dest/node_modules/jquery/jquery.min.js"></script> -->
+>>>>>>> fa2c1b5a93c85ec41fc2c79db40cb02ec2caf657
     <!-- <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
     <link rel="stylesheet" href="../dest/node_modules/slick/slick.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
     <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <!-- <script src="../dest/node_modules/slick/slick.min.js"></script> -->
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa2c1b5a93c85ec41fc2c79db40cb02ec2caf657
 </head>
 
 <body>
@@ -94,7 +104,7 @@
                         <input class="oldPath" id="upload" type="file" name="uploads">
                     </form>
                     <select name="sort" id="sort">
-                        <option disabled >要發什麼版？</option>
+                        <option>要發什麼版？</option>
                         <option value="1">疫情資訊版</option>
                         <option value="2">新聞版</option>
                         <option value="3">八卦版</option>
@@ -102,8 +112,8 @@
                     </select>
                 </div>
                 <textarea id="content" type="text" rows="1" placeholder="你想說的內容？"></textarea><br>
-                <button id="postBtn" type="submit" onclick="uploadData;uploadImg">發文</button>
-                <button id="canBtn" type="submit">取消</button>
+                <button id="postBtn" type="submit" onclick="uploadData();uploadImg()">發文</button>
+                <button id="canBtn">取消</button>
             </div>
 
             <canvas id="canvas"></canvas>
@@ -152,11 +162,12 @@
         <!-- section 中間文章內容 -->
         <section class="content_container">
             <div class="article_content">
-                <h2>《超像塗鴉的衣服》全裸上陣報新聞只好隨便合成？朝日電視台主播意外成為惡搞素材&nbsp&nbsp&nbsp&nbsp<a href="#">#日本</a> <a href="#">#惡搞</a></h2>
-                <h3>2020.04.07</h3>
+                <h2 class="article_content_title"></h2>
+                <h3 class="article_content_time"></h3>
                 <div class="left">
                     <img class="thumbnail" src="/dest/image/forum/thum_img1.jpeg" alt="">
-                    <span>Stusis</span>
+                    <span class="article_content_name"></span>
+                    <span class="article_content_no"></span>
                 </div>
                 <div class="right">
                     <img src="/dest/image/forum/facebook.png" alt="">
@@ -165,18 +176,13 @@
                     <img src="/dest/image/forum/instagram.png" alt="">
                 </div>
                 <img class="main_pic" src="/dest/image/forum/comment_pic1.png" alt="">
-                <p class="article_text">
-                    &nbsp&nbsp&nbsp負責播報六、日新聞的日本朝日電視台主播本間智惠（本間智恵）在上個週末過後意外爆紅，全都是因為她穿了一件白底黑邊的衣服上台播報，乍看之下整個身體都像是經過小朋友隨手塗鴉合成，導致她被網友懷疑實際上是不是全裸呢？甚至還被惡搞素材大玩特玩！當她知道這件衣服在網路上被取笑得這麼誇張，以後可能再也不敢穿這件衣服出門了啊……雖然本魚也覺得這件衣服超像合成就是了！
-                    <br>&nbsp&nbsp&nbsp日本主播本間智惠（本間智恵）自2008年進入朝日電視台，現在主要負責每週六、日的新聞時段，她在上個星期六（4月4日）穿了一套白底黑邊的衣服報了一整天的新聞，隨即成了網路上的話題焦點……
-                </p>
+                <p class="article_text"></p>
                 <hr>
-                <form action="" method="get">
-                    <img class="thumbnail2" src="/dest/image/forum/thum_img1.jpeg" alt="">
-                    <textarea rows="2" placeholder="講話啊白癡......."></textarea>
-                    <button type="submit"></button>
-                </form>
+                <img class="thumbnail2" src="/dest/image/forum/thum_img1.jpeg" alt="">
+                <textarea id="comment_text" type="text" rows="2" placeholder="講話啊白癡......."></textarea>
+                <button type="submit" id="postCom" onclick="uploadCom();showComment()"></button>
                 <div class="comment">
-                    <h2><img src="/dest/image/forum/thum_img2.png">貓草：
+                    <!-- <h2><img src="/dest/image/forum/thum_img2.png">貓草：
                         <span>我看了很久，這衣服真的很二次元ww</span>
                         <span class="time">2020年04月09日 08:54</span>
                     </h2>
@@ -187,119 +193,187 @@
                     <h2><img src="/dest/image/forum/thum_img7.png">貓尿：
                         <span>我看了很久，這衣服真的很二次元ww</span>
                         <span class="time">2020年04月09日 08:54</span>
-                    </h2>
+                    </h2> -->
                 </div>
             </div>
-
             <div class="tab_contents">
-                <!-- tab1 -->
                 <div class="subtitle_1 ">
                     <h3>疫情資訊</h3>
                     <hr>
                 </div>
-                <div class="tab tab1 -on row masonry">
-                    <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
-                        <div class="item_content">
-                            <div class="date">
-                                <h4 class="year">2020</h4>
-                                <h4 class="day">17</h4>
-                                <h4 class="month">4月</h4>
-                            </div>
-                            <div class="info">
-                                <img class="thum_img" src="../dest/image/forum/thum_img1.jpeg">
-                                <h4 class="username">Funny</h4>
-                            </div>
-                            <h2 class="article_title"></h2>
-                            <img class="main_img" src="../dest/image/forum/forum_img_1.jpg" alt="">
-                            <h4 class="like_comment"><span class="likes"></span><span class="comments">40</span>comments</h4>
-
-                            <h4 class="function">
-                                <img class="heart" src="../dest/image/forum/like.png">
-                                <img class="share" src="../dest/image/forum/share.png">
-                            </h4>
-                            <h4 class="function2">
-                                <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
-                                <img class="line" src="../dest/image/forum/line.png" alt="">
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 下方 你可能也喜歡的section -->
-        <section class="stretch">
-            <h2>You may also like</h2>
-            <div class="slider">
-                <a href="">
-                    <div class="slide1"></div>
-                </a>
-                <a href="">
-                    <div class="slide2"></div>
-                </a>
-
-                <a href="">
-                    <div class="slide3"></div>
-                </a>
-                <a href="">
-                    <div class="slide4"></div>
-                </a>
-                <a href="">
-                    <div class="slide5"></div>
-                </a>
-                <a href="">
-                    <div class="slide6"></div>
-                </a>
-                <a href="">
-                    <div class="slide7"></div>
-                </a>
-
+                <!-- tab1 -->
+                <div class="tab tab1 -on row masonry"></div>
             </div>
         </section>
     </main>
     @@include('./LAYOUT/footer.html')
-    <!-- <script src="../dest/js/forum.js"></script> -->
 
-    <!-- <script>
-        $(document).ready(function() {
-            $('.slider').slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
-                            infinite: true,
-                            dots: true
-                        }
-                    }, {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    }, {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                    // You can unslick at a given breakpoint now by adding:
-                    // settings: "unslick"
-                    // instead of a settings object
-                ]
-            });
-        });
-    </script> -->
-
-    <!-- tab頁籤 -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script>
+        // 撈留言資料顯示在前端
+        function showComment() {
+            // console.log(articleNo);
+            var article_No = $('.article_content_no').text();
+            console.log(article_No);
+            $.ajax({
+                url: '../dest/PHP/getcomment.php',
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    articleNo: article_No,
+                },
+                success(data) {
+                    //先清空前面留言資料不然會重複
+                    $(".comment").html('');
+                    for (let i = 0; i < data.length; i++) {
+                        userId = data[i].MEM_ACC;
+                        userPic = data[i].MEM_IMG;
+                        userCom = data[i].COM_CON;
+                        comTime = data[i].COM_DATE;
+                        //動態新增留言欄位
+                        $('.comment').append(`
+                        <h2 id="commentId"><img src="${userPic}">${userId}：
+                            <span>${userCom}</span>
+                            <span class="time">${comTime}</span>
+                        </h2>
+                        `)
+                    }
+                }
+            })
+        }
+        // 撈後端文章資料顯示在前端
+        function showData() {
+            $.ajax({
+                url: '../dest/PHP/getinfo.php',
+                type: 'GET',
+                dataType: 'json',
+                success(data) {
+                    // console.log(data.length);
+                    // console.log(data[0].MEM_NO);
+                    // console.log(data);
+                    for (let i = 0; i < data.length; i++) {
+                        userName = data[i].MEM_ACC;
+                        nowTime = data[i].DIS_EST;
+                        // topic = data[i].DIS_C_NO;
+                        thumImg = data[i].MEM_IMG
+                        imgPath = data[i].DIS_IMG_PATH;
+                        artitle = data[i].DIS_TIT;
+                        artcon = data[i].DIS_CON;
+                        artNo = data[i].DIS_NO
+                            //動態新增要加的欄位
+                        $('.masonry').append(`
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                                <div class="item_content">
+                                    <div class="date">
+                                        <h4 class="year">${nowTime}</h4>
+                                    </div>
+                                    <div class="info">
+                                        <img class="thum_img" src="${thumImg}">
+                                        <h4 class="username">${userName}</h4>
+                                    </div>
+                                    <h2 class="article_title">${artitle}</h2>
+                                    <img class="main_img" src="${imgPath}" alt="">
+                                    <p class="article_contentp">${artcon}</p>
+                                    <p class="article_contentno">${artNo}</p>
+                                    <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">40</span>留言</h4>
+                                    <h4 class="function">
+                                        <img class="heart" src="../dest/image/forum/like.png">
+                                        <img class="share" src="../dest/image/forum/share.png">
+                                    </h4>
+                                    <h4 class="function2">
+                                        <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
+                                        <img class="line" src="../dest/image/forum/line.png" alt="">
+                                    </h4>
+                                </div>
+                            </div>
+                        `)
+                    }
+                },
+                error: function(xhr) {
+                    alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        }
+        // 傳發文的資料到後端
+        function uploadData() {
+            var memno = sessionStorage.getItem('no');
+            console.log(memno);
+            $.ajax({
+                url: '../dest/PHP/post.php',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    memno: memno,
+                    sort: $('#sort').val(),
+                    title: $('#title').val(),
+                    content: $('#content').val(),
+                    path: $(".oldPath")[0].files[0].name,
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.responseText);
+                },
+                success: function(data) {
+                    alert('success: ' + data);
+                    location.href = 'forum.html';
+                }
+            });
+        };
+        // 傳留言資料到後端
+        function uploadCom() {
+            var memno = sessionStorage.getItem('no');
+            var titleNo = $('.article_content_title').text();
+            var articleNo = $('.article_content_no').text();
+            // console.log(articleNo);
+            $.ajax({
+                url: '../dest/PHP/comment.php',
+                type: "POST",
+                dataType: 'html',
+                data: {
+                    articleNo: articleNo,
+                    memno: memno,
+                    comment: $('#comment_text').val(),
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.responseText);
+                },
+                success: function(data) {
+                    alert('success: ' + data);
+                    // location.href = 'forum.html';
+                    $('#comment_text').val('');
+                }
+            });
+        };
+        //發文的圖片上傳
+        function uploadImg() {
+            var form = new FormData(document.getElementById('upfile'))
+
+            $.ajax({
+                url: '../dest/PHP/upload.php',
+                type: "POST",
+                data: form,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    alert(data);
+                }
+            });
+        };
+        //載入圖片避免重疊
+        function imgLoad() {
+            /* 瀑布流區塊div */
+            var $container = $('.masonry');
+            //當圖片讀取完畢才執行
+            $container.imagesLoaded(function() {
+                //選擇瀑布流的區塊名稱
+                $container.masonry({
+                    itemSelector: '.item',
+                })
+            });
+        };
         $(document).ready(function() {
+            showData();
+            imgLoad();
             $("a.tab").on("click", function(e) {
                 e.preventDefault();
 
@@ -309,11 +383,52 @@
                 $("div.tab").removeClass("-on");
                 $("div.tab." + $(this).attr("data-target")).addClass("-on");
             });
+            //動態新增物件 建立聆聽事件
+            //文章燈箱
+            $(".masonry").on("click", '.main_img,.article_title', function(e) {
+                var parr = $(this).parent('.item_content');
+                var thisTime = parr.find('.year');
+                var thisTitle = parr.find('.article_title');
+                var thisThum = parr.find('.thum_img');
+                var thisName = parr.find('.username');
+                var thisImg = parr.find('.main_img');
+                var thisContent = parr.find('.article_contentp');
+                var oldSrc = thisThum.attr('src');
+                var oldSrc2 = thisImg.attr('src');
+                var textext = thisTime.text();
+                var thisNo = parr.find('.article_contentno');
+                var textNum = thisNo.text();
 
-            $(".main_img,.article_title").on("click", function(e) {
+                // console.log(textNo);
+
+                // 頭像
+                $('.thumbnail').attr('src', oldSrc);
+                // 名稱
+                $('.article_content_name').text(thisName.text());
+                // 標題
+                $('.article_content_title').text(thisTitle.text());
+                //文章編號
+                $('.article_content_no').text(textNum);
+                // 時間
+                $('.article_content_time').text(thisTime.text());
+                // 圖片
+                $('.main_pic').attr('src', oldSrc2);
+                // 內文
+                $('.article_text').text(thisContent.text());
+                var status = $('#login_btn').text();
+                var userImage = sessionStorage.getItem('memImg');
+                console.log(userImage);
+
+                if (status == "登入") {
+                    $('.thumbnail2').attr('src', '/dest/image/forum/noface.png');
+                } else {
+                    $('.thumbnail2').attr('src', userImage);
+                };
                 $(".article_content").show();
                 $(".background").show();
                 e.stopPropagation();
+                showComment();
+
             });
             $(".article_content").on("click", function(e) {
                 e.stopPropagation();
@@ -350,16 +465,37 @@
                 $(".filter_left span").text($(this).text());
                 $(".filter_left div").slideToggle();
             });
-
-            //發文按鈕
+            // 發文按鈕  沒登入不能發文
             $('#title').on("click", function() {
-                $('.post').css('background-color', 'rgba(128, 128, 128, 0.6)');
-                $('#upload').show();
-                $('#content').show();
-                $('#postBtn').show();
-                $('#canBtn').show();
-                $('.postimg').show();
-                $('#sort').show();
+                var status = $('#login_btn').text();
+                if (status == "登入") {
+                    alert("請先登入才能發文！！");
+                } else {
+                    $('.post').css('background-color', 'rgba(128, 128, 128, 0.6)');
+                    $('#upload').show();
+                    $('#content').show();
+                    $('#postBtn').show();
+                    $('#canBtn').show();
+                    $('.postimg').show();
+                    $('#sort').show();
+                };
+            });
+            //沒登入不能留言
+            $('#comment_text').on("click", function() {
+                var status = $('#login_btn').text();
+                if (status == "登入") {
+                    alert("請先登入才能留言！！");
+                }
+            });
+            $('#postCom').on("click", function() {
+                var status = $('#login_btn').text();
+                if (status == "登入") {
+                    alert("請先登入才能留言！！");
+                } else {
+                    // location.reload();
+                    // $("#commentId").load(location.href + " #commentId");
+                    showComment();
+                }
             });
             $('#postBtn,#canBtn').on("click", function() {
                 $('#upload').hide();
@@ -368,25 +504,17 @@
                 $('#canBtn').hide();
                 $('.postimg').hide();
                 $('#sort').hide();
-
                 $('.post').css('background-color', 'unset');
             });
         });
-    </script>
-    <script>
-        $(function() {
-            /* 瀑布流區塊div */
-            var $container = $('.masonry');
-            //當圖片讀取完畢才執行
-            $container.imagesLoaded(function() {
-                //選擇瀑布流的區塊名稱
-                $container.masonry({
-                    itemSelector: '.item',
-                })
-            });
-        });
+        // window.addEventListener('load', function() {
+        //     imgLoad();
+        //     showData();
+        //     showComment();
+        // });
     </script>
 
+    </script>
 
 </body>
 
