@@ -1,4 +1,3 @@
-getproduct();
 
 window.addEventListener('load', ()=>{
     
@@ -128,7 +127,6 @@ window.addEventListener('load', ()=>{
                 if (conn.status ==200) {
                     price = JSON.parse(conn.responseText);
                     price.zero=0;
-                    console.log(price);
                 } else {
                     alert(conn.status);
                 }
@@ -190,7 +188,7 @@ window.addEventListener('load', ()=>{
         
         let oo = cl.children[0].getAttribute('kind');
         $(`.shop-item-detail`).addClass('hid');
-        $(`.shop-item-detail[da=${oo}]`).removeClass('hid');
+        $(`.shop-item-detail[kind=${oo}]`).removeClass('hid');
         
 
 
@@ -203,7 +201,7 @@ window.addEventListener('load', ()=>{
 
 
             }
-            console.log(buyList);
+            // console.log(buyList);
         }
         additem();
 
@@ -316,21 +314,33 @@ window.addEventListener('load', ()=>{
             
             itemL = storage.getItem(N).split(', ')
             for ( let j = 0 ; j<itemL.length-2; j++) {
-                if (itemL[j].substring(0, itemL[j].length-2) == 'clothe') {
-                    
+
+                let symposition = itemL[j].indexOf('-');
+                // console.log(symposition);
+                // console.log(itemL[j].substring(0, symposition));
+                if (itemL[j].substring(0, symposition) == 'clothe') {
+                    console.log(555);
                     let divordpic = document.createElement('div');
                     let divimg = document.createElement('img');
                     divordpic.className = "ord-pic";
-                    divimg.src = `../dest/image/Epidemic-shop/cloth/${itemL[j].replace('-','_')}.png`;
+
+                    let da = itemL[j].substring(symposition+1);
+                    let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                    divimg.src = src;
+
                     divimg.setAttribute('da',`${itemL[j]}`);
                     divordpic.appendChild(divimg);
                     newitemD.firstChild.appendChild(divordpic);
 
-                } else if (itemL[j].substring(0, itemL[j].length-2) == 'goggle'){
+                } else if (itemL[j].substring(0, symposition) == 'goggle'){
                     let divordpic = document.createElement('div');
                     let divimg = document.createElement('img');
                     divordpic.className = "ord-pic";
-                    divimg.src = `../dest/image/Epidemic-shop/glass/${itemL[j].replace('-','_')}.png`;
+
+                    let da = itemL[j].substring(symposition+1);
+                    let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                    divimg.src = src;
+
                     divimg.setAttribute('da',`${itemL[j]}`);
                     divordpic.appendChild(divimg);
                     newitemD.firstChild.appendChild(divordpic);
@@ -338,7 +348,11 @@ window.addEventListener('load', ()=>{
                     let divordpic = document.createElement('div');
                     let divimg = document.createElement('img');
                     divordpic.className = "ord-pic";
-                    divimg.src = `../dest/image/Epidemic-shop/mask/${itemL[j].replace('-','_')}.png`;
+
+                    let da = itemL[j].substring(symposition+1);
+                    let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                    divimg.src = src;
+
                     divimg.setAttribute('da',`${itemL[j]}`);
                     divordpic.appendChild(divimg);
                     newitemD.firstChild.appendChild(divordpic);
@@ -478,24 +492,30 @@ window.addEventListener('load', ()=>{
 
                 itemL = storage.getItem(i).split(', ')
                 for ( let j = 0 ; j<itemL.length-2; j++) {
-                    if (itemL[j].substring(0, itemL[j].length-2) == 'clothe') {
+                    let symposition = itemL[j].indexOf('-');
+                    if (itemL[j].substring(0, symposition) == 'clothe') {
                         
                         let divordpic = document.createElement('div');
                         let divimg = document.createElement('img');
                         divordpic.className = "ord-pic";
                         
+                        let da = itemL[j].substring(symposition+1);
+                        let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                        divimg.src = src;
                         
-
-                        divimg.src = `../dest/image/Epidemic-shop/cloth/${itemL[j].replace('-','_')}.png`;
                         divimg.setAttribute('da',`${itemL[j]}`);
                         divordpic.appendChild(divimg);
                         newitemD.firstChild.appendChild(divordpic);
 
-                    } else if (itemL[j].substring(0, itemL[j].length-2) == 'goggle'){
+                    } else if (itemL[j].substring(0, symposition) == 'goggle'){
                         let divordpic = document.createElement('div');
                         let divimg = document.createElement('img');
                         divordpic.className = "ord-pic";
-                        divimg.src = `../dest/image/Epidemic-shop/glass/${itemL[j].replace('-','_')}.png`;
+
+                        let da = itemL[j].substring(symposition+1);
+                        let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                        divimg.src = src;
+
                         divimg.setAttribute('da',`${itemL[j]}`);
                         divordpic.appendChild(divimg);
                         newitemD.firstChild.appendChild(divordpic);
@@ -503,7 +523,13 @@ window.addEventListener('load', ()=>{
                         let divordpic = document.createElement('div');
                         let divimg = document.createElement('img');
                         divordpic.className = "ord-pic";
-                        divimg.src = `../dest/image/Epidemic-shop/mask/${itemL[j].replace('-','_')}.png`;
+
+
+                        let da = itemL[j].substring(symposition+1);
+                        let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                        divimg.src = src;
+
+
                         divimg.setAttribute('da',`${itemL[j]}`);
                         divordpic.appendChild(divimg);
                         newitemD.firstChild.appendChild(divordpic);
@@ -565,11 +591,9 @@ function haha(x, y) {
     return n;
 }
 
-function xaxa() {
-
-}
 
 
+getproduct();
 
 function getproduct() {
     let conn = new XMLHttpRequest();
