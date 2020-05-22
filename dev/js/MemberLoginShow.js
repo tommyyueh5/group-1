@@ -35,15 +35,15 @@ window.addEventListener('load', function () {
             if (xhr.status == 200) {
                 //抓取會員資料
                 datamemb = JSON.parse(xhr.responseText);
-                // datamemb = xhr.responseText;
-                // console.log(datamemb);
+
 
                 if (datamemb.memId) {
                     $id('loginBg').style.display = 'none';
                     $id("login_btn").textContent = "登出";
                     sessionStorage.setItem('memId', datamemb.memId);
-                    sessionStorage.setItem('email', datamemb.email);
                     sessionStorage.setItem('memImg', datamemb.memImg);
+                    sessionStorage.setItem('email', datamemb.email);
+                    sessionStorage.setItem('showPws', datamemb.showPws);
                     sessionStorage.setItem('point', datamemb.point);
                     sessionStorage.setItem('no', datamemb.no);
                     
@@ -53,6 +53,7 @@ window.addEventListener('load', function () {
                     $id('editemail').value = sessionStorage.getItem('email');
                     $cs('member_img>img').src = sessionStorage.getItem('memImg');
                     $id('MyPoint').textContent = sessionStorage.getItem('point');
+                    $id('showPws').textContent = sessionStorage.getItem('showPws');
                     
 
                 }
@@ -66,8 +67,8 @@ window.addEventListener('load', function () {
             }
 
         }
-        xhr.open("POST", "http://localhost/DD106g1/sessionLogin.php", true);
-        // xhr.open("POST", "../../dest/php/sessionLogin.php", true);
+        // xhr.open("POST", "http://localhost/DD106g1/sessionLogin.php", true);
+        xhr.open("POST", "../../dest/PHP_program/sessionLogin.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         let data_info = `emeEmail=${$id('emeEmail').value}&emePaw=${$id('emePaw').value}`;
         
@@ -113,6 +114,8 @@ window.addEventListener('load', function () {
             $id('editemail').value = sessionStorage.getItem('email');
             $cs('member_img>img').src = sessionStorage.getItem('memImg');
             $id('MyPoint').textContent = sessionStorage.getItem('point');
+            $id('showPws').textContent = sessionStorage.getItem('showPws');
+            // !!密碼
         }else{
             return
         }

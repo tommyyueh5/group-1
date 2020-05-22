@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
             for (let i = 0; i < member_data.length; i++) {
                 $('.member_list').append(`
                                         <li class="p_list">
-                                        <img class="p_member" src="../dest/image/Back_End/${member_data[i].MEM_IMG}" alt="">
+                                        <img class="p_member" src="${member_data[i].MEM_IMG}" alt="">
                                         <div class="p_data">
                                             <h1>Name:<span>${member_data[i].MEM_NAME}</span></h1>
                                             <p>No.<span>${member_data[i].MEM_NO}</span></p>
@@ -43,6 +43,7 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../dest/php/Back_End/Back_End_MEM_data.php", true);
+    // xhr.open("Get", "../../dest/php/Back_End/Back_End_MEM_data.php", true);
+    xhr.open("Get", "../../dest/PHP_program/Back_End/Back_End_MEM_data.php", true);
     xhr.send(null);
 });

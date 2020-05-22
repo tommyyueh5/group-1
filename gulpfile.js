@@ -26,7 +26,7 @@ gulp.task('concatlayput', function() {
 });
 gulp.task('concatphp', function() {
     //do sometime
-    gulp.src('./dev/PHP/**/*.php').pipe(gulp.dest('./dest/PHP'))
+    gulp.src('./dev/PHP_program/**/*.php').pipe(gulp.dest('./dest/PHP_program'))
 });
 //編譯scss
 
