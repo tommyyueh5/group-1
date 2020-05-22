@@ -1,5 +1,5 @@
 > li.i5 {
-    margin-top: 10px;
+    margin-top: 20px;
     width: 100%;
     ul.game_topic_title {
         display: flex;
@@ -39,12 +39,26 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 100px;
+            transition: all 0.3s linear;
+            textarea {
+                resize: none;
+                background-color: #333;
+                color: #fff;
+                font-size: 16px;
+            }
+            input.bd_style {
+                border: 1px solid #aaa;
+                margin-left: 10px;
+                color: #fff;
+                background-color: #333;
+                font-size: 16px;
+            }
             &::before {
                 display: block;
                 content: "";
                 width: 80%;
                 background-color: #fff;
-                height: 3px;
+                height: 1px;
                 @include HandV_center(100%, 50%);
             }
             div.game_topic {
@@ -58,7 +72,7 @@
                 flex-direction: column;
                 justify-content: space-around;
                 padding: 50px 0;
-                margin: 0 auto;
+
                 li {
                     width: 200px;
                     height: 100%;
