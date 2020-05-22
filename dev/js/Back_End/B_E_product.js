@@ -13,11 +13,6 @@ window.addEventListener('load', () => {
                 </div>
                 <div class="main_data">
                     <h1 class="product_title">${product_data[i].PRO_NAME}</h1>
-                    <ul class="product_tag">
-                        <li><span></span></li>
-                        <li><span></span></li>
-                        <li><span></span></li>
-                    </ul>
                     <p>
                     ${product_data[i].PRO_EXP}
                     </p>
