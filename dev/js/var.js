@@ -39,7 +39,7 @@ $(document).ready(() => {//html載入完再執行
         if ($(this).prop("checked")) {
             $(':password').attr('type', 'text')
         } else {
-            $(':text').attr('type', 'password')
+            $('#RG_Pwd').attr('type', 'password')
         }
     });
 
