@@ -59,7 +59,7 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/php/Back_End/Back_End_game.php", true);
+    xhr.open("Get", "../../../dest/PHP_program/Back_End/Back_End_game.php", true);
     xhr.send(null);
 
 });
