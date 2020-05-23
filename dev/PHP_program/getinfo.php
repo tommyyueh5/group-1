@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try{
 
-    require_once("connet.php");
+    require_once("connectdd106g1.php");
     
     // $sql= "select * from discussion";
     $sql = "SELECT `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,`MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,`DISCUSSION`.`DIS_C_NO`,`DISCUSSION`.`DIS_NO`,`DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,`DISCUSSION`.`DIS_CON` FROM `MEMBER`,`DISCUSSION` WHERE `MEMBER`.`MEM_NO` = `discussion`.`MEM_NO`";
