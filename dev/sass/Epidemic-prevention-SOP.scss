@@ -28,7 +28,7 @@
     width: 4800px;
     height: 100%;
     position: relative;
-    background-image: url('/dev/image/sop/background0.png');
+    background-image: url('../../dest/image/sop/background0.png');
     background-size: contain;
 }
 
@@ -183,22 +183,22 @@
 
 @keyframes eyes {
     0% {
-        background-image: url('/dev/image/sop/miss.png');
+        background-image: url('../../dest/image/sop/miss.png');
     }
     20% {
-        background-image: url('/dev/image/sop/miss2.png');
+        background-image: url('../../dest/image/sop/miss2.png');
     }
     40% {
-        background-image: url('/dev/image/sop/miss.png');
+        background-image: url('../../dest//image/sop/miss.png');
     }
     60% {
-        background-image: url('/dev/image/sop/miss2.png');
+        background-image: url('../../dest//image/sop/miss2.png');
     }
     80% {
-        background-image: url('/dev/image/sop/miss.png');
+        background-image: url('../../dest//image/sop/miss.png');
     }
     100% {
-        background-image: url('/dev/image/sop/miss2.png');
+        background-image: url('../../dest//image/sop/miss2.png');
     }
 }
 //attendants
