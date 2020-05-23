@@ -1,3 +1,4 @@
+
 window.addEventListener('load', ()=>{
     
     let b = $('.myowl-1-1').attr('tar');
@@ -102,17 +103,41 @@ window.addEventListener('load', ()=>{
     let joker = document.getElementById('haha');
 
 
-    let price = {   'jacket-1': 420, 'jacket-2': 450, 'jacket-3': 410,
-                    'jacket-4': 400, 'jacket-5': 430, 'jacket-6': 440,
-                    'goggles-1': 250, 'goggles-2': 220, 'goggles-3': 240,
-                    'goggles-4': 230, 'goggles-5': 200, 'goggles-6': 220,
-                    'mask-1': 5, 'mask-2': 6, 'mask-3': 7,
-                    'mask-4': 8, 'mask-5': 9, 'mask-6': 10,
-                    'hand-1': 150, 'hand-2': 160, 'hand-3': 170,
-                    'hand-4': 180, 'hand-5': 190, 'hand-6': 140,
-                    'zero': 0,
+    // let price = {   'jacket-1': 420, 'jacket-2': 450, 'jacket-3': 410,
+    //                 'jacket-4': 400, 'jacket-5': 430, 'jacket-6': 440,
+    //                 'goggles-1': 250, 'goggles-2': 220, 'goggles-3': 240,
+    //                 'goggles-4': 230, 'goggles-5': 200, 'goggles-6': 220,
+    //                 'mask-1': 5, 'mask-2': 6, 'mask-3': 7,
+    //                 'mask-4': 8, 'mask-5': 9, 'mask-6': 10,
+    //                 'hand-1': 150, 'hand-2': 160, 'hand-3': 170,
+    //                 'hand-4': 180, 'hand-5': 190, 'hand-6': 140,
+    //                 'zero': 0,
     
-    };
+    // };
+
+    let price;
+
+
+    function getPrice() {
+        let conn = new XMLHttpRequest();
+        conn.open('get', '../dest/php/shopgpri.php', true);
+        conn.send(null);
+        conn.onreadystatechange = function(){
+            if (conn.readyState==4) {
+                if (conn.status ==200) {
+                    price = JSON.parse(conn.responseText);
+                    price.zero=0;
+                } else {
+                    alert(conn.status);
+                }
+            }
+        }
+    }
+
+    getPrice();
+
+
+
 
     let sum;
     let buyList = new Array();
@@ -125,13 +150,13 @@ window.addEventListener('load', ()=>{
 
         
 
-        if (e.currentTarget.children[0].getAttribute('da').substr(0, cl.children[0].getAttribute('da').length-2)=='jacket') {
-            $('#haha').find('.jacket').remove();
+        if (e.currentTarget.children[0].getAttribute('kind')=='clothe') {
+            $('#haha').find('.clothe').remove();
         }
-        if (e.currentTarget.children[0].getAttribute('da').substr(0, cl.children[0].getAttribute('da').length-2)=='goggles') {
-            $('#haha').find('.goggles').remove();
+        if (e.currentTarget.children[0].getAttribute('kind')=='goggle') {
+            $('#haha').find('.goggle').remove();
         }
-        if (e.currentTarget.children[0].getAttribute('da').substr(0, cl.children[0].getAttribute('da').length-2)=='mask') {
+        if (e.currentTarget.children[0].getAttribute('kind')=='mask') {
             $('#haha').find('.mask').remove();
         }
 
@@ -143,7 +168,7 @@ window.addEventListener('load', ()=>{
         cl.classList.remove('sli');
         cl.classList.add('ac');
 
-        cl.classList.add(cl.children[0].getAttribute('da').substr(0, cl.children[0].getAttribute('da').length-2));
+        cl.classList.add(cl.children[0].getAttribute('kind'));
             
         
         // 
@@ -161,9 +186,9 @@ window.addEventListener('load', ()=>{
 
         
         
-        let oo = cl.children[0].getAttribute('da').substr(0, cl.children[0].getAttribute('da').length-2);
+        let oo = cl.children[0].getAttribute('kind');
         $(`.shop-item-detail`).addClass('hid');
-        $(`.shop-item-detail[da=${oo}]`).removeClass('hid');
+        $(`.shop-item-detail[kind=${oo}]`).removeClass('hid');
         
 
 
@@ -172,10 +197,11 @@ window.addEventListener('load', ()=>{
             buyList = [];
             for (let i = 0; i<joker.getElementsByClassName('ac').length; i++ ) {
                 
-                buyList.push(joker.getElementsByClassName('ac')[i].firstElementChild.getAttribute('da'));
+                buyList.push(joker.getElementsByClassName('ac')[i].children[0].getAttribute('kind') +'-'+ joker.getElementsByClassName('ac')[i].firstElementChild.getAttribute('da'));
 
 
             }
+            // console.log(buyList);
         }
         additem();
 
@@ -285,23 +311,36 @@ window.addEventListener('load', ()=>{
                 </div>
             `;
 
+            
             itemL = storage.getItem(N).split(', ')
             for ( let j = 0 ; j<itemL.length-2; j++) {
-                if (itemL[j].substring(0, itemL[j].length-2) == 'jacket') {
-                    
+
+                let symposition = itemL[j].indexOf('-');
+                // console.log(symposition);
+                // console.log(itemL[j].substring(0, symposition));
+                if (itemL[j].substring(0, symposition) == 'clothe') {
+                    console.log(555);
                     let divordpic = document.createElement('div');
                     let divimg = document.createElement('img');
                     divordpic.className = "ord-pic";
-                    divimg.src = `../dest/image/Epidemic-shop/cloth/${itemL[j].replace('-','_')}.png`;
+
+                    let da = itemL[j].substring(symposition+1);
+                    let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                    divimg.src = src;
+
                     divimg.setAttribute('da',`${itemL[j]}`);
                     divordpic.appendChild(divimg);
                     newitemD.firstChild.appendChild(divordpic);
 
-                } else if (itemL[j].substring(0, itemL[j].length-2) == 'goggles'){
+                } else if (itemL[j].substring(0, symposition) == 'goggle'){
                     let divordpic = document.createElement('div');
                     let divimg = document.createElement('img');
                     divordpic.className = "ord-pic";
-                    divimg.src = `../dest/image/Epidemic-shop/glass/${itemL[j].replace('-','_')}.png`;
+
+                    let da = itemL[j].substring(symposition+1);
+                    let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                    divimg.src = src;
+
                     divimg.setAttribute('da',`${itemL[j]}`);
                     divordpic.appendChild(divimg);
                     newitemD.firstChild.appendChild(divordpic);
@@ -309,7 +348,11 @@ window.addEventListener('load', ()=>{
                     let divordpic = document.createElement('div');
                     let divimg = document.createElement('img');
                     divordpic.className = "ord-pic";
-                    divimg.src = `../dest/image/Epidemic-shop/mask/${itemL[j].replace('-','_')}.png`;
+
+                    let da = itemL[j].substring(symposition+1);
+                    let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                    divimg.src = src;
+
                     divimg.setAttribute('da',`${itemL[j]}`);
                     divordpic.appendChild(divimg);
                     newitemD.firstChild.appendChild(divordpic);
@@ -325,8 +368,10 @@ window.addEventListener('load', ()=>{
 
         //cartaddsumall
         
-        for (let i of Object.keys(storage)) {
-            cartall+=parseInt(storage[i].split(', ')[storage[i].split(', ').length-2]);
+        for (let i of Object.keys(storage)) { 
+            if (parseInt(i)!=NaN) {
+                cartall+=parseInt(storage[i].split(', ')[storage[i].split(', ').length-2]);
+            }
         }
            
             
@@ -447,21 +492,30 @@ window.addEventListener('load', ()=>{
 
                 itemL = storage.getItem(i).split(', ')
                 for ( let j = 0 ; j<itemL.length-2; j++) {
-                    if (itemL[j].substring(0, itemL[j].length-2) == 'jacket') {
+                    let symposition = itemL[j].indexOf('-');
+                    if (itemL[j].substring(0, symposition) == 'clothe') {
                         
                         let divordpic = document.createElement('div');
                         let divimg = document.createElement('img');
                         divordpic.className = "ord-pic";
-                        divimg.src = `../dest/image/Epidemic-shop/cloth/${itemL[j].replace('-','_')}.png`;
+                        
+                        let da = itemL[j].substring(symposition+1);
+                        let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                        divimg.src = src;
+                        
                         divimg.setAttribute('da',`${itemL[j]}`);
                         divordpic.appendChild(divimg);
                         newitemD.firstChild.appendChild(divordpic);
 
-                    } else if (itemL[j].substring(0, itemL[j].length-2) == 'goggles'){
+                    } else if (itemL[j].substring(0, symposition) == 'goggle'){
                         let divordpic = document.createElement('div');
                         let divimg = document.createElement('img');
                         divordpic.className = "ord-pic";
-                        divimg.src = `../dest/image/Epidemic-shop/glass/${itemL[j].replace('-','_')}.png`;
+
+                        let da = itemL[j].substring(symposition+1);
+                        let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                        divimg.src = src;
+
                         divimg.setAttribute('da',`${itemL[j]}`);
                         divordpic.appendChild(divimg);
                         newitemD.firstChild.appendChild(divordpic);
@@ -469,7 +523,13 @@ window.addEventListener('load', ()=>{
                         let divordpic = document.createElement('div');
                         let divimg = document.createElement('img');
                         divordpic.className = "ord-pic";
-                        divimg.src = `../dest/image/Epidemic-shop/mask/${itemL[j].replace('-','_')}.png`;
+
+
+                        let da = itemL[j].substring(symposition+1);
+                        let src = document.querySelector(`[da='${da}']`).getAttribute('src');
+                        divimg.src = src;
+
+
                         divimg.setAttribute('da',`${itemL[j]}`);
                         divordpic.appendChild(divimg);
                         newitemD.firstChild.appendChild(divordpic);
@@ -531,9 +591,7 @@ function haha(x, y) {
     return n;
 }
 
-function xaxa() {
 
-}
 
 getproduct();
 
@@ -544,7 +602,6 @@ function getproduct() {
     conn.onreadystatechange = function() {
         if (conn.readyState==4) {
             if (conn.status == 200) {
-                console.log(22222);
                 let prodataArray; 
                 let shopTypeContentInner = document.getElementById('shop-type-content-inner');
                 let kind = ['group', 'clothe','goggle', 'mask'];
@@ -585,7 +642,8 @@ function getproduct() {
                             
                             let img = document.createElement('img');
                             img.src = `${prosingle.PRO_SRC}`;
-                            img.setAttribute('da', `${prosingle.PRO_ID}`);
+                            img.setAttribute('da', `${prosingle.PRO_NO}`);
+                            img.setAttribute('kind', `${prosingle.PRO_KIND}`);
                             sli.appendChild(img);
     
                             let price = document.createElement('div');
@@ -638,6 +696,9 @@ function getproduct() {
                         }
                     }
                 });
+
+                console.log();
+                console.log($('[da="2"]'));
             } else {
                 alert(conn.status);
             }
@@ -645,7 +706,6 @@ function getproduct() {
     }
 }
 
-console.log(1);
 
 // $('.myowl-1-1').owlCarousel({
 //     // stagePadding: 50,
@@ -712,4 +772,7 @@ $('.myowl-2').owlCarousel({
         }
     }
 });
+
+
+
 

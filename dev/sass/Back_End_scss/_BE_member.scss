@@ -1,0 +1,45 @@
+> li.i1 {
+    display: none;
+    ul.member_list {
+        display: flex;
+        height: 100%;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        li.p_list {
+            // box-shadow: 0 3px 30px rgb(84, 190, 240);
+            height: 200px;
+            width: 50%;
+            min-width: 478px;
+            position: relative;
+            img.p_member {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                background-position: center center;
+                @include HandV_center(50%, 25%);
+            }
+            div.p_data {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 100px;
+                line-height: 1.5;
+                @include HandV_center(50%, 50%);
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+
+                    p {
+                        margin-right: 20px;
+                    }
+                    span.center {
+                        padding-top: 10px;
+                        @include switch(20px);
+                    }
+                }
+            }
+        }
+    }
+}
