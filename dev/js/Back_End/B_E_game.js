@@ -11,9 +11,9 @@ window.addEventListener('load', () => {
                 <div class="game_topic">
                     <h1>${game_data[i]["question"]}</h1>
                 </div>
-                <ul class="answer_list">
+                <ol class="answer_list">
                     <li>
-                        <span>A.</span>
+                        <span>A.</span> 
                         <p>${game_data[i]["choiceA"]}</p>
                     </li>
                     <li>
@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
                         <span>C.</span>
                         <p>${game_data[i]["choiceC"]}</p>
                     </li>
-                </ul>
+                </ol>
                 <div class="answer">
                     <p>${game_data[i]["correct"]}.${game_data[i]["RIGHT_ANSWER"]}</p>
                 </div>
