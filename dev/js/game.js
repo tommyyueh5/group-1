@@ -2,6 +2,7 @@
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
+const question1 = document.getElementById("question1");
 const qImg = document.getElementById("qImg");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
@@ -11,226 +12,191 @@ const timeGauge = document.getElementById("timeGauge");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 const dexBox = document.getElementById("des");
+const dexBox1 = document.getElementById("des1");
 const dexBoxDis = document.querySelector("#des>a");
-
-
-
+const dexBoxDis1 = document.querySelector("#des1>a");
+const container = document.querySelector("#container");
 
 //說明箱
-dexBoxDis.addEventListener('click',()=>{
+dexBoxDis.addEventListener('click', () => {
     dexBox.style.display = 'none';
+    // container.style.height= '680px';
+})
+//說明箱1
+dexBoxDis1.addEventListener('click', () => {
+    dexBox1.style.display = 'none';
+})
+scoreDiv.addEventListener('click', () => {
+    scoreDiv.style.display = 'none';
 })
 
-// create our questions
-let questions = [
-    {
-        question: "冠狀病毒的簡稱是什麼？?",
-        imgSrc: "/dest/image/game/img/pic1.png",
-        choiceA: "convid-19",
-        choiceB: "convid-18",
-        choiceC: "convid-17",
-        correct: "A"
-    }, {
-        question: "冠狀病毒屬會造成什麼樣的人類疾病？?",
-        imgSrc: "/dest/image/game/img/pic2.png",
-        choiceA: "發燒",
-        choiceB: "肚子痛",
-        choiceC: "全身痠痛",
-        correct: "A"
-    }, {
-        question: "我要怎麼預防感染2019新型冠狀病毒?",
-        imgSrc: "/dest/image/game/img/pic3.png",
-        choiceA: "儘量避免出入人潮多的地方",
-        choiceB: "多去運動公園與大眾運動增加抵抗力",
-        choiceC: "多吃為它命",
-        correct: "A"
-    }, {
-        question: "2019新型冠狀病毒的潛伏期是多久？?",
-        imgSrc: "/dest/image/game/img/pic4.png",
-        choiceA: "2至12天",
-        choiceB: "1小時",
-        choiceC: "19天",
-        correct: "A"
-    }, {
-        question: "現在還可以去中國武漢嗎??",
-        imgSrc: "/dest/image/game/img/pic5.png",
-        choiceA: "疾病管制署已第三級旅遊警示建議避免所有非必要的旅遊。",
-        choiceB: "不可以去",
-        choiceC: "經過申請才可以去",
-        correct: "A"
-    }, {
-        question: "要在哪裡可以看國內最新疫情變化及防疫建議？?",
-        imgSrc: "/dest/image/game/img/pic6.png",
-        choiceA: "疾病管制署",
-        choiceB: "中央通訊社",
-        choiceC: "youtube",
-        correct: "A"
-    }, {
-        question: "如果一定要去有疫情的地區，要怎麼保護自己？",
-        imgSrc: "/dest/image/game/img/pic7.png",
-        choiceA: "落實肥皂勤洗手、咳嗽戴口罩等個人防護措施。",
-        choiceB: "多去人多的地方",
-        choiceC: "無法避免",
-        correct: "A"
-    }, {
-        question: "要在哪裡看到國際疫情？？",
-        imgSrc: "/dest/image/game/img/pic8.png",
-        choiceA: "疾病管制署",
-        choiceB: "中央通訊社",
-        choiceC: "youtube",
-        correct: "A"
-    }, {
-        question: "下列何者非2019新型冠狀病毒傳播方式？",
-        imgSrc: "/dest/image/game/img/pic9.png",
-        choiceA: "口鼻分泌物或體液",
-        choiceB: "電腦病毒檔案下載",
-        choiceC: "吃野味",
-        correct: "A"
-    },{
-        question: "下列何者非2019新型冠狀病毒傳播方式？",
-        imgSrc: "/dest/image/game/img/pic9.png",
-        choiceA: "口鼻分泌物或體液",
-        choiceB: "電腦病毒檔案下載",
-        choiceC: "吃野味",
-        correct: "A"
+var xhr = new XMLHttpRequest();
+xhr.open('get', '../../dest/PHP_program/game/db.php', true);
+xhr.setRequestHeader('Content-type', 'application/json');
+xhr.send(null);
+xhr.onload = function () {
+    questions = JSON.parse(xhr.responseText);
+
+    const lastQuestion = questions.length - 1;
+    let runningQuestion = 0;
+    let count = 0;
+    let TIMER;
+    let score = 0;
+    let scorePerCent;
+
+    start.addEventListener("click", startQuiz);
+
+    function renderQuestion() {
+        let q = questions[runningQuestion];
+        question.innerHTML = "<p>" + q.question + "</p>";
+        question1.innerHTML = "<a>" + q.question1 + "</a>";
+        qImg.innerHTML = "<img src=" + q.imgSrc + ">";
+        choiceA.innerHTML = q.choiceA;
+        choiceB.innerHTML = q.choiceB;
+        choiceC.innerHTML = q.choiceC;
     }
 
-];
-
-
-
-// create some variables
-
-const lastQuestion = questions.length - 1;
-let runningQuestion = 0;
-let count = 0;
-const questionTime = 10; // 10s
-const gaugeWidth = 150; // 150px
-const gaugeUnit = gaugeWidth / questionTime;
-let TIMER;
-let score = 0;
-
-// render a question
-function renderQuestion() {
-    let q = questions[runningQuestion];
-
-    question.innerHTML = "<p>" + q.question + "</p>";
-    qImg.innerHTML = "<img src=" + q.imgSrc + ">";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-}
-
-start.addEventListener("click", startQuiz);
-
-// start quiz
-function startQuiz() {
-    start.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block";
-    renderProgress();
-    renderCounter();
-    TIMER = setInterval(renderCounter, 1000); // 1000ms = 1s
-}
-
-// render progress
-function renderProgress() {
-    for (let qIndex = 0; qIndex <= lastQuestion; qIndex++) {
-        progress.innerHTML += "<div class='prog' id=" + qIndex + "></div>";
+    function startQuiz() {
+        start.style.display = "none";
+        renderQuestion();
+        quiz.style.display = "block";
+        rightanswer()
     }
-}
 
-// counter render
+    $('.choice').click(function () {
 
-function renderCounter() {
-    if (count <= questionTime) {
-        counter.innerHTML = count;
-        timeGauge.style.width = count * gaugeUnit + "px";
-        count++
-    } else {
+        let answer = this.id;
+
+        if (answer == questions[runningQuestion].correct) {
+            score++;
+        };
         count = 0;
-        // change progress color to red
-        answerIsWrong();
         if (runningQuestion < lastQuestion) {
             runningQuestion++;
             renderQuestion();
         } else {
-            // end the quiz and show the score
             clearInterval(TIMER);
             scoreRender();
         }
-    }
-}
+    });
 
-// checkAnwer
+    function rightanswer() {
 
-function checkAnswer(answer) {
-    if (answer == questions[runningQuestion].correct) {
-        // answer is correct
-        score++;
-        // change progress color to green
-        answerIsCorrect();
-    } else {
-        // answer is wrong
-        // change progress color to red
-        answerIsWrong();
-    }
-    count = 0;
-    if (runningQuestion < lastQuestion) {
-        runningQuestion++;
-        renderQuestion();
-    } else {
-        // end the quiz and show the score
-        clearInterval(TIMER);
-        scoreRender();
-    }
-}
+        el = document.querySelector(".tag_question");
+        var elLen = questions.length
 
-// answer is correct
-function answerIsCorrect() {
-    document.getElementById(runningQuestion).style.backgroundColor = "blue";
-    // document.getElementsByClassName(choice).style.backgroundColor = "blue";
-}
+        var str = "";
 
-// answer is Wrong
-function answerIsWrong() {
-    document.getElementById(runningQuestion).style.backgroundColor = "red";
-}
+        for (var i = 0; i < elLen; i++) {
+            var content = '<li class="answer_part">' + "題目" + (i + 1) + ":" + questions[i]["question"] + '<a href="#">' + questions[i]["question1"] + '</a>' + '</li>';
+            str += content;
+        }
+        el.innerHTML = str
 
-// score render
-function scoreRender() {
-    scoreDiv.style.display = "block";
+        el2 = document.querySelector(".tag_answer");
+        var elLen = questions.length
 
-    // calculate the amount of question percent answered by the user
-    const scorePerCent = Math.round(100 * score / questions.length);
-    const quer = "恭喜您獲得"
-    const point = "分"
-    const scoreEnd = "點"
+        var str1 = "";
+        for (var i = 0; i < elLen; i++) {
+            var content = '<li class="answer_part">' + "答案" + (i + 1) + ":" + questions[i]["correct"] + ":" + questions[i]["RIGHT_ANSWER"] + '</li>';
+            str1 += content;
+        }
+        el2.innerHTML = str1
 
+    };
 
-    // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "/dest/image/game/img/1.png" :
-              (scorePerCent >= 60) ? "/dest/image/game/img/2.png" :
-              (scorePerCent >= 40) ? "/dest/image/game/img/3.png" :
-              (scorePerCent >= 20) ? "/dest/image/game/img/3.png" :
-              "/dest/image/game/img/3.png";
+    function scoreRender() {
+        scoreDiv.style.display = "block";
+        des1.style.display = "block";
+        // calculate the amount of question percent answered by the user
 
-    scoreDiv.innerHTML = "<img src=" + img + ">";
-    scoreDiv.innerHTML += `
-    <p>
-    <span style=''>${quer + scorePerCent + point}，經計算後獲得${(scorePerCent / 10) + scoreEnd}<span>
+        scorePerCent = Math.round(100 * score / questions.length);
+        const quer = "恭喜您獲得"
+        const point = "分"
+        const scoreEnd = "點"
+        let img = (scorePerCent >= 80) ? "../dest/image/game/img/1.png" :
+            (scorePerCent >= 60) ? "../dest/image/game/img/2.png" :
+                (scorePerCent >= 40) ? "../dest/image/game/img/3.png" :
+                    (scorePerCent <= 20) ? "../dest/image/game/img/3.png" :
+                        "img/3.png";
+
+        scoreDiv.innerHTML = "<img src=" + img + ">";
+        scoreDiv.innerHTML +=
+            `
+    <p class='anwser'>
+    <span class='score_text_size'>${quer + scorePerCent + point}，經計算後獲得${(scorePerCent / 10) + scoreEnd}<span>
     <br>
-    <a class='endSelect' href="/dest/game.html" rel="noopener noreferrer">重玩</a>
-    <a class='endSelect' href="/dest/Epidemic-shop.html" rel="noopener noreferrer">前往商店</a>
-    <a class='endSelect' href="/dest/index.html" rel="noopener noreferrer">返回首頁</a>
+     <h1 class="close">X</h1>
     </p>
-    `
+     `
+        ShowHello()
+        //   point_des()
+    };
+    function ShowHello() {
+        
+        let MEM_TIME;
+        let MEM_BOOLE = sessionStorage.getItem('boolen');
+        let GAME_DATE = sessionStorage.getItem('gamedate');
+        let first_game = sessionStorage.getItem('point');
+        var myDate = new Date();
+        var month = myDate.getMonth() + 1;
+        var day = myDate.getDate();
+        month = (month.toString().length == 1) ? ("0" + month) : month;
+        day = (day.toString().length == 1) ? ("0" + day) : day;
+        var result = myDate.getFullYear() + '-' + month + '-' + day;
+
+        if (MEM_BOOLE > 0 && result > GAME_DATE) {
+            point_add()
+        }
+        else if (MEM_BOOLE == 1 && first_game == 0) {
+            point_add()
+        }
+        else {
+            no_point();
+        };
+
+        function point_add() {
+            xhr = new XMLHttpRequest();
+            xhr.open('POST', '../../dest/PHP_program/game/db_member_point_poi.php', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            MEM_POI = scorePerCent;
+            MEM_NO = sessionStorage.getItem('no');
+            MEM_POINT = MEM_NO - 1;
+            MEM_TIME = 1;
+
+            xhr.send(`MEM_POI=${MEM_POI}&MEM_NO=${MEM_NO}&MEM_TIME=${MEM_TIME}&GAME_LASTTIME=${result}`);
+            xhr.onload = function () {
+                member_point = JSON.parse(xhr.responseText);
+                var session = sessionStorage;
+                session.setItem('point', member_point[MEM_POINT]["MEM_POI"]);
+                session.setItem('boolen', member_point[MEM_POINT]["MEM_TIME"]);
+                session.setItem('gamedate', member_point[MEM_POINT]["GAME_LASTTIME"]);
+
+            };
+        };
+
+        function no_point() {
+            xhr = new XMLHttpRequest();
+            xhr.open('POST', '../../dest/PHP_program/game/db_member_point_poi.php', true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            MEM_POI = "0";
+            MEM_NO = sessionStorage.getItem('no');
+            MEM_POINT = MEM_NO - 1;
+            MEM_TIME = 1;
+            xhr.send(`MEM_POI=${MEM_POI}&MEM_NO=${MEM_NO}&MEM_TIME=${MEM_TIME}&GAME_LASTTIME=${result}`);
+            xhr.onload = function () {
+                member_point = JSON.parse(xhr.responseText);
+                var session = sessionStorage;
+                session.setItem('point', member_point[MEM_POINT]["MEM_POI"]);
+                session.setItem('boolen', member_point[MEM_POINT]["MEM_TIME"]);
+                session.setItem('gamedate', member_point[MEM_POINT]["GAME_LASTTIME"]);
+            };
+        };
+    };
+};
 
 
 
-
-        ;
-}
 
 
 

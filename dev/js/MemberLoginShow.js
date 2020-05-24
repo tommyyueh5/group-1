@@ -46,6 +46,8 @@ window.addEventListener('load', function () {
                     sessionStorage.setItem('showPws', datamemb.showPws);
                     sessionStorage.setItem('point', datamemb.point);
                     sessionStorage.setItem('no', datamemb.no);
+                    sessionStorage.setItem('boolen', datamemb.boolen);
+                    sessionStorage.setItem('gamedate', datamemb.gamedate);
                     
                     window.location.href = '../../dest/member.html'
                     $cs('member_center').classList.add('on');
