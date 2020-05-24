@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
                 $('.care_list').append(
                     `
                     <li class="p_care">
+                    <div id="edit_cancel">刪除</div>
                     <div class="care_topic">
                         <h1>${care_data[i]["MAN_CON"]}</h1>
                     </div>

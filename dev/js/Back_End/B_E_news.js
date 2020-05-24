@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
                 $('.news_list').append(
                     `
                 <li class="p_news">
+                <div id="edit_cancel">刪除</div>
                 <div class="news_img">
                     <img src="${news_data[i]["NEWS_IMG_PATH"]}" alt="">
                 </div>

@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
             for (let i = 0; i < game_data.length; i++) {
                 $('.game_list').append(`
                 <li class="p_game">
+                <div id="edit_cancel">刪除</div>
                 <div class="game_topic">
                     <textarea id="game_h1_edit" rows="3 class="edit_on" disabled>${game_data[i]["question"]}</textarea>
                 </div>

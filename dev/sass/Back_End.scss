@@ -177,7 +177,26 @@ body.Back_Edn {
                             transition: all 0.3s linear;
                             &:hover {
                                 border: 5px solid #fff;
+                                div#edit_cancel.on {
+                                    width: 100px;
+                                    opacity: 1;
+                                }
                             }
+                        }
+                        div#edit_cancel {
+                            position: absolute;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            opacity: 0;
+                            left: 1px;
+                            width: 0px;
+                            height: 190px;
+                            background-color: red;
+                            transition: all 0.3s linear;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 30px;
                         }
                     }
                 }

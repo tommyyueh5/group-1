@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
                 $('.forum_list').append(
                     `
                 <li class="p_forum">
+                            <div id="edit_cancel">刪除</div>
                             <div class="forum_img">
                                 <img src="${forum_data[i]["DIS_IMG_PATH"]}" alt="">
                             </div>
@@ -45,7 +46,7 @@ window.addEventListener('load', () => {
                     } else {
                         $(`#discussion_psi${forum_data[i].DIS_NO}`).val(0);
                     }
-                    
+
                 })
             });
         } else {

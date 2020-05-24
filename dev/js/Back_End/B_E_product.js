@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
             for (let i = 0; i < product_data.length; i++) {
                 $('.product_list').append(`
                 <li class="p_product">
+                <div id="edit_cancel">刪除</div>
                 <div class="product_img">
                     <img src="${product_data[i].PRO_IMG}" alt="">
                 </div>

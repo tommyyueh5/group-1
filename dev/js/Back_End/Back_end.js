@@ -221,6 +221,8 @@ window.addEventListener('load', () => {
                     if ($csa('data')[index].querySelectorAll('ul>li')[0].classList.contains('edit_focus')) {
                         for (let j = 0; j < objects.length; j++) {
                             objects[j].classList.remove('edit_focus')
+                            objects[j].querySelector('#edit_cancel').classList.remove('on');
+                            
                             // 編輯按鈕文字切換
                             $id('edit').textContent = '編輯';
                         }
@@ -229,6 +231,7 @@ window.addEventListener('load', () => {
                         for (let j = 0; j < objects.length; j++) {
                             objects[j].classList.add('edit_focus')
                             $id('edit').textContent = '取消';
+                            objects[j].querySelector('#edit_cancel').classList.add('on');
 
                         }
                     };
