@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 header('Content-Type: text/html; charset=UTF-8');
 
 try{
-    require_once("connet.php");
+    require_once("connectdd106g1.php");
     $memno=$_POST["memno"];
     $artno=$_POST["artno"];
     $reason=$_POST["reason"];
