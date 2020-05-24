@@ -10,15 +10,24 @@ try{
         $memno = $_POST["memno"];
         $articleno = $_POST["articleNo"];
         $content = $_POST["comment"];
+        $comLength = $_POST["comLength"];
         $nowtime = date("Y-m-d");
-        $sql = "INSERT INTO `DISCUSS_COMMENT` (`DIS_NO`,`MEM_NO`,`COM_CON`,`COM_DATE`) 
-        VALUES (:disno,:memno,:content,:nowtime)";
+
+
+        $sql = "INSERT INTO `DISCUSS_COMMENT` (`DIS_NO`,`MEM_NO`,`COM_CON`,`COM_DATE`,`COM_COUNT`) 
+        VALUES (:disno,:memno,:content,:nowtime,:comLength+'1')";
         $comment = $pdo->prepare($sql); 
         $comment ->bindParam(":memno",$memno);
         $comment ->bindValue(":disno",$articleno);
         $comment ->bindParam(":content",$content);
         $comment ->bindParam(":nowtime",$nowtime);
+        $comment ->bindParam(":comLength",$comLength);
         $comment -> execute();
+        // $sql2="UPDATE `discuss_comment` SET `COM_COUNT` =`COM_COUNT` +'1' WHERE `discuss_comment`.`DIS_NO` = :disno";
+        // $commentPlus = $pdo->prepare($sql2); 
+        // $commentPlus ->bindValue(":disno",$articleno);
+        // $commentPlus -> execute();
+
         echo "成功";
 }catch(PDOException $e){
     echo "錯誤原因：",$e->getMessage(),"<br>";

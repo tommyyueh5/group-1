@@ -49,8 +49,25 @@
 
         <!-- 左邊filter -->
         <aside class="filter">
-            <div class="filter_order">
+            <div class="filter_time">
                 <div>
+                    <a href="#" data-target="tab1" class="tab tab_first"><img src="/dest/image/forum/fire.png">
+                        <h2>熱門程度<span>1</span></h2>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" data-target="tab2" class="tab tab_second"><img src="/dest/image/forum/arrow.png">
+                        <h2>關注趨勢<span>2</span></h2>
+                    </a>
+                </div>
+                <div>
+                    <a href="#" data-target="tab3" class="tab tab_third"><img src="/dest/image/forum/clock.png">
+                        <h2>即時發佈<span>3</span></h2>
+                    </a>
+                </div>
+            </div>
+            <div class="filter_order">
+                <!-- <div>
                     <a href="#" data-target="tab5" class="tab"><img src="/dest/image/forum/fire.png">
                         <h2>熱門程度</h2>
                     </a>
@@ -64,7 +81,7 @@
                     <a href="#" data-target="tab7" class="tab"><img src="/dest/image/forum/clock.png">
                         <h2>即時發佈</h2>
                     </a>
-                </div>
+                </div> -->
 
                 <a href="#" data-target="tab1" class="tab -on">
                     <h3>疫情資訊</h3>
@@ -94,10 +111,10 @@
                     </form>
                     <select name="sort" id="sort">
                         <option>要發什麼版？</option>
-                        <option value="1">疫情資訊版</option>
-                        <option value="2">新聞版</option>
-                        <option value="3">八卦版</option>
-                        <option value="4">迷因版</option>
+                        <option value="疫情資訊">疫情資訊版</option>
+                        <option value="新聞">新聞版</option>
+                        <option value="八卦">八卦版</option>
+                        <option value="迷因">迷因版</option>
                     </select>
                 </div>
                 <textarea id="content" type="text" rows="1" placeholder="你想說的內容？"></textarea><br>
@@ -108,7 +125,7 @@
             <canvas id="canvas"></canvas>
 
         </section>
-        <!-- 左邊filter -->
+        <!-- RWD的filter -->
         <aside class="filter filter2">
             <div class="filter_left">
                 <span>條件篩選</span><input id="filter_con" type="button" value="&or;">
@@ -148,6 +165,26 @@
             </div>
         </aside>
         <div class="background"></div>
+        <div class="report">
+            <h2>檢舉原因</h2>
+            <label for="label1">虐待兒童
+                <input type="checkbox" value="1" id="label1">
+            </label>
+            <label for="label2">色情內容
+                <input type="checkbox" value="2" id="label2">
+            </label>
+            <label for="label3">暴力或令人厭惡內容
+                <input type="checkbox" value="3" id="label3">
+            </label>
+            <label for="label4">仇恨或惡意內容
+                <input type="checkbox" value="4" id="label4">
+            </label>
+            <label for="label5">誤導性的內容
+                <input type="checkbox" value="5" id="label5">
+            </label>
+            <button id="sendReport">送出</button>
+            <button id="cancelReport">取消</button>
+        </div>
         <!-- section 中間文章內容 -->
         <section class="content_container">
             <div class="article_content">
@@ -162,36 +199,47 @@
                     <img src="/dest/image/forum/facebook.png" alt="">
                     <img src="/dest/image/forum/twitter.png" alt="">
                     <img src="/dest/image/forum/line.png" alt="">
-                    <img src="/dest/image/forum/instagram.png" alt="">
+                    <img id="report" src="/dest/image/forum/alert.png">
                 </div>
                 <img class="main_pic" src="/dest/image/forum/comment_pic1.png" alt="">
                 <p class="article_text"></p>
                 <hr>
                 <img class="thumbnail2" src="/dest/image/forum/thum_img1.jpeg" alt="">
                 <textarea id="comment_text" type="text" rows="2" placeholder="講話啊白癡......."></textarea>
-                <button type="submit" id="postCom" onclick="uploadCom();showComment()"></button>
+                <button type="submit" id="postCom" onclick="uploadCom();showComment();updateCom();"></button>
                 <div class="comment">
-                    <!-- <h2><img src="/dest/image/forum/thum_img2.png">貓草：
-                        <span>我看了很久，這衣服真的很二次元ww</span>
-                        <span class="time">2020年04月09日 08:54</span>
-                    </h2>
-                    <h2><img src="/dest/image/forum/thum_img9.jpeg">貓屎：
-                        <span>我看了很久，這衣服真的很二次元ww</span>
-                        <span class="time">2020年04月09日 08:54</span>
-                    </h2>
-                    <h2><img src="/dest/image/forum/thum_img7.png">貓尿：
-                        <span>我看了很久，這衣服真的很二次元ww</span>
-                        <span class="time">2020年04月09日 08:54</span>
-                    </h2> -->
                 </div>
             </div>
             <div class="tab_contents">
-                <div class="subtitle_1 ">
-                    <h3>疫情資訊</h3>
-                    <hr>
+
+                <!-- tab1 疫情資訊-->
+                <div class="tab tab1 -on row masonry">
+                    <div class="subtitle_1 col-sm-12 item ">
+                        <h3>疫情資訊</h3>
+                        <hr>
+                    </div>
                 </div>
-                <!-- tab1 -->
-                <div class="tab tab1 -on row masonry"></div>
+                <div class="tab tab2  row masonry">
+                    <div class="subtitle_1 col-sm-12 item ">
+                        <h3>新聞</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="tab tab3  row masonry">
+                    <div class="subtitle_1 col-sm-12 item ">
+                        <h3>八卦</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="tab tab4  row masonry">
+                    <div class="subtitle_1 col-sm-12 item ">
+                        <h3>迷因</h3>
+                        <hr>
+                    </div>
+                </div>
+
+
+
             </div>
         </section>
     </main>
@@ -206,7 +254,7 @@
             var article_No = $('.article_content_no').text();
             console.log(article_No);
             $.ajax({
-                url: '../dest/PHP/getcomment.php',
+                url: '../dest/PHP_program/getcomment.php',
                 type: "POST",
                 dataType: 'json',
                 data: {
@@ -233,14 +281,77 @@
         }
         // 撈後端文章資料顯示在前端
         function showData() {
+            var filterText = $('div.filter_order .-on h3').text();
+            console.log(filterText);
+            // $('.masonry').html('');
             $.ajax({
-                url: '../dest/PHP/getinfo.php',
-                type: 'GET',
+                url: '../dest/PHP_program/getinfo.php',
+                type: "POST",
                 dataType: 'json',
+                data: {
+                    filterText: filterText,
+                },
                 success(data) {
-                    // console.log(data.length);
-                    // console.log(data[0].MEM_NO);
-                    // console.log(data);
+                    for (let i = 0; i < data.length; i++) {
+                        userName = data[i].MEM_ACC;
+                        nowTime = data[i].DIS_EST;
+                        // topic = data[i].DIS_C_NO;
+                        thumImg = data[i].MEM_IMG
+                        imgPath = data[i].DIS_IMG_PATH;
+                        artitle = data[i].DIS_TIT;
+                        artcon = data[i].DIS_CON;
+                        artNo = data[i].DIS_NO;
+                        comCount = data[i].COM_COUNT;
+                        //動態新增要加的欄位
+                        $('.masonry').append(`
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                                <div class="item_content">
+                                    <div class="date">
+                                        <h4 class="year">${nowTime}</h4>
+                                    </div>
+                                    <div class="info">
+                                        <img class="thum_img" src="${thumImg}">
+                                        <h4 class="username">${userName}</h4>
+                                    </div>
+                                    <h2 class="article_title">${artitle}</h2>
+                                    <img class="main_img" src="${imgPath}" alt="">
+                                    <p class="article_contentp">${artcon}</p>
+                                    <p class="article_contentno">${artNo}</p>
+                                    <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">${comCount}</span>留言</h4>
+                                    <h4 class="function">
+                                        <img class="heart" src="../dest/image/forum/like.png">
+                                        <img class="share" src="../dest/image/forum/share.png">
+                                    </h4>
+                                    <h4 class="function2">
+                                        <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
+                                        <img class="line" src="../dest/image/forum/line.png" alt="">
+                                    </h4>
+                                </div>
+                            </div>
+                        `)
+                    }
+                },
+                error: function(xhr) {
+                    alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
+                }
+            });
+        }
+
+        // 撈後端排序後資料顯示在前端
+        function showDataTime() {
+            // var filterTime = $('div.filter_time .-on h2 span').text();
+            var filterText = $('div.filter_order .-on h3 ').text();
+            // console.log(filterTime);
+            console.log(filterText);
+            $.ajax({
+                url: '../dest/PHP_program/getinfo_time.php',
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    filterText: filterText,
+                    // filterTime: filterTime,
+                },
+                success(data) {
                     for (let i = 0; i < data.length; i++) {
                         userName = data[i].MEM_ACC;
                         nowTime = data[i].DIS_EST;
@@ -289,7 +400,7 @@
             var memno = sessionStorage.getItem('no');
             console.log(memno);
             $.ajax({
-                url: '../dest/PHP/post.php',
+                url: '../dest/PHP_program/post.php',
                 type: 'POST',
                 dataType: 'html',
                 data: {
@@ -313,15 +424,17 @@
             var memno = sessionStorage.getItem('no');
             var titleNo = $('.article_content_title').text();
             var articleNo = $('.article_content_no').text();
-            // console.log(articleNo);
+            var comLength = $('.comment h2').length;
+            console.log(comLength);
             $.ajax({
-                url: '../dest/PHP/comment.php',
+                url: '../dest/PHP_program/comment.php',
                 type: "POST",
                 dataType: 'html',
                 data: {
                     articleNo: articleNo,
                     memno: memno,
                     comment: $('#comment_text').val(),
+                    comLength: comLength,
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     alert(jqXHR.responseText);
@@ -333,12 +446,38 @@
                 }
             });
         };
+        // 更新留言筆數到後端
+        function updateCom() {
+            var memno = sessionStorage.getItem('no');
+            var titleNo = $('.article_content_title').text();
+            var articleNo = $('.article_content_no').text();
+            var comLength = $('.comment h2').length;
+            // console.log(articleNo);
+            $.ajax({
+                url: '../dest/PHP_program/updateComment.php',
+                type: "POST",
+                dataType: 'html',
+                data: {
+                    articleNo: articleNo,
+                    memno: memno,
+                    comment: $('#comment_text').val(),
+                    comLength: comLength,
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert(jqXHR.responseText);
+                },
+                success: function(data) {
+                    alert('success: ' + data);
+                    // location.href = 'forum.html';
+                    // $('#comment_text').val('');
+                }
+            });
+        };
         //發文的圖片上傳
         function uploadImg() {
             var form = new FormData(document.getElementById('upfile'))
-
             $.ajax({
-                url: '../dest/PHP/upload.php',
+                url: '../dest/PHP_program/upload.php',
                 type: "POST",
                 data: form,
                 processData: false,
@@ -348,7 +487,7 @@
                 }
             });
         };
-        //載入圖片避免重疊
+        // 載入圖片避免重疊
         function imgLoad() {
             /* 瀑布流區塊div */
             var $container = $('.masonry');
@@ -360,18 +499,78 @@
                 })
             });
         };
+
+        //傳送檢舉資訊到資料庫
+        function sendReport() {
+            var memno = sessionStorage.getItem('no'); //會員編號
+            var artno = $('.article_content_no').text(); //文章編號
+            var reason = $("input[type='checkbox']:checked").val()
+            console.log(reason);
+            $.ajax({
+                url: '../dest/PHP_program/report.php',
+                type: "POST",
+                data: {
+                    memno: memno,
+                    artno: artno,
+                    reason: reason,
+                },
+                success: function(data) {
+                    alert(data);
+                }
+            });
+        }
         $(document).ready(function() {
             showData();
-            imgLoad();
-            $("a.tab").on("click", function(e) {
+            // imgLoad();
+            $(".filter_order a.tab").on("click", function(e) {
+                $('div.article').remove();
                 e.preventDefault();
 
+                $(".filter_time").find("a.tab").removeClass("-on");
                 $(this).closest(".filter_order").find("a.tab").removeClass("-on");
                 $(this).addClass("-on");
 
                 $("div.tab").removeClass("-on");
                 $("div.tab." + $(this).attr("data-target")).addClass("-on");
+                var filterText = $('div.filter_order .-on h3 ').text();
+                $('.subtitle_1 h3').text(filterText);
+                showData();
             });
+            $(".filter_time a.tab_third").on("click", function(e) {
+                $('div.article').remove();
+                e.preventDefault();
+
+                $(this).closest(".filter_time").find("a.tab").removeClass("-on");
+                $(this).addClass("-on");
+
+                $("div.tab").removeClass("-on");
+                $("div.tab." + $(this).attr("data-target")).addClass("-on");
+                // showData();
+                var filterText = $('div.filter_order .-on h3 ').text();
+                $('.subtitle_1 h3').text(filterText);
+                showDataTime();
+
+            });
+            //檢舉燈箱
+            $(".report").on("click", function(e) {
+                e.stopPropagation();
+            });
+            $("img#report").on("click", function() {
+                $("div.report").show();
+                // console.log($(".article_content_no").text());
+            });
+            $("#sendReport").on("click", function(e) {
+                $("div.report").hide();
+                // sendReport();
+                e.stopPropagation();
+                sendReport();
+                alert("謝謝您的回覆，我們將盡快審查！")
+            });
+            $("#cancelReport").on("click", function(e) {
+                $("div.report").hide();
+                e.stopPropagation();
+            });
+
             //動態新增物件 建立聆聽事件
             //文章燈箱
             $(".masonry").on("click", '.main_img,.article_title', function(e) {
@@ -435,6 +634,7 @@
                 $('#postBtn').hide();
                 $('#canBtn').hide();
                 $('#sort').hide();
+                $("div.report").hide();
             });
             //條件篩選
             $("#filter_con").on("click", function() {
@@ -497,12 +697,10 @@
             });
         });
         // window.addEventListener('load', function() {
-        //     imgLoad();
-        //     showData();
-        //     showComment();
+        // imgLoad();
+        // showData();
+        // showComment();
         // });
-    </script>
-
     </script>
 
 </body>

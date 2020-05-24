@@ -83,7 +83,8 @@ aside.filter {
     padding: 4px 0;
 }
 
-div.filter_order {
+div.filter_order,
+div.filter_time {
     width: 100%;
     display: inline-block;
     box-sizing: border-box;
@@ -91,7 +92,17 @@ div.filter_order {
     margin-bottom: 20px;
 }
 
+div.filter_time {
+    margin-bottom: 0;
+}
+
 div.filter_order>div {
+    width: 100%;
+    margin: 25px auto;
+    text-align: center;
+}
+
+div.filter_time>div {
     width: 100%;
     margin: 25px auto;
     text-align: center;
@@ -102,7 +113,17 @@ div.filter_order img {
     // border: 1px solid whitesmoke;
 }
 
+div.filter_time div a img {
+    width: 40px;
+    // border: 1px solid whitesmoke;
+}
+
 div.filter_order a {
+    text-decoration: none;
+    color: unset;
+}
+
+div.filter_time a {
     text-decoration: none;
     color: unset;
 }
@@ -118,6 +139,20 @@ div.filter_order h2 {
     padding: 10px 15px
 }
 
+div.filter_time h2 {
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    // border: whitesmoke 1px solid;
+    letter-spacing: 1px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 15px;
+    span {
+        display: none;
+    }
+}
+
 aside.filter h3 {
     color: whitesmoke;
     font-size: 22px;
@@ -130,7 +165,7 @@ aside.filter>a {
     color: unset;
 }
 
-div.filter_order div a.-on h2 {
+div.filter_time div a.-on h2 {
     color: yellow;
 }
 
@@ -553,6 +588,41 @@ div.right {
 div.right {
     text-align: right;
     padding: 10px 0;
+}
+
+img#report {
+    cursor: pointer;
+}
+
+//檢舉燈箱
+div.report {
+    display: none;
+    background-color: gray;
+    position: fixed;
+    top: 27%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 105;
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: white;
+    }
+    label {
+        text-align: left;
+        display: block;
+        font-size: 17px;
+        color: white;
+    }
+    button {
+        font-size: 20px;
+        margin: 30px 30px 0;
+    }
 }
 
 div.left {
