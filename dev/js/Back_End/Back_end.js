@@ -99,7 +99,7 @@ window.addEventListener('load', () => {
                 $csa('game_list')[0].removeChild($id('create_game'));
 
             }
-            choose_edit();
+
         })
     });
 

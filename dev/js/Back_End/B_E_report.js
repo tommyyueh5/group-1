@@ -1,24 +1,23 @@
 window.addEventListener('load', () => {
 
 
-    fetch('../../../dest/PHP_program/Back_End/Back_End_report.php',{
-        method:'POST',
-        headers:{
+    fetch('../../../dest/PHP_program/Back_End/Back_End_report.php', {
+        method: 'POST',
+        headers: {
             'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
         }
 
-    }).then(resp=>{
-        if(resp.status == 200){
+    }).then(resp => {
+        if (resp.status == 200) {
             return resp.json();
         }
-    }).then(FetchData=>{
-        
+    }).then(FetchData => {
         // console.log();
-        Array.from(FetchData).forEach((report,index)=>{
-        let report_list_P = document.querySelector('.report_list');
-        let createLi = document.createElement('li');
-        createLi.classList.add('p_member');
-        let render = `
+        Array.from(FetchData).forEach((report, index) => {
+            let report_list_P = document.querySelector('.report_list');
+            let createLi = document.createElement('li');
+            createLi.classList.add('p_member');
+            let render = `
                         <div class="main_data">
                             <h1 class="report_title">${report.DIS_TIT}</h1>
                             <div class="in_box">
@@ -35,21 +34,40 @@ window.addEventListener('load', () => {
                             <p class="category_date">${report.REP_DATE}</p>
                         </div>
                         <div class="Audit_results">
-                            <h1>${report.VER_SIT == 0?'未審核':report.VER_SIT == 1?'未通過':report.VER_SIT == 2?'通過':null}</h1>
+                            <span class="center">
+                                <input class="report_isON" id="report${index}" type="checkbox" value="0">
+                            </span>
                         </div>
                     `;
-                    createLi.innerHTML = render;
-                    report_list_P.appendChild(createLi)
+            createLi.innerHTML = render;
+            report_list_P.appendChild(createLi)
             // console.log(report);
-            
+            let pData = document.querySelectorAll('.isON');
+            pData.forEach((p, i) => {
+                if (p.value == 1) {
+                    p.checked = true;
+                    $(`#report${index}`).click(function () {
+
+                        if ($(`#report${index}`).val() == 0) {
+                            $(`#report${index}`).val(1);
+                        } else {
+                            $(`#report${index}`).val(0);
+                        }
+                    })
+                } else {
+                    p.checked = false;
+                }
+
+            });
+
         })
         // console.log(report_list_P);
         // FetchData.
-        
 
-                    
-        
-    }).catch(err=>{
+
+
+
+    }).catch(err => {
         console.log(err);
     })
     // let xhr = new XMLHttpRequest();
@@ -67,8 +85,8 @@ window.addEventListener('load', () => {
     //             <div class="main_data">
     //                 <h1 class="news_title">${news_data[i]["NEWS_TIT"]}</h1>
     //                 <ul class="news_tag">
-         
-                    
+
+
     //                 </ul>
     //                 <p>${news_data[i]["NEWS_CON"]}
     //                 </p>
@@ -87,25 +105,9 @@ window.addEventListener('load', () => {
     //         `
     //         )
     //         };
-            
 
-    //         let pData = document.querySelectorAll('.isON');
-    //         pData.forEach((p, i) => {
-    //             if (p.value == 1) {
-    //                 p.checked = true;
-    //                 $(`#report${news_data[i].GAME_NO}`).click(function () {
 
-    //                     if ($(`#report${news_data[i].GAME_NO}`).val() == 0) {
-    //                         $(`#report${news_data[i].GAME_NO}`).val(1);
-    //                     } else {
-    //                         $(`#report${news_data[i].GAME_NO}`).val(0);
-    //                     }
-    //                 })
-    //             } else {
-    //                 p.checked = false;
-    //             }
-               
-    //         });
+
     //     } else {
     //         alert(xhr.status);
     //     }
