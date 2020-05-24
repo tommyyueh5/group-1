@@ -317,10 +317,10 @@ var myBar = new Chart(ctx, {
     type: 'roundedBar',
     //plugins: [ChartDataSource],
     data: {
-        labels: ['2020/01', '2020/02', '2020/03', '2020/04', '2020/05', '2020/06', '2020/07', '2020/08', '2020/09', '2020/10', '2020/11', '2020/12', '2020/13'],
+        labels: ['2020/01', '2020/02', '2020/03', '2020/04', '2020/05'],
         datasets: [{
             label: '病例數',
-            data: [20, 26, 27, 58, 29, 30, 24, 25, 24, 25, 26, 30, 24], //資料以陣列形式存放
+            data: [8, 14, 27, 58, 29], //資料以陣列形式存放
             borderColor: "#80b6f4",
             backgroundColor: "#80b6f4",
             fill: false,
@@ -344,7 +344,7 @@ var myBar = new Chart(ctx, {
             duration: 1500,
         },
         title: {
-            text: '冠狀病毒肺炎境外移入確定病例統計-人數/國家',
+            text: '冠狀病毒肺炎確定病例統計-人數/月份',
             fontSize: 12,
             display: true,
             position: 'top',
@@ -371,7 +371,7 @@ var myBar = new Chart(ctx, {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: '國家',
+                    labelString: '月份',
                 },
             }],
         }

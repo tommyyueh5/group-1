@@ -11,17 +11,17 @@ const { JSDOM } = jsdom;
 const { window } = new JSDOM();
 const $ = require('jquery')(window);
 
-加入排程
-var schedule = require('node-schedule');
-　　var rule = new schedule.RecurrenceRule();
+//加入排程
+// var schedule = require('node-schedule');
+// 　　var rule = new schedule.RecurrenceRule();
 
-　　rule.minute = 40;
+// 　　rule.minute = 40;
 
-　　var j = schedule.scheduleJob(rule, function(){
+// 　　var j = schedule.scheduleJob(rule, function(){
 
-　　　　console.log("執行任務");
+// 　　　　console.log("執行任務");
 
-　　});
+// 　　});
 
 // var j = schedule.scheduleJob(rule, function(){
 //     console.log('The answer to life, the universe, and everything!');
@@ -74,7 +74,7 @@ let url = `https://news.campaign.yahoo.com.tw/2019-nCoV/index.php`;
         });
          console.log({data:arrLink});
         let result = {data:arrLink};
-        await fs.writeFileSync(`/dest/js/map/taiwanmap/index.json`, JSON.stringify(result, null ,4));  
+        await fs.writeFileSync(`dest/js/map/taiwanmap/index.json`, JSON.stringify(result, null ,4));  
         // await fs.writeFileSync(`downloads/index.json`, JSON.stringify(arrLink, null,4));  
         //console.log(typeof JSON.stringify(arrLink));
     }

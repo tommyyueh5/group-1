@@ -3,71 +3,71 @@
         {
             "number": "1",
             "name": "臺北市",
-            "brithplace": "113"
+            "brithplace": "117"
         },
         {
             "number": "2",
             "name": "新北市",
-            "brithplace": "89"
+            "brithplace": "91"
         },
         {
             "number": "3",
             "name": "桃園市",
-            "brithplace": "48"
+            "brithplace": "53"
         },
         {
             "number": "4",
-            "name": "臺中市",
-            "brithplace": "37"
+            "name": "高雄市",
+            "brithplace": "49"
         },
         {
             "number": "5",
-            "name": "高雄市",
-            "brithplace": "30"
+            "name": "臺中市",
+            "brithplace": "40"
         },
         {
             "number": "6",
             "name": "彰化縣",
-            "brithplace": "18"
+            "brithplace": "19"
         },
         {
             "number": "7",
             "name": "臺南市",
-            "brithplace": "14"
+            "brithplace": "16"
         },
         {
             "number": "8",
+            "name": "屏東縣",
+            "brithplace": "12"
+        },
+        {
+            "number": "9",
             "name": "新竹市",
             "brithplace": "11"
         },
         {
-            "number": "9",
-            "name": "屏東縣",
-            "brithplace": "7"
-        },
-        {
             "number": "10",
             "name": "基隆市",
-            "brithplace": "6"
+            "brithplace": "7"
         },
         {
             "number": "11",
             "name": "新竹縣",
-            "brithplace": "6"
+            "brithplace": "7"
         },
         {
             "number": "12",
             "name": "雲林縣",
-            "brithplace": "4"
+            "brithplace": "6"
         },
         {
             "number": "13",
-            "name": "苗栗縣",
-            "brithplace": "3"
+            "name": "嘉義市",
+            "brithplace": "4"
         },
         {
             "number": "14",
-            "name": "嘉義市",
+            "name": "苗栗縣",
             "brithplace": "3"
         },
         {
