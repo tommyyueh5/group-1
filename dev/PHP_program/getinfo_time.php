@@ -9,8 +9,12 @@ try{
     $filterText = $_POST["filterText"];
     // $filterTime = $_POST["filterTime"];
     // 篩選條件--照最新發文排序
+<<<<<<< HEAD
     $sql = "SELECT `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,`MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,
     `DISCUSSION`.`DIS_C`,`DISCUSSION`.`DIS_NO`,`DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,`DISCUSSION`.`DIS_CON` 
+=======
+    $sql = "SELECT `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,`MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,`DISCUSSION`.`DIS_C`,`DISCUSSION`.`DIS_NO`,`DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,`DISCUSSION`.`DIS_CON` 
+>>>>>>> dev
     FROM `MEMBER`,`DISCUSSION` 
     WHERE `MEMBER`.`MEM_NO` = `DISCUSSION`.`MEM_NO` 
     AND `DISCUSSION`.`DIS_C` = :disCon

@@ -20,11 +20,19 @@ function showComment() {
                 comTime = data[i].COM_DATE;
                 //動態新增留言欄位
                 $('.comment').append(`
+<<<<<<< HEAD
                 <h2 id="commentId"><img src="${userPic}">${userId}：
                     <span>${userCom}</span>
                     <span class="time">${comTime}</span>
                 </h2>
                 `)
+=======
+                        <h2 id="commentId"><img src="${userPic}">${userId}：
+                            <span>${userCom}</span>
+                            <span class="time">${comTime}</span>
+                        </h2>
+                        `)
+>>>>>>> dev
             }
         }
     })
@@ -35,7 +43,11 @@ function showData() {
     console.log(filterText);
     // $('.masonry').html('');
     $.ajax({
+<<<<<<< HEAD
         url: '../../../dest/PHP_program/getinfo.php',
+=======
+        url: '../dest/PHP_program/getinfo.php',
+>>>>>>> dev
         type: "POST",
         dataType: 'json',
         data: {
@@ -54,6 +66,7 @@ function showData() {
                 comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
+<<<<<<< HEAD
                     <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
                         <div class="item_content">
                             <div class="date">
@@ -79,6 +92,33 @@ function showData() {
                         </div>
                     </div>
                 `)
+=======
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                                <div class="item_content">
+                                    <div class="date">
+                                        <h4 class="year">${nowTime}</h4>
+                                    </div>
+                                    <div class="info">
+                                        <img class="thum_img" src="${thumImg}">
+                                        <h4 class="username">${userName}</h4>
+                                    </div>
+                                    <h2 class="article_title">${artitle}</h2>
+                                    <img class="main_img" src="${imgPath}" alt="">
+                                    <p class="article_contentp">${artcon}</p>
+                                    <p class="article_contentno">${artNo}</p>
+                                    <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">${comCount}</span>留言</h4>
+                                    <h4 class="function">
+                                        <img class="heart" src="../dest/image/forum/like.png">
+                                        <img class="share" src="../dest/image/forum/share.png">
+                                    </h4>
+                                    <h4 class="function2">
+                                        <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
+                                        <img class="line" src="../dest/image/forum/line.png" alt="">
+                                    </h4>
+                                </div>
+                            </div>
+                        `)
+>>>>>>> dev
             }
         },
         error: function(xhr) {
@@ -113,6 +153,7 @@ function showDataTime() {
                 artNo = data[i].DIS_NO
                     //動態新增要加的欄位
                 $('.masonry').append(`
+<<<<<<< HEAD
                     <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
                         <div class="item_content">
                             <div class="date">
@@ -138,6 +179,33 @@ function showDataTime() {
                         </div>
                     </div>
                 `)
+=======
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                                <div class="item_content">
+                                    <div class="date">
+                                        <h4 class="year">${nowTime}</h4>
+                                    </div>
+                                    <div class="info">
+                                        <img class="thum_img" src="${thumImg}">
+                                        <h4 class="username">${userName}</h4>
+                                    </div>
+                                    <h2 class="article_title">${artitle}</h2>
+                                    <img class="main_img" src="${imgPath}" alt="">
+                                    <p class="article_contentp">${artcon}</p>
+                                    <p class="article_contentno">${artNo}</p>
+                                    <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">40</span>留言</h4>
+                                    <h4 class="function">
+                                        <img class="heart" src="../dest/image/forum/like.png">
+                                        <img class="share" src="../dest/image/forum/share.png">
+                                    </h4>
+                                    <h4 class="function2">
+                                        <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
+                                        <img class="line" src="../dest/image/forum/line.png" alt="">
+                                    </h4>
+                                </div>
+                            </div>
+                        `)
+>>>>>>> dev
             }
         },
         error: function(xhr) {
@@ -148,6 +216,10 @@ function showDataTime() {
 // 傳發文的資料到後端
 function uploadData() {
     var memno = sessionStorage.getItem('no');
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
     console.log(memno);
     $.ajax({
         url: '../dest/PHP_program/post.php',
@@ -175,6 +247,11 @@ function uploadCom() {
     var titleNo = $('.article_content_title').text();
     var articleNo = $('.article_content_no').text();
     var comLength = $('.comment h2').length;
+<<<<<<< HEAD
+=======
+    var filterText = $('div.filter_order .-on h3 ').text();
+
+>>>>>>> dev
     console.log(comLength);
     $.ajax({
         url: '../dest/PHP_program/comment.php',
@@ -185,6 +262,10 @@ function uploadCom() {
             memno: memno,
             comment: $('#comment_text').val(),
             comLength: comLength,
+<<<<<<< HEAD
+=======
+            filterText: filterText,
+>>>>>>> dev
         },
         error: function(jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
@@ -201,7 +282,10 @@ function updateCom() {
     var memno = sessionStorage.getItem('no');
     var titleNo = $('.article_content_title').text();
     var articleNo = $('.article_content_no').text();
+<<<<<<< HEAD
     var filterText = $('div.filter_order .-on h3 ').text();
+=======
+>>>>>>> dev
     var comLength = $('.comment h2').length;
     // console.log(articleNo);
     $.ajax({
@@ -213,7 +297,10 @@ function updateCom() {
             memno: memno,
             comment: $('#comment_text').val(),
             comLength: comLength,
+<<<<<<< HEAD
             filterText:filterText,
+=======
+>>>>>>> dev
         },
         error: function(jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
@@ -240,6 +327,7 @@ function uploadImg() {
     });
 };
 // 載入圖片避免重疊
+<<<<<<< HEAD
 // function imgLoad() {
 //     /* 瀑布流區塊div */
 //     var $container = $('.masonry');
@@ -251,6 +339,19 @@ function uploadImg() {
 //         })
 //     });
 // };
+=======
+function imgLoad() {
+    /* 瀑布流區塊div */
+    var $container = $('.masonry');
+    //當圖片讀取完畢才執行
+    $container.imagesLoaded(function() {
+        //選擇瀑布流的區塊名稱
+        $container.masonry({
+            itemSelector: '.item',
+        })
+    });
+};
+>>>>>>> dev
 
 //傳送檢舉資訊到資料庫
 function sendReport() {
