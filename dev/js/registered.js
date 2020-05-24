@@ -30,19 +30,17 @@ window.addEventListener('load', () => {
                 let RP =  ($id('RG_Pwd').value).trim();
                 
                 
-            if($id('RG_Email')){
-                if (RE.length == 0) {
-                    alert('您的信箱長度不能為空值');
-                    return
-                }
-                if (RN.length == 0) {
-                    alert('您的名稱長度不能為空值');
-                    return
-                }
-                if (RP.length == 0) {
-                    alert('您的密碼長度不能為空值');
-                    return
-                }
+            if (RE.length == 0) {
+                alert('您的信箱長度不能為空值');
+                return
+            }
+            if (RN.length == 0) {
+                alert('您的名稱長度不能為空值');
+                return
+            }
+            if (RP.length == 0) {
+                alert('您的密碼長度不能為空值');
+                return
             }
 
             let isOpen = sessionStorage.getItem('open')

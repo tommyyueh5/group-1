@@ -5,6 +5,7 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try{
 
+<<<<<<< HEAD
     require_once("connet.php");
     $filter = $_POST["filterText"];
 
@@ -23,6 +24,13 @@ try{
     // $commentCount =$pdo->query($sql2);
     // $comRows = $commentCount->fetchAll(PDO::FETCH_ASSOC);
 
+=======
+    require_once("connectdd106g1.php");
+    
+    // $sql= "select * from discussion";
+    $sql = "SELECT `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,`MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,`DISCUSSION`.`DIS_C_NO`,`DISCUSSION`.`DIS_NO`,`DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,`DISCUSSION`.`DIS_CON` FROM `MEMBER`,`DISCUSSION` WHERE `MEMBER`.`MEM_NO` = `discussion`.`MEM_NO`";
+    $articles = $pdo->query($sql);
+>>>>>>> 8c5b8ba53104661844a13b6bfd49983a0b01826c
     $prodRows = $articles->fetchAll(PDO::FETCH_ASSOC);
     shuffle($prodRows);
     // echo urldecode(json_encode($prodRows));

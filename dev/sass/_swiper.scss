@@ -5,7 +5,7 @@
 
     >.newTitle {
         width: 100%;
-        padding: 20px;
+        padding: 30px 60px;
         background: #333;
         display: flex;
         align-items: center;
@@ -88,7 +88,8 @@
                 }
 
                 .timeline-text {
-                    font-size: 20px;
+                    font-size: 16px;
+                    padding: 0 20px;
                     line-height: 1.5;
                     opacity: 1;
                     transform: translate3d(20px, 0, 0);

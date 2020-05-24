@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
 
             }
 
-            xhr.open('Post', '../../dest/PHP_program/admin.php');
+            xhr.open('Post', '../../../dest/PHP_program/admin.php');
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             let admin_info = `ID=${$id('rootName').value}&PAS=${$id('pws_box').value}`;
             xhr.send(admin_info);
