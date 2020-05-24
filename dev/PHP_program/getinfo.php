@@ -8,21 +8,6 @@ try{
     require_once("connectdd106g1.php");
     $filter = $_POST["filterText"];
 
-<<<<<<< HEAD
-
-    $sql =  "SELECT DISTINCT 
-    `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,
-    `MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,
-    `DISCUSSION`.`DIS_C`,`DISCUSSION`.`DIS_NO`,
-    `DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,
-    `DISCUSSION`.`DIS_CON`,`discuss_comment`.`COM_COUNT` 
-     
-    FROM `MEMBER`,`DISCUSSION`,`discuss_comment` 
-    WHERE `MEMBER`.`MEM_NO` = `DISCUSS_comment`.`MEM_NO` 
-    AND `discussion`.`DIS_NO` = `discuss_comment`.`DIS_NO` 
-    AND `DISCUSSION`.`DIS_C` = ':disCon'"; 
-   
-=======
     // $sql = "SELECT DISTINCT `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,`MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,`DISCUSSION`.`DIS_C_NO`,`DISCUSSION`.`DIS_NO`,`DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,`DISCUSSION`.`DIS_CON` 
     // FROM `MEMBER`,`DISCUSSION`
     // WHERE `MEMBER`.`MEM_NO` = `DISCUSSION`.`MEM_NO` 
@@ -38,7 +23,6 @@ try{
     // AND `discussion`.`DIS_NO` = `discuss_comment`.`DIS_NO` 
     // AND `DISCUSSION`.`DIS_C_NO` = :disCon ";
     
->>>>>>> dev
 
     $articles = $pdo->prepare($sql);
     $articles ->bindValue(":disCon",$filter);

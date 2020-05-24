@@ -20,19 +20,11 @@ function showComment() {
                 comTime = data[i].COM_DATE;
                 //動態新增留言欄位
                 $('.comment').append(`
-<<<<<<< HEAD
-                <h2 id="commentId"><img src="${userPic}">${userId}：
-                    <span>${userCom}</span>
-                    <span class="time">${comTime}</span>
-                </h2>
-                `)
-=======
                         <h2 id="commentId"><img src="${userPic}">${userId}：
                             <span>${userCom}</span>
                             <span class="time">${comTime}</span>
                         </h2>
                         `)
->>>>>>> dev
             }
         }
     })
@@ -43,11 +35,7 @@ function showData() {
     console.log(filterText);
     // $('.masonry').html('');
     $.ajax({
-<<<<<<< HEAD
-        url: '../../../dest/PHP_program/getinfo.php',
-=======
         url: '../dest/PHP_program/getinfo.php',
->>>>>>> dev
         type: "POST",
         dataType: 'json',
         data: {
@@ -66,33 +54,6 @@ function showData() {
                 comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
-<<<<<<< HEAD
-                    <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
-                        <div class="item_content">
-                            <div class="date">
-                                <h4 class="year">${nowTime}</h4>
-                            </div>
-                            <div class="info">
-                                <img class="thum_img" src="${thumImg}">
-                                <h4 class="username">${userName}</h4>
-                            </div>
-                            <h2 class="article_title">${artitle}</h2>
-                            <img class="main_img" src="${imgPath}" alt="">
-                            <p class="article_contentp">${artcon}</p>
-                            <p class="article_contentno">${artNo}</p>
-                            <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">${comCount}</span>留言</h4>
-                            <h4 class="function">
-                                <img class="heart" src="../dest/image/forum/like.png">
-                                <img class="share" src="../dest/image/forum/share.png">
-                            </h4>
-                            <h4 class="function2">
-                                <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
-                                <img class="line" src="../dest/image/forum/line.png" alt="">
-                            </h4>
-                        </div>
-                    </div>
-                `)
-=======
                             <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
                                 <div class="item_content">
                                     <div class="date">
@@ -118,10 +79,9 @@ function showData() {
                                 </div>
                             </div>
                         `)
->>>>>>> dev
             }
         },
-        error: function(xhr) {
+        error: function (xhr) {
             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     });
@@ -151,35 +111,8 @@ function showDataTime() {
                 artitle = data[i].DIS_TIT;
                 artcon = data[i].DIS_CON;
                 artNo = data[i].DIS_NO
-                    //動態新增要加的欄位
+                //動態新增要加的欄位
                 $('.masonry').append(`
-<<<<<<< HEAD
-                    <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
-                        <div class="item_content">
-                            <div class="date">
-                                <h4 class="year">${nowTime}</h4>
-                            </div>
-                            <div class="info">
-                                <img class="thum_img" src="${thumImg}">
-                                <h4 class="username">${userName}</h4>
-                            </div>
-                            <h2 class="article_title">${artitle}</h2>
-                            <img class="main_img" src="${imgPath}" alt="">
-                            <p class="article_contentp">${artcon}</p>
-                            <p class="article_contentno">${artNo}</p>
-                            <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">40</span>留言</h4>
-                            <h4 class="function">
-                                <img class="heart" src="../dest/image/forum/like.png">
-                                <img class="share" src="../dest/image/forum/share.png">
-                            </h4>
-                            <h4 class="function2">
-                                <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
-                                <img class="line" src="../dest/image/forum/line.png" alt="">
-                            </h4>
-                        </div>
-                    </div>
-                `)
-=======
                             <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
                                 <div class="item_content">
                                     <div class="date">
@@ -205,10 +138,9 @@ function showDataTime() {
                                 </div>
                             </div>
                         `)
->>>>>>> dev
             }
         },
-        error: function(xhr) {
+        error: function (xhr) {
             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     });
@@ -216,10 +148,6 @@ function showDataTime() {
 // 傳發文的資料到後端
 function uploadData() {
     var memno = sessionStorage.getItem('no');
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
     console.log(memno);
     $.ajax({
         url: '../dest/PHP_program/post.php',
@@ -232,10 +160,10 @@ function uploadData() {
             content: $('#content').val(),
             path: $(".oldPath")[0].files[0].name,
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function(data) {
+        success: function (data) {
             alert('success: ' + data);
             location.href = 'forum.html';
         }
@@ -247,11 +175,8 @@ function uploadCom() {
     var titleNo = $('.article_content_title').text();
     var articleNo = $('.article_content_no').text();
     var comLength = $('.comment h2').length;
-<<<<<<< HEAD
-=======
     var filterText = $('div.filter_order .-on h3 ').text();
 
->>>>>>> dev
     console.log(comLength);
     $.ajax({
         url: '../dest/PHP_program/comment.php',
@@ -262,15 +187,12 @@ function uploadCom() {
             memno: memno,
             comment: $('#comment_text').val(),
             comLength: comLength,
-<<<<<<< HEAD
-=======
             filterText: filterText,
->>>>>>> dev
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function(data) {
+        success: function (data) {
             alert('success: ' + data);
             // location.href = 'forum.html';
             $('#comment_text').val('');
@@ -282,10 +204,6 @@ function updateCom() {
     var memno = sessionStorage.getItem('no');
     var titleNo = $('.article_content_title').text();
     var articleNo = $('.article_content_no').text();
-<<<<<<< HEAD
-    var filterText = $('div.filter_order .-on h3 ').text();
-=======
->>>>>>> dev
     var comLength = $('.comment h2').length;
     // console.log(articleNo);
     $.ajax({
@@ -297,15 +215,11 @@ function updateCom() {
             memno: memno,
             comment: $('#comment_text').val(),
             comLength: comLength,
-<<<<<<< HEAD
-            filterText:filterText,
-=======
->>>>>>> dev
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function(data) {
+        success: function (data) {
             alert('success: ' + data);
             // location.href = 'forum.html';
             // $('#comment_text').val('');
@@ -321,37 +235,23 @@ function uploadImg() {
         data: form,
         processData: false,
         contentType: false,
-        success: function(data) {
+        success: function (data) {
             alert(data);
         }
     });
 };
 // 載入圖片避免重疊
-<<<<<<< HEAD
-// function imgLoad() {
-//     /* 瀑布流區塊div */
-//     var $container = $('.masonry');
-//     //當圖片讀取完畢才執行
-//     $container.imagesLoaded(function() {
-//         //選擇瀑布流的區塊名稱
-//         $container.masonry({
-//             itemSelector: '.item',
-//         })
-//     });
-// };
-=======
 function imgLoad() {
     /* 瀑布流區塊div */
     var $container = $('.masonry');
     //當圖片讀取完畢才執行
-    $container.imagesLoaded(function() {
+    $container.imagesLoaded(function () {
         //選擇瀑布流的區塊名稱
         $container.masonry({
             itemSelector: '.item',
         })
     });
 };
->>>>>>> dev
 
 //傳送檢舉資訊到資料庫
 function sendReport() {
@@ -367,15 +267,15 @@ function sendReport() {
             artno: artno,
             reason: reason,
         },
-        success: function(data) {
+        success: function (data) {
             alert(data);
         }
     });
 }
-$(document).ready(function() {
+$(document).ready(function () {
     showData();
     // imgLoad();
-    $(".filter_order a.tab").on("click", function(e) {
+    $(".filter_order a.tab").on("click", function (e) {
         $('div.article').remove();
         e.preventDefault();
 
@@ -389,7 +289,7 @@ $(document).ready(function() {
         $('.subtitle_1 h3').text(filterText);
         showData();
     });
-    $(".filter_time a.tab_third").on("click", function(e) {
+    $(".filter_time a.tab_third").on("click", function (e) {
         $('div.article').remove();
         e.preventDefault();
 
@@ -405,28 +305,28 @@ $(document).ready(function() {
 
     });
     //檢舉燈箱
-    $(".report").on("click", function(e) {
+    $(".report").on("click", function (e) {
         e.stopPropagation();
     });
-    $("img#report").on("click", function() {
+    $("img#report").on("click", function () {
         $("div.report").show();
         // console.log($(".article_content_no").text());
     });
-    $("#sendReport").on("click", function(e) {
+    $("#sendReport").on("click", function (e) {
         $("div.report").hide();
         // sendReport();
         e.stopPropagation();
         sendReport();
         alert("謝謝您的回覆，我們將盡快審查！")
     });
-    $("#cancelReport").on("click", function(e) {
+    $("#cancelReport").on("click", function (e) {
         $("div.report").hide();
         e.stopPropagation();
     });
 
     //動態新增物件 建立聆聽事件
     //文章燈箱
-    $(".masonry").on("click", '.main_img,.article_title', function(e) {
+    $(".masonry").on("click", '.main_img,.article_title', function (e) {
         var parr = $(this).parent('.item_content');
         var thisTime = parr.find('.year');
         var thisTitle = parr.find('.article_title');
@@ -471,15 +371,15 @@ $(document).ready(function() {
         showComment();
 
     });
-    $(".article_content").on("click", function(e) {
+    $(".article_content").on("click", function (e) {
         e.stopPropagation();
 
     });
-    $(".post,#upload,#content,#postBtn").on("click", function(e) {
+    $(".post,#upload,#content,#postBtn").on("click", function (e) {
         e.stopPropagation();
 
     });
-    $("body").on("click", function() {
+    $("body").on("click", function () {
         $(".article_content,.background").hide();
         $('.post').css('background-color', 'unset');
         $('#upload').hide();
@@ -490,25 +390,25 @@ $(document).ready(function() {
         $("div.report").hide();
     });
     //條件篩選
-    $("#filter_con").on("click", function() {
+    $("#filter_con").on("click", function () {
         $(".filter_left div").slideToggle();
     });
-    $("#filter_top").on("click", function() {
+    $("#filter_top").on("click", function () {
         $(".filter_right h3").slideToggle();
     });
-    $(".filter_right h3").on("click", function(e) {
+    $(".filter_right h3").on("click", function (e) {
         // console.log($(this).text());
         // console.log($(".filter_right span").text());
         $(".filter_right span").text($(this).text());
         $(".filter_right h3").slideToggle();
     });
-    $(".filter_left div").on("click", function(e) {
+    $(".filter_left div").on("click", function (e) {
         // console.log($(this).text());
         $(".filter_left span").text($(this).text());
         $(".filter_left div").slideToggle();
     });
     // 發文按鈕  沒登入不能發文
-    $('#title').on("click", function() {
+    $('#title').on("click", function () {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能發文！！");
@@ -523,13 +423,13 @@ $(document).ready(function() {
         };
     });
     //沒登入不能留言
-    $('#comment_text').on("click", function() {
+    $('#comment_text').on("click", function () {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能留言！！");
         }
     });
-    $('#postCom').on("click", function() {
+    $('#postCom').on("click", function () {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能留言！！");
@@ -539,7 +439,7 @@ $(document).ready(function() {
             showComment();
         }
     });
-    $('#postBtn,#canBtn').on("click", function() {
+    $('#postBtn,#canBtn').on("click", function () {
         $('#upload').hide();
         $('#content').hide();
         $('#postBtn').hide();

@@ -15,11 +15,7 @@ try{
         $nowtime = date("Y-m-d");
 
 
-<<<<<<< HEAD
-        $sql = "INSERT INTO `DISCUSS_COMMENT` (`DIS_NO`,`MEM_NO`,`COM_CON`,`COM_DATE`,`DIS_COM_C`,`COM_COUNT`)
-=======
         $sql = "INSERT INTO `DISCUSS_COMMENT` (`DIS_NO`,`MEM_NO`,`COM_CON`,`COM_DATE`,`DIS_COM_C`,`COM_COUNT`) 
->>>>>>> dev
         VALUES (:disno,:memno,:content,:nowtime,:filterText,:comLength+'1')";
         $comment = $pdo->prepare($sql); 
         $comment ->bindParam(":memno",$memno);
