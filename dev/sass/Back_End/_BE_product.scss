@@ -4,10 +4,9 @@
     ol.product_topic_title {
         display: flex;
         background-color: #333;
-        position: fixed;
-        top: 115px;
-        left: 300px;
-        width: calc(100vw - 300px);
+        position: absolute;
+        top: 55px;
+        width: 100%;
         z-index: 11;
         li {
             display: flex;
@@ -77,7 +76,7 @@
                 flex-direction: column;
                 width: 100%;
                 padding: 0 30px;
-                >input{
+                > input {
                     margin-bottom: 20px;
                 }
                 > h1 {

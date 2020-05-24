@@ -9,24 +9,24 @@ window.addEventListener('load', () => {
                 $('.game_list').append(`
                 <li class="p_game">
                 <div class="game_topic">
-                    <h1>${game_data[i]["question"]}</h1>
+                    <textarea id="game_h1_edit" rows="3 class="edit_on" disabled>${game_data[i]["question"]}</textarea>
                 </div>
                 <ol class="answer_list">
                     <li>
                         <span>A.</span> 
-                        <p>${game_data[i]["choiceA"]}</p>
+                        <input class="edit_on" disabled="disabled" value="${game_data[i]["choiceA"]}"></input>
                     </li>
                     <li>
                         <span>B.</span>
-                        <p>${game_data[i]["choiceB"]}</p>
+                        <input class="edit_on" disabled="disabled" value="${game_data[i]["choiceB"]}"></input>
                     </li>
                     <li>
                         <span>C.</span>
-                        <p>${game_data[i]["choiceC"]}</p>
+                        <input class="edit_on" disabled="disabled" value="${game_data[i]["choiceC"]}"></input>
                     </li>
                 </ol>
                 <div class="answer">
-                    <p>${game_data[i]["correct"]}.${game_data[i]["RIGHT_ANSWER"]}</p>
+                    <input class="edit_on" disabled="disabled" value="${game_data[i]["correct"]}.${game_data[i]["RIGHT_ANSWER"]}"></input>
                 </div>
                 <div class="Audit_results">
                     <span class="center">

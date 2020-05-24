@@ -13,6 +13,14 @@ window.addEventListener('load', () => {
         return document.getElementsByTagName(tag);
     }
 
+
+
+
+
+
+
+
+
     //宣告頁籤
     let datas = document.querySelectorAll('.data');
     //針對mgmt_title建立自動迴圈，頁籤切換功能
@@ -83,8 +91,9 @@ window.addEventListener('load', () => {
                 $csa('product_list')[0].removeChild($id('create_product'));
             } else if ($id('create_game')) {
                 $csa('game_list')[0].removeChild($id('create_game'));
-            }
 
+            }
+            choose_edit();
         })
     });
 
@@ -99,7 +108,7 @@ window.addEventListener('load', () => {
                 <div class="game_topic">
                 <textarea cols="20" rows="5"></textarea>
                 </div>
-                <ul class="answer_list">
+                <ol class="answer_list">
                     <li>
                         <span>A.</span>
                         <input class="bd_style"></input>
@@ -112,7 +121,7 @@ window.addEventListener('load', () => {
                         <span>C.</span>
                         <input class="bd_style"></input>
                     </li>
-                </ul>
+                </ol>
                 <div class="answer">
                     <input class="bd_style"></input>
                 </div>
@@ -210,10 +219,8 @@ window.addEventListener('load', () => {
                         for (let j = 0; j < objects.length; j++) {
                             objects[j].classList.add('edit_focus')
                             $id('edit').textContent = '取消';
+
                         }
-                        // for (let n = 0; n < objects.length; n++) {
-                        //     objects[n].addEventListener('click', choose_edit, true);
-                        // }
                     };
                 };
             };
@@ -222,33 +229,50 @@ window.addEventListener('load', () => {
 
     $id('edit').addEventListener('click', edit_cancel, true);
 
+    // let choose_edit = () => {
+    //     //頁籤
+
+    //     let title_object = $csa('mgmt_title')
+    //     for (let n = 0; n < title_object.length; n++) {
+    //         // 表單欄位數
+    //         let objects = $csa('data')[n].querySelectorAll('ul>li')
+    //         // 當在當前頁籤且在編輯狀態下才作用
+
+    //         if (objects[0].classList.contains('edit_focus')) {
+    //             if ($tag('h1')[n].textContent == $id('tag_title').textContent) {
+    //                 $csa("edit_chack").forEach((editChack, index) => {
+    //                     let lilenght = $csa("edit_chack")[index].children
+    //                     for (let n = 0; n < lilenght.length; n++) {
+    //                         console.log($csa("edit_chack")[index].children[n].children);
+
+    //                     }
+    //                 });
+    //             }
+    //         }
+    //     }
+    // }
+
     let choose_edit = () => {
-        //頁籤
-        let title_object = $csa('mgmt_title')
-        for (let n = 0; n < title_object.length; n++) {
-            // 表單欄位數
-            let objects = $csa('data')[n].querySelectorAll('ul>li')
-            // 當在當前頁籤且在編輯狀態下才作用
-            if (objects[0].classList.contains('edit_focus')) {
-                 if ($tag('h1')[n].textContent == $id('tag_title').textContent) {
+        Array.from($csa('p_game')).forEach((pGame, index) => {
+            pGame.addEventListener('click', () => {
+                if ($cs('edit_focus')) {
+                    pGame.querySelector('textarea').removeAttribute('disabled');
+                    pGame.querySelector('textarea').classList.add('edit_open');
 
-   
+                    for (let i = 0; i < 4; i++) {
+                        pGame.querySelectorAll('input')[i].removeAttribute('disabled');
+                        pGame.querySelectorAll('input')[i].classList.add('edit_open')
+                    }
+                    for (let j = 0; j < $csa('p_game').length; j++) {
+                        // pGame.classList.remove('edit_focus');
+                        
+                    }
+                    
+                    
                 }
-            }
-        }
-        Array.from($csa('data')[2].querySelector('ul>li').children).forEach(item => {
-            let forumTitle = document.querySelector('.forum_title');
-
-
-
-            console.log($csa('data')[2].querySelector('ul>li').children);
-
-            console.log(forumTitle);
-            // item.replaceChild(input, forumTitle)
-        })
+            })
+        });
     }
-    window.addEventListener("click", choose_edit, true);
-
 });
 
 
