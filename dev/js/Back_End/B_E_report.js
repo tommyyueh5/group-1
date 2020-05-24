@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
                 </div>
                 <div class="Audit_results">
                     <span class="center">
-                        <input type="checkbox" name="">
+                        <input class="report_isON" id="report_psi${product_data[i].PRO_NO}" type="checkbox" value="${product_data[i].PRO_PUB}">
                     </span>
                 </div>
             </li>
@@ -40,12 +40,12 @@ window.addEventListener('load', () => {
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#aaa_${news_data[i].GAME_NO}`).click(function () {
+                    $(`#report${news_data[i].GAME_NO}`).click(function () {
 
-                        if ($(`#aaa_${news_data[i].GAME_NO}`).val() == 0) {
-                            $(`#aaa_${news_data[i].GAME_NO}`).val(1);
+                        if ($(`#report${news_data[i].GAME_NO}`).val() == 0) {
+                            $(`#report${news_data[i].GAME_NO}`).val(1);
                         } else {
-                            $(`#aaa_${news_data[i].GAME_NO}`).val(0);
+                            $(`#report${news_data[i].GAME_NO}`).val(0);
                         }
                     })
                 } else {
