@@ -5,14 +5,15 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try{
 
-    require_once("connet.php");
+    require_once("connectdd106g1.php");
     $filterText = $_POST["filterText"];
     // $filterTime = $_POST["filterTime"];
     // 篩選條件--照最新發文排序
-    $sql = "SELECT `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,`MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,`DISCUSSION`.`DIS_C_NO`,`DISCUSSION`.`DIS_NO`,`DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,`DISCUSSION`.`DIS_CON` 
+    $sql = "SELECT `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,`MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,
+    `DISCUSSION`.`DIS_C`,`DISCUSSION`.`DIS_NO`,`DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,`DISCUSSION`.`DIS_CON` 
     FROM `MEMBER`,`DISCUSSION` 
     WHERE `MEMBER`.`MEM_NO` = `DISCUSSION`.`MEM_NO` 
-    AND `DISCUSSION`.`DIS_C_NO` = :disCon
+    AND `DISCUSSION`.`DIS_C` = :disCon
     ORDER BY `DISCUSSION`.`DIS_EST` DESC";
 
 
