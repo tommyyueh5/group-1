@@ -97,7 +97,6 @@ window.addEventListener('load', () => {
             JudgeXhr.send(Judge_info)
 
         } else {
-            alert('註冊信箱格式不正確');
             sessionStorage.clear();
         }
     }
