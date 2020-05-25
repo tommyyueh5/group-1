@@ -59,7 +59,8 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../dest/PHP_program/new_news.php", true);
+
+    xhr.open("Get", "./PHP_program/new_news.php", true);
     xhr.send(null);
   // ----------------------切日期----------------
   function newdate(dates){

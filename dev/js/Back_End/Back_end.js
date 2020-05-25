@@ -100,9 +100,9 @@ window.addEventListener('load', () => {
 
     //新增題庫功能
     let createFun = function () {
-        console.log(createBtn);
+        // console.log(createBtn);
         if (createBtn.textContent == "新增題庫") {
-            console.log('現在是要新增題庫');
+            // console.log('現在是要新增題庫');
             $('.game_list').prepend(`
             <li class="p_game" id="create_game">
                 <div class="game_topic">
@@ -284,7 +284,7 @@ window.addEventListener('load', () => {
         if (!submit) {
             return
         } else {
-            console.log($id('topic_img'));
+            // console.log($id('topic_img'));
             //照片儲存路徑
             $id('topic_img').addEventListener('change', imgHandler);
             submit.addEventListener('click', () => {
@@ -346,7 +346,7 @@ window.addEventListener('load', () => {
 
     //刪除文章
     function removeDiscussion(dataLi){
-        console.log(dataLi);
+        // console.log(dataLi);
         
         // Array.from(dataLi).forEach
         Array.from(dataLi[0]).forEach((item,index)=>{

@@ -88,7 +88,7 @@ xhr.onload = function () {
         var str = "";
 
         for (var i = 0; i < elLen; i++) {
-            var content = '<li class="answer_part">' + "題目" + (i + 1) + ":" + questions[i]["question"] + '<a href="#">' + questions[i]["question1"] + '</a>' + '</li>';
+            var content = '<li class="answer_part">' + "題目" + (i + 1) + ":" + questions[i]["question"] + '</li>';
             str += content;
         }
         el.innerHTML = str

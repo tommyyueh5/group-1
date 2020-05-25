@@ -3,6 +3,10 @@ ul.mark_bar {
     margin-bottom: 0;
 }
 
+header div.title_list div.login_Bg .login-Box .sign label input {
+    width: 200% !important;
+}
+
 .nav_bar {
     margin: 0 auto !important;
 }
@@ -88,7 +92,7 @@ aside.filter {
     background-color: rgb(43, 43, 43);
     font-size: 0;
     text-align: center;
-    padding: 13px 0;
+    padding: 10px 0;
 }
 
 div.filter_order,
@@ -156,6 +160,7 @@ div.filter_time h2 {
     display: inline-block;
     vertical-align: top;
     padding: 10px 15px;
+    border-bottom: 3px solid rgba(207, 207, 207, 0);
     span {
         display: none;
     }
@@ -174,7 +179,7 @@ aside.filter>a {
 }
 
 div.filter_time div a.-on h2 {
-    color: yellow;
+    border-bottom: 3px solid rgb(207, 207, 207);
 }
 
 div.filter_order a.-on h3 {
@@ -342,7 +347,7 @@ div.subtitle_1 h3 {
     font-weight: bolder;
     display: inline-block;
     margin-top: 5px;
-    width: 15%;
+    width: 16%;
 }
 
 div.subtitle_1 hr {
@@ -436,26 +441,22 @@ h4.like_comment {
     margin-top: 5px;
 }
 
-h4.function,
-h4.function2 {
+h4.function {
     margin-top: 10px;
     display: inline-block;
 }
 
 h4.function2 {
-    float: right;
-}
-
-h4.function img {
-    width: 20px;
-    vertical-align: top;
-    cursor: pointer;
+    text-align: right;
+    display: block;
+    margin-top: 10px;
 }
 
 h4.function2 img {
-    width: 20px;
+    width: 30px;
     vertical-align: top;
     cursor: pointer;
+    margin: 0 5px;
 }
 
 img.heart {
@@ -591,7 +592,7 @@ img.thumbnail2 {
     height: 50px;
     border-radius: 50%;
     vertical-align: top;
-    margin: 10px;
+    margin-top: 20px;
 }
 
 div.left span {
@@ -640,7 +641,8 @@ button#postCom {
     border: unset;
     cursor: pointer;
     vertical-align: top;
-    margin: 20px 10px 0;
+    margin: 25px 10px 0;
+    background-color: white;
 }
 
 div.comment {
@@ -682,9 +684,6 @@ aside.filter2 {
 }
 
 @media (max-width:1199px) {
-    main {
-        margin-top: 70px;
-    }
     //文章內容燈箱
     div.article_content {
         padding: 40px 50px;
@@ -719,6 +718,7 @@ aside.filter2 {
             cursor: pointer;
             vertical-align: top;
             margin: 20px 10px 0;
+            background-color: white;
         }
     }
     div.comment {
@@ -746,6 +746,17 @@ aside.filter2 {
                 color: rgb(160, 158, 158);
             }
         }
+    }
+    header div.title_list div.login_Bg .login-Box .sign {
+        padding: 0 30px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 1100px) {
+    header div.title_list div.login_Bg .login-Box .sign {
+        padding: 0 30px;
+        text-align: left;
     }
 }
 
@@ -806,6 +817,10 @@ aside.filter2 {
                 font-size: 14px;
             }
         }
+    }
+    textarea#comment_text {
+        width: 75%;
+        margin: 18px 10px;
     }
 }
 
@@ -879,8 +894,9 @@ aside.filter2 {
             div {
                 display: none;
                 width: 100%;
-                padding: 20px 0;
                 border-bottom: 1px solid white;
+                padding: 0;
+                margin: 0;
                 a {
                     color: unset;
                     text-decoration: none;
@@ -893,7 +909,8 @@ aside.filter2 {
                     vertical-align: top;
                     display: inline-block;
                     color: white;
-                    margin-top: 10px;
+                    padding: 20px;
+                    margin: 0;
                 }
             }
         }
@@ -919,7 +936,8 @@ aside.filter2 {
                 display: none;
                 border-bottom: 1px solid white;
                 font-size: 16px;
-                padding: 28.5px 0;
+                padding: 20px;
+                margin: 0;
             }
         }
     }
@@ -1065,6 +1083,10 @@ aside.filter2 {
             }
         }
     }
+    textarea#comment_text {
+        width: 70%;
+        margin: 18px 5px;
+    }
 }
 
 @media (max-width:575px) {
@@ -1104,13 +1126,12 @@ aside.filter2 {
                 font-size: 13px;
             }
             div {
-                padding: 20px 0;
+                padding: 0;
                 img {
                     width: 20px;
                 }
                 h2 {
                     font-size: 14px;
-                    margin-top: 5px;
                 }
             }
         }
@@ -1121,7 +1142,7 @@ aside.filter2 {
             }
             h3 {
                 font-size: 14px;
-                padding: 24px 0;
+                padding: 20px 0;
             }
         }
     }
@@ -1230,7 +1251,7 @@ aside.filter2 {
     //文章內容燈箱
     div.article_content {
         width: 90%;
-        padding: 30px 30px;
+        padding: 20px;
         h2 {
             font-size: 18px;
             a {
@@ -1291,5 +1312,9 @@ aside.filter2 {
                 font-size: 12px;
             }
         }
+    }
+    textarea#comment_text {
+        width: 65%;
+        margin: 18px 5px;
     }
 }
