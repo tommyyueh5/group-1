@@ -6,6 +6,7 @@ del = require('del');
 sass = require('gulp-sass');
 watch = require('gulp-watch');
 fileinclude = require('gulp-file-include');
+gulpImagemin = require('gulp-imagemin');
 
 //搬家
 gulp.task('concatjs', function () {
@@ -33,6 +34,13 @@ gulp.task('sass', ['fileinclude'], function () {
 });
 
 
+    
+//壓縮圖檔
+gulp.task('image', function () {
+    gulp.src('./dev/image/**/*')
+        .pipe(gulpImagemin())
+        .pipe(gulp.dest('./dest/images/'));
+});
 //壓縮檔案
 gulp.task('minicss', ['sass'], function () {
     gulp.src('dest/CSS/*.css')
