@@ -8,12 +8,7 @@ function $cs(cs) {
 }
 // 如果session有資料渲染全部頁面登入
 window.addEventListener('load', function () {
-    
 
-    let textError = document.createElement('span');
-    textError.classList.add('textError');
-    textError.textContent = '帳號密碼有誤請重新輸入';
-    let loginBox = $cs('login-Box');
     // console.log(loginBox);
     // 點擊打叉就返回上一頁
     // if(!$id(btnX)){
@@ -30,7 +25,7 @@ window.addEventListener('load', function () {
     let xhr = new XMLHttpRequest();
     $cs('submit1').addEventListener('click', function (e) {
         
-        xhr.onload = function (e) {
+        xhr.onload = function () {
             //成功就執行
             if (xhr.status == 200) {
                 //抓取會員資料
@@ -71,12 +66,8 @@ window.addEventListener('load', function () {
         }
 
         xhr.open("POST", "./PHP_program/sessionLogin.php", true);
-
-
-
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         let data_info = `emeEmail=${$id('emeEmail').value}&emePaw=${$id('emePaw').value}`;
-        
         xhr.send(data_info);
         
     })
