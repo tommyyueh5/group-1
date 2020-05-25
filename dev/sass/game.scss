@@ -6,9 +6,10 @@
 }
 body {
     /* font-size: 10px; */
+
     font-family: monospace;
     background-repeat: repeat;
-    background-image:url("../../dest/image/game/img/pic16.png");
+    background-image: url("./image/game/img/pic16.png");
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -32,6 +33,9 @@ body {
     top: 0;
     // width: 700px;
 }
+article {
+    margin-top: 8%;
+}
 #des > article > h1 {
     padding: 1%;
     text-align: center;
@@ -44,7 +48,8 @@ body {
 #des > article > p {
     position: relative;
     padding-left: 5%;
-    line-height: 5;
+
+    line-height: 3;
     font-size: 26px;
     // font-size: 1.6rem;
 }
@@ -111,7 +116,8 @@ body {
     display: flex;
     flex-direction: row;
     // margin:auto;
-    margin-top: 2%;
+    margin-top: 1%;
+    margin-left: 5.1%;
 }
 
 .tag_answer {
@@ -126,7 +132,7 @@ body {
 .answer_title {
     text-align: center;
     font-size: 30px;
-    margin: 5%;
+    margin: 1%;
 }
 .three_button {
     // display:flex;
@@ -138,7 +144,7 @@ body {
 }
 .tag_question {
     margin: auto;
-    padding: 10px;
+    // padding:10px;
 
     text-align: left;
 }
@@ -154,7 +160,7 @@ body {
     background-color: #fff;
     border: 1px solid #000;
     width: 100%;
-    height: 950px;
+    height: 840px;
     /* top: 50%; */
     top: 0;
     /* left: 50%; */
@@ -219,7 +225,7 @@ body {
     margin: auto;
     background-color: #222;
     width: 38%;
-    height: 950px;
+    height: calc(100vh - 70px);
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px;
     position: relative;
@@ -259,7 +265,7 @@ body {
 }
 
 #qImg {
-    width: 100%;
+    width: 80%;
     margin: auto;
 }
 #qImg img {
@@ -278,7 +284,7 @@ body {
     text-align: center;
     color: white;
     margin: 3%;
-    margin-top: 10%;
+    margin-top: 3%;
     font-size: 1.25em;
 }
 
@@ -455,14 +461,14 @@ body {
 @media (max-width: 1440px) {
     #container {
         width: 800px;
-        height: 1100px;
+        height: 840px;
     }
     #des1 {
         position: absolute;
         background-color: #fff;
         border: 1px solid #000;
         width: 100%;
-        height: 1120px;
+        height: 840px;
         /* top: 50%; */
         top: 0;
         /* left: 50%; */
@@ -495,7 +501,7 @@ body {
 @media (max-width: 1023px) {
     #container {
         width: 700px;
-        height: 1000px;
+        height: 800px;
     }
 
     #des {
@@ -514,7 +520,7 @@ body {
         right: 0;
     }
     #des1 {
-        height: 1000px;
+        height: 840px;
     }
     .three_button {
         display: inline-block;
@@ -525,7 +531,7 @@ body {
     #container {
         width: 100%;
         min-width: 0;
-        height: 1000px;
+        height: 800px;
     }
     .endSelect {
         width: 100px;
@@ -544,7 +550,7 @@ body {
     }
     #start {
         width: 100%;
-        background-image: url(../../dest/image/game/img/pic16.png);
+        background-image: url(./image/game/img/fight.png);
         background-color: rgb(172, 172, 162);
         color: black;
     }

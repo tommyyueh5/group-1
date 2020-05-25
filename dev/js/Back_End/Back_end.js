@@ -152,33 +152,52 @@ window.addEventListener('load', () => {
             console.log('現在是要新增商品');
             $('.product_list').prepend(`
                 <li class="p_product" id="create_product">
-                <div class="product_img">
-                    <div class="create_product_img"></div>
-                </div>
-                <div class="main_data">
-                    <select name="" id="">
-                        <option value="Epidemic_prevention_glasses">防疫眼鏡</option>
-                        <option value="Protective_clothing">防護衣</option>
-                        <option value="Anti_epidemic_masks">防疫口罩</option>
-                    </select>
-                    <textarea name="" id="" cols="29" rows="5"></textarea>
-                </div>
-                <div class="category">
-                    <p>上架時間</p>
-                    <input type="date" name="" id="">
-                </div>
-                <div class="Audit_results">
-                    <span class="center">
-                    <input class="product_isON" id="product_psi" type="checkbox" value="">
-                    </span>
-                    <div id="create_product_yes">確定新增</div>
-                    <div id="create_product_no">取消新增</div>
-                </div>
+                    <div class="product_img_div">
+                        <input class="uploadimg" id="product-img-upload" type="image" src="../dest/image/member/interface.png" />
+                        <input class="uploadbtn" type="file" id="upload"/>
+                    </div>
+                    <div class="main_data">
+                        <select name="" id="imageKind">
+                            <option value="">----</option>
+                            <option value="clothe">防護衣</option>
+                            <option value="goggle">防疫眼鏡</option>
+                            <option value="mask">防疫口罩</option>
+                        </select>
+                        <p class="kind-warning warning_color"></p>
+
+                        <textarea name="" id="product-desc" cols="29" rows="5"></textarea>
+                        <p class="desc-warning warning_color"></p>
+                    </div>
+                    <div class="category" id="create_date_item">
+                        <p>上架時間</p>
+                        <input type="date" name="" id="pro-time">
+                        <p class="time-warning warning_color"></p>
+
+                        <p>上架名</p>
+                        <input type="text" name="" id="pro-id">
+                        <p class="id-warning warning_color"></p>
+
+                        <p>上架價格</p>
+                        <input type="text" name="" id="pro-price">
+                        <p class="pri-warning warning_color"></p>
+                    </div>
+                    <div class="Audit_results">
+                        <span class="center">
+                            <input class="product_isON" id="product_psi" type="checkbox" value="0">
+                        </span>
+                        <div id="create_product_yes">確定新增</div>
+                        <div id="create_product_no">取消新增</div>
+                    </div>
             </li>`)
             //關閉createBtn的點擊聆聽功能
             createBtn.removeEventListener('click', createFun, true);
             //取消新增createBtn點擊聆聽功能
             $id('create_product_no').addEventListener('click', cancelCreateProduct, true);
+
+            $("input.uploadimg").click(function() {
+                $("input.uploadbtn").click();
+            });
+            newProduct();
         }
     }
 
