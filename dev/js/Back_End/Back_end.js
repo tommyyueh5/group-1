@@ -21,12 +21,6 @@ window.addEventListener('load', () => {
 
 
 
-
-
-
-
-
-
     //宣告頁籤
     let datas = document.querySelectorAll('.data');
     //針對mgmt_title建立自動迴圈，頁籤切換功能
@@ -225,6 +219,7 @@ window.addEventListener('load', () => {
     });
     // 編輯功能
     let edit_cancel = () => {
+        let arrPf = [];
         // 建立mgmt_title為基礎的自動迴圈
         Array.from($csa('mgmt_title')).forEach((memitem, index) => {
             // 判斷前兩個不允許做編輯
@@ -236,27 +231,30 @@ window.addEventListener('load', () => {
                 } else {
                     // 後面五個可以做編輯且判斷底下的每一個class有沒有edit_focus沒有的話加上，有的話取消
                     let objects = $csa('data')[index].querySelectorAll('ul>li')
-
+                    
                     if ($csa('data')[index].querySelectorAll('ul>li')[0].classList.contains('edit_focus')) {
                         for (let j = 0; j < objects.length; j++) {
                             objects[j].classList.remove('edit_focus')
                             objects[j].querySelector('#edit_cancel').classList.remove('on');
-                            
                             // 編輯按鈕文字切換
                             $id('edit').textContent = '編輯';
                         }
+
+                        arrPf.push('');
                     } else {
                         let objects = $csa('data')[index].querySelectorAll('ul>li')
                         for (let j = 0; j < objects.length; j++) {
                             objects[j].classList.add('edit_focus')
                             $id('edit').textContent = '取消';
                             objects[j].querySelector('#edit_cancel').classList.add('on');
-
                         }
+                        arrPf.push(objects);
                     };
+                    
                 };
             };
         });
+        removeDiscussion(arrPf);
     };
 
     $id('edit').addEventListener('click', edit_cancel, true);
@@ -281,7 +279,8 @@ window.addEventListener('load', () => {
     //         let objects = $csa('data')[n].querySelectorAll('ul>li')
     //         // 當在當前頁籤且在編輯狀態下才作用
 
-        console.log(submit);
+        // console.log(submit);
+        // 新增遊戲題目
         if (!submit) {
             return
         } else {
@@ -327,7 +326,7 @@ window.addEventListener('load', () => {
             })
         }
     }
-
+    //新增遊戲儲存照片檔案及位置
     function imgHandler(e) {
         sessionStorage.clear();
         const xhrsend = new XMLHttpRequest();
@@ -338,16 +337,47 @@ window.addEventListener('load', () => {
         // 路徑可能需更改
         let ImgPath = './image/game/img/' + e.target.files[0].name;
         sessionStorage.setItem('ImgPath', ImgPath);
-
-        // './image/game/img/png8_1.png'
         Data.append('one', e.target.files[0], fileName);
-        // console.log(Data.get('one'));
         xhrsend.open("post", "./image/game/img/Back_End_IMG.php");
-
-        // xhrsend.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhrsend.send(Data);
         alert('照片儲存成功')
-
     }
+
+
+    //刪除文章
+    function removeDiscussion(dataLi){
+        console.log(dataLi);
+        
+        // Array.from(dataLi).forEach
+        Array.from(dataLi[0]).forEach((item,index)=>{
+            item.children[0].addEventListener('click',()=>{
+                let forum_data = JSON.parse(sessionStorage.getItem('forum_data'))
+                let NODiscNum = forum_data[index].DIS_NO;
+                // console.log(NODiscNum ,index);
+                item.remove();
+                fetch('./PHP_program/Back_End/removeDicBack_end.php',{
+                    method:'POST',
+                    body:JSON.stringify({
+                        "NONum":NODiscNum
+                    }),
+                    headers:{
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                    }
+                }).then(resp=>{
+                    if(resp.ok){
+                        return resp.text();
+                    }
+                }).then(text=>{
+                    console.log(text);
+                }).catch(err=>{
+                    console.log('有問題');
+                    
+                })
+
+            })
+            
+        })
+    }
+
 
 });
