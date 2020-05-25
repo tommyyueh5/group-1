@@ -92,7 +92,7 @@ aside.filter {
     background-color: rgb(43, 43, 43);
     font-size: 0;
     text-align: center;
-    padding: 13px 0;
+    padding: 10px 0;
 }
 
 div.filter_order,
@@ -160,6 +160,7 @@ div.filter_time h2 {
     display: inline-block;
     vertical-align: top;
     padding: 10px 15px;
+    border-bottom: 3px solid rgba(207, 207, 207, 0);
     span {
         display: none;
     }
@@ -178,7 +179,7 @@ aside.filter>a {
 }
 
 div.filter_time div a.-on h2 {
-    color: yellow;
+    border-bottom: 3px solid rgb(207, 207, 207);
 }
 
 div.filter_order a.-on h3 {
@@ -440,26 +441,22 @@ h4.like_comment {
     margin-top: 5px;
 }
 
-h4.function,
-h4.function2 {
+h4.function {
     margin-top: 10px;
     display: inline-block;
 }
 
 h4.function2 {
-    float: right;
-}
-
-h4.function img {
-    width: 20px;
-    vertical-align: top;
-    cursor: pointer;
+    text-align: right;
+    display: block;
+    margin-top: 10px;
 }
 
 h4.function2 img {
-    width: 20px;
+    width: 30px;
     vertical-align: top;
     cursor: pointer;
+    margin: 0 5px;
 }
 
 img.heart {
@@ -595,7 +592,7 @@ img.thumbnail2 {
     height: 50px;
     border-radius: 50%;
     vertical-align: top;
-    margin: 10px;
+    margin-top: 20px;
 }
 
 div.left span {
@@ -644,7 +641,7 @@ button#postCom {
     border: unset;
     cursor: pointer;
     vertical-align: top;
-    margin: 20px 10px 0;
+    margin: 25px 10px 0;
     background-color: white;
 }
 
@@ -820,6 +817,10 @@ aside.filter2 {
                 font-size: 14px;
             }
         }
+    }
+    textarea#comment_text {
+        width: 75%;
+        margin: 18px 10px;
     }
 }
 
@@ -1079,6 +1080,10 @@ aside.filter2 {
             }
         }
     }
+    textarea#comment_text {
+        width: 70%;
+        margin: 18px 5px;
+    }
 }
 
 @media (max-width:575px) {
@@ -1244,7 +1249,7 @@ aside.filter2 {
     //文章內容燈箱
     div.article_content {
         width: 90%;
-        padding: 30px 30px;
+        padding: 20px;
         h2 {
             font-size: 18px;
             a {
@@ -1305,5 +1310,9 @@ aside.filter2 {
                 font-size: 12px;
             }
         }
+    }
+    textarea#comment_text {
+        width: 65%;
+        margin: 18px 5px;
     }
 }
