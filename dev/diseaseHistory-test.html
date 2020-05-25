@@ -46,44 +46,44 @@
                 <h5 class="history_subtitle">瘟疫與人</h5>
             </section>
             <div class="image-slider">
-                <div class="layer1 box">
+                <div class="layer1 box"  >
                     <div id="" class="covid-19  tab " >
                         <img class="test" src="../dest/image/btn_img_background/covid-19/covid-19-cover.jpg" data-book="book1">
                     </div>
                 </div>
-                <div class="layer3 ">
-                    <div id="" class="ebola  tab " data-book="book3">
-                        <img class="test" src="../dest/image/btn_img_background/ebola/ebola-cover.jpg">
+                <div class="layer3 box">
+                    <div id="" class="ebola  tab " >
+                        <img class="test" src="../dest/image/btn_img_background/ebola/ebola-cover.jpg" data-book="book3">
                     </div>
                 </div>
-                <div class="layer4">
-                    <div id="" class="sars  tab " data-book="book2">
-                        <img class="test" src="../dest/image/btn_img_background/sars/sars-cover.jpg">
+                <div class="layer4 box">
+                    <div id="" class="sars  tab ">
+                        <img class="test" src="../dest/image/btn_img_background/sars/sars-cover.jpg"  data-book="book2">
                     </div>
                 </div>
-                <div class="layer5">
-                    <div id="" class="Influenza  tab " data-book="book4">
-                        <img class="test" src="../dest/image/btn_img_background/Influenza/influenza-cover.jpg">
+                <div class="layer5 box">
+                    <div id="" class="Influenza  tab " >
+                        <img class="test" src="../dest/image/btn_img_background/Influenza/influenza-cover.jpg" data-book="book4">
                     </div>
                 </div>
-                <div class="layer2">
-                    <div id="" class="smallpox  tab" data-book="book5">
-                        <img class="test" src="../dest/image/btn_img_background/smallpox/smallpox-cover.jpg">
+                <div class="layer2 box">
+                    <div id="" class="smallpox  tab" >
+                        <img class="test" src="../dest/image/btn_img_background/smallpox/smallpox-cover.jpg" data-book="book5">
                     </div>
                 </div>
-                <div class="layer6">
-                    <div id="" class="black-death  tab" data-book="book6">
-                        <img class="test" src="../dest/image/btn_img_background/black_death/blackdeath-cover.jpg">
+                <div class="layer6 box">
+                    <div id="" class="black-death  tab" >
+                        <img class="test" src="../dest/image/btn_img_background/black_death/blackdeath-cover.jpg" data-book="book6">
                     </div>
                 </div>
-                <div class="layer7">
+                <div class="layer7 box">
                     <div id="" class="covid-19  tab">
-                        <img class="test" src="../dest/image/btn_img_background/covid-19/covid-19-cover.jpg">
+                        <img class="test" src="../dest/image/btn_img_background/covid-19/covid-19-cover.jpg" data-book="book7">
                     </div>
                 </div>
-                <div class="layer8">
-                    <div id="" class="ebola  tab" data-book="book7">
-                        <img class="test" src="../dest/image/btn_img_background/ebola/ebola-cover.jpg">
+                <div class="layer8 box">
+                    <div id="" class="ebola  tab" >
+                        <img class="test" src="../dest/image/btn_img_background/ebola/ebola-cover.jpg" data-book="book8">
                     </div>
                 </div>
                 <!-- <div class="layer3"> -->
@@ -617,7 +617,7 @@
                 </div>
             </div> -->
             <div class="lightbox-background tab1">
-                <a class="btnclose "></a>
+                <a class="btnclose"></a>
             </div>
             <section class="sectionAll">
                 <div class="flipbook-viewport">
@@ -1023,21 +1023,25 @@
                 event.stopPropagation();
                 let widthw = document.body.clientWidth;
                 location.href = `/dev/diseaseHistory-test.html?${mybook}`;
+                
             });
         }
 
         function dofirst() {
             var box = document.querySelectorAll('.box');
+            console.log(box.length);
             box.forEach(item => (item.addEventListener("click", (e) => {
                 // console.log(e.target.getAttribute('data-book'));
-
+            //    console.log(item);
                 let widthw = document.body.clientWidth;
                 let mybook = e.target.getAttribute('data-book');
                 let backgroundC = document.querySelector('.lightbox-background');
                 backgroundC.style.display = 'block';
                 loadApp(mybook, widthw);
-                let closeB = document.getElementsByClassName('.btnclose');
-                closeB.addEventListener('click', function () {
+                let closeB = document.querySelector('.btnclose');
+                
+                closeB.addEventListener('click', function (e) {
+                    console.log(e.target)
                     backgroundC.style.display = 'none';
                     location.href = `/dev/diseaseHistory-test.html`;
                 })
@@ -1045,7 +1049,8 @@
             })));
             if (location.search.split("?book")[1]) {
                 let search = (location.search.split("?book")[1]) - 1;
-                document.querySelectorAll('.box')[search].click();
+                console.log(document.querySelectorAll('.box').length);
+              document.querySelectorAll('.box')[1].click();
             }
         }
 
