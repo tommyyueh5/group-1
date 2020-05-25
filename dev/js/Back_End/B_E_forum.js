@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
         if (xhr.status == 200) {
             var forum_data = JSON.parse(xhr.responseText);
             // console.log(forum_data);
-
+            sessionStorage.setItem('forum_data',xhr.responseText)
             for (let i = 0; i < forum_data.length; i++) {
                 $('.forum_list').append(
                     `

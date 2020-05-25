@@ -59,7 +59,7 @@ const normalWalk = ({ peep, props }) => {
         startY,
         endX
     } =
-        props;
+    props;
 
     const xDuration = 10;
     const yDuration = 0.25;
@@ -67,17 +67,17 @@ const normalWalk = ({ peep, props }) => {
     const tl = gsap.timeline();
     tl.timeScale(randomRange(0.5, 1.5));
     tl.to(peep, {
-        duration: xDuration,
-        x: endX,
-        ease: 'none'
-    },
+            duration: xDuration,
+            x: endX,
+            ease: 'none'
+        },
         0);
     tl.to(peep, {
-        duration: yDuration,
-        repeat: xDuration / yDuration,
-        yoyo: true,
-        y: startY - 10
-    },
+            duration: yDuration,
+            repeat: xDuration / yDuration,
+            yoyo: true,
+            y: startY - 10
+        },
         0);
 
     return tl;
@@ -162,12 +162,12 @@ function createPeeps() {
         rows,
         cols
     } =
-        config;
+    config;
     const {
         naturalWidth: width,
         naturalHeight: height
     } =
-        img;
+    img;
     const total = rows * cols;
     const rectWidth = width / rows;
     const rectHeight = height / cols;
@@ -225,10 +225,10 @@ function addPeepToCrowd() {
         })
     }).
 
-        eventCallback('onComplete', () => {
-            removePeepFromCrowd(peep);
-            addPeepToCrowd();
-        });
+    eventCallback('onComplete', () => {
+        removePeepFromCrowd(peep);
+        addPeepToCrowd();
+    });
 
     peep.walk = walk;
 

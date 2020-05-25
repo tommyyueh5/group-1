@@ -128,10 +128,6 @@ function showDataTime() {
                                     <p class="article_contentp">${artcon}</p>
                                     <p class="article_contentno">${artNo}</p>
                                     <h4 class="like_comment"><span class="comments">${comCount}</span>則留言</h4>
-                                    <h4 class="function">
-                                        <img class="heart" src="../dest/image/forum/like.png">
-                                        <img class="share" src="../dest/image/forum/share.png">
-                                    </h4>
                                     <h4 class="function2">
                                         <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
                                         <img class="line" src="../dest/image/forum/line.png" alt="">
@@ -187,10 +183,6 @@ function showCommentMost() {
                                     <p class="article_contentp">${artcon}</p>
                                     <p class="article_contentno">${artNo}</p>
                                     <h4 class="like_comment"><span class="comments">${comCount}</span>則留言</h4>
-                                    <h4 class="function">
-                                        <img class="heart" src="./image/forum/like.png">
-                                        <img class="share" src="./image/forum/share.png">
-                                    </h4>
                                     <h4 class="function2">
                                         <img class="facebook" src="./image/forum/facebook.png" alt="">
                                         <img class="line" src="./image/forum/line.png" alt="">

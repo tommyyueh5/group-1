@@ -57,61 +57,10 @@ window.addEventListener('load', () => {
                 } else {
                     p.checked = false;
                 }
-
             });
-
         })
-        // console.log(report_list_P);
-        // FetchData.
-
-
-
-
     }).catch(err => {
         console.log(err);
     })
-    // let xhr = new XMLHttpRequest();
-    // xhr.onload = function () {
-    //     if (xhr.status == 200) {
-    //         const news_data = JSON.parse(xhr.responseText);
-    //         console.log(news_data);
-    //         for (let i = 0; i < news_data.length; i++) {
-    //             $('.news_list').append(
-    //             `
-    //             <li class="p_news">
-    //             <div class="news_img">
-    //                 <img src="${news_data[i]["NEWS_IMG_PATH"]}" alt="">
-    //             </div>
-    //             <div class="main_data">
-    //                 <h1 class="news_title">${news_data[i]["NEWS_TIT"]}</h1>
-    //                 <ul class="news_tag">
-
-
-    //                 </ul>
-    //                 <p>${news_data[i]["NEWS_CON"]}
-    //                 </p>
-    //             </div>
-    //             <div class="category">
-    //                 <p>最新消息</p>
-    //                 <h1 class="tag">台灣新聞</h1>
-    //                 <p class="category_date">${news_data[i]["NEWS_PUBLISH_DATE"]}</p>
-    //             </div>
-    //             <div class="Audit_results">
-    //                 <span class="center">
-    //                     <input class="report_isON" id="report_psi${product_data[i].PRO_NO}" type="checkbox" value="${product_data[i].PRO_PUB}">
-    //                 </span>
-    //             </div>
-    //         </li>
-    //         `
-    //         )
-    //         };
-
-
-
-    //     } else {
-    //         alert(xhr.status);
-    //     }
-    // }
-    // xhr.open("Get", "../../../dest/PHP_program/Back_End/Back_End_report.php", true);
-    // xhr.send(null);
+  
 });
