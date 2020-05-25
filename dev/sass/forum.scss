@@ -3,6 +3,14 @@ ul.mark_bar {
     margin-bottom: 0;
 }
 
+.nav_bar {
+    margin: 0 auto !important;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
 footer {
     position: unset;
 }
@@ -612,8 +620,8 @@ p.article_text {
 }
 
 div.article_content hr {
-    margin: 20px auto;
-    border: 0.5px solid rgb(140, 140, 140);
+    margin: 20px auto !important;
+    border: 1px solid rgb(140, 140, 140) !important;
 }
 
 textarea#comment_text {
@@ -625,7 +633,7 @@ textarea#comment_text {
 }
 
 button#postCom {
-    background-image: url("./image/forum/send.png");
+    background-image: url("./../image/forum/send.png");
     background-size: cover;
     width: 40px;
     height: 40px;
@@ -703,7 +711,7 @@ aside.filter2 {
             font-size: 16px;
         }
         button {
-            background-image: url("./image/forum/send.png");
+            background-image: url("./../image/forum/send.png");
             background-size: cover;
             width: 40px;
             height: 40px;
