@@ -73,7 +73,7 @@
                         $type = array('clothe','goggle','mask');
                         foreach ($type as $i => $v) {
                             if ( $_POST['kind']==$v) {
-                                move_uploaded_file($_FILES["images"]["tmp_name"], "../../image/epidemic-shop/${v}/". $_FILES["images"]["name"]);
+                                move_uploaded_file($_FILES["images"]["tmp_name"], "./image/epidemic-shop/${v}/". $_FILES["images"]["name"]);
                             }
                         }
                         print_r(json_encode($row));
