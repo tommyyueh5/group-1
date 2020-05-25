@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
     xhr.onload = function () {
         if (xhr.status == 200) {
             const news_data = JSON.parse(xhr.responseText);
-            // console.log(news_data[0].NEWS_NO);
+            // console.log(news_data);
             for (let i = 0; i < news_data.length; i++) {
                 $('.news_list').append(
                     `
