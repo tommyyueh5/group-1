@@ -1249,6 +1249,10 @@ button:focus {
 
 .covid-vedio-title {
     float: left;
+    
+}
+.bbc-news-iframe{
+    margin:0 0 10% 0;
 }
 
 .before-paragraph-line {
@@ -1510,6 +1514,9 @@ ul.covid-19-timeline>li:before {
     .bbc-news{
         position:relative;
         right:8%;
+    }
+    .bbc-news-iframe{
+        width:80%;
     }
     
 }

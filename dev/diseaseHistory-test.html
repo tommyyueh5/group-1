@@ -46,43 +46,43 @@
                 <h5 class="history_subtitle">瘟疫與人</h5>
             </section>
             <div class="image-slider">
-                <div class="layer1">
-                    <div id="" class="covid-19 box tab " data-book="book1">
-                        <img class="test" src="../dest/image/btn_img_background/covid-19/covid-19-cover.jpg">
+                <div class="layer1 box">
+                    <div id="" class="covid-19  tab " >
+                        <img class="test" src="../dest/image/btn_img_background/covid-19/covid-19-cover.jpg" data-book="book1">
                     </div>
                 </div>
                 <div class="layer3 ">
-                    <div id="" class="ebola box tab " data-book="book3">
+                    <div id="" class="ebola  tab " data-book="book3">
                         <img class="test" src="../dest/image/btn_img_background/ebola/ebola-cover.jpg">
                     </div>
                 </div>
                 <div class="layer4">
-                    <div id="" class="sars box tab " data-book="book2">
+                    <div id="" class="sars  tab " data-book="book2">
                         <img class="test" src="../dest/image/btn_img_background/sars/sars-cover.jpg">
                     </div>
                 </div>
                 <div class="layer5">
-                    <div id="" class="Influenza box tab " data-book="book4">
+                    <div id="" class="Influenza  tab " data-book="book4">
                         <img class="test" src="../dest/image/btn_img_background/Influenza/influenza-cover.jpg">
                     </div>
                 </div>
                 <div class="layer2">
-                    <div id="" class="smallpox box tab" data-book="book5">
+                    <div id="" class="smallpox  tab" data-book="book5">
                         <img class="test" src="../dest/image/btn_img_background/smallpox/smallpox-cover.jpg">
                     </div>
                 </div>
                 <div class="layer6">
-                    <div id="" class="black-death box tab" data-book="book6">
+                    <div id="" class="black-death  tab" data-book="book6">
                         <img class="test" src="../dest/image/btn_img_background/black_death/blackdeath-cover.jpg">
                     </div>
                 </div>
                 <div class="layer7">
-                    <div id="" class="covid-19 box tab">
+                    <div id="" class="covid-19  tab">
                         <img class="test" src="../dest/image/btn_img_background/covid-19/covid-19-cover.jpg">
                     </div>
                 </div>
                 <div class="layer8">
-                    <div id="" class="ebola box tab" data-book="book7">
+                    <div id="" class="ebola  tab" data-book="book7">
                         <img class="test" src="../dest/image/btn_img_background/ebola/ebola-cover.jpg">
                     </div>
                 </div>
@@ -714,6 +714,8 @@
 
         function loadApp(mybook, widthw) {
             console.log(widthw);
+            console.log(mybook);
+
             let html = " ";
             let flipbookV = document.querySelector('.flipbook');
             switch (mybook) {
@@ -1027,6 +1029,8 @@
         function dofirst() {
             var box = document.querySelectorAll('.box');
             box.forEach(item => (item.addEventListener("click", (e) => {
+                // console.log(e.target.getAttribute('data-book'));
+
                 let widthw = document.body.clientWidth;
                 let mybook = e.target.getAttribute('data-book');
                 let backgroundC = document.querySelector('.lightbox-background');

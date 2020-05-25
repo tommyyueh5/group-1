@@ -1247,7 +1247,7 @@ button:focus {
 }
 
 .covid-vedio-title {
-    float: left;
+    // float: left;
 }
 
 .before-paragraph-line {
@@ -1378,6 +1378,10 @@ ul.covid-19-timeline>li:before {
     .DW_news {
         width: 70%;
     }
+    .covid-pic-2{
+        margin:10% 0;
+        width:100%;
+    }
 
     .book1,
     .book2,
@@ -1429,12 +1433,17 @@ ul.covid-19-timeline>li:before {
         display: flex !important;
         flex-direction: column;
         width: 100%;
-        height: 110%;
+        height: auto;
         top: -4%;
         right: 0%;
         bottom: 5%;
     }
-
+    .btnclose {
+        position: absolute;
+        top: 8%;
+        right: 5%;
+    }
+    
 }
 
 @media only screen and (max-width: 414px) {
@@ -1455,6 +1464,8 @@ ul.covid-19-timeline>li:before {
         border-radius: 0%;
         max-width: inherit;
         padding:0%;
+        overflow: scroll;
+        height:auto;
     }
 
     .btnclose {
@@ -1468,7 +1479,7 @@ ul.covid-19-timeline>li:before {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 110%;
+        height: auto;
         top: -4%;
         right: 0%;
         bottom: 5%;
@@ -1504,12 +1515,16 @@ ul.covid-19-timeline>li:before {
     }
     .about-bat{
         position:relative;
-        right:25%;
+        width:200%;
     }
     .bbc-news{
         position:relative;
-        right:8%;
+        width:200%;
     }
+    element.style{
+        margin-left:0;
+    }
+    
     
 }
 
