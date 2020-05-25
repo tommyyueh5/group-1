@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../dest/PHP_program/hot_news_internal.php", true);
+    xhr.open("Get", "./PHP_program/hot_news_internal.php", true);
     xhr.send(null);
 
     // ----------------------切日期----------------
