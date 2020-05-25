@@ -103,17 +103,7 @@ window.addEventListener('load', ()=>{
     let joker = document.getElementById('haha');
 
 
-    // let price = {   'jacket-1': 420, 'jacket-2': 450, 'jacket-3': 410,
-    //                 'jacket-4': 400, 'jacket-5': 430, 'jacket-6': 440,
-    //                 'goggles-1': 250, 'goggles-2': 220, 'goggles-3': 240,
-    //                 'goggles-4': 230, 'goggles-5': 200, 'goggles-6': 220,
-    //                 'mask-1': 5, 'mask-2': 6, 'mask-3': 7,
-    //                 'mask-4': 8, 'mask-5': 9, 'mask-6': 10,
-    //                 'hand-1': 150, 'hand-2': 160, 'hand-3': 170,
-    //                 'hand-4': 180, 'hand-5': 190, 'hand-6': 140,
-    //                 'zero': 0,
-    
-    // };
+   
 
     let price;
 
