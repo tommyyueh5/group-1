@@ -211,33 +211,34 @@ function newProduct(){
         
         let conn = new XMLHttpRequest();
 
-        conn.open('post', './PHP_program/Back_End/shopbackaddnewproduct.php', true);
+        conn.open('post', './PHP_program/shop_cart/shopbackaddnewproduct.php', true);
         conn.send(form);
         conn.onreadystatechange = function() {
             if (conn.readyState==4) {
                 if (conn.status == 200) {
-                    console.log(JSON.parse(conn.responseText));
+                    
+                    
                     let res = JSON.parse(conn.responseText);
-                    if (JSON.parse(conn.responseText)['error'] == 0) {
-                        let kind;if ('clothe'==JSON.parse(conn.responseText)['PRO_KIND']) {kind = '防護衣'; } else if ('goggle'==JSON.parse(conn.responseText)['PRO_KIND']){kind = '防疫眼鏡'; } else {kind = '防疫口罩<'; }
+                    if (res['error'] == 0) {
+                        let kind;if ('clothe'==res['PRO_KIND']) {kind = '防護衣'; } else if ('goggle'==res['PRO_KIND']){kind = '防疫眼鏡'; } else {kind = '防疫口罩<'; }
                 
-                        let html = `<li class="p_product"><div class="product_img"><img src="${JSON.parse(conn.responseText)['PRO_SRC']}" alt="">                    </div>
+                        let html = `<li class="p_product"><div class="product_img"><img src="${res['PRO_SRC']}" alt="">                    </div>
                             <div class="main_data">
                                 <h1 class="product_title">${kind}</h1>
                                 
-                                <p> ${JSON.parse(conn.responseText)['PRO_DESC']}                             
+                                <p> ${res['PRO_DESC']}                             
                                 </p>
                             </div>
                             <div class="category">
                                 <p>上架時間</p>
-                                <p class="category_date">${JSON.parse(conn.responseText)['PRO_TIME']}</p>
+                                <p class="category_date">${res['PRO_TIME']}</p>
                             </div>
                             <div class="Audit_results">
-                                <span class="center" id="${JSON.parse(conn.responseText)['PRO_NO']}">
-                                    <input type="checkbox" class="pro-on"  name="release" value="${JSON.parse(conn.responseText)['PRO_SHE']}">
+                                <span class="center" id="${res['PRO_NO']}">
+                                    <input type="checkbox" class="pro-on"  name="release" value="${res['PRO_SHE']}">
                                 </span>
                             </div>
-                            </li>`; $( html ).insertAfter( ".p-up-product" );
+                            </li>`; $( html ).insertAfter( "#create_product" );
                             let pData = document.querySelectorAll('.pro-on');
                             pData.forEach((p, i) => {
                                 if (p.value == 1) {
