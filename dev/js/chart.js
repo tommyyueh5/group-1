@@ -132,13 +132,13 @@ var chart = new Chart(context, {
     type: 'line',
     //plugins: [ChartDataSource],
     data: {
-        labels: ['第一週', '第二週', '第三週', '第四週', '第五週', '第六週', '第七週', '第八週', '第九週', '第十週', '第十一週', '第十二週',
-            '第十三週',
+        labels: ['10↓', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64',
+            '65-69','70↑'
         ], //項目中的標籤
         datasets: [{
             lineTension: 0.3,
             label: '病例數',
-            data: [0, 1, 0, 9, 11, 7, 1, 6, 10, 15, 66, 102, 7], //資料以陣列形式存放
+            data: [4,1,20,103,65,61,35,24,18,23,28,24,19,16], //資料以陣列形式存放
             borderColor: "#80b6f4",
             pointBorderColor: "#80b6f4",
             pointBackgroundColor: "#80b6f4",
@@ -169,7 +169,7 @@ var chart = new Chart(context, {
             duration: 1500,
         },
         title: {
-            text: '2020年各周確定病例統計表--人數/周數',
+            text: '2020年冠狀病毒肺炎年齡確定病例統計表-人數/年齡',
             fontSize: 12,
             display: true,
             position: 'top',
@@ -198,7 +198,7 @@ var chart = new Chart(context, {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: '年周數',
+                    labelString: '年齡',
                 },
             }],
         }
@@ -314,15 +314,15 @@ Chart.controllers.roundedBar = Chart.controllers.bar.extend({
 
 var ctx = document.getElementById('chart2').getContext('2d');
 var myBar = new Chart(ctx, {
-    type: 'roundedBar',
+    type: 'bar',
     //plugins: [ChartDataSource],
     data: {
         labels: ['2020/01', '2020/02', '2020/03', '2020/04', '2020/05'],
         datasets: [{
             label: '病例數',
-            data: [8, 14, 27, 58, 29], //資料以陣列形式存放
-            borderColor: "#80b6f4",
-            backgroundColor: "#80b6f4",
+            data: [10, 29, 284, 107, 11], //資料以陣列形式存放
+            borderColor: "rgba(205, 119, 119)",
+            backgroundColor: "rgba(205, 119, 119)",
             fill: false,
             borderWidth: 1,
         }],
@@ -344,7 +344,7 @@ var myBar = new Chart(ctx, {
             duration: 1500,
         },
         title: {
-            text: '冠狀病毒肺炎確定病例統計-人數/月份',
+            text: '2020年冠狀病毒肺炎確定病例統計-人數/月份',
             fontSize: 12,
             display: true,
             position: 'top',
@@ -377,20 +377,3 @@ var myBar = new Chart(ctx, {
         }
     }
 });
-
-
-
-// --------------------------圖表燈箱放大----------------------------
-
-
-// var pictures = document.querySelectorAll('.svg1 .svg1_1');
-
-// pictures.forEach(function(){
-//   document.addEventListener('click', function(e){
-//      this.classList.toggle('lightbox');
-//   });
-// });
-
-// document.getElementsByClassName('svg1_1').addEventListener('click', function(){
-//     this.classList.toggle('lightbox');
-//  });

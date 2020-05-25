@@ -24,6 +24,7 @@
     "ionicons": "^5.0.1",
     "jquery": "^3.4.1",
     "jsdom": "^16.2.0",
+    "masonry-layout": "^4.2.2",
     "moment": "^2.24.0",
     "node-schedule": "^1.3.2",
     "owl.carousel": "^2.3.4",
