@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try{
 
-    require_once("./connectdd106g1.php");
+    require_once("connectdd106g1.php");
     $filterText = $_POST["filterText"];
     // $filterTime = $_POST["filterTime"];
     // 篩選條件--照最新發文排序
@@ -13,7 +13,7 @@ try{
     FROM `MEMBER`,`DISCUSSION` 
     WHERE `MEMBER`.`MEM_NO` = `DISCUSSION`.`MEM_NO` 
     AND `DISCUSSION`.`DIS_C` = :disCon
-    ORDER BY `DISCUSSION`.`DIS_EST` DESC";
+    ORDER BY `DISCUSSION`.`COM_COUNT` DESC";
 
 
     $articles = $pdo->prepare($sql);
