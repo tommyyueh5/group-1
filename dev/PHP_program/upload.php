@@ -6,9 +6,6 @@ header('Content-Type: text/html; charset=UTF-8');
 
 try{
     require_once("./connectdd106g1.php");
-
-
-
     $sql = "UPDATE `discussion` SET `DIS_IMG_PATH`= :newPath WHERE DIS_IMG_PATH = :oldPath ";
     
     $dest_folder = "./image/forum/";
@@ -20,7 +17,6 @@ try{
     $uploadfile = $dest_folder.$name;
     $savefile = $save_folder.$name;
     move_uploaded_file($tmp_name,$savefile);
-
     $updatePath = $pdo->prepare($sql);
     $updatePath ->bindParam(":oldPath",$imgpath);
     $updatePath ->bindParam(":newPath",$uploadfile);
