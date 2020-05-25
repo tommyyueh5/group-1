@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
     // console.log(article);
 
 
-    fetch('../dest/PHP_program/HomePage_Instant_News.php', {
+    fetch('./PHP_program/HomePage_Instant_News.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

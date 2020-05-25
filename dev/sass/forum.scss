@@ -47,7 +47,7 @@ div.marquee_container {
     // border: 1px solid whitesmoke;
     padding: 10px 0;
     box-sizing: border-box;
-    background-image: url("/dest/image/forum/marquee.png");
+    background-image: url("./../image/forum/marquee.png");
     background-size: contain;
     filter: grayscale(0.4);
 }
@@ -418,6 +418,7 @@ p.article_content {
 
 img.main_img {
     width: 100%;
+    cursor: pointer;
 }
 
 h4.like_comment {
@@ -624,7 +625,7 @@ textarea#comment_text {
 }
 
 button#postCom {
-    background-image: url("/dest/image/forum/send.png");
+    background-image: url("./image/forum/send.png");
     background-size: cover;
     width: 40px;
     height: 40px;
@@ -702,7 +703,7 @@ aside.filter2 {
             font-size: 16px;
         }
         button {
-            background-image: url("/dest/image/forum/send.png");
+            background-image: url("./image/forum/send.png");
             background-size: cover;
             width: 40px;
             height: 40px;

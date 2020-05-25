@@ -1,7 +1,7 @@
 <?php
 
 try {
-  require_once("../connectdd106g1.php");
+  require_once("./../connectdd106g1.php");
   //選取資料表
   $sql = "select * from product";
   //pdo請求資料庫

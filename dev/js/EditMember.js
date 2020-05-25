@@ -46,7 +46,7 @@ window.addEventListener('load', function () {
 
             //ftp需更改=================================================================
             // xhrEdit.open("POST", "http://localhost/DD106g1/EditMem.php", true);
-            xhrEdit.open("POST", "../../dest/PHP_program/EditMem.php", true);
+            xhrEdit.open("POST", "./PHP_program/EditMem.php", true);
 
             xhrEdit.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             // 欲將資料傳入資料庫前準備
@@ -74,7 +74,7 @@ window.addEventListener('load', function () {
         // 將圖片資料及會員編號暫存到formData內
         formData.append('one', e.target.files[0], sessionStorage.getItem('no'));
         // xhrsend.open("post","http://localhost/DD106g1/uploadIMG.php");
-        xhrsend.open("post", "../../dest/image/mem_image/uploadIMG.php");
+        xhrsend.open("post", "./image/mem_image/uploadIMG.php");
         // xhrsend.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhrsend.send(formData);
 
@@ -96,7 +96,7 @@ window.addEventListener('load', function () {
                 console.log('檔案正確');
                 $cs('thumbnail').src = this.result;
                 // update後到sesssion並img更改名稱   需要注意路徑問題
-                sessionStorage.setItem('memImg', `../../dest/image/mem_image/${imgName}.${isImg}`);
+                sessionStorage.setItem('memImg', `./image/mem_image/${imgName}.${isImg}`);
 
             } else {
                 console.log('檔案格式有誤');

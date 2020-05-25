@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @@include('./LAYOUT/head.html')
-    <link rel="stylesheet" href="../dest/css/forum.css">
+    <link rel="stylesheet" href="./css/forum.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -25,7 +25,7 @@
     <main>
         <!-- 麵包屑 -->
         <div class="bread_crumbs">
-            <a href="../dest/index.html"><span>Home</span></a> &gt;
+            <a href="./index.html"><span>Home</span></a> &gt;
             <a href=""><span>Events</span></a> &gt;
             <a href=""><span>Iran attack</span></a>
         </div>
@@ -139,34 +139,34 @@
         <div class="report">
             <h2>檢舉原因</h2>
             <label for="label1">字幕問題
-                <input type="checkbox" value="0" id="label1">
+                <input type="radio" name="report_cheak" value="0" id="label1">
             </label>
             <label for="label1">色情內容
-                <input type="checkbox" value="1" id="label1">
+                <input type="radio" name="report_cheak" value="1" id="label1">
             </label>
             <label for="label1">暴力或令人厭惡的內容
-                <input type="checkbox" value="2" id="label1">
+                <input type="radio" name="report_cheak" value="2" id="label1">
             </label>
             <label for="label1">仇恨或惡意內容
-                <input type="checkbox" value="3" id="label1">
+                <input type="radio" name="report_cheak" value="3" id="label1">
             </label>
             <label for="label1">人身安全之急迫危險
-                <input type="checkbox" value="4" id="label1">
+                <input type="radio" name="report_cheak" value="4" id="label1">
             </label>
             <label for="label1">有害的危險行為
-                <input type="checkbox" value="5" id="label1">
+                <input type="radio" name="report_cheak" value="5" id="label1">
             </label>
             <label for="label2">虐待兒童
-                <input type="checkbox" value="6" id="label2">
+                <input type="radio" name="report_cheak" value="6" id="label2">
             </label>
             <label for="label3">宣傳恐怖主義
-                <input type="checkbox" value="7" id="label3">
+                <input type="radio" name="report_cheak" value="7" id="label3">
             </label>
             <label for="label4">垃圾內容或誤導性內容
-                <input type="checkbox" value="8" id="label4">
+                <input type="radio" name="report_cheak" value="8" id="label4">
             </label>
             <label for="label5">侵犯我的權利
-                <input type="checkbox" value="9" id="label5">
+                <input type="radio" name="report_cheak" value="9" id="label5">
             </label>
             <button id="sendReport">送出</button>
             <button id="cancelReport">取消</button>
@@ -177,20 +177,20 @@
                 <h2 class="article_content_title"></h2>
                 <h3 class="article_content_time"></h3>
                 <div class="left">
-                    <img class="thumbnail" src="/dest/image/forum/thum_img1.jpeg" alt="">
+                    <img class="thumbnail" src="./image/forum/thum_img1.jpeg" alt="">
                     <span class="article_content_name"></span>
                     <span class="article_content_no"></span>
                 </div>
                 <div class="right">
-                    <img src="/dest/image/forum/facebook.png" alt="">
-                    <img src="/dest/image/forum/twitter.png" alt="">
-                    <img src="/dest/image/forum/line.png" alt="">
-                    <img id="report" src="/dest/image/forum/alert.png">
+                    <img src="./image/forum/facebook.png" alt="">
+                    <img src="./image/forum/twitter.png" alt="">
+                    <img src="./image/forum/line.png" alt="">
+                    <img id="report" src="./image/forum/alert.png">
                 </div>
-                <img class="main_pic" src="/dest/image/forum/comment_pic1.png" alt="">
+                <img class="main_pic" src="./image/forum/comment_pic1.png" alt="">
                 <p class="article_text"></p>
                 <hr>
-                <img class="thumbnail2" src="/dest/image/forum/thum_img1.jpeg" alt="">
+                <img class="thumbnail2" src="./image/forum/thum_img1.jpeg" alt="">
                 <textarea id="comment_text" type="text" rows="2" placeholder="講話啊白癡......."></textarea>
                 <button type="submit" id="postCom" onclick="uploadCom();showComment();updateCom();"></button>
                 <div class="comment">
@@ -228,8 +228,8 @@
     @@include('./LAYOUT/footer.html')
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <!-- <script src="../dest/js/forum/forum.js"></script> -->
-    <script src="../dest/js/forum/forum_Back.js"></script>
+    <script src="./js/forum/forum.js"></script>
+    <script src="./js/forum/forum_Back.js"></script>
 </body>
 
 </html>

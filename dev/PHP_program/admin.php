@@ -4,8 +4,7 @@
 try {
   $ADMIN_ID = $_POST["ID"];
   $ADMIN_PAS = $_POST["PAS"];
-  // require_once("../../PHP/connectdd106g1.php");
-  require_once("connectdd106g1.php");
+  require_once("./connectdd106g1.php");
   // echo $ID;
   // $sql = "select * from `asministrator` where `ADMIN_ID`=:ADMIN_ID and `ADMIN_PAS`=:ADMIN_PAS";
   $sql = "select * from `asministrator` where `ADMIN_ID`=:ADMIN_ID and `ADMIN_PAS`=:ADMIN_PAS ";

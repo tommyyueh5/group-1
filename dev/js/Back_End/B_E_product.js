@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
             for (let i = 0; i < product_data.length; i++) {
                 $('.product_list').append(`
                 <li class="p_product">
+                <div id="edit_cancel">刪除</div>
                 <div class="product_img">
                     <img src="${product_data[i].PRO_IMG}" alt="">
                 </div>
@@ -49,6 +50,6 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/PHP_program/Back_End/Back_End_product.php", true);
+    xhr.open("Get", "./PHP_program/Back_End/Back_End_product.php", true);
     xhr.send(null);   
 });

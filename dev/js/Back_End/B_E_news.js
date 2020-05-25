@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
                 $('.news_list').append(
                     `
                 <li class="p_news">
+                <div id="edit_cancel">刪除</div>
                 <div class="news_img">
                     <img src="${news_data[i]["NEWS_IMG_PATH"]}" alt="">
                 </div>
@@ -57,7 +58,7 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/PHP_program/Back_End/Back_End_news.php", true);
+    xhr.open("Get", "./PHP_program/Back_End/Back_End_news.php", true);
     xhr.send(null);
 });
 
