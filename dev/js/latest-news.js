@@ -32,7 +32,7 @@ window.addEventListener('load', function(){
     $(function () {
         $.ajax({
             type: 'get',
-            url: '/dest/js/map/taiwanmap/index.json',
+            url: './js/map/taiwanmap/index.json',
             success: function (data) {
                 pushDom(data.data);
             },

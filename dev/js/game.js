@@ -31,7 +31,7 @@ scoreDiv.addEventListener('click', () => {
 })
 
 var xhr = new XMLHttpRequest();
-xhr.open('get', '../../dest/PHP_program/game/db.php', true);
+xhr.open('get', './PHP_program/game/db.php', true);
 xhr.setRequestHeader('Content-type', 'application/json');
 xhr.send(null);
 xhr.onload = function () {
@@ -114,10 +114,10 @@ xhr.onload = function () {
         const quer = "恭喜您獲得"
         const point = "分"
         const scoreEnd = "點"
-        let img = (scorePerCent >= 80) ? "../dest/image/game/img/1.png" :
-            (scorePerCent >= 60) ? "../dest/image/game/img/2.png" :
-                (scorePerCent >= 40) ? "../dest/image/game/img/3.png" :
-                    (scorePerCent <= 20) ? "../dest/image/game/img/3.png" :
+        let img = (scorePerCent >= 80) ? "./image/game/img/1.png" :
+            (scorePerCent >= 60) ? "./image/game/img/2.png" :
+                (scorePerCent >= 40) ? "./image/game/img/3.png" :
+                    (scorePerCent <= 20) ? "./image/game/img/3.png" :
                         "img/3.png";
 
         scoreDiv.innerHTML = "<img src=" + img + ">";
@@ -157,7 +157,7 @@ xhr.onload = function () {
 
         function point_add() {
             xhr = new XMLHttpRequest();
-            xhr.open('POST', '../../dest/PHP_program/game/db_member_point_poi.php', true);
+            xhr.open('POST', './PHP_program/game/db_member_point_poi.php', true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             MEM_POI = scorePerCent;
             MEM_NO = sessionStorage.getItem('no');
@@ -177,7 +177,7 @@ xhr.onload = function () {
 
         function no_point() {
             xhr = new XMLHttpRequest();
-            xhr.open('POST', '../../dest/PHP_program/game/db_member_point_poi.php', true);
+            xhr.open('POST', './PHP_program/game/db_member_point_poi.php', true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             MEM_POI = "0";
             MEM_NO = sessionStorage.getItem('no');

@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try{
 
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $filter = $_POST["filterText"];
 
     $sql = "SELECT DISTINCT `MEMBER`.`MEM_NO`,`MEMBER`.`MEM_ACC`,`MEMBER`.`MEM_IMG`,`DISCUSSION`.`DIS_EST`,`DISCUSSION`.`DIS_C`,`DISCUSSION`.`DIS_NO`,`DISCUSSION`.`DIS_IMG_PATH`,`DISCUSSION`.`DIS_TIT`,`DISCUSSION`.`DIS_CON` 

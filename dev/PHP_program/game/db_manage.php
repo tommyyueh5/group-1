@@ -6,7 +6,7 @@ try{
   // //異常處理
   // $options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
   // $pdo = new PDO($dsn,$user,$password);
-  require_once("../connectdd106g1.php");  
+  require_once("./../connectdd106g1.php");  
 
 
   //選取資料表

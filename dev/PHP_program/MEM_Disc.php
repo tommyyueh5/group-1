@@ -5,7 +5,7 @@
 // header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 try {
     header("Content-Type:text/html; charset=utf-8");
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $showno = $_POST["no"];
 
     // echo $emeEmail;

@@ -2,8 +2,7 @@ window.addEventListener('load', function () {
 
     // console.log(article);
 
-
-    fetch('../dest/PHP_program/HomePage_hotNews.php', {
+    fetch('./PHP_program/HomePage_hotNews.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'

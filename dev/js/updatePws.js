@@ -29,10 +29,10 @@ window.addEventListener('load', function () {
                     // 請使用者再次登入新密碼
                     alert(xhr.responseText);
                     // 登出
-                    window.location.href = '../../dest/homepage.html';
+                    window.location.href = './homepage.html';
                 }
             }
-            xhr.open('post', '../../dest/PHP_program/updatePws.php',true);
+            xhr.open('post', './PHP_program/updatePws.php',true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             let pws_info = `showPws=${sessionStorage.getItem('showPws')}&no=${sessionStorage.getItem('no')}`;
             // 新密碼及編號傳送到後端修改

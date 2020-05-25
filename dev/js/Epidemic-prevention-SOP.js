@@ -286,7 +286,7 @@ window.addEventListener('load', function() {
         // console.log(mask1, mask2, mask3);
         let tag1 = document.createElement('div');
         tag1.innerHTML = `<div id="ther" style="animation-play-state:running">
-                            <img src="/dest/image//Epidemic-prevention-SOP/ther.png" alt="">
+                            <img src="./image//Epidemic-prevention-SOP/ther.png" alt="">
                         </div>`;
         equipment.appendChild(tag1);
         mask1.remove();
@@ -296,7 +296,7 @@ window.addEventListener('load', function() {
     mask2.onclick = function() {
         let tag1 = document.createElement('div');
         tag1.innerHTML = `<div id="alcohol" style="animation-play-state:running">
-        <img src="/dest/image/Epidemic-prevention-SOP/alcohol-gel.png" alt="">
+        <img src="./image/Epidemic-prevention-SOP/alcohol-gel.png" alt="">
         </div>`;
         equipment.appendChild(tag1);
         mask2.remove();
@@ -304,7 +304,7 @@ window.addEventListener('load', function() {
     mask3.onclick = function() {
         let tag1 = document.createElement('div');
         tag1.innerHTML = `<div id="soap" style="animation-play-state:running">
-        <img src="/dest/image/Epidemic-prevention-SOP/soap.png" alt="">
+        <img src="./image/Epidemic-prevention-SOP/soap.png" alt="">
         </div>`;
         equipment.appendChild(tag1);
         mask3.remove();
@@ -441,7 +441,7 @@ window.addEventListener('load', function() {
         mask.classList.add('sec1-mask-move');
         let tag = document.createElement('div');
         tag.innerHTML = `<div class="equipment-mask-pic">
-        <img class="equipment-mask-img" src="/dest/image/Epidemic-prevention-SOP/mask.png" alt="">
+        <img class="equipment-mask-img" src="./image/Epidemic-prevention-SOP/mask.png" alt="">
         </div>`;
         equipment.appendChild(tag);
         equipment.classList.add('equip-show');

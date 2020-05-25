@@ -4,7 +4,7 @@ function showComment() {
     var article_No = $('.article_content_no').text();
     console.log(article_No);
     $.ajax({
-        url: '../dest/PHP_program/getcomment.php',
+        url: './PHP_program/getcomment.php',
         type: "POST",
         dataType: 'json',
         data: {
@@ -35,7 +35,7 @@ function showData() {
     console.log(filterText);
     // $('.masonry').html('');
     $.ajax({
-        url: '../dest/PHP_program/getinfo.php',
+        url: './PHP_program/getinfo.php',
         type: "POST",
         dataType: 'json',
         data: {
@@ -69,12 +69,12 @@ function showData() {
                                     <p class="article_contentno">${artNo}</p>
                                     <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">${comCount}</span>留言</h4>
                                     <h4 class="function">
-                                        <img class="heart" src="../dest/image/forum/like.png">
-                                        <img class="share" src="../dest/image/forum/share.png">
+                                        <img class="heart" src="./image/forum/like.png">
+                                        <img class="share" src="./image/forum/share.png">
                                     </h4>
                                     <h4 class="function2">
-                                        <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
-                                        <img class="line" src="../dest/image/forum/line.png" alt="">
+                                        <img class="facebook" src="./image/forum/facebook.png" alt="">
+                                        <img class="line" src="./image/forum/line.png" alt="">
                                     </h4>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ function showDataTime() {
     // console.log(filterTime);
     console.log(filterText);
     $.ajax({
-        url: '../dest/PHP_program/getinfo_time.php',
+        url: './PHP_program/getinfo_time.php',
         type: "POST",
         dataType: 'json',
         data: {
@@ -128,12 +128,12 @@ function showDataTime() {
                                     <p class="article_contentno">${artNo}</p>
                                     <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">40</span>留言</h4>
                                     <h4 class="function">
-                                        <img class="heart" src="../dest/image/forum/like.png">
-                                        <img class="share" src="../dest/image/forum/share.png">
+                                        <img class="heart" src="./image/forum/like.png">
+                                        <img class="share" src="./image/forum/share.png">
                                     </h4>
                                     <h4 class="function2">
-                                        <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
-                                        <img class="line" src="../dest/image/forum/line.png" alt="">
+                                        <img class="facebook" src="./image/forum/facebook.png" alt="">
+                                        <img class="line" src="./image/forum/line.png" alt="">
                                     </h4>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@ function uploadData() {
     var memno = sessionStorage.getItem('no');
     console.log(memno);
     $.ajax({
-        url: '../dest/PHP_program/post.php',
+        url: './PHP_program/post.php',
         type: 'POST',
         dataType: 'html',
         data: {
@@ -179,7 +179,7 @@ function uploadCom() {
 
     console.log(comLength);
     $.ajax({
-        url: '../dest/PHP_program/comment.php',
+        url: './PHP_program/comment.php',
         type: "POST",
         dataType: 'html',
         data: {
@@ -207,7 +207,7 @@ function updateCom() {
     var comLength = $('.comment h2').length;
     // console.log(articleNo);
     $.ajax({
-        url: '../dest/PHP_program/updateComment.php',
+        url: './PHP_program/updateComment.php',
         type: "POST",
         dataType: 'html',
         data: {
@@ -230,7 +230,7 @@ function updateCom() {
 function uploadImg() {
     var form = new FormData(document.getElementById('upfile'))
     $.ajax({
-        url: '../dest/PHP_program/upload.php',
+        url: './PHP_program/upload.php',
         type: "POST",
         data: form,
         processData: false,
@@ -260,7 +260,7 @@ function sendReport() {
     var reason = $("input[type='checkbox']:checked").val()
     console.log(reason);
     $.ajax({
-        url: '../dest/PHP_program/report.php',
+        url: './PHP_program/report.php',
         type: "POST",
         data: {
             memno: memno,
@@ -361,7 +361,7 @@ $(document).ready(function () {
         console.log(userImage);
 
         if (status == "登入") {
-            $('.thumbnail2').attr('src', '/dest/image/forum/noface.png');
+            $('.thumbnail2').attr('src', "./image/forum/noface.png");
         } else {
             $('.thumbnail2').attr('src', userImage);
         };

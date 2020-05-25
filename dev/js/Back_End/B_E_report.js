@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
 
 
-    fetch('../../../dest/PHP_program/Back_End/Back_End_report.php', {
+    fetch('./PHP_program/Back_End/Back_End_report.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'

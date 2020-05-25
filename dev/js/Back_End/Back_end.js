@@ -271,7 +271,7 @@ window.addEventListener('load', () => {
             $id('topic_img').addEventListener('change', imgHandler);
             submit.addEventListener('click', () => {
                 let ImgPath = sessionStorage.getItem('ImgPath');
-                fetch('../../../dest/PHP_program/Back_End/B_E_game_import.php', {
+                fetch('./PHP_program/Back_End/B_E_game_import.php', {
                     method: "post",
                     body: JSON.stringify({
                         //將資料傳送到後端處理
@@ -323,7 +323,7 @@ window.addEventListener('load', () => {
         // './image/game/img/png8_1.png'
         Data.append('one', e.target.files[0], fileName);
         // console.log(Data.get('one'));
-        xhrsend.open("post", "../../../dest/image/game/img/Back_End_IMG.php");
+        xhrsend.open("post", "./image/game/img/Back_End_IMG.php");
 
         // xhrsend.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhrsend.send(Data);

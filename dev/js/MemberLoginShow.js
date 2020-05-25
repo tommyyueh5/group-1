@@ -49,7 +49,7 @@ window.addEventListener('load', function () {
                     sessionStorage.setItem('boolen', datamemb.boolen);
                     sessionStorage.setItem('gamedate', datamemb.gamedate);
                     
-                    window.location.href = '../../dest/member.html'
+                    window.location.href = './member.html'
                     $cs('member_center').classList.add('on');
                     $id('editname').value = sessionStorage.getItem('memId');
                     $id('editemail').value = sessionStorage.getItem('email');
@@ -69,10 +69,8 @@ window.addEventListener('load', function () {
             }
 
         }
-        // xhr.open("POST", "http://localhost/DD106g1/sessionLogin.php", true);
-        // 需更改路徑
-        // xhr.open("POST", "../../dest/PHP/sessionLogin.php", true);
-        xhr.open("POST", "../../dest/PHP_program/sessionLogin.php", true);
+
+        xhr.open("POST", "./PHP_program/sessionLogin.php", true);
 
 
 
@@ -90,7 +88,7 @@ window.addEventListener('load', function () {
     $id("login_btn").addEventListener('click', function () {
         if ($id("login_btn").textContent == '登出') {
             sessionStorage.clear();
-            window.location.href = '../../dest/homepage.html'
+            window.location.href = './homepage.html'
         } else {
             return
         }

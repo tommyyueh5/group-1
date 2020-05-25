@@ -1,7 +1,7 @@
 <?php
 // session_start();
 // try {
-  require_once("../connectdd106g1.php");
+  require_once("./../connectdd106g1.php");
   $post_input = trim(file_get_contents('php://input'));
   $bdata = json_decode($post_input,true);
   $gameTit = $bdata['gameTit'];

@@ -53,11 +53,11 @@ window.addEventListener('load', () => {
 
                             sessionStorage.clear();
                             alert(xhr.responseText)
-                            window.location.href = '../../dest/homepage.html';
+                            window.location.href = './homepage.html';
                         }
                     }
 
-                    xhr.open("POST", "../../dest/PHP_program/registered.php", true);
+                    xhr.open("POST", "./PHP_program/registered.php", true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     let registerd_info = `RG_Email=${$id('RG_Email').value}&RG_Name=${$id('RG_Name').value}&RG_Pwd=${$id('RG_Pwd').value}`;
                     console.log(registerd_info);
@@ -91,7 +91,7 @@ window.addEventListener('load', () => {
                     sessionStorage.setItem('open', JudgeXhr.status)
                 }
             }
-            JudgeXhr.open("POST", "../../dest/PHP_program/registeredJudge.php", true)
+            JudgeXhr.open("POST", "./PHP_program/registeredJudge.php", true)
             JudgeXhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             let Judge_info = `RG_Email=${$id('RG_Email').value}`;
             JudgeXhr.send(Judge_info)

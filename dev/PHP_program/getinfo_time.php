@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try{
 
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $filterText = $_POST["filterText"];
     // $filterTime = $_POST["filterTime"];
     // 篩選條件--照最新發文排序
