@@ -25,6 +25,7 @@ try{
         $comment ->bindParam(":comLength",$comLength);
         $comment ->bindParam(":filterText",$filterText);
         $comment -> execute();
+
         // $sql2="UPDATE `discuss_comment` SET `COM_COUNT` =`COM_COUNT` +'1' WHERE `discuss_comment`.`DIS_NO` = :disno";
         // $commentPlus = $pdo->prepare($sql2); 
         // $commentPlus ->bindValue(":disno",$articleno);

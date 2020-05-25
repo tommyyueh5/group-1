@@ -80,7 +80,7 @@ aside.filter {
     background-color: rgb(43, 43, 43);
     font-size: 0;
     text-align: center;
-    padding: 4px 0;
+    padding: 13px 0;
 }
 
 div.filter_order,
@@ -89,7 +89,7 @@ div.filter_time {
     display: inline-block;
     box-sizing: border-box;
     // border: 1px solid whitesmoke;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 div.filter_time {
@@ -104,7 +104,7 @@ div.filter_order>div {
 
 div.filter_time>div {
     width: 100%;
-    margin: 25px auto;
+    margin: 35px auto;
     text-align: center;
 }
 
@@ -157,7 +157,7 @@ aside.filter h3 {
     color: whitesmoke;
     font-size: 22px;
     letter-spacing: 1px;
-    padding: 20px;
+    padding: 25px 0;
 }
 
 aside.filter>a {
@@ -219,7 +219,7 @@ section.top_slide_container {
         border-radius: 5px;
         letter-spacing: 2px;
         color: whitesmoke;
-        width: 70%;
+        width: 75%;
         resize: none;
         position: relative;
         z-index: 20;
@@ -247,16 +247,16 @@ section.top_slide_container {
         color: whitesmoke;
     }
     div.postimg {
-        width: 70%;
+        width: 100%;
         margin: 0 auto;
         border-radius: 20px;
-        text-align: left;
+        text-align: center;
         margin-top: 20px;
         position: relative;
         z-index: 2;
         select {
             background-color: black;
-            width: 29%;
+            width: 30%;
             color: white;
             height: 73px;
             text-indent: 12px;
@@ -280,7 +280,7 @@ section.top_slide_container {
         }
     }
     input#upload {
-        width: 70%;
+        width: 45%;
         display: none;
         // opacity: 0;
         padding: 22px 20px;
@@ -468,63 +468,6 @@ section.stretch h2 {
     margin: 20px 0;
 }
 
-//下方slider
-div.slider {
-    width: 100%;
-    // border: 1px solid black;
-    font-size: 40px;
-    color: white;
-    margin: 0 auto;
-    background-color: black;
-    text-align: center;
-}
-
-div.slider a {
-    margin: 0 20px;
-    border: 4px solid gray;
-}
-
-div.slider a div {
-    width: 100%;
-    margin: 0 auto;
-    height: 300px;
-}
-
-div.slide1 {
-    background-image: url('/dest/image/forum/slide_1.jpeg');
-    background-size: cover;
-}
-
-div.slide2 {
-    background-image: url('/dest/image/forum/slide_2.jpg');
-    background-size: cover;
-}
-
-div.slide3 {
-    background-image: url('/dest/image/forum/slide_3.jpg');
-    background-size: cover;
-}
-
-div.slide4 {
-    background-image: url('/dest/image/forum/slide_4.jpg');
-    background-size: cover;
-}
-
-div.slide5 {
-    background-image: url('/dest/image/forum/slide_5.jpg');
-    background-size: cover;
-}
-
-div.slide6 {
-    background-image: url('/dest/image/forum/slide_6.png');
-    background-size: cover;
-}
-
-div.slide7 {
-    background-image: url('/dest/image/forum/slide_7.jpg');
-    background-size: contain;
-}
-
 // 文章內容燈箱
 div.background {
     display: none;
@@ -540,9 +483,9 @@ div.background {
 div.article_content {
     display: none;
     width: 78%;
-    height: 80vh;
+    height: 95vh;
     position: fixed;
-    top: 18%;
+    top: 3%;
     left: 50%;
     border-radius: 20px;
     transform: translate(-50%);
@@ -599,7 +542,7 @@ div.report {
     display: none;
     background-color: gray;
     position: fixed;
-    top: 27%;
+    top: 18%;
     transform: translateY(-50%);
     left: 50%;
     transform: translateX(-50%);
@@ -867,12 +810,20 @@ aside.filter2 {
         width: 100%;
         height: 520px;
         div.postimg {
-            width: 90%;
+            width: 100%;
+            margin-bottom: 10px;
+            select {
+                font-size: 14px;
+                height: 40px;
+                vertical-align: top;
+                width: 34%;
+            }
         }
         textarea {
             font-size: 16px;
             width: 90%;
             margin-top: 10px;
+            height: 240px;
         }
         button {
             font-size: 16px;
@@ -880,8 +831,8 @@ aside.filter2 {
         input {
             height: 40px;
             z-index: 10;
-            position: relative;
-            bottom: 10px;
+            // position: relative;
+            // bottom: 10px;
             cursor: pointer;
             font-size: 16px;
             width: 90%;
@@ -889,6 +840,7 @@ aside.filter2 {
         input#upload {
             padding: 7px 20px;
             font-size: 14px;
+            width: 55%;
         }
     }
     //拿掉左邊篩選移到下方
@@ -1128,9 +1080,9 @@ aside.filter2 {
         }
         input {
             height: 40px;
-            z-index: 10;
-            position: relative;
-            bottom: 10px;
+            // z-index: 10;
+            // position: relative;
+            // bottom: 10px;
             cursor: pointer;
         }
     }

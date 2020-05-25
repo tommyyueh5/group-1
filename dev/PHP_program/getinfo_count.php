@@ -13,7 +13,7 @@ try{
     FROM `MEMBER`,`DISCUSSION` 
     WHERE `MEMBER`.`MEM_NO` = `DISCUSSION`.`MEM_NO` 
     AND `DISCUSSION`.`DIS_C` = :disCon
-    ORDER BY `DISCUSSION`.`DIS_EST` DESC";
+    ORDER BY `DISCUSSION`.`COM_COUNT` DESC";
 
 
     $articles = $pdo->prepare($sql);

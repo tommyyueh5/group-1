@@ -32,7 +32,7 @@ function showComment() {
 // 撈後端文章資料顯示在前端
 function showData() {
     var filterText = $('div.filter_order .-on h3').text();
-    console.log(filterText);
+    // console.log(filterText);
     // $('.masonry').html('');
     $.ajax({
         url: '../dest/PHP_program/getinfo.php',
@@ -67,7 +67,7 @@ function showData() {
                                     <img class="main_img" src="${imgPath}" alt="">
                                     <p class="article_contentp">${artcon}</p>
                                     <p class="article_contentno">${artNo}</p>
-                                    <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">${comCount}</span>留言</h4>
+                                    <h4 class="like_comment"><span class="comments">${comCount}</span>則留言</h4>
                                     <h4 class="function">
                                         <img class="heart" src="../dest/image/forum/like.png">
                                         <img class="share" src="../dest/image/forum/share.png">
@@ -81,18 +81,18 @@ function showData() {
                         `)
             }
         },
-        error: function (xhr) {
+        error: function(xhr) {
             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     });
 }
 
-// 撈後端排序後資料顯示在前端
+// 撈後端後資料依”最新發佈時間“顯示在前端
 function showDataTime() {
     // var filterTime = $('div.filter_time .-on h2 span').text();
     var filterText = $('div.filter_order .-on h3 ').text();
     // console.log(filterTime);
-    console.log(filterText);
+    // console.log(filterText);
     $.ajax({
         url: '../dest/PHP_program/getinfo_time.php',
         type: "POST",
@@ -111,6 +111,7 @@ function showDataTime() {
                 artitle = data[i].DIS_TIT;
                 artcon = data[i].DIS_CON;
                 artNo = data[i].DIS_NO
+                comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
                             <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
@@ -126,7 +127,7 @@ function showDataTime() {
                                     <img class="main_img" src="${imgPath}" alt="">
                                     <p class="article_contentp">${artcon}</p>
                                     <p class="article_contentno">${artNo}</p>
-                                    <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">40</span>留言</h4>
+                                    <h4 class="like_comment"><span class="comments">${comCount}</span>則留言</h4>
                                     <h4 class="function">
                                         <img class="heart" src="../dest/image/forum/like.png">
                                         <img class="share" src="../dest/image/forum/share.png">
@@ -140,7 +141,66 @@ function showDataTime() {
                         `)
             }
         },
-        error: function (xhr) {
+        error: function(xhr) {
+            alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
+        }
+    });
+}
+// 撈後端後資料依”最多留言數“顯示在前端
+function showCommentMost() {
+    // var filterTime = $('div.filter_time .-on h2 span').text();
+    var filterText = $('div.filter_order .-on h3 ').text();
+    // console.log(filterTime);
+    // console.log(filterText);
+    $.ajax({
+        url: '../dest/PHP_program/getinfo_count.php',
+        type: "POST",
+        dataType: 'json',
+        data: {
+            filterText: filterText,
+            // filterTime: filterTime,
+        },
+        success(data) {
+            for (let i = 0; i < data.length; i++) {
+                userName = data[i].MEM_ACC;
+                nowTime = data[i].DIS_EST;
+                // topic = data[i].DIS_C_NO;
+                thumImg = data[i].MEM_IMG
+                imgPath = data[i].DIS_IMG_PATH;
+                artitle = data[i].DIS_TIT;
+                artcon = data[i].DIS_CON;
+                artNo = data[i].DIS_NO
+                comCount = data[i].COM_COUNT;
+                //動態新增要加的欄位
+                $('.masonry').append(`
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                                <div class="item_content">
+                                    <div class="date">
+                                        <h4 class="year">${nowTime}</h4>
+                                    </div>
+                                    <div class="info">
+                                        <img class="thum_img" src="${thumImg}">
+                                        <h4 class="username">${userName}</h4>
+                                    </div>
+                                    <h2 class="article_title">${artitle}</h2>
+                                    <img class="main_img" src="${imgPath}" alt="">
+                                    <p class="article_contentp">${artcon}</p>
+                                    <p class="article_contentno">${artNo}</p>
+                                    <h4 class="like_comment"><span class="comments">${comCount}</span>則留言</h4>
+                                    <h4 class="function">
+                                        <img class="heart" src="../dest/image/forum/like.png">
+                                        <img class="share" src="../dest/image/forum/share.png">
+                                    </h4>
+                                    <h4 class="function2">
+                                        <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
+                                        <img class="line" src="../dest/image/forum/line.png" alt="">
+                                    </h4>
+                                </div>
+                            </div>
+                        `)
+            }
+        },
+        error: function(xhr) {
             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     });
@@ -160,10 +220,10 @@ function uploadData() {
             content: $('#content').val(),
             path: $(".oldPath")[0].files[0].name,
         },
-        error: function (jqXHR, textStatus, errorThrown) {
+        error: function(jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function (data) {
+        success: function(data) {
             alert('success: ' + data);
             location.href = 'forum.html';
         }
@@ -176,7 +236,6 @@ function uploadCom() {
     var articleNo = $('.article_content_no').text();
     var comLength = $('.comment h2').length;
     var filterText = $('div.filter_order .-on h3 ').text();
-
     console.log(comLength);
     $.ajax({
         url: '../dest/PHP_program/comment.php',
@@ -189,10 +248,10 @@ function uploadCom() {
             comLength: comLength,
             filterText: filterText,
         },
-        error: function (jqXHR, textStatus, errorThrown) {
+        error: function(jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function (data) {
+        success: function(data) {
             alert('success: ' + data);
             // location.href = 'forum.html';
             $('#comment_text').val('');
@@ -216,10 +275,10 @@ function updateCom() {
             comment: $('#comment_text').val(),
             comLength: comLength,
         },
-        error: function (jqXHR, textStatus, errorThrown) {
+        error: function(jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function (data) {
+        success: function(data) {
             alert('success: ' + data);
             // location.href = 'forum.html';
             // $('#comment_text').val('');
@@ -235,7 +294,7 @@ function uploadImg() {
         data: form,
         processData: false,
         contentType: false,
-        success: function (data) {
+        success: function(data) {
             alert(data);
         }
     });
@@ -245,7 +304,7 @@ function imgLoad() {
     /* 瀑布流區塊div */
     var $container = $('.masonry');
     //當圖片讀取完畢才執行
-    $container.imagesLoaded(function () {
+    $container.imagesLoaded(function() {
         //選擇瀑布流的區塊名稱
         $container.masonry({
             itemSelector: '.item',
@@ -267,15 +326,16 @@ function sendReport() {
             artno: artno,
             reason: reason,
         },
-        success: function (data) {
+        success: function(data) {
             alert(data);
         }
     });
 }
-$(document).ready(function () {
+$(document).ready(function() {
     showData();
     // imgLoad();
-    $(".filter_order a.tab").on("click", function (e) {
+    //按下不同類型的版篩選鍵
+    $(".filter_order a.tab").on("click", function(e) {
         $('div.article').remove();
         e.preventDefault();
 
@@ -287,9 +347,13 @@ $(document).ready(function () {
         $("div.tab." + $(this).attr("data-target")).addClass("-on");
         var filterText = $('div.filter_order .-on h3 ').text();
         $('.subtitle_1 h3').text(filterText);
+        $(".filter_right span").text(filterText);
+        $(".filter_left span").text('條件篩選');
+
         showData();
     });
-    $(".filter_time a.tab_third").on("click", function (e) {
+    //按下熱門程度篩選鍵
+    $(".filter_time a.tab_first").on("click", function(e) {
         $('div.article').remove();
         e.preventDefault();
 
@@ -301,32 +365,119 @@ $(document).ready(function () {
         // showData();
         var filterText = $('div.filter_order .-on h3 ').text();
         $('.subtitle_1 h3').text(filterText);
-        showDataTime();
+        $(".filter_left span").text($(this).text());
 
+        showCommentMost();
     });
-    //檢舉燈箱
-    $(".report").on("click", function (e) {
+    //按下即時發布篩選鍵
+    $(".filter_time a.tab_third").on("click", function(e) {
+        $('div.article').remove();
+        e.preventDefault();
+
+        $(this).closest(".filter_time").find("a.tab").removeClass("-on");
+        $(this).addClass("-on");
+
+        $("div.tab").removeClass("-on");
+        $("div.tab." + $(this).attr("data-target")).addClass("-on");
+        // showData();
+        var filterText = $('div.filter_order .-on h3 ').text();
+        $('.subtitle_1 h3').text(filterText);
+        $(".filter_left span").text($(this).text());
+
+        showDataTime();
+    });
+    //ＲＷＤ後的條件篩選
+    $("#filter_con").on("click", function() {
+        $(".filter_left div").slideToggle();
+    });
+    $("#filter_top").on("click", function() {
+        $(".filter_right h3").slideToggle();
+    });
+    // 按下ＲＷＤ後不同類型的版篩選鍵
+    $(".filter_right a.tab").on("click", function(e) {
+        $('div.article').remove();
+        var rwdFilterText = $(this).find("h3").text();
+        $(".filter_right span").text($(this).text());
+        $(".filter_right h3").slideToggle();
+        $('.subtitle_1 h3').text(rwdFilterText);
+
+        $(".filter_time").find("a.tab").removeClass("-on");
+        $(".filter_order").find("a.tab").removeClass("-on");
+        var onText1 = $(".filter_order").find("a#tab1");
+        var onText2 = $(".filter_order").find("a#tab2");
+        var onText3 = $(".filter_order").find("a#tab3");
+        var onText4 = $(".filter_order").find("a#tab4");
+        console.log(rwdFilterText);
+        console.log(onText1.text());
+        // console.log(onText2.text());
+        // console.log(onText3.text());
+        // console.log(onText4.text());
+
+        if (rwdFilterText == (onText1.find("h3").text())) {
+            onText1.addClass("-on");
+            $("div.tab").removeClass("-on");
+            $("div.tab." + $(this).attr("data-target")).addClass("-on");
+        } else if (rwdFilterText == (onText2.find("h3").text())) {
+            onText2.addClass("-on");
+            $("div.tab").removeClass("-on");
+            $("div.tab." + $(this).attr("data-target")).addClass("-on");
+        } else if (rwdFilterText == (onText3.find("h3").text())) {
+            onText3.addClass("-on");
+            $("div.tab").removeClass("-on");
+            $("div.tab." + $(this).attr("data-target")).addClass("-on");
+        } else {
+            onText4.addClass("-on");
+            $("div.tab").removeClass("-on");
+            $("div.tab." + $(this).attr("data-target")).addClass("-on");
+        }
+        // var filterText = $('div.filter_order .-on h3 ');
+        // filterText.text(rwdFilterText);
+        // console.log(filterText.text());
+
+        showData();
+    });
+    // 按下ＲＷＤ後熱門程度篩選鍵
+    $(".filter_left a.tab_first").on("click", function() {
+        $('div.article').remove();
+        $(".filter_left span").text($(this).text());
+        $(".filter_left div").slideToggle();
+        $('.subtitle_1 h3').text($(".filter_right span").text());
+
+        showCommentMost();
+    });
+    // 按下ＲＷＤ後即時發布篩選鍵
+    $(".filter_left a.tab_third").on("click", function() {
+        $('div.article').remove();
+        $(".filter_left span").text($(this).text());
+        $(".filter_left div").slideToggle();
+
+        showDataTime();
+    });
+
+
+    //檢舉按下後燈箱
+    $(".report").on("click", function(e) {
         e.stopPropagation();
     });
-    $("img#report").on("click", function () {
+    $("img#report").on("click", function() {
         $("div.report").show();
         // console.log($(".article_content_no").text());
     });
-    $("#sendReport").on("click", function (e) {
+    $("#sendReport").on("click", function(e) {
         $("div.report").hide();
         // sendReport();
         e.stopPropagation();
         sendReport();
         alert("謝謝您的回覆，我們將盡快審查！")
     });
-    $("#cancelReport").on("click", function (e) {
+    $("#cancelReport").on("click", function(e) {
         $("div.report").hide();
         e.stopPropagation();
     });
 
     //動態新增物件 建立聆聽事件
     //文章燈箱
-    $(".masonry").on("click", '.main_img,.article_title', function (e) {
+    $(".masonry").on("click", '.main_img,.article_title', function(e) {
         var parr = $(this).parent('.item_content');
         var thisTime = parr.find('.year');
         var thisTitle = parr.find('.article_title');
@@ -339,9 +490,7 @@ $(document).ready(function () {
         var textext = thisTime.text();
         var thisNo = parr.find('.article_contentno');
         var textNum = thisNo.text();
-
         // console.log(textNo);
-
         // 頭像
         $('.thumbnail').attr('src', oldSrc);
         // 名稱
@@ -359,7 +508,6 @@ $(document).ready(function () {
         var status = $('#login_btn').text();
         var userImage = sessionStorage.getItem('memImg');
         console.log(userImage);
-
         if (status == "登入") {
             $('.thumbnail2').attr('src', '/dest/image/forum/noface.png');
         } else {
@@ -371,15 +519,14 @@ $(document).ready(function () {
         showComment();
 
     });
-    $(".article_content").on("click", function (e) {
+    $(".article_content").on("click", function(e) {
         e.stopPropagation();
 
     });
-    $(".post,#upload,#content,#postBtn").on("click", function (e) {
+    $(".post,#upload,#content,#postBtn").on("click", function(e) {
         e.stopPropagation();
-
     });
-    $("body").on("click", function () {
+    $("body").on("click", function() {
         $(".article_content,.background").hide();
         $('.post').css('background-color', 'unset');
         $('#upload').hide();
@@ -389,26 +536,9 @@ $(document).ready(function () {
         $('#sort').hide();
         $("div.report").hide();
     });
-    //條件篩選
-    $("#filter_con").on("click", function () {
-        $(".filter_left div").slideToggle();
-    });
-    $("#filter_top").on("click", function () {
-        $(".filter_right h3").slideToggle();
-    });
-    $(".filter_right h3").on("click", function (e) {
-        // console.log($(this).text());
-        // console.log($(".filter_right span").text());
-        $(".filter_right span").text($(this).text());
-        $(".filter_right h3").slideToggle();
-    });
-    $(".filter_left div").on("click", function (e) {
-        // console.log($(this).text());
-        $(".filter_left span").text($(this).text());
-        $(".filter_left div").slideToggle();
-    });
+
     // 發文按鈕  沒登入不能發文
-    $('#title').on("click", function () {
+    $('#title').on("click", function() {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能發文！！");
@@ -423,13 +553,13 @@ $(document).ready(function () {
         };
     });
     //沒登入不能留言
-    $('#comment_text').on("click", function () {
+    $('#comment_text').on("click", function() {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能留言！！");
         }
     });
-    $('#postCom').on("click", function () {
+    $('#postCom').on("click", function() {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能留言！！");
@@ -439,7 +569,7 @@ $(document).ready(function () {
             showComment();
         }
     });
-    $('#postBtn,#canBtn').on("click", function () {
+    $('#postBtn,#canBtn').on("click", function() {
         $('#upload').hide();
         $('#content').hide();
         $('#postBtn').hide();
@@ -448,6 +578,14 @@ $(document).ready(function () {
         $('#sort').hide();
         $('.post').css('background-color', 'unset');
     });
+    // $(function() {
+    //     $(window).scroll(function() {
+    //         var scrollVal = $(this).scrollTop();
+    //         console.log(scrollVal);
+    //         $('.article_content').css("top", `${scrollVal}px`);
+    //     })
+    // })
+
 });
 // window.addEventListener('load', function() {
 // imgLoad();

@@ -10,7 +10,7 @@ try{
         $articleno = $_POST["articleNo"];
         $content = $_POST["comment"];
         $nowtime = date("Y-m-d");
-        $comLength = $_POST["comLength"];
+        // $comLength = $_POST["comLength"];
 
         
         $sql2="UPDATE `discuss_comment` SET `COM_COUNT` =:comLength+'1' WHERE `discuss_comment`.`DIS_NO` = :disno";
@@ -18,6 +18,12 @@ try{
         $commentPlus ->bindValue(":disno",$articleno);
         $commentPlus ->bindParam(":comLength",$comLength);
         $commentPlus -> execute();
+
+        $sql3="UPDATE `discussion` SET `COM_COUNT` =`COM_COUNT`+'1' WHERE `discussion`.`DIS_NO` = :disno";
+        $disPlus = $pdo->prepare($sql3); 
+        $disPlus ->bindValue(":disno",$articleno);
+        // $disPlus ->bindParam(":comLength",$comLength);
+        $disPlus -> execute();
 
         echo "成功";
 }catch(PDOException $e){
