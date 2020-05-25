@@ -41,6 +41,7 @@ window.addEventListener('resize', function () {
     };
 });
 
+<<<<<<< HEAD
 function number4() {
     var current = 0,
         $preview = $('#preview'),
@@ -52,6 +53,14 @@ function number4() {
             onClick: function (el, pos, evt) {
                 changeImage(el, pos);
                 evt.preventDefault();
+=======
+    $(function () {
+        $.ajax({
+            type: 'get',
+            url: './js/map/taiwanmap/index.json',
+            success: function (data) {
+                pushDom(data.data);
+>>>>>>> 15f7627d388748f26f8268eddccf2b9516191504
             },
             onReady: function () {
                 changeImage($carouselItems.eq(current), current);

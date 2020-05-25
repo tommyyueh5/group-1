@@ -5,7 +5,7 @@
 try {
     
 
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $showPws = $_POST["showPws"];
     $showno = $_POST["no"];
 

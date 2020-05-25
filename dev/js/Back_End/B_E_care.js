@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
                 $('.care_list').append(
                     `
                     <li class="p_care">
+                    <div id="edit_cancel">刪除</div>
                     <div class="care_topic">
                         <h1>${care_data[i]["MAN_CON"]}</h1>
                     </div>
@@ -73,7 +74,7 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/PHP_program/Back_End/Back_End_cares.php", true);
+    xhr.open("Get", "./PHP_program/Back_End/Back_End_cares.php", true);
     xhr.send(null);
 });
 

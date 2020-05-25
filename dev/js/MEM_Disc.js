@@ -23,7 +23,7 @@ window.addEventListener('load',function(){
            
         }
     }
-    xhr.open("POST", "../../dest/PHP_program/MEM_Disc.php", true);
+    xhr.open("POST", "./PHP_program/MEM_Disc.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
     xhr.send(`no=${no}`);
 

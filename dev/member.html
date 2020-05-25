@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>會員中心</title>
     @@include('./LAYOUT/head.html')
-    <link rel="stylesheet" href="../dest/css/member.css">
-
+    <link rel="stylesheet" href="./css/member.css">
+    <script src="./node_modules/jquery/jquery.min.js"></script>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                 <img class="thumbnail" src="">
                 <form action="#" method="post" class="edit_thumbnail">
                     <label for="editimage">
-                        <img src="/dest/image/member/interface.png" >
+                        <img src="./image/member/interface.png" >
                         <input type="file" name="" id="editimage" value="">
                     </label>
                 </form>
@@ -106,8 +106,7 @@
         </section>
     </main>
     @@include('./LAYOUT/footer.html')
-    <script src="../dest/node_modules/jquery/jquery.min.js"></script>
-    <script src="../dest/js/member.js"></script>
+    <script src="./js/member.js"></script>
     <!-- 頁籤 -->
 
     <script>
@@ -141,11 +140,11 @@
         });
         
     </script>
-    <script src="../dest/js/EditMember.js"></script>
-    <script src="../dest/js/updatePws.js"></script>
-    <script src="../dest/js/MEM_Disc.js"></script>
-    <script src="../dest/js/MEM_Meg.js"></script>
-    <script src="../dest/js/MEM_Report.js"></script>
+    <script src="./js/EditMember.js"></script>
+    <script src="./js/updatePws.js"></script>
+    <script src="./js/MEM_Disc.js"></script>
+    <script src="./js/MEM_Meg.js"></script>
+    <script src="./js/MEM_Report.js"></script>
 
 
 </body>

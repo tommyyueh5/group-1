@@ -70,6 +70,9 @@
                     }
                 }
             }
+            p.warning_color{
+                color: red;
+            }
             div.main_data {
                 flex: 4;
                 display: flex;
@@ -100,6 +103,7 @@
                     white-space: nowrap;
                     text-overflow: ellipsis;
                 }
+                
             }
             div.category {
                 flex: 2;
@@ -110,6 +114,10 @@
                 align-items: center;
                 justify-content: space-around;
                 padding: 50px;
+            }
+            div#create_date_item{
+                padding: 0;
+                height: 200px;
             }
             div.Audit_results {
                 flex: 2;
@@ -144,5 +152,21 @@
                 }
             }
         }
+        div.product_img_div{
+            input.uploadimg{
+                width: 100px;
+                height: 100px;
+                background-color: #ccc;
+                padding: 3px;
+                &:active{
+                    background-color: #fff;
+                }
+            }
+            input.uploadbtn{
+                display: none;
+            }
+            
+        }
+        
     }
 }

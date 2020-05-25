@@ -3,7 +3,7 @@
 // header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 // header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 try {
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $RG_Email = $_POST["RG_Email"];
     // $Test = 'abc@ccc.co';
     $sql = "select * from `member` where `MEM_MAIL`=:memEmail"; 

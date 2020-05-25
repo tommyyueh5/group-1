@@ -5,7 +5,7 @@
 try {
     
 
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $emeEmail = $_POST["emeEmail"];
     $emePaw = $_POST["emePaw"];
 
@@ -25,7 +25,7 @@ try {
         $memRow = $member->fetch(PDO::FETCH_ASSOC);
         //登入成功,將登入者的資料寫入session
 
-        $member = array("memId"=>$memRow["MEM_ACC"], "memImg"=>$memRow["MEM_IMG"], "email"=>$memRow["MEM_MAIL"], "point"=>$memRow["MEM_POI"],"no"=>$memRow["MEM_NO"],"showPws"=>$memRow["MEM_PAS"]);        
+        $member = array("memId"=>$memRow["MEM_ACC"], "memImg"=>$memRow["MEM_IMG"], "email"=>$memRow["MEM_MAIL"], "point"=>$memRow["MEM_POI"],"no"=>$memRow["MEM_NO"],"showPws"=>$memRow["MEM_PAS"],"boolen"=>$memRow["MEM_TIME"],"gamedate"=>$memRow["GAME_LASTTIME"]);        
         echo json_encode($member);        
     }
 } catch (PDOException $e) {

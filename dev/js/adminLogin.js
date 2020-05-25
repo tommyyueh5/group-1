@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
 
             }
 
-            xhr.open('Post', '../../../dest/PHP_program/admin.php');
+            xhr.open('Post', './PHP_program/admin.php');
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             let admin_info = `ID=${$id('rootName').value}&PAS=${$id('pws_box').value}`;
             xhr.send(admin_info);
@@ -48,7 +48,7 @@ window.addEventListener('load', () => {
 
         if (datas && datas[0].ADMIN_ID) {
             if ($id('rootName').value == datas[0].ADMIN_ID && $id('pws_box').value == datas[0].ADMIN_PAS) {
-                window.location.href = "../../dest/Back_End.html"
+                window.location.href = "./Back_End.html"
             }
         }
 

@@ -6,7 +6,7 @@
 // header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try {
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $editname = $_POST["editname"];
     $editemail = $_POST["editemail"];
     $editimg = $_POST["editimg"];

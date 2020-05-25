@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../dest/node_modules/icofont/icofont.css">
     <script src="../dest/node_modules/jquery/jquery.min.js"></script>
     @@include('./LAYOUT/head.html')
+    <!-- <link rel="stylesheet" href="../dest/css/game.css"> -->
 </head>
 
 <body>
@@ -16,32 +17,66 @@
         <div id="des">
             <article>
                 <h1>遊戲規則</h1>
-                <p>規則一:<span>題目隨機取十題，每題皆為單選題。</span></p>
-                <p>規則二:<span>每題10分答對以累加計算。</span></p>
-                <p>規則三:<span>如尚未註冊可先<a href="#">加入會員</a>。</span></p>
-                <p>規則四:<span>完成遊戲經由分數計算後即可得到點數，點數可至防疫商店兌換商品。</span></p>
-                <p>規則五:<span>題目取<a href="#">防疫SOP</a>及<a href="#">病毒起源</a>，建議瀏覽上述知識區。</span></p>
+                <p class="rule_title">規則一:每題10分答對以累加計算</p>
+                <p class="rule_title">規則二:如尚未註冊可先加入會員</p>
+                <p class="rule_title">規則三:題目隨機取十題，每題皆為單選題</p>
+                <p class="rule_title">規則四:完成遊戲計算後可得到點數點數可兌換商品</p>
+                <p class="rule_title">規則五:題目取防疫SOP及病毒起源</p>
             </article>
-            <a href="#">X</a>
+            <a class="btnclose" href="#">X</a>
         </div>
-        <div id="start">全民知識王要開始囉</div>
+
+        <div id="start">
+            <p> 全民知識王要開始囉</p>
+        </div>
         <div id="quiz" style="display: none">
             <div id="qImg"></div>
             <div id="question"></div>
+            <div class="move"><a href="#" id="question1"></a></div>
             <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+
+                <div class="choice" id="A"></div>
+                <div class="choice" id="B"></div>
+                <div class="choice" id="C"></div>
             </div>
 
-            <div id="timer">
-                <div id="counter"></div>
-                <div id="btimeGauge"></div>
-                <div id="timeGauge"></div>
-            </div>
-            <div id="progress"></div>
+
+
+            <div id="progress" style="opacity: 0;"></div>
         </div>
-        <div id="scoreContainer" style="display: none"></div>
+
+        <div id="scoreContainer" style="display:none"></div>
+
+        <div id="des1" style="display:none">
+            <p class="return">
+
+
+            <div class="answer_title">正確答案</div>
+            <div class="question_answer">
+                <div class="text_question">
+                    <ul class="tag_question">
+
+                    </ul>
+
+                </div>
+                <div class="rightanswer">
+                    <ul class="tag_answer">
+
+                    </ul>
+
+                </div>
+            </div>
+
+
+            <div class="three_button">
+                <a class='endSelect' href="/dest/game/game.html" rel="noopener noreferrer">重玩</a>
+                <a class='endSelect' href="/dest/Epidemic-shop/Epidemic-shop.html" rel="noopener noreferrer">前往商店</a>
+                <a class='endSelect' href="/dest/index/index.html" rel="noopener noreferrer">返回首頁</a>
+            </div>
+            </p>
+            <a href="#" style="display:none">X</a>
+        </div>
+
     </div>
     @@include('./LAYOUT/footer.html')
     <script src="../dest/js/game.js"></script>

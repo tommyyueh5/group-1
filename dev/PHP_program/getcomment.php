@@ -4,7 +4,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 try{
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $articleNo = $_POST["articleNo"];
     // $articleno = 4;
 

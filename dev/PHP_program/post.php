@@ -4,7 +4,7 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 header('Content-Type: application/json; charset=UTF-8');
 try{
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
    
     // if($_SERVER['REQUEST_METHOD']=="POST"){
         $memno = $_POST["memno"];
@@ -13,7 +13,7 @@ try{
         $content = $_POST["content"];
         $imgpath = $_POST["path"];
         $nowtime = date("Y-m-d");
-        $sql = "INSERT INTO `DISCUSSION` (`MEM_NO`, `DIS_C_NO`, `DIS_TIT`, `DIS_CON`, `DIS_EST`, `DIS_EDIT`, `DIS_IMG_PATH`, `DIS_PUB`) 
+        $sql = "INSERT INTO `DISCUSSION` (`MEM_NO`, `DIS_C`, `DIS_TIT`, `DIS_CON`, `DIS_EST`, `DIS_EDIT`, `DIS_IMG_PATH`, `DIS_PUB`) 
         VALUES (:memno,:sort,:title,:content,:nowtime,:nowtime,:imgpath,0)";
         $post = $pdo->prepare($sql); 
         $post ->bindParam(":memno",$memno);

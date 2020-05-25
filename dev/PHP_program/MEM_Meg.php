@@ -5,7 +5,7 @@
 // header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 try {
     header("Content-Type:text/html; charset=utf-8");
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $showno = $_POST["no"];
 
     // 將兩個列表合併成一個表格傳到前端
