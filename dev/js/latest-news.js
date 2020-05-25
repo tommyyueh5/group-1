@@ -260,7 +260,7 @@ window.addEventListener('load', function () {
                 var sickTotal1 = document.createElement('div');
                 sickTotal1.textContent = yes_sendcheck;
                 el.appendChild(sickTotal1);
-                yes_alreadycheckcheckout += parseInt(str[i]['昨日送驗']);
+                yes_alreadycheckcheckout += parseInt(str[i]['昨日排除']);
                 var el = document.querySelector('#yes_alreadycheckcheckout');
                 var sickTotal1 = document.createElement('div');
                 sickTotal1.textContent = yes_alreadycheckcheckout;
