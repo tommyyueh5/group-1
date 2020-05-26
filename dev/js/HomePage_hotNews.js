@@ -15,10 +15,10 @@ window.addEventListener('load', function () {
       
         const article = document.querySelector('.article');
         const datas = JSON.parse(text);
-        // console.log(datas.length);
+        // console.log(datas);
         // if (datas.length <= 4){
             datas.forEach((data, index) => {
-                if(data.NEWS_NO <= 4){
+                if(data.NEWS_NO <= 29 && data.NEWS_NO >= 26 ){
                     const li = document.createElement('li');
                 li.classList.add('item');
                 li.classList.add(`item${index}`);
@@ -79,6 +79,16 @@ window.addEventListener('load', function () {
     //輸出資料至畫面畫面
     function ExportHtml(datalist) {
         // console.log(datalist);
+        arryTest = [];
+        datalist.forEach((item,num)=>{
+            if (item.NEWS_NO <= 25 || item.NEWS_NO >= 30) {
+                return
+            } else if (item.NEWS_NO >= 26) {
+                arryTest.push(num);
+                // console.log(num);
+            }
+        })
+        // console.log(arryTest);
         
         let flag = false;
         Array.from(International).forEach((item, index) => {
@@ -103,21 +113,21 @@ window.addEventListener('load', function () {
                 dateBox.innerHTML = pdate;
                 // dateBox.appendChild(pdate);
                 // dateBox.appendChild(pdate)
-
+                // console.log(arryTest[index]);
                 //設置屬性區
-                img.setAttribute('src', datalist[index].NEWS_IMG_PATH);
+                img.setAttribute('src', datalist[arryTest[index]].NEWS_IMG_PATH);
                 //停止預設行為
                 btnClose.setAttribute('href', 'javascript:void(0)');
                 //  圖片敘述
-                pImg.innerText = `▲ ${datalist[index].NEWS_IMG_EXP}`;
+                pImg.innerText = `▲ ${datalist[arryTest[index]].NEWS_IMG_EXP}`;
                 // console.log(datalist[index]);
 
 
                 // 顯示標題及內容
                 let dateChilds = dateBox.children;
-                let date = dateHandler(datalist[index].NEWS_PUBLISH_DATE);
-                newsTitle.innerText = datalist[index].NEWS_TIT;
-                newsContent.innerText = datalist[index].NEWS_CON;
+                let date = dateHandler(datalist[arryTest[index]].NEWS_PUBLISH_DATE);
+                newsTitle.innerText = datalist[arryTest[index]].NEWS_TIT;
+                newsContent.innerText = datalist[arryTest[index]].NEWS_CON;
                 dateChilds[0].innerText = date[0];
                 dateChilds[2].innerText = `${date[1]}月`;
                 dateChilds[1].innerText = date[2];
