@@ -43,16 +43,16 @@ window.addEventListener('load', () => {
             createLi.innerHTML = render;
             report_list_P.appendChild(createLi)
             // console.log(report);
-            let pData = document.querySelectorAll('.isON');
+            let pData = document.querySelectorAll('.report_isON');
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#report_psi${index}`).click(function () {
+                    $(`#report_psi${i}`).click(function () {
 
-                        if ($(`#report_psi${index}`).val() == 0) {
-                            $(`#report_psi${index}`).val(1);
+                        if ($(`#report_psi${i}`).val() == 0) {
+                            $(`#report_psi${i}`).val(1);
                         } else {
-                            $(`#report_psi${index}`).val(0);
+                            $(`#report_psi${i}`).val(0);
                         }
                     })
                 } else {
