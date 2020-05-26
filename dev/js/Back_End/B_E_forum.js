@@ -39,12 +39,41 @@ window.addEventListener('load', () => {
                 } else {
                     p.checked = false;
                 }
-                $(`#discussion_psi${forum_data[i].DIS_NO}`).click(function () {
-
+                $(`#discussion_psi${forum_data[i].DIS_NO}`).click(function (e) {
                     if ($(`#discussion_psi${forum_data[i].DIS_NO}`).val() == 0) {
                         $(`#discussion_psi${forum_data[i].DIS_NO}`).val(1);
+                        // console.log(e.currentTarget.value,'=',forum_data[i].DIS_NO);
+                        fetch('./PHP_program/Back_End/Back_End_forum_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "forumNum":forum_data[i].DIS_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     } else {
                         $(`#discussion_psi${forum_data[i].DIS_NO}`).val(0);
+                        console.log(e.currentTarget.value,'=',forum_data[i].DIS_NO);
+                        fetch('./PHP_program/Back_End/Back_End_forum_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "forumNum":forum_data[i].DIS_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     }
 
                 })

@@ -46,14 +46,42 @@ window.addEventListener('load', () => {
                 } else {
                     p.checked = false;
                 };
-                $(`#game_psi${game_data[i].GAME_NO}`).click(function () {
+                $(`#game_psi${game_data[i].GAME_NO}`).click(function (e) {
 
                     if ($(`#game_psi${game_data[i].GAME_NO}`).val() == 0) {
                         $(`#game_psi${game_data[i].GAME_NO}`).val(1);
+                        fetch('./PHP_program/Back_End/Back_End_GAME_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "GameNum":game_data[i].GAME_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     } else {
                         $(`#game_psi${game_data[i].GAME_NO}`).val(0);
+                        fetch('./PHP_program/Back_End/Back_End_GAME_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "GameNum":game_data[i].GAME_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     }
-                    console.log(p);
+                    // console.log(p);
                 });
             });
         } else {

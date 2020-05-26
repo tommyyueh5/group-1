@@ -47,7 +47,9 @@ window.addEventListener('load', () => {
             // =================註冊信箱判定======================
             if (isOpen == 200) {
                 let isOk = JSON.parse(sessionStorage.getItem('isdone'))
-                if (isOk.isJudgeDone == "false") {
+                console.log(isOk.isJudgeDone);
+                
+                if (isOk.isJudgeDone == false) {
                     xhr.onload = function () {
                         if (xhr.status == 200) {
 
@@ -57,7 +59,7 @@ window.addEventListener('load', () => {
                         }
                     }
 
-                    xhr.open("POST", "./PHP_program/registered.php", true);
+                    xhr.open("POST", "./PHP_program/registered.php",true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     let registerd_info = `RG_Email=${$id('RG_Email').value}&RG_Name=${$id('RG_Name').value}&RG_Pwd=${$id('RG_Pwd').value}`;
                     console.log(registerd_info);
@@ -76,7 +78,7 @@ window.addEventListener('load', () => {
             isrule: false,
             isJudgeDone: true
         };
-
+        
         sessionStorage.setItem('isdone', JSON.stringify(Done))
         let JudgeXhr = new XMLHttpRequest();
         emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
@@ -86,9 +88,15 @@ window.addEventListener('load', () => {
             JudgeXhr.onload = function () {
                 if (Done.isrule) {
                     //資料庫如果給的值是true就代表以(有重複)，給false(就代表可以使用)
-                    Done.isJudgeDone = JudgeXhr.responseText;
-                    sessionStorage.setItem('isdone', JSON.stringify(Done))
-                    sessionStorage.setItem('open', JudgeXhr.status)
+                    
+                    
+                    num = JudgeXhr.responseText.indexOf('false');
+                    
+                    Done.isJudgeDone = JudgeXhr.responseText.substring(num,JudgeXhr.responseText.length) == 'false'? false:null;
+                    // console.log(Done.isJudgeDone);
+                    console.log(JSON.stringify(Done));
+                    sessionStorage.setItem('isdone',JSON.stringify(Done));
+                    sessionStorage.setItem('open', JudgeXhr.status);
                 }
             }
             JudgeXhr.open("POST", "./PHP_program/registeredJudge.php", true)
