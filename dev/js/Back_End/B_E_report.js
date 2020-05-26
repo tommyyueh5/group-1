@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
             return resp.json();
         }
     }).then(FetchData => {
-        // console.log();
+        console.log(FetchData);
         Array.from(FetchData).forEach((report, index) => {
             let report_list_P = document.querySelector('.report_list');
             let createLi = document.createElement('li');
