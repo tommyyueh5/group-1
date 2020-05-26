@@ -561,6 +561,15 @@ window.addEventListener('load', ()=>{
         
     }
 
+
+
+    //scro
+
+    $(".scroll").click(function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $(".shop-detail").offset().top -130
+        }, 2000);
+    });
 });
 
 

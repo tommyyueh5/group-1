@@ -149,6 +149,7 @@ window.addEventListener('load', () => {
                     <div class="product_img_div">
                         <input class="uploadimg" id="product-img-upload" type="image" src="./image/member/interface.png" />
                         <input class="uploadbtn" type="file" id="upload"/>
+                        <p class="file-warning warning_color"></p>
                     </div>
                     <div class="main_data">
                         <select name="" id="imageKind">

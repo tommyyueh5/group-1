@@ -216,7 +216,7 @@ function newProduct(){
         conn.onreadystatechange = function() {
             if (conn.readyState==4) {
                 if (conn.status == 200) {
-                    
+                    // console.log(conn.responseText);
                     let res = JSON.parse(conn.responseText);
                     if (res['error'] == 0) {
                         let kind;if ('clothe'==res['PRO_KIND']) {kind = '防護衣'; } else if ('goggle'==res['PRO_KIND']){kind = '防疫眼鏡'; } else {kind = '防疫口罩<'; }
@@ -249,7 +249,25 @@ function newProduct(){
                 
                                 
                             });
+                        form.forEach(function(val, key, fD){
+                            form.delete(key);
+                        });
+                        productUpImage.src='./image/member/interface.png';
+                        imageKind.value='';
+                        proId.value='';
+                        proPri.value='';
+                        productDesc.value='';
+                        protime.value='';
+                        upstate.checked = false;
                     } else if (JSON.parse(conn.responseText)['error'] == 1) {
+                        // console.log(res['file']);
+                        // console.log(res['kind']);
+                        // console.log(res);
+                        // console.log($('.file-warning').text());
+                        // console.log($('.kind-warning').text());
+
+                       
+                        $('.file-warning').text(res['file']);
                         $('.kind-warning').text(res['kind']);
                         $('.desc-warning').text(res['desc']);
                         $('.time-warning').text(res['time']);
@@ -259,6 +277,10 @@ function newProduct(){
                         $('.pri-warning').text(res['pri']);
                     }
                     
+
+
+                   
+
                 }else {
                     alert(conn.status);
                 }

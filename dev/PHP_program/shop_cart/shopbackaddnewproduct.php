@@ -17,8 +17,12 @@
         foreach ($_POST as $i=>$v) {
             //是
             $x++;
-            if (empty($_POST[$i])&&($_POST[$i]!='0')) {
-
+            
+            if (sizeof($_FILES)<1||(empty($_POST[$i])&&($_POST[$i]!='0'))) {
+                if ( sizeof($_FILES)<1) {
+                    $state['file'] = '請選擇照片';
+                }
+                // print_r($_FILES);
                 foreach( $_POST as $i=>$v) {
 
                     if (empty($_POST[$i])&&($_POST[$i]!='0')) {
