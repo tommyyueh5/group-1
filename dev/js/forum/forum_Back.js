@@ -288,17 +288,20 @@ function uploadImg() {
     });
 };
 // 載入圖片避免重疊
-function imgLoad() {
-    /* 瀑布流區塊div */
-    var $container = $('.masonry');
-    //當圖片讀取完畢才執行
-    $container.imagesLoaded(function() {
-        //選擇瀑布流的區塊名稱
-        $container.masonry({
-            itemSelector: '.item',
-        })
-    });
-};
+// function imgLoad() {
+//     /* 瀑布流區塊div */
+//     var $container = $('.masonry');
+//     //當圖片讀取完畢才執行
+//     $container.imagesLoaded(function() {
+//         //選擇瀑布流的區塊名稱
+//         $container.masonry({
+//             itemSelector: '.item',
+//         })
+//     });
+//     $('.masonry').imagesLoaded().always(function(instance) {
+//         $('.loadingScreen').fadeOut();
+//     })
+// };
 
 //傳送檢舉資訊到資料庫
 function sendReport() {
@@ -371,7 +374,6 @@ $(document).ready(function() {
         var filterText = $('div.filter_order .-on h3 ').text();
         $('.subtitle_1 h3').text(filterText);
         $(".filter_left span").text($(this).text());
-
         showDataTime();
     });
     //ＲＷＤ後的條件篩選
@@ -421,7 +423,6 @@ $(document).ready(function() {
         // var filterText = $('div.filter_order .-on h3 ');
         // filterText.text(rwdFilterText);
         // console.log(filterText.text());
-
         showData();
     });
     // 按下ＲＷＤ後熱門程度篩選鍵
@@ -430,7 +431,6 @@ $(document).ready(function() {
         $(".filter_left span").text($(this).text());
         $(".filter_left div").slideToggle();
         $('.subtitle_1 h3').text($(".filter_right span").text());
-
         showCommentMost();
     });
     // 按下ＲＷＤ後即時發布篩選鍵
@@ -438,7 +438,6 @@ $(document).ready(function() {
         $('div.article').remove();
         $(".filter_left span").text($(this).text());
         $(".filter_left div").slideToggle();
-
         showDataTime();
     });
 
@@ -514,6 +513,10 @@ $(document).ready(function() {
     $(".post,#upload,#content,#postBtn").on("click", function(e) {
         e.stopPropagation();
     });
+    $(".close").on("click", function() {
+        $(".article_content,.background").hide();
+        $('.post').css('background-color', 'unset');
+    })
     $("body").on("click", function() {
         $(".article_content,.background").hide();
         $('.post').css('background-color', 'unset');
@@ -551,32 +554,35 @@ $(document).ready(function() {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能留言！！");
+        } else if ($("#comment_text").val() == "") {
+            alert("請確實填寫欄位");
         } else {
             // location.reload();
             // $("#commentId").load(location.href + " #commentId");
+            uploadCom();
+            updateCom();
             showComment();
         }
     });
     $('#postBtn,#canBtn').on("click", function() {
-        $('#upload').hide();
-        $('#content').hide();
-        $('#postBtn').hide();
-        $('#canBtn').hide();
-        $('.postimg').hide();
-        $('#sort').hide();
-        $('.post').css('background-color', 'unset');
+        var sort = $('#sort').val();
+        var title = $('#title').val();
+        var content = $('#content').val();
+        var file = $(".oldPath").get(0).files.item(0).name;
+        console.log(file);
+        console.log(sort);
+        if (sort == "要發什麼版？" || title == "" || content == "" || file == "") {
+            alert("請確實填寫欄位");
+        } else {
+            $('#upload').hide();
+            $('#content').hide();
+            $('#postBtn').hide();
+            $('#canBtn').hide();
+            $('.postimg').hide();
+            $('#sort').hide();
+            $('.post').css('background-color', 'unset');
+            uploadData();
+            uploadImg();
+        }
     });
-    // $(function() {
-    //     $(window).scroll(function() {
-    //         var scrollVal = $(this).scrollTop();
-    //         console.log(scrollVal);
-    //         $('.article_content').css("top", `${scrollVal}px`);
-    //     })
-    // })
-
 });
-// window.addEventListener('load', function() {
-// imgLoad();
-// showData();
-// showComment();
-// });

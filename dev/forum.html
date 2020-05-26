@@ -90,7 +90,7 @@
                     </select>
                 </div>
                 <textarea id="content" type="text" rows="1" placeholder="你想說的內容？"></textarea><br>
-                <button id="postBtn" type="submit" onclick="uploadData();uploadImg()">發文</button>
+                <button id="postBtn" type="submit">發文</button>
                 <button id="canBtn">取消</button>
             </div>
             <canvas id="canvas"></canvas>
@@ -120,7 +120,6 @@
                 <a data-target="tab1" class="tab -on">
                     <h3>疫情資訊</h3>
                 </a>
-
                 <a data-target="tab2" class="tab">
                     <h3>新聞</h3>
                 </a>
@@ -173,6 +172,7 @@
         <!-- section 中間文章內容 -->
         <section class="content_container">
             <div class="article_content">
+                <img class="close" src="./image/forum/close.png">
                 <h2 class="article_content_title"></h2>
                 <h3 class="article_content_time"></h3>
                 <div class="left">
@@ -182,7 +182,7 @@
                 </div>
                 <div class="right">
                     <img src="./image/forum/facebook.png" alt="">
-                    <img src="./image/forum/twitter.png" alt="">
+                    <!-- <img src="./image/forum/twitter.png" alt=""> -->
                     <img src="./image/forum/line.png" alt="">
                     <img id="report" src="./image/forum/alert.png">
                 </div>
@@ -191,12 +191,13 @@
                 <hr>
                 <img class="thumbnail2" src="./image/forum/thum_img1.jpeg" alt="">
                 <textarea id="comment_text" type="text" rows="2" placeholder="講話啊白癡......."></textarea>
-                <button type="submit" id="postCom" onclick="uploadCom();showComment();updateCom();"></button>
+                <button type="submit" id="postCom"></button>
                 <div class="comment">
                 </div>
             </div>
             <div class="tab_contents">
                 <!-- tab1 疫情資訊-->
+
                 <div class="tab tab1 -on row masonry">
                     <div class="subtitle_1 col-sm-12 item ">
                         <h3>疫情資訊</h3>
