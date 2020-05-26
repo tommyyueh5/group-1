@@ -1,5 +1,11 @@
 @import "../LAYOUT/base/var";
 @import "../sass/subpage";
+body{
+  h1, h2{
+    font-family:"NotoSansTC-Black";
+    font-weight: bold;
+  }
+}
 main {
   background-color: #222;
 }

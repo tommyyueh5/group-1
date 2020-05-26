@@ -89,12 +89,18 @@ window.addEventListener('load', () => {
                 if (Done.isrule) {
                     //資料庫如果給的值是true就代表以(有重複)，給false(就代表可以使用)
                     
+<<<<<<< HEAD
                     
                     num = JudgeXhr.responseText.indexOf('false');
                     
                     Done.isJudgeDone = JudgeXhr.responseText.substring(num,JudgeXhr.responseText.length) == 'false'? false:null;
                     // console.log(Done.isJudgeDone);
                     console.log(JSON.stringify(Done));
+=======
+                    num = JudgeXhr.responseText.indexOf('false');
+                    Done.isJudgeDone = JudgeXhr.responseText.substring(num,JudgeXhr.responseText.length);
+
+>>>>>>> c43fee8a269a64449919ab1f2536f981c5f1f107
                     sessionStorage.setItem('isdone',JSON.stringify(Done));
                     sessionStorage.setItem('open', JudgeXhr.status);
                 }
