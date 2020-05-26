@@ -217,7 +217,7 @@ function newProduct(){
             if (conn.readyState==4) {
                 if (conn.status == 200) {
                     
-                    
+                    console.log(conn.responseText);
                     let res = JSON.parse(conn.responseText);
                     if (res['error'] == 0) {
                         let kind;if ('clothe'==res['PRO_KIND']) {kind = '防護衣'; } else if ('goggle'==res['PRO_KIND']){kind = '防疫眼鏡'; } else {kind = '防疫口罩<'; }

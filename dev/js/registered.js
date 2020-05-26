@@ -18,11 +18,14 @@ window.addEventListener('load', () => {
     let xhr = new XMLHttpRequest();
     
     $id('RG_Email').addEventListener('change', function () {
+        sessionStorage.setItem('123','asd');
         emailHandler();
 
     })
     if ($cs('submit2')) {
         $cs('submit2').addEventListener('click', function (e) {
+            console.log(123);
+            
             e.stopPropagation();
             // ==============註冊信箱判定=========================
                 let RE =  ($id('RG_Email').value).trim();
@@ -80,6 +83,8 @@ window.addEventListener('load', () => {
         };
         
         sessionStorage.setItem('isdone', JSON.stringify(Done))
+        console.log(Done);
+        
         let JudgeXhr = new XMLHttpRequest();
         emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
         // 如果email內格式正確就撈取資料,再查看資料庫資料是否有重複
@@ -89,18 +94,12 @@ window.addEventListener('load', () => {
                 if (Done.isrule) {
                     //資料庫如果給的值是true就代表以(有重複)，給false(就代表可以使用)
                     
-<<<<<<< HEAD
                     
                     num = JudgeXhr.responseText.indexOf('false');
                     
                     Done.isJudgeDone = JudgeXhr.responseText.substring(num,JudgeXhr.responseText.length) == 'false'? false:null;
                     // console.log(Done.isJudgeDone);
                     console.log(JSON.stringify(Done));
-=======
-                    num = JudgeXhr.responseText.indexOf('false');
-                    Done.isJudgeDone = JudgeXhr.responseText.substring(num,JudgeXhr.responseText.length);
-
->>>>>>> c43fee8a269a64449919ab1f2536f981c5f1f107
                     sessionStorage.setItem('isdone',JSON.stringify(Done));
                     sessionStorage.setItem('open', JudgeXhr.status);
                 }
@@ -110,7 +109,8 @@ window.addEventListener('load', () => {
             let Judge_info = `RG_Email=${$id('RG_Email').value}`;
             JudgeXhr.send(Judge_info)
 
-        } else {
+        } 
+        else {
             sessionStorage.clear();
         }
     }

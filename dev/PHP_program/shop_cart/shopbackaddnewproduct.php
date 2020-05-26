@@ -1,17 +1,14 @@
 <?php
     
 
-    $dsn ="mysql:host=localhost;dbname=dd106g1";
-    $user = 'root';
-    $password = "root";
-    $pdo = new PDO($dsn, $user, $password);
-    
+    require_once("./../connectdd106g1.php");
     $sql2 = "SELECT *
              FROM PRODUCT
              WHERE PRO_ID='{$_POST["id"]}'";
     
         $state = array();
         $x=0;
+        
         foreach ($_POST as $i=>$v) {
             //是
             $x++;

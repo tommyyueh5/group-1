@@ -147,7 +147,7 @@ window.addEventListener('load', () => {
             $('.product_list').prepend(`
                 <li class="p_product" id="create_product">
                     <div class="product_img_div">
-                        <input class="uploadimg" id="product-img-upload" type="image" src="../dest/image/member/interface.png" />
+                        <input class="uploadimg" id="product-img-upload" type="image" src="./image/member/interface.png" />
                         <input class="uploadbtn" type="file" id="upload"/>
                     </div>
                     <div class="main_data">
