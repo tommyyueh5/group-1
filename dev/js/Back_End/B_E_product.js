@@ -237,7 +237,8 @@ function newProduct(){
                                     <input type="checkbox" class="pro-on"  name="release" value="${res['PRO_SHE']}">
                                 </span>
                             </div>
-                            </li>`; $( html ).insertAfter( "#create_product" );
+                            </li>`; 
+                            $( html ).insertAfter( "#create_product" );
                             let pData = document.querySelectorAll('.pro-on');
                             pData.forEach((p, i) => {
                                 if (p.value == 1) {

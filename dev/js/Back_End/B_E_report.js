@@ -35,8 +35,9 @@ window.addEventListener('load', () => {
                         </div>
                         <div class="Audit_results">
                             <span class="center">
-                                <input class="report_isON" id="report${index}" type="checkbox" value="0">
+                                <input class="report_isON" id="report_psi${index}" type="checkbox" value="${report.VER_SIT}">
                             </span>
+                            
                         </div>
                     `;
             createLi.innerHTML = render;
@@ -46,12 +47,12 @@ window.addEventListener('load', () => {
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#report${index}`).click(function () {
+                    $(`#report_psi${index}`).click(function () {
 
-                        if ($(`#report${index}`).val() == 0) {
-                            $(`#report${index}`).val(1);
+                        if ($(`#report_psi${index}`).val() == 0) {
+                            $(`#report_psi${index}`).val(1);
                         } else {
-                            $(`#report${index}`).val(0);
+                            $(`#report_psi${index}`).val(0);
                         }
                     })
                 } else {
