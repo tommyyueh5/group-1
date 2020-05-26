@@ -76,7 +76,7 @@ window.addEventListener('load', () => {
             isrule: false,
             isJudgeDone: true
         };
-
+        
         sessionStorage.setItem('isdone', JSON.stringify(Done))
         let JudgeXhr = new XMLHttpRequest();
         emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
@@ -86,9 +86,12 @@ window.addEventListener('load', () => {
             JudgeXhr.onload = function () {
                 if (Done.isrule) {
                     //資料庫如果給的值是true就代表以(有重複)，給false(就代表可以使用)
-                    Done.isJudgeDone = JudgeXhr.responseText;
-                    sessionStorage.setItem('isdone', JSON.stringify(Done))
-                    sessionStorage.setItem('open', JudgeXhr.status)
+                    
+                    num = JudgeXhr.responseText.indexOf('false');
+                    Done.isJudgeDone = JudgeXhr.responseText.substring(num,JudgeXhr.responseText.length);
+
+                    sessionStorage.setItem('isdone',JSON.stringify(Done));
+                    sessionStorage.setItem('open', JudgeXhr.status);
                 }
             }
             JudgeXhr.open("POST", "./PHP_program/registeredJudge.php", true)
