@@ -281,13 +281,13 @@ div.bread_crumbs a span {
     margin: 10px 0 0 0%;
 }
 
-.breadcrumb-item>a,
-::after,
-::before {
-    color: grey;
-    /* position: relative;
-    left:50%; */
-}
+// .breadcrumb-item>a,
+// ::after,
+// ::before {
+//     // color: grey;
+//     /* position: relative;
+//     left:50%; */
+// }
 
 /*---------------------------------------------*/
 .main {
@@ -401,6 +401,7 @@ button:focus {
     top: -1%;
     right: 0%;
     overflow: auto;
+    z-index: 1;
 }
 .-on{
     display:block;
@@ -633,9 +634,9 @@ button:focus {
     color: #2e1e05;
 }
 
-.covid-vedio-title {
-    // float: left;
-}
+// .covid-vedio-title {
+//     // float: left;
+// }
 
 .before-paragraph-line {
     width: 80%;
@@ -805,7 +806,7 @@ ul.covid-19-timeline>li:before {
     .book_content {
         width: 100%;
         height: 100%;
-        top: 7%;
+        top: 11%;
         left: 50%;
         border-radius: 0%;
     }
@@ -827,7 +828,7 @@ ul.covid-19-timeline>li:before {
     }
     .btnclose {
         position: absolute;
-        top: 8%;
+        top: 16%;
         right: 5%;
     }
     
