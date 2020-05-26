@@ -14,7 +14,7 @@ try{
         $imgpath = $_POST["path"];
         $nowtime = date("Y-m-d");
         $sql = "INSERT INTO `DISCUSSION` (`MEM_NO`, `DIS_C`, `DIS_TIT`, `DIS_CON`, `DIS_EST`, `DIS_EDIT`, `DIS_IMG_PATH`, `DIS_PUB`) 
-        VALUES (:memno,:sort,:title,:content,:nowtime,:nowtime,:imgpath,0)";
+        VALUES (:memno,:sort,:title,:content,:nowtime,:nowtime,:imgpath,1)";
         $post = $pdo->prepare($sql); 
         $post ->bindParam(":memno",$memno);
         $post ->bindParam(":sort",$sort);

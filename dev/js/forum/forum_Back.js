@@ -307,7 +307,7 @@ function uploadImg() {
 function sendReport() {
     var memno = sessionStorage.getItem('no'); //會員編號
     var artno = $('.article_content_no').text(); //文章編號
-    var reason = $("input[type='checkbox']:checked").val()
+    var reason = $("input[type='radio']:checked").val()
     console.log(reason);
     $.ajax({
         url: './PHP_program/report.php',
