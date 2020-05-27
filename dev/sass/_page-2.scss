@@ -2,7 +2,7 @@ section.page-2 {
     // padding-top: $headerH;
     width: 100%;
     // height: 100vh;
-    background-color: #000;
+    background-color: #393E46;
 
     .newTitle {
         width: 100%;
@@ -27,7 +27,7 @@ section.page-2 {
         h1 {
             letter-spacing: 1px;
             color: #fff;
-            font-size: $main_titleFs;
+            font-size: $sub_titleFs;
         }
     }
 
@@ -300,6 +300,12 @@ section.page-2 {
 }
 
 @include rwd(small) {
+    section.page-2 .newTitle{
+        padding: 15px 60px;
+    }
+    section.page-2 .newTitle h1{
+        font-size: $rwd_layout_title;
+    }
     section.page-2 .container-top .article {
         width: 100%;
         height: 50vh;
@@ -314,6 +320,7 @@ section.page-2 {
 }
 
 @include rwd(mobile) {
+    
     section.page-2 .container-top .article {
         width: 100%;
         height: 90%;
@@ -335,7 +342,7 @@ section.page-2 {
 
     section.page-2 .newTitle {
         padding: 10px;
-        font-size: 22px;
+        font-size: $sub_titleFs;
     }
 
     section.page-2 .container-top .article .item>div>.hotNewcontent {
