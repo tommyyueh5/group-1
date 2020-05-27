@@ -30,6 +30,7 @@ div.bread_crumbs {
     padding: 15px 0 15px 80px;
     font-size: 20px;
     color: rgb(155, 155, 155);
+    background-color: #2e2e2e;
 }
 
 div.bread_crumbs a {
@@ -43,6 +44,7 @@ div.bread_crumbs a span {
     // border: white 1px solid;
     padding: 0 5px;
     margin: 0 10px;
+
 }
 
 
@@ -208,7 +210,10 @@ div.bread_crumbs a span {
                 color: white;
                 text-align: center;
                 // font-weight: bold;
-                font-family:"NotoSansTC-Black";
+                margin-left: 65px;
+                margin-top: 25px;
+                margin-bottom: 130px;
+                // font-family:"NotoSansTC-Black";
                 font-size: 30px;
                 @include rwd(small) {
                     display: none;
@@ -221,7 +226,7 @@ div.bread_crumbs a span {
             }
 
             .shop-type {
-                margin-top: 30px;
+                // margin-top: 30px;
                 // border: 1px solid purple;
                 display: flex;
 
@@ -404,6 +409,8 @@ div.bread_crumbs a span {
                 color: white;
                 text-align: center;
                 font-size: 30px;
+                margin-top: 25px;
+                margin-bottom: 25px;
             }
 
             .shop-two-item-des {
@@ -459,6 +466,24 @@ div.bread_crumbs a span {
                             top: -2%;
                             left: -2%;
                         }
+
+                        .btnplace {
+                            position: absolute;
+                            left:0;
+                            bottom:0;
+                            z-index: 1;
+                            margin: 5px;
+                            
+                            .icofont-undo {
+                                font-size: 50px;
+                                @include rwd(mobile) {
+                                    font-size: 30px;
+                                }
+                                @include rwd-shop(i5) {
+                                    font-size: 30px;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -481,49 +506,49 @@ div.bread_crumbs a span {
                         width: 95%;
                     }
 
-                    .btnplace {
-                        margin-left: 28%;
-                        display: inline-block;
+                    // .btnplace {
+                    //     margin-left: 28%;
+                    //     display: inline-block;
 
-                        @include rwd(mobile) {
-                            margin-left: 65px;
-                        }
+                    //     @include rwd(mobile) {
+                    //         margin-left: 65px;
+                    //     }
 
-                        @include rwd-shop(i5) {
-                            margin-left: 20px;
-                        }
+                    //     @include rwd-shop(i5) {
+                    //         margin-left: 20px;
+                    //     }
 
-                        .re {
-                            box-shadow: inset 0px -3px 7px 0px #000000;
-                            background: linear-gradient(to bottom, #4d4d4d 5%, #2e2e2e 100%);
-                            background-color: #4d4d4d;
-                            border-radius: 3px;
-                            border: 1px solid #ffffff;
-                            display: inline-block;
-                            cursor: pointer;
-                            color: #ffffff;
-                            font-family: Arial;
-                            font-size: 15px;
-                            padding: 6px 24px;
-                            text-decoration: none;
-                            text-shadow: 0px 1px 0px #263666;
+                    //     .re {
+                    //         box-shadow: inset 0px -3px 7px 0px #000000;
+                    //         background: linear-gradient(to bottom, #4d4d4d 5%, #2e2e2e 100%);
+                    //         background-color: #4d4d4d;
+                    //         border-radius: 3px;
+                    //         border: 1px solid #ffffff;
+                    //         display: inline-block;
+                    //         cursor: pointer;
+                    //         color: #ffffff;
+                    //         font-family: Arial;
+                    //         font-size: 15px;
+                    //         padding: 6px 24px;
+                    //         text-decoration: none;
+                    //         text-shadow: 0px 1px 0px #263666;
 
-                            @include rwd-shop(i5) {
-                                font-size: 14px;
-                                padding: 6px 16px;
-                            }
-                        }
+                    //         @include rwd-shop(i5) {
+                    //             font-size: 14px;
+                    //             padding: 6px 16px;
+                    //         }
+                    //     }
 
-                        .re:hover {
-                            background: linear-gradient(to bottom, #2e2e2e 5%, #4d4d4d 100%);
-                            background-color: #2e2e2e;
-                        }
+                    //     .re:hover {
+                    //         background: linear-gradient(to bottom, #2e2e2e 5%, #4d4d4d 100%);
+                    //         background-color: #2e2e2e;
+                    //     }
 
-                        .re:active {
-                            position: relative;
-                            top: 1px;
-                        }
-                    }
+                    //     .re:active {
+                    //         position: relative;
+                    //         top: 1px;
+                    //     }
+                    // }
                 }
 
                 .shop-two-item-text {
@@ -1053,7 +1078,7 @@ div.bread_crumbs a span {
         left: 51%;
         bottom: 3px;
         width: 167px;
-        height: 160px;
+        height: 80px;
         position: relative;
         transform: translate(-50%,-50%);
         .scroll-prompt-arrow-container {
