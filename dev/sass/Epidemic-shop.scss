@@ -864,24 +864,24 @@ div.bread_crumbs a span {
     }
 
     @include rwd(mobile) {
-        bottom: -42%;
-        width: 513px;
-        height: 417px;
-        left: -10%;
+        width: 402px;
+        height: 441px;
+        left: 2%;
+        top: 306px;
     }
 
     @include rwd-shop(i6) {
-        bottom: -42%;
+        top: 60%;
         width: 430px;
         height: 417px;
-        left: -5%;
+        left: -12%;
     }
 
     @include rwd-shop(i5) {
-        bottom: -42%;
-        width: 380px;
+        top: 60%;
+        width: 350px;
         height: 417px;
-        left: -8%;
+        left: -10%;
     }
 }
 
@@ -906,17 +906,17 @@ div.bread_crumbs a span {
     }
 
     @include rwd-shop(i6) {
-        width: 200px;
-        left: 26%;
+        width: 180px;
+        left: 25%;
         top: 28%;
-        height: 100px;
+        height: 90px;
     }
 
     @include rwd-shop(i5) {
-        width: 180px;
+        width: 150px;
         left: 26%;
         top: 28%;
-        height: 100px;
+        height: 90px;
     }
 }
 
@@ -941,17 +941,17 @@ div.bread_crumbs a span {
     }
 
     @include rwd-shop(i6) {
-        width: 233px;
-        height: 96px;
+        width: 220px;
+        height: 90px;
         top: 45%;
-        left: 22%;
+        left: 18%;
     }
 
     @include rwd-shop(i5) {
-        width: 230px;
-        height: 96px;
+        width: 170px;
+        height: 80px;
         top: 45%;
-        left: 18%;
+        left: 21%;
     }
 }
 
@@ -1084,6 +1084,7 @@ div.bread_crumbs a span {
             animation-name: bounce;
             animation-duration: 1.5s;
             animation-iteration-count: infinite;
+            cursor: pointer;
         }
         .scroll-prompt-arrow {
             animation-name: opacity;
