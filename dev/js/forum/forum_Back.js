@@ -26,13 +26,16 @@ function showComment() {
                         </h2>
                         `)
             }
+        },
+        error: function(xhr) {
+            alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     })
 }
 // 撈後端文章資料顯示在前端
 function showData() {
     var filterText = $('div.filter_order .-on h3').text();
-    // console.log(filterText);
+    console.log(filterText);
     // $('.masonry').html('');
     $.ajax({
         url: './PHP_program/getinfo.php',
@@ -45,6 +48,9 @@ function showData() {
             for (let i = 0; i < data.length; i++) {
                 userName = data[i].MEM_ACC;
                 nowTime = data[i].DIS_EST;
+                year = nowTime.split('-')[0];
+                days = nowTime.split('-')[1];
+                month = nowTime.split('-')[2];
                 // topic = data[i].DIS_C_NO;
                 thumImg = data[i].MEM_IMG
                 imgPath = data[i].DIS_IMG_PATH;
@@ -57,7 +63,9 @@ function showData() {
                             <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
                                 <div class="item_content">
                                     <div class="date">
-                                        <h4 class="year">${nowTime}</h4>
+                                        <h4 class="year">${year}</h4>
+                                        <h4 class="day">${month}</h4>
+                                        <h4 class="month"><span>${days}</span>月</h4>
                                     </div>
                                     <div class="info">
                                         <img class="thum_img" src="${thumImg}">
@@ -101,6 +109,9 @@ function showDataTime() {
             for (let i = 0; i < data.length; i++) {
                 userName = data[i].MEM_ACC;
                 nowTime = data[i].DIS_EST;
+                year = nowTime.split('-')[0];
+                days = nowTime.split('-')[1];
+                month = nowTime.split('-')[2];
                 // topic = data[i].DIS_C_NO;
                 thumImg = data[i].MEM_IMG
                 imgPath = data[i].DIS_IMG_PATH;
@@ -113,7 +124,9 @@ function showDataTime() {
                             <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
                                 <div class="item_content">
                                     <div class="date">
-                                        <h4 class="year">${nowTime}</h4>
+                                        <h4 class="year">${year}</h4>
+                                        <h4 class="day">${month}</h4>
+                                        <h4 class="month"><span>${days}</span>月</h4>
                                     </div>
                                     <div class="info">
                                         <img class="thum_img" src="${thumImg}">
@@ -156,6 +169,9 @@ function showCommentMost() {
             for (let i = 0; i < data.length; i++) {
                 userName = data[i].MEM_ACC;
                 nowTime = data[i].DIS_EST;
+                year = nowTime.split('-')[0];
+                days = nowTime.split('-')[1];
+                month = nowTime.split('-')[2];
                 // topic = data[i].DIS_C_NO;
                 thumImg = data[i].MEM_IMG
                 imgPath = data[i].DIS_IMG_PATH;
@@ -168,7 +184,9 @@ function showCommentMost() {
                             <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
                                 <div class="item_content">
                                     <div class="date">
-                                        <h4 class="year">${nowTime}</h4>
+                                        <h4 class="year">${year}</h4>
+                                        <h4 class="day">${month}</h4>
+                                        <h4 class="month"><span>${days}</span>月</h4>
                                     </div>
                                     <div class="info">
                                         <img class="thum_img" src="${thumImg}">
@@ -337,10 +355,11 @@ $(document).ready(function() {
         $("div.tab").removeClass("-on");
         $("div.tab." + $(this).attr("data-target")).addClass("-on");
         var filterText = $('div.filter_order .-on h3 ').text();
+        console.log(filterText);
+
         $('.subtitle_1 h3').text(filterText);
         $(".filter_right span").text(filterText);
         $(".filter_left span").text('條件篩選');
-
         showData();
     });
     //按下熱門程度篩選鍵
@@ -440,8 +459,6 @@ $(document).ready(function() {
         $(".filter_left div").slideToggle();
         showDataTime();
     });
-
-
     //檢舉按下後燈箱
     $(".report").on("click", function(e) {
         e.stopPropagation();
@@ -466,7 +483,9 @@ $(document).ready(function() {
     //文章燈箱
     $(".masonry").on("click", '.main_img,.article_title', function(e) {
         var parr = $(this).parent('.item_content');
-        var thisTime = parr.find('.year');
+        var thisYear = parr.find('.year').text();
+        var thisDay = parr.find('.day').text();
+        var thisMonth = parr.find('.month  span').text();
         var thisTitle = parr.find('.article_title');
         var thisThum = parr.find('.thum_img');
         var thisName = parr.find('.username');
@@ -474,7 +493,7 @@ $(document).ready(function() {
         var thisContent = parr.find('.article_contentp');
         var oldSrc = thisThum.attr('src');
         var oldSrc2 = thisImg.attr('src');
-        var textext = thisTime.text();
+        // var textext = thisTime.text();
         var thisNo = parr.find('.article_contentno');
         var textNum = thisNo.text();
         // console.log(textNo);
@@ -487,7 +506,7 @@ $(document).ready(function() {
         //文章編號
         $('.article_content_no').text(textNum);
         // 時間
-        $('.article_content_time').text(thisTime.text());
+        $('.article_content_time').text(`${thisYear}-${thisMonth}-${thisDay}`);
         // 圖片
         $('.main_pic').attr('src', oldSrc2);
         // 內文
@@ -508,7 +527,6 @@ $(document).ready(function() {
     });
     $(".article_content").on("click", function(e) {
         e.stopPropagation();
-
     });
     $(".post,#upload,#content,#postBtn").on("click", function(e) {
         e.stopPropagation();
@@ -564,7 +582,7 @@ $(document).ready(function() {
             showComment();
         }
     });
-    $('#postBtn,#canBtn').on("click", function() {
+    $('#postBtn').on("click", function() {
         var sort = $('#sort').val();
         var title = $('#title').val();
         var content = $('#content').val();
@@ -584,5 +602,14 @@ $(document).ready(function() {
             uploadData();
             uploadImg();
         }
+    });
+    $('#canBtn').on("click", function() {
+        $('#upload').hide();
+        $('#content').hide();
+        $('#postBtn').hide();
+        $('#canBtn').hide();
+        $('.postimg').hide();
+        $('#sort').hide();
+        $('.post').css('background-color', 'unset');
     });
 });

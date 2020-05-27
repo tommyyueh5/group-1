@@ -5,6 +5,7 @@ ul.mark_bar {
 
 header div.title_list div.login_Bg .login-Box .sign label input {
     width: 200% !important;
+    height: unset !important;
 }
 
 .nav_bar {
@@ -22,7 +23,8 @@ footer {
 main {
     margin: 0 auto;
     width: 100%;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(57, 62, 70);
+    // background-color: yellow;
     box-sizing: border-box;
     font-size: 0;
     overflow: hidden;
@@ -37,6 +39,7 @@ div.bread_crumbs {
     padding: 15px 0 15px 80px;
     font-size: 20px;
     color: rgb(155, 155, 155);
+    background-image: url("./../image/forum/background-color.jpg");
 }
 
 div.bread_crumbs a {
@@ -141,18 +144,20 @@ div.filter_time a {
 }
 
 div.filter_order h2 {
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     text-align: left;
     // border: whitesmoke 1px solid;
     letter-spacing: 1px;
     display: inline-block;
     vertical-align: top;
-    padding: 10px 15px
+    padding: 10px 15px;
+    font-weight: bold;
+    font-family: Time;
 }
 
 div.filter_time h2 {
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     text-align: left;
     // border: whitesmoke 1px solid;
@@ -161,6 +166,8 @@ div.filter_time h2 {
     vertical-align: top;
     padding: 10px 15px;
     border-bottom: 3px solid rgba(207, 207, 207, 0);
+    font-weight: bold;
+    font-family: Times;
     span {
         display: none;
     }
@@ -168,9 +175,11 @@ div.filter_time h2 {
 
 aside.filter h3 {
     color: whitesmoke;
-    font-size: 22px;
+    font-weight: bold;
+    font-family: Times;
     letter-spacing: 1px;
     padding: 25px 0;
+    font-size: 25px;
 }
 
 aside.filter>a {
@@ -195,7 +204,7 @@ section.top_slide_container {
     display: inline-block;
     font-size: 20px;
     vertical-align: top;
-    height: 580px;
+    height: 608px;
     background-color: whitesmoke;
     position: relative;
     form {
@@ -212,6 +221,8 @@ section.top_slide_container {
         // background-color: rgb(143, 143, 143);
         color: white;
         h2 {
+            font-weight: bold;
+            font-family: Times;
             vertical-align: top;
             font-size: 22px;
             margin-bottom: 20px;
@@ -342,19 +353,21 @@ div.subtitle_1 {
 }
 
 div.subtitle_1 h3 {
-    font-size: 26px;
+    font-size: 25px;
     color: rgb(224, 224, 224);
     font-weight: bolder;
     display: inline-block;
     margin-top: 5px;
     width: 16%;
+    font-family: Times;
+    font-weight: bold;
 }
 
 div.subtitle_1 hr {
-    display: inline-block;
-    width: 75%;
-    vertical-align: top;
-    margin: 15px 10px;
+    display: block;
+    width: 100%;
+    // vertical-align: top;
+    border-top: 2px solid whitesmoke !important;
 }
 
 //文章內容
@@ -436,11 +449,6 @@ p.article_content {
     display: none;
 }
 
-img.main_img {
-    width: 90%;
-    cursor: pointer;
-}
-
 h4.like_comment {
     font-size: 20px;
     color: rgb(146, 146, 146);
@@ -499,6 +507,17 @@ div.article_content {
     z-index: 101;
 }
 
+div.item_content {
+    height: 600px;
+    img.main_img {
+        margin: 30px 0;
+        height: 300px;
+        object-fit: contain;
+        width: 95%;
+        cursor: pointer;
+    }
+}
+
 div.article_content h2 {
     font-size: 28px;
     line-height: 45px;
@@ -529,6 +548,9 @@ div.right {
     padding: 10px;
     vertical-align: top;
     text-align: left;
+    .article_content_no {
+        display: none;
+    }
 }
 
 div.right {
@@ -602,7 +624,7 @@ div.right img {
 
 img.main_pic {
     margin: 30px auto;
-    width: 75%;
+    width: 60%;
 }
 
 p.article_text {
@@ -972,7 +994,6 @@ aside.filter2 {
     h4.username {
         font-size: 16px;
         color: rgb(146, 146, 146);
-        // border: 1px solid black;
         display: inline-block;
         vertical-align: top;
         margin-top: 12px;
@@ -984,9 +1005,6 @@ aside.filter2 {
     h2.article_title {
         font-size: 18px;
         margin: 15px 0;
-    }
-    img.main_img {
-        width: 90%;
     }
     h4.like_comment {
         font-size: 16px;
@@ -1143,12 +1161,9 @@ aside.filter2 {
     //文章內容
     div.subtitle_1 {
         h3 {
-            font-size: 14px;
+            font-size: 16px;
             width: unset;
             margin-top: 10px;
-        }
-        hr {
-            width: 65%;
         }
     }
     section.content_container {
