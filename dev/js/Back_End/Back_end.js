@@ -352,9 +352,19 @@ window.addEventListener('load', () => {
         // console.log(dataLi);
         
         // Array.from(dataLi).forEach
+        // console.log(forum_data[0].DIS_NO);
+        
+        if(dataLi[0] == undefined){
+            return    
+        }
         Array.from(dataLi[0]).forEach((item,index)=>{
+            // console.log(item);
             item.children[0].addEventListener('click',()=>{
                 let forum_data = JSON.parse(sessionStorage.getItem('forum_data'))
+                if (forum_data == '') {
+                    return
+                }
+                
                 let NODiscNum = forum_data[index].DIS_NO;
                 // console.log(NODiscNum ,index);
                 item.remove();
