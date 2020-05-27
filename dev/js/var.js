@@ -43,9 +43,9 @@ $(document).ready(() => {//html載入完再執行
         }
     });
 
-    $('.icofont-search').click(() => { //展開搜尋紐
-        $(".input_box").toggleClass("on");
-    });
+    // $('.icofont-search').click(() => { //展開搜尋紐
+    //     $(".input_box").toggleClass("on");
+    // });
 
     let menuSwitch = document.querySelector('#menu_switch');
     let titleList = document.querySelector('.title_list');
@@ -57,7 +57,7 @@ $(document).ready(() => {//html載入完再執行
         }
     });
     let changePage = document.querySelector('.changePage');
-    let icofontSearch = document.querySelector('.icofont-search');
+    // let icofontSearch = document.querySelector('.icofont-search');
     let fuctionSearch = document.querySelector('.fuction_search');
     let markBar = document.querySelector('.mark_bar');
     let inputBox = document.querySelector('#search')
@@ -72,12 +72,7 @@ $(document).ready(() => {//html載入完再執行
     changePage.addEventListener('click', (e) => {
         e.stopPropagation();
     });
-    icofontSearch.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-    fuctionSearch.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
+
 
 });
 

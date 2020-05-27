@@ -143,16 +143,17 @@ window.addEventListener('load', () => {
             //取消新增createBtn點擊聆聽功能
             $id('create_game_no').addEventListener('click', cancelCreateTopit, true);
         } else if (createBtn.textContent == "新增商品") {
-            console.log('現在是要新增商品');
+            // console.log('現在是要新增商品');
             $('.product_list').prepend(`
                 <li class="p_product" id="create_product">
                     <div class="product_img_div">
                         <input class="uploadimg" id="product-img-upload" type="image" src="./image/member/interface.png" />
                         <input class="uploadbtn" type="file" id="upload"/>
+                        <p class="fing warning_color"></p>
                     </div>
                     <div class="main_data">
                         <select name="" id="imageKind">
-                            <option value="">----</option>
+                            <option value="">--請選擇--</option>
                             <option value="clothe">防護衣</option>
                             <option value="goggle">防疫眼鏡</option>
                             <option value="mask">防疫口罩</option>
@@ -244,6 +245,8 @@ window.addEventListener('load', () => {
                     } else {
                         let objects = $csa('data')[index].querySelectorAll('ul>li')
                         for (let j = 0; j < objects.length; j++) {
+                            
+                            
                             objects[j].classList.add('edit_focus')
                             $id('edit').textContent = '取消';
                             objects[j].querySelector('#edit_cancel').classList.add('on');
@@ -254,7 +257,9 @@ window.addEventListener('load', () => {
                 };
             };
         });
-        removeDiscussion(arrPf);
+        // console.log(arrPf);
+        
+        // removeDiscussion(arrPf);
     };
 
     $id('edit').addEventListener('click', edit_cancel, true);
@@ -273,13 +278,7 @@ window.addEventListener('load', () => {
             }
         })
 
-    //     let title_object = $csa('mgmt_title')
-    //     for (let n = 0; n < title_object.length; n++) {
-    //         // 表單欄位數
-    //         let objects = $csa('data')[n].querySelectorAll('ul>li')
-    //         // 當在當前頁籤且在編輯狀態下才作用
 
-        // console.log(submit);
         // 新增遊戲題目
         if (!submit) {
             return
@@ -344,40 +343,7 @@ window.addEventListener('load', () => {
     }
 
 
-    //刪除文章
-    function removeDiscussion(dataLi){
-        // console.log(dataLi);
-        
-        // Array.from(dataLi).forEach
-        Array.from(dataLi[0]).forEach((item,index)=>{
-            item.children[0].addEventListener('click',()=>{
-                let forum_data = JSON.parse(sessionStorage.getItem('forum_data'))
-                let NODiscNum = forum_data[index].DIS_NO;
-                // console.log(NODiscNum ,index);
-                item.remove();
-                fetch('./PHP_program/Back_End/removeDicBack_end.php',{
-                    method:'POST',
-                    body:JSON.stringify({
-                        "NONum":NODiscNum
-                    }),
-                    headers:{
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-                    }
-                }).then(resp=>{
-                    if(resp.ok){
-                        return resp.text();
-                    }
-                }).then(text=>{
-                    console.log(text);
-                }).catch(err=>{
-                    console.log('有問題');
-                    
-                })
-
-            })
-            
-        })
-    }
+    
 
 
 });

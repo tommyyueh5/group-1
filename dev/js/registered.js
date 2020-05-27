@@ -18,14 +18,11 @@ window.addEventListener('load', () => {
     let xhr = new XMLHttpRequest();
     
     $id('RG_Email').addEventListener('change', function () {
-        sessionStorage.setItem('123','asd');
         emailHandler();
 
     })
     if ($cs('submit2')) {
         $cs('submit2').addEventListener('click', function (e) {
-            console.log(123);
-            
             e.stopPropagation();
             // ==============註冊信箱判定=========================
                 let RE =  ($id('RG_Email').value).trim();
@@ -64,7 +61,7 @@ window.addEventListener('load', () => {
 
                     xhr.open("POST", "./PHP_program/registered.php",true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-                    let registerd_info = `RG_Email=${$id('RG_Email').value}&RG_Name=${$id('RG_Name').value}&RG_Pwd=${$id('RG_Pwd').value}`;
+                    let registerd_info = `RG_Email=${$id('RG_Email').value}&RG_Name=${$id('RG_Name').value}&RG_Pwd=${$id('RG_Pwd').value}&RG_ImgDf=./image/mem_image/WhoAmi.jpg`;
                     console.log(registerd_info);
                     xhr.send(registerd_info);
 
@@ -83,8 +80,6 @@ window.addEventListener('load', () => {
         };
         
         sessionStorage.setItem('isdone', JSON.stringify(Done))
-        console.log(Done);
-        
         let JudgeXhr = new XMLHttpRequest();
         emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
         // 如果email內格式正確就撈取資料,再查看資料庫資料是否有重複
@@ -109,8 +104,7 @@ window.addEventListener('load', () => {
             let Judge_info = `RG_Email=${$id('RG_Email').value}`;
             JudgeXhr.send(Judge_info)
 
-        } 
-        else {
+        } else {
             sessionStorage.clear();
         }
     }

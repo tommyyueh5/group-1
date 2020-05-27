@@ -16,10 +16,38 @@ $i5: 325px;
     }
 }
 
+
 .epidemic-shop {
     background-color: black;
     // min-width: 1200px;
 }
+
+div.bread_crumbs {
+    width: 100%;
+    text-align: left;
+    // border: 1px solid white;
+    box-sizing: border-box;
+    padding: 15px 0 15px 80px;
+    font-size: 20px;
+    color: rgb(155, 155, 155);
+    background-color: #2e2e2e;
+}
+
+div.bread_crumbs a {
+    text-decoration: none;
+    color: unset;
+}
+
+div.bread_crumbs a span {
+    font-size: 18px;
+    color: rgb(207, 207, 207);
+    // border: white 1px solid;
+    padding: 0 5px;
+    margin: 0 10px;
+
+}
+
+
 
 .advertise1 {
     .advertise-inner {
@@ -133,7 +161,7 @@ $i5: 325px;
 
 .shop-items {
     // border: 1px solid rgb(250, 139, 139);
-    margin-top: 50px;
+    // margin-top: 50px;
 
     @include rwd(small) {
         margin-top: 10px;
@@ -179,7 +207,14 @@ $i5: 325px;
             .shop-discount {
                 // border: 1px solid blue;
                 width: 100%;
-
+                color: white;
+                text-align: center;
+                // font-weight: bold;
+                margin-left: 65px;
+                margin-top: 25px;
+                margin-bottom: 130px;
+                // font-family:"NotoSansTC-Black";
+                font-size: 30px;
                 @include rwd(small) {
                     display: none;
                 }
@@ -191,7 +226,7 @@ $i5: 325px;
             }
 
             .shop-type {
-                margin-top: 30px;
+                // margin-top: 30px;
                 // border: 1px solid purple;
                 display: flex;
 
@@ -370,6 +405,13 @@ $i5: 325px;
             @include rwd(small) {
                 width: 100%;
             }
+            p {
+                color: white;
+                text-align: center;
+                font-size: 30px;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
 
             .shop-two-item-des {
                 // border: 1px solid rgb(67, 171, 231);
@@ -424,6 +466,24 @@ $i5: 325px;
                             top: -2%;
                             left: -2%;
                         }
+
+                        .btnplace {
+                            position: absolute;
+                            left:0;
+                            bottom:0;
+                            z-index: 1;
+                            margin: 5px;
+                            
+                            .icofont-undo {
+                                font-size: 50px;
+                                @include rwd(mobile) {
+                                    font-size: 30px;
+                                }
+                                @include rwd-shop(i5) {
+                                    font-size: 30px;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -446,49 +506,49 @@ $i5: 325px;
                         width: 95%;
                     }
 
-                    .btnplace {
-                        margin-left: 28%;
-                        display: inline-block;
+                    // .btnplace {
+                    //     margin-left: 28%;
+                    //     display: inline-block;
 
-                        @include rwd(mobile) {
-                            margin-left: 65px;
-                        }
+                    //     @include rwd(mobile) {
+                    //         margin-left: 65px;
+                    //     }
 
-                        @include rwd-shop(i5) {
-                            margin-left: 20px;
-                        }
+                    //     @include rwd-shop(i5) {
+                    //         margin-left: 20px;
+                    //     }
 
-                        .re {
-                            box-shadow: inset 0px -3px 7px 0px #000000;
-                            background: linear-gradient(to bottom, #4d4d4d 5%, #2e2e2e 100%);
-                            background-color: #4d4d4d;
-                            border-radius: 3px;
-                            border: 1px solid #ffffff;
-                            display: inline-block;
-                            cursor: pointer;
-                            color: #ffffff;
-                            font-family: Arial;
-                            font-size: 15px;
-                            padding: 6px 24px;
-                            text-decoration: none;
-                            text-shadow: 0px 1px 0px #263666;
+                    //     .re {
+                    //         box-shadow: inset 0px -3px 7px 0px #000000;
+                    //         background: linear-gradient(to bottom, #4d4d4d 5%, #2e2e2e 100%);
+                    //         background-color: #4d4d4d;
+                    //         border-radius: 3px;
+                    //         border: 1px solid #ffffff;
+                    //         display: inline-block;
+                    //         cursor: pointer;
+                    //         color: #ffffff;
+                    //         font-family: Arial;
+                    //         font-size: 15px;
+                    //         padding: 6px 24px;
+                    //         text-decoration: none;
+                    //         text-shadow: 0px 1px 0px #263666;
 
-                            @include rwd-shop(i5) {
-                                font-size: 14px;
-                                padding: 6px 16px;
-                            }
-                        }
+                    //         @include rwd-shop(i5) {
+                    //             font-size: 14px;
+                    //             padding: 6px 16px;
+                    //         }
+                    //     }
 
-                        .re:hover {
-                            background: linear-gradient(to bottom, #2e2e2e 5%, #4d4d4d 100%);
-                            background-color: #2e2e2e;
-                        }
+                    //     .re:hover {
+                    //         background: linear-gradient(to bottom, #2e2e2e 5%, #4d4d4d 100%);
+                    //         background-color: #2e2e2e;
+                    //     }
 
-                        .re:active {
-                            position: relative;
-                            top: 1px;
-                        }
-                    }
+                    //     .re:active {
+                    //         position: relative;
+                    //         top: 1px;
+                    //     }
+                    // }
                 }
 
                 .shop-two-item-text {
@@ -671,6 +731,10 @@ $i5: 325px;
                                 display: inline-block;
                                 border: none;
 
+                                color: black; 
+                                border-bottom: 1px solid white; 
+                                border-top: 1px solid white; 
+                                background-color: white;
                                 @include rwd(mobile) {
                                     width: 35px;
                                     height: 35px;
@@ -860,7 +924,7 @@ $i5: 325px;
 
 .mask {
     width: 285px;
-    height: 100px;
+    height: 128px;
     top: 43%;
     left: 26%;
 
@@ -1005,6 +1069,154 @@ $i5: 325px;
     background: rgb(218, 218, 218);
 }
 
+
+
+
+.scroll {
+    .scroll-prompt {
+        z-index: 1;
+        left: 51%;
+        bottom: 3px;
+        width: 167px;
+        height: 80px;
+        position: relative;
+        transform: translate(-50%,-50%);
+        .scroll-prompt-arrow-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -18px;
+            animation-name: bounce;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+        }
+        .scroll-prompt-arrow {
+            animation-name: opacity;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+        }
+        .scroll-prompt-arrow:last-child {
+            animation-direction: reverse;
+            margin-top: -6px;
+        }
+        .scroll-prompt-arrow > div {
+            width: 36px;
+            height: 36px;
+            border-right: 8px solid #bebebe;
+            border-bottom: 8px solid #bebebe;
+            transform: rotate(45deg) translateZ(1px);
+        }
+    }
+}
+@keyframes opacity {
+	0% {
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 0.1;
+	}
+
+	20% {
+		opacity: 0.2;
+	}
+
+	30% {
+		opacity: 0.3;
+	}
+
+	40% {
+		opacity: 0.4;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	60% {
+		opacity: 0.6;
+	}
+
+	70% {
+		opacity: 0.7;
+	}
+
+	80% {
+		opacity: 0.8;
+	}
+
+	90% {
+		opacity: 0.9;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+
+	10% {
+		transform: translateY(3px);
+	}
+
+	20% {
+		transform: translateY(6px);
+	}
+
+	30% {
+		transform: translateY(9px);
+	}
+
+	40% {
+		transform: translateY(12px);
+	}
+
+	50% {
+		transform: translateY(15px);
+	}
+
+	60% {
+		transform: translateY(18px);
+	}
+
+	70% {
+		transform: translateY(21px);
+	}
+
+	80% {
+		transform: translateY(24px);
+	}
+
+	90% {
+		transform: translateY(27px);
+	}
+
+	100% {
+		transform: translateY(30px);
+	}
+}
+
+
+
+
+
+.shop-detail {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
 //detail
 .shop-item-detail {
     margin-top: 70px;
@@ -1114,7 +1326,7 @@ $i5: 325px;
             width: 65%;
             // border: 1px solid yellowgreen;
             margin: 0 auto;
-            margin-bottom: 50px;
+            padding-bottom: 50px;
             text-align: center;
             overflow: hidden;
             border-radius: 20px;

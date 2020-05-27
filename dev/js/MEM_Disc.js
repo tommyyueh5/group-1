@@ -16,7 +16,7 @@ window.addEventListener('load',function(){
         if(xhr.status == 200){
             // console.log(xhr.responseText);
            let importData = JSON.parse(xhr.responseText) ;
-        //    let importData = xhr.responseText;
+
             MemDiscHandler(importData);
         //    console.log(Array.from(importData).forEach);
         
