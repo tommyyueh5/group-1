@@ -16,6 +16,8 @@ window.addEventListener('load', () => {
             let report_list_P = document.querySelector('.report_list');
             let createLi = document.createElement('li');
             createLi.classList.add('p_member');
+            // console.log(report);
+            
             let render = `
                         <div class="main_data">
                             <h1 class="report_title">${report.DIS_TIT}</h1>
@@ -42,15 +44,47 @@ window.addEventListener('load', () => {
             report_list_P.appendChild(createLi)
             // console.log(report);
             let pData = document.querySelectorAll('.report_isON');
+
+            
             pData.forEach((p, i) => {
                 if (p.value == 1) {
                     p.checked = true;
-                    $(`#report_psi${i}`).click(function () {
-
+                    $(`#report_psi${i}`).click(function (e) {
+                        
+                        // console.log(FetchData[i].DIS_NO);
                         if ($(`#report_psi${i}`).val() == 0) {
                             $(`#report_psi${i}`).val(1);
+                            
+                            fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
+                                method:'POST',
+                                body:JSON.stringify({
+                                    "REPORTSNum":FetchData[i].REP_NO,
+                                    "PositionNum":$(`#report_psi${i}`).val()
+                                }),
+                                headers:{
+                                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                                }
+                            }).then(resp=>{
+                                return resp.text();
+                            }).then(alertShow=>{
+                                alert(alertShow);
+                            })
                         } else {
                             $(`#report_psi${i}`).val(0);
+                            fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
+                                method:'POST',
+                                body:JSON.stringify({
+                                    "REPORTSNum":FetchData[i].REP_NO,
+                                    "PositionNum":$(`#report_psi${i}`).val()
+                                }),
+                                headers:{
+                                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                                }
+                            }).then(resp=>{
+                                return resp.text();
+                            }).then(alertShow=>{
+                                alert(alertShow);
+                            })
                         }
                     })
                 } else {
