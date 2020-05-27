@@ -1270,7 +1270,7 @@ aside.filter2 {
     }
     div.right {
         float: unset;
-        text-align: center;
+        text-align: right;
         width: 65%;
         img {
             height: 28px;
@@ -1317,5 +1317,16 @@ aside.filter2 {
     textarea#comment_text {
         width: 65%;
         margin: 18px 5px;
+        height: 35px;
+    }
+    .close {
+        img {
+            width: 24px;
+        }
+    }
+    button#postCom {
+        height: 30px;
+        width: 30px;
+        margin: 20px 10px 0;
     }
 }
