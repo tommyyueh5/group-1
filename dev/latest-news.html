@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/latest-news.css">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
 </head>
 
 <body>
@@ -31,7 +31,7 @@
 
         <!-- ----------------------------video------------------------------ -->
 
-        <div class="first_title">CornavirusCOVID-19TaiwanCases</div>
+        <div class="first_title">台灣新冠疫情統計資料</div>
         <div class="map_chartarea">
 
             <div id="app">
@@ -151,9 +151,6 @@
                         </table>
                     </div>
                 </div>
-                <script>
-
-                </script>
                 <div class="svg1_1">
                     <canvas id="chart" class=""></canvas>
                 </div>
@@ -177,7 +174,7 @@
                 <div class="image-preview">
 
                     <video id="preview" width="100%" height="600" controls>
-                        <source src="./dest/image/HotNews/video/01.mp4" type="video/mp4">
+                        <source src="./image/HotNews/video/A1.mp4" type="video/mp4">
                     </video>
 
                 </div>
@@ -299,13 +296,13 @@
     </main>
     <div class="subNewsBox"></div> <!--  開啟子頁面全部新聞框架 -->
     @@include('./LAYOUT/footer.html')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
     <script src="./node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/xlsx@0.14.3/dist/xlsx.full.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>

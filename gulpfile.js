@@ -95,7 +95,7 @@ gulp.task('default', function () {
     // //         index: "dest/diseaseHistory.html"
     // //         // index: "dest/game.html"˝
     // //         // index: "dest/Epidemic-shop.html"
-    // //         // index: "dest/forum.html"
+    // //         // index: "dest/forum.html" 
     // //         // index: "dest/member.html"
     // //         // index: "dest/infectious-Diseases.hmtl"
     // //         // index: "dest/latest-news.html"

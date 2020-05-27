@@ -198,7 +198,7 @@ function number1() {
 $(function () {
     $.ajax({
         type: 'get',
-        url: '../dest/js/map/taiwanmap/index.json',
+        url: './js/map/taiwanmap/index.json',
         success: function (data) {
             pushDom(data.data);
         },
@@ -241,7 +241,7 @@ $(function () {
 // --------------------------疫情統計----------------------------
 window.addEventListener('load', function () {
     var xhr = new XMLHttpRequest();
-    xhr.open('get', '../dest/js/map/striat-map/col/statistics.json', true);
+    xhr.open('get', './js/map/striat-map/col/statistics.json', true);
     xhr.send(null);
 
     xhr.onload = function () {

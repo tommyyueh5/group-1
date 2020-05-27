@@ -30,7 +30,7 @@ window.addEventListener('load', function () {
             if (xhr.status == 200) {
                 //抓取會員資料
                 datamemb = JSON.parse(xhr.responseText);
-                console.log(datamemb.mem_state);
+                // console.log(datamemb.mem_state);
 
 
                 if (datamemb.memId) {
@@ -94,7 +94,6 @@ window.addEventListener('load', function () {
     // sessionStorage.clear();
     if (!isLogin || isLogin == null) {
         $id("login_btn").textContent = "登入";
-        $cs('points').style.display = 'none';
         $cs('member_center').classList.remove('on');
     } else if (isLogin) {
         //Login到會員時hander上面都要列出資料

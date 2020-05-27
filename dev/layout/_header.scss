@@ -32,8 +32,8 @@ header {
                 width: 400px;
                 height: 70px;
                 display: block;
-                background-position: center 15px ;
-                background-size: cover;
+                background-position: center 15px;
+                background-size: contain;
                 background-repeat: no-repeat;
             }
         }
@@ -127,7 +127,7 @@ header {
                     order: 7;
                     position: relative;
                     right: -22%;
-                    color:#8e8e8e;
+                    color: #8e8e8e;
                 }
             }
             i.icofont-cart {
@@ -257,17 +257,18 @@ header {
     }
 }
 .move {
-    &::before{
+    &::before {
         content: "";
         display: block;
         width: 100%;
-        height: 3PX;
+        height: 3px;
         background-color: yellow;
         position: absolute;
-        bottom: -5px;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
-
 
 @include rwd(header) {
     header {
@@ -421,6 +422,7 @@ header {
                         align-items: center;
                         justify-content: center;
                         a {
+                            position: relative;
                             text-decoration: none;
                             color: black;
                             font-size: 20px;
@@ -573,8 +575,6 @@ header {
         }
     }
 }
-
-
 
 @include rwd(medium) {
     header {
