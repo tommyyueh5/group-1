@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
                     if ($(`#member_psi${member_data[i].MEM_NO}`).val() == 0) {
                         $(`#member_psi${member_data[i].MEM_NO}`).val(1);
                         // console.log(e.currentTarget.value,"=",member_data[i].MEM_NO);
-                        fetch('./PHP_program/Back_End/Back_End_MEM_updatePosition.php',{
+                        fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
                             method:'POST',
                             body:JSON.stringify({
                                 "NONum":member_data[i].MEM_NO,
@@ -58,7 +58,7 @@ window.addEventListener('load', () => {
                         })
                     } else {
                         $(`#member_psi${member_data[i].MEM_NO}`).val(0);
-                        fetch('./PHP_program/Back_End/Back_End_MEM_updatePosition.php',{
+                        fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
                             method:'POST',
                             body:JSON.stringify({
                                 "NONum":member_data[i].MEM_NO,
