@@ -232,7 +232,9 @@ window.addEventListener('load', () => {
                 } else {
                     // 後面五個可以做編輯且判斷底下的每一個class有沒有edit_focus沒有的話加上，有的話取消
                     let objects = $csa('data')[index].querySelectorAll('ul>li')
-                    
+                    if($csa('data')[index].querySelectorAll('ul>li')[0] == undefined){
+                        return
+                    }
                     if ($csa('data')[index].querySelectorAll('ul>li')[0].classList.contains('edit_focus')) {
                         for (let j = 0; j < objects.length; j++) {
                             objects[j].classList.remove('edit_focus')

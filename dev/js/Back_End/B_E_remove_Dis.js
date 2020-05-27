@@ -17,6 +17,7 @@ function $tag(tag) {
 //刪除文章
 window.addEventListener('load', () => {
     let edit = $id('edit');
+    let flag = false;
     // let arr_pf = [];
 
     edit.addEventListener('click', () => {
@@ -52,10 +53,14 @@ window.addEventListener('load', () => {
                 })
                 
             }, true)
-        })
-        if($id('edit').innerText == '編輯'){
-            window.location.reload()
-        }
+            flag = true
+        });
+            if($id('edit').innerText == '取消'){
+                $id('edit').addEventListener('click',()=>{
+                    window.location.reload()
+                })
+            }
+        
     })
 
 })

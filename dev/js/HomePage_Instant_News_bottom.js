@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
     // console.log(article);
 
 
-    fetch('./PHP_program/HomePage_Instant_News.php', {
+    fetch('./PHP_program/HomePage_Instant_bottomNews.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -19,9 +19,9 @@ window.addEventListener('load', function () {
 
         // console.log(datas.length);
         datas.forEach((data, index) => {
-            if (data.NEWS_NO <= 12 || data.NEWS_NO >= 16) {
-                return
-            } else if (data.NEWS_NO >= 13) {
+            // if (data.NEWS_NO <= 12 || data.NEWS_NO >= 16) {
+            //     return
+            // } else if (data.NEWS_NO >= 13) {
                 // console.log(data.NEWS_NO + '='+index);
                 const divBm = document.createElement('div');
                 // console.log(index);
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
                 divBm.innerHTML = newsText;
                 // console.log(div_C);
                 article_d.appendChild(divBm);
-            }
+            // }
         })
         test(datas);
     })
@@ -81,17 +81,8 @@ window.addEventListener('load', function () {
 
         //輸出資料至畫面畫面
         function ExportHtml(datalist) {
-            // console.log(datalist);
-                let arryTest = [];
-                datalist.forEach((item,num)=>{
-                    if (item.NEWS_NO <= 12 || item.NEWS_NO >= 16) {
-                        return
-                    } else if (item.NEWS_NO >= 13) {
-                        arryTest.push(num);
-                        // console.log(num);
-                    }
-                })
-                // console.log(arryTest);
+;
+                
                 
             let flag = false;
             Array.from(International).forEach((item, index) => {
@@ -122,21 +113,21 @@ window.addEventListener('load', function () {
                     console.log(arryTest[index]);
                     
                     //設置屬性區
-                    img.setAttribute('src', datalist[arryTest[index]].NEWS_IMG_PATH);
+                    img.setAttribute('src', datalist[index].NEWS_IMG_PATH);
                     //停止預設行為
                     btnClose.setAttribute('href', 'javascript:void(0)');
                     //  圖片敘述
-                    pImg.innerText = `▲ ${datalist[arryTest[index]].NEWS_IMG_EXP}`;
+                    pImg.innerText = `▲ ${datalist[index].NEWS_IMG_EXP}`;
                     // console.log(datalist[index]);
 
 
                     // 顯示標題及內容
                     let dateChilds = dateBox.children;
-                    let date = dateHandler(datalist[arryTest[index]].NEWS_PUBLISH_DATE);
+                    let date = dateHandler(datalist[index].NEWS_PUBLISH_DATE);
                     // console.log(date);
 
-                    newsTitle.innerText = datalist[arryTest[index]].NEWS_TIT;
-                    newsContent.innerText = datalist[arryTest[index]].NEWS_CON;
+                    newsTitle.innerText = datalist[index].NEWS_TIT;
+                    newsContent.innerText = datalist[index].NEWS_CON;
                     dateChilds[0].innerText = date[0];
                     dateChilds[2].innerText = `${date[1]}月`;
                     dateChilds[1].innerText = date[2];

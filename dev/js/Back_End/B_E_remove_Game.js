@@ -17,17 +17,15 @@ function $tag(tag) {
 //刪除文章
 window.addEventListener('load', () => {
     let edit = $id('edit');
-    // let arr_pf = [];
-
     edit.addEventListener('click', () => {
         let game_data = JSON.parse(sessionStorage.getItem('game_data'))
-        console.log(game_data);
+        // console.log(game_data);
         
         if (game_data == '') {
             return
         }
         Array.from($csa('p_game')).forEach((item, index) => {
-            console.log(item);
+            // console.log(item);
             if (item.children[0].length == '') {
                 return
             }
@@ -55,6 +53,9 @@ window.addEventListener('load', () => {
                 
             }, true)
         })
+        // if($id('edit').innerText == '取消'){
+        //     window.location.reload()
+        // }
     })
 
 })

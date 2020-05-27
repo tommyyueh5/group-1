@@ -56,11 +56,11 @@ window.addEventListener('load', function () {
                     $id('editemail').value = sessionStorage.getItem('email');
                     $cs('member_img>img').src = sessionStorage.getItem('memImg');
                     $id('MyPoint').textContent = sessionStorage.getItem('point');
-                    $id('showPws').textContent = sessionStorage.getItem('showPws');
+                    // $id('showPws').textContent = sessionStorage.getItem('showPws');
 
 
                 } else if (datamemb.memId == undefined) {
-                    alert("找不到該用戶");
+                    alert("你輸入帳號及密碼不正確");
                 }
                 // if (datamemb.memId == undefined) {
 
@@ -116,7 +116,7 @@ window.addEventListener('load', function () {
             $id('editemail').value = sessionStorage.getItem('email');
             $cs('member_img>img').src = sessionStorage.getItem('memImg');
             $id('MyPoint').textContent = sessionStorage.getItem('point');
-            $id('showPws').textContent = sessionStorage.getItem('showPws');
+            // $id('showPws').textContent = sessionStorage.getItem('showPws');
             // !!密碼
         } else {
             return

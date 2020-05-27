@@ -8,7 +8,7 @@ try {
     $showno = $_POST["no"];
 
     // 將兩個列表合併成一個表格傳到前端
-    $sql = "SELECT rep.MEM_NO,disc.DIS_NO,disc.DIS_TIT,rep.REP_C_NO,rep_c.REP_C_REA,rep.VER_SIT,rep.REP_DATE from discussion disc JOIN report rep ON disc.DIS_NO=rep.DIS_NO JOIN report_class rep_c ON rep.REP_NO=rep_c.REP_C_NO where rep.MEM_NO=:showno order by rep.VER_SIT"; 
+    $sql = "SELECT rep.MEM_NO,disc.DIS_NO,disc.DIS_TIT,rep.REP_C_NO,rep_c.REP_C_REA,rep.VER_SIT,rep.REP_DATE from discussion disc JOIN report rep ON disc.DIS_NO=rep.DIS_NO JOIN report_class rep_c ON rep.REP_C_NO=rep_c.REP_C_NO where rep.MEM_NO=1 order by rep.VER_SIT"; 
 
    
     $mem_dis_com = $pdo->prepare( $sql); //先編譯好
