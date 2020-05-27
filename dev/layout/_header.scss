@@ -9,7 +9,7 @@ header {
     flex-direction: column;
     align-items: center;
     z-index: 99;
-    background-image: url("./../image/index/background/black_background.png");
+    background-color: #000;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -28,12 +28,12 @@ header {
             align-items: center;
             z-index: 1;
             a {
-                background-image: url("./../image/title/logo-text.png");
-                width: 300px;
+                background-image: url("./../image/title/title_text_logo.png");
+                width: 400px;
                 height: 70px;
                 display: block;
-                background-position: center center;
-                background-size: contain;
+                background-position: center 15px ;
+                background-size: cover;
                 background-repeat: no-repeat;
             }
         }
@@ -51,7 +51,7 @@ header {
                 margin-right: 5px;
                 > a {
                     text-decoration: none;
-                    color: #fff;
+                    color: #8e8e8e;
                     > p {
                         font-size: $sub_titleFs;
                     }
@@ -85,7 +85,7 @@ header {
     div.title_list {
         width: 100%;
         position: relative;
-        background-color: $btn-color3;
+        background-color: #000;
         z-index: 1;
         div.main_box {
             position: relative;
@@ -118,7 +118,7 @@ header {
                         text-decoration: none;
                         color: black;
                         font-size: 20px;
-                        color: rgba(230, 230, 230, 1);
+                        color: #8e8e8e;
                         letter-spacing: 3px;
                         display: inline-block;
                     }
@@ -127,6 +127,7 @@ header {
                     order: 7;
                     position: relative;
                     right: -22%;
+                    color:#8e8e8e;
                 }
             }
             i.icofont-cart {

@@ -22,25 +22,37 @@ footer {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
+                cursor: pointer;
+                transition: all .2s linear;
                 &:nth-child(1) {
-                    background-color: #1876f2;
+                    &:hover {
+                        background-color: #c43ea3;
+                    }
                 }
                 &:nth-child(2) {
-                    background-color: #39a1f2;
+                    &:hover {
+                        background-color: #39a1f2;
+                    }
                 }
                 &:nth-child(3) {
-                    background-color: #c43ea3;
+                    &:hover {
+                        background-color: #1876f2;
+                    }
                 }
                 &:nth-child(4) {
-                    background-color: #e73731;
+                    &:hover {
+                        background-color: #e73731;
+                    }
                 }
                 &:nth-child(5) {
-                    background-color: #ed3833;
+                    &:hover {
+                        background-color: #ed3833;
+                    }
                 }
                 i {
                     display: block;
                     @include HandV_center(50%, 50%);
-                    color: white;
+                    color: #8e8e8e;
                 }
             }
         }
@@ -67,10 +79,18 @@ footer {
             li {
                 i {
                     display: block;
-                    color: red;
+                    color: #8e8e8e;
                     font-size: 40px;
+                    cursor: pointer;
+                    transition: all 0.2s linear;
+                    &:hover {
+                        color: red;
+                    }
                 }
             }
+        }
+        ul.end_text {
+            color: #aaa;
         }
     }
 }

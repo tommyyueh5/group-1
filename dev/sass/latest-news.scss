@@ -16,7 +16,8 @@ div.bread_crumbs {
   box-sizing: border-box;
   padding: 15px 0 15px 80px;
   font-size: 20px;
-  color: rgb(155, 155, 155);
+  // color: rgb(155, 155, 155);
+  background-image: url(./../image/backroung/background-color.jpg);
   @include rwd(medium) {
     display: none;
   }
