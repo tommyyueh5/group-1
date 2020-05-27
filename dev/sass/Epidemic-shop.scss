@@ -24,12 +24,11 @@ $i5: 325px;
 div.bread_crumbs {
     width: 100%;
     text-align: left;
-    // border: 1px solid white;
     box-sizing: border-box;
     padding: 15px 0 15px 80px;
     font-size: 20px;
     color: rgb(155, 155, 155);
-    background-color: #2e2e2e;
+    background-image: url(./../image/backroung/background-color.jpg);
 }
 
 div.bread_crumbs a {
