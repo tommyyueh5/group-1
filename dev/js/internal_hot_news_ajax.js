@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
                         <div class="news_box_content">
                             <a href="javascript:void(0)">
                                 <div class="date">
-                                    <h4 class="year"${dateSplit[i][0]}></h4>
+                                    <h4 class="year">${dateSplit[i][0]}</h4>
                                     <h4 class="day">${dateSplit[i][2]}</h4>
                                     <h4 class="month">${dateSplit[i][1]}月</h4>
                                 </div>
@@ -40,9 +40,9 @@ window.addEventListener('load', () => {
 
     // ----------------------切日期----------------
     function newdate(dates){
-       let arrDate =  dates.map(date => (date.NEWS_PUBLISH_DATE.split('-')));
-       return arrDate
-    };
+        let arrDate =  dates.map(date => (date.NEWS_PUBLISH_DATE.split('-')));
+        return arrDate
+     };
     // ----------------------切日期----------------
 
     function test(datas) {
@@ -99,9 +99,10 @@ window.addEventListener('load', () => {
                     subcontainer.appendChild(content);
                     content.appendChild(newsTitle);
                     content.appendChild(imgBox);
+                    content.appendChild(pImg);
                     content.appendChild(newsContent);
                     imgBox.appendChild(img);
-                    imgBox.appendChild(pImg);
+                    
                     content.appendChild(dateBox);
                     dateBox.innerHTML = pdate;
                     // dateBox.appendChild(pdate);

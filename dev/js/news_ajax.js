@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
                             <div class="date">
                                 <h4 class="year">${dateSplit[i][0]}</h4>
                                 <h4 class="day">${dateSplit[i][2]}</h4>
-                                <h4 class="month">${dateSplit[i][1]}</h4>
+                                <h4 class="month">${dateSplit[i][1]}月</h4>
                             </div>
                             <img src="${new_news_data[i].NEWS_IMG_PATH}" alt="">
                             <div class="cards_content">
@@ -51,8 +51,7 @@ window.addEventListener('load', () => {
                         init:test(new_news_data)
                         
                     },
-                },
-                
+                },               
             });
             // test(news_data); 
         } else {
@@ -122,9 +121,10 @@ window.addEventListener('load', () => {
                  subcontainer.appendChild(content);
                  content.appendChild(newsTitle);
                  content.appendChild(imgBox);
+                 content.appendChild(pImg);
                  content.appendChild(newsContent);
                  imgBox.appendChild(img);
-                 imgBox.appendChild(pImg);
+                 
                  content.appendChild(dateBox);
                  dateBox.innerHTML = pdate;
                  // dateBox.appendChild(pdate);
