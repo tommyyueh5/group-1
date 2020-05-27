@@ -111,17 +111,10 @@ header {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                span#move_var {
-                    position: absolute;
-                    bottom: 0;
-                    width: 100px;
-                    height: 5px;
-                    background-color: yellow;
-                    z-index: 50;
-                }
                 li {
                     margin: 10px;
                     a {
+                        position: relative;
                         text-decoration: none;
                         color: black;
                         font-size: 20px;
@@ -262,6 +255,18 @@ header {
         }
     }
 }
+.move {
+    &::before{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3PX;
+        background-color: yellow;
+        position: absolute;
+        bottom: -5px;
+    }
+}
+
 
 @include rwd(header) {
     header {
@@ -567,6 +572,8 @@ header {
         }
     }
 }
+
+
 
 @include rwd(medium) {
     header {
