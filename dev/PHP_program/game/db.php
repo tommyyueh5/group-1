@@ -9,7 +9,7 @@ try{
   require_once("./../connectdd106g1.php");  
 
   //選取資料表
-  $sql = "SELECT * FROM  game ORDER BY RAND( )LIMIT 10";
+  $sql = "SELECT * FROM  game WHERE GAME_STATUS = 1 ORDER BY RAND( )LIMIT 10";
   //pdo請求資料庫
   $game = $pdo->query($sql);
   //將資料庫的資料比數全部抓出來
