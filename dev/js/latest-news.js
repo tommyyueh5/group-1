@@ -1,23 +1,28 @@
 // --------------------------影片----------------------------
-window.addEventListener('load', function () {
-
+window.addEventListener('load', function () { 
     var current = 0,
         $preview = $('#preview'),
+
         $carouselEl = $('#carousel'),
+
+
         $carouselItems = $carouselEl.children(),
+
         carousel = $carouselEl.elastislide({
             current: current,
             minItems: 3,
             onClick: function (el, pos, evt) {
+
                 changeImage(el, pos);
                 evt.preventDefault();
+
             },
             onReady: function () {
+
                 changeImage($carouselItems.eq(current), current);
+
             }
         });
-
-
 
     function changeImage(el, pos) {
         $preview.attr('src', el.data('preview'));
@@ -25,36 +30,59 @@ window.addEventListener('load', function () {
         el.addClass('current-img');
     }
 });
+
 window.addEventListener('resize', function () {
 
-    if (window.innerWidth < 600) {
+if (window.innerWidth < 600) {
+
+  
         number4();
-    }
-    else if ( window.innerWidth < 900) {
+  
+
+
+}
+else if ( window.innerWidth < 900) {
+  
         number3();
-    }
-    else if (window.innerWidth < 1200) {
+
+
+}
+else if (window.innerWidth < 1200) {
+
         number2();
-    }
-    else {
+
+
+}
+else {
+ 
         number1();
-    };
+ 
+};
 });
 
 function number4() {
+   
     var current = 0,
         $preview = $('#preview'),
-        $carouselEl = $('#carousel'), 
+
+        $carouselEl = $('#carousel'),
+
+        
         $carouselItems = $carouselEl.children(),
+
         carousel = $carouselEl.elastislide({
             current: current,
             minItems: 1,
             onClick: function (el, pos, evt) {
+
                 changeImage(el, pos);
                 evt.preventDefault();
+
             },
             onReady: function () {
+
                 changeImage($carouselItems.eq(current), current);
+
             }
         });
 
@@ -65,19 +93,28 @@ function number4() {
     }
 }
 function number3() {
+
     var current = 0,
         $preview = $('#preview'),
+
         $carouselEl = $('#carousel'),
+
+
         $carouselItems = $carouselEl.children(),
+
         carousel = $carouselEl.elastislide({
             current: current,
             minItems: 3,
             onClick: function (el, pos, evt) {
+
                 changeImage(el, pos);
                 evt.preventDefault();
+
             },
             onReady: function () {
+
                 changeImage($carouselItems.eq(current), current);
+
             }
         });
 
@@ -88,19 +125,28 @@ function number3() {
     }
 }
 function number2() {
+   
     var current = 0,
         $preview = $('#preview'),
+
         $carouselEl = $('#carousel'),
+
+
         $carouselItems = $carouselEl.children(),
+
         carousel = $carouselEl.elastislide({
             current: current,
             minItems: 4,
             onClick: function (el, pos, evt) {
+
                 changeImage(el, pos);
                 evt.preventDefault();
+
             },
             onReady: function () {
+
                 changeImage($carouselItems.eq(current), current);
+
             }
         });
 
@@ -111,19 +157,28 @@ function number2() {
     }
 }
 function number1() {
+
     var current = 0,
         $preview = $('#preview'),
+
         $carouselEl = $('#carousel'),
+        
+
         $carouselItems = $carouselEl.children(),
+
         carousel = $carouselEl.elastislide({
             current: current,
             minItems: 4,
             onClick: function (el, pos, evt) {
+
                 changeImage(el, pos);
                 evt.preventDefault();
+
             },
             onReady: function () {
+
                 changeImage($carouselItems.eq(current), current);
+
             }
         });
 
@@ -132,6 +187,7 @@ function number1() {
         $carouselItems.removeClass('current-img');
         el.addClass('current-img');
     }
+
 };
 
 

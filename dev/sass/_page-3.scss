@@ -465,3 +465,93 @@ section.page-3 {
 }
     
 }
+
+
+div.cards_content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.8;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    @include rwd(medium) {
+      padding: 5px;
+    }
+    @include rwd(mobile) {
+      padding: 10px;
+    }
+    span{
+      font-size: 16px;
+      color: blanchedalmond;
+      line-height: 20px;
+      @include rwd(medium) {
+        font-size: 14px;
+        line-height: 18px;
+      }
+      @include rwd(mobile) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+}
+
+div.date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    text-align: center;
+    padding: 15px 30px;
+    margin: 0;
+    opacity: 0.8;
+    @include rwd(medium) {
+      padding: 10px 20px;
+    }
+    @include rwd(small) {
+      padding: 5px 10px;
+    }
+    @include rwd(mobile) {
+      padding: 15px 30px;
+    }
+  
+    h4.year {
+      color: white;
+      font-size: 16px;
+      @include rwd(medium) {
+        font-size: 14px;
+      }
+      @include rwd(mobile) {
+        font-size: 16px;
+      }
+    }
+  
+    h4.day {
+      color: white;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: bolder;
+      @include rwd(medium) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      @include rwd(mobile) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+    h4.month {
+      color: grey;
+      font-size: 16px;
+      @include rwd(medium) {
+        font-size: 14px;
+      }
+      @include rwd(mobile) {
+        font-size: 16px;
+      }
+    }
+}

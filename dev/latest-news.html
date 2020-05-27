@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/latest-news.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 </head>
 
 <body>
@@ -30,73 +30,6 @@
         <!-- ----------------------------breadcrumb------------------------------ -->
 
         <!-- ----------------------------video------------------------------ -->
-
-        <div class="video">
-
-            <div class="gallery">
-
-                <div class="image-preview">
-                    <video id="preview" width="100%" height="600" controls>
-                        <source src="./image/latest-news/01.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <!-- Elastislide Carousel -->
-                <ul id="carousel" class="elastislide-list">
-
-                    <li data-preview="./image/latest-news/01.mp4">
-                        <a href="#">
-                            <div class="video_title">
-                                <p>寄送口罩給國外親友，實際問題!!!!!</p>
-                            </div>
-                            <video class="video1" src="./image/latest-news/01.mp4">
-                                <source class="a" alt="image04" src="./image/latest-news/01.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="./image/latest-news/02.mp4">
-                        <a href="#">
-                            <video src="./image/latest-news/02.mp4">
-                                <source alt="image04" src="./image/latest-news/02.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="./image/latest-news/03.mp4">
-                        <a href="#">
-                            <video class="video3" src="./image/latest-news/03.mp4">
-                                <source alt="image04" src="./image/latest-news/03.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="./image/latest-news/04.mp4">
-                        <a href="#">
-                            <video class="video1" src="./image/latest-news/04.mp4">
-                                <source alt="image04" src="./image/latest-news/04.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="./image/latest-news/05.mp4">
-                        <a href="#">
-                            <video src="./image/latest-news/05.mp4">
-                                <source alt="image04" src="./image/latest-news/05.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                    <li data-preview="./image/latest-news/06.mp4">
-                        <a href="#">
-                            <video class="video3" src="./image/latest-news/06.mp4">
-                                <source alt="image04" src="./image/latest-news/06.mp4" type="video/mp4">
-                            </video>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <hr>
-        </div>
-
-        <!-- ----------------------------video------------------------------ -->
-
-        <!-- ----------------------------地圖+圖表--------------------------- -->
 
         <div class="first_title">CornavirusCOVID-19TaiwanCases</div>
         <div class="map_chartarea">
@@ -232,6 +165,65 @@
 
         </div>
 
+        <!-- ----------------------------video------------------------------ -->
+
+        <hr>
+
+        <!-- ----------------------------地圖+圖表--------------------------- -->
+        <div class="second_title">新聞焦點</div>
+        <div class="main">
+            <div class="gallery">
+                <h1></h1>
+                <div class="image-preview">
+
+                    <video id="preview" width="100%" height="600" controls>
+                        <source src="./dest/image/HotNews/video/01.mp4" type="video/mp4">
+                    </video>
+
+                </div>
+    
+                
+                <div class="elastislide-wrapper elastislide-horizontal">
+                    <div class="elastislide-carousel">
+                        <ul id="carousel" class="elastislide-list">
+                            <li data-preview="./image/HotNews/video/A1.mp4">
+                                <div>
+                                    <a href="#"><img src="./image/HotNews/video/A1.jpg" alt="image20" /></a>
+                                </div>
+                            </li>
+                            <li data-preview="./image/HotNews/video/A2.mp4">
+                                <div>
+                                    <a href="#"><img src="./image/HotNews/video/A2.jpg" alt="image20" /></a>
+                                </div>
+                            </li>
+                            <li data-preview="./image/HotNews/video/A3.mp4">
+                                <div>
+                                    <a href="#"><img src="./image/HotNews/video/A3.jpg" alt="image20" /></a>
+                                </div>
+                            </li>
+                            <li data-preview="./image/HotNews/video/A4.mp4">
+                                <div>
+                                    <a href="#"><img src="./image/HotNews/video/A4.jpg" alt="image20" /></a>
+                                </div>
+                            </li>
+                            <li data-preview="./image/HotNews/video/A5.mp4">
+                                <div>
+                                    <a href="#"><img src="./image/HotNews/video/A5.jpg" alt="image20" /></a>
+                                </div>
+                            </li>
+                            <li data-preview="./image/HotNews/video/A6.mp4">
+                                <div>
+                                    <a href="#"><img src="./image/HotNews/video/A6.jpg" alt="image20" /></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <nav><span class="elastislide-prev"></span><span class="elastislide-next"></span></nav>
+            </div>
+        </div>
+
         <!-- ----------------------------地圖+圖表------------------------------ -->
 
         <hr>
@@ -270,21 +262,36 @@
 
             <div class="tab tab1 -on">
                 <div class="bottom_cards">
-                        <div id="_container" class="bottom_news_card row masonry hot_internal grid">
+                        <div id="showPanel" class="bottom_news_card row masonry hot_internal grid">
                         </div>
+                </div>
+                <div id="navigator">
+                    <ul id="pageUl">
+    
+                    </ul>
                 </div>
             </div>
 
             <div class="tab tab2">
                 <div class="bottom_cards">
-                    <div class="bottom_news_card row masonry hot_foreign grid">
+                    <div id="showPanel2" class="bottom_news_card row masonry hot_foreign grid">
+                    </div>
+
+                    <div id="navigator">
+                        <ul id="pageUl2">
+        
+                        </ul>
                     </div>
                 </div>
+
+                
             </div>
 
-            <!-- 頁面切換列 -->
-            <!-- <div id="navigator">
-                <ul class="pageUl"></ul>
+            <!-- 頁面切換列
+            <div id="navigator">
+                <ul id="pageUl">
+
+                </ul>
             </div> -->
         </div>
 
@@ -292,6 +299,7 @@
     </main>
     <div class="subNewsBox"></div> <!--  開啟子頁面全部新聞框架 -->
     @@include('./LAYOUT/footer.html')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
     <script src="./node_modules/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
@@ -301,17 +309,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datasource"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<<<<<<< HEAD
-    <script type="text/javascript" src="../dest/js/jqueryelastislide.js"></script>
-    <script type="text/javascript" src="../dest/js/jqueryppcustom.js"></script>
-    <script src="../dest/js/latest-news.js"></script>
-    <script src="../dest/js/chart.js"></script>
-=======
     <script type="text/javascript" src="./js/jqueryelastislide.js"></script>
     <script type="text/javascript" src="./js/jqueryppcustom.js"></script>
     <script src="./js/latest-news.js"></script>
     <script src="./js/chart.js"></script>
->>>>>>> d1b32a309f108a102157cec325e6fed07af63aba
     <!-- --ajax-- -->
     <script src="./js/news_ajax.js"></script>
     <script src="./js/internal_hot_news_ajax.js"></script>
@@ -321,6 +322,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <!-- <script src="./js/a_ajax.js"></script> -->
+    <!-- <script src="./js/b_ajax.js"></script> -->
+
 </body>
 
 </html>
