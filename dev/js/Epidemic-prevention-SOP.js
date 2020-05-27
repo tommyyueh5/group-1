@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
     let hint = document.getElementById('sec1-hint');
 
     let mask = document.getElementById('sec1-mask');
-    let maskImg = document.getElementById('sec1-mask-img');
+    let maskImg = document.getElementsByClassName('sec1-mask-img')[0];
 
     let equipment = document.getElementById('sec-equipment');
     let v = 0;
@@ -418,6 +418,106 @@ window.addEventListener('load', function() {
         });
     }
 
+    mobileKey();
+    function mobileKey() {
+        let right = document.getElementById('right');
+        let left = document.getElementById('left');
+        right.onmousedown = function(){
+            if ( c == 1) {
+                c = 0;
+                setTimeout(function() {
+                    v += 200;
+                    joke.style.backgroundPosition = `-${v}px 0px`;
+                    c = 1;
+                }, 200);
+
+                if (inter == 1) {
+                    slideContainerMove = setInterval(function() {
+                        //
+                        if (s == -1010) {
+                            dranimate.style.animationPlayState = 'running';
+                            mask1.style.animationPlayState = 'running';
+                            mask2.style.animationPlayState = 'running';
+                            mask3.style.animationPlayState = 'running';
+                            pointer1.style.animationPlayState = 'running';
+                            let pha = document.getElementsByClassName('pha')[0];
+                            let type = document.createElement("p");
+                            type.setAttribute('id', 'text');
+                            pha.appendChild(type);
+                            new TypeIt("#text", {
+                                strings: [
+                                    "您好~現在是非常時期,請記得以下幾點重要事項:",
+                                    "1.記得早晚量測體溫",
+                                    "2.勤用肥皂洗手",
+                                    "3.定時用酒精消毒 ",
+                                    "4.減少出入公共場所 ",
+                                    "5.與人保持一公尺以上的社交距離",
+                                ],
+                                speed: 50,
+                                startDelay: 2000,
+                            }).go();
+                        }
+
+
+                       
+                        if (s == -(   parseInt( window.getComputedStyle(slideContainer).getPropertyValue('width').slice(0,-2) )-my(parseInt(window.getComputedStyle(pinContainer).getPropertyValue('width').slice(0,-2)))       -5)) {
+                            sign.style.animationPlayState = 'running';
+                            sign.style.backgroundColor ='rgba(187, 187, 187, 0.562)';
+                        }
+                        if (s == -(   parseInt( window.getComputedStyle(slideContainer).getPropertyValue('width').slice(0,-2) )-my(parseInt(window.getComputedStyle(pinContainer).getPropertyValue('width').slice(0,-2)))       -5)){
+                            s =( -   (parseInt( window.getComputedStyle(slideContainer).getPropertyValue('width').slice(0,-2) )-my(parseInt(window.getComputedStyle(pinContainer).getPropertyValue('width').slice(0,-2)))  -  10) );
+                        }
+
+                        
+                        
+
+                    
+                        s -= 5;
+                        slideContainer.style.left = `${s}px`;
+                    }, 5);
+                    inter = 0;
+                }
+
+            }
+
+            right.addEventListener('mouseup', function(e) {
+                clearInterval(slideContainerMove);
+                    inter = 1;
+                
+            });
+        };
+
+
+        left.onmousedown = function(){
+            if (c == 1) {
+                c = 0;
+                setTimeout(function() {
+                    v += 200;
+                    c = 1;
+                    joke.style.backgroundPosition = `-${v}px 400px`;
+                }, 200);
+
+                if (inter == 1) {
+                    slideContainerMove = setInterval(function() {
+                        
+                        if (s == 0) {
+                            s = -5;
+                        }
+                        s += 5;
+                        slideContainer.style.left = `${s}px`;
+                    }, 5);
+                    inter = 0;
+                }
+            }
+            left.addEventListener('mouseup', function(e) {
+                clearInterval(slideContainerMove);
+                
+                    inter = 1;
+                
+            });
+        };
+    }
+
 
     //
 
@@ -436,7 +536,8 @@ window.addEventListener('load', function() {
             startDelay: 2000,
         }).go();
     });
-
+    console.log(maskImg);
+    
     maskImg.addEventListener('click', function() {
         mask.classList.add('sec1-mask-move');
         let tag = document.createElement('div');
