@@ -120,32 +120,11 @@ footer {
                 justify-content: space-around;
                 padding: 0 0;
                 margin: 25px 0;
-                z-index: -1;
                 li {
                     position: relative;
                     width: 40px;
                     height: 40px;
                     border-radius: 50%;
-                    &:nth-child(1) {
-                        background-color: #1876f2;
-                    }
-                    &:nth-child(2) {
-                        background-color: #39a1f2;
-                    }
-                    &:nth-child(3) {
-                        background-color: #c43ea3;
-                    }
-                    &:nth-child(4) {
-                        background-color: #e73731;
-                    }
-                    &:nth-child(5) {
-                        background-color: #ed3833;
-                    }
-                    i {
-                        display: block;
-                        @include HandV_center(50%, 50%);
-                        color: white;
-                    }
                 }
             }
             ul.list_tilte {
@@ -174,12 +153,6 @@ footer {
                 width: 100%;
                 li {
                     margin: 20px 0;
-                    i {
-                        display: block;
-                        color: red;
-                        font-size: 40px;
-                        margin: 0 20px;
-                    }
                 }
             }
         }

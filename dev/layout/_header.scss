@@ -430,7 +430,14 @@ header {
                             letter-spacing: 3px;
                             display: inline-block;
                         }
+                        i.icofont-cart {
+                            order: 0;
+                            position: relative;
+                            right: -22%;
+                            color: #8e8e8e;
+                        }
                     }
+                    
                 }
                 form.fuction_search {
                     position: absolute;
