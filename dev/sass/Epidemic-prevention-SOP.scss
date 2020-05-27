@@ -45,6 +45,41 @@
     }
 }
 
+
+.mobile-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 1;
+    transform: translate(-50%);
+    display: none;
+    @include rwd(mobile) {
+        display: block;
+        width: 100%;
+    }
+    .left-pic {
+        float: left;
+        width: 50px;
+        height:  50px;
+    }
+
+    .right-pic {
+        float: right;
+        width: 50px;
+        height:  50px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+
+
+
 .keyhint {
     border: 2px solid orange;
     color: white;
@@ -309,7 +344,7 @@
     width: 100px;
     top: -27%;
     right: -34%;
-    z-index: 2;
+    z-index: 10;
     cursor: pointer;
     animation: mark 1s infinite;
     @include rwd(mobile) {
@@ -442,6 +477,8 @@
         font-size: 46px;
         text-align: center;
         font-weight: bold;
+        transform: translateX(-50%);
+        white-space: nowrap;
         @include rwd(mobile) {
             font-size: 16px;
         }
