@@ -52,12 +52,9 @@ window.addEventListener('load', () => {
                 if (p.value) {
 
                     $(`#report_psi${i}`).click(function (e) {
-                        
-                        // console.log(FetchData[i].DIS_NO);
                         if ($(`#report_psi${i}`).val() == 0) {
                             $(`#report_psi${i}`).val(1);
                             p.checked = true;
-
                             fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
                                 method:'POST',
                                 body:JSON.stringify({
