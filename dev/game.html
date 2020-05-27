@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="./css/game.css">
     <link rel="stylesheet" href="./node_modules/icofont/icofont.css">
@@ -13,6 +14,10 @@
 
 <body>
     @@include('./LAYOUT/header.html')
+    <div class="bread_crumbs"  style="display: none;">
+        <a href="./homepage.html"><span>首頁</span></a> &gt;
+        <a href="./Epidemic-shop.html"><span  id="bread">防疫知識王</span></a>
+    </div>
     <div id="container">
         <div id="des">
             <article>
@@ -23,7 +28,7 @@
                 <p class="rule_title">規則四:完成遊戲計算後可得到點數點數可兌換商品</p>
                 <p class="rule_title">規則五:題目取防疫SOP及病毒起源</p>
             </article>
-            <a class="btnclose" href="#">X</a>
+            <a class="btnclose" href="#"></a>
         </div>
 
         <div id="start">
@@ -32,7 +37,7 @@
         <div id="quiz" style="display: none">
             <div id="qImg"></div>
             <div id="question"></div>
-            <div class="move"><a href="#" id="question1"></a></div>
+            <div class="move" style="display: none;"><a href="#" id="question1"></a></div>
             <div id="choices">
 
                 <div class="choice" id="A"></div>

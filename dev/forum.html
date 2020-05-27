@@ -8,6 +8,7 @@
     @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="./css/forum.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
     <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
         <!-- 麵包屑 -->
         <div class="bread_crumbs">
             <a href="./homepage.html"><span>首頁</span></a> &gt;
-            <a href="./forum.html"><span>討論區</span></a>
+            <a href="./forum.html" ><span id="bread">討論區</span></a>
         </div>
         <!-- 彩虹跑馬燈 -->
         <div class="marquee_container">
@@ -44,11 +45,6 @@
                         <h2>熱門程度</h2>
                     </a>
                 </div>
-                <!-- <div>
-                    <a href="#" data-target="tab2" class="tab tab_second"><img src="./image/forum/arrow.png">
-                        <h2>關注趨勢</h2>
-                    </a>
-                </div> -->
                 <div>
                     <a href="#" data-target="tab3" class="tab tab_third"><img src="./image/forum/clock.png">
                         <h2>即時發佈</h2>
@@ -76,7 +72,7 @@
         <!-- 右邊section幻燈片 -->
         <section class="top_slide_container">
             <div class="post">
-                <input id="title" type="text" placeholder="你想下的標題？"><br>
+                <input id="title" type="text" placeholder="按我發個文吧～"><br>
                 <div class="postimg">
                     <form id="upfile">
                         <input class="oldPath" id="upload" type="file" name="uploads">
@@ -90,7 +86,7 @@
                     </select>
                 </div>
                 <textarea id="content" type="text" rows="1" placeholder="你想說的內容？"></textarea><br>
-                <button id="postBtn" type="submit" onclick="uploadData();uploadImg()">發文</button>
+                <button id="postBtn" type="submit">發文</button>
                 <button id="canBtn">取消</button>
             </div>
             <canvas id="canvas"></canvas>
@@ -116,11 +112,10 @@
                 </div>
             </div>
             <div class="filter_right">
-                <span>疫情資訊</span><input id="filter_top" type="button" value="&or;">
+                <span>疫情資訊</span><input id="filter_top" type="button" value="&#9660">
                 <a data-target="tab1" class="tab -on">
                     <h3>疫情資訊</h3>
                 </a>
-
                 <a data-target="tab2" class="tab">
                     <h3>新聞</h3>
                 </a>
@@ -173,6 +168,7 @@
         <!-- section 中間文章內容 -->
         <section class="content_container">
             <div class="article_content">
+                <img class="close" src="./image/forum/close.png">
                 <h2 class="article_content_title"></h2>
                 <h3 class="article_content_time"></h3>
                 <div class="left">
@@ -182,7 +178,7 @@
                 </div>
                 <div class="right">
                     <img src="./image/forum/facebook.png" alt="">
-                    <img src="./image/forum/twitter.png" alt="">
+                    <!-- <img src="./image/forum/twitter.png" alt=""> -->
                     <img src="./image/forum/line.png" alt="">
                     <img id="report" src="./image/forum/alert.png">
                 </div>
@@ -191,12 +187,13 @@
                 <hr>
                 <img class="thumbnail2" src="./image/forum/thum_img1.jpeg" alt="">
                 <textarea id="comment_text" type="text" rows="2" placeholder="講話啊白癡......."></textarea>
-                <button type="submit" id="postCom" onclick="uploadCom();showComment();updateCom();"></button>
+                <button type="submit" id="postCom"></button>
                 <div class="comment">
                 </div>
             </div>
             <div class="tab_contents">
                 <!-- tab1 疫情資訊-->
+
                 <div class="tab tab1 -on row masonry">
                     <div class="subtitle_1 col-sm-12 item ">
                         <h3>疫情資訊</h3>
@@ -229,6 +226,9 @@
     <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="./js/forum/forum.js"></script>
     <script src="./js/forum/forum_Back.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

@@ -7,7 +7,8 @@
     <title>會員中心</title>
     @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="./css/member.css">
-    <script src="./node_modules/jquery/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- <script src="./node_modules/jquery/jquery.min.js"></script> -->
 </head>
 
 <body>
@@ -20,11 +21,10 @@
     <!-- main -->
     <main>
         <!-- 麵包屑 -->
-        <!-- <div class="bread_crumbs">
-            <a href="../index/index.html"><span>Home</span></a> &gt;
-            <a href=""><span>Events</span></a> &gt;
-            <a href=""><span>Iran attack</span></a>
-        </div> -->
+        <div class="bread_crumbs">
+            <a href="./homepage.html"><span>首頁</span></a> &gt;
+            <a href="#"><span>會員中心</span></a>
+        </div>
         <!-- 左邊資料欄 -->
         <aside class="member_info">
             <div class="member_img">
@@ -60,7 +60,27 @@
 
         <!-- 右邊會員功能資訊欄 -->
         <section class="member_data">
-            <ul class="tab_list">
+            <ul class="tab_list ">
+                <a class="tab  -on " id="tab_first" data-target="tab1" href="#">
+                    <li>發文紀錄</li>
+                </a>
+                <a class="tab " id="tab_sec" data-target="tab2" href="#">
+                    <li>留言紀錄</li>
+                </a>
+                <a class="tab  " id="tab_third" data-target="tab3" href="#">
+                    <li>檢舉案件</li>
+                </a>
+                <a class="tab " id="tab_fourth" data-target="tab4" href="#">
+                    <li>訂單查詢</li>
+                </a>
+                <a class="tab " id="tab_fifth" data-target="tab5" href="#">
+                    <li>重設密碼</li>
+                </a>
+            </ul>
+
+            <!-- RWD頁籤展開的ul -->
+            <h2 class="memberFunc">&#9660&nbsp&nbsp<span>會員功能</span>&nbsp&nbsp&#9660</h2>
+            <ul class="tab_list rwdList">
                 <a class="tab -on " data-target="tab1" href="#">
                     <li>發文紀錄</li>
                 </a>
@@ -68,32 +88,39 @@
                     <li>留言紀錄</li>
                 </a>
                 <a class="tab " data-target="tab3" href="#">
-                    <li>檢舉案件狀態</li>
+                    <li>檢舉案件</li>
                 </a>
                 <a class="tab" data-target="tab4" href="#">
+                    <li>訂單查詢</li>
+                </a>
+                <a class="tab" data-target="tab5" href="#">
                     <li>重設密碼</li>
                 </a>
-
             </ul>
             <div class="tab_contents">
                 <div class="tab tab1 -on">
-                <!-- 後端導入資料 -->
+                    <!-- 後端導入資料 -->
                 </div>
                 <!-- 留言紀錄 -->
                 <div class="tab tab2 ">
                 </div>
-               
-                 <!-- 檢舉案件狀態 -->
+
+                <!-- 檢舉案件狀態 -->
                 <div class="tab tab3 ">
                 </div>
-                <!-- 重設密碼 -->
+
+                <!-- 訂單查詢 -->
                 <div class="tab tab4">
+                </div>
+
+                <!-- 重設密碼 -->
+                <div class="tab tab5">
                     <!-- <h3>使用中</h3> -->
                     <div class="pswCon">
                         <!-- <h2>帳號：<span>Vivian520@gmail.com</span></h2> -->
                         <h2>舊密碼：<span id="showPws">T1901824</span></h2>
-                            <hr>
-                           
+                        <hr>
+
                         <div>
                             <label for="pws1">變更密碼：<input name="pws1" id="pws1" type="password" placeholder="含英文數字共8碼"></label><br>
                             <label for="pws2">確認密碼：<input name="pws2" id="pws2" type="password" placeholder="含英文數字共8碼"></label><br>
@@ -118,6 +145,35 @@
 
                 $("div.tab").removeClass("-on");
                 $("div.tab." + $(this).attr("data-target")).addClass("-on");
+                $(".memberFunc span").text($(this).find("li").text());
+            });
+            //RWD頁籤展開
+            $(".memberFunc").on("click", function() {
+                $(".rwdList li").slideToggle();
+            });
+            $(".rwdList li").on("click", function(e) {
+                if (document.body.clientWidth < 576) {
+                    $(".memberFunc span").text($(this).text());
+                    $(".rwdList li").slideToggle();
+                    // console.log($(this).text());
+
+                    if ($(this).text() == $("#tab_first li").text()) {
+                        $(".tab_list").find("a.tab").removeClass("-on");
+                        $("#tab_first").addClass("-on");
+                    } else if ($(this).text() == $("#tab_sec li").text()) {
+                        $(".tab_list").find("a.tab").removeClass("-on");
+                        $("#tab_sec").addClass("-on");
+                    } else if ($(this).text() == $("#tab_third li").text()) {
+                        $(".tab_list").find("a.tab").removeClass("-on");
+                        $("#tab_third").addClass("-on");
+                    } else if ($(this).text() == $("#tab_fourth li").text()) {
+                        $(".tab_list").find("a.tab").removeClass("-on");
+                        $("#tab_fourth").addClass("-on");
+                    } else {
+                        $(".tab_list").find("a.tab").removeClass("-on");
+                        $("#tab_fifth").addClass("-on");
+                    }
+                }
             });
             //編輯個人資料
             $(".edit").on("click", function() {
@@ -137,13 +193,13 @@
                 });
             });
         });
-        
     </script>
     <script src="./js/EditMember.js"></script>
     <script src="./js/updatePws.js"></script>
     <script src="./js/MEM_Disc.js"></script>
     <script src="./js/MEM_Meg.js"></script>
     <script src="./js/MEM_Report.js"></script>
+    <script src="./js/MEM_Ord.js"></script>
 
 
 </body>

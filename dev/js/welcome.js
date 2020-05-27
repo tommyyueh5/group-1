@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
     })
     //訪客登入跳轉
     $id('in_homepage').addEventListener('click', () => {
-        window.location.href = '../dest/homepage.html';
+        window.location.href = './dest/homepage.html';
     });
 
     //密碼顯示切換

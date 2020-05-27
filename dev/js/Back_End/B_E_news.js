@@ -44,14 +44,44 @@ window.addEventListener('load', () => {
                 } else {
                     p.checked = false;
                 };
-                $(`#news_psi${news_data[i].NEWS_NO}`).click(function () {
+                $(`#news_psi${news_data[i].NEWS_NO}`).click(function (e) {
 
                     if ($(`#news_psi${news_data[i].NEWS_NO}`).val() == 0) {
                         $(`#news_psi${news_data[i].NEWS_NO}`).val(1);
+                        // console.log(news_data[i].NEWS_NO,e.currentTarget.value);
+                        fetch('./PHP_program/Back_End/Back_End_NEWS_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "NEWSNum":news_data[i].NEWS_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     } else {
                         $(`#news_psi${news_data[i].NEWS_NO}`).val(0);
+                        // console.log(news_data[i].NEWS_NO,e.currentTarget.value);
+                        fetch('./PHP_program/Back_End/Back_End_NEWS_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "NEWSNum":news_data[i].NEWS_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     }
-                    console.log(p);
+                    // console.log(p);
                 });
             });
         } else {

@@ -19,7 +19,13 @@
     @@include('./LAYOUT/header.html')
 
     <div class="epidemic-shop">
-        <section class="advertise1">
+
+        <!-- 麵包屑 -->
+        <div class="bread_crumbs">
+            <a href="./homepage.html"><span>首頁</span></a> &gt;
+            <a href="./Epidemic-shop.html"><span  id="bread">防疫商店</span></a>
+        </div>
+        <!-- <section class="advertise1">
             <div class="advertise-inner">
                 <img class="advertise-img" src="./image/Epidemic-shop/recommand/recommand6.png" alt="">
                 <div class="advertise-text">
@@ -28,15 +34,22 @@
                 </div>
                 <a class="advertise-links" href="https://www.google.com" target="_blank">shop sale</a>
             </div>
-        </section>
+        </section> -->
 
+        <!-- <hr> -->
         <section class="shop-items">
             <div class="shop-items-inner">
+
+                <!-- <div class="shopdesc">
+                    <div>商品選擇區</div>
+                    <div>展示區</div>
+                </div> -->
                 <div class="shop-one" id="shop-one">
                     <div class="shop-discount">
-                        <a href="">
+                        <!-- <a href="">
                             <img class="shop-discount-img" src="./image/Epidemic-shop/ad/add2.png" alt="">
-                        </a>
+                        </a> -->
+                        商品選擇區
                     </div>
                     <div class="shop-type">
                         <div class="shop-type-choice">
@@ -80,23 +93,24 @@
                 </div>
 
                 <div class="shop-two">
+                    <p>商品展示區</p>
                     <div class="shop-two-item-des">
                         <div class="shop-two-item-pic-o">
                             <div class="shop-two-item-pic" id="haha">
+                                <i class="icofont icofont-undo" id="re"></i>
                                 <img src="./image/Epidemic-shop/man.png" alt="">
                                 <div>
                                     <img class="sli-img m" src="" alt="" da="zero">
                                 </div>
+                                
                             </div>
                         </div>
 
                         <div class="shop-two-tag">
-                            <span class="shop-two-tag-span">#武漢肺炎</span>
+                            <!-- <span class="shop-two-tag-span">#武漢肺炎</span>
                             <span class="shop-two-tag-span">#口罩</span>
-                            <span class="shop-two-tag-span">#中國病毒</span>
-                            <div class='btnplace'>
-                                <button class="re" id='re'>重置</button>
-                            </div>
+                            <span class="shop-two-tag-span">#中國病毒</span> -->
+
                         </div>
 
                         <div class="shop-two-item-text">
@@ -134,7 +148,7 @@
                             <div class="cart-out">
                                 <div class="choice-number">
                                     <span class="minus" id='minus'>-</span>
-                                    <input type="text" value='1' id='count'>
+                                    <input type="text" value='1' id='count' disabled>
                                     <span class="plus" id='plus'>+</span>
                                 </div>
                                 <div class="addcart" id="addbtn">
@@ -151,7 +165,23 @@
             </div>
         </section>
 
+        <div class="scroll">
+            <div class="scroll-prompt" scroll-prompt="" ng-show="showPrompt" style="opacity: 1;">
+                <div class="scroll-prompt-arrow-container">
+                    <div class="scroll-prompt-arrow">
+                        <div></div>
+                    </div>
+                    <div class="scroll-prompt-arrow">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <!--  -->
+        <p class="shop-detail">商品明細</p>
         <section class="shop-item-detail" kind="clothe" da="jacket">
             <div class="shop-item-title">
                 <div class="shop-item-title-star">
@@ -367,7 +397,7 @@
                 </div> -->
         </div>
         <div class="list_bottom">
-            <p>總價<span id="cart-total">123</span></p>
+            <p>總價: <span id="cart-total">123</span></p>
             <button id="send">確認訂單</button>
         </div>
     </div>

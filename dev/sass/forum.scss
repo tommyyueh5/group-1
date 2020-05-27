@@ -5,6 +5,7 @@ ul.mark_bar {
 
 header div.title_list div.login_Bg .login-Box .sign label input {
     width: 200% !important;
+    height: unset !important;
 }
 
 .nav_bar {
@@ -22,7 +23,8 @@ footer {
 main {
     margin: 0 auto;
     width: 100%;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(57, 62, 70);
+    // background-color: yellow;
     box-sizing: border-box;
     font-size: 0;
     overflow: hidden;
@@ -37,6 +39,7 @@ div.bread_crumbs {
     padding: 15px 0 15px 80px;
     font-size: 20px;
     color: rgb(155, 155, 155);
+    background-image: url("./../image/forum/background-color.jpg");
 }
 
 div.bread_crumbs a {
@@ -141,18 +144,20 @@ div.filter_time a {
 }
 
 div.filter_order h2 {
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     text-align: left;
     // border: whitesmoke 1px solid;
     letter-spacing: 1px;
     display: inline-block;
     vertical-align: top;
-    padding: 10px 15px
+    padding: 10px 15px;
+    font-weight: bold;
+    font-family: Time;
 }
 
 div.filter_time h2 {
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     text-align: left;
     // border: whitesmoke 1px solid;
@@ -161,6 +166,8 @@ div.filter_time h2 {
     vertical-align: top;
     padding: 10px 15px;
     border-bottom: 3px solid rgba(207, 207, 207, 0);
+    font-weight: bold;
+    font-family: Times;
     span {
         display: none;
     }
@@ -168,9 +175,11 @@ div.filter_time h2 {
 
 aside.filter h3 {
     color: whitesmoke;
-    font-size: 22px;
+    font-weight: bold;
+    font-family: Times;
     letter-spacing: 1px;
     padding: 25px 0;
+    font-size: 25px;
 }
 
 aside.filter>a {
@@ -195,7 +204,7 @@ section.top_slide_container {
     display: inline-block;
     font-size: 20px;
     vertical-align: top;
-    height: 580px;
+    height: 608px;
     background-color: whitesmoke;
     position: relative;
     form {
@@ -212,6 +221,8 @@ section.top_slide_container {
         // background-color: rgb(143, 143, 143);
         color: white;
         h2 {
+            font-weight: bold;
+            font-family: Times;
             vertical-align: top;
             font-size: 22px;
             margin-bottom: 20px;
@@ -273,7 +284,7 @@ section.top_slide_container {
             color: white;
             height: 73px;
             text-indent: 12px;
-            border-radius: 20px;
+            border-radius: 5px;
             border: unset;
             display: none;
         }
@@ -342,19 +353,21 @@ div.subtitle_1 {
 }
 
 div.subtitle_1 h3 {
-    font-size: 26px;
+    font-size: 25px;
     color: rgb(224, 224, 224);
     font-weight: bolder;
     display: inline-block;
     margin-top: 5px;
     width: 16%;
+    font-family: Times;
+    font-weight: bold;
 }
 
 div.subtitle_1 hr {
-    display: inline-block;
-    width: 75%;
-    vertical-align: top;
-    margin: 15px 10px;
+    display: block;
+    width: 100%;
+    // vertical-align: top;
+    border-top: 2px solid whitesmoke !important;
 }
 
 //文章內容
@@ -367,6 +380,13 @@ div.tab {
         position: relative;
         padding: 20px;
         margin-bottom: 30px;
+        text-align: center;
+    }
+    .info {
+        text-align: left;
+    }
+    .article_title {
+        text-align: left;
     }
 }
 
@@ -429,21 +449,12 @@ p.article_content {
     display: none;
 }
 
-img.main_img {
-    width: 100%;
-    cursor: pointer;
-}
-
 h4.like_comment {
     font-size: 20px;
     color: rgb(146, 146, 146);
     // border: 1px solid black;
-    margin-top: 5px;
-}
-
-h4.function {
-    margin-top: 10px;
-    display: inline-block;
+    margin-top: 25px;
+    text-align: left;
 }
 
 h4.function2 {
@@ -463,21 +474,6 @@ img.heart {
     margin-top: 1px;
 }
 
-// 下方你可能也喜歡區塊
-section.stretch {
-    width: 90%;
-    margin: 30px auto 0;
-    border-top: white 1px solid;
-    padding-bottom: 40px;
-}
-
-section.stretch h2 {
-    font-size: 26px;
-    font-weight: bolder;
-    color: grey;
-    margin: 20px 0;
-}
-
 // 文章內容燈箱
 div.background {
     display: none;
@@ -488,6 +484,11 @@ div.background {
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 50;
+}
+
+.close {
+    width: 30px;
+    cursor: pointer;
 }
 
 div.article_content {
@@ -504,6 +505,17 @@ div.article_content {
     text-align: center;
     overflow: scroll;
     z-index: 101;
+}
+
+div.item_content {
+    height: 600px;
+    img.main_img {
+        margin: 30px 0;
+        height: 300px;
+        object-fit: contain;
+        width: 95%;
+        cursor: pointer;
+    }
 }
 
 div.article_content h2 {
@@ -536,6 +548,9 @@ div.right {
     padding: 10px;
     vertical-align: top;
     text-align: left;
+    .article_content_no {
+        display: none;
+    }
 }
 
 div.right {
@@ -609,7 +624,7 @@ div.right img {
 
 img.main_pic {
     margin: 30px auto;
-    width: 75%;
+    width: 60%;
 }
 
 p.article_text {
@@ -761,6 +776,10 @@ aside.filter2 {
 }
 
 @media (max-width:991px) {
+    //拿掉麵包屑
+    .bread_crumbs {
+        display: none;
+    }
     // section 中間文章內容
     //文章內容燈箱
     div.article_content {
@@ -975,7 +994,6 @@ aside.filter2 {
     h4.username {
         font-size: 16px;
         color: rgb(146, 146, 146);
-        // border: 1px solid black;
         display: inline-block;
         vertical-align: top;
         margin-top: 12px;
@@ -988,22 +1006,16 @@ aside.filter2 {
         font-size: 18px;
         margin: 15px 0;
     }
-    img.main_img {
-        width: 100%;
-    }
     h4.like_comment {
-        font-size: 14px;
+        font-size: 16px;
         color: rgb(146, 146, 146);
         // border: 1px solid black;
-        margin-top: 5px;
+        margin-top: 20px;
     }
-    h4.function,
     h4.function2 {
+        text-align: right;
+        display: block;
         margin-top: 10px;
-        display: inline-block;
-    }
-    h4.function2 {
-        float: right;
     }
     h4.function img {
         width: 16px;
@@ -1011,7 +1023,7 @@ aside.filter2 {
         cursor: pointer;
     }
     h4.function2 img {
-        width: 16px;
+        width: 20px;
         vertical-align: top;
         cursor: pointer;
     }
@@ -1149,12 +1161,9 @@ aside.filter2 {
     //文章內容
     div.subtitle_1 {
         h3 {
-            font-size: 14px;
+            font-size: 16px;
             width: unset;
             margin-top: 10px;
-        }
-        hr {
-            width: 65%;
         }
     }
     section.content_container {
@@ -1225,20 +1234,12 @@ aside.filter2 {
         font-size: 14px;
         color: rgb(146, 146, 146);
         // border: 1px solid black;
-        margin-top: 5px;
+        margin-top: 15px;
     }
-    h4.function,
     h4.function2 {
+        text-align: right;
+        display: block;
         margin-top: 10px;
-        display: inline-block;
-    }
-    h4.function2 {
-        float: right;
-    }
-    h4.function img {
-        width: 16px;
-        vertical-align: top;
-        cursor: pointer;
     }
     h4.function2 img {
         width: 16px;
@@ -1269,7 +1270,7 @@ aside.filter2 {
     }
     div.right {
         float: unset;
-        text-align: center;
+        text-align: right;
         width: 65%;
         img {
             height: 28px;
@@ -1316,5 +1317,16 @@ aside.filter2 {
     textarea#comment_text {
         width: 65%;
         margin: 18px 5px;
+        height: 35px;
+    }
+    .close {
+        img {
+            width: 24px;
+        }
+    }
+    button#postCom {
+        height: 30px;
+        width: 30px;
+        margin: 20px 10px 0;
     }
 }

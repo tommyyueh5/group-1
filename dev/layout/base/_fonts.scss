@@ -1,56 +1,16 @@
 @font-face {
     font-family: "GN-Aki-iro_Sesami_Cookies, HelveticaNeue";
-    src: url(../../dest/fonts/GN-Aki-iro_Sesami_Cookies.ttf);
+    src: url(./../fonts/GN-Aki-iro_Sesami_Cookies.ttf);
 }
 @font-face {
     font-family: "Tahoma_Regular_font";
-    src: url(../../../dest/fonts/Tahoma_Regular_font.ttf);
+    src: url(./../fonts/Tahoma_Regular_font.ttf);
 }
 @font-face {
-    font-family: "TAHOMA_0";
-    src: url(../../../dest/fonts/TAHOMA_0.TTF);
-}
-@font-face {
-    font-family: "HelveticaNeue";
-    src: url(../../dest/fonts/helveticaneue/HelveticaNeue.ttf);
-}
-@font-face {
-    font-family: "SilomBol";
-    src: url(../../dest/fonts/SilomBol.ttf);
-}
-@font-face {
-    font-family: "SilomBol2";
-    src: url(../../dest/fonts/SilomBol2.ttf);
-}
-@font-face {
-    font-family: "fontscom_fonts_ADPX";
-    src: url(../../dest/fonts/fontscom_fonts_ADPX.ttf);
-}
-@font-face {
-    font-family: impact;
-    src: url(../../dest/fonts/impact/impact.ttf);
-}
-@font-face {
-    font-family: "Times-Sans-Serif";
-    src: url(../../dest/fonts/Times-Sans-Serif/Times-Sans-Serif.ttf);
-}
-@font-face {
-    font-family: "Lobster1";
-    src: url(../../dest/fonts/lobster/Lobster1.otf);
-}
-@font-face {
-    font-family: "Trajan-Pro-Regular";
-    src: url(../../dest/fonts/Trajan_Pro_Regular/Trajan-Pro-Regular.ttf);
-}
-@font-face {
-    font-family: "LinotypeZapfino_One";
-    src: url(../../dest/fonts/Zapfino-Font-Family/LinotypeZapfino-One/LinotypeZapfino_One.ttf);
-}
-@font-face {
-    font-family: "Didot";
-    src: url(../../dest/fonts/Didot.ttc);
-}
-@font-face {
-    font-family: "ToppanBunkyuMidashiMinchoStdN-ExtraBold";
-    src: url(../../dest/fonts/ToppanBunkyuMidashiMinchoStdN-ExtraBold.otf);
+    font-family: "NotoSansTC-Black";
+    src: url(./../fonts/Noto_Sans_TC/NotoSansTC-Black.otf);
+    // src: url(./../fonts/Noto_Sans_TC/NotoSansTC-Bold.otf);
+    // src: url(./../fonts/Noto_Sans_TC/NotoSansTC-Light.otf);
+    // src: url(./../fonts/Noto_Sans_TC/NotoSansTC-Medium.otf);
+    // src: url(./../fonts/Noto_Sans_TC/NotoSansTC-Regular.otf);
 }

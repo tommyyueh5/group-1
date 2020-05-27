@@ -20,21 +20,20 @@ window.addEventListener('load', function () {
     //     });
     // }
     // 在登出的狀況下點擊會員中心 
-    
+
     let datamemb = null;
     let xhr = new XMLHttpRequest();
     $cs('submit1').addEventListener('click', function (e) {
-        
+
         xhr.onload = function () {
             //成功就執行
             if (xhr.status == 200) {
                 //抓取會員資料
                 datamemb = JSON.parse(xhr.responseText);
+                console.log(datamemb.mem_state);
 
 
                 if (datamemb.memId) {
-                    $id('loginBg').style.display = 'none';
-                    $id("login_btn").textContent = "登出";
                     sessionStorage.setItem('memId', datamemb.memId);
                     sessionStorage.setItem('memImg', datamemb.memImg);
                     sessionStorage.setItem('email', datamemb.email);
@@ -43,7 +42,14 @@ window.addEventListener('load', function () {
                     sessionStorage.setItem('no', datamemb.no);
                     sessionStorage.setItem('boolen', datamemb.boolen);
                     sessionStorage.setItem('gamedate', datamemb.gamedate);
-                    
+                    if (datamemb.mem_state == 0) {
+                        alert('您的帳號已被停權');
+                        sessionStorage.clear();
+                        return
+                    }
+                    $id('loginBg').style.display = 'none';
+                    $id("login_btn").textContent = "登出";
+
                     window.location.href = './member.html'
                     $cs('member_center').classList.add('on');
                     $id('editname').value = sessionStorage.getItem('memId');
@@ -51,13 +57,14 @@ window.addEventListener('load', function () {
                     $cs('member_img>img').src = sessionStorage.getItem('memImg');
                     $id('MyPoint').textContent = sessionStorage.getItem('point');
                     $id('showPws').textContent = sessionStorage.getItem('showPws');
-                    
 
-                }
-                if (datamemb.memId == undefined) {
+
+                } else if (datamemb.memId == undefined) {
                     alert("找不到該用戶");
-
                 }
+                // if (datamemb.memId == undefined) {
+
+                // }
 
             } else {
                 alert('讀取有誤');
@@ -69,7 +76,7 @@ window.addEventListener('load', function () {
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         let data_info = `emeEmail=${$id('emeEmail').value}&emePaw=${$id('emePaw').value}`;
         xhr.send(data_info);
-        
+
     })
 
 
@@ -102,20 +109,20 @@ window.addEventListener('load', function () {
         // $id('memPoint').textContent = sessionStorage.getItem('point');
         console.log('不存在');
         return
-    }else if(hanNo){
-         console.log('存在');
+    } else if (hanNo) {
+        console.log('存在');
         $id('memPoint').textContent = sessionStorage.getItem('point');
-        if($id('editname')){
+        if ($id('editname')) {
             $id('editname').value = sessionStorage.getItem('memId');
             $id('editemail').value = sessionStorage.getItem('email');
             $cs('member_img>img').src = sessionStorage.getItem('memImg');
             $id('MyPoint').textContent = sessionStorage.getItem('point');
             $id('showPws').textContent = sessionStorage.getItem('showPws');
             // !!密碼
-        }else{
+        } else {
             return
         }
     }
 
-    
+
 });

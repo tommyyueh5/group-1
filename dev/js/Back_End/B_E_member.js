@@ -23,23 +23,59 @@ window.addEventListener('load', () => {
                                     </li>`)
             }
             let pData = document.querySelectorAll('.isON');
+
             pData.forEach((p, i) => {
+
+
                 if (p.value == 1) {
                     p.checked = true;
                 } else {
                     p.checked = false;
                 }
-                $(`#member_psi${member_data[i].MEM_NO}`).click(function () {
-
+                $(`#member_psi${member_data[i].MEM_NO}`).click(function (e) {
+                    // 獲取全部標籤開關及input值
+                    // 建立change聆聽功能
+                    //     如果是0 position 就是關閉送回資料庫
+                    //     如果是1 position 送回資料庫
+                    
+                    // 
                     if ($(`#member_psi${member_data[i].MEM_NO}`).val() == 0) {
                         $(`#member_psi${member_data[i].MEM_NO}`).val(1);
+                        // console.log(e.currentTarget.value,"=",member_data[i].MEM_NO);
+                        fetch('./PHP_program/Back_End/Back_End_MEM_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "NONum":member_data[i].MEM_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     } else {
                         $(`#member_psi${member_data[i].MEM_NO}`).val(0);
+                        fetch('./PHP_program/Back_End/Back_End_MEM_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "NONum":member_data[i].MEM_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
+                     
                     }
-                    console.log(p);
+                  
                 });
-
-
             });
         } else {
             alert(xhr.status);
@@ -47,4 +83,9 @@ window.addEventListener('load', () => {
     }
     xhr.open("Get", "./PHP_program/Back_End/Back_End_MEM_data.php", true);
     xhr.send(null);
+
+
+
+
+
 });

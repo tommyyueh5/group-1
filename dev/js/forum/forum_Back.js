@@ -26,13 +26,16 @@ function showComment() {
                         </h2>
                         `)
             }
+        },
+        error: function(xhr) {
+            alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     })
 }
 // 撈後端文章資料顯示在前端
 function showData() {
     var filterText = $('div.filter_order .-on h3').text();
-    // console.log(filterText);
+    console.log(filterText);
     // $('.masonry').html('');
     $.ajax({
         url: './PHP_program/getinfo.php',
@@ -45,6 +48,9 @@ function showData() {
             for (let i = 0; i < data.length; i++) {
                 userName = data[i].MEM_ACC;
                 nowTime = data[i].DIS_EST;
+                year = nowTime.split('-')[0];
+                days = nowTime.split('-')[1];
+                month = nowTime.split('-')[2];
                 // topic = data[i].DIS_C_NO;
                 thumImg = data[i].MEM_IMG
                 imgPath = data[i].DIS_IMG_PATH;
@@ -54,10 +60,12 @@ function showData() {
                 comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
-                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                            <div  class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item " data-aos="fade-up">
                                 <div class="item_content">
                                     <div class="date">
-                                        <h4 class="year">${nowTime}</h4>
+                                        <h4 class="year">${year}</h4>
+                                        <h4 class="day">${month}</h4>
+                                        <h4 class="month"><span>${days}</span>月</h4>
                                     </div>
                                     <div class="info">
                                         <img class="thum_img" src="${thumImg}">
@@ -101,6 +109,9 @@ function showDataTime() {
             for (let i = 0; i < data.length; i++) {
                 userName = data[i].MEM_ACC;
                 nowTime = data[i].DIS_EST;
+                year = nowTime.split('-')[0];
+                days = nowTime.split('-')[1];
+                month = nowTime.split('-')[2];
                 // topic = data[i].DIS_C_NO;
                 thumImg = data[i].MEM_IMG
                 imgPath = data[i].DIS_IMG_PATH;
@@ -110,10 +121,12 @@ function showDataTime() {
                 comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
-                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item " data-aos="fade-up">
                                 <div class="item_content">
                                     <div class="date">
-                                        <h4 class="year">${nowTime}</h4>
+                                        <h4 class="year">${year}</h4>
+                                        <h4 class="day">${month}</h4>
+                                        <h4 class="month"><span>${days}</span>月</h4>
                                     </div>
                                     <div class="info">
                                         <img class="thum_img" src="${thumImg}">
@@ -156,6 +169,9 @@ function showCommentMost() {
             for (let i = 0; i < data.length; i++) {
                 userName = data[i].MEM_ACC;
                 nowTime = data[i].DIS_EST;
+                year = nowTime.split('-')[0];
+                days = nowTime.split('-')[1];
+                month = nowTime.split('-')[2];
                 // topic = data[i].DIS_C_NO;
                 thumImg = data[i].MEM_IMG
                 imgPath = data[i].DIS_IMG_PATH;
@@ -165,10 +181,12 @@ function showCommentMost() {
                 comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
-                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item " data-aos="fade-up">
                                 <div class="item_content">
                                     <div class="date">
-                                        <h4 class="year">${nowTime}</h4>
+                                        <h4 class="year">${year}</h4>
+                                        <h4 class="day">${month}</h4>
+                                        <h4 class="month"><span>${days}</span>月</h4>
                                     </div>
                                     <div class="info">
                                         <img class="thum_img" src="${thumImg}">
@@ -288,23 +306,26 @@ function uploadImg() {
     });
 };
 // 載入圖片避免重疊
-function imgLoad() {
-    /* 瀑布流區塊div */
-    var $container = $('.masonry');
-    //當圖片讀取完畢才執行
-    $container.imagesLoaded(function() {
-        //選擇瀑布流的區塊名稱
-        $container.masonry({
-            itemSelector: '.item',
-        })
-    });
-};
+// function imgLoad() {
+//     /* 瀑布流區塊div */
+//     var $container = $('.masonry');
+//     //當圖片讀取完畢才執行
+//     $container.imagesLoaded(function() {
+//         //選擇瀑布流的區塊名稱
+//         $container.masonry({
+//             itemSelector: '.item',
+//         })
+//     });
+//     $('.masonry').imagesLoaded().always(function(instance) {
+//         $('.loadingScreen').fadeOut();
+//     })
+// };
 
 //傳送檢舉資訊到資料庫
 function sendReport() {
     var memno = sessionStorage.getItem('no'); //會員編號
     var artno = $('.article_content_no').text(); //文章編號
-    var reason = $("input[type='checkbox']:checked").val()
+    var reason = $("input[type='radio']:checked").val()
     console.log(reason);
     $.ajax({
         url: './PHP_program/report.php',
@@ -334,10 +355,11 @@ $(document).ready(function() {
         $("div.tab").removeClass("-on");
         $("div.tab." + $(this).attr("data-target")).addClass("-on");
         var filterText = $('div.filter_order .-on h3 ').text();
+        console.log(filterText);
+
         $('.subtitle_1 h3').text(filterText);
         $(".filter_right span").text(filterText);
         $(".filter_left span").text('條件篩選');
-
         showData();
     });
     //按下熱門程度篩選鍵
@@ -371,7 +393,6 @@ $(document).ready(function() {
         var filterText = $('div.filter_order .-on h3 ').text();
         $('.subtitle_1 h3').text(filterText);
         $(".filter_left span").text($(this).text());
-
         showDataTime();
     });
     //ＲＷＤ後的條件篩選
@@ -421,7 +442,6 @@ $(document).ready(function() {
         // var filterText = $('div.filter_order .-on h3 ');
         // filterText.text(rwdFilterText);
         // console.log(filterText.text());
-
         showData();
     });
     // 按下ＲＷＤ後熱門程度篩選鍵
@@ -430,7 +450,6 @@ $(document).ready(function() {
         $(".filter_left span").text($(this).text());
         $(".filter_left div").slideToggle();
         $('.subtitle_1 h3').text($(".filter_right span").text());
-
         showCommentMost();
     });
     // 按下ＲＷＤ後即時發布篩選鍵
@@ -438,11 +457,8 @@ $(document).ready(function() {
         $('div.article').remove();
         $(".filter_left span").text($(this).text());
         $(".filter_left div").slideToggle();
-
         showDataTime();
     });
-
-
     //檢舉按下後燈箱
     $(".report").on("click", function(e) {
         e.stopPropagation();
@@ -467,7 +483,9 @@ $(document).ready(function() {
     //文章燈箱
     $(".masonry").on("click", '.main_img,.article_title', function(e) {
         var parr = $(this).parent('.item_content');
-        var thisTime = parr.find('.year');
+        var thisYear = parr.find('.year').text();
+        var thisDay = parr.find('.day').text();
+        var thisMonth = parr.find('.month  span').text();
         var thisTitle = parr.find('.article_title');
         var thisThum = parr.find('.thum_img');
         var thisName = parr.find('.username');
@@ -475,7 +493,7 @@ $(document).ready(function() {
         var thisContent = parr.find('.article_contentp');
         var oldSrc = thisThum.attr('src');
         var oldSrc2 = thisImg.attr('src');
-        var textext = thisTime.text();
+        // var textext = thisTime.text();
         var thisNo = parr.find('.article_contentno');
         var textNum = thisNo.text();
         // console.log(textNo);
@@ -488,7 +506,7 @@ $(document).ready(function() {
         //文章編號
         $('.article_content_no').text(textNum);
         // 時間
-        $('.article_content_time').text(thisTime.text());
+        $('.article_content_time').text(`${thisYear}-${thisMonth}-${thisDay}`);
         // 圖片
         $('.main_pic').attr('src', oldSrc2);
         // 內文
@@ -509,11 +527,14 @@ $(document).ready(function() {
     });
     $(".article_content").on("click", function(e) {
         e.stopPropagation();
-
     });
     $(".post,#upload,#content,#postBtn").on("click", function(e) {
         e.stopPropagation();
     });
+    $(".close").on("click", function() {
+        $(".article_content,.background").hide();
+        $('.post').css('background-color', 'unset');
+    })
     $("body").on("click", function() {
         $(".article_content,.background").hide();
         $('.post').css('background-color', 'unset');
@@ -551,13 +572,38 @@ $(document).ready(function() {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能留言！！");
+        } else if ($("#comment_text").val() == "") {
+            alert("請確實填寫欄位");
         } else {
             // location.reload();
             // $("#commentId").load(location.href + " #commentId");
+            uploadCom();
+            updateCom();
             showComment();
         }
     });
-    $('#postBtn,#canBtn').on("click", function() {
+    $('#postBtn').on("click", function() {
+        var sort = $('#sort').val();
+        var title = $('#title').val();
+        var content = $('#content').val();
+        var file = $(".oldPath").get(0).files.item(0).name;
+        console.log(file);
+        console.log(sort);
+        if (sort == "要發什麼版？" || title == "" || content == "" || file == "") {
+            alert("請確實填寫欄位");
+        } else {
+            $('#upload').hide();
+            $('#content').hide();
+            $('#postBtn').hide();
+            $('#canBtn').hide();
+            $('.postimg').hide();
+            $('#sort').hide();
+            $('.post').css('background-color', 'unset');
+            uploadData();
+            uploadImg();
+        }
+    });
+    $('#canBtn').on("click", function() {
         $('#upload').hide();
         $('#content').hide();
         $('#postBtn').hide();
@@ -566,17 +612,4 @@ $(document).ready(function() {
         $('#sort').hide();
         $('.post').css('background-color', 'unset');
     });
-    // $(function() {
-    //     $(window).scroll(function() {
-    //         var scrollVal = $(this).scrollTop();
-    //         console.log(scrollVal);
-    //         $('.article_content').css("top", `${scrollVal}px`);
-    //     })
-    // })
-
 });
-// window.addEventListener('load', function() {
-// imgLoad();
-// showData();
-// showComment();
-// });

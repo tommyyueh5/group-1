@@ -1,10 +1,7 @@
 <?php
     
 
-    $dsn ="mysql:host=localhost;dbname=dd106g1";
-    $user = 'root';
-    $password = "root";
-    $pdo = new PDO($dsn, $user, $password);
+    require_once("./../connectdd106g1.php");
     
     $sql2 = "SELECT *
              FROM PRODUCT
@@ -12,11 +9,17 @@
     
         $state = array();
         $x=0;
+
+
         foreach ($_POST as $i=>$v) {
             //是
             $x++;
-            if (empty($_POST[$i])&&($_POST[$i]!='0')) {
-
+            
+            if (sizeof($_FILES)<1||(empty($_POST[$i])&&($_POST[$i]!='0'))) {
+                if ( sizeof($_FILES)<1) {
+                    $state['file'] = '請選擇照片';
+                }
+                // print_r($_FILES);
                 foreach( $_POST as $i=>$v) {
 
                     if (empty($_POST[$i])&&($_POST[$i]!='0')) {
@@ -57,6 +60,7 @@
 
                           
                         }
+                        
                         $sql = "INSERT INTO PRODUCT
                         (PRO_KIND, PRO_ID, PRO_PRICE, PRO_SHE, PRO_DESC, PRO_TIME, PRO_SRC)
                         VALUES ('{$_POST["kind"]}','{$_POST["id"]}',{$_POST["pri"]},{$_POST["she"]},'{$_POST["desc"]}', '{$_POST["time"]}', '{$path}')";
@@ -67,15 +71,17 @@
                         $statement2->execute();
                         $row = $statement2->fetch(PDO::FETCH_ASSOC);
                         $row['error'] = 0; 
+
                         
 
                         // 
                         $type = array('clothe','goggle','mask');
                         foreach ($type as $i => $v) {
                             if ( $_POST['kind']==$v) {
-                                move_uploaded_file($_FILES["images"]["tmp_name"], "./image/epidemic-shop/${v}/". $_FILES["images"]["name"]);
+                                move_uploaded_file($_FILES["images"]["tmp_name"], "../../image/epidemic-shop/${v}/". $_FILES["images"]["name"]);
                             }
                         }
+                        
                         print_r(json_encode($row));
                         
 

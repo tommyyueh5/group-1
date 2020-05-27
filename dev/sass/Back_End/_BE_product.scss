@@ -130,9 +130,6 @@
                 span.center {
                     @include switch(20px);
                 }
-                pan.center {
-                    @include switch(20px);
-                }
                 div {
                     cursor: pointer;
                     background-color: #333;
