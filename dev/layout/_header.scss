@@ -111,6 +111,14 @@ header {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                span#move_var {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100px;
+                    height: 5px;
+                    background-color: yellow;
+                    z-index: 50;
+                }
                 li {
                     margin: 10px;
                     a {
@@ -122,7 +130,7 @@ header {
                         display: inline-block;
                     }
                 }
-                i.icofont-cart{
+                i.icofont-cart {
                     order: 7;
                     position: relative;
                     right: -22%;
@@ -299,7 +307,7 @@ header {
                 right: 0;
                 display: flex;
                 align-items: center;
-                font: $sub_titleFs ;
+                font: $sub_titleFs;
                 i {
                     cursor: pointer;
                     margin-right: 10px;
@@ -654,12 +662,12 @@ header {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        div.title_list{
+        div.title_list {
             margin-top: 40px;
-            div.main_box{
+            div.main_box {
                 padding: 100px 0 100px 0;
-                ul.mark_bar{
-                    i.icofont-cart{
+                ul.mark_bar {
+                    i.icofont-cart {
                         order: 0;
                         right: 0;
                     }
