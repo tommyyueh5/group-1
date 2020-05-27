@@ -3,10 +3,11 @@
 .sop-All {
     // width: 100vw;
     // height: 510px;
-    background: url("../../dest/image/sopImg/black_background.png") no-repeat;
-    background-size: cover;
+    // background: url("../../dest/image/sopImg/black_background.png") no-repeat;
+    // background-size: cover;
     flex-direction: column;
     display: flex;
+    background:#393E46 ;
     
     
 
@@ -38,7 +39,7 @@
                 padding: 20px 15px;
                 width: 80%;
                 height: 20%;
-                font-size:16px;
+                font-size:$layout_content;
                 color: #fff;
                 margin: 0 auto;
                 line-height: 1.5;
@@ -52,6 +53,7 @@
 
     .show_sop {
         width: 100%;
+        padding: 50px 0;
 
         @include rwd(medium) {
             height: 40%;
@@ -538,5 +540,18 @@
         a:active, a:hover, a:link, a:visited {
             color: white;
         }
+    }
+}
+@include rwd(small){
+    .newTitle{
+        padding: 15px 60px !important;
+    }
+    .newTitle h1{
+        font-size: $rwd_layout_title !important;
+    }
+}
+@include rwd(mobile) {
+    .sop-All .content-container .content-box > p{
+        font-size: $rwd_layout_content;
     }
 }
