@@ -245,6 +245,8 @@ window.addEventListener('load', () => {
                     } else {
                         let objects = $csa('data')[index].querySelectorAll('ul>li')
                         for (let j = 0; j < objects.length; j++) {
+                            
+                            
                             objects[j].classList.add('edit_focus')
                             $id('edit').textContent = '取消';
                             objects[j].querySelector('#edit_cancel').classList.add('on');

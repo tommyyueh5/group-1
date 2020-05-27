@@ -12,7 +12,6 @@ window.addEventListener('load', () => {
             return resp.json();
         }
     }).then(FetchData => {
-        console.log(FetchData);
         Array.from(FetchData).forEach((report, index) => {
             let report_list_P = document.querySelector('.report_list');
             let createLi = document.createElement('li');
@@ -37,7 +36,6 @@ window.addEventListener('load', () => {
                             <span class="center">
                                 <input class="report_isON" id="report_psi${index}" type="checkbox" value="${report.VER_SIT}">
                             </span>
-                            
                         </div>
                     `;
             createLi.innerHTML = render;
