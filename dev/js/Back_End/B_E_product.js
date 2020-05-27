@@ -37,12 +37,7 @@ conn.onreadystatechange = function () {
                 } else {
                     p.checked = false;
                 };
-
-
             });
-
-
-
             $("input[name='release']").click(function () {
                 let conn = new XMLHttpRequest();
                 $(this).attr('value', this.checked ? '1' : '0');
@@ -58,14 +53,11 @@ conn.onreadystatechange = function () {
                     }
                 }
             });
-
-
         } else {
             alert(conn.status);
         }
     }
 }
-
 
 //file
 function newProduct() {
@@ -83,10 +75,7 @@ function newProduct() {
 
             productUpImage.src = this.result;
         })
-
-
     });
-
     //--------------------------
     const upload = document.getElementById('create_product_yes');
     let imageKind = document.getElementById('imageKind');
@@ -104,7 +93,6 @@ function newProduct() {
         this.value = this.checked ? 1 : 0;
     });
 
-
     upload.addEventListener('click', function (e) {
         e.preventDefault();
         //wargin init
@@ -114,15 +102,12 @@ function newProduct() {
         $('.pri-warning').text('');
         $('.kind-warning').text('');
 
-
-
         form.set('kind', imageKind.value);
         form.set('id', proId.value);
         form.set('pri', proPri.value);
         form.set('desc', productDesc.value);
         form.set('time', protime.value);
         form.set('she', upstate.value);
-
 
         let conn = new XMLHttpRequest();
 
@@ -162,7 +147,6 @@ function newProduct() {
                                 p.checked = false;
                             };
 
-
                         });
                         form.forEach(function (val, key, fD) {
                             form.delete(key);
@@ -174,32 +158,18 @@ function newProduct() {
                         productDesc.value = '';
                         protime.value = '';
                         upstate.checked = false;
-                    } else if (JSON.parse(conn.responseText)['error'] == 1) {  $('.desc-warning').text(res['desc']);  $('.time-warning').text(res['time']);  $('.id-warning').text(res['id']);  $('.pri-warning').text(res['pri']);     document.getElementsByClassName('fing')[0].textContent= res['file'];
+                    } else if (JSON.parse(conn.responseText)['error'] == 1) {
+                        $('.desc-warning').text(res['desc']); $('.time-warning').text(res['time']); $('.id-warning').text(res['id']); $('.pri-warning').text(res['pri']); document.getElementsByClassName('fing')[0].textContent = res['file'];
                         $('.kind-warning').text(res['kind']);
-
-                        
-                        
-                        
                     } else {
                         $('.pri-warning').text(res['pri']);
                     }
-
-
-
-
-
                 } else {
                     alert(conn.status);
                 }
             }
         }
-
-
-
-
     });
-
-
 }
 
 
