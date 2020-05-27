@@ -143,17 +143,17 @@ window.addEventListener('load', () => {
             //取消新增createBtn點擊聆聽功能
             $id('create_game_no').addEventListener('click', cancelCreateTopit, true);
         } else if (createBtn.textContent == "新增商品") {
-            console.log('現在是要新增商品');
+            // console.log('現在是要新增商品');
             $('.product_list').prepend(`
                 <li class="p_product" id="create_product">
                     <div class="product_img_div">
                         <input class="uploadimg" id="product-img-upload" type="image" src="./image/member/interface.png" />
                         <input class="uploadbtn" type="file" id="upload"/>
-                        <p class="file-warning warning_color"></p>
+                        <p class="fing warning_color"></p>
                     </div>
                     <div class="main_data">
                         <select name="" id="imageKind">
-                            <option value="">----</option>
+                            <option value="">--請選擇--</option>
                             <option value="clothe">防護衣</option>
                             <option value="goggle">防疫眼鏡</option>
                             <option value="mask">防疫口罩</option>

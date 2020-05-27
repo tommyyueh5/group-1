@@ -174,20 +174,12 @@ function newProduct() {
                         productDesc.value = '';
                         protime.value = '';
                         upstate.checked = false;
-                    } else if (JSON.parse(conn.responseText)['error'] == 1) {
-                        // console.log(res['file']);
-                        // console.log(res['kind']);
-                        // console.log(res);
-                        // console.log($('.file-warning').text());
-                        // console.log($('.kind-warning').text());
-
-
-                        $('.file-warning').text(res['file']);
+                    } else if (JSON.parse(conn.responseText)['error'] == 1) {  $('.desc-warning').text(res['desc']);  $('.time-warning').text(res['time']);  $('.id-warning').text(res['id']);  $('.pri-warning').text(res['pri']);     document.getElementsByClassName('fing')[0].textContent= res['file'];
                         $('.kind-warning').text(res['kind']);
-                        $('.desc-warning').text(res['desc']);
-                        $('.time-warning').text(res['time']);
-                        $('.id-warning').text(res['id']);
-                        $('.pri-warning').text(res['pri']);
+
+                        
+                        
+                        
                     } else {
                         $('.pri-warning').text(res['pri']);
                     }
