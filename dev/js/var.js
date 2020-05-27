@@ -1,11 +1,5 @@
 $(document).ready(() => {//html載入完再執行
-    let tit = document.getElementById('bread');
-    let ch = document.getElementsByClassName('changePage');
-    for (let i =0; i<ch.length;i++) {
-        if (  tit.textContent== ch[i].children[0].textContent   ) {
-            ch[i].children[0].classList.add('move');
-        }
-    }
+
     $('#login_btn').click((e) => {//點選註冊按鈕顯示燈箱
         $("#loginBg").addClass("open");
         e.stopPropagation();
