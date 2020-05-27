@@ -59,7 +59,7 @@ window.addEventListener('load', () => {
                         })
                     } else {
                         $(`#discussion_psi${forum_data[i].DIS_NO}`).val(0);
-                        console.log(e.currentTarget.value,'=',forum_data[i].DIS_NO);
+                        // console.log(e.currentTarget.value,'=',forum_data[i].DIS_NO);
                         fetch('./PHP_program/Back_End/Back_End_forum_updatePosition.php',{
                             method:'POST',
                             body:JSON.stringify({

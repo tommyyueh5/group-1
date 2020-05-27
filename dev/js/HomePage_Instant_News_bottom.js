@@ -111,9 +111,10 @@ window.addEventListener('load', function () {
                     subcontainer.appendChild(content);
                     content.appendChild(newsTitle);
                     content.appendChild(imgBox);
+                    content.appendChild(pImg);
                     content.appendChild(newsContent);
                     imgBox.appendChild(img);
-                    imgBox.appendChild(pImg);
+                    // imgBox.appendChild(pImg);
                     content.appendChild(dateBox);
                     dateBox.innerHTML = pdate;
                     // dateBox.appendChild(pdate);

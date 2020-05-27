@@ -1,48 +1,78 @@
 window.addEventListener('load', function () {
 
-    // console.log(article);
+    // // console.log(article);
 
 
-    fetch('./PHP_program/HomePage_Instant_News.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-    }).then(function (resp) {
-        if (resp.status == 200) {
-            return resp.text();
-        }
-    }).then(text => {
-        const article_b = document.querySelector('.grid-top-left');
-        const datas = JSON.parse(text);
-        // console.log(datas);
-        // if (datas.length <= 1){
-        datas.forEach((data, index) => {
+    // fetch('./PHP_program/HomePage_Instant_News.php', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/x-www-form-urlencoded'
+    //     }
+    // }).then(function (resp) {
+    //     if (resp.status == 200) {
+    //         return resp.text();
+    //     }
+    // }).then(text => {
+    //     const article_b = document.querySelector('.grid-top-left');
+    //     const datas = JSON.parse(text);
+    //     // console.log(datas);
+    //     // if (datas.length <= 1){
+    //     datas.forEach((data, index) => {
 
-            if (data.NEWS_NO == 5) {
-                // console.log(index+'one');
+    //         if (data.NEWS_NO == 5) {
+    //             // console.log(index+'one');
 
-                const div_C = document.createElement('div');
-                // console.log(index);
+    //             const div_C = document.createElement('div');
+    //             // console.log(index);
 
-                div_C.classList.add('domestic');
-                let newsText = `
-                    <a href="javascript:void(0)">
-                        <img src="${data.NEWS_IMG_PATH}" alt="">
-                        <p>${data.NEWS_TIT}</p>
-                    </a>
-                        `;
-                div_C.innerHTML = newsText;
-                // console.log(div_C);
-                article_b.appendChild(div_C);
-                test(data)
+    //             div_C.classList.add('domestic');
+    //             let newsText = `
+    //                 <a href="javascript:void(0)">
+    //                     <img src="${data.NEWS_IMG_PATH}" alt="">
+    //                     <p>${data.NEWS_TIT}</p>
+    //                 </a>
+    //                     `;
+    //             div_C.innerHTML = newsText;
+    //             // console.log(div_C);
+    //             article_b.appendChild(div_C);
+    //             test(data)
+    //         }
+    //     })
+    // })
+    // }
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            const news_data = JSON.parse(xhr.responseText);
+            let dateSplit = newdate(news_data)
+            for (let i = 0; i < news_data.length; i++) {
+                $('.grid-top-left').append(`
+                    <div class="domestic">
+                        <a href="javascript:void(0)">
+                           <img src="${news_data[i].NEWS_IMG_PATH}" alt="">
+                           <div class="cards_content">
+                                <span>${news_data[i].NEWS_TIT}</span>
+                            </div>
+                        </a>
+                    </div>
+                `)
             }
-        })
-    })
-    
+            test(news_data);
+        } else {
+            alert(xhr.status);
+        }
+    }
+    xhr.open("Get", "./PHP_program/HomePage_Instant_News.php", true);
+    xhr.send(null);
 
-    function test(data) {
-        
+    // ----------------------切日期----------------
+    function newdate(dates) {
+        let arrDate = dates.map(date => (date.NEWS_PUBLISH_DATE.split('-')));
+        return arrDate
+    };
+    // ----------------------切日期----------------
+
+    function test(datas) {
         //獲取標籤區
         let International = document.querySelectorAll('.domestic');
         let subNewsBox = document.querySelector('.subNewsBox');
@@ -70,7 +100,7 @@ window.addEventListener('load', function () {
         newsContent.classList.add('newsContent');
         dateBox.classList.add('dateBox');
         pImg.classList.add('pImg');
-        ExportHtml(data)
+        ExportHtml(datas)
 
 
         // ================================================================
@@ -96,33 +126,35 @@ window.addEventListener('load', function () {
                     subcontainer.appendChild(content);
                     content.appendChild(newsTitle);
                     content.appendChild(imgBox);
+                    content.appendChild(pImg);
                     content.appendChild(newsContent);
                     imgBox.appendChild(img);
-                    imgBox.appendChild(pImg);
+                    
                     content.appendChild(dateBox);
                     dateBox.innerHTML = pdate;
                     // dateBox.appendChild(pdate);
                     // dateBox.appendChild(pdate)
 
                     //設置屬性區
-                    img.setAttribute('src', datalist.NEWS_IMG_PATH);
+                    img.setAttribute('src', datalist[index].NEWS_IMG_PATH);
                     //停止預設行為
                     btnClose.setAttribute('href', 'javascript:void(0)');
                     //  圖片敘述
-                    pImg.innerText = `▲ ${datalist.NEWS_IMG_EXP}`;
+                    pImg.innerText = `▲ ${datalist[index].NEWS_IMG_EXP}`;
                     // console.log(datalist[index]);
 
 
                     // 顯示標題及內容
                     let dateChilds = dateBox.children;
-                    let date = dateHandler(datalist.NEWS_PUBLISH_DATE);
-                    // console.log(date);
-
-                    newsTitle.innerText = datalist.NEWS_TIT;
-                    newsContent.innerText = datalist.NEWS_CON;
+                    let date = dateHandler(datalist[index].NEWS_PUBLISH_DATE);
+                    newsTitle.innerText = datalist[index].NEWS_TIT;
+                    newsContent.innerText = datalist[index].NEWS_CON;
                     dateChilds[0].innerText = date[0];
                     dateChilds[2].innerText = `${date[1]}月`;
                     dateChilds[1].innerText = date[2];
+
+
+
                     //關閉就執行
                     if (!flag) {
                         btnClose.addEventListener('click', closebtn);
@@ -154,12 +186,9 @@ window.addEventListener('load', function () {
             }
 
             //日期處理
-            function dateHandler(date_show) {
-                console.log(date_show);
-                return date_show.split('-');
+            function dateHandler(date) {
+                return date.split('-');
             }
         }
-
     }
-    
 });

@@ -100,18 +100,18 @@ window.addEventListener('load', function () {
         //Login到會員時hander上面都要列出資料
         $id('login_btn').textContent = '登出';
         $id('loginBg').classList.remove('on');
-        $cs('points').style.display = 'flex';
+        // $cs('points').style.display = 'flex';
         $cs('member_center').classList.add('on');
     }
     let hanNo = sessionStorage.getItem('no');
     // 有session的hanNo不存在
     if (!hanNo) {
         // $id('memPoint').textContent = sessionStorage.getItem('point');
-        console.log('不存在');
+        // console.log('不存在');
         return
     } else if (hanNo) {
-        console.log('存在');
-        $id('memPoint').textContent = sessionStorage.getItem('point');
+        // console.log('存在');
+        // $id('memPoint').textContent = sessionStorage.getItem('point');
         if ($id('editname')) {
             $id('editname').value = sessionStorage.getItem('memId');
             $id('editemail').value = sessionStorage.getItem('email');
