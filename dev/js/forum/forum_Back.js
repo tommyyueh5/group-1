@@ -60,7 +60,7 @@ function showData() {
                 comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
-                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                            <div  class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item " data-aos="fade-up">
                                 <div class="item_content">
                                     <div class="date">
                                         <h4 class="year">${year}</h4>
@@ -121,7 +121,7 @@ function showDataTime() {
                 comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
-                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item " data-aos="fade-up">
                                 <div class="item_content">
                                     <div class="date">
                                         <h4 class="year">${year}</h4>
@@ -181,7 +181,7 @@ function showCommentMost() {
                 comCount = data[i].COM_COUNT;
                 //動態新增要加的欄位
                 $('.masonry').append(`
-                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
+                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item " data-aos="fade-up">
                                 <div class="item_content">
                                     <div class="date">
                                         <h4 class="year">${year}</h4>
