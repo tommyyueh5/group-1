@@ -257,7 +257,9 @@ window.addEventListener('load', () => {
                 };
             };
         });
-        removeDiscussion(arrPf);
+        // console.log(arrPf);
+        
+        // removeDiscussion(arrPf);
     };
 
     $id('edit').addEventListener('click', edit_cancel, true);
@@ -276,13 +278,7 @@ window.addEventListener('load', () => {
             }
         })
 
-    //     let title_object = $csa('mgmt_title')
-    //     for (let n = 0; n < title_object.length; n++) {
-    //         // 表單欄位數
-    //         let objects = $csa('data')[n].querySelectorAll('ul>li')
-    //         // 當在當前頁籤且在編輯狀態下才作用
 
-        // console.log(submit);
         // 新增遊戲題目
         if (!submit) {
             return
@@ -347,50 +343,7 @@ window.addEventListener('load', () => {
     }
 
 
-    //刪除文章
-    function removeDiscussion(dataLi){
-        // console.log(dataLi);
-        
-        // Array.from(dataLi).forEach
-        // console.log(forum_data[0].DIS_NO);
-        
-        if(dataLi[0] == undefined){
-            return    
-        }
-        Array.from(dataLi[0]).forEach((item,index)=>{
-            // console.log(item);
-            item.children[0].addEventListener('click',()=>{
-                let forum_data = JSON.parse(sessionStorage.getItem('forum_data'))
-                if (forum_data == '') {
-                    return
-                }
-                
-                let NODiscNum = forum_data[index].DIS_NO;
-                // console.log(NODiscNum ,index);
-                item.remove();
-                fetch('./PHP_program/Back_End/removeDicBack_end.php',{
-                    method:'POST',
-                    body:JSON.stringify({
-                        "NONum":NODiscNum
-                    }),
-                    headers:{
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-                    }
-                }).then(resp=>{
-                    if(resp.ok){
-                        return resp.text();
-                    }
-                }).then(text=>{
-                    console.log(text);
-                }).catch(err=>{
-                    console.log('有問題');
-                    
-                })
-
-            })
-            
-        })
-    }
+    
 
 
 });

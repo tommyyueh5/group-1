@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
     xhr.onload = function () {
         if (xhr.status == 200) {
             const game_data = JSON.parse(xhr.responseText);
+            sessionStorage.setItem('game_data',xhr.responseText)
             // console.log(game_data);
             for (let i = 0; i < game_data.length; i++) {
                 $('.game_list').append(`

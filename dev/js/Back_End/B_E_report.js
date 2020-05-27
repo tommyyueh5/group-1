@@ -45,16 +45,19 @@ window.addEventListener('load', () => {
             // console.log(report);
             let pData = document.querySelectorAll('.report_isON');
 
+           
             
             pData.forEach((p, i) => {
-                if (p.value == 1) {
-                    p.checked = true;
+                
+                if (p.value) {
+
                     $(`#report_psi${i}`).click(function (e) {
                         
                         // console.log(FetchData[i].DIS_NO);
                         if ($(`#report_psi${i}`).val() == 0) {
                             $(`#report_psi${i}`).val(1);
-                            
+                            p.checked = true;
+
                             fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
                                 method:'POST',
                                 body:JSON.stringify({
@@ -71,6 +74,7 @@ window.addEventListener('load', () => {
                             })
                         } else {
                             $(`#report_psi${i}`).val(0);
+                            p.checked = false;
                             fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
                                 method:'POST',
                                 body:JSON.stringify({
