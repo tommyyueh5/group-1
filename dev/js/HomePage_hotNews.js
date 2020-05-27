@@ -2,35 +2,6 @@ window.addEventListener('load', function () {
 
     // // console.log(article);
 
-<<<<<<< HEAD
-    fetch('./PHP_program/HomePage_hotNews.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
-    }).then(function (resp) {
-        if (resp.status == 200) {
-            return resp.text();
-        }
-    }).then(text => {
-      
-        const article = document.querySelector('.article');
-        const datas = JSON.parse(text);
-        // console.log(datas);
-        // if (datas.length <= 4){
-            datas.forEach((data, index) => {
-                if(data.NEWS_NO <= 29 && data.NEWS_NO >= 26 ){
-                    const li = document.createElement('li');
-                li.classList.add('item');
-                li.classList.add(`item${index}`);
-                let newsText = `
-                            <div class="International">
-                                <div class="hotNewcontent">
-                                    <img src="${data.NEWS_IMG_PATH}" alt="">
-                                    <div class="content_hot">
-                                        <h1>${data.NEWS_TIT}</h1>
-                                    </div>
-=======
     // fetch('./PHP_program/HomePage_hotNews.php', {
     //     method: 'POST',
     //     headers: {
@@ -211,7 +182,6 @@ window.addEventListener('load', function () {
                                 <img src="${news_data[i].NEWS_IMG_PATH}" alt="">
                                 <div class="cards_content">
                                     <span>${news_data[i].NEWS_TIT}</span>
->>>>>>> Chai0526
                                 </div>
                             </div>
                         </div>
@@ -251,87 +221,6 @@ window.addEventListener('load', function () {
         let pdate = ` <p class="date1">0</p>
                     <p class="date2">1</p>
                     <p class="date3">2</p>`;
-<<<<<<< HEAD
-    let pImg = document.createElement('p')
-    //新增class區
-    subcontainer.classList.add('subcontainer');
-    btnClose.classList.add('btnclose');
-    content.classList.add('content');
-    imgBox.classList.add('imgBox');
-    newsTitle.classList.add('newsTitle');
-    newsContent.classList.add('newsContent');
-    dateBox.classList.add('dateBox');
-    pImg.classList.add('pImg');
-    ExportHtml(datas)
-
-
-    // ================================================================
-
-
-    //輸出資料至畫面畫面
-    function ExportHtml(datalist) {
-        // console.log(datalist);
-        arryTest = [];
-        datalist.forEach((item,num)=>{
-            if (item.NEWS_NO <= 25 || item.NEWS_NO >= 30) {
-                return
-            } else if (item.NEWS_NO >= 26) {
-                arryTest.push(num);
-                // console.log(num);
-            }
-        })
-        // console.log(arryTest);
-        
-        let flag = false;
-        Array.from(International).forEach((item, index) => {
-            item.addEventListener('click', function () {
-                
-                // console.dir(document.body);
-                document.body.style.overflow = 'hidden';
-                
-                
-                // subNewsBox.style.overflow = 'hidden';
-                //顯示資料及加入標籤
-                subNewsBox.style.display = 'block';
-                subNewsBox.appendChild(subcontainer);
-                subcontainer.appendChild(btnClose);
-                subcontainer.appendChild(content);
-                content.appendChild(newsTitle);
-                content.appendChild(imgBox);
-                content.appendChild(newsContent);
-                imgBox.appendChild(img);
-                imgBox.appendChild(pImg);
-                content.appendChild(dateBox);
-                dateBox.innerHTML = pdate;
-                // dateBox.appendChild(pdate);
-                // dateBox.appendChild(pdate)
-                // console.log(arryTest[index]);
-                //設置屬性區
-                img.setAttribute('src', datalist[arryTest[index]].NEWS_IMG_PATH);
-                //停止預設行為
-                btnClose.setAttribute('href', 'javascript:void(0)');
-                //  圖片敘述
-                pImg.innerText = `▲ ${datalist[arryTest[index]].NEWS_IMG_EXP}`;
-                // console.log(datalist[index]);
-
-
-                // 顯示標題及內容
-                let dateChilds = dateBox.children;
-                let date = dateHandler(datalist[arryTest[index]].NEWS_PUBLISH_DATE);
-                newsTitle.innerText = datalist[arryTest[index]].NEWS_TIT;
-                newsContent.innerText = datalist[arryTest[index]].NEWS_CON;
-                dateChilds[0].innerText = date[0];
-                dateChilds[2].innerText = `${date[1]}月`;
-                dateChilds[1].innerText = date[2];
-
-
-
-                //關閉就執行
-                if (!flag) {
-                    btnClose.addEventListener('click', closebtn);
-                    subNewsBox.addEventListener('click', outlayerclose);
-                }
-=======
         let pImg = document.createElement('p')
         //新增class區
         subcontainer.classList.add('subcontainer');
@@ -403,7 +292,6 @@ window.addEventListener('load', function () {
                         subNewsBox.addEventListener('click', outlayerclose);
                     }
                 });
->>>>>>> Chai0526
             });
 
 
