@@ -10,7 +10,7 @@ window.addEventListener('load', function () {
 
         carousel = $carouselEl.elastislide({
             current: current,
-            minItems: 3,
+            minItems: 4,
             onClick: function (el, pos, evt) {
 
                 changeImage(el, pos);
@@ -104,7 +104,7 @@ function number3() {
 
         carousel = $carouselEl.elastislide({
             current: current,
-            minItems: 3,
+            minItems: 2,
             onClick: function (el, pos, evt) {
 
                 changeImage(el, pos);
@@ -136,7 +136,7 @@ function number2() {
 
         carousel = $carouselEl.elastislide({
             current: current,
-            minItems: 4,
+            minItems: 3,
             onClick: function (el, pos, evt) {
 
                 changeImage(el, pos);

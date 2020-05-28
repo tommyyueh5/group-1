@@ -422,7 +422,7 @@ window.addEventListener('load', function() {
     function mobileKey() {
         let right = document.getElementById('right');
         let left = document.getElementById('left');
-        right.onmousedown = function(){
+        right.ontouchstart = function(){
             if ( c == 1) {
                 c = 0;
                 setTimeout(function() {
@@ -480,7 +480,7 @@ window.addEventListener('load', function() {
 
             }
 
-            right.addEventListener('mouseup', function(e) {
+            right.addEventListener('touchend', function(e) {
                 clearInterval(slideContainerMove);
                     inter = 1;
                 
@@ -488,7 +488,7 @@ window.addEventListener('load', function() {
         };
 
 
-        left.onmousedown = function(){
+        left.ontouchstart = function(){
             if (c == 1) {
                 c = 0;
                 setTimeout(function() {
@@ -509,7 +509,7 @@ window.addEventListener('load', function() {
                     inter = 0;
                 }
             }
-            left.addEventListener('mouseup', function(e) {
+            left.addEventListener('touchend', function(e) {
                 clearInterval(slideContainerMove);
                 
                     inter = 1;
