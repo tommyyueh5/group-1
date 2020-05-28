@@ -1,6 +1,7 @@
 @import "../layout/mixins/allmixin";
 @import "../layout/modules/btn";
 header {
+    font-family: "NotoSansTC-Bold";
     position: sticky;
     top: 0;
     width: 100%;
@@ -8,7 +9,7 @@ header {
     flex-direction: column;
     align-items: center;
     z-index: 99;
-    background-image: url("../image/index/background/black_background.png");
+    background-color: #000;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -27,11 +28,11 @@ header {
             align-items: center;
             z-index: 1;
             a {
-                background-image: url("../image/title/logo-text.png");
-                width: 300px;
+                background-image: url("./../image/title/title_text_logo.png");
+                width: 400px;
                 height: 70px;
                 display: block;
-                background-position: center center;
+                background-position: center 15px;
                 background-size: contain;
                 background-repeat: no-repeat;
             }
@@ -50,7 +51,7 @@ header {
                 margin-right: 5px;
                 > a {
                     text-decoration: none;
-                    color: #fff;
+                    color: #8e8e8e;
                     > p {
                         font-size: $sub_titleFs;
                     }
@@ -68,7 +69,6 @@ header {
                     color: white;
                 }
             }
-
             div.points {
                 // display: flex;
                 display: none;
@@ -85,7 +85,7 @@ header {
     div.title_list {
         width: 100%;
         position: relative;
-        background-color: $btn-color3;
+        background-color: #000;
         z-index: 1;
         div.main_box {
             position: relative;
@@ -111,34 +111,30 @@ header {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-
                 li {
                     margin: 10px;
                     a {
+                        position: relative;
                         text-decoration: none;
                         color: black;
                         font-size: 20px;
-                        color: rgba(230, 230, 230, 1);
+                        color: #8e8e8e;
                         letter-spacing: 3px;
                         display: inline-block;
                     }
                 }
-            }
-            form.fuction_search {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                display: flex;
-                justify-content: start;
-                width: 200px;
-                i.icofont-search {
-                    font-weight: bold;
-                    margin-right: 15px;
-                    color: white;
-                    font-size: $icon_fs;
-                    cursor: pointer;
+                i.icofont-cart {
+                    order: 7;
+                    position: relative;
+                    right: -22%;
+                    color: #8e8e8e;
                 }
+            }
+            i.icofont-cart {
+                font-weight: bold;
+                color: white;
+                font-size: $icon_fs;
+                cursor: pointer;
                 input {
                     background-color: transparent;
                     box-shadow: 0 0 3px rgba(255, 255, 255, 9);
@@ -260,6 +256,20 @@ header {
         }
     }
 }
+.move {
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: yellow;
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 @include rwd(header) {
     header {
         position: sticky;
@@ -269,7 +279,7 @@ header {
         flex-direction: column;
         align-items: center;
         z-index: 99;
-        background-image: url("../image/index/background/black_background.png");
+        background-image: url("./../image/index/background/black_background.png");
         height: 70px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -289,7 +299,7 @@ header {
                 align-items: center;
                 z-index: 1;
                 a {
-                    background-image: url("../image/title/logo-text.png");
+                    background-image: url(./../image/title/title_text_logo.png);
                     width: 300px;
                     height: 70px;
                     display: block;
@@ -301,12 +311,10 @@ header {
             div.fuction_btn_right {
                 z-index: 999;
                 position: absolute;
-                top: 50%;
-                right: 1%;
-                transform: translateY(-50%);
+                right: 0;
                 display: flex;
                 align-items: center;
-                font: $sub_titleFs normal;
+                font: $sub_titleFs;
                 i {
                     cursor: pointer;
                     margin-right: 10px;
@@ -328,11 +336,11 @@ header {
                 cursor: pointer;
                 position: absolute;
                 top: 50%;
-                left: 10px;
+                left: 16px;
                 transform: translateY(-50%);
-                width: 50px;
-                height: 50px;
-                border: 1px solid #fff;
+                width: 35px;
+                height: 36px;
+                // border: 1px solid #fff;
                 z-index: 100;
                 span.switch_line {
                     width: 80%;
@@ -414,6 +422,7 @@ header {
                         align-items: center;
                         justify-content: center;
                         a {
+                            position: relative;
                             text-decoration: none;
                             color: black;
                             font-size: 20px;
@@ -421,7 +430,14 @@ header {
                             letter-spacing: 3px;
                             display: inline-block;
                         }
+                        i.icofont-cart {
+                            order: 0;
+                            position: relative;
+                            right: -22%;
+                            color: #8e8e8e;
+                        }
                     }
+                    
                 }
                 form.fuction_search {
                     position: absolute;
@@ -566,6 +582,7 @@ header {
         }
     }
 }
+
 @include rwd(medium) {
     header {
         position: sticky;
@@ -575,7 +592,7 @@ header {
         flex-direction: column;
         align-items: center;
         z-index: 99;
-        background-image: url("../image/index/background/black_background.png");
+        background-image: url("./../image/index/background/black_background.png");
         height: 70px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -595,7 +612,7 @@ header {
                 align-items: center;
                 z-index: 1;
                 a {
-                    background-image: url("../image/title/logo-text.png");
+                    background-image: url(./../image/title/title_text_logo.png);
                     width: 250px;
                     height: 70px;
                     display: block;
@@ -607,9 +624,7 @@ header {
             div.fuction_btn_right {
                 z-index: 999;
                 position: absolute;
-                top: 50%;
-                right: 1%;
-                transform: translateY(-50%);
+                right: 0;
                 display: flex;
                 align-items: center;
                 font: $sub_titleFs normal;
@@ -627,7 +642,6 @@ header {
                         display: block;
                     }
                 }
-
                 div.points {
                     // display: flex;
                     display: none;
@@ -649,6 +663,7 @@ header {
         }
     }
 }
+
 @include rwd(small) {
     header {
         position: sticky;
@@ -658,10 +673,22 @@ header {
         flex-direction: column;
         align-items: center;
         z-index: 99;
-        background-image: url("../image/index/background/black_background.png");
+        background-image: url("./../image/index/background/black_background.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+        div.title_list {
+            margin-top: 30px;
+            div.main_box {
+                padding: 100px 0 100px 0;
+                ul.mark_bar {
+                    i.icofont-cart {
+                        order: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
         div.nav_bar {
             max-width: 1440px;
             position: relative;
@@ -673,6 +700,9 @@ header {
             flex-direction: column;
             justify-content: space-between;
             z-index: 1;
+            height: 70px;
+            top: 50%;
+            transform: translateY(-50%);
             div.logo {
                 width: 100vw;
                 display: flex;
@@ -680,9 +710,9 @@ header {
                 align-items: center;
                 z-index: 1;
                 a {
-                    background-image: url("../image/title/logo-text.png");
+
                     width: 300px;
-                    height: 30px;
+                    height: 40px;
                     display: block;
                     background-position: center center;
                     background-size: contain;
@@ -691,12 +721,12 @@ header {
             }
             div.fuction_btn_right {
                 z-index: 50;
-                position: initial;
-                transform: translateY(-50%);
+                position: absolute;
                 display: flex;
-                align-items: flex-end;
+                align-items: center;
                 justify-content: center;
-                margin-top: 15px;
+                right: 0;
+                height: 100%;
                 font: $sub_titleFs normal;
                 div.member_center {
                     display: none;
@@ -712,7 +742,6 @@ header {
                         display: block;
                     }
                 }
-
                 div.points {
                     // display: flex;
                     display: none;
@@ -734,5 +763,6 @@ header {
         }
     }
 }
+
 @include rwd(mobile) {
 }

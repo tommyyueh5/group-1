@@ -1,14 +1,15 @@
 > li.i5 {
     margin-top: 20px;
     width: 100%;
-    ul.game_topic_title {
+
+    ol.game_topic_title {
         display: flex;
         background-color: #333;
-        position: fixed;
-        top: 115px;
-        left: 300px;
-        width: calc(100vw - 300px);
+        position: absolute;
+        top: 55px;
+        width: 100%;
         z-index: 11;
+
         li {
             display: flex;
             justify-content: center;
@@ -63,8 +64,23 @@
             }
             div.game_topic {
                 flex: 3;
+                label{
+                    cursor: pointer;
+                    width: 50px;
+                    height: 50px;
+                    display: inline-block;
+                    background-image: url(../../../dest/image/member/interface.png);
+                    background-position: center center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-color: #aaa;
+                input#topic_img{
+                    cursor: pointer;
+                    opacity: 0;
+                }
             }
-            ul.answer_list {
+            }
+            ol.answer_list {
                 flex: 3;
                 display: flex;
                 height: 100%;
@@ -78,6 +94,7 @@
                     height: 100%;
                     display: flex;
                     align-items: flex-start;
+                    align-items: center;
                     margin: 0 0 10px 100px;
                 }
             }
@@ -121,5 +138,25 @@
                 }
             }
         }
+    }
+    textarea#game_h1_edit {
+        background-color: transparent;
+        border: none;
+    }
+    textarea#game_h1_edit.edit_open {
+        background-color: #FFF;
+        border: 1px solid white;
+        color: black;
+    }
+    .edit_on {
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        color: white;
+    }
+    input.edit_open {
+        background-color: white;
+        border: 1px solid white;
+        color: black;
     }
 }

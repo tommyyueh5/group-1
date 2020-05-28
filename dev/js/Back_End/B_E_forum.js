@@ -4,11 +4,12 @@ window.addEventListener('load', () => {
         if (xhr.status == 200) {
             var forum_data = JSON.parse(xhr.responseText);
             // console.log(forum_data);
-
+            sessionStorage.setItem('forum_data',xhr.responseText)
             for (let i = 0; i < forum_data.length; i++) {
                 $('.forum_list').append(
                     `
                 <li class="p_forum">
+                            <div id="edit_cancel">刪除</div>
                             <div class="forum_img">
                                 <img src="${forum_data[i]["DIS_IMG_PATH"]}" alt="">
                             </div>
@@ -38,21 +39,50 @@ window.addEventListener('load', () => {
                 } else {
                     p.checked = false;
                 }
-                $(`#discussion_psi${forum_data[i].DIS_NO}`).click(function () {
-
+                $(`#discussion_psi${forum_data[i].DIS_NO}`).click(function (e) {
                     if ($(`#discussion_psi${forum_data[i].DIS_NO}`).val() == 0) {
                         $(`#discussion_psi${forum_data[i].DIS_NO}`).val(1);
+                        // console.log(e.currentTarget.value,'=',forum_data[i].DIS_NO);
+                        fetch('./PHP_program/Back_End/Back_End_forum_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "forumNum":forum_data[i].DIS_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     } else {
                         $(`#discussion_psi${forum_data[i].DIS_NO}`).val(0);
+                        // console.log(e.currentTarget.value,'=',forum_data[i].DIS_NO);
+                        fetch('./PHP_program/Back_End/Back_End_forum_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "forumNum":forum_data[i].DIS_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     }
-                    
+
                 })
             });
         } else {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/php/Back_End/Back_End_forum.php", true);
+    xhr.open("Get", "./PHP_program/Back_End/Back_End_forum.php", true);
     xhr.send(null);
 });
 

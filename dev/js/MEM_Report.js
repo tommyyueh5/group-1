@@ -14,7 +14,7 @@ window.addEventListener('load',function(){
         if(xhr.status == 200){
            let importData = JSON.parse(xhr.responseText) ;
             // 資料處理
-            // console.log(importData);
+            console.log(importData);
             // console.log(importData.length);
             
             if(importData.length == undefined){
@@ -24,7 +24,7 @@ window.addEventListener('load',function(){
             }
         }
     }
-    xhr.open("POST", "../../dest/PHP_program/MEM_Report.php", true);
+    xhr.open("POST", "./PHP_program/MEM_Report.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
     xhr.send(`no=${no}`);
 
@@ -45,7 +45,7 @@ function MemReortHandler(datas){
                     <h3>${data.REP_DATE}</h3>
                 </div>
                 <div class="condition">
-                    <h3>${data.VER_SIT == 2 ? '通過': data.VER_SIT == 1 ?'未通過':"未審核"}</h3>
+                    <h3>${data.VER_SIT == 1 ? '通過': data.VER_SIT == 0 ?'未通過':"未審核"}</h3>
                 </div>
         `;
         contaniner.appendChild(reEle);

@@ -1,17 +1,25 @@
 //頁籤功能
+
 window.addEventListener('load', () => {
+
+
     function $id(id) {
         return document.getElementById(id);
     }
+
     function $cs(cs) {
         return document.querySelector('.' + cs);
     }
+
     function $csa(csa) {
         return document.querySelectorAll('.' + csa);
     }
+
     function $tag(tag) {
         return document.getElementsByTagName(tag);
     }
+
+
 
     //宣告頁籤
     let datas = document.querySelectorAll('.data');
@@ -22,6 +30,7 @@ window.addEventListener('load', () => {
             //先移除全部class .on
             for (let i = 0; i < datas.length; i++) {
                 datas[i].style.display = 'none';
+
             }
             //把自己加上class on.
             datas[index].style.display = 'block';
@@ -34,6 +43,7 @@ window.addEventListener('load', () => {
         $csa('game_list')[0].removeChild($id('create_game'));
         //開啟新增題目createBtn點擊聆聽功能
         createBtn.addEventListener('click', createFun, true)
+
     };
     //新增商品功能
     let cancelCreateProduct = () => {
@@ -46,7 +56,7 @@ window.addEventListener('load', () => {
     //版面標題動態替換功能
     let createBtn = document.querySelector("#create_btn");
     //針對mgmt_title建立自動迴圈，點到誰指定誰
-    Array.from($csa('mgmt_title')).forEach(mgmtClick => {
+    Array.from($csa('mgmt_title')).forEach((mgmtClick, index) => {
         $id('tag_title').textContent = "會員列表"
         //建立點擊聆聽
         mgmtClick.addEventListener("click", () => {
@@ -58,42 +68,50 @@ window.addEventListener('load', () => {
             createBtn.textContent = titleVal;
             //新增案件判斷切換功能
             createBtn.style.display = "none";
+
             //判斷頁籤抬頭
             if (createBtn.textContent == "遊戲題庫") {
                 createBtn.style.display = "block";
                 createBtn.textContent = "新增題庫";
-                //判斷商品頁是否有新增表格
-                if ($id('create_product')) {
-                    //如果有就刪除
-                    cancelCreateProduct();
-                }
-                //判斷頁籤抬頭
             } else if (createBtn.textContent == "商品上下架") {
                 createBtn.style.display = "block";
                 createBtn.textContent = "新增商品";
-                //判斷題庫頁是否有新增表格
-                if ($id('create_game')) {
-                    //如果有就刪除
-                    cancelCreateTopit();
-                }
             } else {
                 createBtn.style.display = "none";
             }
+
+            // 點擊頁籤將取消所有編輯選取
+            let objs = datas[index].querySelectorAll("ul>li");
+            for (let j = 0; j < objs.length; j++) {
+                objs[j].classList.remove("edit_focus");
+            }
+            $id('edit').textContent = '編輯';
+            //切換頁籤直接刪除新增表格
+            if ($id('create_product')) {
+                $csa('product_list')[0].removeChild($id('create_product'));
+            } else if ($id('create_game')) {
+                $csa('game_list')[0].removeChild($id('create_game'));
+
+            }
+
         })
     });
 
 
     //新增題庫功能
     let createFun = function () {
-        console.log(createBtn);
+        // console.log(createBtn);
         if (createBtn.textContent == "新增題庫") {
-            console.log('現在是要新增題庫');
+            // console.log('現在是要新增題庫');
             $('.game_list').prepend(`
             <li class="p_game" id="create_game">
                 <div class="game_topic">
-                <textarea cols="20" rows="5"></textarea>
+                <textarea id="game_Tit" cols="20" rows="5"></textarea>
+                <label for="topic_img">
+                <input type="file" id="topic_img"></input>
+                </label>
                 </div>
-                <ul class="answer_list">
+                <ol class="answer_list">
                     <li>
                         <span>A.</span>
                         <input class="bd_style"></input>
@@ -106,54 +124,75 @@ window.addEventListener('load', () => {
                         <span>C.</span>
                         <input class="bd_style"></input>
                     </li>
-                </ul>
+                </ol>
                 <div class="answer">
                     <input class="bd_style"></input>
                 </div>
                 <div class="Audit_results">
                     <span class="center">
-                    <input class="game_isON" id="game_ps" type="checkbox" value="1">
+                    <input class="game_isON" id="game_ps" type="checkbox" value="0">
                     </span>
                     <div id="create_game_yes">確定新增</div>
                     <div id="create_game_no">取消新增</div>
                 </div>
             </li>
             `)
+            createGame();
             //關閉createBtn的點擊聆聽功能
             createBtn.removeEventListener('click', createFun, true);
             //取消新增createBtn點擊聆聽功能
             $id('create_game_no').addEventListener('click', cancelCreateTopit, true);
         } else if (createBtn.textContent == "新增商品") {
-            console.log('現在是要新增商品');
+            // console.log('現在是要新增商品');
             $('.product_list').prepend(`
                 <li class="p_product" id="create_product">
-                <div class="product_img">
-                    <div class="create_product_img"></div>
-                </div>
-                <div class="main_data">
-                    <select name="" id="">
-                        <option value="Epidemic_prevention_glasses">防疫眼鏡</option>
-                        <option value="Protective_clothing">防護衣</option>
-                        <option value="Anti_epidemic_masks">防疫口罩</option>
-                    </select>
-                    <textarea name="" id="" cols="29" rows="5"></textarea>
-                </div>
-                <div class="category">
-                    <p>上架時間</p>
-                    <input type="date" name="" id="">
-                </div>
-                <div class="Audit_results">
-                    <span class="center">
-                    <input class="product_isON" id="product_psi" type="checkbox" value="">
-                    </span>
-                    <div id="create_product_yes">確定新增</div>
-                    <div id="create_product_no">取消新增</div>
-                </div>
+                    <div class="product_img_div">
+                        <input class="uploadimg" id="product-img-upload" type="image" src="./image/member/interface.png" />
+                        <input class="uploadbtn" type="file" id="upload"/>
+                        <p class="fing warning_color"></p>
+                    </div>
+                    <div class="main_data">
+                        <select name="" id="imageKind">
+                            <option value="">--請選擇--</option>
+                            <option value="clothe">防護衣</option>
+                            <option value="goggle">防疫眼鏡</option>
+                            <option value="mask">防疫口罩</option>
+                        </select>
+                        <p class="kind-warning warning_color"></p>
+
+                        <textarea name="" id="product-desc" cols="29" rows="5"></textarea>
+                        <p class="desc-warning warning_color"></p>
+                    </div>
+                    <div class="category" id="create_date_item">
+                        <p>上架時間</p>
+                        <input type="date" name="" id="pro-time">
+                        <p class="time-warning warning_color"></p>
+
+                        <p>上架名</p>
+                        <input type="text" name="" id="pro-id">
+                        <p class="id-warning warning_color"></p>
+
+                        <p>上架價格</p>
+                        <input type="text" name="" id="pro-price">
+                        <p class="pri-warning warning_color"></p>
+                    </div>
+                    <div class="Audit_results">
+                        <span class="center">
+                            <input class="product_isON" id="product_psi" type="checkbox" value="0">
+                        </span>
+                        <div id="create_product_yes">確定新增</div>
+                        <div id="create_product_no">取消新增</div>
+                    </div>
             </li>`)
             //關閉createBtn的點擊聆聽功能
             createBtn.removeEventListener('click', createFun, true);
             //取消新增createBtn點擊聆聽功能
             $id('create_product_no').addEventListener('click', cancelCreateProduct, true);
+
+            $("input.uploadimg").click(function() {
+                $("input.uploadbtn").click();
+            });
+            newProduct();
         }
     }
 
@@ -179,51 +218,134 @@ window.addEventListener('load', () => {
             listBar.style.top = (50 * index) + 'px';
         })
     });
-
-    let edit = () => {
+    // 編輯功能
+    let edit_cancel = () => {
+        let arrPf = [];
+        // 建立mgmt_title為基礎的自動迴圈
         Array.from($csa('mgmt_title')).forEach((memitem, index) => {
+            // 判斷前兩個不允許做編輯
             if ($tag('h1')[index].textContent == $id('tag_title').textContent) {
                 if ($tag('h1')[index].textContent == "會員列表") {
                     alert(`${memitem.textContent}表單無法修改`)
                 } else if ($tag('h1')[index].textContent == "檢舉案件") {
                     alert(`${memitem.textContent}表單無法修改`)
                 } else {
-                    console.log($csa('data'));
-                    Array.from($csa('data')).forEach((data, index) => {
-                        // $csa('data')[index].children[0].children[0].classList.add('edit_focus')
-                        console.log(data.children);
-                    });
+                    // 後面五個可以做編輯且判斷底下的每一個class有沒有edit_focus沒有的話加上，有的話取消
+                    let objects = $csa('data')[index].querySelectorAll('ul>li')
+                    if($csa('data')[index].querySelectorAll('ul>li')[0] == undefined){
+                        return
+                    }
+                    if ($csa('data')[index].querySelectorAll('ul>li')[0].classList.contains('edit_focus')) {
+                        for (let j = 0; j < objects.length; j++) {
+                            objects[j].classList.remove('edit_focus')
+                            objects[j].querySelector('#edit_cancel').classList.remove('on');
+                            // 編輯按鈕文字切換
+                            $id('edit').textContent = '編輯';
+                        }
 
-
-                    // for (let j = 0; j < $csa('data').length; j++) {
-                    //     $csa('data')[index].children[0].children[j].classList.add('edit_focus')
-                    // }
-                }
-                // console.log($csa('data')[index]);
-
-            }
+                        arrPf.push('');
+                    } else {
+                        let objects = $csa('data')[index].querySelectorAll('ul>li')
+                        for (let j = 0; j < objects.length; j++) {
+                            
+                            
+                            objects[j].classList.add('edit_focus')
+                            $id('edit').textContent = '取消';
+                            objects[j].querySelector('#edit_cancel').classList.add('on');
+                        }
+                        arrPf.push(objects);
+                    };
+                    
+                };
+            };
         });
+        // console.log(arrPf);
+        
+        // removeDiscussion(arrPf);
     };
 
-    $id('edit').addEventListener('click', edit, true);
+    $id('edit').addEventListener('click', edit_cancel, true);
+
+    function createGame() {
+        let submit = $id('create_game_yes');
+        let isOpen = 0;
+        // 題目啟用狀態
+        $id('game_ps').addEventListener('change', function () {
+            if ($id('game_ps').value == 0) {
+                $id('game_ps').value = 1;
+                isOpen = $id('game_ps').value;
+            } else {
+                $id('game_ps').value = 0;
+                isOpen = $id('game_ps').value;
+            }
+        })
 
 
+        // 新增遊戲題目
+        if (!submit) {
+            return
+        } else {
+            // console.log($id('topic_img'));
+            //照片儲存路徑
+            $id('topic_img').addEventListener('change', imgHandler);
+            submit.addEventListener('click', () => {
+                let ImgPath = sessionStorage.getItem('ImgPath');
+                fetch('./PHP_program/Back_End/B_E_game_import.php', {
+                    method: "post",
+                    body: JSON.stringify({
+                        //將資料傳送到後端處理
+                        gameTit: $id('game_Tit').value,
+                        gameSele_1: $csa('bd_style')[0].value,
+                        gameSele_2: $csa('bd_style')[1].value,
+                        gameSele_3: $csa('bd_style')[2].value,
+                        game_Ans: $csa('bd_style')[3].value,
+                        game_IMG: ImgPath,
+                        game_isOpen: isOpen
+                    }),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                    }
+                }).then(resp => {
+                    return resp.text();
+                }).then(text => {
+                    alert(text);
+                    // 清除所有欄位資料
+                        $id('game_Tit').value ='';
+                        $csa('bd_style')[0].value='';
+                        $csa('bd_style')[1].value='';
+                        $csa('bd_style')[2].value='';
+                        $csa('bd_style')[3].value='';
+                        $id('game_ps').value = 0;
+                        $id('game_ps').checked = false;
+
+                        sessionStorage.clear();
+                }).catch(err => {
+                    console.log(err);
+
+                })
+
+            })
+        }
+    }
+    //新增遊戲儲存照片檔案及位置
+    function imgHandler(e) {
+        sessionStorage.clear();
+        const xhrsend = new XMLHttpRequest();
+        const Data = new FormData();
+        let indexName = e.target.files[0].name.indexOf('.');
+        let fileName = e.target.files[0].name.substring(0, indexName);
+
+        // 路徑可能需更改
+        let ImgPath = './image/game/img/' + e.target.files[0].name;
+        sessionStorage.setItem('ImgPath', ImgPath);
+        Data.append('one', e.target.files[0], fileName);
+        xhrsend.open("post", "./image/game/img/Back_End_IMG.php");
+        xhrsend.send(Data);
+        alert('照片儲存成功')
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 });
-
-
-

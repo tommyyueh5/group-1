@@ -8,10 +8,7 @@
     // border: 5px solid red;
     width: 90%;
     // width: 1280px;
-
     height: 600px;
-
-    
     overflow: hidden;
     position: relative;
     // min-width: 1280px;
@@ -20,7 +17,6 @@
         width: 95%;
         height: 500px;
     }
-    
 }
 
 #slideContainer {
@@ -28,7 +24,7 @@
     width: 4800px;
     height: 100%;
     position: relative;
-    background-image: url('/dev/image/sop/background0.png');
+    background-image: url('../../dest/image/sop/background0.png');
     background-size: contain;
 }
 
@@ -48,6 +44,41 @@
         }
     }
 }
+
+
+.mobile-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 1;
+    transform: translate(-50%);
+    display: none;
+    @include rwd(mobile) {
+        display: block;
+        width: 100%;
+    }
+    .left-pic {
+        float: left;
+        width: 50px;
+        height:  50px;
+    }
+
+    .right-pic {
+        float: right;
+        width: 50px;
+        height:  50px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+
+
 
 .keyhint {
     border: 2px solid orange;
@@ -81,9 +112,7 @@
     left: -23%;
     opacity: 0;
     cursor: pointer;
-    animation:  pointer1 2s ease-in 2s 1 normal paused forwards, 
-                secmaskmove 1s ease-in 3s infinite normal paused none;
-    
+    animation: pointer1 2s ease-in 2s 1 normal paused forwards, secmaskmove 1s ease-in 3s infinite normal paused none;
     img {
         display: block;
         width: 100%;
@@ -91,7 +120,7 @@
     }
 }
 
-@keyframes pointer1{
+@keyframes pointer1 {
     0% {
         opacity: 0;
     }
@@ -100,7 +129,7 @@
     }
 }
 
-@keyframes secmaskmove{
+@keyframes secmaskmove {
     0% {
         left: -23%;
     }
@@ -109,14 +138,9 @@
     }
 }
 
-
-
-
-
 .airplane {
     position: absolute;
     left: 1%;
-    
     .airplane-img {
         width: 50%;
         @include rwd(mobile) {
@@ -133,7 +157,6 @@
         width: 61%;
         opacity: 0;
     }
-
     @include rwd(mobile) {
         left: 2.5%;
         bottom: 10%;
@@ -141,7 +164,6 @@
             width: 25%;
         }
     }
-
     .joke-small {
         width: 62px;
         height: 50px;
@@ -155,14 +177,11 @@
             left: 2%;
         }
     }
-    
     .joke-small-img {
         width: 100%;
         opacity: 0;
-        
     }
 }
-
 
 //attendants
 .miss {
@@ -178,36 +197,30 @@
         width: 80px;
         height: 160px;
     }
-    
 }
 
 @keyframes eyes {
     0% {
-        background-image: url('/dev/image/sop/miss.png');
+        background-image: url('../../dest/image/sop/miss.png');
     }
     20% {
-        background-image: url('/dev/image/sop/miss2.png');
+        background-image: url('../../dest/image/sop/miss2.png');
     }
     40% {
-        background-image: url('/dev/image/sop/miss.png');
+        background-image: url('../../dest//image/sop/miss.png');
     }
     60% {
-        background-image: url('/dev/image/sop/miss2.png');
+        background-image: url('../../dest//image/sop/miss2.png');
     }
     80% {
-        background-image: url('/dev/image/sop/miss.png');
+        background-image: url('../../dest//image/sop/miss.png');
     }
     100% {
-        background-image: url('/dev/image/sop/miss2.png');
+        background-image: url('../../dest//image/sop/miss2.png');
     }
 }
+
 //attendants
-
-
-
-
-
-
 .joke {
     width: 200px;
     height: 400px;
@@ -254,16 +267,12 @@
             width: 100px;
             height: 200px;
         }
-
         .sec1-mo-img {
             width: 100%;
         }
-
-
         .pointer-2 {
             width: 60px;
             height: 60px;
-            
             position: absolute;
             transform: rotate(90deg);
             top: -15%;
@@ -271,13 +280,12 @@
             opacity: 1;
             animation: pointer2 1s ease-in 0s infinite normal running none;
             cursor: pointer;
-
             @include rwd(mobile) {
                 width: 34px;
                 height: 34px;
                 top: -15%;
                 left: 28%;
-                @keyframes pointer2{
+                @keyframes pointer2 {
                     0% {
                         left: 28%;
                     }
@@ -295,7 +303,7 @@
     }
 }
 
-@keyframes pointer2{
+@keyframes pointer2 {
     0% {
         left: -23%;
     }
@@ -303,9 +311,6 @@
         left: -24%;
     }
 }
-
-
-
 
 .sec1-home-out {
     position: absolute;
@@ -321,8 +326,6 @@
         width: 100%;
     }
 }
-
-
 
 @keyframes mark {
     0% {
@@ -341,7 +344,7 @@
     width: 100px;
     top: -27%;
     right: -34%;
-    z-index: 2;
+    z-index: 10;
     cursor: pointer;
     animation: mark 1s infinite;
     @include rwd(mobile) {
@@ -376,6 +379,7 @@
     border: 5px solid rgb(204, 204, 204);
     background-color: white;
     width: 300px;
+    line-height: 27px;
     position: absolute;
     right: 18%;
     top: 2%;
@@ -406,16 +410,28 @@
 }
 
 .sec1-mask-pic {
-    border: 5px solid white;
+    // border: 5px solid white;
     display: inline-block;
     text-align: center;
+    animation: bounce;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(8%);
+    }
 }
 
 .sec1-mask-img {
     width: 35%;
 }
-
-
 
 .show-hint {
     opacity: 1;
@@ -439,8 +455,6 @@
     transition: opacity 2s ease 2.5s, left 2s ease, bottom 2s ease;
 }
 
-
-
 .sign {
     position: absolute;
     width: 100%;
@@ -452,43 +466,35 @@
     animation: sign 2s ease-in 0s 1 normal paused forwards;
     img {
         display: inline-block;
-        width: 71%;
-        height: 91%;
-        margin: 20px;
-        
+        width: 700px;
+        // height: 91%;
+        // margin: 20px;
     }
     p {
         position: absolute;
-        bottom: 65%;
+        bottom: 56%;
         left: 50%;
-        transform: translateX(-50%);
-        font-size: 50px;
+        font-size: 46px;
         text-align: center;
+        font-weight: bold;
+        transform: translateX(-50%);
+        white-space: nowrap;
         @include rwd(mobile) {
             font-size: 16px;
         }
         a {
             text-decoration: none;
-            color: black;  
+            color: black;
         }
     }
-
-
 }
 
 @keyframes sign {
-    0%{
-    }
-    100%{
+    0% {}
+    100% {
         bottom: 0%;
     }
 }
-
-
-
-
-
-
 
 //開
 div.plane {
@@ -512,7 +518,6 @@ div.plane {
             height: 48%;
         }
     }
-
     .airplane_pic {
         height: 120px;
         position: absolute;
@@ -537,16 +542,7 @@ div.plane {
 }
 
 //開
-
-
-
-
-
-
 //
-
-
-
 .tower {
     position: absolute;
     bottom: 9%;
@@ -561,12 +557,12 @@ div.plane {
     height: 50px;
     position: absolute;
     top: 53%;
-    left: 11%;
+    left: 13%;
 }
 
 .container {
     animation: marquee linear 55s infinite 10s;
-    padding-left: 100%;
+    padding-left: 103%;
 }
 
 .container p {
@@ -576,7 +572,7 @@ div.plane {
 
 @keyframes marquee {
     0% {
-        transform: translateX(0%);
+        transform: translateX(2%);
     }
     100% {
         transform: translateX(-1150%);
@@ -617,7 +613,6 @@ div.pha {
     animation-play-state: paused;
     @include rwd(mobile) {
         width: 100px;
-        
     }
 }
 
@@ -641,6 +636,7 @@ div.pha {
     /* border: 1px snow solid; */
     border: 5px solid rgb(204, 204, 204);
     background-color: white;
+    line-height: 27px;
     width: 300px;
     font-size: 20px;
     @include rwd(mobile) {
@@ -840,203 +836,41 @@ div.pha {
     bottom: 10%;
 }
 
-
-
-
-
-// #text {
-//     display: inline-block;
-//     position: absolute;
-//     left: 184px;
-//     bottom: 329px;
-//     padding: 18px;
-//     border-radius: 30px;
-//     /* border: 1px snow solid; */
-//     border: 5px solid rgb(204, 204, 204);
-//     background-color: white;
-//     width: 300px;
-//     font-size: 20px;
-// }
-
-// #cloud {
-//     position: absolute;
-//     top: 10%;
-//     left: 5%;
-// }
-
-// #cloud img {
-//     width: 20%;
-// }
-
-// .cloud2 {
-//     position: absolute;
-//     top: 15%;
-//     left: 50%;
-// }
-
-// .cloud2 img {
-//     width: 20%;
-// }
-
-// #item {
-//     position: absolute;
-//     top: 5%;
-//     left: 35%;
-//     width: 5%;
-//     padding: 10px;
-//     animation-name: maskin;
-//     animation-timing-function: ease-in;
-//     animation-duration: 2s;
-//     animation-delay: 2.5s;
-//     opacity: 1;
-//     animation-fill-mode: backwards;
-//     animation-play-state: paused;
-// }
-
-// #item2 {
-//     position: absolute;
-//     top: 5%;
-//     left: 40%;
-//     width: 5%;
-//     padding: 10px;
-//     animation-name: maskin2;
-//     animation-timing-function: ease-in;
-//     animation-duration: 2s;
-//     animation-delay: 3s;
-//     opacity: 1;
-//     animation-fill-mode: backwards;
-//     animation-play-state: paused;
-// }
-
-// #item3 {
-//     position: absolute;
-//     top: 5%;
-//     left: 45%;
-//     width: 5%;
-//     padding: 10px;
-//     animation-name: maskin3;
-//     animation-timing-function: ease-in;
-//     animation-duration: 2s;
-//     animation-delay: 3.5s;
-//     opacity: 1;
-//     animation-fill-mode: backwards;
-//     animation-play-state: paused;
-// }
-
-// #item #img1 {
-//     width: 80%;
-// }
-
-// #item2 #img2 {
-//     width: 80%;
-// }
-
-// #item3 #img3 {
-//     width: 80%;
-// }
-
-// #item:hover {
-//     border: 8px solid whitesmoke;
-// }
-
-// #item2:hover {
-//     border: 8px solid whitesmoke;
-// }
-
-// #item3:hover {
-//     border: 8px solid whitesmoke;
-// }
-
-// #item:hover h2 {
-//     opacity: 1;
-// }
-
-// #item:hover span {
-//     opacity: 1;
-// }
-
-// #item2:hover h2 {
-//     opacity: 1;
-// }
-
-// #item2:hover span {
-//     opacity: 1;
-// }
-
-// #item3:hover h2 {
-//     opacity: 1;
-// }
-
-// #item3:hover span {
-//     opacity: 1;
-// }
-
-// h2,
-// span.info {
-//     color: rgb(36, 36, 36);
-//     text-shadow: grey 0.02em 0.02em;
-//     opacity: 1;
-//     transition: linear .3s;
-// }
-
-// @keyframes maskin {
-//     0% {
-//         opacity: 0;
-//     }
-//     100% {
-//         opacity: 1;
-//     }
-// }
-
-// @keyframes maskin2 {
-//     0% {
-//         opacity: 0;
-//     }
-//     100% {
-//         opacity: 1;
-//     }
-// }
-
-// @keyframes maskin3 {
-//     0% {
-//         opacity: 0;
-//     }
-//     100% {
-//         opacity: 1;
-//     }
-// }
-
-// #alcohol,
-// #soap,
-// #ther {
-//     opacity: 1;
-//     animation-name: appear;
-//     animation-timing-function: linear;
-//     animation-duration: 1s;
-//     animation-play-state: paused;
-//     animation-fill-mode: backwards;
-//     z-index: 10;
-//     text-align: center;
-//     margin: 10px auto;
-// }
-
-// @keyframes appear {
-//     0% {
-//         opacity: 0;
-//     }
-//     100% {
-//         opacity: 1;
-//     }
-// }
-
-// #alcohol img {
-//     width: 50%;
-// }
-
-// #soap img {
-//     width: 50%;
-// }
-
-// #ther img {
-//     width: 45%;
-// }  
+@media (max-width:991px) {
+    .sign {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        // left: 14%;
+        bottom: -100%;
+        text-align: center;
+        z-index: 15;
+        animation: sign 2s ease-in 0s 1 normal paused forwards;
+        img {
+            display: inline-block;
+            width: 500px;
+            margin-top: 60px;
+            // height: 91%;
+            // margin: 20px;
+            @include rwd(mobile) {
+                width: 320px;
+                transform: translateY(30px);
+            }
+        }
+        p {
+            position: absolute;
+            bottom: 60%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 29px;
+            text-align: center;
+            @include rwd(mobile) {
+                font-size: 24px;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}

@@ -12,11 +12,13 @@ window.addEventListener('load', function () {
     //當點擊確認時執行以下
     $id('pwsSumit').addEventListener('click', function () {
         //判斷變更及確認必須要一樣及不能空值,不一樣則告知
-        if ($id('pws2').value == $id('pws1').value || $id('pws1').value == '' && $id('pws2').value == '') {
+        if (($id('pws1').value).trim() == ($id('pws2').value).trim()  || $id('pws1').value == '' && $id('pws2').value == '') {
+                console.log(($id('pws2').value).trim());
+                
             // 當修改成功就更改儲存到session
-            sessionStorage.setItem('showPws', $id('pws2').value);
+            sessionStorage.setItem('showPws', ($id('pws2').value).trim());
             // 密碼直接變更
-            $id('showPws').textContent = sessionStorage.getItem('showPws');
+            // $id('showPws').textContent = sessionStorage.getItem('showPws'); <<暫無需求
             // 用ajax傳到後端處理
             xhr.onload = function () {
                 //接收後端傳來資料
@@ -29,10 +31,10 @@ window.addEventListener('load', function () {
                     // 請使用者再次登入新密碼
                     alert(xhr.responseText);
                     // 登出
-                    window.location.href = '../../dest/homepage.html';
+                    window.location.href = './homepage.html';
                 }
             }
-            xhr.open('post', '../../dest/PHP_program/updatePws.php',true);
+            xhr.open('post', './PHP_program/updatePws.php',true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             let pws_info = `showPws=${sessionStorage.getItem('showPws')}&no=${sessionStorage.getItem('no')}`;
             // 新密碼及編號傳送到後端修改

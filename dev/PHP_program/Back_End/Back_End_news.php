@@ -1,9 +1,9 @@
 <?php
 // session_start();
 try {
-  require_once("../connectdd106g1.php");  
+  require_once("./../connectdd106g1.php");  
   //選取資料表
-  $sql = "select  NEWS_IMG_PATH, NEWS_TIT, NEWS_C_NO, NEWS_PUBLISH_DATE, NEWS_NO, NEWS_PUB from news";
+  $sql = "select  NEWS_IMG_PATH, NEWS_TIT, NEWS_C_NO,NEWS_CON, NEWS_PUBLISH_DATE, NEWS_NO, NEWS_PUB from news";
   //pdo請求資料庫
   $news = $pdo->query($sql);
 

@@ -1,55 +1,76 @@
+.newTitle {
+    width: 100%;
+    // height: 10%;
+    padding: 30px 60px;
+    background: #333;
+    display: flex;
+    align-items: center;
+
+    .titleImg {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    h1 {
+        letter-spacing: 1px;
+        font-size: $sub_titleFs;
+        color: #fff;
+    }
+}
 .merge-game-Carousel {
     // width: 100vw;
     height: 100vh;
     overflow: hidden;
     // background-color: #f0f;
 
+    
     //遊戲頁面
     .game-container {
         width: 100%;
-        height: 70%;
+        height: 100%;
         // padding: 20px;
-        position: relative;
+        // position: relative;
 
         >.game-background {
             width: 100%;
             height: 100%;
-           
-            background: url('../image/index-game-page/homepageGame.gif') center center no-repeat #000;
-            // background-size: cover;
-            // border-radius: 5px;
-            //遊戲圖片 background-image: url();
 
             >.context {
-                position: absolute;
-                left: 50%;
-                top: 0%;
-                transform: translate(-50%, -20%);
                 width: 50%;
-                // height: 20%;
-                // background-color: #000;
-                // padding: 10px 0;
+                margin: 0 auto;
+                padding: 30px 0;
 
                 >p {
                     text-align: center;
                     font-size: 24px;
                     font-weight: 700;
-                    color: #fff;
+                    color: #000;
                     letter-spacing: 1px;
                     line-height: 1.5;
-                    // text-shadow: 0 1px 1px #fff;
+                }
+            }
+            .gameImgBox{
+                width: 70%;
+                height: 70%;
+                margin: 0 auto;
+                >img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
             }
 
             >.game-btn {
                 width: 150px;
                 height: 50px;
-                position: absolute;
-                left: 50%;
-                top: 95%;
-                transform: translate(-50%, -100%);
+                margin: 0 auto;
                 border-radius: 40%;
-                // overflow: hidden;
 
                 >a {
                     display: inline-block;
@@ -99,84 +120,6 @@
             }
         }
     }
-
-
-    //輪播商品
-    .Carousel {
-        width: 100%;
-        height: 30%;
-        background-color: #000;
-
-        >.title {
-            width: 35%;
-            height: 10%;
-            text-align: center;
-
-            p {
-                font-size: 24px;
-                line-height: 1.3;
-                letter-spacing: 1px;
-                color: #fff;
-            }
-        }
-
-        //商品頁面
-        >.Carousel-Container {
-            max-width: 100%;
-            height: 90%;
-            padding: 30px 0;
-            box-sizing: border-box;
-            position: relative;
-            // background-color: #f00;
-
-            >.swiper-container-games {
-                width: 100%;
-                height: 100%;
-                // background-color: #f0f;
-                // margin: 0 auto;
-
-                >.swiper-wrapper {
-                    width: 100%;
-                    height: 100%;
-                    // background-color: #f0f;
-                    
-
-                    >.swiper-slide {
-                        // height: 100%;
-                        text-align: center;
-                        font-size: 18px;
-                        // background: #fff;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        border-radius: 5px;
-
-                        >a {
-                            display: inline-block;
-                            // width: inherit;
-                            // height: inherit;
-                            width: 100%;
-                            height: 100%;
-                            // background-color: #ff00ff;
-                            >img {
-
-                                width: 100%;
-                                height: 100%;
-                                border-radius: 5px;
-                                // object-fit: cover;
-                            }
-                        }
-                    }
-                }
-            }
-            .swiper-pagination-bullets-dynamic{
-                padding: 15px 0 ;
-                margin: 0 auto;
-                left: none; 
-                 transform: none; 
-            }
-        }
-    }
 }
 
 
@@ -190,21 +133,20 @@
     
 }
 @include rwd(mobile) {
+    .merge-game-Carousel .game-container > .game-background > .context > p{
+        font-size:$rwd_layout_title;
+    }
     .merge-game-Carousel .game-container > .game-background{
         background-size: contain;
     }
 
     .merge-game-Carousel .game-container > .game-background > .context{
-        top: 10%;
-        transform: translate(-50%, -10%);
         width: 80%;
-        height: 50%;
+    }
+    .merge-game-Carousel .game-container > .game-background .gameImgBox{
+        width: 100%;
     }
 
-    .merge-game-Carousel .game-container > .game-background > .game-btn{
-        top: 90%;
-        transform: translate(-50%, -90%);
-    }
     .merge-game-Carousel .game-container > .game-background > .game-btn > a{
         height: 90%;
     }

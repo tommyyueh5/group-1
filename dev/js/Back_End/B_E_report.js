@@ -1,64 +1,100 @@
 window.addEventListener('load', () => {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            const news_data = JSON.parse(xhr.responseText);
-            console.log(news_data);
-            for (let i = 0; i < news_data.length; i++) {
-                $('.news_list').append(
-                `
-                <li class="p_news">
-                <div class="news_img">
-                    <img src="${news_data[i]["NEWS_IMG_PATH"]}" alt="">
-                </div>
-                <div class="main_data">
-                    <h1 class="news_title">${news_data[i]["NEWS_TIT"]}</h1>
-                    <ul class="news_tag">
-         
-                    
-                    </ul>
-                    <p>${news_data[i]["NEWS_CON"]}
-                    </p>
-                </div>
-                <div class="category">
-                    <p>最新消息</p>
-                    <h1 class="tag">台灣新聞</h1>
-                    <p class="category_date">${news_data[i]["NEWS_PUBLISH_DATE"]}</p>
-                </div>
-                <div class="Audit_results">
-                    <span class="center">
-                        <input type="checkbox" name="">
-                    </span>
-                </div>
-            </li>
-            `
-            )
-            };
+
+
+    fetch('./PHP_program/Back_End/Back_End_report.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+        }
+
+    }).then(resp => {
+        if (resp.status == 200) {
+            return resp.json();
+        }
+    }).then(FetchData => {
+        Array.from(FetchData).forEach((report, index) => {
+            let report_list_P = document.querySelector('.report_list');
+            let createLi = document.createElement('li');
+            createLi.classList.add('p_member');
+            // console.log(report);
             
+            let render = `
+                        <div class="main_data">
+                            <h1 class="report_title">${report.DIS_TIT}</h1>
+                            <div class="in_box">
+                                <div class="class_data">
+                                    <p>討論區<span>/</span></p>
+                                    <h1 class="tag">${report.DIS_C}</h1>
+                                </div>
+                                <img src="${report.MEM_IMG}" alt="">
+                                <h1>${report.MEM_ACC}</h1>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <h1 class="category_text">${report.REP_C_REA}</h1>
+                            <p class="category_date">${report.REP_DATE}</p>
+                        </div>
+                        <div class="Audit_results">
+                            <span class="center">
+                                <input class="report_isON" id="report_psi${index}" type="checkbox" value="${report.VER_SIT}">
+                            </span>
+                        </div>
+                    `;
+            createLi.innerHTML = render;
+            report_list_P.appendChild(createLi)
+            // console.log(report);
+            let pData = document.querySelectorAll('.report_isON');
 
-            let pData = document.querySelectorAll('.isON');
+           
+            
             pData.forEach((p, i) => {
-                if (p.value == 1) {
-                    p.checked = true;
-                    $(`#aaa_${news_data[i].GAME_NO}`).click(function () {
+                
+                if (p.value) {
 
-                        if ($(`#aaa_${news_data[i].GAME_NO}`).val() == 0) {
-                            $(`#aaa_${news_data[i].GAME_NO}`).val(1);
+                    $(`#report_psi${i}`).click(function (e) {
+                        if ($(`#report_psi${i}`).val() == 0) {
+                            $(`#report_psi${i}`).val(1);
+                            p.checked = true;
+                            fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
+                                method:'POST',
+                                body:JSON.stringify({
+                                    "REPORTSNum":FetchData[i].REP_NO,
+                                    "PositionNum":$(`#report_psi${i}`).val()
+                                }),
+                                headers:{
+                                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                                }
+                            }).then(resp=>{
+                                return resp.text();
+                            }).then(alertShow=>{
+                                alert(alertShow);
+                            })
                         } else {
-                            $(`#aaa_${news_data[i].GAME_NO}`).val(0);
+                            $(`#report_psi${i}`).val(0);
+                            p.checked = false;
+                            fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
+                                method:'POST',
+                                body:JSON.stringify({
+                                    "REPORTSNum":FetchData[i].REP_NO,
+                                    "PositionNum":$(`#report_psi${i}`).val()
+                                }),
+                                headers:{
+                                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                                }
+                            }).then(resp=>{
+                                return resp.text();
+                            }).then(alertShow=>{
+                                alert(alertShow);
+                            })
                         }
                     })
                 } else {
                     p.checked = false;
                 }
-               
             });
-        } else {
-            alert(xhr.status);
-        }
-    }
-    xhr.open("Get", "../../../dest/php/Back_End/Back_End_MEM_data.php", true);
-    xhr.send(null);
+        })
+    }).catch(err => {
+        console.log(err);
+    })
+  
 });
-
-

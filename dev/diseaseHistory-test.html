@@ -1019,12 +1019,12 @@
                 });
             }
 
-            window.addEventListener('resize', function (event) {
-                event.stopPropagation();
-                let widthw = document.body.clientWidth;
-                location.href = `/dev/diseaseHistory-test.html?${mybook}`;
+            // window.addEventListener('resize', function (event) {
+            //     event.stopPropagation();
+            //     let widthw = document.body.clientWidth;
+            //     location.href = `/dev/diseaseHistory-test.html?${mybook}`;
                 
-            });
+            // });
         }
 
         function dofirst() {
@@ -1043,15 +1043,15 @@
                 closeB.addEventListener('click', function (e) {
                     console.log(e.target)
                     backgroundC.style.display = 'none';
-                    location.href = `/dev/diseaseHistory-test.html`;
+                    // location.href = `/dev/diseaseHistory-test.html`;
                 })
 
             })));
-            if (location.search.split("?book")[1]) {
-                let search = (location.search.split("?book")[1]) - 1;
-                console.log(document.querySelectorAll('.box').length);
-              document.querySelectorAll('.box')[1].click();
-            }
+            // if (location.search.split("?book")[1]) {
+            //     let search = (location.search.split("?book")[1]) - 1;
+            //     console.log(document.querySelectorAll('.box').length);
+            //   document.querySelectorAll('.box')[1].click();
+            // }
         }
 
 

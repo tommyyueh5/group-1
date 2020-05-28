@@ -10,10 +10,11 @@ window.addEventListener('load', () => {
                 $('.care_list').append(
                     `
                     <li class="p_care">
+                    <div id="edit_cancel">刪除</div>
                     <div class="care_topic">
                         <h1>${care_data[i]["MAN_CON"]}</h1>
                     </div>
-                    <ul class="answer_list">
+                    <ol class="answer_list">
                         <li>
                             <span>1.</span>
                             <p>咳嗽</p>
@@ -26,8 +27,8 @@ window.addEventListener('load', () => {
                             <span>3.</span>
                             <p>無</p>
                         </li>
-                    </ul>
-                    <ul class="gat_point">
+                    </ol>
+                    <ol class="gat_point">
                         <li>
                             <span>+</span>
                             <p>8</p>
@@ -40,7 +41,7 @@ window.addEventListener('load', () => {
                             <span>+</span>
                             <p>0</p>
                         </li>
-                    </ul>
+                    </ol>
                     <div class="Audit_results">
                         <span class="center">
                         <input class="care_isON" id="care_psi${care_data[i].MAN_NO}" type="checkbox" value="${care_data[i].MAN_ANS}">
@@ -73,7 +74,7 @@ window.addEventListener('load', () => {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/PHP/Back_End/Back_End_cares.php", true);
+    xhr.open("Get", "./PHP_program/Back_End/Back_End_cares.php", true);
     xhr.send(null);
 });
 

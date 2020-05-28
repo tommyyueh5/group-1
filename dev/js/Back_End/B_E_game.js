@@ -4,29 +4,31 @@ window.addEventListener('load', () => {
     xhr.onload = function () {
         if (xhr.status == 200) {
             const game_data = JSON.parse(xhr.responseText);
+            sessionStorage.setItem('game_data',xhr.responseText)
             // console.log(game_data);
             for (let i = 0; i < game_data.length; i++) {
                 $('.game_list').append(`
                 <li class="p_game">
+                <div id="edit_cancel">刪除</div>
                 <div class="game_topic">
-                    <h1>${game_data[i]["question"]}</h1>
+                    <textarea id="game_h1_edit" rows="3 class="edit_on" disabled>${game_data[i]["question"]}</textarea>
                 </div>
-                <ul class="answer_list">
+                <ol class="answer_list">
                     <li>
-                        <span>A.</span>
-                        <p>${game_data[i]["choiceA"]}</p>
+                        <span>A.</span> 
+                        <input class="edit_on" disabled="disabled" value="${game_data[i]["choiceA"]}"></input>
                     </li>
                     <li>
                         <span>B.</span>
-                        <p>${game_data[i]["choiceB"]}</p>
+                        <input class="edit_on" disabled="disabled" value="${game_data[i]["choiceB"]}"></input>
                     </li>
                     <li>
                         <span>C.</span>
-                        <p>${game_data[i]["choiceC"]}</p>
+                        <input class="edit_on" disabled="disabled" value="${game_data[i]["choiceC"]}"></input>
                     </li>
-                </ul>
+                </ol>
                 <div class="answer">
-                    <p>${game_data[i]["correct"]}.${game_data[i]["RIGHT_ANSWER"]}</p>
+                    <input class="edit_on" disabled="disabled" value="${game_data[i]["correct"]}.${game_data[i]["RIGHT_ANSWER"]}"></input>
                 </div>
                 <div class="Audit_results">
                     <span class="center">
@@ -45,21 +47,49 @@ window.addEventListener('load', () => {
                 } else {
                     p.checked = false;
                 };
-                $(`#game_psi${game_data[i].GAME_NO}`).click(function () {
+                $(`#game_psi${game_data[i].GAME_NO}`).click(function (e) {
 
                     if ($(`#game_psi${game_data[i].GAME_NO}`).val() == 0) {
                         $(`#game_psi${game_data[i].GAME_NO}`).val(1);
+                        fetch('./PHP_program/Back_End/Back_End_GAME_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "GameNum":game_data[i].GAME_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     } else {
                         $(`#game_psi${game_data[i].GAME_NO}`).val(0);
+                        fetch('./PHP_program/Back_End/Back_End_GAME_updatePosition.php',{
+                            method:'POST',
+                            body:JSON.stringify({
+                                "GameNum":game_data[i].GAME_NO,
+                                "PositionNum":e.currentTarget.value
+                            }),
+                            headers:{
+                                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+                            }
+                        }).then(resp=>{
+                            return resp.text();
+                        }).then(alertShow=>{
+                            alert(alertShow);
+                        })
                     }
-                    console.log(p);
+                    // console.log(p);
                 });
             });
         } else {
             alert(xhr.status);
         }
     }
-    xhr.open("Get", "../../../dest/php/Back_End/Back_End_game.php", true);
+    xhr.open("Get", "./PHP_program/Back_End/Back_End_game.php", true);
     xhr.send(null);
 
 });

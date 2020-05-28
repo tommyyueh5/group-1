@@ -5,7 +5,7 @@
 
     >.newTitle {
         width: 100%;
-        padding: 20px;
+        padding: 30px 60px;
         background: #333;
         display: flex;
         align-items: center;
@@ -23,7 +23,7 @@
         >h1{
             letter-spacing: 1px;
             color: #fff;
-            font-size: 24px;
+            font-size:  $sub_titleFs;
         }
     }
 }
@@ -75,7 +75,7 @@
                 }
 
                 .timeline-title {
-                    font-size: 24px;
+                    font-size: $sub_titleFs;
                     margin: 10px 0;
                     opacity: 1;
                     transform: translate3d(20px, 0, 0);
@@ -88,8 +88,9 @@
                 }
 
                 .timeline-text {
-                    font-size: 20px;
-                    line-height: 1.5;
+                    font-size: $layout_content;
+                    padding: 0 20px;
+                    line-height: 1.6;
                     opacity: 1;
                     transform: translate3d(20px, 0, 0);
                     transition: .2s ease .6s;
@@ -99,7 +100,7 @@
                     font-weight: 700;
                     color: #222;
                     // padding: 20px;
-                    letter-spacing: 3px;
+                    // letter-spacing: 0px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     display: -webkit-box;
@@ -277,12 +278,15 @@
 
     .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text {
         margin-top: 0px;
-        font-size: 18px;
-        letter-spacing: 2px;
+        font-size: $rwd_layout_content;
+        letter-spacing: 1px;
     }
 }
 
 @include rwd(small) {
+    .page-4 > .newTitle > h1{
+        font-size: $rwd_layout_title;;
+    }
 
     .swiper-container .swiper-wrapper .swiper-slide-content .timeline-text {
         margin-top: initial;
@@ -327,8 +331,8 @@
         left: 25%;
         top: 25%;
         transform: translate(-25%, 0);
-        height: 65%;
-        padding: 0 15px;
+        height: 55%;
+        padding: 0 20px;
     }
 
     .swiper-container .swiper-wrapper .swiper-slide-content::before {

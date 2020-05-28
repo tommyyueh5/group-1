@@ -250,7 +250,7 @@
 			this.$el.append( this.$items );
 
 			// main wrapper
-			this.$el.wrap( '<div class="elastislide-wrapper elastislide-loading elastislide-' + this.options.orientation + '"></div>' );
+			// this.$el.wrap( '<div class="elastislide-wrapper elastislide-loading elastislide-' + this.options.orientation + '"></div>' );
 
 			// check if we applied a transition to the <ul>
 			this.hasTransition = false;
@@ -330,7 +330,7 @@
 		},
 		_layout : function() {
 
-			this.$el.wrap( '<div class="elastislide-carousel"></div>' );
+			// this.$el.wrap( '<div class="elastislide-carousel"></div>' );
 
 			this.$carousel = this.$el.parent();
 			this.$wrapper = this.$carousel.parent().removeClass( 'elastislide-loading' );
@@ -397,8 +397,8 @@
 			
 			this.$items.css( {
 				'width' : w + '%',
-				'max-width' : this.imgSize.width,
-				'max-height' : this.imgSize.height
+				// 'max-width' : this.imgSize.width,
+				// 'max-height' : this.imgSize.height
 			} );
 
 			if( this.options.orientation === 'vertical' ) {
@@ -494,14 +494,14 @@
 			$window.off( '.elastislide' );
 			
 			this.$el.css( {
-				'max-height' : 'none',
+				// 'max-height' : 'none',
 				'transition' : 'none'
 			} ).unwrap( this.$carousel ).unwrap( this.$wrapper );
 
 			this.$items.css( {
 				'width' : 'auto',
-				'max-width' : 'none',
-				'max-height' : 'none'
+				// 'max-width' : 'none',
+				// 'max-height' : 'none'
 			} );
 
 			this.$navigation.remove();

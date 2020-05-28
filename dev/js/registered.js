@@ -30,38 +30,38 @@ window.addEventListener('load', () => {
                 let RP =  ($id('RG_Pwd').value).trim();
                 
                 
-            if($id('RG_Email')){
-                if (RE.length == 0) {
-                    alert('您的信箱長度不能為空值');
-                    return
-                }
-                if (RN.length == 0) {
-                    alert('您的名稱長度不能為空值');
-                    return
-                }
-                if (RP.length == 0) {
-                    alert('您的密碼長度不能為空值');
-                    return
-                }
+            if (RE.length == 0) {
+                alert('您的信箱長度不能為空值');
+                return
+            }
+            if (RN.length == 0) {
+                alert('您的名稱長度不能為空值');
+                return
+            }
+            if (RP.length == 0) {
+                alert('您的密碼長度不能為空值');
+                return
             }
 
             let isOpen = sessionStorage.getItem('open')
             // =================註冊信箱判定======================
             if (isOpen == 200) {
                 let isOk = JSON.parse(sessionStorage.getItem('isdone'))
-                if (isOk.isJudgeDone == "false") {
+                console.log(isOk.isJudgeDone);
+                
+                if (isOk.isJudgeDone == false) {
                     xhr.onload = function () {
                         if (xhr.status == 200) {
 
                             sessionStorage.clear();
                             alert(xhr.responseText)
-                            window.location.href = '../../dest/homepage.html';
+                            window.location.href = './homepage.html';
                         }
                     }
 
-                    xhr.open("POST", "../../dest/PHP_program/registered.php", true);
+                    xhr.open("POST", "./PHP_program/registered.php",true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-                    let registerd_info = `RG_Email=${$id('RG_Email').value}&RG_Name=${$id('RG_Name').value}&RG_Pwd=${$id('RG_Pwd').value}`;
+                    let registerd_info = `RG_Email=${$id('RG_Email').value}&RG_Name=${$id('RG_Name').value}&RG_Pwd=${$id('RG_Pwd').value}&RG_ImgDf=./image/mem_image/WhoAmi.jpg`;
                     console.log(registerd_info);
                     xhr.send(registerd_info);
 
@@ -78,7 +78,7 @@ window.addEventListener('load', () => {
             isrule: false,
             isJudgeDone: true
         };
-
+        
         sessionStorage.setItem('isdone', JSON.stringify(Done))
         let JudgeXhr = new XMLHttpRequest();
         emailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
@@ -88,18 +88,23 @@ window.addEventListener('load', () => {
             JudgeXhr.onload = function () {
                 if (Done.isrule) {
                     //資料庫如果給的值是true就代表以(有重複)，給false(就代表可以使用)
-                    Done.isJudgeDone = JudgeXhr.responseText;
-                    sessionStorage.setItem('isdone', JSON.stringify(Done))
-                    sessionStorage.setItem('open', JudgeXhr.status)
+                    
+                    
+                    num = JudgeXhr.responseText.indexOf('false');
+                    
+                    Done.isJudgeDone = JudgeXhr.responseText.substring(num,JudgeXhr.responseText.length) == 'false'? false:null;
+                    // console.log(Done.isJudgeDone);
+                    console.log(JSON.stringify(Done));
+                    sessionStorage.setItem('isdone',JSON.stringify(Done));
+                    sessionStorage.setItem('open', JudgeXhr.status);
                 }
             }
-            JudgeXhr.open("POST", "../../dest/PHP_program/registeredJudge.php", true)
+            JudgeXhr.open("POST", "./PHP_program/registeredJudge.php", true)
             JudgeXhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             let Judge_info = `RG_Email=${$id('RG_Email').value}`;
             JudgeXhr.send(Judge_info)
 
         } else {
-            alert('註冊信箱格式不正確');
             sessionStorage.clear();
         }
     }

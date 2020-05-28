@@ -8,8 +8,8 @@ function $cs(cs) {
 }
 
 window.addEventListener('load',function(){
-    let no = sessionStorage.getItem('no');
-    // console.log(no);
+    const noNum = sessionStorage.getItem('no');
+    console.log(noNum);
     
     let xhr = new XMLHttpRequest();
     xhr.onload = function(){
@@ -17,6 +17,7 @@ window.addEventListener('load',function(){
            let importData = JSON.parse(xhr.responseText) ;
             // 資料處理
             // console.log(importData);
+            console.log(xhr.responseText);
             
             if (importData.length == undefined){
                 return
@@ -25,15 +26,15 @@ window.addEventListener('load',function(){
             }
         }
     }
-    xhr.open("POST", "../../dest/PHP_program/MEM_Meg.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded")
-    xhr.send(`no=${no}`);
+    xhr.open("POST", "./PHP_program/MEM_Meg.php");
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    xhr.send(`no=${noNum}`);
 
   
 });
 function MemMegHandler(datas){
     const contaniner = $cs('tab2');
-
+        
         datas.forEach(data=>{
              let ele = document.createElement('div');
                 ele.classList.add('record');

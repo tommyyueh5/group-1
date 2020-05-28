@@ -6,15 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     @@include('./LAYOUT/head.html')
-    <link rel="stylesheet" href="../dest/css/forum.css">
-
-    <!-- <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
-    <link rel="stylesheet" href="../dest/node_modules/slick/slick.css"> -->
-    <!-- <script src="../dest/node_modules/jquery/jquery.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="../dest/node_modules/slick/slick-theme.css">
-    <link rel="stylesheet" href="../dest/node_modules/slick/slick.css"> -->
+    <link rel="stylesheet" href="./css/forum.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -22,8 +16,7 @@
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
     <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <!-- <script src="../dest/node_modules/slick/slick.min.js"></script> -->
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -33,11 +26,9 @@
     <main>
         <!-- 麵包屑 -->
         <div class="bread_crumbs">
-            <a href="../dest/index.html"><span>Home</span></a> &gt;
-            <a href=""><span>Events</span></a> &gt;
-            <a href=""><span>Iran attack</span></a>
+            <a href="./homepage.html"><span>首頁</span></a> &gt;
+            <a href="./forum.html" ><span id="bread">討論區</span></a>
         </div>
-
         <!-- 彩虹跑馬燈 -->
         <div class="marquee_container">
 
@@ -46,465 +37,198 @@
             </p>
 
         </div>
-
         <!-- 左邊filter -->
         <aside class="filter">
-            <div class="filter_order">
+            <div class="filter_time">
                 <div>
-                    <a href="#" data-target="tab5" class="tab"><img src="/dest/image/forum/fire.png">
+                    <a href="#" data-target="tab1" class="tab tab_first"><img src="./image/forum/fire.png">
                         <h2>熱門程度</h2>
                     </a>
                 </div>
                 <div>
-                    <a href="#" data-target="tab6" class="tab "><img src="/dest/image/forum/arrow.png">
-                        <h2>關注趨勢</h2>
-                    </a>
-                </div>
-                <div>
-                    <a href="#" data-target="tab7" class="tab"><img src="/dest/image/forum/clock.png">
+                    <a href="#" data-target="tab3" class="tab tab_third"><img src="./image/forum/clock.png">
                         <h2>即時發佈</h2>
                     </a>
                 </div>
-
-                <a href="#" data-target="tab1" class="tab -on">
+            </div>
+            <div class="filter_order">
+                <a href="#" data-target="tab1" class="tab -on" id="tab1">
                     <h3>疫情資訊</h3>
                 </a>
 
-                <a href="#" data-target="tab2" class="tab">
+                <a href="#" data-target="tab2" class="tab" id="tab2">
                     <h3>新聞</h3>
                 </a>
 
-                <a href="#" data-target="tab3" class="tab">
+                <a href="#" data-target="tab3" class="tab" id="tab3">
                     <h3>八卦</h3>
                 </a>
 
-                <a href="#" data-target="tab4" class="tab">
+                <a href="#" data-target="tab4" class="tab" id="tab4">
                     <h3>迷因</h3>
                 </a>
             </div>
         </aside>
-
         <!-- 右邊section幻燈片 -->
         <section class="top_slide_container">
             <div class="post">
-                <input id="title" type="text" placeholder="你想下的標題？"><br>
+                <input id="title" type="text" placeholder="按我發個文吧～"><br>
                 <div class="postimg">
                     <form id="upfile">
                         <input class="oldPath" id="upload" type="file" name="uploads">
                     </form>
                     <select name="sort" id="sort">
                         <option>要發什麼版？</option>
-                        <option value="1">疫情資訊版</option>
-                        <option value="2">新聞版</option>
-                        <option value="3">八卦版</option>
-                        <option value="4">迷因版</option>
+                        <option value="疫情資訊">疫情資訊版</option>
+                        <option value="新聞">新聞版</option>
+                        <option value="八卦">八卦版</option>
+                        <option value="迷因">迷因版</option>
                     </select>
                 </div>
                 <textarea id="content" type="text" rows="1" placeholder="你想說的內容？"></textarea><br>
-                <button id="postBtn" type="submit" onclick="uploadData();uploadImg()">發文</button>
+                <button id="postBtn" type="submit">發文</button>
                 <button id="canBtn">取消</button>
             </div>
-
             <canvas id="canvas"></canvas>
-
         </section>
-        <!-- 左邊filter -->
+        <!-- RWD的filter -->
         <aside class="filter filter2">
             <div class="filter_left">
                 <span>條件篩選</span><input id="filter_con" type="button" value="&or;">
                 <div>
-                    <a href="#" data-target="tab5" class="tab"><img src="/dest/image/forum/fire.png">
+                    <a data-target="tab1" class="tab tab_first">
                         <h2>熱門程度</h2>
                     </a>
                 </div>
-                <div>
-                    <a href="#" data-target="tab6" class="tab "><img src="/dest/image/forum/arrow.png">
+                <!-- <div>
+                    <a data-target="tab2" class="tab tab_second"><img src="./image/forum/arrow.png">
                         <h2>關注趨勢</h2>
                     </a>
-                </div>
+                </div> -->
                 <div>
-                    <a href="#" data-target="tab7" class="tab"><img src="/dest/image/forum/clock.png">
+                    <a data-target="tab3" class="tab tab_third">
                         <h2>即時發佈</h2>
                     </a>
                 </div>
             </div>
             <div class="filter_right">
-                <span>主題分類</span><input id="filter_top" type="button" value="&or;">
-                <a href="#" data-target="tab1" class="tab -on">
+                <span>疫情資訊</span><input id="filter_top" type="button" value="&#9660">
+                <a data-target="tab1" class="tab -on">
                     <h3>疫情資訊</h3>
                 </a>
-
-                <a href="#" data-target="tab2" class="tab">
+                <a data-target="tab2" class="tab">
                     <h3>新聞</h3>
                 </a>
 
-                <a href="#" data-target="tab3" class="tab">
+                <a data-target="tab3" class="tab">
                     <h3>八卦</h3>
                 </a>
 
-                <a href="#" data-target="tab4" class="tab">
+                <a data-target="tab4" class="tab">
                     <h3>迷因</h3>
                 </a>
             </div>
         </aside>
         <div class="background"></div>
+        <div class="report">
+            <h2>檢舉原因</h2>
+            <label for="label1">字幕問題
+                <input type="radio" name="report_cheak" value="0" id="label1">
+            </label>
+            <label for="label1">色情內容
+                <input type="radio" name="report_cheak" value="1" id="label1">
+            </label>
+            <label for="label1">暴力或令人厭惡的內容
+                <input type="radio" name="report_cheak" value="2" id="label1">
+            </label>
+            <label for="label1">仇恨或惡意內容
+                <input type="radio" name="report_cheak" value="3" id="label1">
+            </label>
+            <label for="label1">人身安全之急迫危險
+                <input type="radio" name="report_cheak" value="4" id="label1">
+            </label>
+            <label for="label1">有害的危險行為
+                <input type="radio" name="report_cheak" value="5" id="label1">
+            </label>
+            <label for="label2">虐待兒童
+                <input type="radio" name="report_cheak" value="6" id="label2">
+            </label>
+            <label for="label3">宣傳恐怖主義
+                <input type="radio" name="report_cheak" value="7" id="label3">
+            </label>
+            <label for="label4">垃圾內容或誤導性內容
+                <input type="radio" name="report_cheak" value="8" id="label4">
+            </label>
+            <label for="label5">侵犯我的權利
+                <input type="radio" name="report_cheak" value="9" id="label5">
+            </label>
+            <button id="sendReport">送出</button>
+            <button id="cancelReport">取消</button>
+        </div>
         <!-- section 中間文章內容 -->
         <section class="content_container">
             <div class="article_content">
+                <img class="close" src="./image/forum/close.png">
                 <h2 class="article_content_title"></h2>
                 <h3 class="article_content_time"></h3>
                 <div class="left">
-                    <img class="thumbnail" src="/dest/image/forum/thum_img1.jpeg" alt="">
+                    <img class="thumbnail" src="./image/forum/thum_img1.jpeg" alt="">
                     <span class="article_content_name"></span>
                     <span class="article_content_no"></span>
                 </div>
                 <div class="right">
-                    <img src="/dest/image/forum/facebook.png" alt="">
-                    <img src="/dest/image/forum/twitter.png" alt="">
-                    <img src="/dest/image/forum/line.png" alt="">
-                    <img src="/dest/image/forum/instagram.png" alt="">
+                    <img src="./image/forum/facebook.png" alt="">
+                    <!-- <img src="./image/forum/twitter.png" alt=""> -->
+                    <img src="./image/forum/line.png" alt="">
+                    <img id="report" src="./image/forum/alert.png">
                 </div>
-                <img class="main_pic" src="/dest/image/forum/comment_pic1.png" alt="">
+                <img class="main_pic" src="./image/forum/comment_pic1.png" alt="">
                 <p class="article_text"></p>
                 <hr>
-                <img class="thumbnail2" src="/dest/image/forum/thum_img1.jpeg" alt="">
+                <img class="thumbnail2" src="./image/forum/thum_img1.jpeg" alt="">
                 <textarea id="comment_text" type="text" rows="2" placeholder="講話啊白癡......."></textarea>
-                <button type="submit" id="postCom" onclick="uploadCom();showComment()"></button>
+                <button type="submit" id="postCom"></button>
                 <div class="comment">
-                    <!-- <h2><img src="/dest/image/forum/thum_img2.png">貓草：
-                        <span>我看了很久，這衣服真的很二次元ww</span>
-                        <span class="time">2020年04月09日 08:54</span>
-                    </h2>
-                    <h2><img src="/dest/image/forum/thum_img9.jpeg">貓屎：
-                        <span>我看了很久，這衣服真的很二次元ww</span>
-                        <span class="time">2020年04月09日 08:54</span>
-                    </h2>
-                    <h2><img src="/dest/image/forum/thum_img7.png">貓尿：
-                        <span>我看了很久，這衣服真的很二次元ww</span>
-                        <span class="time">2020年04月09日 08:54</span>
-                    </h2> -->
                 </div>
             </div>
             <div class="tab_contents">
-                <div class="subtitle_1 ">
-                    <h3>疫情資訊</h3>
-                    <hr>
+                <!-- tab1 疫情資訊-->
+
+                <div class="tab tab1 -on row masonry">
+                    <div class="subtitle_1 col-sm-12 item ">
+                        <h3>疫情資訊</h3>
+                        <hr>
+                    </div>
                 </div>
-                <!-- tab1 -->
-                <div class="tab tab1 -on row masonry"></div>
+                <div class="tab tab2  row masonry">
+                    <div class="subtitle_1 col-sm-12 item ">
+                        <h3>新聞</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="tab tab3  row masonry">
+                    <div class="subtitle_1 col-sm-12 item ">
+                        <h3>八卦</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="tab tab4  row masonry">
+                    <div class="subtitle_1 col-sm-12 item ">
+                        <h3>迷因</h3>
+                        <hr>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     @@include('./LAYOUT/footer.html')
-
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/forum/forum.js"></script>
+    <script src="./js/forum/forum_Back.js"></script>
     <script>
-        // 撈留言資料顯示在前端
-        function showComment() {
-            // console.log(articleNo);
-            var article_No = $('.article_content_no').text();
-            console.log(article_No);
-            $.ajax({
-                url: '../dest/PHP/getcomment.php',
-                type: "POST",
-                dataType: 'json',
-                data: {
-                    articleNo: article_No,
-                },
-                success(data) {
-                    //先清空前面留言資料不然會重複
-                    $(".comment").html('');
-                    for (let i = 0; i < data.length; i++) {
-                        userId = data[i].MEM_ACC;
-                        userPic = data[i].MEM_IMG;
-                        userCom = data[i].COM_CON;
-                        comTime = data[i].COM_DATE;
-                        //動態新增留言欄位
-                        $('.comment').append(`
-                        <h2 id="commentId"><img src="${userPic}">${userId}：
-                            <span>${userCom}</span>
-                            <span class="time">${comTime}</span>
-                        </h2>
-                        `)
-                    }
-                }
-            })
-        }
-        // 撈後端文章資料顯示在前端
-        function showData() {
-            $.ajax({
-                url: '../dest/PHP/getinfo.php',
-                type: 'GET',
-                dataType: 'json',
-                success(data) {
-                    // console.log(data.length);
-                    // console.log(data[0].MEM_NO);
-                    // console.log(data);
-                    for (let i = 0; i < data.length; i++) {
-                        userName = data[i].MEM_ACC;
-                        nowTime = data[i].DIS_EST;
-                        // topic = data[i].DIS_C_NO;
-                        thumImg = data[i].MEM_IMG
-                        imgPath = data[i].DIS_IMG_PATH;
-                        artitle = data[i].DIS_TIT;
-                        artcon = data[i].DIS_CON;
-                        artNo = data[i].DIS_NO
-                            //動態新增要加的欄位
-                        $('.masonry').append(`
-                            <div class="article col-sm-12 col-md-6 col-lg-6 col-xl-4 item ">
-                                <div class="item_content">
-                                    <div class="date">
-                                        <h4 class="year">${nowTime}</h4>
-                                    </div>
-                                    <div class="info">
-                                        <img class="thum_img" src="${thumImg}">
-                                        <h4 class="username">${userName}</h4>
-                                    </div>
-                                    <h2 class="article_title">${artitle}</h2>
-                                    <img class="main_img" src="${imgPath}" alt="">
-                                    <p class="article_contentp">${artcon}</p>
-                                    <p class="article_contentno">${artNo}</p>
-                                    <h4 class="like_comment"><span class="likes"></span>讚<span class="comments">40</span>留言</h4>
-                                    <h4 class="function">
-                                        <img class="heart" src="../dest/image/forum/like.png">
-                                        <img class="share" src="../dest/image/forum/share.png">
-                                    </h4>
-                                    <h4 class="function2">
-                                        <img class="facebook" src="../dest/image/forum/facebook.png" alt="">
-                                        <img class="line" src="../dest/image/forum/line.png" alt="">
-                                    </h4>
-                                </div>
-                            </div>
-                        `)
-                    }
-                },
-                error: function(xhr) {
-                    alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
-                }
-            });
-        }
-        // 傳發文的資料到後端
-        function uploadData() {
-            var memno = sessionStorage.getItem('no');
-            console.log(memno);
-            $.ajax({
-                url: '../dest/PHP/post.php',
-                type: 'POST',
-                dataType: 'html',
-                data: {
-                    memno: memno,
-                    sort: $('#sort').val(),
-                    title: $('#title').val(),
-                    content: $('#content').val(),
-                    path: $(".oldPath")[0].files[0].name,
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.responseText);
-                },
-                success: function(data) {
-                    alert('success: ' + data);
-                    location.href = 'forum.html';
-                }
-            });
-        };
-        // 傳留言資料到後端
-        function uploadCom() {
-            var memno = sessionStorage.getItem('no');
-            var titleNo = $('.article_content_title').text();
-            var articleNo = $('.article_content_no').text();
-            // console.log(articleNo);
-            $.ajax({
-                url: '../dest/PHP/comment.php',
-                type: "POST",
-                dataType: 'html',
-                data: {
-                    articleNo: articleNo,
-                    memno: memno,
-                    comment: $('#comment_text').val(),
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    alert(jqXHR.responseText);
-                },
-                success: function(data) {
-                    alert('success: ' + data);
-                    // location.href = 'forum.html';
-                    $('#comment_text').val('');
-                }
-            });
-        };
-        //發文的圖片上傳
-        function uploadImg() {
-            var form = new FormData(document.getElementById('upfile'))
-
-            $.ajax({
-                url: '../dest/PHP/upload.php',
-                type: "POST",
-                data: form,
-                processData: false,
-                contentType: false,
-                success: function(data) {
-                    alert(data);
-                }
-            });
-        };
-        //載入圖片避免重疊
-        function imgLoad() {
-            /* 瀑布流區塊div */
-            var $container = $('.masonry');
-            //當圖片讀取完畢才執行
-            $container.imagesLoaded(function() {
-                //選擇瀑布流的區塊名稱
-                $container.masonry({
-                    itemSelector: '.item',
-                })
-            });
-        };
-        $(document).ready(function() {
-            showData();
-            imgLoad();
-            $("a.tab").on("click", function(e) {
-                e.preventDefault();
-
-                $(this).closest(".filter_order").find("a.tab").removeClass("-on");
-                $(this).addClass("-on");
-
-                $("div.tab").removeClass("-on");
-                $("div.tab." + $(this).attr("data-target")).addClass("-on");
-            });
-            //動態新增物件 建立聆聽事件
-            //文章燈箱
-            $(".masonry").on("click", '.main_img,.article_title', function(e) {
-                var parr = $(this).parent('.item_content');
-                var thisTime = parr.find('.year');
-                var thisTitle = parr.find('.article_title');
-                var thisThum = parr.find('.thum_img');
-                var thisName = parr.find('.username');
-                var thisImg = parr.find('.main_img');
-                var thisContent = parr.find('.article_contentp');
-                var oldSrc = thisThum.attr('src');
-                var oldSrc2 = thisImg.attr('src');
-                var textext = thisTime.text();
-                var thisNo = parr.find('.article_contentno');
-                var textNum = thisNo.text();
-
-                // console.log(textNo);
-
-                // 頭像
-                $('.thumbnail').attr('src', oldSrc);
-                // 名稱
-                $('.article_content_name').text(thisName.text());
-                // 標題
-                $('.article_content_title').text(thisTitle.text());
-                //文章編號
-                $('.article_content_no').text(textNum);
-                // 時間
-                $('.article_content_time').text(thisTime.text());
-                // 圖片
-                $('.main_pic').attr('src', oldSrc2);
-                // 內文
-                $('.article_text').text(thisContent.text());
-                var status = $('#login_btn').text();
-                var userImage = sessionStorage.getItem('memImg');
-                console.log(userImage);
-
-                if (status == "登入") {
-                    $('.thumbnail2').attr('src', '/dest/image/forum/noface.png');
-                } else {
-                    $('.thumbnail2').attr('src', userImage);
-                };
-                $(".article_content").show();
-                $(".background").show();
-                e.stopPropagation();
-                showComment();
-
-            });
-            $(".article_content").on("click", function(e) {
-                e.stopPropagation();
-
-            });
-            $(".post,#upload,#content,#postBtn").on("click", function(e) {
-                e.stopPropagation();
-
-            });
-            $("body").on("click", function() {
-                $(".article_content,.background").hide();
-                $('.post').css('background-color', 'unset');
-                $('#upload').hide();
-                $('#content').hide();
-                $('#postBtn').hide();
-                $('#canBtn').hide();
-                $('#sort').hide();
-            });
-            //條件篩選
-            $("#filter_con").on("click", function() {
-                $(".filter_left div").slideToggle();
-            });
-            $("#filter_top").on("click", function() {
-                $(".filter_right h3").slideToggle();
-            });
-            $(".filter_right h3").on("click", function(e) {
-                // console.log($(this).text());
-                // console.log($(".filter_right span").text());
-                $(".filter_right span").text($(this).text());
-                $(".filter_right h3").slideToggle();
-            });
-            $(".filter_left div").on("click", function(e) {
-                // console.log($(this).text());
-                $(".filter_left span").text($(this).text());
-                $(".filter_left div").slideToggle();
-            });
-            // 發文按鈕  沒登入不能發文
-            $('#title').on("click", function() {
-                var status = $('#login_btn').text();
-                if (status == "登入") {
-                    alert("請先登入才能發文！！");
-                } else {
-                    $('.post').css('background-color', 'rgba(128, 128, 128, 0.6)');
-                    $('#upload').show();
-                    $('#content').show();
-                    $('#postBtn').show();
-                    $('#canBtn').show();
-                    $('.postimg').show();
-                    $('#sort').show();
-                };
-            });
-            //沒登入不能留言
-            $('#comment_text').on("click", function() {
-                var status = $('#login_btn').text();
-                if (status == "登入") {
-                    alert("請先登入才能留言！！");
-                }
-            });
-            $('#postCom').on("click", function() {
-                var status = $('#login_btn').text();
-                if (status == "登入") {
-                    alert("請先登入才能留言！！");
-                } else {
-                    // location.reload();
-                    // $("#commentId").load(location.href + " #commentId");
-                    showComment();
-                }
-            });
-            $('#postBtn,#canBtn').on("click", function() {
-                $('#upload').hide();
-                $('#content').hide();
-                $('#postBtn').hide();
-                $('#canBtn').hide();
-                $('.postimg').hide();
-                $('#sort').hide();
-                $('.post').css('background-color', 'unset');
-            });
-        });
-        // window.addEventListener('load', function() {
-        //     imgLoad();
-        //     showData();
-        //     showComment();
-        // });
+        AOS.init();
     </script>
-
-    </script>
-
 </body>
 
 </html>
