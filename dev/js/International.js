@@ -61,7 +61,7 @@ window.addEventListener('load', function () {
             item.addEventListener('click', function () {
 
                 
-                console.dir(document.body);
+                // console.dir(document.body);
                 document.body.style.overflow = 'hidden';
                 
                 

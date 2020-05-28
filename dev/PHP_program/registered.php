@@ -1,7 +1,7 @@
 
 <?php
 try {
-    require_once("connectdd106g1.php");
+    require_once("./connectdd106g1.php");
     $RG_Email = $_POST["RG_Email"];
     $RG_Name = $_POST["RG_Name"];
     $RG_Pwd = $_POST["RG_Pwd"];

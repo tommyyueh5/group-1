@@ -14,7 +14,7 @@ window.addEventListener('load',function(){
         if(xhr.status == 200){
            let importData = JSON.parse(xhr.responseText) ;
             // 資料處理
-            console.log(importData);
+            // console.log(importData);
             // console.log(importData.length);
             
             if(importData.length == undefined){

@@ -1,8 +1,5 @@
 <?php
-
 try {
-    
-
     require_once("./connectdd106g1.php");
     $emeEmail = $_POST["emeEmail"];
     $emePaw = $_POST["emePaw"];

@@ -1,6 +1,4 @@
 <?php
-
-
 try{
     require_once("./connectdd106g1.php");
     $sql = "UPDATE `discussion` SET `DIS_IMG_PATH`= :newPath WHERE DIS_IMG_PATH = :oldPath ";

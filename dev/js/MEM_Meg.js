@@ -28,7 +28,7 @@ window.addEventListener('load',function(){
     }
     xhr.open("POST", "./PHP_program/MEM_Meg.php",true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-    console.log(noNum);
+    // console.log(noNum);
     
     xhr.send(`no=${noNum}`);
 

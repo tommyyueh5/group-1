@@ -536,7 +536,7 @@ window.addEventListener('load', function() {
             startDelay: 2000,
         }).go();
     });
-    console.log(maskImg);
+    // console.log(maskImg);
     
     maskImg.addEventListener('click', function() {
         mask.classList.add('sec1-mask-move');

@@ -1,8 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: http://localhost:8888');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
-
 try{
 
     require_once("./connectdd106g1.php");
@@ -13,7 +9,7 @@ try{
     FROM `MEMBER`,`DISCUSSION`
     WHERE `MEMBER`.`MEM_NO` = `DISCUSSion`.`MEM_NO` 
     AND `DISCUSSION`.`DIS_C` = :disCon
-    AND `DISCUSSION`.`DIS_PUB` =1"; 
+    AND `DISCUSSION`.`DIS_PUB` =0"; 
 
     
 

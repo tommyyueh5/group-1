@@ -47,7 +47,7 @@ window.addEventListener('load', () => {
             // =================註冊信箱判定======================
             if (isOpen == 200) {
                 let isOk = JSON.parse(sessionStorage.getItem('isdone'))
-                console.log(isOk.isJudgeDone);
+                // console.log(isOk.isJudgeDone);
                 
                 if (isOk.isJudgeDone == false) {
                     xhr.onload = function () {
@@ -62,7 +62,7 @@ window.addEventListener('load', () => {
                     xhr.open("POST", "./PHP_program/registered.php",true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                     let registerd_info = `RG_Email=${$id('RG_Email').value}&RG_Name=${$id('RG_Name').value}&RG_Pwd=${$id('RG_Pwd').value}&RG_ImgDf=./image/mem_image/WhoAmi.jpg`;
-                    console.log(registerd_info);
+                    // console.log(registerd_info);
                     xhr.send(registerd_info);
 
                 } else {
@@ -94,7 +94,7 @@ window.addEventListener('load', () => {
                     
                     Done.isJudgeDone = JudgeXhr.responseText.substring(num,JudgeXhr.responseText.length) == 'false'? false:null;
                     // console.log(Done.isJudgeDone);
-                    console.log(JSON.stringify(Done));
+                    // console.log(JSON.stringify(Done));
                     sessionStorage.setItem('isdone',JSON.stringify(Done));
                     sessionStorage.setItem('open', JudgeXhr.status);
                 }

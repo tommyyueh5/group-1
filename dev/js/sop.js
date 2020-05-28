@@ -79,7 +79,7 @@ window.addEventListener('load', function(){
 
     // plane
     mask1.onclick = function() {
-        console.log(mask1, mask2, mask3);
+        // console.log(mask1, mask2, mask3);
         let tag1 = document.createElement('div');
         tag1.innerHTML = `<div id="ther" style="animation-play-state:running">
                             <img src="./image/Epidemic-prevention-SOP/ther.png" alt="">

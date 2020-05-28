@@ -1,5 +1,4 @@
 <?php
-
 try{
     require_once("./connectdd106g1.php");
     // if($_SERVER['REQUEST_METHOD']=="POST"){

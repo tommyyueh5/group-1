@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
     $id('pwsSumit').addEventListener('click', function () {
         //判斷變更及確認必須要一樣及不能空值,不一樣則告知
         if (($id('pws1').value).trim() == ($id('pws2').value).trim()  || $id('pws1').value == '' && $id('pws2').value == '') {
-                console.log(($id('pws2').value).trim());
+                // console.log(($id('pws2').value).trim());
                 
             // 當修改成功就更改儲存到session
             sessionStorage.setItem('showPws', ($id('pws2').value).trim());
