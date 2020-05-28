@@ -1,7 +1,7 @@
 section.page-3 {
     width: 100%;
     // height: 100vh;
-    background-color: #393E46;
+    background-color: #000;
 
     .container-bottom {
         width: 100%;
@@ -104,8 +104,8 @@ section.page-3 {
 
                 h1 {
                     letter-spacing: 1px;
-                    font-size: $sub_titleFs;
                     color: #fff;
+                    font-size: $main_titleFs;
                 }
             }
 
@@ -158,8 +158,10 @@ section.page-3 {
                                     display: inline-block;
                                     font-size: 20px;
                                     color: #fff;
+                                    border-radius: 50%;
                                     width: 30px;
-                                    height: 30px;                                    // background-color: #f00;
+                                    height: 30px;
+                                    background-color: #f00;
                                     line-height: 1.5;
                                     box-sizing: border-box;
                                 }
@@ -416,12 +418,6 @@ section.page-3 {
     }
 }
 @include rwd(small) {
-    section.page-3 .container-bottom .bottom-right .newTitle h1{
-        font-size: $rwd_layout_title;
-    }
-    section.page-3 .container-bottom .bottom-right .newTitle{
-        padding: 15px 60px;
-    }
     section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template .grid-top-left > div{
         height: 240px;
     }
@@ -446,7 +442,6 @@ section.page-3 {
 
 }
 @include rwd(mobile) {
-    
     section.page-3 .container-bottom .bottom-right .box .inside-right .grid-template{
         margin-bottom: 15px;
     height: 250px;
