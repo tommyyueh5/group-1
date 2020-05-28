@@ -9,7 +9,7 @@ function $cs(cs) {
 
 window.addEventListener('load',function(){
     const noNum = sessionStorage.getItem('no');
-    console.log(noNum);
+    // console.log(noNum);
     
     let xhr = new XMLHttpRequest();
     xhr.onload = function(){
@@ -17,7 +17,7 @@ window.addEventListener('load',function(){
            let importData = JSON.parse(xhr.responseText) ;
             // 資料處理
             // console.log(importData);
-            console.log(xhr.responseText);
+            // console.log(xhr.responseText);
             
             if (importData.length == undefined){
                 return
@@ -26,8 +26,10 @@ window.addEventListener('load',function(){
             }
         }
     }
-    xhr.open("POST", "./PHP_program/MEM_Meg.php");
+    xhr.open("POST", "./PHP_program/MEM_Meg.php",true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    console.log(noNum);
+    
     xhr.send(`no=${noNum}`);
 
   

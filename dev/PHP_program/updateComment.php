@@ -1,8 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: http://localhost:8888');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
-header('Content-Type: application/json; charset=UTF-8');
+
 try{
     require_once("./connectdd106g1.php");
     // if($_SERVER['REQUEST_METHOD']=="POST"){

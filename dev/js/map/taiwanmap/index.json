@@ -84,6 +84,17 @@
             "number": "17",
             "name": "嘉義縣",
             "brithplace": "2"
+        },
+        {
+            "number": "18",
+            "name": "花蓮縣",
+            "brithplace": "0"
+        },
+        {
+            "number": "19",
+            "name": "臺東縣",
+            "brithplace": "0"
         }
+     
     ]
 }

@@ -16,7 +16,6 @@ div.bread_crumbs {
   box-sizing: border-box;
   padding: 15px 0 15px 80px;
   font-size: 20px;
-  // color: rgb(155, 155, 155);
   background-image: url(./../image/backroung/background-color.jpg);
   @include rwd(medium) {
     display: none;
@@ -200,7 +199,6 @@ html { height: 100%; }
 
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    // background: #ddd url(../images/bg.jpg) repeat top left;
     font-weight: 300;
     font-size: 15px;
     color: #333;
@@ -230,7 +228,10 @@ a {
 	/* max-width: 960px; */
 	padding: 0 10px;
 	margin: 2% auto;
-	position: relative;
+  position: relative;
+  @include rwd(mobile){
+    margin-top: 20px;
+  }
 }
 
 .main > header {
@@ -351,10 +352,9 @@ a {
 	width: 100%;
 	/* max-width: 450px; */
 	margin: 0 auto;
-	border-radius: 20px;
+	// border-radius: 20px;
 	position: relative;
-	background: #000 url(../images/black_denim.png);
-	box-shadow: 0 2px 1px rgba(255,255,255,0.9), 0 -2px 1px rgba(255,255,255,0.9);
+	// box-shadow: 0 2px 1px rgba(255,255,255,0.9), 0 -2px 1px rgba(255,255,255,0.9);
 }
 
 .lt-ie8 .elastislide-list {
@@ -476,7 +476,6 @@ a {
 
 .demo-3 .elastislide-horizontal.elastislide-loading,
 .demo-4 .elastislide-horizontal.elastislide-loading {
-	background-image: url(../images/loading_dark.gif);
 }
 
 .demo-4 .elastislide-carousel ul li a{
@@ -536,7 +535,7 @@ html {
 .js .gallery {
   width: 90%;
   margin: 0 auto;
-  border-radius: 20px;
+  // border-radius: 20px;
   position: relative;
   background: #000;
 }
@@ -639,6 +638,7 @@ html {
 
 .elastislide-carousel ul li {
   margin: 0;
+  padding: 1% 2%;
 }
 .elastislide-carousel ul li a {
   display: inline-block;
@@ -1146,6 +1146,9 @@ div.cards_content {
 .news_container {
   width: 100%;
   margin: auto;
+  @include rwd(mobile){
+    margin-top: 50px;
+  }
   h1 {
     font-size: 24px;
     color: white;
@@ -1224,6 +1227,9 @@ div.cards_content {
       display: flex;
       width: 86%;
       margin: 0 auto;
+      @include rwd(mobile){
+        width: 96%;
+      }
       // justify-content: center;
       .news_box{
         position: relative;
