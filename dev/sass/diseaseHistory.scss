@@ -905,7 +905,7 @@ header div.login-Bg .login-Box .sign .submit {
 /*---------------------------------------------*/
 .main {
     position: relative;
-    margin: 0px 0 0 0%;
+    margin: 70px 0 0 0%;
     box-sizing: border-box;
     display: inline-block;
     background-image: url(../../dest/image/btn_img_background/spanishflue.jpg);
@@ -922,7 +922,48 @@ header div.login-Bg .login-Box .sign .submit {
     border-radius: 50px;
     width: 78%;
     margin: 20px 0 0 20%;
+    position: relative;
+
+    .click-hand {
+        // z-index: 1;
+        width: 100px;
+        height: 85px;
+
+        position: absolute;
+        top: 47%;
+        left: 9%;
+
+        .click-on {
+            width:100%;
+            height: 100%;
+            z-index: 500;
+            position: absolute;;
+            // right: 0%;
+            // top: 0%;
+            animation: click 2s alternate infinite ease-in-out;
+        }
+
+
+
+    }
 }
+
+@keyframes click {
+    0% {
+        top: 50px;
+
+        //   animation: ease-in;
+    }
+
+    100% {
+        top: 0px;
+
+        // animation:ease-out;
+    }
+
+}
+
+
 
 .history_subtitle::before {
     content: "";
@@ -934,6 +975,7 @@ header div.login-Bg .login-Box .sign .submit {
     left: 20%;
 }
 
+
 .history_container>.history_sextion1>.history_subtitle {
     font-family: Toppan Bunkyu Midashi Mincho Extrabold;
     font-size: 35px;
@@ -944,6 +986,9 @@ header div.login-Bg .login-Box .sign .submit {
     font-family: Monoton;
     font-size: 40px;
 }
+
+
+
 
 /* bookstyle---------------------------------------------------*/
 /* .slick-initialized .slick-slide{
@@ -1014,10 +1059,13 @@ button:focus {
     top: -1%;
     right: 0%;
     overflow: auto;
+    z-index: 999;
 }
-.-on{
-    display:block;
+
+.-on {
+    display: block;
 }
+
 .book_content {
     display: block !important;
     max-width: inherit;
@@ -1107,7 +1155,7 @@ button:focus {
 }
 
 .flipbook2 {
-    display: none !important;
+    display: none  ;
 }
 
 #sars-book {
@@ -1120,6 +1168,37 @@ button:focus {
 
 .page-wrapper {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.slick-hand {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+@keyframes touch {
+    0% {
+        top: 30px;
+
+        //   animation: ease-in;
+    }
+
+    100% {
+        top: 0px;
+
+        // animation:ease-out;
+    }
+
+}
+
+.slick-on {
+    width: 200px;
+    z-index: 500;
+    position: fixed;
+    right: 3%;
+    top: 4%;
+    animation: touch 1s alternate infinite;
 }
 
 /* book1 covid-19---------------------------------------------------------*/
@@ -1378,9 +1457,10 @@ ul.covid-19-timeline>li:before {
     .DW_news {
         width: 70%;
     }
-    .covid-pic-2{
-        margin:10% 0;
-        width:100%;
+
+    .covid-pic-2 {
+        margin: 10% 0;
+        width: 100%;
     }
 
     .book1,
@@ -1413,6 +1493,13 @@ ul.covid-19-timeline>li:before {
         display: none;
     }
 }
+@media screen and (max-width: 900px) {
+    #covid-19-book_test {
+        width: 900px;
+        height: 600px;
+        width: 10%;
+    }
+}
 
 @media screen and (max-width: 768px) {
     .book_content {
@@ -1438,45 +1525,48 @@ ul.covid-19-timeline>li:before {
         right: 0%;
         bottom: 5%;
     }
+
     .btnclose {
         position: absolute;
         top: 8%;
         right: 5%;
     }
-    
+
 }
 
 @media only screen and (max-width: 414px) {
     .lightbox-background {
-        height: 150%;
+        // height: auto;
     }
 
     .main {
         overflow-y: auto;
-        margin:0;
+        margin: 0;
     }
 
     .book_content {
         width: 100%;
-        height: 100%;
-        top: 20%;
+        // height: 100%;
+        top: 3%;
         left: 50%;
         border-radius: 0%;
         max-width: inherit;
-        padding:0%;
+        padding: 0%;
         overflow: scroll;
-        height:auto;
+        // height: 100%;
     }
 
     .btnclose {
         position: absolute;
-        top: 8%;
-        right: 3%;
+        top: 7%;
+        right: 10%;
     }
-
+    .flipbook {
+        display: none;
+    }
     .flipbook2 {
         position: inherit;
-        display: flex;
+        display: block ;
         flex-direction: column;
         width: 100%;
         height: auto;
@@ -1485,9 +1575,7 @@ ul.covid-19-timeline>li:before {
         bottom: 5%;
     }
 
-    .flipbook {
-        display: none;
-    }
+    
 
 
     .history_container {
@@ -1507,25 +1595,32 @@ ul.covid-19-timeline>li:before {
         width: 80%;
         box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.8), 10px 20px 10px 0 rgba(0, 0, 0, 0.8);
     }
+    .history_container .click-hand{
+        top:43%;
+        left:33%;
+    }
 
     #covid-19-book {
         position: fixed;
         right: -42%;
         width: 414px;
     }
-    .about-bat{
-        position:relative;
-        width:200%;
+
+    .about-bat {
+        position: relative;
+        width: 80%;
     }
-    .bbc-news{
-        position:relative;
-        width:200%;
+
+    .bbc-news {
+        position: relative;
+        width: 80%;
     }
-    element.style{
-        margin-left:0;
+
+    element.style {
+        margin-left: 0;
     }
-    
-    
+
+
 }
 
 #covid-19-book {
@@ -1534,13 +1629,7 @@ ul.covid-19-timeline>li:before {
     background-color: transparent;
 }
 
-@media screen and (max-width: 900px) {
-    #covid-19-book_test {
-        width: 900px;
-        height: 600px;
-        width:10%;
-    }
-}
+
 
 
 /*BOOK-SARS----------------------------------------------------------------*/

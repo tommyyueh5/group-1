@@ -41,6 +41,7 @@
             </ol>
         </nav>
         <div class="history_container">
+            <div class="click-hand"><img class="click-on" src="../dest/image/btn_img_background/click.png"></div>
             <section class="history_sextion1">
                 <h1 class="history_title">A visual history of <br>pandemics</h1>
                 <h5 class="history_subtitle">瘟疫與人</h5>
@@ -130,6 +131,8 @@
                 <div class="book_content">
                     <div class="flipbook">
                         <div class="page-turns cover-front">
+                            <div class="slick-hand"><img class="slick-on"
+                                    src="../dest/image/btn_img_background/hand-to.png"></div>
                         </div>
                         <div class="page-turns cover-back"></div>
                         <div class="page-turns page-right">
@@ -363,13 +366,13 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="page-turns page-left">
+                        <!-- <div class="page-turns page-left">
 
                         </div>
                         <div class="page-turns page-right"></div>
                         <div class="page-turns page-left"></div>
                         <div class="page-turns page-right"></div>
-                        <div class="page-turns cover-back"></div>
+                        <div class="page-turns cover-back"></div> -->
                     </div>
                     <div class="flipbook2">
                         <div class="page-turns cover-front">
@@ -570,8 +573,8 @@
                                     隨著時間推進，專家們得到病毒更完整的基因排序，能夠作出更全面的比對研究。科學界目前主流認為，病毒與蝙蝠和穿山甲有關。
                                 </p>
                                 <figure class="covid-pic-2">
-                                    <iframe class="about-bat" 
-                                        src="https://www.youtube.com/embed/UNMdlHUT6L0" frameborder="0"
+                                    <iframe class="about-bat" src="https://www.youtube.com/embed/UNMdlHUT6L0"
+                                        frameborder="0"
                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                         allowfullscreen></iframe>
                                     <figcaption class="covid-vedio-title"><a
@@ -854,13 +857,13 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="page-turns page-left">
+                        <!-- <div class="page-turns page-left">
 
                         </div>
                         <div class="page-turns page-right"></div>
                         <div class="page-turns page-left"></div>
                         <div class="page-turns page-right"></div>
-                        <div class="page-turns cover-back"></div>
+                        <div class="page-turns cover-back"></div> -->
                     </div>
                 </div>
             </div>
@@ -1073,7 +1076,7 @@
 
 
 
- 
+
         $(".flipbook").turn({
             width: 1000,
             height: 619,
@@ -1086,42 +1089,42 @@
             autoCenter: true
         });
 
-//--------------------------------------------------
+        //--------------------------------------------------
 
-        $('.flipbook').each(function(){
-        $(".flipbook").turn({
+        $('.flipbook').each(function () {
+            $(".flipbook").turn({
+                width: 1000,
+                height: 619,
+                autoCenter: true
+            })
+
+            $(".hard").turn({
+                width: 500,
+                height: 619,
+                autoCenter: true
+            });
+        });
+
+        //-----------------------------------------------
+
+        $(".flipbook", "#sars-book").turn({
             width: 1000,
             height: 619,
             autoCenter: true
-        })
+        });
 
         $(".hard").turn({
             width: 500,
             height: 619,
             autoCenter: true
         });
-        });
-
-//-----------------------------------------------
- 
-$(".flipbook","#sars-book").turn({
-            width: 1000,
-            height: 619,
-            autoCenter: true
-        });
-
-        $(".hard").turn({
-            width: 500,
-            height: 619,
-            autoCenter: true
-        });
 
 
-//------------------------------------------------
+        //------------------------------------------------
 
 
 
-        
+
 
         $("#sars-book").turn({
             width: 1000,
