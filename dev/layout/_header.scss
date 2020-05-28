@@ -1,7 +1,7 @@
 @import "../layout/mixins/allmixin";
 @import "../layout/modules/btn";
 header {
-    font-family: "NotoSansTC-Bold";
+    font-family: "Times-Sans-Serif";
     position: sticky;
     top: 0;
     width: 100%;
@@ -162,20 +162,17 @@ header {
             position: absolute;
             top: 0;
             left: 0;
-            // background-color: rgba(0, 0, 0, 0.8);
-            background-color: rgba(51, 51, 51, 1);
             z-index: 1000000000;
             position: fixed;
             display: none;
             .login-Box {
-                @include shadow-box-black();
                 position: absolute;
                 width: 400px;
                 height: 400px;
-                border-radius: 10px;
-                background-color: $color;
-                @include HandV_center(45%,
-                50%);
+                border-radius: 20px;
+                background-color: #4D4949;
+                @include HandV_center(45%,50%);
+                box-shadow: 15px 15px 15px black;
                 .sign-title {
                     font-size: 0px;
                     text-align: center;
@@ -196,12 +193,12 @@ header {
                         }
                     }
                 }
-                a.X {
+                a {
                     cursor: pointer;
                     position: absolute;
                     top: 10px;
                     right: 10px;
-                    border: 1px solid #000;
+                    border: 1px solid #fff;
                     width: 25px;
                     height: 25px;
                     display: block;
@@ -211,7 +208,7 @@ header {
                         left: 50%;
                         width: 100%;
                         height: 1px;
-                        background-color: black;
+                        background-color: #fff;
                     }
                     span.left {
                         transform: translate(-50%, -50%) rotate(45deg);
@@ -231,14 +228,21 @@ header {
                     label {
                         font-weight: normal;
                         font-size: 16px;
+                        color: #eee;
                         input {
+                            background-color: transparent;
                             margin: 10px 0;
                             width: 100%;
                             border-radius: 5px;
                             height: 20px;
-                            border: 1px solid rgba(0, 0, 0, 0.5);
+                            border: 1px solid #222;
+                            &:focus{
+                                background-color: #555;
+                                box-shadow: inset 2px 2px 2px black;
+                            }
                         }
                         .viveswitch {
+                            cursor: pointer;
                             width: 20px;
                             margin-right: 10px;
                         }
@@ -273,9 +277,11 @@ header {
 }
 
 //登入按鈕
-.submit1 {
-    background-color: rgb(77, 73, 73);
+.submit1,.submit2 {
+    background-color: #4d4949;
+    cursor: pointer;
     border-radius: 16px;
+    margin: 10px 0 0px 15px;
     padding: 5px 30px;
     box-shadow: 3px 3px 0.5rem black;
 }
@@ -301,7 +307,6 @@ header {
             color: whitesmoke;
             width: 100%;
             display: flex;
-            z-index: 1;
             div.logo {
                 width: 100vw;
                 display: flex;
@@ -398,7 +403,7 @@ header {
             z-index: 999;
             div.main_box {
                 width: 100%;
-                height: 100%;
+                height: 100vh;
                 position: relative;
                 display: flex;
                 justify-content: center;
@@ -535,7 +540,7 @@ header {
                         position: absolute;
                         top: 10px;
                         right: 10px;
-                        border: 1px solid #000;
+                        border: 1px solid #fff;
                         width: 25px;
                         height: 25px;
                         display: block;
@@ -545,7 +550,7 @@ header {
                             left: 50%;
                             width: 100%;
                             height: 1px;
-                            background-color: black;
+                            background-color: #fff;
                         }
                         span.left {
                             transform: translate(-50%, -50%) rotate(45deg);
@@ -689,7 +694,8 @@ header {
         background-size: cover;
         background-position: center center;
         div.title_list {
-            margin-top: 30px;
+            top: 70px;
+            margin-top: 0px;
             div.main_box {
                 padding: 100px 0 100px 0;
                 ul.mark_bar {
@@ -720,6 +726,7 @@ header {
                 justify-content: center;
                 align-items: center;
                 z-index: 1;
+                height: inherit;
                 a {
                     width: 300px;
                     height: 40px;

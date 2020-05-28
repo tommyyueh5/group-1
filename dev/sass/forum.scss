@@ -95,7 +95,7 @@ aside.filter {
     background-color: rgb(43, 43, 43);
     font-size: 0;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 div.filter_order,
@@ -153,7 +153,8 @@ div.filter_order h2 {
     vertical-align: top;
     padding: 10px 15px;
     font-weight: bold;
-    font-family: Time;
+    // font-family: Time;
+    font-family: "Tahoma_Regular_font";
 }
 
 div.filter_time h2 {
@@ -204,7 +205,7 @@ section.top_slide_container {
     display: inline-block;
     font-size: 20px;
     vertical-align: top;
-    height: 608px;
+    height: 580px;
     background-color: whitesmoke;
     position: relative;
     form {
@@ -282,7 +283,7 @@ section.top_slide_container {
             background-color: black;
             width: 30%;
             color: white;
-            height: 73px;
+            height: 66px;
             text-indent: 12px;
             border-radius: 5px;
             border: unset;
@@ -422,7 +423,7 @@ h4.month {
 }
 
 img.thum_img {
-    width: 40px;
+    max-height: 40px;
 }
 
 h4.username {
@@ -442,7 +443,7 @@ span.posted_time {
 
 h2.article_title {
     font-size: 24px;
-    margin: 20px 0;
+    margin: 40px 0 0;
 }
 
 p.article_content {
@@ -453,7 +454,7 @@ h4.like_comment {
     font-size: 20px;
     color: rgb(146, 146, 146);
     // border: 1px solid black;
-    margin-top: 25px;
+    margin-top: 10px;
     text-align: left;
 }
 
@@ -508,9 +509,8 @@ div.article_content {
 }
 
 div.item_content {
-    height: 600px;
     img.main_img {
-        margin: 30px 0;
+        margin:  0;
         height: 300px;
         object-fit: contain;
         width: 95%;
@@ -586,6 +586,7 @@ div.report {
         display: block;
         font-size: 17px;
         color: white;
+        line-height: 22px;
     }
     button {
         font-size: 20px;
@@ -1010,7 +1011,7 @@ aside.filter2 {
         font-size: 16px;
         color: rgb(146, 146, 146);
         // border: 1px solid black;
-        margin-top: 20px;
+        margin-top: 5px;
     }
     h4.function2 {
         text-align: right;
@@ -1078,7 +1079,7 @@ aside.filter2 {
             vertical-align: top;
         }
         img.thumbnail2 {
-            margin-top: 15px;
+            margin-top: 10px;
             height: 40px;
         }
     }
@@ -1234,7 +1235,7 @@ aside.filter2 {
         font-size: 14px;
         color: rgb(146, 146, 146);
         // border: 1px solid black;
-        margin-top: 15px;
+        margin-top:5px;
     }
     h4.function2 {
         text-align: right;
@@ -1287,7 +1288,7 @@ aside.filter2 {
     }
     form {
         textarea {
-            width: 66%;
+            width: 50%;
             font-size: 12px;
         }
         button {
@@ -1297,8 +1298,8 @@ aside.filter2 {
             vertical-align: top;
         }
         img.thumbnail2 {
-            margin-top: 15px;
-            height: 35px;
+            margin-top: 0px;
+            height: 30px;
         }
     }
     div.comment {

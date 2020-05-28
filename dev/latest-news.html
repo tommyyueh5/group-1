@@ -8,7 +8,7 @@
     <link rel="icon" href="./image/title/logoimage.ico" type="image/x-icon">
     <link rel="shortcut icon" type="image/x-icon" href="./image/title/logoimage.ico" />
     <link rel="stylesheet" href="./node_modules/icofont/icofont.css">
-
+    @@include('./LAYOUT/head.html')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./node_modules/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
@@ -16,103 +16,14 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/latest-news.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/registered.js"></script>
 
 </head>
 
 <body>
-    <!-- ----------------------------header---------------------------------- -->
-    <header id="myMeun">
+    @@include('./LAYOUT/header.html')
+  
 
-    <div class="nav_bar">
-        <div id="logo" class="logo">
-            <a href="./homepage.html"></a>
-        </div>
-        <div class="fuction_btn_right">
-            <div class="member_center"><a href="./member.html">
-                    <p>會員中心</p>
-                </a></div>
-            <div class="inbtn">
-                <i id="login_btn"><a href="#">登入</a></i>
-            </div>
-        </div>
-        <div id="menu_switch">
-            <span class="switch_line btn_top"></span>
-            <span class="switch_line btn_mid"></span>
-            <span class="switch_line btn_bot"></span>
-        </div>
-    </div>
-
-
-    <div class="title_list" id="menu_list">
-        <div class="main_box">
-
-            <div class="menu_btn">
-                <span class="horizontal"></span>
-                <span class="vertical"></span>
-            </div>
-            <ul class="mark_bar">
-                <!-- <span id="move_var"></span> -->
-                <i class="icofont icofont-cart" id="cart"></i>
-                <li class="changePage"><a href="./latest-news.html">最新消息</a></li>
-                <li class="changePage"><a href="./forum.html">討論區</a></li>
-                <li class="changePage"><a href="./diseaseHistory.html">傳染病事記</a></li>
-                <li class="changePage"><a href="./Epidemic-prevention-SOP.html">防疫SOP</a></li>
-                <li class="changePage "><a href="./game.html">防疫知識王</a></li>
-                <li class="changePage"><a href="./Epidemic-shop.html">防疫商店</a></li>
-            </ul>
-            <!-- <form class="fuction_search" action="#">
-                <i class="icofont icofont-search"></i>
-                <input class="input_box" typne="text" name="search" id="search">
-            </form> -->
-        </div>
-
-        <div class="login_Bg" id="loginBg">
-            <div class="login-Box">
-                <div class="sign-title">
-                    <h1 id="sign-in">登入</h1>
-                    <h1 id="sign-up">註冊</h1>
-                </div>
-                <a href="./homepage.html" class="X" id="btnX">
-                    <span class="left"></span>
-                    <span class="right"></span>
-                </a>
-                <form class="sign sign-in">
-
-                    <label for="emeEmail">登入信箱<br>
-                        <input id="emeEmail" class="input-data" type="email" name="emeEmail">
-                    </label><br>
-
-                    <label for="emePaw">登入密碼<br>
-                        <input id="emePaw" class="input-data" type="password" name="emePaw"><br>
-                        <input class="viveswitch" type="checkbox">顯示密碼
-                    </label>
-                    <a href="">忘記密碼</a>
-                    <br>
-                    <input class="submit1" type="button" name="login" value="登入">
-                </form>
-
-                <form class="sign sign-up">
-                    <label for="upEmail">註冊信箱<br>
-                        <input id="RG_Email" class="input-data" type="email" name="upEmail">
-                    </label><br>
-
-                    <label for="upName">註冊名稱<br>
-                        <input id="RG_Name" class="input-data" type="text" name="upName" maxlength="10">
-                    </label><br>
-
-                    <label for="upPaw">註冊密碼<br>
-                        <input id="RG_Pwd" class="input-data" type="password" name="upPaw"><br>
-                        <input class="viveswitch" type="checkbox" id="vivePsw">顯示密碼
-                    </label>
-                    <a href="">忘記密碼</a>
-                    <br>
-                    <input class="submit2" type="button" name="login" value="註冊">
-                </form>
-            </div>
-        </div>
-    </div>
-    <script src="./js/registered.js"></script>
-</header>
     <!-- ----------------------------header---------------------------------- -->
     <main>
         <!-- ----------------------------breadcrumb------------------------------ -->
@@ -126,7 +37,7 @@
 
         <!-- ----------------------------video------------------------------ -->
 
-        <div class="first_title">CornavirusCOVID-19TaiwanCases</div>
+        <div class="first_title">台灣新冠疫情分佈資訊</div>
         <div class="map_chartarea">
 
             <div id="app">

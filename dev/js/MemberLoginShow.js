@@ -11,14 +11,14 @@ window.addEventListener('load', function () {
 
     // console.log(loginBox);
     // 點擊打叉就返回上一頁
-    // if(!$id(btnX)){
-    //     return
-    // }else{
-    //     $id(btnX).addEventListener('click',function(e){
-    //         e.stopPropagation();
-    //         this.href = history.go(-1);
-    //     });
-    // }
+    if(!$id('btnX')){
+        return
+    }else{
+        $id('btnX').addEventListener('click',function(e){
+            e.stopPropagation();
+             window.location.reload();
+        });
+    }
     // 在登出的狀況下點擊會員中心 
 
     let datamemb = null;

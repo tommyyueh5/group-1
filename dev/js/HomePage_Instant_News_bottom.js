@@ -105,12 +105,9 @@ window.addEventListener('load', function () {
                     content.appendChild(pImg);
                     content.appendChild(newsContent);
                     imgBox.appendChild(img);
-                    // imgBox.appendChild(pImg);
                     content.appendChild(dateBox);
                     dateBox.innerHTML = pdate;
-                    // dateBox.appendChild(pdate);
-                    // dateBox.appendChild(pdate)
-                    console.log(arryTest[index]);
+                    
                     
                     //設置屬性區
                     img.setAttribute('src', datalist[index].NEWS_IMG_PATH);
@@ -118,7 +115,7 @@ window.addEventListener('load', function () {
                     btnClose.setAttribute('href', 'javascript:void(0)');
                     //  圖片敘述
                     pImg.innerText = `▲ ${datalist[index].NEWS_IMG_EXP}`;
-                    // console.log(datalist[index]);
+
 
 
                     // 顯示標題及內容

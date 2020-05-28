@@ -39,12 +39,13 @@ section.Earth {
             // flex-direction: row;
             justify-content: space-around;
             align-items: center;
+            
 
             >li {
                 flex: 1;
                 text-align: center;
                 width: 100%;
-                color: #33A6B8;
+                color: #fff;
                 // background-color: #00f;
                 font-size: $sub_titleFs;
                 font-weight: 700;
@@ -79,11 +80,9 @@ section.Earth {
         list-style: none;
 
         li {
-            padding: 10px 15px;
-            // background: #ccc;
-            // position: absolute;
-            background-color: rgba(51, 166, 184, 0.795);
-            color: #000;
+            padding: 15px 15px;
+            background-color: #333;
+            color: #fff;
             font-size: $sub_titleFs;
             // font-family: Verdana;
         }

@@ -13,6 +13,7 @@
 
 <body>
     @@include('./LAYOUT/header.html')
+    
     <!-- <script>
         let loginbox = document.querySelector('#loginBg');
         loginbox.classList.add('on');
@@ -31,7 +32,7 @@
                 <img class="thumbnail" src="">
                 <form action="#" method="post" class="edit_thumbnail">
                     <label for="editimage">
-                        <img src="./image/member/interface.png" >
+                        <img src="./image/member/interface.png">
                         <input type="file" name="" id="editimage" value="">
                     </label>
                 </form>
@@ -118,8 +119,10 @@
                     <!-- <h3>使用中</h3> -->
                     <div class="pswCon">
                         <div>
-                            <label for="pws1">變更密碼：<input name="pws1" id="pws1" type="password" placeholder="含英文數字共8碼"></label><br>
-                            <label for="pws2">確認密碼：<input name="pws2" id="pws2" type="password" placeholder="含英文數字共8碼"></label><br>
+                            <label for="pws1">變更密碼：<input name="pws1" id="pws1" type="password"
+                                    placeholder="含英文數字共8碼"></label><br>
+                            <label for="pws2">確認密碼：<input name="pws2" id="pws2" type="password"
+                                    placeholder="含英文數字共8碼"></label><br>
                             <input id="pwsSumit" type="submit" value="確認">
                         </div>
                     </div>
@@ -132,9 +135,9 @@
     <!-- 頁籤 -->
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // 切換頁籤
-            $("a.tab").on("click", function(e) {
+            $("a.tab").on("click", function (e) {
                 e.preventDefault();
                 $(this).closest(".tab_list").find("a.tab").removeClass("-on");
                 $(this).addClass("-on");
@@ -144,10 +147,10 @@
                 $(".memberFunc span").text($(this).find("li").text());
             });
             //RWD頁籤展開
-            $(".memberFunc").on("click", function() {
+            $(".memberFunc").on("click", function () {
                 $(".rwdList li").slideToggle();
             });
-            $(".rwdList li").on("click", function(e) {
+            $(".rwdList li").on("click", function (e) {
                 if (document.body.clientWidth < 576) {
                     $(".memberFunc span").text($(this).text());
                     $(".rwdList li").slideToggle();
@@ -172,17 +175,17 @@
                 }
             });
             //編輯個人資料
-            $(".edit").on("click", function() {
+            $(".edit").on("click", function () {
                 $(".edit").hide();
                 $("#save,#cancel,.edit_thumbnail").show();
                 $("input").removeAttr('disabled');
                 $("#editname").focus();
-                $("#cancel").on("click", function() {
+                $("#cancel").on("click", function () {
                     $(".edit").show();
                     $("#save,#cancel,.edit_thumbnail").hide();
                     $("#editname,#editemail").attr('disabled', true);
                 });
-                $("#save").on("click", function() {
+                $("#save").on("click", function () {
                     $(".edit").show();
                     $("#save,#cancel,.edit_thumbnail").hide();
                     $("#editname,#editemail").attr('disabled', true);

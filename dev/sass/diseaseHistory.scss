@@ -10,7 +10,10 @@ body {
     color: black;
     background: white;
 }
-
+header div.title_list div.login_Bg .login-Box .sign label input {
+    width: 200% !important;
+    height: unset !important;
+}
 
 ol,
 ul {
@@ -370,7 +373,7 @@ div.bread_crumbs a span {
 }
 
 .history_container>.history_sextion1>.history_title {
-    font-family: Monoton;
+    font-family: "Monoton-Regular";
     font-size: 40px;
 }
 
@@ -884,6 +887,11 @@ ul.covid-19-timeline>li:before {
         display: none;
     }
 }
+@media screen and (max-width: 992px) {
+    div.bread_crumbs{
+        display: none;
+    }
+}
 @media screen and (max-width: 900px) {
     #covid-19-book_test {
         width: 900px;
@@ -922,7 +930,7 @@ ul.covid-19-timeline>li:before {
         right: 5%;
     }
     .history_container .click-hand .click-on{
-        display:none;
+        // display:none;
     }
     
 }
@@ -994,11 +1002,11 @@ ul.covid-19-timeline>li:before {
     }
     .about-bat{
         position:relative;
-        width:200%;
+        width:80%;
     }
     .bbc-news{
         position:relative;
-        width:200%;
+        width:80%;
     }
     element.style{
         margin-left:0;

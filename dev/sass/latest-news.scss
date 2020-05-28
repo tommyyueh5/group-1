@@ -6,6 +6,11 @@ body{
     font-weight: bold;
   }
 }
+header div.title_list div.login_Bg .login-Box .sign label input {
+  width: 200% !important;
+  height: unset !important;
+}
+
 main {
   background-color: #222;
 }
@@ -1006,6 +1011,9 @@ div.video_title{
       }
       .out-left{
         margin-top: 10px;
+        h1{
+         font-size:  20px;
+        }
       
         #image_3{
           width: 100%;

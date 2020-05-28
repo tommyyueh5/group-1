@@ -37,12 +37,25 @@ $(document).ready(() => {//html載入完再執行
         $('.sign-up').css('display', 'none');
     })
     $(".viveswitch").click(function () {//顯示密碼開關
-        if ($(this).prop("checked")) {
-            $(':password').attr('type', 'text')
-        } else {
-            $('#RG_Pwd').attr('type', 'password')
+        if($("#emePaw")[0].type == "text"){
+            $("#emePaw")[0].type = "password"
+            $('.icofont-eye-alt')[0].className = "viveswitch icofont icofont-eye-blocked";
+        }else{
+            $("#emePaw")[0].type = "text"
+            $('.icofont-eye-blocked')[0].className = "viveswitch icofont icofont-eye-alt";
         }
     });
+
+    $("#viveswitch").click(function () {//顯示密碼開關Ç
+        if($("#RG_Pwd")[0].type == "text"){
+            $("#RG_Pwd")[0].type = "password"
+            $('#viveswitch')[0].className = "viveswitch icofont icofont-eye-blocked";
+        }else{
+            $("#RG_Pwd")[0].type = "text"
+            $('#viveswitch')[0].className = "viveswitch icofont icofont-eye-alt";
+        }
+    });
+
 
     // $('.icofont-search').click(() => { //展開搜尋紐
     //     $(".input_box").toggleClass("on");
@@ -73,6 +86,15 @@ $(document).ready(() => {//html載入完再執行
     changePage.addEventListener('click', (e) => {
         e.stopPropagation();
     });
+
+
+    let tit = document.getElementById('bread');
+    let ch = document.getElementsByClassName('changePage');
+    for (let i =0; i<ch.length;i++) {
+        if (  tit.textContent== ch[i].children[0].textContent   ) {
+            ch[i].children[0].classList.add('move');
+        }
+    }
 
 
 });

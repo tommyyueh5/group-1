@@ -468,11 +468,16 @@ $(document).ready(function() {
         // console.log($(".article_content_no").text());
     });
     $("#sendReport").on("click", function(e) {
-        $("div.report").hide();
-        // sendReport();
-        e.stopPropagation();
-        sendReport();
-        alert("謝謝您的回覆，我們將盡快審查！")
+        var status = $('#login_btn').text();
+        if (status == "登入") {
+            alert("請先登入才能檢舉！！");
+        } else {
+            $("div.report").hide();
+            // sendReport();
+            e.stopPropagation();
+            sendReport();
+            alert("謝謝您的回覆，我們將盡快審查！")
+        }
     });
     $("#cancelReport").on("click", function(e) {
         $("div.report").hide();

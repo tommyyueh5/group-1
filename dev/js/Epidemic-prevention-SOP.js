@@ -30,7 +30,7 @@ window.addEventListener('load', function() {
     let mask2 = document.getElementById('item2');
     let mask3 = document.getElementById('item3');
     let bag = document.getElementById('alcohol');
-    let sign = document.getElementById('sign');
+    let sign = document.getElementById('sign222');
     document.getElementById('myMeun').style.position = "static";
 
     // map
