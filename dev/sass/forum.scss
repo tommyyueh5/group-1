@@ -4,7 +4,7 @@ ul.mark_bar {
 }
 
 header div.title_list div.login_Bg .login-Box .sign label input {
-    width: 200% !important;
+    width: 165% !important;
     height: unset !important;
 }
 
@@ -1316,18 +1316,22 @@ aside.filter2 {
         }
     }
     textarea#comment_text {
-        width: 65%;
+        width: 60%;
         margin: 18px 5px;
         height: 35px;
     }
     .close {
         img {
-            width: 24px;
+            width: 25px;
         }
     }
     button#postCom {
+        height: 25px;
+        width: 25px;
+        margin: 15px 10px 0;
+    }
+    img.thumbnail2 {
+        margin-top: 0px;
         height: 30px;
-        width: 30px;
-        margin: 20px 10px 0;
     }
 }

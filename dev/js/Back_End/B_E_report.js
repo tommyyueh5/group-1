@@ -2,23 +2,23 @@ window.addEventListener('load', () => {
 
 
     fetch('./PHP_program/Back_End/Back_End_report.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-        }
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+            }
 
-    }).then(resp => {
-        if (resp.status == 200) {
-            return resp.json();
-        }
-    }).then(FetchData => {
-        Array.from(FetchData).forEach((report, index) => {
-            let report_list_P = document.querySelector('.report_list');
-            let createLi = document.createElement('li');
-            createLi.classList.add('p_member');
-            // console.log(report);
-            
-            let render = `
+        }).then(resp => {
+            if (resp.status == 200) {
+                return resp.json();
+            }
+        }).then(FetchData => {
+            Array.from(FetchData).forEach((report, index) => {
+                let report_list_P = document.querySelector('.report_list');
+                let createLi = document.createElement('li');
+                createLi.classList.add('p_member');
+                // console.log(report);
+
+                let render = `
                         <div class="main_data">
                             <h1 class="report_title">${report.DIS_TIT}</h1>
                             <div class="in_box">
@@ -40,50 +40,56 @@ window.addEventListener('load', () => {
                             </span>
                         </div>
                     `;
-            createLi.innerHTML = render;
-            report_list_P.appendChild(createLi)
-            // console.log(report);
+                createLi.innerHTML = render;
+                report_list_P.appendChild(createLi)
+                // console.log(report);
+
+
+            })
+            return FetchData
+        }).then(FetchData => {
             let pData = document.querySelectorAll('.report_isON');
+            console.log(FetchData);
 
-           
-            
             pData.forEach((p, i) => {
-                
-                if (p.value) {
+                // console.log(pData);
 
+                if (p.value) {
                     $(`#report_psi${i}`).click(function (e) {
                         if ($(`#report_psi${i}`).val() == 0) {
                             $(`#report_psi${i}`).val(1);
                             p.checked = true;
-                            fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
-                                method:'POST',
-                                body:JSON.stringify({
-                                    "REPORTSNum":FetchData[i].REP_NO,
-                                    "PositionNum":$(`#report_psi${i}`).val()
+                            fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php', {
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    "REPORTSNum": FetchData[i].REP_NO,
+                                    "PositionNum": $(`#report_psi${i}`).val(1),
+                                    "DIS_NO": FetchData[i].DIS_NO
                                 }),
-                                headers:{
+                                headers: {
                                     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
                                 }
-                            }).then(resp=>{
+                            }).then(resp => {
                                 return resp.text();
-                            }).then(alertShow=>{
+                            }).then(alertShow => {
                                 alert(alertShow);
                             })
                         } else {
                             $(`#report_psi${i}`).val(0);
                             p.checked = false;
-                            fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php',{
-                                method:'POST',
-                                body:JSON.stringify({
-                                    "REPORTSNum":FetchData[i].REP_NO,
-                                    "PositionNum":$(`#report_psi${i}`).val()
+                            fetch('./PHP_program/Back_End/Back_End_report_updatePosition.php', {
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    "REPORTSNum": FetchData[i].REP_NO,
+                                    "PositionNum": $(`#report_psi${i}`).val(0),
+                                    "DIS_NO": FetchData[i].DIS_NO
                                 }),
-                                headers:{
+                                headers: {
                                     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
                                 }
-                            }).then(resp=>{
+                            }).then(resp => {
                                 return resp.text();
-                            }).then(alertShow=>{
+                            }).then(alertShow => {
                                 alert(alertShow);
                             })
                         }
@@ -93,8 +99,8 @@ window.addEventListener('load', () => {
                 }
             });
         })
-    }).catch(err => {
-        console.log(err);
-    })
-  
+        .catch(err => {
+            console.log(err);
+        })
+
 });

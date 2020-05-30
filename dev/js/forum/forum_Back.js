@@ -27,7 +27,7 @@ function showComment() {
                         `)
             }
         },
-        error: function(xhr) {
+        error: function (xhr) {
             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     })
@@ -85,7 +85,7 @@ function showData() {
                         `)
             }
         },
-        error: function(xhr) {
+        error: function (xhr) {
             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     });
@@ -146,7 +146,7 @@ function showDataTime() {
                         `)
             }
         },
-        error: function(xhr) {
+        error: function (xhr) {
             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     });
@@ -206,7 +206,7 @@ function showCommentMost() {
                         `)
             }
         },
-        error: function(xhr) {
+        error: function (xhr) {
             alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
         }
     });
@@ -226,10 +226,10 @@ function uploadData() {
             content: $('#content').val(),
             path: $(".oldPath")[0].files[0].name,
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function(data) {
+        success: function (data) {
             alert('success: ' + data);
             location.href = 'forum.html';
         }
@@ -254,10 +254,10 @@ function uploadCom() {
             comLength: comLength,
             filterText: filterText,
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function(data) {
+        success: function (data) {
             alert('success: ' + data);
             // location.href = 'forum.html';
             $('#comment_text').val('');
@@ -281,10 +281,10 @@ function updateCom() {
             comment: $('#comment_text').val(),
             comLength: comLength,
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
         },
-        success: function(data) {
+        success: function (data) {
             alert('success: ' + data);
             // location.href = 'forum.html';
             // $('#comment_text').val('');
@@ -300,7 +300,7 @@ function uploadImg() {
         data: form,
         processData: false,
         contentType: false,
-        success: function(data) {
+        success: function (data) {
             alert(data);
         }
     });
@@ -335,16 +335,16 @@ function sendReport() {
             artno: artno,
             reason: reason,
         },
-        success: function(data) {
+        success: function (data) {
             alert(data);
         }
     });
 }
-$(document).ready(function() {
+$(document).ready(function () {
     showData();
     // imgLoad();
     //按下不同類型的版篩選鍵
-    $(".filter_order a.tab").on("click", function(e) {
+    $(".filter_order a.tab").on("click", function (e) {
         $('div.article').remove();
         e.preventDefault();
 
@@ -363,7 +363,7 @@ $(document).ready(function() {
         showData();
     });
     //按下熱門程度篩選鍵
-    $(".filter_time a.tab_first").on("click", function(e) {
+    $(".filter_time a.tab_first").on("click", function (e) {
         $('div.article').remove();
         e.preventDefault();
 
@@ -380,7 +380,7 @@ $(document).ready(function() {
         showCommentMost();
     });
     //按下即時發布篩選鍵
-    $(".filter_time a.tab_third").on("click", function(e) {
+    $(".filter_time a.tab_third").on("click", function (e) {
         $('div.article').remove();
         e.preventDefault();
 
@@ -396,14 +396,14 @@ $(document).ready(function() {
         showDataTime();
     });
     //ＲＷＤ後的條件篩選
-    $("#filter_con").on("click", function() {
+    $("#filter_con").on("click", function () {
         $(".filter_left div").slideToggle();
     });
-    $("#filter_top").on("click", function() {
+    $("#filter_top").on("click", function () {
         $(".filter_right h3").slideToggle();
     });
     // 按下ＲＷＤ後不同類型的版篩選鍵
-    $(".filter_right a.tab").on("click", function(e) {
+    $(".filter_right a.tab").on("click", function (e) {
         $('div.article').remove();
         var rwdFilterText = $(this).find("h3").text();
         $(".filter_right span").text($(this).text());
@@ -445,7 +445,7 @@ $(document).ready(function() {
         showData();
     });
     // 按下ＲＷＤ後熱門程度篩選鍵
-    $(".filter_left a.tab_first").on("click", function() {
+    $(".filter_left a.tab_first").on("click", function () {
         $('div.article').remove();
         $(".filter_left span").text($(this).text());
         $(".filter_left div").slideToggle();
@@ -453,40 +453,44 @@ $(document).ready(function() {
         showCommentMost();
     });
     // 按下ＲＷＤ後即時發布篩選鍵
-    $(".filter_left a.tab_third").on("click", function() {
+    $(".filter_left a.tab_third").on("click", function () {
         $('div.article').remove();
         $(".filter_left span").text($(this).text());
         $(".filter_left div").slideToggle();
         showDataTime();
     });
     //檢舉按下後燈箱
-    $(".report").on("click", function(e) {
+    $(".report").on("click", function (e) {
         e.stopPropagation();
     });
-    $("img#report").on("click", function() {
+    $("img#report").on("click", function () {
         $("div.report").show();
         // console.log($(".article_content_no").text());
     });
-    $("#sendReport").on("click", function(e) {
+    //檢舉按鈕沒登入不能檢舉 沒勾選檢舉原因不能送出
+    $("#sendReport").on("click", function (e) {
         var status = $('#login_btn').text();
+        var radioValue = $("input[name='report_cheak']:checked").val();
         if (status == "登入") {
             alert("請先登入才能檢舉！！");
+        } else if (radioValue == undefined) {
+            alert("請填寫原因謝謝！！")
         } else {
             $("div.report").hide();
             // sendReport();
             e.stopPropagation();
             sendReport();
-            alert("謝謝您的回覆，我們將盡快審查！")
+            alert("謝謝您的回覆，我們將盡快審查！！")
         }
     });
-    $("#cancelReport").on("click", function(e) {
+    $("#cancelReport").on("click", function (e) {
         $("div.report").hide();
         e.stopPropagation();
     });
 
     //動態新增物件 建立聆聽事件
     //文章燈箱
-    $(".masonry").on("click", '.main_img,.article_title', function(e) {
+    $(".masonry").on("click", '.main_img,.article_title', function (e) {
         var parr = $(this).parent('.item_content');
         var thisYear = parr.find('.year').text();
         var thisDay = parr.find('.day').text();
@@ -530,17 +534,17 @@ $(document).ready(function() {
         showComment();
 
     });
-    $(".article_content").on("click", function(e) {
+    $(".article_content").on("click", function (e) {
         e.stopPropagation();
     });
-    $(".post,#upload,#content,#postBtn").on("click", function(e) {
+    $(".post,#upload,#content,#postBtn").on("click", function (e) {
         e.stopPropagation();
     });
-    $(".close").on("click", function() {
+    $(".close").on("click", function () {
         $(".article_content,.background").hide();
         $('.post').css('background-color', 'unset');
     })
-    $("body").on("click", function() {
+    $("body").on("click", function () {
         $(".article_content,.background").hide();
         $('.post').css('background-color', 'unset');
         $('#upload').hide();
@@ -552,7 +556,7 @@ $(document).ready(function() {
     });
 
     // 發文按鈕  沒登入不能發文
-    $('#title').on("click", function() {
+    $('#title').on("click", function () {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能發文！！");
@@ -567,13 +571,13 @@ $(document).ready(function() {
         };
     });
     //沒登入不能留言
-    $('#comment_text').on("click", function() {
+    $('#comment_text').on("click", function () {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能留言！！");
         }
     });
-    $('#postCom').on("click", function() {
+    $('#postCom').on("click", function () {
         var status = $('#login_btn').text();
         if (status == "登入") {
             alert("請先登入才能留言！！");
@@ -587,7 +591,7 @@ $(document).ready(function() {
             showComment();
         }
     });
-    $('#postBtn').on("click", function() {
+    $('#postBtn').on("click", function () {
         var sort = $('#sort').val();
         var title = $('#title').val();
         var content = $('#content').val();
@@ -608,7 +612,7 @@ $(document).ready(function() {
             uploadImg();
         }
     });
-    $('#canBtn').on("click", function() {
+    $('#canBtn').on("click", function () {
         $('#upload').hide();
         $('#content').hide();
         $('#postBtn').hide();
